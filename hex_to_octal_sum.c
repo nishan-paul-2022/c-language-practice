@@ -1,0 +1,28 @@
+// Purpose: Demonstrates adding two hexadecimal numbers and printing the sum in octal format.
+// Topic: Number Bases (Hexadecimal, Octal), printf Formatting
+#include <stdio.h>
+#include <stdlib.h> // For EXIT_SUCCESS
+
+int main() {
+    int hexValue1;
+    int hexValue2;
+    int sum;
+
+    // Assign hexadecimal values to variables
+    hexValue1 = 0x987; // Represents 2439 in decimal
+    hexValue2 = 0x123987; // Represents 1194471 in decimal
+
+    // Calculate the sum of the two hexadecimal values
+    sum = hexValue1 + hexValue2;
+
+    // Print the sum in octal format
+    // 0x987 (hex) = 2439 (dec) = 4547 (oct)
+    // 0x123987 (hex) = 1194471 (dec) = 4444747 (oct)
+    // Sum (dec) = 2439 + 1194471 = 1196910
+    // Sum (oct) = 4547 + 4444747 = 4452276 (oct)
+    printf("Hexadecimal Value 1: 0x%X (%d decimal, %o octal)\n", hexValue1, hexValue1, hexValue1);
+    printf("Hexadecimal Value 2: 0x%X (%d decimal, %o octal)\n", hexValue2, hexValue2, hexValue2);
+    printf("Sum in Octal: %o\n", sum);
+
+    return 0; // Indicate success
+}

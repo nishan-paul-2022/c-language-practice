@@ -1,0 +1,23 @@
+// Purpose: Generates and prints all permutations of three distinct numbers from 1 to 3.
+// Topic: Nested Loops, Permutations, Conditional Logic
+
+#include <stdio.h>
+
+int main(void) {
+    // Iterate through all possible combinations for three numbers
+    for (int num1 = 1; num1 <= 3; num1++) {
+        for (int num2 = 1; num2 <= 3; num2++) {
+            // Ensure the second number is different from the first
+            if (num2 != num1) {
+                for (int num3 = 1; num3 <= 3; num3++) {
+                    // Ensure the third number is different from the first two
+                    if (num3 != num1 && num3 != num2) {
+                        printf("%d, %d, %d\n\n", num1, num2, num3);
+                    }
+                }
+            }
+        }
+    }
+
+    return 0; // Indicate successful execution
+}

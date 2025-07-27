@@ -1,0 +1,87 @@
+// Purpose: Calculates the maximum, minimum, and average of an array of integers.
+// Topic: Array Operations, Max/Min, Average Calculation
+
+#include <stdio.h>
+
+// Function to find the maximum element in an array
+int find_maximum(int numbers[], int size) {
+    if (size <= 0) {
+        // Handle empty or invalid size array
+        return 0; // Or some other indicator of error/default value
+    }
+    int maximum = numbers[0];
+    for (int index = 1; index < size; index++) {
+        if (numbers[index] > maximum) {
+            maximum = numbers[index];
+        }
+    }
+    return maximum;
+}
+
+// Function to find the minimum element in an array
+int find_minimum(int numbers[], int size) {
+    if (size <= 0) {
+        // Handle empty or invalid size array
+        return 0; // Or some other indicator of error/default value
+    }
+    int minimum = numbers[0];
+    for (int index = 1; index < size; index++) {
+        if (numbers[index] < minimum) {
+            minimum = numbers[index];
+        }
+    }
+    return minimum;
+}
+
+// Function to calculate the average of elements in an array
+float calculate_average(int numbers[], int size) {
+    if (size <= 0) {
+        // Handle empty or invalid size array
+        return 0.0f; // Return 0.0 for average of empty array
+    }
+    long long sum = 0; // Use long long for sum to prevent overflow with large arrays/values
+    for (int index = 0; index < size; index++) {
+        sum += numbers[index];
+    }
+    // Perform floating-point division to get the average
+    return (float)sum / size;
+}
+
+int main() {
+    int size; // Number of elements in the array
+    int i;    // Loop counter
+
+    printf("Enter the number of elements in the array: ");
+    // Read the size of the array and validate input
+    if (scanf("%d", &size) != 1) {
+        fprintf(stderr, "Error: Invalid input for array size.\n");
+        return 1; // Indicate an error
+    }
+
+    if (size <= 0) {
+        fprintf(stderr, "Error: Array size must be positive.\n");
+        return 1; // Indicate an error
+    }
+
+    int numbers[size]; // Declare array with Variable Length Array (VLA)
+
+    printf("Enter %d integers separated by spaces:\n", size);
+    // Read elements into the array
+    for (i = 0; i < size; i++) {
+        if (scanf("%d", &numbers[i]) != 1) {
+            fprintf(stderr, "Error: Invalid input for element %d.\n", i + 1);
+            return 1; // Indicate an error
+        }
+    }
+
+    // Calculate and print the maximum, minimum, and average
+    int maximum = find_maximum(numbers, size);
+    int minimum = find_minimum(numbers, size);
+    float average = calculate_average(numbers, size);
+
+    printf("Maximum: %d\n", maximum);
+    printf("Minimum: %d\n", minimum);
+    printf("Average: %.2f\n", average); // Display average with 2 decimal places
+
+    return 0; // Indicate successful execution
+}
