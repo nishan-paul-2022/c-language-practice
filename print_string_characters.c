@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading strings into a 2D array and printing each character.
-// Topic: 2D Arrays, Strings, Character Access, Input/Output
+/*
+ * Purpose: Demonstrates reading strings into a 2D array and printing each character.
+ * Topic: 2D Arrays, Strings, Character Access, Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen, strcspn

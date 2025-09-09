@@ -1,5 +1,7 @@
-// Purpose: Demonstrates concatenating two strings.
-// Topic: String concatenation
+/*
+ * Purpose: Demonstrates concatenating two strings.
+ * Topic: String concatenation
+ */
 
 #include <stdio.h>
 #include <string.h>

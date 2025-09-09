@@ -1,5 +1,7 @@
-// Purpose: Reads two integers from input in a specific format ("input X*Y") and prints their product.
-// Topic: Formatted Input, Arithmetic Operations
+/*
+ * Purpose: Reads two integers from input in a specific format ("input X*Y") and prints their product.
+ * Topic: Formatted Input, Arithmetic Operations
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

@@ -1,5 +1,7 @@
-// Purpose: Prints a right-aligned triangle pattern using asterisks with leading spaces.
-// Topic: Nested Loops, Spacing
+/*
+ * Purpose: Prints a right-aligned triangle pattern using asterisks with leading spaces.
+ * Topic: Nested Loops, Spacing
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

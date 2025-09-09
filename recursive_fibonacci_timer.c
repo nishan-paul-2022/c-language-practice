@@ -1,6 +1,8 @@
-// Purpose: Calculates and prints the first N Fibonacci numbers using a recursive approach,
-//          and measures the time taken for the computation.
-// Topic: Recursion, Fibonacci Sequence, Time Measurement, Clock Function
+/*
+ * Purpose: Calculates and prints the first N Fibonacci numbers using a recursive approach,
+ *          and measures the time taken for the computation.
+ * Topic: Recursion, Fibonacci Sequence, Time Measurement, Clock Function
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

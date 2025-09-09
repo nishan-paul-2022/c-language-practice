@@ -1,5 +1,7 @@
-// Purpose: Prints all odd numbers from 1 up to a specified limit.
-// Topic: Loops and Conditional Logic (Printing Odd Numbers)
+/*
+ * Purpose: Prints all odd numbers from 1 up to a specified limit.
+ * Topic: Loops and Conditional Logic (Printing Odd Numbers)
+ */
 
 #include <stdio.h>
 

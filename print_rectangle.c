@@ -1,5 +1,7 @@
-// Purpose: Reads a character and two integers (rows, columns) to print a rectangle of that character.
-// Topic: Nested Loops, Character Output, Input Handling, Pattern Printing
+/*
+ * Purpose: Reads a character and two integers (rows, columns) to print a rectangle of that character.
+ * Topic: Nested Loops, Character Output, Input Handling, Pattern Printing
+ */
 
 #include <stdio.h>
 #include <ctype.h> // For isspace, to help clean up input

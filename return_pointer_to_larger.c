@@ -1,5 +1,7 @@
-// Purpose: Demonstrates returning a pointer to the larger of two integer values.
-// Topic: Pointers, Functions, Return Values, Comparison
+/*
+ * Purpose: Demonstrates returning a pointer to the larger of two integer values.
+ * Topic: Pointers, Functions, Return Values, Comparison
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

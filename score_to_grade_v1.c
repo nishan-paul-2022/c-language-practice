@@ -1,5 +1,7 @@
-// Purpose: Converts a numerical score into a letter grade using if-else if statements.
-// Topic: Input Processing, Conditional Logic (if-else if), Grading System
+/*
+ * Purpose: Converts a numerical score into a letter grade using if-else if statements.
+ * Topic: Input Processing, Conditional Logic (if-else if), Grading System
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

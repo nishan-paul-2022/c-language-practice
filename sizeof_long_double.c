@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how to determine the size of a long double data type.
-// Topic: Pointers, Data Types, Sizeof Operator, Type Casting
+/*
+ * Purpose: Demonstrates how to determine the size of a long double data type.
+ * Topic: Pointers, Data Types, Sizeof Operator, Type Casting
+ */
 
 #include <stdio.h>
 #include <stddef.h> // For ptrdiff_t

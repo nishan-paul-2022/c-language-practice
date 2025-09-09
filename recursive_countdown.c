@@ -1,5 +1,7 @@
-// Purpose: Demonstrates recursion by printing numbers in descending order.
-// Topic: Recursion, Static Variables, Function Calls
+/*
+* Purpose: Demonstrates recursion by printing numbers in descending order.
+* Topic: Recursion, Static Variables, Function Calls
+ */
 
 #include <stdio.h>
 

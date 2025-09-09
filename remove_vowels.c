@@ -1,5 +1,7 @@
-// Purpose: Reads a string, converts it to lowercase, and prints it without vowels.
-// Topic: String Manipulation, Character Handling, Loops, Input Safety
+/*
+ * Purpose: Reads a string, converts it to lowercase, and prints it without vowels.
+ * Topic: String Manipulation, Character Handling, Loops, Input Safety
+ */
 
 #include <stdio.h>
 #include <string.h>

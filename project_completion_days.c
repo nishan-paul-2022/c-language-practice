@@ -1,5 +1,7 @@
-// Purpose: Calculates the number of days required to complete a project based on total work and daily work capacity.
-// Topic: Basic Arithmetic, Loops, Conditional Logic, Integer Division
+/*
+ * Purpose: Calculates the number of days required to complete a project based on total work and daily work capacity.
+ * Topic: Basic Arithmetic, Loops, Conditional Logic, Integer Division
+ */
 
 #include <stdio.h>
 

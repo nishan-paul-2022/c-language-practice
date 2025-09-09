@@ -1,5 +1,7 @@
-// Purpose: Reads three decimal numbers, finds the maximum number of decimal places, scales them to integers, finds their GCD, and performs a final calculation.
-// Topic: Floating-Point Numbers, Integer Conversion, GCD, Basic Arithmetic
+/*
+ * Purpose: Reads three decimal numbers, finds the maximum number of decimal places, scales them to integers, finds their GCD, and performs a final calculation.
+ * Topic: Floating-Point Numbers, Integer Conversion, GCD, Basic Arithmetic
+*/
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

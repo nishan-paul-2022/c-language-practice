@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading a string and a character using scanf and fgets.
-// Topic: String input, character input, input buffer handling.
+/*
+ * Purpose: Demonstrates reading a string and a character using scanf and fgets.
+ * Topic: String input, character input, input buffer handling.
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcspn

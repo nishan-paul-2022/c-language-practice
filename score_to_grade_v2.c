@@ -1,5 +1,7 @@
-// Purpose: Converts a numerical score into a letter grade based on a predefined scale.
-// Topic: Input Processing, Conditional Logic (Switch Statement), Grading System
+/*
+ * Purpose: Converts a numerical score into a letter grade based on a predefined scale.
+ * Topic: Input Processing, Conditional Logic (Switch Statement), Grading System
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

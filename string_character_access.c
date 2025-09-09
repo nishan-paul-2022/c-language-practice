@@ -1,5 +1,7 @@
-// Purpose: Demonstrates accessing and printing individual characters of a string.
-// Topic: Strings, Characters, Array Indexing, Input/Output Functions
+/*
+ * Purpose: Demonstrates accessing and printing individual characters of a string.
+ * Topic: Strings, Characters, Array Indexing, Input/Output Functions
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strlen()

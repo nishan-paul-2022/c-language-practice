@@ -1,5 +1,7 @@
-// Purpose: Compares two sets of scores (or values) based on specific sum conditions.
-// Topic: Basic Input/Output, Loops, Conditional Logic
+/*
+ * Purpose: Compares two sets of scores (or values) based on specific sum conditions.
+ * Topic: Basic Input/Output, Loops, Conditional Logic
+ */
 
 #include <stdio.h>
 

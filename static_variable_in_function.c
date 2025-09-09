@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the behavior of static variables within functions, showing that they retain their value between calls.
-// Topic: Functions, Static Variables, Scope, Initialization
+/*
+ * Purpose: Demonstrates the behavior of static variables within functions, showing that they retain their value between calls.
+ * Topic: Functions, Static Variables, Scope, Initialization
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

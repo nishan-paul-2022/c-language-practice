@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-// Purpose: Calculates salary based on hours worked, with overtime pay.
-// Topic: Conditional Logic, Input/Output, Basic Arithmetic
+/*
+ * Purpose: Calculates salary based on hours worked, with overtime pay.
+ * Topic: Conditional Logic, Input/Output, Basic Arithmetic
+ */
 
 int main(void) {
     double hours_worked;

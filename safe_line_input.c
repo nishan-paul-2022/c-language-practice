@@ -1,5 +1,7 @@
-// Purpose: Safely reads multiple lines of input and prints them.
-// Topic: Safe String Input and Line Printing
+/*
+ * Purpose: Safely reads multiple lines of input and prints them.
+ * Topic: Safe String Input and Line Printing
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen, strcspn

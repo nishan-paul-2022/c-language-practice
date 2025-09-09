@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints Fibonacci numbers using recursion, along with their sum.
-// Topic: Recursion, Fibonacci Sequence, Basic Input/Output
+/*
+ * Purpose: Calculates and prints Fibonacci numbers using recursion, along with their sum.
+ * Topic: Recursion, Fibonacci Sequence, Basic Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

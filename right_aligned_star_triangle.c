@@ -1,5 +1,7 @@
-// Purpose: Demonstrates printing a right-aligned triangle of asterisks using nested loops.
-// Topic: Loops, Nested Loops, Character Output
+/*
+ * Purpose: Demonstrates printing a right-aligned triangle of asterisks using nested loops.
+ * Topic: Loops, Nested Loops, Character Output
+ */
 
 #include <stdio.h>
 

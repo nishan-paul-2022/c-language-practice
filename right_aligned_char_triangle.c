@@ -1,5 +1,7 @@
-// Purpose: Prints a right-aligned triangle pattern using characters with leading spaces.
-// Topic: Nested Loops, Character Manipulation, Spacing
+/*
+ * Purpose: Prints a right-aligned triangle pattern using characters with leading spaces.
+ * Topic: Nested Loops, Character Manipulation, Spacing
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

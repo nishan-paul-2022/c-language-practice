@@ -1,5 +1,7 @@
-// Purpose: Reads two integers (rows, columns) and prints a rectangle where each cell contains the current row number.
-// Topic: Nested Loops, Integer Output, Input Handling, Pattern Printing
+/*
+ * Purpose: Reads two integers (rows, columns) and prints a rectangle where each cell contains the current row number.
+ * Topic: Nested Loops, Integer Output, Input Handling, Pattern Printing
+ */
 
 #include <stdio.h>
 #include <ctype.h> // For isspace, to help clean up input

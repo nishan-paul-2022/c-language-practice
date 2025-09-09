@@ -1,6 +1,8 @@
-// Purpose: Reads an integer and two dimensions (rows, columns) to print a rectangle
-// where each cell contains the specified integer.
-// Topic: Nested Loops, Integer Output, Input Handling, Pattern Printing
+/*
+ * Purpose: Reads an integer and two dimensions (rows, columns) to print a rectangle
+ * where each cell contains the specified integer.
+ * Topic: Nested Loops, Integer Output, Input Handling, Pattern Printing
+ */
 
 #include <stdio.h>
 #include <ctype.h> // For isspace, to help clean up input

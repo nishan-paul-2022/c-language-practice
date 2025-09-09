@@ -1,5 +1,7 @@
-// Purpose: Calculates x raised to the power of y using recursion.
-// Topic: Recursion, Mathematical Functions
+/*
+ * Purpose: Calculates x raised to the power of y using recursion.
+ * Topic: Recursion, Mathematical Functions
+ */
 
 #include <stdio.h>
 

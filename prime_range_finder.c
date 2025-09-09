@@ -1,5 +1,7 @@
-// Purpose: Finds and prints all prime numbers within a specified range.
-// Topic: Prime Numbers, Loops, Conditional Statements, Input Parsing
+/*
+ * Purpose: Finds and prints all prime numbers within a specified range.
+ * Topic: Prime Numbers, Loops, Conditional Statements, Input Parsing
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function

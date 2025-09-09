@@ -1,5 +1,7 @@
-// Purpose: Reads a specified number of integers into an array and prints them in groups of three.
-// Topic: Arrays, Loops, Input/Output, Grouping Elements
+/*
+ * Purpose: Reads a specified number of integers into an array and prints them in groups of three.
+ * Topic: Arrays, Loops, Input/Output, Grouping Elements
+ */
 
 #include <stdio.h>
 

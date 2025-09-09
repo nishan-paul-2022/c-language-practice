@@ -1,5 +1,7 @@
-// Purpose: Reads strings from input and prints them until a string starting with 'x' is encountered.
-// Topic: String input, loops, conditional execution, input buffer handling.
+/*
+ * Purpose: Reads strings from input and prints them until a string starting with 'x' is encountered.
+ * Topic: String input, loops, conditional execution, input buffer handling.
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcspn

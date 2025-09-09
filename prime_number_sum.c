@@ -1,6 +1,11 @@
+/*
+ * Purpose: Reads a matrix, identifies prime numbers within it, and calculates their sum.
+ * Topic: Arrays, 2D Arrays, Primality Test, Dynamic Memory Allocation
+ */
+
 #include <stdio.h>
-#include <stdlib.h> // For malloc and free
-#include <math.h>   // For sqrt
+#include <stdlib.h>
+#include <math.h>
 
 // Function to check if a number is prime
 // Returns 1 if prime, 0 otherwise.
@@ -17,8 +22,6 @@ int is_prime(int num) {
     return 1; // If no divisors found, it's prime
 }
 
-// Purpose: Reads a matrix, identifies prime numbers within it, and calculates their sum.
-// Topic: Arrays, 2D Arrays, Primality Test, Dynamic Memory Allocation
 int main() {
     int rows, cols;
     int **matrix; // Pointer to pointer for dynamic 2D array

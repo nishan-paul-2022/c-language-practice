@@ -1,5 +1,7 @@
-// Purpose: Calculates a sum by repeatedly adding a value and then dividing it by a divisor until it becomes zero.
-// Topic: Loops, Integer Division, Accumulation, Input Validation
+/*
+ * Purpose: Calculates a sum by repeatedly adding a value and then dividing it by a divisor until it becomes zero.
+ * Topic: Loops, Integer Division, Accumulation, Input Validation
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

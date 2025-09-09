@@ -1,5 +1,7 @@
-// Purpose: Calculates the length of a string using recursion.
-// Topic: Recursion, String Manipulation
+/*
+ * Purpose: Calculates the length of a string using recursion.
+ * Topic: Recursion, String Manipulation
+ */
 
 #include <stdio.h>
 

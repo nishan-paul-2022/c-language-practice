@@ -1,5 +1,7 @@
-// Purpose: Reads a floating-point number, calculates its ceiling, and prints that many asterisks.
-// Topic: Floating-Point Numbers, Math Functions (ceil), Loops, Character Output, Input Handling
+/*
+ * Purpose: Reads a floating-point number, calculates its ceiling, and prints that many asterisks.
+ * Topic: Floating-Point Numbers, Math Functions (ceil), Loops, Character Output, Input Handling
+ */
 
 #include <stdio.h>
 #include <math.h> // Required for ceil() function

@@ -1,5 +1,7 @@
-// Purpose: Generates and prints prime numbers within a specified range.
-// Topic: Prime Numbers, Loops, Conditional Statements, Functions
+/*
+ * Purpose: Generates and prints prime numbers within a specified range.
+ * Topic: Prime Numbers, Loops, Conditional Statements, Functions
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function

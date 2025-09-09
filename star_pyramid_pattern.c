@@ -1,5 +1,7 @@
-// Purpose: Prints a pyramid pattern using asterisks.
-// Topic: Nested Loops, Star Patterns
+/*
+ * Purpose: Prints a pyramid pattern using asterisks.
+ * Topic: Nested Loops, Star Patterns
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

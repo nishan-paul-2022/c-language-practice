@@ -1,5 +1,7 @@
-// Purpose: Demonstrates self-referential structures and dynamic memory allocation to create a linked list.
-// Topic: Self-Referential Structures, Linked Lists, Dynamic Memory Allocation, Pointers
+/*
+ * Purpose: Demonstrates self-referential structures and dynamic memory allocation to create a linked list.
+ * Topic: Self-Referential Structures, Linked Lists, Dynamic Memory Allocation, Pointers
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // Required for malloc and free

@@ -1,5 +1,7 @@
-// Purpose: Reads and prints multiple lines of text entered by the user until end-of-file or error.
-// Topic: String Input/Output, Reading Multiple Lines, Input Safety
+/*
+ * Purpose: Reads and prints multiple lines of text entered by the user until end-of-file or error.
+ * Topic: String Input/Output, Reading Multiple Lines, Input Safety
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcspn

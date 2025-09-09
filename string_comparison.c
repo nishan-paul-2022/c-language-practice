@@ -1,5 +1,7 @@
-// Purpose: Compares two strings lexicographically and prints the result.
-// Topic: String Manipulation, String Comparison, Input Safety
+/*
+ * Purpose: Compares two strings lexicographically and prints the result.
+ * Topic: String Manipulation, String Comparison, Input Safety
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen, strcspn, strcmp

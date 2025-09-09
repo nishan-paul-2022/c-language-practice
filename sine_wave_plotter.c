@@ -1,14 +1,15 @@
-#define _USE_MATH_DEFINES
-#include <stdio.h>
+/*
+ * Purpose: Visualizes a sine wave by printing asterisks at scaled positions.
+ * Topic: Trigonometry, Loops, Math Functions, Output Formatting
+ */
 
-// Define M_PI if it's not already defined by math.h with _USE_MATH_DEFINES
+#include <stdio.h>
+#include <math.h>
+#define _USE_MATH_DEFINES
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
-#include <math.h> // For sin() and M_PI, round()
 
-// Purpose: Visualizes a sine wave by printing asterisks at scaled positions.
-// Topic: Trigonometry, Loops, Math Functions, Output Formatting
 int main(void) {
     double angle_degrees; // Angle in degrees
     double angle_radians; // Angle in radians

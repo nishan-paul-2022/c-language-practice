@@ -1,5 +1,7 @@
-// Purpose: Demonstrates a basic function that takes an integer argument, performs a calculation, and returns the result.
-// Topic: Functions, Parameters, Return Values, Basic Arithmetic
+/*
+ * Purpose: Demonstrates a basic function that takes an integer argument, performs a calculation, and returns the result.
+ * Topic: Functions, Parameters, Return Values, Basic Arithmetic
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

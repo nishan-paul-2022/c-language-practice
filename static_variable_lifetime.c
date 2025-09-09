@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the lifetime and behavior of static variables in C functions.
-// Topic: Variables, Scope, Lifetime, Static Keyword
+/*
+ * Purpose: Demonstrates the lifetime and behavior of static variables in C functions.
+ * Topic: Variables, Scope, Lifetime, Static Keyword
+ */
 
 #include <stdio.h>
 

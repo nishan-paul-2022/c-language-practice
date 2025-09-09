@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading a string and printing words separated by spaces.
-// Topic: String manipulation, input/output, loops.
+/*
+ * Purpose: Demonstrates reading a string and printing words separated by spaces.
+ * Topic: String manipulation, input/output, loops.
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen

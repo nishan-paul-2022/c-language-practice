@@ -1,5 +1,7 @@
-// Purpose: Calculates a specific ratio from two input values and checks if it matches a target integer value.
-// Topic: Floating-point Arithmetic, Type Casting, Conditional Logic, Math Functions (round)
+/*
+ * Purpose: Calculates a specific ratio from two input values and checks if it matches a target integer value.
+ * Topic: Floating-point Arithmetic, Type Casting, Conditional Logic, Math Functions (round)
+ */
 
 #include <stdio.h>
 #include <math.h> // For round() function

@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading a single character from a text file and displaying it.
-// Topic: Text File I/O, Reading Data
+/*
+ * Purpose: Demonstrates reading a single character from a text file and displaying it.
+ * Topic: Text File I/O, Reading Data
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()
@@ -26,7 +28,7 @@ int main() {
             printf("File is empty or could not read the first character.\n");
         }
         fclose(input_file_ptr);
-        return 0; or empty file
+        return 0;
     }
 
     // Print the character read to the console

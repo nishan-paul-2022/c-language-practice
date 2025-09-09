@@ -26,5 +26,8 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "stdio.h": "c"
   }
 }
