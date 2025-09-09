@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 // Function to perform bubble sort on an integer array
-void bubbleSort(int arr[], int size) {
+void bubble_sort(int arr[], int size) {
     int i, j, temp;
     for (i = 0; i < size - 1; i++) {
         // Last i elements are already in place, so no need to check them
@@ -23,7 +23,7 @@ void bubbleSort(int arr[], int size) {
 }
 
 // Function to read integer elements into an array
-void inputArray(int arr[], int size) {
+void input_array(int arr[], int size) {
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
         if (scanf("%d", &arr[i]) != 1) {
@@ -34,7 +34,7 @@ void inputArray(int arr[], int size) {
 }
 
 // Function to print integer elements of an array
-void printArray(int arr[], int size) {
+void print_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
@@ -42,30 +42,30 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    int arraySize;
+    int array_size;
 
     printf("Enter the size of the array: ");
-    if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
+    if (scanf("%d", &array_size) != 1 || array_size <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 0;
     }
 
     // Dynamically allocate memory for the array
-    int *numbers = (int *)malloc(arraySize * sizeof(int));
+    int *numbers = (int *)malloc(array_size * sizeof(int));
     if (numbers == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
     }
 
-    inputArray(numbers, arraySize);
+    input_array(numbers, array_size);
 
     printf("Original array: ");
-    printArray(numbers, arraySize);
+    print_array(numbers, array_size);
 
-    bubbleSort(numbers, arraySize);
+    bubble_sort(numbers, array_size);
 
     printf("Sorted array (Bubble Sort): ");
-    printArray(numbers, arraySize);
+    print_array(numbers, array_size);
 
     free(numbers); // Free dynamically allocated memory
 

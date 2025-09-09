@@ -12,14 +12,14 @@ int subtract(int num1, int num2);
 int main() {
     int x = 10;
     int y = 20;
-    int sumResult;
-    int subtractResult;
+    int sum_result;
+    int subtract_result;
 
-    sumResult = add(x, y);
-    subtractResult = subtract(y, x);
+    sum_result = add(x, y);
+    subtract_result = subtract(y, x);
 
-    printf("%d + %d = %d\n", x, y, sumResult);
-    printf("%d - %d = %d\n", y, x, subtractResult);
+    printf("%d + %d = %d\n", x, y, sum_result);
+    printf("%d - %d = %d\n", y, x, subtract_result);
 
     return 0;
 }

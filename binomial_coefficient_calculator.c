@@ -7,7 +7,7 @@
 
 // Function to calculate nCr using the formula C(n, k) = C(n, k-1) * (n - k + 1) / k
 // This iterative approach avoids large intermediate factorial calculations.
-long long calculate_nCr(int n, int r)
+long long calculate_ncr(int n, int r)
 {
     // Base cases and error handling
     if (r < 0 || r > n)
@@ -57,19 +57,19 @@ int main(void)
     }
 
     // Calculate and print the binomial coefficient
-    long long nCr = calculate_nCr(n, r);
+    long long ncr= calculate_ncr(n, r);
 
-    if (nCr == -1)
+    if (ncr == -1)
     {
         printf("Error: Invalid input (n or r out of bounds).\n");
     }
-    else if (nCr == -2)
+    else if (ncr == -2)
     {
         printf("Error: Calculation resulted in overflow.\n");
     }
     else
     {
-        printf("C(%d, %d) = %lld\n", n, r, nCr);
+        printf("C(%d, %d) = %lld\n", n, r, ncr);
     }
 
     return 0;

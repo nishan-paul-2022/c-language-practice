@@ -7,24 +7,24 @@
 #include <stdlib.h>
 
 int main() {
-    int arraySize;
+    int array_size;
     int *array;
     int target;
 
     printf("Enter the size of the sorted array: ");
-    if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
+    if (scanf("%d", &array_size) != 1 || array_size <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 0;
     }
 
-    array = (int *)malloc(arraySize * sizeof(int));
+    array = (int *)malloc(array_size * sizeof(int));
     if (array == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
     }
 
-    printf("Enter %d sorted integers for the array:\n", arraySize);
-    for (int i = 0; i < arraySize; i++) {
+    printf("Enter %d sorted integers for the array:\n", array_size);
+    for (int i = 0; i < array_size; i++) {
         if (scanf("%d", &array[i]) != 1) {
             printf("Invalid input. Exiting.\n");
             free(array);
@@ -44,15 +44,15 @@ int main() {
         }
 
         int start = 0;
-        int end = arraySize - 1;
+        int end = array_size - 1;
         int mid;
-        int foundIndex = -1; // To store the 1-based index if found
+        int found_index = -1; // To store the 1-based index if found
 
         while (start <= end) {
             mid = start + (end - start) / 2; // Safer way to calculate mid to prevent overflow
 
             if (array[mid] == target) {
-                foundIndex = mid + 1; // Found, store 1-based index
+                found_index = mid + 1; // Found, store 1-based index
                 break;
             }
             else if (array[mid] < target) {
@@ -62,8 +62,8 @@ int main() {
                 end = mid - 1;
         }
 
-        if (foundIndex != -1) {
-            printf("Element %d found at 1-based index: %d\n", target, foundIndex);
+        if (found_index != -1) {
+            printf("Element %d found at 1-based index: %d\n", target, found_index);
         }
         else {
             printf("Element %d doesn't exist in the array.\n", target);

@@ -7,14 +7,14 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *inputFile = NULL;
-    FILE *outputFile = NULL;
+    FILE *input_file = NULL;
+    FILE *output_file = NULL;
     int number;
     int square;
 
     // Open the input file for reading
-    inputFile = fopen("input.txt", "r");
-    if (inputFile == NULL) {
+    input_file = fopen("input.txt", "r");
+    if (input_file == NULL) {
         perror("Error opening input file input.txt");
         return EXIT_FAILURE;
     } else {
@@ -22,10 +22,10 @@ int main() {
     }
 
     // Open the output file for writing
-    outputFile = fopen("mineput.txt", "w");
-    if (outputFile == NULL) {
+    output_file = fopen("mineput.txt", "w");
+    if (output_file == NULL) {
         perror("Error opening output file mineput.txt");
-        fclose(inputFile); // Close the already opened input file
+        fclose(input_file); // Close the already opened input file
         return EXIT_FAILURE;
     } else {
         printf("Output file mineput.txt opened successfully for writing.\n");
@@ -33,30 +33,30 @@ int main() {
 
     // Read numbers from the input file and calculate their squares
     printf("Calculating squares...\n");
-    while (fscanf(inputFile, "%d", &number) == 1) {
+    while (fscanf(input_file, "%d", &number) == 1) {
         square = number * number;
         // Write the squared number to the output file
-        if (fprintf(outputFile, "%d\n", square) < 0) {
+        if (fprintf(output_file, "%d\n", square) < 0) {
             perror("Error writing to output file");
-            fclose(inputFile);
-            fclose(outputFile);
+            fclose(input_file);
+            fclose(output_file);
             return EXIT_FAILURE;
         }
     }
 
     // Check if the loop terminated due to an error other than reaching EOF
-    if (ferror(inputFile)) {
+    if (ferror(input_file)) {
         perror("Error reading from input file");
-        fclose(inputFile);
-        fclose(outputFile);
+        fclose(input_file);
+        fclose(output_file);
         return EXIT_FAILURE;
     }
 
     printf("Squares calculated and written successfully.\n");
 
     // Close the files
-    fclose(inputFile);
-    fclose(outputFile);
+    fclose(input_file);
+    fclose(output_file);
 
     return 0;
 }

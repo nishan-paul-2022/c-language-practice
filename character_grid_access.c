@@ -10,7 +10,7 @@
 
 int main(void) {
     int rows, cols;
-    int rowIndex, colIndex;
+    int row_index, col_index;
     char input_buffer[MAX_ROW_LEN]; // Buffer for reading lines
 
     // Prompt for and read the dimensions of the 2D array
@@ -54,21 +54,21 @@ int main(void) {
 
     // Prompt for and read the row and column index to access
     printf("\nEnter the row and column index to access (e.g., 1 2): ");
-    if (scanf("%d %d", &rowIndex, &colIndex) != 2) {
+    if (scanf("%d %d", &row_index, &col_index) != 2) {
         fprintf(stderr, "Error: Invalid input for indices.\n");
         free(char_grid);
         return EXIT_FAILURE;
     }
 
     // Validate indices
-    if (rowIndex < 0 || rowIndex >= rows || colIndex < 0 || colIndex >= cols) {
+    if (row_index < 0 || row_index >= rows || col_index < 0 || col_index >= cols) {
         fprintf(stderr, "Error: Indices out of bounds.\n");
         free(char_grid);
         return EXIT_FAILURE;
     }
 
     // Print the character at the specified index
-    printf("\nCharacter at [%d][%d]: %c\n", rowIndex, colIndex, char_grid[rowIndex][colIndex]);
+    printf("\nCharacter at [%d][%d]: %c\n", row_index, col_index, char_grid[row_index][col_index]);
 
     // Free the dynamically allocated memory
     free(char_grid);

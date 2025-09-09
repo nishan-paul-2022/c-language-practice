@@ -7,26 +7,26 @@
 #include <stdlib.h>
 
 int main() {
-    int arraySize;
+    int array_size;
     int *numbers;
-    int targetNumber;
+    int target_number;
 
     printf("Enter the size of the array (or Ctrl+D to exit): ");
-    while (scanf("%d", &arraySize) == 1) {
-        if (arraySize <= 0) {
+    while (scanf("%d", &array_size) == 1) {
+        if (array_size <= 0) {
             printf("Array size must be positive. Please try again.\n");
             continue;
         }
 
         // Dynamically allocate memory for the array
-        numbers = (int *)malloc(arraySize * sizeof(int));
+        numbers = (int *)malloc(array_size * sizeof(int));
         if (numbers == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
             return 0;
         }
 
-        printf("Enter %d integers for the array:\n", arraySize);
-        for (int i = 0; i < arraySize; i++) {
+        printf("Enter %d integers for the array:\n", array_size);
+        for (int i = 0; i < array_size; i++) {
             if (scanf("%d", &numbers[i]) != 1) {
                 printf("Invalid input. Exiting.\n");
                 free(numbers);  // Free allocated memory before exiting
@@ -35,16 +35,16 @@ int main() {
         }
 
         printf("Enter the number to search for: ");
-        if (scanf("%d", &targetNumber) != 1) {
+        if (scanf("%d", &target_number) != 1) {
             printf("Invalid input. Exiting.\n");
             free(numbers);  // Free allocated memory before exiting
             return 0;
         }
 
-        printf("Occurrences of %d found at 1-based indices: ", targetNumber);
+        printf("Occurrences of %d found at 1-based indices: ", target_number);
         int found = 0;
-        for (int i = 0; i < arraySize; i++) { // Loop up to arraySize, not i
-            if (numbers[i] == targetNumber) {
+        for (int i = 0; i < array_size; i++) { // Loop up to array_size, not i
+            if (numbers[i] == target_number) {
                 printf("%d ", i + 1); // Print 1-based index
                 found = 1;
             }

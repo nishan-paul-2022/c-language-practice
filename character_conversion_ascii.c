@@ -7,36 +7,36 @@
 #include <ctype.h>
 
 int main() {
-    char inputChar1, inputChar2; // Characters to read from input
-    char upperChar, lowerChar;   // Characters after conversion
-    int asciiVal1, asciiValUpper, asciiVal2, asciiValLower; // ASCII values
+    char input_char1, input_char2; // Characters to read from input
+    char upper_char, lower_char;   // Characters after conversion
+    int ascii_val1, ascii_val_upper, ascii_val2, ascii_val_lower; // ASCII values
 
     // Prompt user for input
     printf("Enter two characters: ");
 
     // Read the first character
-    inputChar1 = getchar();
+    input_char1 = getchar();
     // Read the second character
-    inputChar2 = getchar();
+    input_char2 = getchar();
 
     // Convert the first character to uppercase
-    upperChar = toupper(inputChar1);
+    upper_char = toupper(input_char1);
     // Convert the first character to lowercase
-    lowerChar = tolower(inputChar1);
+    lower_char = tolower(input_char1);
 
     // Get ASCII values
-    asciiVal1 = toascii(inputChar1);       // ASCII value of the first input character
-    asciiValUpper = toascii(upperChar);   // ASCII value of the uppercase version of the first character
-    asciiVal2 = toascii(inputChar2);       // ASCII value of the second input character
-    asciiValLower = toascii(lowerChar);   // ASCII value of the lowercase version of the first character
+    ascii_val1 = toascii(input_char1);       // ASCII value of the first input character
+    ascii_val_upper = toascii(upper_char);   // ASCII value of the uppercase version of the first character
+    ascii_val2 = toascii(input_char2);       // ASCII value of the second input character
+    ascii_val_lower = toascii(lower_char);   // ASCII value of the lowercase version of the first character
 
     // Print the converted characters
-    printf("Uppercase of first char: %c\n", upperChar);
-    printf("Lowercase of first char: %c\n", lowerChar);
+    printf("Uppercase of first char: %c\n", upper_char);
+    printf("Lowercase of first char: %c\n", lower_char);
 
     // Print the ASCII values
     printf("ASCII values: Original1=%d, Upper1=%d, Original2=%d, Lower1=%d\n",
-           asciiVal1, asciiValUpper, asciiVal2, asciiValLower);
+           ascii_val1, ascii_val_upper, ascii_val2, ascii_val_lower);
 
     return 0;
 }
