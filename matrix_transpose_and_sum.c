@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit() and EXIT_FAILURE
+#include <stdlib.h>
 
 #define MAX_ROWS 100 // Maximum number of rows
 #define MAX_COLS 100 // Maximum number of columns

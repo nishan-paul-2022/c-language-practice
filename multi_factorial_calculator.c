@@ -4,9 +4,9 @@
  * Topic: String Parsing, Loops, Arithmetic Operations
  */
 
-#include <stdio.h>  // Required for printf, scanf, sscanf
-#include <string.h> // Required for strlen (though not directly used, good for string ops)
-#include <stdlib.h> // Required for atoi (alternative to sscanf for number parsing)
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main() {
     int number;         // The base number for factorial calculation

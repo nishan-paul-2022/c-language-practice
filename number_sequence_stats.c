@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For potential use of fabs for tolerance comparison, though not strictly needed for sentinel
+#include <math.h>
 
 int main() {
     double current_value;       // The current number read from input

@@ -3,7 +3,7 @@
  * Topic: Arrays (Multi-dimensional), Loops, Basic I/O
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 #define ROWS 5 // Define number of rows
 #define COLS 5 // Define number of columns

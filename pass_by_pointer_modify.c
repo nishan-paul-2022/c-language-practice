@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function to potentially modify the values pointed to by ptr_val1 and ptr_val2.
 // If the value pointed to by ptr_val1 is less than 40, it increments it by 5.

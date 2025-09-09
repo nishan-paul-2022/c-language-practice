@@ -3,7 +3,7 @@
  * Topic: Input Processing, Conditional Logic, Financial Calculations (simplified/custom)
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <stdlib.h>
 
 int main() {
     double input1, input2, input3;

@@ -3,7 +3,7 @@
  * Topic: Pointers, Function Parameters, Swapping Variables
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <stdlib.h>
 
 // Function to swap two integer values using pointers
 void swap(int *ptr1, int *ptr2) {

@@ -3,7 +3,7 @@
  * Topic: Preprocessor Directives, Macros
  */
 
-#include <stdio.h> // Required for printf()
+#include <stdio.h>
 
 // Define a macro 'x' with a value of 2.
 // Macros are simple text substitutions performed by the preprocessor.

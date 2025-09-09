@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <ctype.h> // For isspace, to help clean up input
+#include <ctype.h>
 
 // Helper function to consume any leftover newline character in the input buffer
 void consume_newline() {

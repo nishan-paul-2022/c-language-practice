@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function to perform arithmetic operations on two doubles.
 // Takes two doubles (values) and four double pointers (for results).

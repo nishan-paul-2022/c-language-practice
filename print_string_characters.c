@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen, strcspn
-#include <stdlib.h> // For exit() and EXIT_FAILURE
+#include <string.h>
+#include <stdlib.h>
 
 #define MAX_ROWS 100 // Maximum number of rows
 #define MAX_COLS 100 // Maximum number of columns for each string

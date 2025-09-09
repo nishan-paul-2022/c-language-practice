@@ -3,7 +3,7 @@
  * Topic: Loops, Basic I/O
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int limit_value; // Variable to store the user-defined limit

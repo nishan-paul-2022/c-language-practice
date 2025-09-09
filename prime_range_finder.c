@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For sqrt function
+#include <math.h>
 
 // Function to check if a number is prime
 int is_prime(int num) {

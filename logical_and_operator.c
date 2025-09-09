@@ -3,7 +3,7 @@
  * Topic: Operators (Relational, Logical)
  */
 
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
     int result; // Variable to store the boolean result of the logical expression

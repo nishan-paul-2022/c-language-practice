@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // Required for exp() function
+#include <math.h>
 
 int main() {
     double x_value;         // The independent variable for the functions (x-axis).

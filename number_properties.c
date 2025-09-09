@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h> // For abs() if needed for negative numbers, though we'll validate for positive
+#include <stdlib.h>
 
 // Function to check if a number is an Abundant Number
 // An abundant number is a number for which the sum of its proper divisors is greater than the number itself.

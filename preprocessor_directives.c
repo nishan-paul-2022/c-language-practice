@@ -3,7 +3,7 @@
  * Topic: Preprocessor Directives, Macros, Conditional Compilation
  */
 
-#include <stdio.h> // Required for puts()
+#include <stdio.h>
 
 // Define a macro 'x'. This will be used by #ifdef.
 // If this line is commented out, the #else block will be executed.

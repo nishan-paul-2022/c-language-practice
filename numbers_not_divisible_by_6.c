@@ -3,7 +3,7 @@
  * Topic: Loops, Conditional Statements, Basic I/O
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int start_range, end_range; // Variables to store the start and end of the range

@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For sqrt function and fabs (for robust floating-point comparison)
+#include <math.h>
 
 // A small epsilon value for floating-point comparisons
 #define EPSILON 1e-9

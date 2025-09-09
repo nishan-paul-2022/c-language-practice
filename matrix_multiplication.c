@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 #define MAX_DIM 10 // Define a reasonable maximum dimension for matrices
 

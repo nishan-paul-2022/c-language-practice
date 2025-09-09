@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // For pow, though we'll use iterative multiplication for powers of 10
+#include <math.h>
 
 /*
  * Purpose: Reads an integer and prints the remainders when divided by increasing powers of 10,

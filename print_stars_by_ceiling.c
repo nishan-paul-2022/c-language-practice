@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // Required for ceil() function
+#include <math.h>
 
 int main() {
     float input_value;      // The floating-point number entered by the user

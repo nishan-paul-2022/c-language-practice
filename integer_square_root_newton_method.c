@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // Required for floor() and ceil()
+#include <math.h>
 
 int main() {
     int number;

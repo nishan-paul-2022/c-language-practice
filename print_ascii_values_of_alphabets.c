@@ -3,7 +3,7 @@
  * Topic: Loops, Character Handling, ASCII Values
  */
 
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
     int char_code; // Loop variable to iterate through character codes

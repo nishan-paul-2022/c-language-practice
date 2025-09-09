@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <limits.h> // For LLONG_MAX
+#include <limits.h>
 
 int main() {
     int T; // Number of test cases

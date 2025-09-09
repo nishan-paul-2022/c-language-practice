@@ -3,7 +3,7 @@
  * Topic: Preprocessor Directives, Macros with Arguments, Ternary Operator
  */
 
-#include <stdio.h> // Required for printf()
+#include <stdio.h>
 
 // Macro 'x' takes one argument 'i' and prints it as a float.
 #define PRINT_FLOAT(i) printf("%f\n", (double)(i))

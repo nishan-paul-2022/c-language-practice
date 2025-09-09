@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen()
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <string.h>
+#include <stdlib.h>
 
 // Function to initialize the character mapping table
 void initializeMapping(char map[])

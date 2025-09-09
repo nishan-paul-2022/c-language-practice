@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit() and EXIT_FAILURE
+#include <stdlib.h>
 
 int main(void) {
     int rows, cols;

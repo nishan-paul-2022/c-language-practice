@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For pow() function
+#include <math.h>
 
 int main() {
     int numIterations; // Number of iterations to perform

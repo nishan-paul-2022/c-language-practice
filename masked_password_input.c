@@ -4,9 +4,9 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
-#include <termios.h> // For terminal control functions (tcgetattr, tcsetattr)
-#include <unistd.h>  // For STDIN_FILENO
+#include <stdlib.h>
+#include <termios.h>
+#include <unistd.h>
 
 // Function to read a password from the user, masking input with asterisks.
 // It returns 0 on success, and -1 on failure.

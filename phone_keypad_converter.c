@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen()
-#include <ctype.h> // For isalpha(), isdigit()
+#include <string.h>
+#include <ctype.h>
 
 int main()
 {

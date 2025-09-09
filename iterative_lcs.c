@@ -3,8 +3,8 @@
  * Topic: String Manipulation, Dynamic Programming (Iterative LCS), 2D Arrays
  */
 #include <stdio.h>
-#include <string.h> // For strlen()
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <string.h>
+#include <stdlib.h>
 
 // Helper function to find the maximum of two integers.
 int max_int(int a, int b) {

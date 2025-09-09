@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For the pow() function
+#include <math.h>
 
 int main() {
     double base, exponent, result; // Variables for base, exponent, and the calculated result

@@ -3,7 +3,7 @@
  * Topic: Recursion, Arithmetic Operations
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 // Recursive function to calculate base^exponent
 // base: the base number
