@@ -1,5 +1,7 @@
-// Purpose: Reads strings and determines if the last character (assumed to be a digit) is odd or even.
-// Topic: String Input, String Length, Character to Integer Conversion, Modulo Operator
+/*
+ * Purpose: Reads strings and determines if the last character (assumed to be a digit) is odd or even.
+ * Topic: String Input, String Length, Character to Integer Conversion, Modulo Operator
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen
@@ -17,7 +19,7 @@ int main() {
     // Read the number of test cases.
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error reading number of test cases.\n");
-        return 0;.
+        return 0;
     }
 
     // Consume the newline character left by scanf for the integer.

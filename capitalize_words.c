@@ -1,10 +1,13 @@
-#include <stdio.h>
-#include <string.h> // For strlen
-#include <ctype.h>  // For toupper and tolower
+/*
+ * Purpose: Reads a string and capitalizes the first letter of each word,
+ *          converting other letters to lowercase.
+ * Topic: Strings, Character Manipulation, Loops, Input/Output
+ */
 
-// Purpose: Reads a string and capitalizes the first letter of each word,
-//          converting other letters to lowercase.
-// Topic: Strings, Character Manipulation, Loops, Input/Output
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
 int main() {
     char str[100]; // Increased buffer size for safety
     int i;

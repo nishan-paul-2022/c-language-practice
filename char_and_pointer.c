@@ -1,6 +1,8 @@
-// Purpose: Demonstrates how a character pointer can be used to access both the value
-// and the memory address of a character variable.
-// Topic: Pointers, Character Variables, Dereferencing, Memory Addresses
+/*
+ * Purpose: Demonstrates how a character pointer can be used to access both the value
+ *          of a character variable and the memory address of a character variable.
+ * Topic: Pointers, Character Variables, Dereferencing, Memory Addresses
+ */
 
 #include <stdio.h>
 

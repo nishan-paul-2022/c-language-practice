@@ -1,7 +1,10 @@
-// Purpose: Reads integers from an input file, calculates their squares, and writes the results to an output file.
-// Topic: File I/O, Input/Output Redirection, Basic Arithmetic
+/*
+ * Purpose: Reads integers from an input file, calculates their squares, and writes the results to an output file.
+ * Topic: File I/O, Input/Output Redirection, Basic Arithmetic
+ */
+
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 int main() {
     FILE *inputFile = NULL;

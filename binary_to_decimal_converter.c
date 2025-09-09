@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h> // For strlen
-#include <stdlib.h> // For exit, strtol (alternative for conversion)
+#include <string.h>
+#include <stdlib.h>
 
 // Function to calculate 2 raised to the power of exp efficiently using bit shifts.
 // This avoids using the math.h pow() function which can be slower and less precise for integers.

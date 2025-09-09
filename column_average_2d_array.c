@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints the average of each column in a 2D integer array.
-// Topic: 2D arrays, loops, averages, input/output.
+/*
+* Purpose: Calculates and prints the average of each column in a 2D integer array.
+* Topic: 2D arrays, loops, averages, input/output.
+*/
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

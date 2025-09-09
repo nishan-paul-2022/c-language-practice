@@ -1,5 +1,7 @@
-// Purpose: Demonstrates printing various character and number patterns using nested loops.
-// Topic: Patterns, Nested Loops, Functions, Characters, Numbers
+/*
+ * Purpose: Demonstrates printing various character and number patterns using nested loops.
+ * Topic: Patterns, Nested Loops, Functions, Characters, Numbers
+ */
 
 #include <stdio.h>
 

@@ -1,9 +1,10 @@
-// Purpose: Prints a right-angled triangle pattern of characters, starting from 'A'.
-// The number of rows is determined by user input. Each row prints characters from 'A' up to the current row number.
-// Topic: Nested Loops, Character Arithmetic, Pattern Printing, Input Handling
+/*
+ * Purpose: Prints a right-angled triangle pattern of characters, starting from 'A'.
+ *          The number of rows is determined by user input. Each row prints characters from 'A' up to the current row number.
+ * Topic: Nested Loops, Character Arithmetic, Pattern Printing, Input Handling
+ */
 
 #include <stdio.h>
-// #include <math.h> // math.h is not needed for this implementation
 
 int main() {
     int num_rows;           // The number of rows for the triangle pattern

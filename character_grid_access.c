@@ -1,5 +1,7 @@
-// Purpose: Demonstrates accessing a specific character within a 2D array of characters.
-// Topic: 2D Arrays, Character Arrays, Input/Output
+/*
+ * Purpose: Demonstrates accessing a specific character within a 2D array of characters.
+ * Topic: 2D Arrays, Character Arrays, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit() and EXIT_FAILURE

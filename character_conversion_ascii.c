@@ -1,8 +1,10 @@
-// Purpose: Demonstrates character conversion to uppercase and lowercase, and retrieving ASCII values using ctype.h functions.
-// Topic: Character Manipulation, ctype.h Functions, ASCII Values
+/*
+ * Purpose: Demonstrates character conversion to uppercase and lowercase, and retrieving ASCII values using ctype.h functions.
+ * Topic: Character Manipulation, ctype.h Functions, ASCII Values
+ */
 
 #include <stdio.h>
-#include <ctype.h> // For toupper, tolower, toascii
+#include <ctype.h>
 
 int main() {
     char inputChar1, inputChar2; // Characters to read from input

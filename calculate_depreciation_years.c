@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // Required for log() function
+#include <math.h>
 
 int main() {
     double initial_cost;        // The initial cost or value of the item.

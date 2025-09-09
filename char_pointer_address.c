@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how to print the memory address of a character variable using a pointer.
-// Topic: Pointers, Memory Addresses, Character Types
+/*
+ * Purpose: Demonstrates how to print the memory address of a character variable using a pointer.
+ * Topic: Pointers, Memory Addresses, Character Types
+ */
 
 #include <stdio.h>
 

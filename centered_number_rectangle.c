@@ -1,5 +1,7 @@
-// Purpose: Prints a rectangle with a specified number at the center and another number elsewhere.
-// Topic: Nested Loops, Rectangle Patterns, Conditional Logic
+/*
+ * Purpose: Prints a rectangle with a specified number at the center and another number elsewhere.
+ * Topic: Nested Loops, Rectangle Patterns, Conditional Logic
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

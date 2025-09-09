@@ -1,5 +1,7 @@
-// Purpose: Checks if a given string is a palindrome, ignoring case.
-// Topic: Strings, Character Handling, Loops, Conditional Logic
+/*
+ * Purpose: Checks if a given string is a palindrome, ignoring case.
+ * Topic: Strings, Character Handling, Loops, Conditional Logic
+ */
 
 #include <stdio.h>
 #include <string.h>

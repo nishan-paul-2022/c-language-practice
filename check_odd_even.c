@@ -1,5 +1,7 @@
-// Purpose: Reads a series of numbers and determines if each number is odd or even.
-// Topic: Input/Output, Loops, Conditional Statements, Modulo Operator
+/*
+ * Purpose: Reads a series of numbers and determines if each number is odd or even.
+ * Topic: Input/Output, Loops, Conditional Statements, Modulo Operator
+ */
 
 #include <stdio.h>
 
@@ -13,7 +15,7 @@ int main() {
     // Read the number of test cases.
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error reading number of test cases.\n");
-        return 0;.
+        return 0;
     }
 
     // Loop through each test case.

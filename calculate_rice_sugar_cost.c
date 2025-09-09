@@ -3,7 +3,7 @@
  * Topic: Basic I/O, Floating-point Arithmetic
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     float rice_quantity_kg; // Quantity of rice in kilograms

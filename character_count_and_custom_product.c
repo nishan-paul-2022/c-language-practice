@@ -1,6 +1,8 @@
-// Purpose: Reads an integer and a string, counts exclamation marks in the string,
-//          and performs a custom product calculation based on the integer and the count.
-// Topic: Input Handling (Mixed Types), String Iteration, Custom Calculation
+/*
+ * Purpose: Reads an integer and a string, counts exclamation marks in the string,
+ *          and performs a custom product calculation based on the integer and the count.
+ * Topic: Input Handling (Mixed Types), String Iteration, Custom Calculation
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strlen if we were to remove trailing newline, but not strictly needed for this logic.

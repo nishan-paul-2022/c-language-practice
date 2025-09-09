@@ -1,5 +1,7 @@
-// Purpose: Counts the frequency of each lowercase letter in a given string.
-// Topic: Strings, Character Handling, Arrays, Loops, Frequency Counting
+/* 
+ * Purpose: Counts the frequency of each lowercase letter in a given string.
+ * Topic: Strings, Character Handling, Arrays, Loops, Frequency Counting
+ */
 
 #include <stdio.h>
 #include <string.h>

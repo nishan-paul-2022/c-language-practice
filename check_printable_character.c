@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ctype.h> // Required for isprint
+#include <ctype.h>
 
 int main() {
     int input_value; // Variable to store the integer input
@@ -31,5 +31,5 @@ int main() {
         }
     }
 
-    return 0; (though the loop is infinite, this is good practice)
+    return 0;
 }
