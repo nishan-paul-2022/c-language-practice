@@ -7,8 +7,8 @@
 
 int main()
 {
-    int numberOfTestCases; // n in original
-    int currentTestCase = 0; // x in original
+    int numberOfTestCases;
+    int currentTestCase = 0;
 
     printf("Enter the number of test cases: ");
     if (scanf("%d", &numberOfTestCases) != 1 || numberOfTestCases < 0)
@@ -21,7 +21,7 @@ int main()
     {
         int k1, k2, k3, k4;
         int K1, K2, K3, K4;
-        int sum1, sum2; // y1, y2 in original
+        int sum1, sum2;
 
         printf("\n--- Test Case %d ---\n", currentTestCase + 1);
         printf("Enter four integers for the first set (k1 k2 k3 k4): ");

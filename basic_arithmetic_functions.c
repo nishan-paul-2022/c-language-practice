@@ -16,10 +16,10 @@ int main() {
     int subtractResult;
 
     sumResult = add(x, y);
-    subtractResult = subtract(y, x); // Changed to y - x for positive result as in original output
+    subtractResult = subtract(y, x);
 
     printf("%d + %d = %d\n", x, y, sumResult);
-    printf("%d - %d = %d\n", y, x, subtractResult); // Changed output format for clarity
+    printf("%d - %d = %d\n", y, x, subtractResult);
 
     return 0;
 }

@@ -7,7 +7,7 @@
 
 int main()
 {
-    int numberOfTestCases; // T in original
+    int numberOfTestCases;
     int currentTestCase = 0;
     
     // Read the number of test cases
@@ -20,8 +20,8 @@ int main()
 
     while (currentTestCase < numberOfTestCases)
     {
-        int n; // n in original, represents the total number of items
-        int resultPosition = 0; // y in original, represents the calculated position
+        int n;
+        int resultPosition = 0;
 
         printf("Enter the value of n for test case %d: ", currentTestCase + 1);
         if (scanf("%d", &n) != 1 || n < 1)

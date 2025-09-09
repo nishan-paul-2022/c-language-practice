@@ -10,7 +10,7 @@
 void bubbleSort(int arr[], int size) {
     int i, j, temp;
     for (i = 0; i < size - 1; i++) {
-        for (j = 0; j < size - 1 - i; j++) // Optimized inner loop
+        for (j = 0; j < size - 1 - i; j++) { // Optimized inner loop
             if (arr[j] > arr[j + 1]) {
                 // Swap elements
                 temp = arr[j];
@@ -39,15 +39,14 @@ int binarySearch(int arr[], int size, int target) {
         }
         else // arr[mid] > target
             high = mid - 1;
-        }
     }
     return -1; // Element not found
 }
 
 int main() {
-    int arraySize; // n in original
-    int *numbers;  // a in original
-    int targetNumber; // s in original
+    int arraySize;
+    int *numbers; 
+    int targetNumber;
 
     printf("Enter the size of the array: ");
     if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {

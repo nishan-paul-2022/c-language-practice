@@ -8,7 +8,7 @@
 
 int main()
 {
-    int numberOfTestCases; // T in original
+    int numberOfTestCases;
     int i;
 
     printf("Enter the number of test cases: ");
@@ -20,10 +20,10 @@ int main()
 
     for (i = 0; i < numberOfTestCases; i++)
     {
-        int numberOfCalls; // n in original
-        int callDuration;  // c[j] in original
-        int mileCost = 0;  // s1 in original
-        int juiceCost = 0; // s2 in original
+        int numberOfCalls;
+        int callDuration;
+        int mileCost = 0;
+        int juiceCost = 0;
 
         printf("\n--- Test Case %d ---\n", i + 1);
         printf("Enter the number of calls: ");

@@ -4,7 +4,6 @@
  */
 
 #include <stdio.h>
-#include <math.h> // Not strictly needed for this code, but included in original.
 
 int main()
 {

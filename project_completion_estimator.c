@@ -7,12 +7,12 @@
 
 int main()
 {
-    int targetWorkAmount; // x in original
-    int numberOfDailyProgressEntries; // y in original
-    int totalDailyProgress; // s in original
-    int currentProgress; // n in original
-    int daysCount; // i in original
-    int accumulatedProgress; // M in original
+    int targetWorkAmount;
+    int numberOfDailyProgressEntries;
+    int totalDailyProgress;
+    int currentProgress;
+    int daysCount;
+    int accumulatedProgress;
 
     printf("Enter the total work amount required for the project (or Ctrl+D to exit): ");
     while (scanf("%d", &targetWorkAmount) == 1)

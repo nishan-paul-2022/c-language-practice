@@ -10,7 +10,7 @@
 int main()
 {
     char encodedString[100001]; // Buffer for input string, +1 for null terminator
-    int repetitionCount; // k in original
+    int repetitionCount;
     int i;
 
     printf("Enter encoded strings (digits 1-9 for repetition, 'b' for space, '!' for newline).\n");

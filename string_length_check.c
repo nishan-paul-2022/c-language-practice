@@ -24,7 +24,6 @@ int main() {
         return 1;
     }
 
-    // Declare a buffer for the string. Using VLA as in original, but dynamic allocation is preferred.
     char input_string[max_len + 1]; // +1 for null terminator
 
     // Prompt user for the string

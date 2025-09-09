@@ -29,12 +29,12 @@ int main() {
         }
     }
 
-    // Calculate D1 using the minimum y value (z in original code)
+    // Calculate D1 using the minimum y value
     // The formula is D1 = sqrt(6400 - 4 * (4000 - min_y * 100))
     // Note: The term inside sqrt must be non-negative for sqrt to be defined in real numbers.
     D1 = sqrt(6400.0 - 4.0 * (4000.0 - min_y * 100.0));
 
-    // Calculate D2 using the maximum y value (Z in original code)
+    // Calculate D2 using the maximum y value
     // The formula is D2 = sqrt(6400 - 4 * (4000 - max_y * 100))
     D2 = sqrt(6400.0 - 4.0 * (4000.0 - max_y * 100.0));
 

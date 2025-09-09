@@ -7,9 +7,9 @@
 #include <stdlib.h> // For malloc and free
 
 int main() {
-    int arraySize; // m in original
-    int *array; // a in original
-    int target; // n in original
+    int arraySize;
+    int *array;
+    int target;
 
     printf("Enter the size of the sorted array: ");
     if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
