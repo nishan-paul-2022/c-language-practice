@@ -14,7 +14,7 @@ int main() {
     inputFile = fopen("FH file.txt", "r");
     if (inputFile == NULL) {
         perror("Error opening input file FH file.txt");
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     } else {
         printf("Input file FH file.txt opened successfully for reading.\n");
     }

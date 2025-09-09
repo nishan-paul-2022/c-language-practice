@@ -13,7 +13,7 @@ int main(void) {
     // Input validation for size
     if (scanf("%d", &size) != 1 || size <= 0) {
         fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\\n");
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 
     printf("Enter the character to use for the diamond: ");
@@ -22,7 +22,7 @@ int main(void) {
     // Input validation for fill character
     if (scanf("%c", &fill_char) != 1) {
         fprintf(stderr, "Error: Invalid input for fill character.\\n");
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 
     // Print the upper half of the diamond

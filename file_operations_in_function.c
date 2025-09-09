@@ -83,7 +83,7 @@ int main(void) {
         }
     } else {
         // Error message is already printed by the open_file_with_extension function.
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 
     return 0;

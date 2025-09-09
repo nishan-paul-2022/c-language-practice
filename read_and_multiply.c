@@ -24,6 +24,6 @@ int main() {
         fprintf(stderr, "Error: Invalid input format. Please use 'input X*Y'.\n");
         // Clear the input buffer in case of partial reads or invalid characters
         while (getchar() != '\n');
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 }

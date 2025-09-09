@@ -13,7 +13,7 @@ int main() {
     inputFile = fopen("input.txt", "r");
     if (inputFile == NULL) {
         perror("Error opening input file input.txt");
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     } else {
         printf("Input file input.txt opened successfully for reading.\n");
     }

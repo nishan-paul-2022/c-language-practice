@@ -42,6 +42,6 @@ int main() {
         fprintf(stderr, "Error: Invalid input. Please enter two integers separated by a space.\n");
         // Clear the input buffer in case of partial reads or invalid characters
         while (getchar() != '\n');
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 }

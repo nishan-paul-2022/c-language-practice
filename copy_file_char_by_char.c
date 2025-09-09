@@ -90,7 +90,7 @@ int main(void) {
     }
     if (fclose(file_output) != 0) {
         perror("Error closing output file");
-        return EXIT_FAILURE; // Indicate failure if output file closing failed
+        return EXIT_FAILURE;
     }
 
     printf("File copy complete.\n");

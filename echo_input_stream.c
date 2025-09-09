@@ -17,7 +17,7 @@ int main() {
     // Check if the loop terminated due to an error rather than EOF
     if (ferror(stdin)) {
         perror("Error reading from standard input");
-        return EXIT_FAILURE; // Indicate failure
+        return EXIT_FAILURE;
     }
 
     // If EOF was reached without error, the program naturally ends after the loop.
