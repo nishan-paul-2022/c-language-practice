@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 // Function to calculate GCD using Euclidean algorithm
-long int calculateGCD(long int num1, long int num2)
+long int calculate_gcd(long int num1, long int num2)
 {
     // Take absolute values to handle negative inputs
     num1 = abs(num1);
@@ -24,18 +24,18 @@ long int calculateGCD(long int num1, long int num2)
 }
 
 // Function to calculate LCM using GCD
-long int calculateLCM(long int num1, long int num2)
+long int calculate_lcm(long int num1, long int num2)
 {
     if (num1 == 0 || num2 == 0)
     {
         return 0; // LCM is 0 if any number is 0
     }
     // LCM(a, b) = |a * b| / GCD(a, b)
-    return (long int)abs(num1 * num2) / calculateGCD(num1, num2);
+    return (long int)abs(num1 * num2) / calculate_gcd(num1, num2);
 }
 
 // Function to list common divisors
-void listCommonDivisors(long int num1, long int num2)
+void list_common_divisors(long int num1, long int num2)
 {
     num1 = abs(num1);
     num2 = abs(num2);
@@ -93,12 +93,12 @@ int main()
     {
         printf("\nFor numbers %ld and %ld:\n", numA, numB);
 
-        listCommonDivisors(numA, numB);
+        list_common_divisors(numA, numB);
 
-        long int gcd = calculateGCD(numA, numB);
+        long int gcd = calculate_gcd(numA, numB);
         printf("GREATEST COMMON DIVISOR (GCD): %ld\n", gcd);
 
-        long int lcm = calculateLCM(numA, numB);
+        long int lcm = calculate_lcm(numA, numB);
         printf("LEAST COMMON MULTIPLE (LCM): %ld\n", lcm);
 
         printf("\n----------------------------------------\n");

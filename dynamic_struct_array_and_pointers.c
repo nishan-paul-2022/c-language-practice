@@ -18,7 +18,7 @@ typedef struct Record
 } Record;
 
 // Function to input data into an array of Record structures
-void inputRecords(Record *recordsArray, int count)
+void input_records(Record *records_array, int count)
 {
     printf("Enter %d records (ID, Value, Name) separated by commas (e.g., 123, 45.67, JohnDoe):\n", count);
     for (int i = 0; i < count; i++)
@@ -26,7 +26,7 @@ void inputRecords(Record *recordsArray, int count)
         printf("Record %d: ", i + 1);
         // Use a field width for %s to prevent buffer overflow
         // Note: scanf with %s stops at whitespace. If names can have spaces, use fgets.
-        if (scanf("%ld, %f, %99s", &recordsArray[i].id, &recordsArray[i].value, recordsArray[i].name) != 3)
+        if (scanf("%ld, %f, %99s", &records_array[i].id, &records_array[i].value, records_array[i].name) != 3)
         {
             fprintf(stderr, "Invalid input format for record %d. Exiting.\n", i + 1);
             // Clear input buffer in case of invalid input
@@ -39,22 +39,22 @@ void inputRecords(Record *recordsArray, int count)
 }
 
 // Function to output data from an array of Record structures
-void outputRecords(Record *recordsArray, int count)
+void output_records(Record *records_array, int count)
 {
     printf("\n--- Stored Records ---\n");
     for (int i = 0; i < count; i++)
     {
-        printf("Record %d: Name: %s, ID: %ld, Value: %.2f\n", i + 1, recordsArray[i].name, recordsArray[i].id, recordsArray[i].value);
+        printf("Record %d: Name: %s, ID: %ld, Value: %.2f\n", i + 1, records_array[i].name, records_array[i].id, records_array[i].value);
     }
 }
 
 int main()
 {
-    int numberOfRecords;
-    Record *recordsArray; // Pointer to the dynamically allocated array of structures
+    int number_of_records;
+    Record *records_array; // Pointer to the dynamically allocated array of structures
 
     printf("Enter the number of records to store: ");
-    if (scanf("%d", &numberOfRecords) != 1 || numberOfRecords <= 0)
+    if (scanf("%d", &number_of_records) != 1 || number_of_records <= 0)
     {
         printf("Invalid number of records. Please enter a positive integer.\n");
         return EXIT_FAILURE;
@@ -62,31 +62,31 @@ int main()
     // Clear the newline character left by scanf
     while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
 
-    // Dynamically allocate memory for an array of 'numberOfRecords' Record structures
+    // Dynamically allocate memory for an array of 'number_of_records' Record structures
     // calloc initializes all allocated memory to zero, which is useful for pointers (sets them to NULL)
-    recordsArray = (Record *)calloc(numberOfRecords, sizeof(Record));
-    if (recordsArray == NULL)
+    records_array = (Record *)calloc(number_of_records, sizeof(Record));
+    if (records_array == NULL)
     {
         fprintf(stderr, "Memory allocation failed. Unable to create records array.\n");
         return EXIT_FAILURE;
     }
 
     // Link the records sequentially using the 'next' pointer, forming a pseudo-linked list within the array
-    for (int i = 0; i < numberOfRecords - 1; i++)
+    for (int i = 0; i < number_of_records - 1; i++)
     {
-        recordsArray[i].next = &recordsArray[i + 1];
+        records_array[i].next = &records_array[i + 1];
     }
-    recordsArray[numberOfRecords - 1].next = NULL; // The last record points to NULL
+    records_array[number_of_records - 1].next = NULL; // The last record points to NULL
 
     // Input data into the records
-    inputRecords(recordsArray, numberOfRecords);
+    input_records(records_array, number_of_records);
 
     // Output data from the records
-    outputRecords(recordsArray, numberOfRecords);
+    output_records(records_array, number_of_records);
 
     // Free the dynamically allocated memory
-    free(recordsArray);
-    recordsArray = NULL; // Set pointer to NULL after freeing to prevent dangling pointer issues
+    free(records_array);
+    records_array = NULL; // Set pointer to NULL after freeing to prevent dangling pointer issues
 
     return EXIT_SUCCESS;
 }

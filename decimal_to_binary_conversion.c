@@ -8,21 +8,21 @@
 
 int main()
 {
-    int decimalNumber;
-    int binaryDigits[32]; // An array to store binary digits (sufficient for 32-bit int)
+    int decimal_number;
+    int binary_digits[32]; // An array to store binary digits (sufficient for 32-bit int)
     int i;
 
     printf("Enter a non-negative decimal integer (or Ctrl+D to exit): ");
-    while (scanf("%d", &decimalNumber) == 1)
+    while (scanf("%d", &decimal_number) == 1)
     {
-        if (decimalNumber < 0)
+        if (decimal_number < 0)
         {
             printf("Please enter a non-negative integer.\n");
             printf("Enter a non-negative decimal integer (or Ctrl+D to exit): ");
             continue;
         }
 
-        if (decimalNumber == 0)
+        if (decimal_number == 0)
         {
             printf("Binary: 0\n");
             printf("Enter a non-negative decimal integer (or Ctrl+D to exit): ");
@@ -30,10 +30,10 @@ int main()
         }
 
         i = 0;
-        while (decimalNumber > 0)
+        while (decimal_number > 0)
         {
-            binaryDigits[i] = decimalNumber % 2;
-            decimalNumber = decimalNumber / 2;
+            binary_digits[i] = decimal_number % 2;
+            decimal_number = decimal_number / 2;
             i++;
         }
 
@@ -41,7 +41,7 @@ int main()
         // Print binary digits in reverse order
         for (int j = i - 1; j >= 0; j--)
         {
-            printf("%d", binaryDigits[j]);
+            printf("%d", binary_digits[j]);
         }
         printf("\n\n");
 

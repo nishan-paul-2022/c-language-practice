@@ -7,39 +7,39 @@
 #include <string.h>
 
 int main() {
-    int bufferSize;
-    char inputString[256]; // Use a reasonably sized buffer
-    int stringLength;
+    int buffer_size;
+    char input_string[256]; // Use a reasonably sized buffer
+    int string_length;
 
     // Prompt user for buffer size (though we'll use a fixed buffer for simplicity and safety)
     printf("Enter the maximum string length (e.g., 255 for a buffer of 256):\n");
-    if (scanf("%d", &bufferSize) != 1 || bufferSize <= 0 || bufferSize >= sizeof(inputString)) {
-        fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %lu.\n", sizeof(inputString) - 1);
-        bufferSize = sizeof(inputString) - 1; // Use the maximum allowed size
+    if (scanf("%d", &buffer_size) != 1 || buffer_size <= 0 || buffer_size >= sizeof(input_string)) {
+        fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %lu.\n", sizeof(input_string) - 1);
+        buffer_size = sizeof(input_string) - 1; // Use the maximum allowed size
     }
     // Consume the newline character after reading the integer
     while (getchar() != '\n');
 
-    printf("Enter a string (max %d characters):\n", bufferSize);
+    printf("Enter a string (max %d characters):\n", buffer_size);
     // Read the input string safely using fgets
-    if (fgets(inputString, sizeof(inputString), stdin) == NULL) {
+    if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         fprintf(stderr, "Error reading input string.\n");
         return 0;
     }
 
     // Remove trailing newline character if present
-    inputString[strcspn(inputString, "\n")] = 0;
+    input_string[strcspn(input_string, "\n")] = 0;
 
     // Calculate the string length using strlen
-    stringLength = strlen(inputString);
+    string_length = strlen(input_string);
 
     // The original code had a check `if(i<n)` which was related to buffer overflow.
     // With fgets, we are safer, but we can still check if the input length
     // respects the user-provided buffer size for logical consistency.
-    if (stringLength > bufferSize) {
+    if (string_length > buffer_size) {
         printf("ERROR: Input string length exceeds the specified buffer size.\n");
     } else {
-        printf("%d\n", stringLength);
+        printf("%d\n", string_length);
     }
 
     return 0;

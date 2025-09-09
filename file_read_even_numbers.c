@@ -8,15 +8,15 @@
 
 int main()
 {
-    FILE *filePointer;
+    FILE *file_pointer;
     unsigned long long int number;
     const char *filename = "PRACTICE C/bishal.txt"; // Specify the path to the input file
 
     // Open the file in read mode
-    filePointer = fopen(filename, "r");
+    file_pointer = fopen(filename, "r");
 
     // Check if the file was opened successfully
-    if (filePointer == NULL)
+    if (file_pointer == NULL)
     {
         perror("Error opening file"); // Print error message if file opening fails
         return EXIT_FAILURE;
@@ -25,7 +25,7 @@ int main()
     printf("Reading numbers from '%s' and printing even numbers:\n", filename);
 
     // Read numbers from the file until End-Of-File (EOF) is reached
-    while (fscanf(filePointer, "%llu", &number) != EOF)
+    while (fscanf(file_pointer, "%llu", &number) != EOF)
     {
         if (number % 2 == 0)
         {
@@ -35,7 +35,7 @@ int main()
     printf("\n"); // Print a newline at the end for cleaner output
 
     // Close the file
-    fclose(filePointer);
+    fclose(file_pointer);
 
     return EXIT_SUCCESS;
 }

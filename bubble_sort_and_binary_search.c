@@ -71,7 +71,7 @@ int main() {
     }
 
     printf("\nOriginal array elements: ");
-    for (int i = 0; i < arraySize; i++) {
+    for (int i = 0; i < array_size; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");

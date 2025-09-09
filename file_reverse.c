@@ -6,15 +6,15 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *inputFile = NULL;
-    FILE *outputFile = NULL;
+    FILE *input_file = NULL;
+    FILE *output_file = NULL;
     char character;
-    long fileSize;
+    long file_size;
     long i;
 
     // Open the input file for reading
-    inputFile = fopen("FH file.txt", "r");
-    if (inputFile == NULL) {
+    input_file = fopen("FH file.txt", "r");
+    if (input_file == NULL) {
         perror("Error opening input file FH file.txt");
         return EXIT_FAILURE;
     } else {
@@ -22,58 +22,58 @@ int main() {
     }
 
     // Move to the end of the file to determine its size
-    if (fseek(inputFile, 0, SEEK_END) != 0) {
+    if (fseek(input_file, 0, SEEK_END) != 0) {
         perror("Error seeking to end of input file");
-        fclose(inputFile);
+        fclose(input_file);
         return EXIT_FAILURE;
     }
 
     // Get the current position, which is the file size
-    fileSize = ftell(inputFile);
-    if (fileSize == -1) {
+    file_size = ftell(input_file);
+    if (file_size == -1) {
         perror("Error getting file size");
-        fclose(inputFile);
+        fclose(input_file);
         return EXIT_FAILURE;
     }
 
     // Open the output file for writing
-    outputFile = fopen("FH file 1.txt", "w");
-    if (outputFile == NULL) {
+    output_file = fopen("FH file 1.txt", "w");
+    if (output_file == NULL) {
         perror("Error opening output file FH file 1.txt");
-        fclose(inputFile);
+        fclose(input_file);
         return EXIT_FAILURE;
     } else {
         printf("Output file FH file 1.txt opened successfully for writing.\n");
     }
 
     // Read the input file in reverse and write to the output file
-    // Loop from the last character (fileSize - 1) down to the first character (0)
-    for (i = fileSize - 1; i >= 0; i--) {
+    // Loop from the last character (file_size - 1) down to the first character (0)
+    for (i = file_size - 1; i >= 0; i--) {
         // Seek to the i-th byte from the beginning of the input file
-        if (fseek(inputFile, i, SEEK_SET) != 0) {
+        if (fseek(input_file, i, SEEK_SET) != 0) {
             perror("Error seeking within input file");
-            fclose(inputFile);
-            fclose(outputFile);
+            fclose(input_file);
+            fclose(output_file);
             return EXIT_FAILURE;
         }
 
         // Read the character at the current position
-        character = fgetc(inputFile);
+        character = fgetc(input_file);
         if (character == EOF) {
             // Check for read errors, but not necessarily end of file if i was 0
-            if (ferror(inputFile)) {
+            if (ferror(input_file)) {
                 perror("Error reading character from input file");
-                fclose(inputFile);
-                fclose(outputFile);
+                fclose(input_file);
+                fclose(output_file);
                 return EXIT_FAILURE;
             }
         }
 
         // Write the character to the output file
-        if (fputc(character, outputFile) == EOF) {
+        if (fputc(character, output_file) == EOF) {
             perror("Error writing character to output file");
-            fclose(inputFile);
-            fclose(outputFile);
+            fclose(input_file);
+            fclose(output_file);
             return EXIT_FAILURE;
         }
     }
@@ -81,8 +81,8 @@ int main() {
     printf("File content reversed successfully.\n");
 
     // Close the files
-    fclose(inputFile);
-    fclose(outputFile);
+    fclose(input_file);
+    fclose(output_file);
 
     return 0;
 }
