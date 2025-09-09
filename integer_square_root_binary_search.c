@@ -1,5 +1,7 @@
-// Purpose: Demonstrates integer square root calculation using binary search.
-// Topic: Algorithms, Binary Search, Integer Math
+/*
+ * Purpose: Demonstrates integer square root calculation using binary search.
+ * Topic: Algorithms, Binary Search, Integer Math
+ */
 
 #include <stdio.h>
 

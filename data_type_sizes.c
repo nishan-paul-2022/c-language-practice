@@ -1,7 +1,9 @@
 #include <stdio.h> // For printf() and size_t
 
-// Purpose: Demonstrates the use of the sizeof operator to find the memory size of various data types.
-// Topic: Data Types, Memory Management, sizeof Operator
+/*
+ * Purpose: Demonstrates the use of the sizeof operator to find the memory size of various data types.
+ * Topic: Data Types, Memory Management, sizeof Operator
+ */
 int main(void) {
     // Declare variables of different integer types
     short int short_var;

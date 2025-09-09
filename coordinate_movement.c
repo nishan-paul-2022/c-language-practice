@@ -1,5 +1,7 @@
-// Purpose: Simulates movement on a 2D plane based on character commands.
-// Topic: Variables, Loops, Switch Statements, Input/Output
+/*
+ * Purpose: Simulates movement on a 2D plane based on character commands.
+ * Topic: Variables, Loops, Switch Statements, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit() and EXIT_FAILURE

@@ -1,5 +1,7 @@
-// Purpose: Reads two floating-point numbers, performs division, and checks the integer part of the quotient.
-// Topic: Floating-Point Input, Division, Integer Conversion, Switch Statement
+/*
+ * Purpose: Reads two floating-point numbers, performs division, and checks the integer part of the quotient.
+ * Topic: Floating-Point Input, Division, Integer Conversion, Switch Statement
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

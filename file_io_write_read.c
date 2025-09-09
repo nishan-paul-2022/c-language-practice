@@ -1,5 +1,7 @@
-// Purpose: Demonstrates writing characters to a file and then reading them back using 'w+' mode and rewind.
-// Topic: File I/O
+/*
+ * Purpose: Demonstrates writing characters to a file and then reading them back using 'w+' mode and rewind.
+ * Topic: File I/O
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

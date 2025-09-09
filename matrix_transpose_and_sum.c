@@ -1,5 +1,7 @@
-// Purpose: Demonstrates matrix transpose and summing elements of a specified row or column.
-// Topic: 2D Arrays, Matrix Transpose, Loops, Input/Output
+/*
+ * Purpose: Demonstrates matrix transpose and summing elements of a specified row or column.
+ * Topic: 2D Arrays, Matrix Transpose, Loops, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit() and EXIT_FAILURE

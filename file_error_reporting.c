@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reporting file opening errors using perror.
-// Topic: File I/O, Error Handling, perror
+/*
+ * Purpose: Demonstrates reporting file opening errors using perror.
+ * Topic: File I/O, Error Handling, perror
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

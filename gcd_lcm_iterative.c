@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints the GCD and LCM of two integers iteratively.
-// Topic: Arithmetic Operations, Iteration, GCD, LCM
+/*
+ * Purpose: Calculates and prints the GCD and LCM of two integers iteratively.
+ * Topic: Arithmetic Operations, Iteration, GCD, LCM
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

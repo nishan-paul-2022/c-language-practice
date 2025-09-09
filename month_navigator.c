@@ -1,5 +1,7 @@
-// Purpose: Displays the current month and the next month based on user input.
-// Topic: Switch Statement, Input Handling, Loops
+/*
+ * Purpose: Displays the current month and the next month based on user input.
+ * Topic: Switch Statement, Input Handling, Loops
+ */
 
 #include <stdio.h>
 

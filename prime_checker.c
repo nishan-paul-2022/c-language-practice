@@ -1,5 +1,7 @@
-// Purpose: Checks if a given integer is a prime number.
-// Topic: Prime Numbers, Loops, Conditional Statements
+/*
+ * Purpose: Checks if a given integer is a prime number.
+ * Topic: Prime Numbers, Loops, Conditional Statements
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function

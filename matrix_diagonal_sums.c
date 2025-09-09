@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-// Purpose: Calculates the sum of the main diagonal and anti-diagonal of a square matrix.
-// Topic: Arrays, 2D Arrays, Matrix Operations
+/*
+ * Purpose: Calculates the sum of the main diagonal and anti-diagonal of a square matrix.
+ * Topic: Arrays, 2D Arrays, Matrix Operations
+ */
 
 int main() {
     int matrix_size;

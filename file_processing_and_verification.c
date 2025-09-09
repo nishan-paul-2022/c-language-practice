@@ -1,5 +1,7 @@
-// Purpose: Reads numbers from an input file, calculates a value, writes it to an output file, and verifies the output against a reference file.
-// Topic: File I/O, Input Validation, Calculation, File Comparison
+/*
+ * Purpose: Reads numbers from an input file, calculates a value, writes it to an output file, and verifies the output against a reference file.
+ * Topic: File I/O, Input Validation, Calculation, File Comparison
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

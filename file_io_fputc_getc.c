@@ -1,5 +1,7 @@
-// Purpose: Demonstrates writing a character using `fputc` and reading it back, with corrected file handling.
-// Topic: Text File I/O, Character I/O
+/*
+ * Purpose: Demonstrates writing a character using `fputc` and reading it back, with corrected file handling.
+ * Topic: Text File I/O, Character I/O
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

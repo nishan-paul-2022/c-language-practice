@@ -1,5 +1,7 @@
-// Purpose: Demonstrates functions performing arithmetic operations using parameters and returning results, avoiding global variables.
-// Topic: Functions, Parameters, Return Values, Arithmetic Operations, Global Variables (avoidance), Structs
+/*
+ * Purpose: Demonstrates functions performing arithmetic operations using parameters and returning results, avoiding global variables.
+ * Topic: Functions, Parameters, Return Values, Arithmetic Operations, Global Variables (avoidance), Structs
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

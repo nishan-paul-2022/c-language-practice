@@ -1,5 +1,7 @@
-// Purpose: Counts the number of scores falling into different grade categories.
-// Topic: Input Processing, Counting, Conditional Logic, Loop Refactoring
+/*
+ * Purpose: Counts the number of scores falling into different grade categories.
+ * Topic: Input Processing, Counting, Conditional Logic, Loop Refactoring
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

@@ -1,5 +1,7 @@
-// Purpose: Calculates the factorial of a non-negative integer and counts its trailing zeros.
-// Topic: Factorial, Trailing Zeros, Loops, Integer Arithmetic
+/*
+ * Purpose: Calculates the factorial of a non-negative integer and counts its trailing zeros.
+ * Topic: Factorial, Trailing Zeros, Loops, Integer Arithmetic
+ */
 
 #include <stdio.h>
 

@@ -1,5 +1,7 @@
-// Purpose: Generates and prints all permutations of three distinct numbers from 1 to 3.
-// Topic: Nested Loops, Permutations, Conditional Logic
+/*
+ * Purpose: Generates and prints all permutations of three distinct numbers from 1 to 3.
+ * Topic: Nested Loops, Permutations, Conditional Logic
+ */
 
 #include <stdio.h>
 

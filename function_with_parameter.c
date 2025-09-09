@@ -1,5 +1,7 @@
-// Purpose: Demonstrates passing a value to a function and returning a result.
-// Topic: Functions, Parameters, Return Values, Basic Input/Output
+/*
+ * Purpose: Demonstrates passing a value to a function and returning a result.
+ * Topic: Functions, Parameters, Return Values, Basic Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

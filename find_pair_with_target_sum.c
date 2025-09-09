@@ -1,6 +1,8 @@
-// Purpose: Finds pairs of numbers in an array that sum up to a target value,
-//          where the target value is the sum of the maximum and minimum elements in the array.
-// Topic: Arrays, Finding Pairs, Max/Min Elements, Nested Loops, Target Sum
+/*
+ * Purpose: Finds pairs of numbers in an array that sum up to a target value,
+ *          where the target value is the sum of the maximum and minimum elements in the array.
+ * Topic: Arrays, Finding Pairs, Max/Min Elements, Nested Loops, Target Sum
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

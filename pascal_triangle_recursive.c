@@ -1,5 +1,7 @@
-// Purpose: Generates and prints Pascal's triangle up to a specified number of rows using recursion.
-// Topic: Recursion, Binomial Coefficients, Nested Loops, Input Handling
+/*
+ * Purpose: Generates and prints Pascal's triangle up to a specified number of rows using recursion.
+ * Topic: Recursion, Binomial Coefficients, Nested Loops, Input Handling
+ */
 
 #include <stdio.h>
 // #include <math.h> // math.h is not needed for this implementation

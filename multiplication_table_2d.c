@@ -1,5 +1,7 @@
-// Purpose: Demonstrates creating and printing a 2D array with values based on row and column indices.
-// Topic: 2D Arrays, Nested Loops, Input/Output
+/*
+ * Purpose: Demonstrates creating and printing a 2D array with values based on row and column indices.
+ * Topic: 2D Arrays, Nested Loops, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit() and EXIT_FAILURE

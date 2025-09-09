@@ -1,5 +1,7 @@
-// Purpose: Generates a specific number sequence based on input ranges.
-// Topic: Algorithmic Number Transformation
+/*
+ * Purpose: Generates a specific number sequence based on input ranges.
+ * Topic: Algorithmic Number Transformation
+ */
 
 #include <stdio.h>
 

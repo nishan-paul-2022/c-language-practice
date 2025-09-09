@@ -1,5 +1,7 @@
-// Purpose: Implements the Fast Inverse Square Root algorithm.
-// Topic: Algorithms, Floating-Point Math, Bit Manipulation, Optimization
+/*
+ * Purpose: Implements the Fast Inverse Square Root algorithm.
+ * Topic: Algorithms, Floating-Point Math, Bit Manipulation, Optimization
+ */
 
 #include <stdio.h>
 #include <math.h> // For pow() and sqrt() for comparison

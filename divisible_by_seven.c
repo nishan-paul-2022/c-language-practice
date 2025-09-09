@@ -1,5 +1,7 @@
-// Purpose: Prints all numbers divisible by 7 within a specified range.
-// Topic: Divisibility, Loops, Conditional Statements, Input Parsing
+/*
+ * Purpose: Prints all numbers divisible by 7 within a specified range.
+ * Topic: Divisibility, Loops, Conditional Statements, Input Parsing
+ */
 
 #include <stdio.h>
 

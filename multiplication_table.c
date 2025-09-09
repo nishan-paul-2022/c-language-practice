@@ -1,5 +1,7 @@
-// Purpose: Prints the multiplication table for a given number up to 10.
-// Topic: Multiplication Table, Loops, Input/Output
+/*
+ * Purpose: Prints the multiplication table for a given number up to 10.
+ * Topic: Multiplication Table, Loops, Input/Output
+ */
 
 #include <stdio.h>
 

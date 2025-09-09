@@ -1,5 +1,7 @@
-// Purpose: Calculates the sum of digits and reverses a given integer.
-// Topic: Number Manipulation, Loops, Functions, Input/Output
+/*
+ * Purpose: Calculates the sum of digits and reverses a given integer.
+ * Topic: Number Manipulation, Loops, Functions, Input/Output
+ */
 
 #include <stdio.h>
 #include <math.h> // For pow, though not strictly needed for reversal if done iteratively

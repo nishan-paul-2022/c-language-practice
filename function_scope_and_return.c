@@ -1,5 +1,7 @@
-// Purpose: Demonstrates variable scope (local vs. function-local) and how to capture and use a function's return value.
-// Topic: Functions, Scope, Return Values, Basic Output
+/*
+ * Purpose: Demonstrates variable scope (local vs. function-local) and how to capture and use a function's return value.
+ * Topic: Functions, Scope, Return Values, Basic Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

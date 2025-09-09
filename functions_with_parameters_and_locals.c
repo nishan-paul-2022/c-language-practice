@@ -1,5 +1,7 @@
-// Purpose: Demonstrates functions operating on parameters and local variables, avoiding global variables.
-// Topic: Functions, Parameters, Local Variables, Scope, Global Variables (avoidance)
+/*
+ * Purpose: Demonstrates functions operating on parameters and local variables, avoiding global variables.
+ * Topic: Functions, Parameters, Local Variables, Scope, Global Variables (avoidance)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

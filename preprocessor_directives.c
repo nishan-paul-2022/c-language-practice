@@ -1,5 +1,7 @@
-// Purpose: Demonstrates various C preprocessor directives like #define, #ifdef, #undef, #else.
-// Topic: Preprocessor Directives, Macros, Conditional Compilation
+/*
+ * Purpose: Demonstrates various C preprocessor directives like #define, #ifdef, #undef, #else.
+ * Topic: Preprocessor Directives, Macros, Conditional Compilation
+ */
 
 #include <stdio.h> // Required for puts()
 

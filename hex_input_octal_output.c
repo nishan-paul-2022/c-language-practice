@@ -1,5 +1,7 @@
-// Purpose: Demonstrates using hexadecimal integer literals, performing addition, and printing the result in octal format.
-// Topic: Data Types, Number Bases, Input/Output
+/*
+ * Purpose: Demonstrates using hexadecimal integer literals, performing addition, and printing the result in octal format.
+ * Topic: Data Types, Number Bases, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

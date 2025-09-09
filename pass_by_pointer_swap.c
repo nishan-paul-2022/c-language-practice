@@ -1,5 +1,7 @@
-// Purpose: Demonstrates swapping two integer values using pass-by-pointer.
-// Topic: Pointers, Function Parameters, Swapping Variables
+/*
+ * Purpose: Demonstrates swapping two integer values using pass-by-pointer.
+ * Topic: Pointers, Function Parameters, Swapping Variables
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

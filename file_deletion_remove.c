@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of the `remove()` function to delete a file and interpret its return value.
-// Topic: File System Operations, Error Handling
+/*
+ * Purpose: Demonstrates the use of the `remove()` function to delete a file and interpret its return value.
+ * Topic: File System Operations, Error Handling
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

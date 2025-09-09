@@ -1,6 +1,8 @@
-// Purpose: Demonstrates nested loops to generate a pattern of numbers
-//          based on row and column indices, and calculates their sum.
-// Topic: Nested Loops and Pattern Generation with Multiplication
+/*
+ * Purpose: Demonstrates nested loops to generate a pattern of numbers
+ *          based on row and column indices, and calculates their sum.
+ * Topic: Nested Loops and Pattern Generation with Multiplication
+ */
 
 #include <stdio.h>
 

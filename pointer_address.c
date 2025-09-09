@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how to print the memory address of a variable using a pointer.
-// Topic: Pointers, Memory Addresses
+/*
+ * Purpose: Demonstrates how to print the memory address of a variable using a pointer.
+ * Topic: Pointers, Memory Addresses
+ */
 
 #include <stdio.h>
 

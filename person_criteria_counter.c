@@ -1,5 +1,7 @@
-// Purpose: Counts the number of persons meeting specific criteria (weight < 50 and height > 170).
-// Topic: Input Processing, Loops, Conditional Statements, Counting
+/*
+ * Purpose: Counts the number of persons meeting specific criteria (weight < 50 and height > 170).
+ * Topic: Input Processing, Loops, Conditional Statements, Counting
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

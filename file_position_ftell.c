@@ -1,5 +1,7 @@
-// Purpose: Demonstrates using ftell to get the current file position, typically used to find file size.
-// Topic: File I/O (ftell, fseek)
+/*
+ * Purpose: Demonstrates using ftell to get the current file position, typically used to find file size.
+ * Topic: File I/O (ftell, fseek)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS, perror

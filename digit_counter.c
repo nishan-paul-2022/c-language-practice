@@ -1,5 +1,7 @@
-// Purpose: Counts the number of digits in a given non-negative integer.
-// Topic: Integer Arithmetic, Loops, Basic Math
+/*
+ * Purpose: Counts the number of digits in a given non-negative integer.
+ * Topic: Integer Arithmetic, Loops, Basic Math
+ */
 
 #include <stdio.h>
 

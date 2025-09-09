@@ -1,5 +1,7 @@
-// Purpose: Finds the largest among three double-precision floating-point numbers.
-// Topic: Input Processing, Conditional Statements, Finding Maximum Value
+/*
+ * Purpose: Finds the largest among three double-precision floating-point numbers.
+ * Topic: Input Processing, Conditional Statements, Finding Maximum Value
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <math.h> // For pow() function
 
-// Purpose: Calculates the sum of a geometric series (x^0 + x^1 + ... + x^n).
-// Topic: Series Summation, Loops, Math Functions, Input/Output
+/*
+ * Purpose: Calculates the sum of a geometric series (x^0 + x^1 + ... + x^n).
+ * Topic: Series Summation, Loops, Math Functions, Input/Output
+ */
 int main(void) {
     double base_x; // The base of the power
     int exponent_n; // The maximum exponent

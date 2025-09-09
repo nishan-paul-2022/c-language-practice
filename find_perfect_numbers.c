@@ -1,6 +1,8 @@
-// Purpose: Finds and prints the first 'n' perfect numbers.
-//          A perfect number is a positive integer that is equal to the sum of its proper positive divisors.
-// Topic: Number Theory, Loops, Divisibility
+/*
+ * Purpose: Finds and prints the first 'n' perfect numbers.
+ *          A perfect number is a positive integer that is equal to the sum of its proper positive divisors.
+ * Topic: Number Theory, Loops, Divisibility
+ */
 
 #include <stdio.h>
 

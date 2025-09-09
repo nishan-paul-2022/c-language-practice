@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <math.h> // For pow, though we'll use iterative multiplication for powers of 10
 
-// Purpose: Reads an integer and prints the remainders when divided by increasing powers of 10,
-//          up to the largest power of 10 less than the input number.
-// Topic: Loops, Modulo Operator, Powers of 10, Input Validation
+/*
+ * Purpose: Reads an integer and prints the remainders when divided by increasing powers of 10,
+ *          up to the largest power of 10 less than the input number.
+ * Topic: Loops, Modulo Operator, Powers of 10, Input Validation
+ */
 int main() {
     int input_value;
     int remainder;

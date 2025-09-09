@@ -1,5 +1,7 @@
-// Purpose: Demonstrates using two pointers to manage and modify two separate integer variables.
-// Topic: Pointers, Multiple Pointers, Dereferencing, Variable Modification
+/*
+ * Purpose: Demonstrates using two pointers to manage and modify two separate integer variables.
+ * Topic: Pointers, Multiple Pointers, Dereferencing, Variable Modification
+ */
 
 #include <stdio.h>
 

@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-// Purpose: Demonstrates reading multiple integers from input, including skipping one.
-// Topic: Input/Output (scanf), Format Specifiers, Variable Declaration
+/*
+ * Purpose: Demonstrates reading multiple integers from input, including skipping one.
+ * Topic: Input/Output (scanf), Format Specifiers, Variable Declaration
+ */
 int main(void) {
     int num1, num2, skipped_value;
     int items_read;

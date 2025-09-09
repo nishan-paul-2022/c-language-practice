@@ -1,6 +1,8 @@
-// Purpose: Demonstrates dynamic memory allocation, manipulation, and deallocation in C
-//          using calloc, realloc, and free.
-// Topic: Dynamic Memory Management
+/*
+ * Purpose: Demonstrates dynamic memory allocation, manipulation, and deallocation in C
+ *          using calloc, realloc, and free.
+ * Topic: Dynamic Memory Management
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // Required for calloc, realloc, free

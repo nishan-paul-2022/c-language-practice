@@ -1,5 +1,7 @@
-// Purpose: Performs matrix multiplication for two matrices.
-// Topic: 2D arrays, matrix operations, loops, input/output.
+/*
+ * Purpose: Performs matrix multiplication for two matrices.
+ * Topic: 2D arrays, matrix operations, loops, input/output.
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

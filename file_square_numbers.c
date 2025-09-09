@@ -1,5 +1,7 @@
-// Purpose: Reads numbers from an input file, calculates their squares, and writes the squares to an output file.
-// Topic: File I/O (fopen, fprintf, fscanf, fclose) - Note: Does not use freopen despite filename.
+/*
+ * Purpose: Reads numbers from an input file, calculates their squares, and writes the squares to an output file.
+ * Topic: File I/O (fopen, fprintf, fscanf, fclose) - Note: Does not use freopen despite filename.
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, perror

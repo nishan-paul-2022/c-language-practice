@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints the exponential of a given number (e^x).
-// Topic: Mathematical Functions, Exponential Calculation
+/*
+ * Purpose: Calculates and prints the exponential of a given number (e^x).
+ * Topic: Mathematical Functions, Exponential Calculation
+ */
 
 #include <stdio.h>
 #include <math.h> // For the exp() function

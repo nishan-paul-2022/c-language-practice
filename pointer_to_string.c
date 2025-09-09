@@ -1,6 +1,8 @@
-// Purpose: Demonstrates how to use a character pointer to point to a string (character array)
-// and print the string and its starting memory address.
-// Topic: Pointers, Strings, Arrays, Memory Addresses
+/*
+ * Purpose: Demonstrates how to use a character pointer to point to a string (character array)
+ * and print the string and its starting memory address.
+ * Topic: Pointers, Strings, Arrays, Memory Addresses
+ */
 
 #include <stdio.h>
 

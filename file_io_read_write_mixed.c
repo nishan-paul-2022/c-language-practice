@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading various data types from user input, writing them to a file, and then reading them back from the file.
-// Topic: File I/O, Input/Output Functions, Data Types
+/*
+ * Purpose: Demonstrates reading various data types from user input, writing them to a file, and then reading them back from the file.
+ * Topic: File I/O, Input/Output Functions, Data Types
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

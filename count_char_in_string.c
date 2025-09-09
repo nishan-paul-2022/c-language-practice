@@ -1,5 +1,7 @@
-// Purpose: Counts the occurrences of a specific character within a string.
-// Topic: Strings, Arrays, Functions, Character Counting, Input/Output
+/*
+ * Purpose: Counts the occurrences of a specific character within a string.
+ * Topic: Strings, Arrays, Functions, Character Counting, Input/Output
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

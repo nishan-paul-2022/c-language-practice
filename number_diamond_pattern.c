@@ -1,5 +1,7 @@
-// Purpose: Prints a diamond-like number pattern with leading spaces.
-// Topic: Nested Loops, Number Patterns, Spacing
+/*
+ * Purpose: Prints a diamond-like number pattern with leading spaces.
+ * Topic: Nested Loops, Number Patterns, Spacing
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

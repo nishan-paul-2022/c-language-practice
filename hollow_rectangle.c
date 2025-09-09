@@ -1,5 +1,7 @@
-// Purpose: Prints a hollow rectangle pattern using a specified number.
-// Topic: Nested Loops, Rectangle Patterns
+/*
+ * Purpose: Prints a hollow rectangle pattern using a specified number.
+ * Topic: Nested Loops, Rectangle Patterns
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS

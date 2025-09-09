@@ -1,5 +1,7 @@
-// Purpose: Demonstrates various uses of fseek with different whence values (SEEK_CUR) and data types.
-// Topic: File I/O (fseek, fgets, fscanf, puts, printf, sprintf)
+/*
+ * Purpose: Demonstrates various uses of fseek with different whence values (SEEK_CUR) and data types.
+ * Topic: File I/O (fseek, fgets, fscanf, puts, printf, sprintf)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS

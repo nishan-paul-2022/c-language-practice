@@ -1,5 +1,7 @@
-// Purpose: Demonstrates using fseek to manipulate file pointers for reading and writing.
-// Topic: File I/O (fseek, fputs, fscanf, sprintf)
+/*
+ * Purpose: Demonstrates using fseek to manipulate file pointers for reading and writing.
+ * Topic: File I/O (fseek, fputs, fscanf, sprintf)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE, perror

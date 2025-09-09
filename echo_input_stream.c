@@ -1,5 +1,7 @@
-// Purpose: Reads characters from standard input until EOF and echoes them to standard output.
-// Topic: Character Input/Output, Reading Input Streams, EOF Handling
+/*
+ * Purpose: Reads characters from standard input until EOF and echoes them to standard output.
+ * Topic: Character Input/Output, Reading Input Streams, EOF Handling
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

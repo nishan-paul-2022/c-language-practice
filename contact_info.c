@@ -1,5 +1,7 @@
-// Purpose: Displays contact information.
-// Topic: Basic Output, String Literals
+/*
+ * Purpose: Displays contact information.
+ * Topic: Basic Output, String Literals
+ */
 
 #include <stdio.h>
 

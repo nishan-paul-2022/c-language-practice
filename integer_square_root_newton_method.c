@@ -1,5 +1,7 @@
-// Purpose: Demonstrates integer square root calculation using Newton's method.
-// Topic: Algorithms, Newton's Method, Integer Math
+/*
+ * Purpose: Demonstrates integer square root calculation using Newton's method.
+ * Topic: Algorithms, Newton's Method, Integer Math
+ */
 
 #include <stdio.h>
 #include <math.h> // Required for floor() and ceil()

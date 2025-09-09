@@ -1,5 +1,7 @@
-// Purpose: Demonstrates functions using a global variable, performing calculations, and includes error handling for division by zero.
-// Topic: Global Variables, Functions, Arithmetic Operations, Error Handling
+/*
+ * Purpose: Demonstrates functions using a global variable, performing calculations, and includes error handling for division by zero.
+ * Topic: Global Variables, Functions, Arithmetic Operations, Error Handling
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

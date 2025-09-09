@@ -1,5 +1,7 @@
-// Purpose: Calculates the Greatest Common Divisor (GCD) and Least Common Multiple (LCM) of two numbers.
-// Topic: Number Theory, Euclidean Algorithm, Input Handling
+/*
+ * Purpose: Calculates the Greatest Common Divisor (GCD) and Least Common Multiple (LCM) of two numbers.
+ * Topic: Number Theory, Euclidean Algorithm, Input Handling
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS and EXIT_FAILURE
 

@@ -1,5 +1,7 @@
-// Purpose: Checks the parity of row and column sums in a matrix to detect single bit errors.
-// Topic: Arrays (2D), Loops, Conditional Logic, Error Detection
+/*
+ * Purpose: Checks the parity of row and column sums in a matrix to detect single bit errors.
+ * Topic: Arrays (2D), Loops, Conditional Logic, Error Detection
+ */
 
 #include <stdio.h>
 

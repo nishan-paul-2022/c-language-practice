@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how to use a pointer to access and modify the value of a variable.
-// Topic: Pointers, Dereferencing, Variable Modification
+/*
+ * Purpose: Demonstrates how to use a pointer to access and modify the value of a variable.
+ * Topic: Pointers, Dereferencing, Variable Modification
+ */
 
 #include <stdio.h>
 

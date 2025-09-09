@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of nested switch statements to handle different input ranges and values.
-// Topic: Switch Statements, Nested Control Flow, Type Casting (double to int)
+/*
+ * Purpose: Demonstrates the use of nested switch statements to handle different input ranges and values.
+ * Topic: Switch Statements, Nested Control Flow, Type Casting (double to int)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

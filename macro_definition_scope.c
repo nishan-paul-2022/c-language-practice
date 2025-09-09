@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the definition and usage of a simple macro in C.
-// Topic: Preprocessor Directives, Macros
+/*
+ * Purpose: Demonstrates the definition and usage of a simple macro in C.
+ * Topic: Preprocessor Directives, Macros
+ */
 
 #include <stdio.h> // Required for printf()
 

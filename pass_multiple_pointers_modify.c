@@ -1,5 +1,7 @@
-// Purpose: Demonstrates passing multiple pointers to a function to modify multiple variables in the caller's scope, with corrected signature and type issues.
-// Topic: Pointers, Functions, Pass-by-Reference, Multiple Variable Modification, Error Handling
+/*
+ * Purpose: Demonstrates passing multiple pointers to a function to modify multiple variables in the caller's scope, with corrected signature and type issues.
+ * Topic: Pointers, Functions, Pass-by-Reference, Multiple Variable Modification, Error Handling
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

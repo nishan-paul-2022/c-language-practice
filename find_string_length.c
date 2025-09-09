@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints the length of a given string.
-// Topic: String Manipulation, String Length Calculation, Input Validation
+/*
+ * Purpose: Calculates and prints the length of a given string.
+ * Topic: String Manipulation, String Length Calculation, Input Validation
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen and strcspn

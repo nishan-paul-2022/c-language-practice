@@ -1,5 +1,7 @@
-// Purpose: Demonstrates writing to a file using 'w' (write) and 'a' (append) modes.
-// Topic: Text File I/O, File Modes
+/*
+ * Purpose: Demonstrates writing to a file using 'w' (write) and 'a' (append) modes.
+ * Topic: Text File I/O, File Modes
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

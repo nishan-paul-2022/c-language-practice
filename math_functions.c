@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the usage of various standard C math functions.
-// Topic: Math Functions
+/*
+ * Purpose: Demonstrates the usage of various standard C math functions.
+ * Topic: Math Functions
+ */
 
 #include <stdio.h>
 #include <math.h>

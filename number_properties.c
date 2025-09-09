@@ -1,5 +1,7 @@
-// Purpose: Checks if a number is an Abundant Number and a Palindrome Number.
-// Topic: Number Theory, String Manipulation, Loops
+/*
+ * Purpose: Checks if a number is an Abundant Number and a Palindrome Number.
+ * Topic: Number Theory, String Manipulation, Loops
+ */
 
 #include <stdio.h>
 #include <string.h>

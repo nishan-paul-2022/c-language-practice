@@ -1,5 +1,7 @@
-// Purpose: Calculates the length of the Longest Common Subsequence (LCS) of two strings using an iterative dynamic programming approach and reconstructs one such subsequence.
-// Topic: String Manipulation, Dynamic Programming (Iterative LCS), 2D Arrays
+/*
+ * Purpose: Calculates the length of the Longest Common Subsequence (LCS) of two strings using an iterative dynamic programming approach and reconstructs one such subsequence.
+ * Topic: String Manipulation, Dynamic Programming (Iterative LCS), 2D Arrays
+ */
 #include <stdio.h>
 #include <string.h> // For strlen()
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE

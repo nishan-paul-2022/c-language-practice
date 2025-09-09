@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of `perror` to print system error messages and `clearerr` to clear stream error indicators.
-// Topic: Error Handling, Standard Library Functions
+/*
+ * Purpose: Demonstrates the use of `perror` to print system error messages and `clearerr` to clear stream error indicators.
+ * Topic: Error Handling, Standard Library Functions
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

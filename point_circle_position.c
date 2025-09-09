@@ -1,5 +1,7 @@
-// Purpose: Determines if a given point is inside, outside, or on the circumference of a circle.
-// Topic: Geometry, Floating-point Arithmetic, Conditional Logic, Math Functions (sqrt)
+/*
+ * Purpose: Determines if a given point is inside, outside, or on the circumference of a circle.
+ * Topic: Geometry, Floating-point Arithmetic, Conditional Logic, Math Functions (sqrt)
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function and fabs (for robust floating-point comparison)

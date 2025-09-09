@@ -1,5 +1,7 @@
-// Purpose: Demonstrates passing pointers to a function to allow the function to modify the original variables.
-// Topic: Pointers, Functions, Pass-by-Reference (for arrays), Variable Modification
+/*
+ * Purpose: Demonstrates passing pointers to a function to allow the function to modify the original variables.
+ * Topic: Pointers, Functions, Pass-by-Reference (for arrays), Variable Modification
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

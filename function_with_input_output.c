@@ -1,5 +1,7 @@
-// Purpose: Demonstrates a function that takes arguments, reads input, performs a calculation, prints output, and returns a character.
-// Topic: Functions, Parameters, Input/Output, Return Values
+/*
+ * Purpose: Demonstrates a function that takes arguments, reads input, performs a calculation, prints output, and returns a character.
+ * Topic: Functions, Parameters, Input/Output, Return Values
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

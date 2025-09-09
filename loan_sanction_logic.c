@@ -1,5 +1,7 @@
-// Purpose: Implements a specific, albeit unusual, logic for loan sanctioning based on input values.
-// Topic: Input Processing, Conditional Logic, Financial Calculations (simplified/custom)
+/*
+ * Purpose: Implements a specific, albeit unusual, logic for loan sanctioning based on input values.
+ * Topic: Input Processing, Conditional Logic, Financial Calculations (simplified/custom)
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

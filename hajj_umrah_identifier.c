@@ -1,5 +1,7 @@
-// Purpose: Identifies "Hajj" or "Umrah" strings from input and prints corresponding messages with case numbers.
-// Topic: Strings, Conditional Logic, Input/Output
+/*
+ * Purpose: Identifies "Hajj" or "Umrah" strings from input and prints corresponding messages with case numbers.
+ * Topic: Strings, Conditional Logic, Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h>

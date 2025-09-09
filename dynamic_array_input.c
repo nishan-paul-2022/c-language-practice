@@ -1,5 +1,7 @@
-// Purpose: Reads a dynamic array of integers from user input and prints its elements.
-// Topic: Arrays, Input/Output, Dynamic Sizing (via user input)
+/*
+ * Purpose: Reads a dynamic array of integers from user input and prints its elements.
+ * Topic: Arrays, Input/Output, Dynamic Sizing (via user input)
+ */
 
 #include <stdio.h> // Required for printf(), scanf()
 

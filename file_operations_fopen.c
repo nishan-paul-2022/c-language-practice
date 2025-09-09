@@ -1,5 +1,7 @@
-// Purpose: Demonstrates basic file opening, writing, and closing operations in C.
-// Topic: File I/O (fopen, fprintf, fclose)
+/*
+ * Purpose: Demonstrates basic file opening, writing, and closing operations in C.
+ * Topic: File I/O (fopen, fprintf, fclose)
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

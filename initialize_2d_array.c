@@ -1,5 +1,7 @@
-// Purpose: Demonstrates initializing a 2D array and setting specific elements to 1.
-// Topic: 2D arrays, loops, input/output, initialization.
+/*
+ * Purpose: Demonstrates initializing a 2D array and setting specific elements to 1.
+ * Topic: 2D arrays, loops, input/output, initialization.
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

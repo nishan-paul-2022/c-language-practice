@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how to fix infinite recursion by adding a base case.
-// Topic: Recursion, Base Case, Function Calls
+/*
+ * Purpose: Demonstrates how to fix infinite recursion by adding a base case.
+ * Topic: Recursion, Base Case, Function Calls
+ */
 
 #include <stdio.h>
 

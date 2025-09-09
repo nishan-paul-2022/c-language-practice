@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of the standard C library's pow() function for exponentiation.
-// Topic: Mathematical Functions, pow(), Loops
+/*
+ * Purpose: Demonstrates the use of the standard C library's pow() function for exponentiation.
+ * Topic: Mathematical Functions, pow(), Loops
+ */
 
 #include <stdio.h>
 #include <math.h> // For the pow() function

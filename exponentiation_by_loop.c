@@ -1,6 +1,8 @@
-// Purpose: Calculates 'base' raised to the power of 'exponent' (base^exponent) using a loop.
-//          Handles positive, zero, and negative integer exponents.
-// Topic: Exponentiation, Loops, Floating-Point Arithmetic
+/*
+ * Purpose: Calculates 'base' raised to the power of 'exponent' (base^exponent) using a loop.
+ *          Handles positive, zero, and negative integer exponents.
+ * Topic: Exponentiation, Loops, Floating-Point Arithmetic
+ */
 
 #include <stdio.h>
 #include <math.h> // Required for fabs() if handling negative exponents with division.

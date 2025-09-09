@@ -1,5 +1,7 @@
-// Purpose: Reads a single character from standard input and echoes it back to standard output.
-// Topic: Character Input/Output, getchar(), putchar()
+/*
+ * Purpose: Reads a single character from standard input and echoes it back to standard output.
+ * Topic: Character Input/Output, getchar(), putchar()
+ */
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 

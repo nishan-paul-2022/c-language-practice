@@ -1,5 +1,7 @@
-// Purpose: Demonstrates printing the address of a pointer to a pointer in C.
-// Topic: Pointers, Pointer to Pointer
+/*
+ * Purpose: Demonstrates printing the address of a pointer to a pointer in C.
+ * Topic: Pointers, Pointer to Pointer
+ */
 
 #include <stdio.h>
 

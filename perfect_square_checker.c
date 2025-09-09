@@ -1,5 +1,7 @@
-// Purpose: Checks if a given non-negative integer is a perfect square.
-// Topic: Number Theory, Math Functions (sqrt), Integer Arithmetic, Conditional Logic
+/*
+ * Purpose: Checks if a given non-negative integer is a perfect square.
+ * Topic: Number Theory, Math Functions (sqrt), Integer Arithmetic, Conditional Logic
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function

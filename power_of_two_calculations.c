@@ -1,5 +1,7 @@
-// Purpose: Calculates and displays powers of 2 and their reciprocals for a given number of iterations using the pow() function.
-// Topic: Loops, Math Functions, Powers
+/*
+ * Purpose: Calculates and displays powers of 2 and their reciprocals for a given number of iterations using the pow() function.
+ * Topic: Loops, Math Functions, Powers
+ */
 
 #include <stdio.h>
 #include <math.h> // For pow() function

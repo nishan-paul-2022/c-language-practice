@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of function pointers to perform arithmetic operations.
-// Topic: Function Pointers, Arithmetic Operations
+/*
+ * Purpose: Demonstrates the use of function pointers to perform arithmetic operations.
+ * Topic: Function Pointers, Arithmetic Operations
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For abs() function

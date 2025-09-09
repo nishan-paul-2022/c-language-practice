@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of macros with arguments and the ternary operator.
-// Topic: Preprocessor Directives, Macros with Arguments, Ternary Operator
+/*
+ * Purpose: Demonstrates the use of macros with arguments and the ternary operator.
+ * Topic: Preprocessor Directives, Macros with Arguments, Ternary Operator
+ */
 
 #include <stdio.h> // Required for printf()
 

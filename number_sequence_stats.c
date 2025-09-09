@@ -1,6 +1,8 @@
-// Purpose: Reads a sequence of double values until a sentinel value (0.007) is entered,
-// then calculates and prints the average, maximum, and minimum of the entered numbers.
-// Topic: Loops, Input Handling, Floating-Point Numbers, Max/Min/Average Calculation
+/*
+ * Purpose: Reads a sequence of double values until a sentinel value (0.007) is entered,
+ * then calculates and prints the average, maximum, and minimum of the entered numbers.
+ * Topic: Loops, Input Handling, Floating-Point Numbers, Max/Min/Average Calculation
+ */
 
 #include <stdio.h>
 #include <math.h> // For potential use of fabs for tolerance comparison, though not strictly needed for sentinel

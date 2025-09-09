@@ -1,5 +1,7 @@
-// Purpose: Demonstrates printing a character's value, its address, and the pointer's address.
-// Topic: Pointers, Memory Addresses, Dereferencing, Character Pointers
+/*
+ * Purpose: Demonstrates printing a character's value, its address, and the pointer's address.
+ * Topic: Pointers, Memory Addresses, Dereferencing, Character Pointers
+ */
 
 #include <stdio.h>
 
