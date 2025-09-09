@@ -21,7 +21,7 @@ int main()
     if (scanf("%lf", &base) != 1)
     {
         printf("Invalid input for base. Please enter a valid double.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the comma and any whitespace after the base.

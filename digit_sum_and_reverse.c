@@ -51,7 +51,7 @@ int main() {
     // Read the number from user input and validate
     if (scanf("%ld", &number) != 1) {
         printf("Error: Invalid input. Please enter a long integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the sum of digits

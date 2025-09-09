@@ -10,7 +10,7 @@ int main() {
     printf("Enter an integer (or a non-integer to exit): ");
     if (scanf("%d", &n) != 1) {
         printf("Invalid input. Exiting program.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     int output;

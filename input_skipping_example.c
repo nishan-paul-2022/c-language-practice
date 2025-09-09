@@ -23,7 +23,7 @@ int main(void) {
         printf("Invalid input. Please ensure you enter three integers separated by spaces.\n");
         // If scanf failed to read num1 and num2, it might be due to non-integer input
         // or an incomplete input line.
-        return 1; // Indicate an error
+        return 0;
     }
 
     return 0;

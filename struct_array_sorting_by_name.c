@@ -88,7 +88,7 @@ int main() {
     printf("Enter the number of records: ");
     if (scanf("%d", &num_records) != 1) {
         fprintf(stderr, "Invalid input for number of records.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf

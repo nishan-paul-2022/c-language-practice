@@ -18,13 +18,13 @@ int main()
     if (scanf("%f", &radius) != 1)
     {
         printf("Invalid input. Please enter a numeric value for the radius.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     if (radius < 0)
     {
         printf("Radius cannot be negative. Please enter a non-negative value.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     area = PI * radius * radius;

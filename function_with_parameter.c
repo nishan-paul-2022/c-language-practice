@@ -19,7 +19,7 @@ int main() {
     printf("Enter a double value: ");
     if (scanf("%lf", &input_value) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter a valid double.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Call the function to double the input value

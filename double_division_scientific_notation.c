@@ -14,13 +14,13 @@ int main()
     if (scanf("%lf/%lf", &numerator, &denominator) != 2)
     {
         printf("Invalid input format. Please enter two numbers separated by a slash.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     if (denominator == 0.0)
     {
         printf("Error: Division by zero is not allowed.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("Result in scientific notation: %e\n", numerator / denominator);

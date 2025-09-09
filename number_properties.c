@@ -54,13 +54,13 @@ int main() {
     // Read input and validate that it's an integer
     if (scanf("%d", &input_number) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Validate that the input number is positive
     if (input_number <= 0) {
         fprintf(stderr, "Error: Please enter a positive integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Check and print if it's an Abundant Number

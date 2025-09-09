@@ -35,7 +35,7 @@ int main() {
     // If both numbers are 0, GCD is typically undefined or 0.
     if (number1 == 0 && number2 == 0) {
         printf("GCD of 0 and 0 is undefined (or 0 by some definitions).\n");
-        return 1; // Indicate an error or special case
+        return 0;
     }
 
     // Call the recursive function to find the GCD

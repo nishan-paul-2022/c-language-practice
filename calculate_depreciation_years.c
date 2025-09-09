@@ -12,7 +12,7 @@ int main() {
     // Example input: 10000.0, 0.10, 5000.0
     if (scanf("%lf, %lf, %lf", &initial_cost, &depreciation_rate, &target_value) != 3) {
         fprintf(stderr, "Invalid input format. Please enter values as 'initial_cost, depreciation_rate, target_value'.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Ensure valid inputs for the calculation:
@@ -23,7 +23,7 @@ int main() {
         fprintf(stderr, "Invalid input values for depreciation calculation.\n");
         // Handle cases where target_value == initial_cost (0 years) or other edge cases if needed.
         // For simplicity, we'll exit if inputs are invalid for the formula.
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the number of years using the formula derived from:

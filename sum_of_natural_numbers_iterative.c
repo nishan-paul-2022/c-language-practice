@@ -16,7 +16,7 @@ int main() {
     // Validate input: sum is typically defined for non-negative integers
     if (input_number < 0) {
         printf("Error: Input must be a non-negative integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Loop to calculate the sum iteratively

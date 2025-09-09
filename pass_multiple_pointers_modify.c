@@ -41,7 +41,7 @@ int main() {
     printf("Enter two double values separated by a comma (e.g., 10.5, 5.2): ");
     if (scanf("%lf, %lf", &value1, &value2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two double values separated by a comma.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume any remaining characters on the line after the second double, including the newline
     while (getchar() != '\n');

@@ -16,7 +16,7 @@ int main() {
     // fgets reads up to sizeof(input_string) - 1 characters or until a newline is encountered.
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read input string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove the trailing newline character if fgets read one

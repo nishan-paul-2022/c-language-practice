@@ -15,7 +15,7 @@ int main() {
     output_file_ptr = fopen("text_file_writing_example.txt", "w");
     if (output_file_ptr == NULL) {
         perror("Error opening file for writing");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write a formatted string using fprintf

@@ -14,13 +14,13 @@ int main() {
     // Read the input number and validate that it's an integer
     if (scanf("%d", &input_number) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Validate that the input is non-negative
     if (input_number < 0) {
         fprintf(stderr, "Error: Please enter a non-negative integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     original_number = input_number; // Store the original number for the final output

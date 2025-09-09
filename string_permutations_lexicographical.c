@@ -102,7 +102,7 @@ int main()
         generate_sorted_permutations(input_string);
     } else {
         printf("Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     return 0;

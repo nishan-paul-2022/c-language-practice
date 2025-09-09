@@ -13,13 +13,13 @@ int main(void) {
     // Read input and check for valid entry
     if (scanf("%lf", &hours_worked) != 1) {
         printf("Invalid input. Please enter a numeric value for hours worked.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate salary based on hours worked
     if (hours_worked < 0) {
         printf("Hours worked cannot be negative.\n");
-        return 1; // Indicate an error
+        return 0;
     } else if (hours_worked == 40) {
         // Standard pay for exactly 40 hours
         salary = 300.0;

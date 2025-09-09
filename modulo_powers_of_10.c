@@ -14,7 +14,7 @@ int main() {
     // Use " %d" to consume any leading whitespace, including newlines
     if (scanf(" %d", &input_value) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Handle non-positive input gracefully

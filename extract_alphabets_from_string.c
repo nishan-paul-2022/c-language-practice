@@ -15,7 +15,7 @@ int main() {
     printf("Enter a string (e.g., 'Hello World 123!'): ");
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         printf("Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove the trailing newline character if fgets read it

@@ -32,7 +32,7 @@ int main() {
     // For simplicity, this example assumes non-negative exponents as per the original code's logic.
     if (exponent_number < 0) {
         printf("Error: This program calculates power for non-negative exponents only.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Call the recursive function to calculate the power

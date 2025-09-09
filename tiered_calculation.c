@@ -14,7 +14,7 @@ int main() {
     // Using %lf for double input. Added input validation.
     if (scanf("%lf", &units_consumed) != 1) {
         printf("Invalid input. Please enter a valid number for units.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the total cost based on tiered rates.

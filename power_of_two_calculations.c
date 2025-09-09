@@ -16,7 +16,7 @@ int main() {
     // Read the number of iterations and validate input
     if (scanf("%d", &numIterations) != 1 || numIterations <= 0) {
         fprintf(stderr, "Invalid input. Please enter a positive integer for the number of iterations.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf after reading numIterations

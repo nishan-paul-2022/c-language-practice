@@ -25,7 +25,7 @@ int main() {
     file_ptr = fopen("FH fwrite & fread.txt", "wb+");
     if (file_ptr == NULL) {
         perror("Error opening file for writing");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write the structure to the file

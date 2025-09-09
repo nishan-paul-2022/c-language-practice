@@ -49,7 +49,7 @@ int main() {
     // Read the number of students and validate input
     if (scanf("%d", &numStudents) != 1 || numStudents <= 0) {
         fprintf(stderr, "Invalid input for number of students. Please enter a positive integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf after reading numStudents

@@ -51,7 +51,7 @@ int main() {
     // Use fgets for safe string input
     if (fgets(input_string, MAX_STRING_LENGTH, stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read string input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Remove the trailing newline character from fgets if it exists
     input_string[strcspn(input_string, "\n")] = 0;
@@ -65,7 +65,7 @@ int main() {
     // Check if the function call resulted in an error
     if (occurrence_count == -1) {
         fprintf(stderr, "Character counting failed.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Print the final count

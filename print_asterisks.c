@@ -12,7 +12,7 @@ int main() {
         fprintf(stderr, "Invalid input. Please enter an integer.\n");
         // Clear the input buffer in case of non-integer input
         while (getchar() != '\n' && !feof(stdin));
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Print a newline character for better formatting after the input prompt.

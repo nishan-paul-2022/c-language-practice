@@ -33,7 +33,7 @@ int main() {
     printf("Enter two integers separated by a comma (e.g., 30, 50): ");
     if (scanf("%d, %d", &value1, &value2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume any remaining characters on the line after the second integer, including the newline
     while (getchar() != '\n');

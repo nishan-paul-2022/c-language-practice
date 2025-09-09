@@ -17,7 +17,7 @@ int main(void) {
     // Read the size of the array and validate input
     if (scanf("%d", &array_size) != 1 || array_size <= 0 || array_size > BUFFER_SIZE) {
         printf("Invalid input. Please enter a positive integer up to %d.\\n", BUFFER_SIZE);
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -28,7 +28,7 @@ int main(void) {
     for (outer_index = 0; outer_index < array_size; outer_index++) {
         if (scanf("%d", &numbers[outer_index]) != 1) {
             printf("Invalid input for integer at position %d. Please enter integers only.\\n", outer_index + 1);
-            return 1; // Indicate an error
+            return 0;
         }
         // Consume the newline character left by scanf after each number
         while (getchar() != '\\n');

@@ -15,7 +15,7 @@ int main(void) {
     // Read the maximum length for strings and validate input
     if (scanf("%d", &max_string_length) != 1 || max_string_length <= 0 || max_string_length >= BUFFER_SIZE) {
         printf("Invalid length entered. Please enter a positive integer less than %d.\\n", BUFFER_SIZE);
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf

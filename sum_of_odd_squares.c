@@ -15,7 +15,7 @@ int main() {
     // Use " %d" to consume any leading whitespace, including newlines
     if (scanf(" %d", &input_n) != 1 || input_n <= 0) {
         printf("Invalid input. Please enter a positive integer for N.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the largest odd number to consider.

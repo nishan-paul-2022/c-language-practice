@@ -14,7 +14,7 @@ int main() {
     file_ptr = fopen("FH putw.txt", "w+");
     if (file_ptr == NULL) {
         perror("Error opening file for writing/reading");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write a character to the file using fputc
@@ -41,7 +41,7 @@ int main() {
             printf("File is empty or could not read the first character after writing.\n");
         }
         fclose(file_ptr);
-        return 1; // Indicate an error or empty file
+        return 0; or empty file
     }
 
     // Print the character read to the console

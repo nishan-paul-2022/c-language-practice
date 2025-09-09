@@ -35,13 +35,13 @@ int main(void) {
 
     if (input_status != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Check for negative input, which would cause infinite recursion
     if (n < 0) {
         printf("Input must be a non-negative integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the sum using the recursive function

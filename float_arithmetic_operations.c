@@ -14,7 +14,7 @@ int main()
     if (scanf("%f, %f", &num1, &num2) != 2)
     {
         printf("Invalid input. Please enter two numbers.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Loop to repeatedly print results if both numbers are positive

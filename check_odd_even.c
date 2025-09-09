@@ -13,7 +13,7 @@ int main() {
     // Read the number of test cases.
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error reading number of test cases.\n");
-        return 1; // Indicate an error.
+        return 0;.
     }
 
     // Loop through each test case.

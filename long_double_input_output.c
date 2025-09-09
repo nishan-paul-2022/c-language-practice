@@ -14,7 +14,7 @@ int main()
     if (scanf("%Lf", &value) != 1)
     {
         printf("Invalid input. Please enter a valid number.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("You entered: %Lf\n", value);

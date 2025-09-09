@@ -15,7 +15,7 @@ int main() {
     file_ptr = fopen("file_modes_example.txt", "w");
     if (file_ptr == NULL) {
         perror("Error opening file in 'w' mode");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write the first part of the text
@@ -36,7 +36,7 @@ int main() {
     file_ptr = fopen("file_modes_example.txt", "a");
     if (file_ptr == NULL) {
         perror("Error opening file in 'a' mode");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write the second part of the text

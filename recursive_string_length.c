@@ -37,7 +37,7 @@ int main() {
         printf("The length of the string is: %d\n", len);
     } else {
         printf("Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     return 0;

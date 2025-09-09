@@ -11,7 +11,7 @@ int main() {
     // Use " %d" to consume any leading whitespace, including newlines
     if (scanf(" %d", &number) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Handle negative numbers by taking the absolute value for digit sum calculation

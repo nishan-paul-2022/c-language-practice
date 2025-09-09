@@ -14,7 +14,7 @@ int main() {
     // Read the number of rows and validate input
     if (scanf("%d", &num_rows) != 1) {
         printf("Error: Invalid input. Please enter an integer for the number of rows.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("\nEnter %d double values for each of the %d rows:\n", num_rows, num_rows);
@@ -30,7 +30,7 @@ int main() {
             // Read each double value and validate input
             if (scanf("%lf", &value) != 1) {
                 printf("\nError: Invalid input for value %d in row %d. Please enter a double.\n", col_index, row_index);
-                return 1; // Indicate an error
+                return 0;
             }
             row_sum += value; // Add the value to the current row's sum
         }

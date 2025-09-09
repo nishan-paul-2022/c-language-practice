@@ -46,7 +46,7 @@ int main() {
     head = (Node *)malloc(sizeof(Node));
     if (head == NULL) {
         fprintf(stderr, "Memory allocation failed for head node.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     head->data_int = 10;
     head->data_float = 1.14f;
@@ -61,7 +61,7 @@ int main() {
             fprintf(stderr, "Memory allocation failed for node %d.\n", i);
             // Clean up already allocated memory before exiting
             free_list(head);
-            return 1; // Indicate an error
+            return 0;
         }
         new_node->data_int = i * 10;
         new_node->data_float = (float)i + 0.14f;

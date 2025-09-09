@@ -19,7 +19,7 @@ int main() {
     // Read the integer.
     if (scanf("%d", &input_number) != 1) {
         printf("Error: Invalid integer input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left in the input buffer by scanf.

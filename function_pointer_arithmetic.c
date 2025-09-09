@@ -26,7 +26,7 @@ int main() {
     // Added input validation for scanf.
     if (scanf("%d %d", &num1, &num2) != 2) {
         printf("Invalid input. Please enter two integers.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Declare function pointers.

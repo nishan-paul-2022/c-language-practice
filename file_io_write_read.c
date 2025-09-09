@@ -13,7 +13,7 @@ int main() {
     printf("Enter two characters separated by a comma (e.g., a,b): ");
     if (scanf(" %c,%c", &char1, &char2) != 2) {
         fprintf(stderr, "Error: Invalid input format.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Open the file for writing and reading.
@@ -21,7 +21,7 @@ int main() {
     file_ptr = fopen("FH function.txt", "w+");
     if (file_ptr == NULL) {
         perror("Error opening file for writing");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Write the characters to the file

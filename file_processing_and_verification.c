@@ -19,7 +19,7 @@ int main() {
     inputFile = fopen("input.txt", "r");
     if (inputFile == NULL) {
         perror("Error opening input.txt for reading");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Open mine.txt for writing (truncates if exists)
@@ -27,7 +27,7 @@ int main() {
     if (mineFile == NULL) {
         perror("Error opening mine.txt for writing");
         fclose(inputFile); // Close previously opened file
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Read integers from input file, calculate, print, and write to mine.txt

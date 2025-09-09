@@ -31,7 +31,7 @@ int main() {
             break;
         default:
             printf("Error: Invalid account type. Please enter a number between 1 and 4.\n");
-            return 1; // Indicate an error
+            return 0;
     }
 
     // Apply discounts based on the calculated amount

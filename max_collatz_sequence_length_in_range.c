@@ -31,7 +31,7 @@ int main() {
     // The " - " in the format string ensures scanf reads the hyphen and spaces correctly.
     if (scanf("%d - %d", &start_range, &end_range) != 2) {
         fprintf(stderr, "Invalid input format. Please enter range as 'start - end'.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Iterate through each number in the specified range

@@ -22,7 +22,7 @@ int main() {
     // Read the input string safely using fgets
     if (fgets(inputString, sizeof(inputString), stdin) == NULL) {
         fprintf(stderr, "Error reading input string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove trailing newline character if present

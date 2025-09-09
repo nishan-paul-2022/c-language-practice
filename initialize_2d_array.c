@@ -17,7 +17,7 @@ int main(void) {
     // Read the dimension of the matrix and validate input
     if (scanf("%d", &dimension) != 1 || dimension <= 0 || dimension > MAX_DIMENSION) {
         printf("Invalid input. Please enter a positive integer for dimension up to %d.\\n", MAX_DIMENSION);
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -27,7 +27,7 @@ int main(void) {
     // Read the number of elements to set and validate input
     if (scanf("%d", &num_elements_to_set) != 1 || num_elements_to_set < 0) {
         printf("Invalid input. Please enter a non-negative integer for the number of elements.\\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf

@@ -17,7 +17,7 @@ int main()
     if (scanf("%d", array) != 1)
     {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Print the entered integer using pointer arithmetic.

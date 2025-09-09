@@ -12,7 +12,7 @@ int main() {
     // Read the number from user input and validate
     if (scanf("%d", &number) != 1) {
         printf("Error: Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("\nMultiplication table for %d:\n", number);

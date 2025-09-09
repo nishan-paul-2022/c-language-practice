@@ -29,7 +29,7 @@ int main() {
     printf("Enter a non-negative integer to calculate Fibonacci numbers up to that term: ");
     if (scanf("%d", &input_number) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Handle non-positive input (although the function handles n<=0, it's good practice to validate user input)

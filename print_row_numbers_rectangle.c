@@ -22,7 +22,7 @@ int main() {
     if (scanf("%d", &num_rows) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer for the number of rows.\n");
         consume_newline(); // Clear buffer
-        return 1; // Indicate an error
+        return 0;
     }
     consume_newline(); // Consume the newline character left by scanf
 
@@ -31,14 +31,14 @@ int main() {
     if (scanf("%d", &num_cols) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer for the number of columns.\n");
         consume_newline(); // Clear buffer
-        return 1; // Indicate an error
+        return 0;
     }
     consume_newline(); // Consume the newline character left by scanf
 
     // Validate that the dimensions are positive
     if (num_rows <= 0 || num_cols <= 0) {
         fprintf(stderr, "Error: Number of rows and columns must be positive.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Outer loop iterates through each row

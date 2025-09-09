@@ -24,13 +24,13 @@ int main() {
     // Read the input and validate that it's an integer
     if (scanf("%d", &n) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Validate that the input is a non-negative integer
     if (n < 0) {
         fprintf(stderr, "Error: Please enter a non-negative integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate and print the sum using the recursive function

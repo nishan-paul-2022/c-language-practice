@@ -17,7 +17,7 @@ int main() {
         fprintf(stderr, "Error: Invalid input. Please enter a valid floating-point number.\n");
         // Clear the input buffer to prevent issues with subsequent reads
         while (getchar() != '\n'); 
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the ceiling of the input value

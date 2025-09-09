@@ -36,7 +36,7 @@ int main() {
     // Read the range from user input
     if (scanf("%d %d", &start_num, &end_num) != 2) {
         printf("Error: Invalid input. Please enter two integers.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("\nPrime numbers between %d and %d are:\n", start_num, end_num);

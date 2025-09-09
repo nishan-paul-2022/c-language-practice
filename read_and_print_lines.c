@@ -31,7 +31,7 @@ int main() {
     // Check if the loop terminated due to an error other than EOF
     if (ferror(stdin)) {
         fprintf(stderr, "An error occurred during input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     return 0;

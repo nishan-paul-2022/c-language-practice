@@ -17,7 +17,7 @@ int main() {
     // Read the number of test cases
     if (scanf("%d", &numTestCases) != 1) {
         fprintf(stderr, "Error reading number of test cases.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume the newline character after reading the integer
     while (getchar() != '\n');

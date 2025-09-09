@@ -31,7 +31,7 @@ int main() {
     // Read the size of the array from the user.
     if (scanf("%d", &n) != 1) {
         printf("Invalid input for array size. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Declare an array of size 'n'. This is a Variable Length Array (VLA),

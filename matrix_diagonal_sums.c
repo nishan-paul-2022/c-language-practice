@@ -15,7 +15,7 @@ int main() {
     printf("Enter the size of the square matrix: ");
     if (scanf("%d", &matrix_size) != 1 || matrix_size <= 0 || matrix_size > 100) {
         printf("Invalid input. Please enter a positive integer for the matrix size (up to 100).\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Prompt user to enter the matrix elements
@@ -25,7 +25,7 @@ int main() {
             printf("Enter element m[%d][%d]: ", i, j);
             if (scanf("%d", &matrix[i][j]) != 1) {
                 printf("Invalid input for matrix element. Please enter an integer.\n");
-                return 1; // Indicate an error
+                return 0;
             }
             // Calculate sum of main diagonal elements
             if (i == j) {

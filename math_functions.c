@@ -16,7 +16,7 @@ int main() {
     // Read input values. Check if scanf successfully read all four values.
     if (scanf("%lf %lf %lf %lf", &angle_rad, &sine_value, &base, &exponent) != 4) {
         fprintf(stderr, "Error: Invalid input. Please enter four double values.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Demonstrate various math functions

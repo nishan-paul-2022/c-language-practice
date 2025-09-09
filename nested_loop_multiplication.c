@@ -15,7 +15,7 @@ int main() {
     printf("Enter a positive integer (determines the number of rows): ");
     if (scanf("%d", &input_limit) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Ensure the input is positive.

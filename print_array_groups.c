@@ -12,7 +12,7 @@ int main() {
     // Read the number of elements and validate input
     if (scanf("%d", &num_elements) != 1) {
         printf("Error: Invalid input. Please enter an integer for the number of elements.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Ensure there are enough elements to form at least one group of three
@@ -32,7 +32,7 @@ int main() {
         // Read integer and consume the character after it (e.g., newline)
         if (scanf("%d%*c", &elements[element_index]) != 1) {
             printf("\nError: Invalid input for element %d. Please enter an integer.\n", element_index + 1);
-            return 1; // Indicate an error
+            return 0;
         }
     }
 

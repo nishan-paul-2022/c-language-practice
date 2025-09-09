@@ -12,7 +12,7 @@ int main(void) {
     // Read the first string safely using fgets
     if (fgets(source_string, sizeof(source_string), stdin) == NULL) {
         fprintf(stderr, "Error reading the first string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Remove the trailing newline character if present
     source_string[strcspn(source_string, "\n")] = 0;
@@ -21,7 +21,7 @@ int main(void) {
     // Read the second string safely using fgets
     if (fgets(destination_string, sizeof(destination_string), stdin) == NULL) {
         fprintf(stderr, "Error reading the second string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Remove the trailing newline character if present
     destination_string[strcspn(destination_string, "\n")] = 0;

@@ -38,7 +38,7 @@ int main() {
     // We expect 2 integers to be read.
     if (scanf("%d to %d", &start_range, &end_range) != 2) {
         printf("Error: Invalid input format. Please use 'start to end' format (e.g., 1 to 100).\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("\nPrime numbers between %d and %d are:\n", start_range, end_range);

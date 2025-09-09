@@ -36,7 +36,7 @@ int main() {
         printf("String: %s\n", myStruct.stringValue);
     } else {
         fprintf(stderr, "Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     return 0;

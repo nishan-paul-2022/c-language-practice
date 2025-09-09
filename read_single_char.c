@@ -12,7 +12,7 @@ int main() {
     input_file_ptr = fopen("FH fwrite & fread.txt", "r");
     if (input_file_ptr == NULL) {
         perror("Error opening file for reading");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Read a single character from the file
@@ -26,7 +26,7 @@ int main() {
             printf("File is empty or could not read the first character.\n");
         }
         fclose(input_file_ptr);
-        return 1; // Indicate an error or empty file
+        return 0; or empty file
     }
 
     // Print the character read to the console

@@ -15,7 +15,7 @@ int main() {
     // and appends a null terminator. It also reads the newline character if space permits.
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove the trailing newline character if it exists

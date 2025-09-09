@@ -46,7 +46,7 @@ int main() {
     // Use fgets for safer string input to prevent buffer overflows.
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read input string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove the trailing newline character if fgets read one

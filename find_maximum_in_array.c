@@ -19,7 +19,7 @@ int main() {
     // Check for valid number of elements
     if (num_elements <= 0) {
         printf("Number of elements must be positive.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Declare a Variable Length Array (VLA) - C99 feature

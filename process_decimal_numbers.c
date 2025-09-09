@@ -67,7 +67,7 @@ int main() {
     printf("Enter three decimal numbers separated by commas (e.g., 1.23, 4.5, 6.789): ");
     if (scanf("%lf, %lf, %lf", &input_numbers[0], &input_numbers[1], &input_numbers[2]) != 3) {
         fprintf(stderr, "Error: Invalid input format. Please use the specified format.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // --- Determine the maximum number of decimal places ---

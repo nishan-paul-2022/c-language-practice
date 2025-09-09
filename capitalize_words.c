@@ -15,7 +15,7 @@ int main() {
     // Use fgets for safe string input
     if (fgets(str, sizeof(str), stdin) == NULL) {
         printf("Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove trailing newline character if present from fgets

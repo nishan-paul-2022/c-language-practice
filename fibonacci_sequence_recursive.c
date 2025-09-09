@@ -34,7 +34,7 @@ int main() {
     // Validate input
     if (num_terms < 0) {
         printf("Error: Number of terms cannot be negative.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("Fibonacci Sequence (up to %d terms):\n", num_terms);

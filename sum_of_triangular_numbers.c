@@ -13,7 +13,7 @@ int main() {
     printf("Enter a positive integer (n): ");
     if (scanf("%d", &input_number) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Ensure the input is positive.

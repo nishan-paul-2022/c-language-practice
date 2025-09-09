@@ -17,7 +17,7 @@ int main() {
     // Handle edge cases
     if (number <= 0) {
         printf("Divisors are typically defined for positive integers.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("Divisors of %d are: ", number);

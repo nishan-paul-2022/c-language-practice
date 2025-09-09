@@ -14,7 +14,7 @@ int main() {
     // We expect 2 integers to be read.
     if (scanf("%d, %d", &start_num, &end_num) != 2) {
         printf("Error: Invalid input format. Please use 'start, end' format (e.g., 1, 100).\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("\nNumbers divisible by 7 between %d and %d are:\n", start_num, end_num);

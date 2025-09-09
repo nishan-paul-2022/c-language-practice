@@ -47,7 +47,7 @@ int main() {
     printf("Enter a global integer value to be used as a multiplier and divisor: ");
     if (scanf("%d", &global_multiplier_divisor) != 1) {
         fprintf(stderr, "Error: Invalid input for the global multiplier/divisor.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume any remaining characters on the line after the integer, including the newline
     while (getchar() != '\n');
@@ -56,7 +56,7 @@ int main() {
     printf("Enter two integers separated by a comma (e.g., 5, 12): ");
     if (scanf("%d, %d", &number1, &number2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume any remaining characters on the line after the second integer, including the newline
     while (getchar() != '\n');

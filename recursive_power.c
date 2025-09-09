@@ -33,7 +33,7 @@ int main() {
     // Added input validation for scanf.
     if (scanf("%d %d", &base, &exponent) != 2) {
         printf("Invalid input. Please enter two integers for base and exponent.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Calculate the power using the recursive function

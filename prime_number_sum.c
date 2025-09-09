@@ -31,7 +31,7 @@ int main() {
     printf("Enter the number of rows and columns for the matrix: ");
     if (scanf("%d %d", &rows, &cols) != 2 || rows <= 0 || cols <= 0) {
         printf("Invalid input. Please enter positive integers for rows and columns.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Dynamically allocate memory for the matrix
@@ -67,7 +67,7 @@ int main() {
                     free(matrix[k]);
                 }
                 free(matrix);
-                return 1; // Indicate an error
+                return 0;
             }
 
             // Check if the number is prime

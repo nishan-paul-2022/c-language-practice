@@ -18,7 +18,7 @@ int main() {
         fprintf(stderr, "Error: Invalid input. Please enter an integer for the number of rows.\n");
         // Clear the input buffer
         while (getchar() != '\n');
-        return 1; // Indicate an error
+        return 0;
     }
     // Consume the newline character left by scanf
     while (getchar() != '\n');
@@ -26,7 +26,7 @@ int main() {
     // Validate that the number of rows is non-negative
     if (num_rows < 0) {
         fprintf(stderr, "Error: Number of rows cannot be negative.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     
     // If num_rows is 0, print nothing or a message. For this task, we'll just exit.

@@ -13,7 +13,7 @@ int main() {
     // Use " %d" to consume any leading whitespace, including newlines
     if (scanf(" %d", &num_terms) != 1 || num_terms <= 0) {
         printf("Invalid input. Please enter a positive integer for the number of terms.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("Fibonacci Sequence:\n");

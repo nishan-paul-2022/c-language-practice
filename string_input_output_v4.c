@@ -11,7 +11,7 @@ int main(void) {
     // Read the string safely using fgets
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         fprintf(stderr, "Error reading the string.\n");
-        return 1; // Indicate an error
+        return 0;
     }
     // Remove the trailing newline character if present
     input_string[strcspn(input_string, "\n")] = 0;

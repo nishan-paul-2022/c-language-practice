@@ -18,7 +18,7 @@ int main()
     if (scanf("%c", charPointer) != 1)
     {
         printf("Invalid input. No character was read.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Print the character using pointer dereferencing

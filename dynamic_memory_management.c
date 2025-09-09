@@ -16,7 +16,7 @@ int main() {
     // Read the number of elements and validate input.
     if (scanf("%d", &num_elements) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Ensure the number of elements is positive.
@@ -33,7 +33,7 @@ int main() {
     // Check if memory allocation was successful.
     if (allocated_memory == NULL) {
         printf("Error: Memory allocation failed using calloc.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     printf("Memory allocated successfully for %d integers.\n", num_elements);
@@ -79,7 +79,7 @@ int main() {
         // If realloc fails, the original pointer 'allocated_memory' is still valid.
         // We should free it before exiting.
         free(allocated_memory);
-        return 1; // Indicate an error
+        return 0;
     } else {
         // If reallocation was successful, update the pointer.
         allocated_memory = temp_ptr;

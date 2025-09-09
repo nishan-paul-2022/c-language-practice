@@ -18,13 +18,13 @@ int main(void) {
     // Read the dimensions of the matrix and validate input
     if (scanf("%d %d", &rows, &cols) != 2) {
         printf("Invalid input for dimensions. Please enter two integers separated by a space.\\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Validate dimensions
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
         printf("Invalid dimensions. Rows and columns must be positive and within limits (max %d x %d).\\n", MAX_ROWS, MAX_COLS);
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -37,7 +37,7 @@ int main(void) {
             printf("Enter element matrix[%d][%d]: ", i, j);
             if (scanf("%d", &matrix[i][j]) != 1) {
                 printf("Invalid input for element matrix[%d][%d]. Please enter an integer.\\n", i, j);
-                return 1; // Indicate an error
+                return 0;
             }
             // Consume the newline character left by scanf
             while (getchar() != '\\n');
