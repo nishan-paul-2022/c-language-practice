@@ -3,16 +3,16 @@
  * Topic: String Manipulation, Loops, Character Handling (ctype.h), Arrays (for frequency counting)
  */
 
-#include <stdio.h> // Required for printf, fgets
-#include <string.h> // Required for strcspn
-#include <ctype.h> // Required for tolower, isalpha
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int main() {
     char input_string[100]; // Buffer to store the input string
     int frequency[26] = {0}; // Array to store frequency of 'a' through 'z', initialized to 0
-    int i; // Loop counter
+    int i;
 
-    // Prompt user for input and read the entire line safely
+    // Read input line
     printf("Enter a line of text: ");
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         printf("Error reading input.\n");
@@ -22,12 +22,11 @@ int main() {
     // Remove the trailing newline character if fgets read it
     input_string[strcspn(input_string, "\n")] = '\0';
 
-    // Iterate through each character in the input string
+    // Process each character
     for (i = 0; input_string[i] != '\0'; i++) {
         char current_char = input_string[i];
         char lower_char = tolower(current_char); // Convert to lowercase
 
-        // If the character is a lowercase alphabet, increment its frequency count
         if (lower_char >= 'a' && lower_char <= 'z') {
             frequency[lower_char - 'a']++;
         }
@@ -41,5 +40,5 @@ int main() {
         }
     }
 
-    return 0; // Indicate successful execution
+    return 0; // Success
 }

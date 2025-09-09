@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For abs()
+#include <stdlib.h>
 
 int main() {
     long int x, y, z;

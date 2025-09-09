@@ -76,7 +76,7 @@ int main() {
             printf("%d\n\n", decimal_value);
         }
         else {
-            // If an error occurred (e.g. invalid binary string), we might want to print an error message
+            // If an error occurred (e.g., invalid binary string), we might want to print an error message
             // or just exit without printing a result. The loop will break anyway.
         }
     }

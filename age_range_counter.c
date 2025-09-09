@@ -34,7 +34,7 @@ int main() {
             break;
         }
 
-        printf("Number of ages in range [50-60]: %d\n\n", countInRange);
+        printf("Number of ages in range 50-60: %d\n\n", countInRange);
 
         // Clear input buffer for the next iteration, if any
         while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));

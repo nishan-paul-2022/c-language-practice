@@ -40,7 +40,7 @@ int main() {
         printf("Enter the number to search for (or Ctrl+D to exit): ");
         if (scanf("%d", &target) != 1) {
             printf("\nExiting search program.\n");
-            break; // Exit loop if scanf fails (e.g. EOF)
+            break; // Exit loop if scanf fails (e.g., EOF)
         }
 
         int start = 0;

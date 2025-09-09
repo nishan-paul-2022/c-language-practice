@@ -47,7 +47,7 @@ int main(void)
     int n, r;
 
     // Prompt user for input
-    printf("Enter the values for n and r (e.g. '10 5' for C(10, 5)): ");
+    printf("Enter the values for n and r (e.g., '10 5' for C(10, 5)): ");
 
     // Read input. Using "%d %d" for space-separated input.
     if (scanf("%d %d", &n, &r) != 2)
