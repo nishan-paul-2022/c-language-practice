@@ -37,7 +37,7 @@ int main() {
             fprintf(stderr, "Error: Incomplete write of structure to file.\n");
         }
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Rewind the file pointer to the beginning of the file to read what was written.
@@ -52,7 +52,7 @@ int main() {
             fprintf(stderr, "Error: Could not read structure from file.\n");
         }
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Print the members of the structure

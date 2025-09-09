@@ -47,14 +47,14 @@ int main() {
     printf("Enter the size of the array: ");
     if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     // Dynamically allocate memory for the array
     int *numbers = (int *)malloc(arraySize * sizeof(int));
     if (numbers == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
-        return 1;
+        return 0;
     }
 
     inputArray(numbers, arraySize);

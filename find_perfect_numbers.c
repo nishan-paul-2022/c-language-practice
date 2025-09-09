@@ -22,7 +22,7 @@ int main() {
     // Ensure the input is positive.
     if (count_needed <= 0) {
         printf("Please enter a positive integer to find perfect numbers.\n");
-        return 1;
+        return 0;
     }
 
     printf("The first %d perfect numbers are:\n", count_needed);

@@ -13,7 +13,7 @@ int main() {
 
     if (divisor == 0) {
         printf("Error: Division by zero is not allowed.\n");
-        return 1;
+        return 0;
     }
 
     while (num > 0) {

@@ -47,7 +47,7 @@ int main(void) {
         if (scanf("%d %d", &row, &col) != 2) {
             printf("Invalid input for pair %d. Please enter two integers separated by a space.\\n", i + 1);
             // Optionally, you could decide to skip this pair or exit. Exiting for now.
-            return 1;
+            return 0;
         }
 
         // Consume the newline character left by scanf

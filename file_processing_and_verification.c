@@ -44,7 +44,7 @@ int main() {
             perror("Error writing to mine.txt");
             fclose(inputFile);
             fclose(mineFile);
-            return 1;
+            return 0;
         }
     }
 
@@ -53,7 +53,7 @@ int main() {
         perror("Error reading from input.txt");
         fclose(inputFile);
         fclose(mineFile);
-        return 1;
+        return 0;
     }
 
     // Close files after the first part
@@ -68,7 +68,7 @@ int main() {
         perror("Error opening output.txt for reading (reference file)");
         // If output.txt doesn't exist, we can't verify. Treat as an error or skip verification.
         // For this example, we'll treat it as an error as the original code implies its existence.
-        return 1;
+        return 0;
     }
 
     // Open mine.txt again for reading to compare
@@ -76,7 +76,7 @@ int main() {
     if (mineFileRead == NULL) {
         perror("Error opening mine.txt for reading (for comparison)");
         fclose(outputFile); // Close previously opened file
-        return 1;
+        return 0;
     }
 
     printf("\nVerifying mine.txt against output.txt:\n");

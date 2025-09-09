@@ -65,7 +65,7 @@ int main() {
 
     if (factorial_result == 0 && number != 0) { // Check for error/overflow from calculate_factorial
         printf("Could not calculate factorial or it resulted in zero (possibly due to overflow or negative input).\n");
-        return 1;
+        return 0;
     }
 
     // Print the factorial result

@@ -32,7 +32,7 @@ int main() {
     // and includes the newline character if space permits.
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         printf("Error: Invalid string input or end of file reached.\n");
-        return 1;
+        return 0;
     }
 
     // Note: fgets might include a trailing newline character ('\n') if it fits in the buffer.

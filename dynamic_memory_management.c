@@ -22,7 +22,7 @@ int main() {
     // Ensure the number of elements is positive.
     if (num_elements <= 0) {
         printf("Please enter a positive number of elements.\n");
-        return 1;
+        return 0;
     }
 
     // --- Dynamic Allocation using calloc ---
@@ -49,7 +49,7 @@ int main() {
         if (scanf("%d", &allocated_memory[index]) != 1) {
             printf("Invalid input for integer %d. Aborting.\n", index + 1);
             free(allocated_memory); // Free allocated memory before exiting.
-            return 1;
+            return 0;
         }
         // Consume the newline character after reading the integer.
         int c;

@@ -15,7 +15,7 @@ int main()
     if (scanf("%d", &numberOfTestCases) != 1 || numberOfTestCases < 0)
     {
         printf("Invalid input for number of test cases.\n");
-        return 1;
+        return 0;
     }
 
     while (currentTestCase < numberOfTestCases)

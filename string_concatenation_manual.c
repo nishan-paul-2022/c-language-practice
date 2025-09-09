@@ -17,7 +17,7 @@ int main() {
     printf("Enter the first string: ");
     if (fgets(string1, sizeof(string1), stdin) == NULL) {
         printf("Error reading input for string 1.\n");
-        return 1;
+        return 0;
     }
     string1[strcspn(string1, "\n")] = '\0'; // Remove trailing newline
 
@@ -25,7 +25,7 @@ int main() {
     printf("Enter the second string: ");
     if (fgets(string2, sizeof(string2), stdin) == NULL) {
         printf("Error reading input for string 2.\n");
-        return 1;
+        return 0;
     }
     string2[strcspn(string2, "\n")] = '\0'; // Remove trailing newline
 

@@ -68,7 +68,7 @@ int main() {
     printf("Enter your first name: ");
     if (fgets(user_data.first_name, sizeof(user_data.first_name), stdin) == NULL) {
         fprintf(stderr, "Error reading first name.\n");
-        return 1;
+        return 0;
     }
     user_data.first_name[strcspn(user_data.first_name, "\n")] = 0; // Remove trailing newline
 
@@ -76,7 +76,7 @@ int main() {
     printf("Enter your last name: ");
     if (fgets(user_data.last_name, sizeof(user_data.last_name), stdin) == NULL) {
         fprintf(stderr, "Error reading last name.\n");
-        return 1;
+        return 0;
     }
     user_data.last_name[strcspn(user_data.last_name, "\n")] = 0; // Remove trailing newline
 
@@ -84,18 +84,18 @@ int main() {
     printf("Enter your username: ");
     if (fgets(user_data.user_name, sizeof(user_data.user_name), stdin) == NULL) {
         fprintf(stderr, "Error reading username.\n");
-        return 1;
+        return 0;
     }
     user_data.user_name[strcspn(user_data.user_name, "\n")] = 0; // Remove trailing newline
 
     // Get and confirm Password
     printf("Enter password (max %d characters): ", (int)sizeof(user_data.password) - 1);
     password_input_status = read_password(user_data.password, sizeof(user_data.password));
-    if (password_input_status != 0) return 1; // Exit if password input failed
+    if (password_input_status != 0) return 0; // Exit if password input failed
 
     printf("Confirm password: ");
     password_input_status = read_password(user_data.repeat_password, sizeof(user_data.repeat_password));
-    if (password_input_status != 0) return 1; // Exit if password confirmation failed
+    if (password_input_status != 0) return 0; // Exit if password confirmation failed
 
     // Check if passwords match
     if (strcmp(user_data.password, user_data.repeat_password) != 0) {
@@ -112,7 +112,7 @@ int main() {
     printf("\tDay: ");
     if (scanf("%d", &user_data.birth_date.day) != 1) {
         fprintf(stderr, "Error reading day.\n");
-        return 1;
+        return 0;
     }
     // Basic validation for day (can be more robust)
     if (user_data.birth_date.day < 1 || user_data.birth_date.day > 31) {
@@ -123,7 +123,7 @@ int main() {
     printf("\tMonth: ");
     if (scanf("%d", &user_data.birth_date.month) != 1) {
         fprintf(stderr, "Error reading month.\n");
-        return 1;
+        return 0;
     }
     // Basic validation for month
     if (user_data.birth_date.month < 1 || user_data.birth_date.month > 12) {
@@ -134,7 +134,7 @@ int main() {
     printf("\tYear: ");
     if (scanf("%d", &user_data.birth_date.year) != 1) {
         fprintf(stderr, "Error reading year.\n");
-        return 1;
+        return 0;
     }
     // Basic validation for year (e.g., not in the far future or past)
     if (user_data.birth_date.year < 1900 || user_data.birth_date.year > 2025) { // Example range

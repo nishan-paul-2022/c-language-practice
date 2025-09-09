@@ -30,7 +30,7 @@ int main() {
             if (scanf("%d", &numbers[i]) != 1) {
                 printf("Invalid input. Exiting.\n");
                 free(numbers);  // Free allocated memory before exiting
-                return 1;
+                return 0;
             }
         }
 
@@ -38,7 +38,7 @@ int main() {
         if (scanf("%d", &targetNumber) != 1) {
             printf("Invalid input. Exiting.\n");
             free(numbers);  // Free allocated memory before exiting
-            return 1;
+            return 0;
         }
 
         printf("Occurrences of %d found at 1-based indices: ", targetNumber);

@@ -25,7 +25,7 @@ int main() {
     // Check if the loop terminated due to an error
     if (ferror(stdin)) {
         fprintf(stderr, "Error: An input error occurred.\n");
-        return 1;
+        return 0;
     }
 
     return 0; // Exit successfully

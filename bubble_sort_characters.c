@@ -22,7 +22,7 @@ int main(void) {
     // Validate input for array size
     if (scanf("%d", &array_size) != 1 || array_size <= 0 || array_size >= BUFFER_SIZE) {
         printf("Invalid input. Please enter a positive integer less than %d.\n", BUFFER_SIZE);
-        return 1;
+        return 0;
     }
     
     // Clear input buffer
@@ -32,7 +32,7 @@ int main(void) {
     int actual_count = get_valid_input(characters, array_size);
     if (actual_count != array_size) {
         printf("Error: Expected %d characters but got %d.\n", array_size, actual_count);
-        return 1;
+        return 0;
     }
     
     // Sort the characters using bubble sort

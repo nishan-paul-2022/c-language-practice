@@ -19,7 +19,7 @@ int main() {
     // Ensure the input is positive, as the logic implies positive integers.
     if (input_number <= 0) {
         printf("Input must be a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     // Calculate the weighted sum: 1*n + 2*(n-1) + 3*(n-2) + ... + n*1

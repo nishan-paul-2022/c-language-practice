@@ -67,12 +67,12 @@ int main() {
     printf("Enter the number of rows for the first pattern: ");
     if (scanf("%d", &rows1) != 1) {
         printf("Error: Invalid input for rows.\n");
-        return 1;
+        return 0;
     }
     printf("Enter the starting character: ");
     if (scanf(" %c", &char1) != 1) { // Space before %c to consume any leftover newline
         printf("Error: Invalid input for character.\n");
-        return 1;
+        return 0;
     }
 
     // Pattern 2: Left-aligned character triangle
@@ -80,12 +80,12 @@ int main() {
     printf("Enter the number of rows for the second pattern: ");
     if (scanf("%d", &rows2) != 1) {
         printf("Error: Invalid input for rows.\n");
-        return 1;
+        return 0;
     }
     printf("Enter the starting character: ");
     if (scanf(" %c", &char2) != 1) { // Space before %c
         printf("Error: Invalid input for character.\n");
-        return 1;
+        return 0;
     }
 
     // Pattern 3: Right-aligned number triangle
@@ -93,7 +93,7 @@ int main() {
     printf("Enter the number of rows for the third pattern: ");
     if (scanf("%d", &rows3) != 1) {
         printf("Error: Invalid input for rows.\n");
-        return 1;
+        return 0;
     }
 
     // Print the patterns

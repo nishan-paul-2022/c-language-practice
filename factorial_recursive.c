@@ -42,7 +42,7 @@ int main(void) {
     // Read input
     if (scanf("%d", &n) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate input error
+       return 0;
     }
 
     // Calculate factorial

@@ -14,13 +14,13 @@ int main() {
     printf("Enter the size of the sorted array: ");
     if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     array = (int *)malloc(arraySize * sizeof(int));
     if (array == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
-        return 1;
+        return 0;
     }
 
     printf("Enter %d sorted integers for the array:\n", arraySize);
@@ -28,7 +28,7 @@ int main() {
         if (scanf("%d", &array[i]) != 1) {
             printf("Invalid input. Exiting.\n");
             free(array);
-            return 1;
+            return 0;
         }
     }
 

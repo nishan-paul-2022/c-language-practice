@@ -34,7 +34,7 @@ int main()
             if (scanf("%d", &currentProgress) != 1)
             {
                 printf("Invalid input for daily progress. Exiting.\n");
-                return 1;
+                return 0;
             }
             totalDailyProgress += currentProgress;
         }

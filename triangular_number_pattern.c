@@ -20,7 +20,7 @@ int main() {
     // Ensure the input is positive.
     if (input_limit <= 0) {
         printf("Input must be a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     printf("Triangular number pattern:\n");

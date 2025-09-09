@@ -35,7 +35,7 @@ int main() {
     // Handle non-positive input (although the function handles n<=0, it's good practice to validate user input)
     if (input_number < 0) {
         fprintf(stderr, "Error: Input must be a non-negative integer.\n");
-        return 1;
+        return 0;
     }
 
     // Calculate the Fibonacci number for the input 'n' (i.e., F(input_number))

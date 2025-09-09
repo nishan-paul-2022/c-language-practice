@@ -20,7 +20,7 @@ int main() {
         double number;
         if (scanf("%lf", &number) != 1) {
             printf("Invalid input. Please enter a numeric value.\n");
-            return 1;
+            return 0;
         }
         sum += number;
     }

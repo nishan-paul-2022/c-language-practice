@@ -24,21 +24,21 @@ int main() {
     printf("Enter the number of elements for the array: ");
     if (scanf("%d", &array_size) != 1) {
         fprintf(stderr, "Error: Invalid input for array size.\n");
-        return 1;
+        return 0;
     }
     // Clear input buffer
     while (getchar() != '\n');
 
     if (array_size <= 0) {
         fprintf(stderr, "Error: Array size must be positive.\n");
-        return 1;
+        return 0;
     }
 
     // Allocate memory for array
     data_array = (int *)malloc(array_size * sizeof(int));
     if (data_array == NULL) {
         fprintf(stderr, "Error: Memory allocation failed.\n");
-        return 1;
+        return 0;
     }
 
     // Read elements into the array
@@ -48,7 +48,7 @@ int main() {
         if (scanf("%d", &data_array[i]) != 1) {
             fprintf(stderr, "Error: Invalid input for array element %d.\n", i);
             free(data_array); // Free allocated memory before exiting
-            return 1;
+            return 0;
         }
         // Clear input buffer
         while (getchar() != '\n');

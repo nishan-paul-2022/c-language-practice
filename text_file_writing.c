@@ -23,7 +23,7 @@ int main() {
     if (fprintf(output_file_ptr, "Formatted number: %d\n", number_to_write) < 0) {
         perror("Error writing formatted string with fprintf");
         fclose(output_file_ptr);
-        return 1;
+        return 0;
     }
 
     // Write a string using fputs
@@ -31,7 +31,7 @@ int main() {
     if (fputs("String written with fputs.\n", output_file_ptr) == EOF) {
         perror("Error writing string with fputs");
         fclose(output_file_ptr);
-        return 1;
+        return 0;
     }
 
     // Write a single character using putc
@@ -39,13 +39,13 @@ int main() {
     if (putc(char_to_write, output_file_ptr) == EOF) {
         perror("Error writing character with putc");
         fclose(output_file_ptr);
-        return 1;
+        return 0;
     }
     // Add a newline after the character for better readability in the file
     if (putc('\n', output_file_ptr) == EOF) {
         perror("Error writing newline after putc");
         fclose(output_file_ptr);
-        return 1;
+        return 0;
     }
 
 

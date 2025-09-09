@@ -15,13 +15,13 @@ int main() {
     // Validate input
     if (scanf("%d", &num_terms) != 1) {
         printf("Error: Invalid input. Please enter an integer for the number of terms.\n");
-        return 1;
+        return 0;
     }
 
     // Check for negative terms
     if (num_terms < 0) {
         printf("Error: Number of terms cannot be negative.\n");
-        return 1;
+        return 0;
     }
 
     // Calculate sum using iterative approach

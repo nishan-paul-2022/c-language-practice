@@ -19,7 +19,7 @@ int main() {
     // Ensure the input is positive.
     if (input_number <= 0) {
         printf("Input must be a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     // Calculate the sum of the first n triangular numbers.

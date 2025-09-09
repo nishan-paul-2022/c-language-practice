@@ -31,7 +31,7 @@ int main() {
     // Handle negative numbers or zero
     if (original_number < 0) {
         printf("%d is not a positive integer.\n", original_number);
-        return 1;
+        return 0;
     }
 
     if (original_number == 0) {

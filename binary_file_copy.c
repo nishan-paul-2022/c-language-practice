@@ -15,7 +15,7 @@ int main() {
     source_file_ptr = fopen("files/img-01.jpg", "rb");
     if (source_file_ptr == NULL) {
         perror("Error opening source file");
-        return 1;
+        return 0;
     }
 
     // Open destination file in binary write mode
@@ -23,7 +23,7 @@ int main() {
     if (destination_file_ptr == NULL) {
         perror("Error opening destination file");
         fclose(source_file_ptr);
-        return 1;
+        return 0;
     }
 
     // Copy bytes from source to destination
@@ -34,7 +34,7 @@ int main() {
             perror("Error writing byte to destination file");
             fclose(source_file_ptr);
             fclose(destination_file_ptr);
-            return 1;
+            return 0;
         }
     }
 
@@ -43,7 +43,7 @@ int main() {
         perror("Error reading from source file");
         fclose(source_file_ptr);
         fclose(destination_file_ptr);
-        return 1;
+        return 0;
     }
 
     // Cleanup: close both file handles

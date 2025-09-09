@@ -76,7 +76,7 @@ int read_date(struct BirthDate *date) {
     printf("\tDay: ");
     if (scanf("%d", &date->day) != 1) {
         fprintf(stderr, "Error reading day.\n");
-        return 1;
+        return 0;
     }
     if (date->day < 1 || date->day > 31) {
         printf("Warning: Day seems out of range (1-31).\n");
@@ -87,7 +87,7 @@ int read_date(struct BirthDate *date) {
     printf("\tMonth: ");
     if (scanf("%d", &date->month) != 1) {
         fprintf(stderr, "Error reading month.\n");
-        return 1;
+        return 0;
     }
     if (date->month < 1 || date->month > 12) {
         printf("Warning: Month seems out of range (1-12).\n");
@@ -98,7 +98,7 @@ int read_date(struct BirthDate *date) {
     printf("\tYear: ");
     if (scanf("%d", &date->year) != 1) {
         fprintf(stderr, "Error reading year.\n");
-        return 1;
+        return 0;
     }
     // Example year validation range
     if (date->year < 1900 || date->year > 2025) {
@@ -121,7 +121,7 @@ int main() {
     printf("Enter your first name: ");
     if (fgets(user_data.first_name, sizeof(user_data.first_name), stdin) == NULL) {
         fprintf(stderr, "Error reading first name.\n");
-        return 1;
+        return 0;
     }
     user_data.first_name[strcspn(user_data.first_name, "\n")] = 0; // Remove trailing newline
 
@@ -129,7 +129,7 @@ int main() {
     printf("Enter your last name: ");
     if (fgets(user_data.last_name, sizeof(user_data.last_name), stdin) == NULL) {
         fprintf(stderr, "Error reading last name.\n");
-        return 1;
+        return 0;
     }
     user_data.last_name[strcspn(user_data.last_name, "\n")] = 0; // Remove trailing newline
 
@@ -137,18 +137,18 @@ int main() {
     printf("Enter your username: ");
     if (fgets(user_data.user_name, sizeof(user_data.user_name), stdin) == NULL) {
         fprintf(stderr, "Error reading username.\n");
-        return 1;
+        return 0;
     }
     user_data.user_name[strcspn(user_data.user_name, "\n")] = 0; // Remove trailing newline
 
     // Get and confirm User's Password
     printf("Enter password (max %d characters): ", (int)sizeof(user_data.password) - 1);
     password_input_status = read_password(user_data.password, sizeof(user_data.password));
-    if (password_input_status != 0) return 1;
+    if (password_input_status != 0) return 0;
 
     printf("Confirm password: ");
     password_input_status = read_password(user_data.repeat_password, sizeof(user_data.repeat_password));
-    if (password_input_status != 0) return 1;
+    if (password_input_status != 0) return 0;
 
     // Check if passwords match
     if (strcmp(user_data.password, user_data.repeat_password) != 0) {
@@ -160,27 +160,27 @@ int main() {
 
     // Get User's Birthdate
     printf("Enter your birthdate:\n");
-    if (read_date(&user_data.birth_date) != 0) return 1;
+    if (read_date(&user_data.birth_date) != 0) return 0;
 
     // Ask about having a son
     printf("Do you have a son? (Y/N): ");
     // Read the single character response, consuming the newline afterwards
     if (scanf(" %c", &has_son) != 1) { // Note the space before %c to consume leading whitespace/newline
         fprintf(stderr, "Error reading son information query.\n");
-        return 1;
+        return 0;
     }
     consume_newline(); // Consume the newline after reading the character
 
     // If the user has a son, collect his information
     if (has_son == 'Y' || has_son == 'y') {
         printf("Enter your son's birthdate:\n");
-        if (read_date(&son_data.son_birth_date) != 0) return 1;
+        if (read_date(&son_data.son_birth_date) != 0) return 0;
 
         // Get Son's Phone Number
         printf("Enter your son's phone number: ");
         if (fgets(son_data.phone, sizeof(son_data.phone), stdin) == NULL) {
             fprintf(stderr, "Error reading son's phone number.\n");
-            return 1;
+            return 0;
         }
         son_data.phone[strcspn(son_data.phone, "\n")] = 0; // Remove trailing newline
 
@@ -188,7 +188,7 @@ int main() {
         printf("Enter your son's home address: ");
         if (fgets(son_data.address, sizeof(son_data.address), stdin) == NULL) {
             fprintf(stderr, "Error reading son's home address.\n");
-            return 1;
+            return 0;
         }
         son_data.address[strcspn(son_data.address, "\n")] = 0; // Remove trailing newline
         

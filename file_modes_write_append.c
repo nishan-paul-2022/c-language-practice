@@ -22,7 +22,7 @@ int main() {
     if (fprintf(file_ptr, "%s", first_part) < 0) {
         perror("Error writing first part to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     printf("Wrote first part using 'w' mode.\n");
 
@@ -43,7 +43,7 @@ int main() {
     if (fprintf(file_ptr, "%s", second_part) < 0) {
         perror("Error writing second part to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     printf("Wrote second part using 'a' mode.\n");
 

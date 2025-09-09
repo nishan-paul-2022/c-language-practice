@@ -51,14 +51,14 @@ int main() {
     printf("Enter the size of the array: ");
     if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     // Dynamically allocate memory for the array
     numbers = (int *)malloc(arraySize * sizeof(int));
     if (numbers == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
-        return 1;
+        return 0;
     }
 
     printf("Enter %d integer elements for the array:\n", arraySize);
@@ -66,7 +66,7 @@ int main() {
         if (scanf("%d", &numbers[i]) != 1) {
             printf("Invalid input. Exiting.\n");
             free(numbers);
-            return 1;
+            return 0;
         }
     }
 
@@ -88,7 +88,7 @@ int main() {
     if (scanf("%d", &targetNumber) != 1) {
         printf("Invalid input for search target. Exiting.\n");
         free(numbers);
-        return 1;
+        return 0;
     }
 
     // Perform binary search on the sorted array

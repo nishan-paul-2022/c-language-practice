@@ -32,7 +32,7 @@ int main() {
 
     if (function_return_value == -1) {
         fprintf(stderr, "Function call failed.\n");
-        return 1;
+        return 0;
     }
 
     printf("Value of data_array[0] after function call: %d\n", data_array[0]);

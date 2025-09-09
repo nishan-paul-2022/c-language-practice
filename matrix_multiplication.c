@@ -18,13 +18,13 @@ int main(void) {
     // Read dimensions for the first matrix and validate
     if (scanf("%d %d", &R1, &C1_R2) != 2) {
         printf("Invalid input for Matrix 1 dimensions. Please enter two integers separated by a space.\\n");
-        return 1;
+        return 0;
     }
 
     // Validate dimensions for Matrix 1
     if (R1 <= 0 || R1 > MAX_DIM || C1_R2 <= 0 || C1_R2 > MAX_DIM) {
         printf("Invalid dimensions for Matrix 1. Rows and columns must be positive and within limits (max %d x %d).\\n", MAX_DIM, MAX_DIM);
-        return 1;
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -34,13 +34,13 @@ int main(void) {
     // Read dimensions for the second matrix and validate
     if (scanf("%d %d", &C1_R2, &C2) != 2) { // Note: C1_R2 must match for multiplication
         printf("Invalid input for Matrix 2 dimensions. Please enter two integers separated by a space.\\n");
-        return 1;
+        return 0;
     }
 
     // Validate dimensions for Matrix 2
     if (C1_R2 <= 0 || C1_R2 > MAX_DIM || C2 <= 0 || C2 > MAX_DIM) {
         printf("Invalid dimensions for Matrix 2. Rows and columns must be positive and within limits (max %d x %d).\\n", MAX_DIM, MAX_DIM);
-        return 1;
+        return 0;
     }
 
     // Check if matrix multiplication is possible
@@ -57,7 +57,7 @@ int main(void) {
             printf("Enter element matrix1[%d][%d]: ", i, j);
             if (scanf("%lf", &matrix1[i][j]) != 1) {
                 printf("Invalid input for element matrix1[%d][%d]. Please enter a double.\\n", i, j);
-                return 1;
+                return 0;
             }
             // Consume the newline character left by scanf
             while (getchar() != '\\n');
@@ -71,7 +71,7 @@ int main(void) {
             printf("Enter element matrix2[%d][%d]: ", i, j);
             if (scanf("%lf", &matrix2[i][j]) != 1) {
                 printf("Invalid input for element matrix2[%d][%d]. Please enter a double.\\n", i, j);
-                return 1;
+                return 0;
             }
             // Consume the newline character left by scanf
             while (getchar() != '\\n');

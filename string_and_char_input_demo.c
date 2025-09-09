@@ -28,7 +28,7 @@ int main(void) {
     printf("Enter a string: ");
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input string.\\n");
-        return 1;
+        return 0;
     }
     // Remove trailing newline from fgets
     input_string[strcspn(input_string, "\\n")] = 0;
@@ -39,7 +39,7 @@ int main(void) {
     // before reading the actual character.
     if (scanf(" %c", &input_char) != 1) { // Note the space before %c
         printf("Error reading input character.\\n");
-        return 1;
+        return 0;
     }
 
     // Consume any remaining characters on the line after the character, including the newline
@@ -53,7 +53,7 @@ int main(void) {
     printf("\\nEnter another string: ");
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading second input string.\\n");
-        return 1;
+        return 0;
     }
     input_string[strcspn(input_string, "\\n")] = 0;
 

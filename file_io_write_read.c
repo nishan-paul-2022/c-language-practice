@@ -28,12 +28,12 @@ int main() {
     if (putc(char1, file_ptr) == EOF) {
         perror("Error writing first character to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     if (putc(char2, file_ptr) == EOF) {
         perror("Error writing second character to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Rewind the file pointer to the beginning of the file to read what was written.
@@ -52,7 +52,7 @@ int main() {
             fprintf(stderr, "Error: Could not read first character from file.\n");
         }
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     read_char1 = (char)temp_read_char1;
 
@@ -64,7 +64,7 @@ int main() {
             fprintf(stderr, "Error: Could not read second character from file.\n");
         }
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     read_char2 = (char)temp_read_char2;
 

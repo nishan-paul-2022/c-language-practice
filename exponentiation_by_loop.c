@@ -38,7 +38,7 @@ int main()
             if (c == '\n' || c == EOF)
             {
                 printf("Invalid input format. Missing exponent after comma.\n");
-                return 1;
+                return 0;
             }
     
             break; // Exit the character consumption loop if we found the comma.

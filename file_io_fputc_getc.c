@@ -21,7 +21,7 @@ int main() {
     if (fputc(char_to_write, file_ptr) == EOF) {
         perror("Error writing character to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     printf("Wrote character '%c' to file.\n", char_to_write);
 
@@ -41,7 +41,7 @@ int main() {
             printf("File is empty or could not read the first character after writing.\n");
         }
         fclose(file_ptr);
-        return 0; or empty file
+        return 0;
     }
 
     // Print the character read to the console

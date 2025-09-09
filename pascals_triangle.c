@@ -35,13 +35,13 @@ int main(void) {
     // Read input
     if (scanf("%d", &num_rows) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1; // Indicate input error
+       return 0;
     }
 
     // Validate input: Pascal's triangle is typically for non-negative rows.
     if (num_rows < 0) {
         printf("Number of rows cannot be negative.\n");
-        return 1; // Indicate invalid input
+        return 0;
     }
 
     printf("\n"); // Add a blank line for better formatting

@@ -11,7 +11,7 @@ int main() {
     printf("Enter the maximum string length (n): ");
     if (scanf("%d", &max_len) != 1) {
         fprintf(stderr, "Error: Invalid input for maximum length.\n");
-        return 1;
+        return 0;
     }
 
     // Consume the newline character left by scanf to prepare for fgets
@@ -21,7 +21,7 @@ int main() {
     // Validate the maximum length
     if (max_len <= 0) {
         fprintf(stderr, "Error: Maximum length must be positive.\n");
-        return 1;
+        return 0;
     }
 
     char input_string[max_len + 1]; // +1 for null terminator
@@ -32,7 +32,7 @@ int main() {
     // Read the string using fgets for safety
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read string.\n");
-        return 1;
+        return 0;
     }
 
     // Remove the trailing newline character if it exists

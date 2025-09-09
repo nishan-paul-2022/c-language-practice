@@ -22,7 +22,7 @@ int main(void) {
     // Read input safely using fgets
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return EXIT_FAILURE; // Indicate input error
+        return EXIT_FAILURE; 
     }
 
     // Open the file in "w+" mode (write and read)

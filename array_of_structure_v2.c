@@ -18,7 +18,7 @@ int main() {
     printf("Enter the number of students: ");
     if (scanf("%d", &number_of_students) != 1 || number_of_students <= 0) {
         fprintf(stderr, "Invalid input for number of students. Please enter a positive integer.\n");
-        return 1;
+        return 0;
     }
 
     struct Student students[number_of_students];

@@ -33,30 +33,30 @@ int main() {
     if (scanf(" %c", &start_char_for_rows) != 1) {
         fprintf(stderr, "Error: Invalid input for START_CHAR.\n");
         consume_newline();
-        return 1;
+        return 0;
     }
     // Consume the comma and any whitespace after the first character
     if (scanf(" , %c", &end_char_for_rows) != 1) {
         fprintf(stderr, "Error: Invalid input for ROW_END_CHAR.\n");
         consume_newline();
-        return 1;
+        return 0;
     }
     // Consume the comma and any whitespace after the second character
     if (scanf(" , %c", &end_char_for_cols) != 1) {
         fprintf(stderr, "Error: Invalid input for COLUMN_END_CHAR.\n");
         consume_newline();
-        return 1;
+        return 0;
     }
     consume_newline(); // Consume any remaining newline character
 
     // Validate that the characters define valid ranges
     if (start_char_for_rows > end_char_for_rows) {
         fprintf(stderr, "Error: START_CHAR must be less than or equal to ROW_END_CHAR.\n");
-        return 1;
+        return 0;
     }
     if ('A' > end_char_for_cols) { // Assuming columns start from 'A'
         fprintf(stderr, "Error: COLUMN_END_CHAR must be 'A' or later.\n");
-        return 1;
+        return 0;
     }
 
     // Outer loop iterates through rows, from start_char_for_rows to end_char_for_rows

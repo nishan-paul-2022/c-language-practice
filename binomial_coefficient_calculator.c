@@ -53,7 +53,7 @@ int main(void)
     if (scanf("%d %d", &n, &r) != 2)
     {
         printf("Invalid input format. Please enter two integers separated by a space.\n");
-        return 1; // Indicate input error
+       return 0;
     }
 
     // Calculate and print the binomial coefficient

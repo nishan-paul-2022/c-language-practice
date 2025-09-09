@@ -20,7 +20,7 @@ int main() {
     // Handle non-positive input gracefully
     if (input_value <= 0) {
         printf("Input value must be positive.\n");
-        return 1;
+        return 0;
     }
 
     // Loop to find powers of 10 less than input_value

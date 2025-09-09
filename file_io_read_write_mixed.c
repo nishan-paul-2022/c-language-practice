@@ -27,7 +27,7 @@ int main() {
     printf("Enter filename (e.g., my_data.txt): ");
     if (fgets(filename, MAX_FILENAME_LEN, stdin) == NULL) {
         perror("Error reading filename");
-        return 1;
+        return 0;
     }
     // Remove trailing newline character from filename if present
     filename[strcspn(filename, "\n")] = 0;
@@ -36,7 +36,7 @@ int main() {
     file_ptr = fopen(filename, "w");
     if (file_ptr == NULL) {
         perror("Error opening file for writing");
-        return 1;
+        return 0;
     }
 
     // Get string input from user
@@ -44,7 +44,7 @@ int main() {
     if (fgets(input_string, MAX_STRING_LEN, stdin) == NULL) {
         perror("Error reading string");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     // Remove trailing newline from input_string
     input_string[strcspn(input_string, "\n")] = 0;
@@ -55,7 +55,7 @@ int main() {
     if (scanf(" %c", &read_char) != 1) { // Note: Using read_char as variable name here
         perror("Error reading character");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     // Consume any remaining characters on the line after the character, including the newline
     while (getchar() != '\n');
@@ -66,7 +66,7 @@ int main() {
     if (scanf("%d %f", &input_int, &input_float) != 2) {
         perror("Error reading integer and float");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     // Consume any remaining characters on the line after the float, including the newline
     while (getchar() != '\n');
@@ -78,22 +78,22 @@ int main() {
     if (fprintf(file_ptr, "%s\n", input_string) < 0) {
         perror("Error writing string to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     if (fprintf(file_ptr, "%c\n", read_char) < 0) { // Writing char with newline
         perror("Error writing character to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     if (fprintf(file_ptr, "%d\n", input_int) < 0) {
         perror("Error writing integer to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     if (fprintf(file_ptr, "%f\n", input_float) < 0) {
         perror("Error writing float to file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Close the file after writing
@@ -105,7 +105,7 @@ int main() {
     file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for reading");
-        return 1;
+        return 0;
     }
 
     printf("\nReading data from '%s':\n", filename);
@@ -114,7 +114,7 @@ int main() {
     if (fgets(read_string, MAX_STRING_LEN, file_ptr) == NULL) {
         perror("Error reading string from file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     read_string[strcspn(read_string, "\n")] = 0; // Remove newline
 
@@ -122,13 +122,13 @@ int main() {
     if (fscanf(file_ptr, "%c", &read_char_from_file) != 1) {
         perror("Error reading character from file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     // Consume the newline character after reading the character
     if (fgetc(file_ptr) == EOF && ferror(file_ptr)) { // Check for error after consuming newline
         perror("Error consuming newline after character read");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
 
@@ -136,20 +136,20 @@ int main() {
     if (fscanf(file_ptr, "%d", &read_int) != 1) {
         perror("Error reading integer from file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
     // Consume the newline character after reading the integer
     if (fgetc(file_ptr) == EOF && ferror(file_ptr)) {
         perror("Error consuming newline after integer read");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Read the float
     if (fscanf(file_ptr, "%f", &read_float_from_file) != 1) {
         perror("Error reading float from file");
         fclose(file_ptr);
-        return 1;
+        return 0;
     }
 
     // Display the data read from the file

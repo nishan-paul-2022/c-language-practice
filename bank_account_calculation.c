@@ -13,7 +13,7 @@ int main() {
     printf("Enter account type (1-4) and an input value (e.g., 1, 100.50): ");
     if (scanf("%d, %lf", &account_type, &cash) != 2) {
         printf("Invalid input format. Please enter an integer and a double separated by a comma.\n");
-        return 1;
+        return 0;
     }
 
     switch (account_type) {

@@ -12,7 +12,7 @@ int main() {
     printf("Enter the maximum string length (n): ");
     if (scanf("%d", &max_len) != 1) {
         fprintf(stderr, "Error: Invalid input for maximum length.\n");
-        return 1;
+        return 0;
     }
 
     // Consume the newline character left by scanf to prepare for fgets
@@ -22,14 +22,14 @@ int main() {
     // Validate the maximum length
     if (max_len <= 0) {
         fprintf(stderr, "Error: Maximum length must be positive.\n");
-        return 1;
+        return 0;
     }
 
     // Dynamically allocate memory for the string buffer
     char *input_string = (char *)malloc((max_len + 1) * sizeof(char));
     if (input_string == NULL) {
         fprintf(stderr, "Error: Memory allocation failed.\n");
-        return 1;
+        return 0;
     }
 
     // Prompt user for the string
@@ -39,7 +39,7 @@ int main() {
     if (fgets(input_string, max_len + 1, stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read string.\n");
         free(input_string); // Free allocated memory before exiting
-        return 1;
+        return 0;
     }
 
     // Remove the trailing newline character if it exists

@@ -20,7 +20,7 @@ int main() {
         // Handle non-positive input, though original code didn't specify.
         // Assuming positive integers are expected based on ranges.
         printf("Input must be a positive integer.\n");
-        return 1;
+        return 0;
     } else if (n <= 9) {
         // Range 1: 1 to 9
         // Output is the number itself.
@@ -61,7 +61,7 @@ int main() {
         printf("Input %d is outside the defined processing ranges (1-198).\n", n);
         // If we wanted to extend the pattern, we would add more else if blocks here.
         // For now, we'll just inform the user.
-        return 1; // Indicate that the input was out of range for defined processing.
+        return 0; // Indicate that the input was out of range for defined processing.
     }
 
     return 0;
