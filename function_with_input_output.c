@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function that takes two integers, reads another integer from input,
 // calculates the product of their sum and the read integer, prints the product,

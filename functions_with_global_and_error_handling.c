@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Global variable to be used by functions.
 // It's generally better to pass such values as parameters, but we'll keep it global

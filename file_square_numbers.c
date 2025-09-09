@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE, perror
+#include <stdlib.h>
 
 int main() {
     FILE *input_file_ptr = NULL;  // Pointer for the input file

@@ -4,7 +4,7 @@
  * Topic: Basic I/O, Conditional Operator (Ternary), sizeof Operator, Data Types
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     float number1; // First floating-point number

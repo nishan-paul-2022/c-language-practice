@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // For pow() function
+#include <math.h>
 
 /*
  * Purpose: Calculates the sum of a geometric series (x^0 + x^1 + ... + x^n).

@@ -3,7 +3,7 @@
  * Topic: Number Theory, GCD, LCM, Input Handling
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS and EXIT_FAILURE
+#include <stdlib.h>
 
 // Function to calculate GCD using the Euclidean algorithm
 long int calculate_gcd(long int a, long int b) {

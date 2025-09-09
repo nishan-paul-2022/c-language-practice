@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS, perror
+#include <stdlib.h>
 
 int main() {
     FILE *file_ptr = NULL; // File pointer

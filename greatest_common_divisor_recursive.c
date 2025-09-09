@@ -3,7 +3,7 @@
  * Topic: Recursion, Arithmetic Operators (Modulo)
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 // Recursive function to find the GCD of two numbers
 // This implementation uses the property that GCD(a, b) = GCD(b, a % b)

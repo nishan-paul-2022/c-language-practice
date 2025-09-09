@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
+#include <stdlib.h>
 
 #define FILENAME "FH_feof.txt"
 #define BUFFER_SIZE 100

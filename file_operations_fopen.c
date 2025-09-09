@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
-#include <string.h> // For strlen
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
     FILE *file_pointer; // File pointer to manage the file stream

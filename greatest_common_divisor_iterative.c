@@ -3,7 +3,7 @@
  * Topic: Loops, Conditional Statements, Arithmetic Operators (Modulo)
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int num1, num2; // Two integer numbers for which to find the GCD

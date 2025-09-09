@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE, perror
-#include <string.h> // For strlen (to remove newline from fgets)
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
     FILE *output_file_ptr = NULL; // Pointer for the output file

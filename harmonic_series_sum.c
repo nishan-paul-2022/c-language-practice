@@ -3,7 +3,7 @@
  * Topic: Loops, Floating-point Arithmetic, Type Casting
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int n_terms; // Number of terms for the harmonic series

@@ -4,8 +4,8 @@
  * Topic: Loops, Conditional Statements, Arithmetic Operators (Modulo), Absolute Value
  */
 
-#include <stdio.h>  // Required for printf and scanf
-#include <stdlib.h> // Required for abs()
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int num1, num2; // Two integer numbers for which to find the GCD

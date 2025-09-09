@@ -4,7 +4,7 @@
  * Topic: Conditional Operator (Ternary), Basic I/O, Data Types
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int num1, num2, num3; // Three integer numbers to compare

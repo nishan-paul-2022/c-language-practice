@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <string.h> // For strcspn
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_FILENAME_LEN 100
 #define MAX_STRING_LEN 100

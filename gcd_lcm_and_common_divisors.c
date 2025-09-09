@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For abs()
+#include <stdlib.h>
 
 // Function to calculate GCD using Euclidean algorithm
 long int calculateGCD(long int num1, long int num2)

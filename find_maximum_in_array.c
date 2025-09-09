@@ -4,8 +4,8 @@
  * Topic: Arrays, Loops, Conditional Statements, Finding Maximum
  */
 
-#include <stdio.h> // Required for printf and scanf
-#include <stdlib.h> // Required for malloc and free (for dynamic array if VLA is not desired)
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int num_elements; // Number of elements in the array

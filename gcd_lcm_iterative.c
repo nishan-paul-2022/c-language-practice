@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function to calculate the Greatest Common Divisor (GCD) of two non-negative integers iteratively.
 // Uses the Euclidean algorithm.

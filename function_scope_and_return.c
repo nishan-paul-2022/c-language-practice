@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function that returns a fixed integer value.
 // It defines its own local variable, demonstrating that it does not affect

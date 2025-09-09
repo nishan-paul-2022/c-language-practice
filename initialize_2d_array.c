@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 #define MAX_DIMENSION 100 // Define a maximum dimension for the square matrix to avoid excessively large VLAs
 

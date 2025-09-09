@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For abs() function
-#include <math.h>   // Included for completeness, though abs() is preferred for integers
+#include <stdlib.h>
+#include <math.h>
 
 // Function to calculate the sum of two integers
 int sum(int a, int b) {

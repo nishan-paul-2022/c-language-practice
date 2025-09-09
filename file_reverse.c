@@ -3,7 +3,7 @@
  * Topic: File I/O, File Reversal
  */
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 int main() {
     FILE *inputFile = NULL;

@@ -3,7 +3,7 @@
  * Topic: Number Bases (Hexadecimal, Octal), printf Formatting
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS
+#include <stdlib.h>
 
 int main() {
     int hexValue1;

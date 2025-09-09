@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
-#include <limits.h> // For INT_MAX, INT_MIN
+#include <stdlib.h>
+#include <limits.h>
 
 int main() {
     int num_elements;           // Number of elements in the input array.

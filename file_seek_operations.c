@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE, EXIT_SUCCESS
-#include <string.h> // For strlen (if needed for input handling)
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
     FILE *file_ptr = NULL;          // File pointer

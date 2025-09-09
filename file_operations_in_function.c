@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
-#include <string.h> // For strcat and other string functions
+#include <stdlib.h>
+#include <string.h>
 
 #define FILENAME_BUFFER_SIZE 100
 #define MODE_BUFFER_SIZE 10

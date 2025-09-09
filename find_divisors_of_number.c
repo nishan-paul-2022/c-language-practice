@@ -3,8 +3,8 @@
  * Topic: Loops, Conditional Statements, Mathematical Functions (sqrt)
  */
 
-#include <stdio.h> // Required for printf and scanf
-#include <math.h>  // Required for sqrt()
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     int number; // The integer number for which to find divisors
