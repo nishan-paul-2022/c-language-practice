@@ -50,7 +50,7 @@ int read_password(char pass_cpy[], int buffer_size) {
             fprintf(stderr, "\nError: Password too long. Maximum %d characters allowed.\n", buffer_size - 1);
             // Clear the rest of the input buffer to prevent issues with subsequent reads
             while ((ch = getchar()) != '\n' && ch != EOF);
-            return 1; // Indicate error
+            return 0;
         }
     }
     pass_cpy[i] = '\0'; // Null-terminate the password string

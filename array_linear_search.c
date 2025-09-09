@@ -22,7 +22,7 @@ int main() {
         numbers = (int *)malloc(arraySize * sizeof(int));
         if (numbers == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
-            return 1; // Indicate error
+            return 0;
         }
 
         printf("Enter %d integers for the array:\n", arraySize);
