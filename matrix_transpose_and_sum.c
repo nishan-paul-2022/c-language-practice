@@ -11,7 +11,7 @@
 
 int main(void) {
     int rows, cols;
-    int rowIndexToSum, colIndexToSum;
+    int row_index_to_sum, col_index_to_sum;
     int sum = 0;
 
     // Prompt for and read the dimensions of the matrix
@@ -69,19 +69,19 @@ int main(void) {
 
     // Prompt for row or column index to sum
     printf("\nEnter a row index (0 to %d) to sum its elements, or -1 to skip row sum: ", rows - 1);
-    scanf("%d", &rowIndexToSum);
+    scanf("%d", &row_index_to_sum);
     while (getchar() != '\n'); // Consume newline
 
-    if (rowIndexToSum != -1) {
+    if (row_index_to_sum != -1) {
         // Validate row index
-        if (rowIndexToSum < 0 || rowIndexToSum >= rows) {
+        if (row_index_to_sum < 0 || row_index_to_sum >= rows) {
             fprintf(stderr, "Error: Row index out of bounds.\n");
         } else {
             // Sum elements of the specified row
             for (int j = 0; j < cols; j++) {
-                sum += matrix[rowIndexToSum][j];
+                sum += matrix[row_index_to_sum][j];
             }
-            printf("Sum of elements in row %d: %d\n", rowIndexToSum, sum);
+            printf("Sum of elements in row %d: %d\n", row_index_to_sum, sum);
         }
     }
 
@@ -89,19 +89,19 @@ int main(void) {
     sum = 0;
 
     printf("\nEnter a column index (0 to %d) to sum its elements, or -1 to skip column sum: ", cols - 1);
-    scanf("%d", &colIndexToSum);
+    scanf("%d", &col_index_to_sum);
     while (getchar() != '\n'); // Consume newline
 
-    if (colIndexToSum != -1) {
+    if (col_index_to_sum != -1) {
         // Validate column index
-        if (colIndexToSum < 0 || colIndexToSum >= cols) {
+        if (col_index_to_sum < 0 || col_index_to_sum >= cols) {
             fprintf(stderr, "Error: Column index out of bounds.\n");
         } else {
             // Sum elements of the specified column
             for (int i = 0; i < rows; i++) {
-                sum += matrix[i][colIndexToSum];
+                sum += matrix[i][col_index_to_sum];
             }
-            printf("Sum of elements in column %d: %d\n", colIndexToSum, sum);
+            printf("Sum of elements in column %d: %d\n", col_index_to_sum, sum);
         }
     }
 

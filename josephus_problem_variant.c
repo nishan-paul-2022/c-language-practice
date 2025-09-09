@@ -7,29 +7,29 @@
 
 int main()
 {
-    int numberOfTestCases;
-    int currentTestCase = 0;
+    int number_of_test_cases;
+    int current_test_case = 0;
     
     // Read the number of test cases
     printf("Enter the number of test cases: ");
-    if (scanf("%d", &numberOfTestCases) != 1 || numberOfTestCases < 0)
+    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0)
     {
         printf("Invalid input for number of test cases.\n");
         return 0;
     }
 
-    while (currentTestCase < numberOfTestCases)
+    while (current_test_case < number_of_test_cases)
     {
         int n;
-        int resultPosition = 0;
+        int result_position = 0;
 
-        printf("Enter the value of n for test case %d: ", currentTestCase + 1);
+        printf("Enter the value of n for test case %d: ", current_test_case + 1);
         if (scanf("%d", &n) != 1 || n < 1)
         {
             printf("Invalid input for n. Skipping this test case.\n");
             // Clear input buffer in case of invalid input
             while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
-            currentTestCase++;
+            current_test_case++;
             continue;
         }
 
@@ -38,12 +38,12 @@ int main()
         // and the position of the last remaining item is sought.
         for (int x = 2; x <= n; x++)
         {
-            resultPosition = (resultPosition + n + 1 - x) % x;
+            result_position = (result_position + n + 1 - x) % x;
         }
 
         // The problem's output seems to be 1-indexed, so add 1 to the 0-indexed result.
-        printf("Result for n = %d: %d\n", n, resultPosition + 1);
-        currentTestCase++;
+        printf("Result for n = %d: %d\n", n, result_position + 1);
+        current_test_case++;
     }
 
     return 0;
