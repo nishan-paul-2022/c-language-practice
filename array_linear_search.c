@@ -4,12 +4,12 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For malloc and free
+#include <stdlib.h>
 
 int main() {
-    int arraySize; // m in original
-    int *numbers; // x in original, dynamically allocated array
-    int targetNumber; // n in original
+    int arraySize;
+    int *numbers;
+    int targetNumber;
 
     printf("Enter the size of the array (or Ctrl+D to exit): ");
     while (scanf("%d", &arraySize) == 1) {

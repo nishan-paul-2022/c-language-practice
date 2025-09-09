@@ -4,11 +4,11 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For malloc and free
+#include <stdlib.h>
 
 int main() {
-    int size; // n in original
-    int *arrayPtr; // p in original, pointer to the array
+    int size;
+    int *array_pointer;
 
     printf("Enter the size of the array: ");
     if (scanf("%d", &size) != 1 || size <= 0) {
@@ -17,10 +17,9 @@ int main() {
     }
 
     // Dynamically allocate memory for the array
-    // Using VLA (Variable Length Array) `int a[n]` is a C99 feature,
-    // but dynamic allocation with malloc is more flexible and standard across C versions.
-    arrayPtr = (int *)malloc(size * sizeof(int));
-    if (arrayPtr == NULL) {
+    // Using malloc for dynamic allocation (more flexible than VLA)
+    array_pointer = (int *)malloc(size * sizeof(int));
+    if (array_pointer == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 1;
     }
@@ -28,21 +27,22 @@ int main() {
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
         // Read elements using pointer arithmetic
-        if (scanf("%d", (arrayPtr + i)) != 1) {
+        if (scanf("%d", (array_pointer + i)) != 1) {
             printf("Invalid input. Exiting.\n");
-            free(arrayPtr);
+            free(array_pointer);
             return 1;
         }
     }
 
-    printf("Array elements entered:\n");
+    printf("Array elements entered: ");
     for (int i = 0; i < size; i++) {
         // Print elements using pointer dereferencing
-        printf("%d ", *(arrayPtr + i));
+        printf("%d ", *(array_pointer + i));
     }
-    printf("\n");
 
-    free(arrayPtr); // Free the dynamically allocated memory
+    free(array_pointer); // Free the dynamically allocated memory
+
+    printf("\n");
 
     return 0;
 }

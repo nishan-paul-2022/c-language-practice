@@ -3,32 +3,31 @@
  * Topic: Arrays, Loops, Arithmetic Operations, Type Casting
  */
 
-#include <stdio.h> // For printf and scanf
-#include <stdlib.h> // For malloc and free
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    int num_elements; // Stores the number of elements in the array
-    int i; // Loop counter for array traversal
-    long long int sum = 0; // Stores the sum of array elements
-    double average; // Stores the calculated average
+    int number_of_elements;
+    long long int sum = 0;
+    double average;
 
     printf("Enter the number of elements: ");
-    scanf("%d", &num_elements);
+    scanf("%d", &number_of_elements);
 
-    if (num_elements <= 0) {
+    if (number_of_elements <= 0) {
         printf("Number of elements must be positive.\n");
-        return 1; // Exit with error
+        return 0;
     }
 
-    int arr[num_elements]; // Declare Variable Length Array (VLA)
+    int arr[number_of_elements];
 
-    printf("Enter %d integer elements:\n", num_elements);
-    for (i = 0; i < num_elements; i++) {
+    printf("Enter %d integer elements:\n", number_of_elements);
+    for (int i = 0; i < number_of_elements; i++) {
         scanf("%d", &arr[i]);
         sum += arr[i];
     }
 
-    average = (double)sum / num_elements; // Calculate average with floating-point division
+    average = (double)sum / number_of_elements;
 
     printf("Sum of elements: %lld\n", sum);
     printf("Average of elements: %.2lf\n", average);

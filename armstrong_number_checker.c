@@ -5,9 +5,9 @@
  * Topic: Loops, Arithmetic Operations, String Conversion, Digit Manipulation
  */
 
-#include <stdio.h> // Required for printf, scanf, sprintf
-#include <string.h> // Required for strlen
-#include <math.h> // Required for pow (though custom power function is better for integers)
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
 
 // Function to calculate integer power (base^exponent)
 long long int integer_power(int base, int exponent) {
@@ -19,13 +19,12 @@ long long int integer_power(int base, int exponent) {
 }
 
 int main() {
-    int original_number; // The number input by the user
-    int temp_number; // Temporary variable for digit extraction
-    int num_digits = 0; // Number of digits in the input number
-    long long int sum_of_powers = 0; // Sum of digits raised to the power of num_digits
-    char num_as_string[20]; // Buffer to store the number as a string (max 19 digits for long long)
+    int original_number;
+    int temp_number;
+    int num_digits = 0;
+    long long int sum_of_powers = 0;
+    char num_as_string[20];
 
-    // Prompt user for input
     printf("Enter a positive integer to check if it's an Armstrong number: ");
     scanf("%d", &original_number);
 
@@ -34,6 +33,7 @@ int main() {
         printf("%d is not a positive integer.\n", original_number);
         return 1;
     }
+
     if (original_number == 0) {
         printf("0 is an Armstrong number.\n"); // 0^1 = 0
         return 0;
@@ -53,12 +53,12 @@ int main() {
         temp_number /= 10; // Remove the last digit
     }
 
-    // Compare the sum of powers with the original number
+    // Check if sum equals original number
     if (sum_of_powers == original_number) {
         printf("%d is an Armstrong number.\n", original_number);
     } else {
         printf("%d is Not an Armstrong number.\n", original_number);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

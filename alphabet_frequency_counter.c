@@ -16,7 +16,7 @@ int main() {
     printf("Enter a line of text: ");
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         printf("Error reading input.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
     // Remove the trailing newline character if fgets read it
@@ -35,10 +35,11 @@ int main() {
     // Print the frequency of each alphabet that appeared
     printf("Alphabet Frequencies:\n");
     for (i = 0; i < 26; i++) {
-        if (frequency[i] > 0) { // Only print if the character appeared at least once
+        // Only print if the character appeared at least once
+        if (frequency[i] > 0) {
             printf("%c - %d\n", (char)('a' + i), frequency[i]);
         }
     }
 
-    return 0; // Success
+    return 0;
 }

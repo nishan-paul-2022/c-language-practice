@@ -16,7 +16,6 @@ void reverse_array(int arr[], int size) {
 
     // Swap elements from the beginning and end, moving towards the center
     while (start_index < end_index) {
-        // Swap arr[start_index] and arr[end_index]
         temp = arr[start_index];
         arr[start_index] = arr[end_index];
         arr[end_index] = temp;
@@ -41,8 +40,8 @@ int main() {
             break; // Stop reading if non-integer is entered
         }
 
-        numbers[count] = input_value; // Store the valid input
-        count++; // Increment the count of elements
+        numbers[count] = input_value;
+        count++;
     }
 
     // If no elements were entered
@@ -55,11 +54,10 @@ int main() {
     reverse_array(numbers, count);
 
     printf("\nArray after reversal:\n");
-    // Print the reversed array elements
     for (int k = 0; k < count; k++) {
         printf("%d ", numbers[k]);
     }
-    printf("\n"); // Print a newline at the end
+    printf("\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }
