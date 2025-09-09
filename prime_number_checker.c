@@ -8,7 +8,7 @@
 
 int main() {
     int number; // The integer number to check for primality
-    int i;      // Loop counter (potential divisor)
+    int i;
     int is_prime = 1; // Flag: 1 means prime, 0 means not prime
 
     // Prompt user for input

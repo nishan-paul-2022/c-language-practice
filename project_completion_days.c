@@ -8,7 +8,7 @@ int main() {
     int num_workers;        // Number of workers
     int worker_capacity;    // Individual worker's daily capacity
     int total_daily_capacity; // Sum of all workers' daily capacities
-    int i;                  // Loop counter
+    int i;
     int days_needed;        // Calculated days to complete the project
 
     // Read total project work and number of workers until EOF

@@ -2,7 +2,7 @@
 
 int main() {
     int num_asterisks; // The number of asterisks to print, as entered by the user.
-    int i;             // Loop counter.
+    int i;
 
     // Prompt the user to enter the desired number of asterisks.
     printf("ENTER THE NUMBER OF ASTERISKS TO PRINT: ");

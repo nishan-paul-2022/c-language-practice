@@ -8,7 +8,7 @@ int main() {
     float next_value;    // Represents 'f' in the original code
     int base_int;        // Represents 'c' in the original code
     int incremented_int; // Represents 'e' in the original code
-    int i;               // Loop counter for the main loop
+    int i;
 
     // The outer loop iterates 11 times (from i=0 to i=10)
     // current_value starts at 0.0 and increases by 0.2 in each iteration.

@@ -11,7 +11,7 @@ int main()
     double base;         // The base number.
     int exponent;        // The exponent.
     double result = 1.0; // Initialize result to 1.0 for exponentiation.
-    int counter;         // Loop counter.
+    int counter;
 
     // --- Input ---
     printf("Enter the base (a double) and the exponent (an integer), separated by a comma (e.g., 2.5, 3): ");

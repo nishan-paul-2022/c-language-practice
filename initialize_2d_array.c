@@ -10,8 +10,8 @@ int main(void) {
     int dimension; // Size of the square matrix (n x n)
     int num_elements_to_set; // Number of elements to set to 1
     int matrix[MAX_DIMENSION][MAX_DIMENSION]; // 2D array
-    int row, col; // Loop counters and indices for elements
-    int i; // Loop counter for setting elements
+    int row, col;
+    int i;
 
     printf("Enter the dimension of the square matrix (max %d): ", MAX_DIMENSION);
     // Read the dimension of the matrix and validate input

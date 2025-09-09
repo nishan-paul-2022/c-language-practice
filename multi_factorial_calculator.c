@@ -11,7 +11,7 @@
 int main() {
     int number;         // The base number for factorial calculation
     int k_value = 0;    // Represents 'k' in k-factorial (number of exclamation marks)
-    int i;              // Loop counter
+    int i;
     long long int result = 1; // Stores the calculated multi-factorial result (using long long for larger values)
     char input_string[100]; // Buffer to read the entire input line
 

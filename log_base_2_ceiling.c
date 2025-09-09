@@ -5,8 +5,8 @@
 
 int main() {
     int numbers[2000]; // Array to store input numbers
-    int i;             // Loop counter for input
-    int j;             // Loop counter for processing numbers
+    int i;
+    int j;
     int k;             // Counter for power of 2
 
     // Read numbers into the array until a negative number is entered

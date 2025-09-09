@@ -7,7 +7,7 @@ int main() {
     double y2_value_double; // The calculated value of the second function (Gaussian-like).
     int y1_scaled;          // Scaled and truncated value of y1 for plotting.
     int y2_scaled;          // Scaled and truncated value of y2 for plotting.
-    int i;                  // Loop counter for printing spaces.
+    int i;
     const double decay_constant_exp = 0.4; // Decay constant for the exponential function.
     const double decay_constant_gauss = 0.4; // Constant related to the width of the Gaussian-like function.
 

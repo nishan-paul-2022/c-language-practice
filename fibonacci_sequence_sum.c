@@ -25,7 +25,7 @@ int calculate_fibonacci_term(int n) {
 
 int main() {
     int n;                  // The number of terms to calculate and sum.
-    int current_term_index; // Loop counter to iterate from 1 to n.
+    int current_term_index;
     int fib_term;           // Stores the calculated Fibonacci term.
     long long int total_sum = 0; // Stores the sum of the Fibonacci terms. Use long long for potentially large sums.
 

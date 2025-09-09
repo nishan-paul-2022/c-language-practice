@@ -2,7 +2,7 @@
 #include <math.h> // Required for sqrt() and potentially other math functions
 
 int main() {
-    int i;                  // Loop counter
+    int i;
     double y_value;         // The value of the quadratic function for a given i
     double min_y = 40.0;    // Initialize minimum y to a large value (or a value from the range)
     double max_y = 40.0;    // Initialize maximum y to a small value (or a value from the range)

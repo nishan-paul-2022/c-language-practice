@@ -29,7 +29,7 @@ int main() {
     while (current_value != 0) {
         sum += current_value; // Add the current value to the sum
         current_value /= divisor; // Update current_value by dividing it by the divisor
-        loop_counter++; // Increment loop counter (optional, for tracking iterations)
+        loop_counter++;
     }
 
     // Print the final calculated sum

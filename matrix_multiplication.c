@@ -11,7 +11,7 @@ int main(void) {
     double matrix1[MAX_DIM][MAX_DIM];
     double matrix2[MAX_DIM][MAX_DIM];
     double result_matrix[MAX_DIM][MAX_DIM];
-    int i, j, k; // Loop counters
+    int i, j, k;
     double sum; // To store the sum for matrix multiplication
 
     printf("Enter dimensions for Matrix 1 (rows cols, e.g., '3 4'): ");

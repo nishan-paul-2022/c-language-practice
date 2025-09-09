@@ -6,7 +6,7 @@
 
 int main() {
     int numIterations; // Number of iterations to perform
-    int i;             // Loop counter
+    int i;
     int powerOfTwo;    // Stores 2 raised to the power of i
     double reciprocalPowerOfTwo; // Stores 2 raised to the power of -i (1 / 2^i)
 

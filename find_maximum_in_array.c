@@ -9,7 +9,7 @@
 
 int main() {
     int num_elements; // Number of elements in the array
-    int i, j;         // Loop counters
+    int i, j;
     int temp_val;     // Temporary variable for swapping
 
     // Prompt user for the number of elements

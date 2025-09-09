@@ -14,8 +14,8 @@ int main(void) {
     double angle_radians; // Angle in radians
     double sine_value;    // The sine of the angle
     int scaled_position;  // Scaled position for printing spaces
-    int i;                // Loop counter for degrees
-    double m;             // Loop counter for spaces
+    int i;
+    double m;
 
     // Define the amplitude and the scaling factor for the plot
     const double AMPLITUDE = 50.0; 

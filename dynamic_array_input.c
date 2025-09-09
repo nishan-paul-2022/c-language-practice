@@ -23,7 +23,7 @@ void read_integer_array(int arr[], int size) {
 
 int main() {
     int n; // Variable to store the size of the array
-    int i; // Loop counter
+    int i;
 
     // Prompt the user to enter the number of elements for the array.
     printf("Enter the number of elements for the array: ");

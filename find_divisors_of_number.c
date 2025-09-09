@@ -8,7 +8,7 @@
 
 int main() {
     int number; // The integer number for which to find divisors
-    int i;      // Loop counter (potential divisor)
+    int i;
 
     // Prompt user for input
     printf("Enter a positive integer to find its divisors: ");

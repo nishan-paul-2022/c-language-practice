@@ -14,7 +14,7 @@ int main() {
     int digits = 0;         // Counter for digits
     int spaces = 0;         // Counter for spaces
     int others = 0;         // Counter for other characters
-    int i;                  // Loop counter
+    int i;
 
     // Prompt user for input and read the entire line
     printf("Enter a line of text: ");

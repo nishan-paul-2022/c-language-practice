@@ -29,7 +29,7 @@ int calculate_fibonacci_recursive(int n) {
 int main() {
     clock_t start_time, end_time; // Variables to store start and end times for measurement.
     int num_terms;                // The number of Fibonacci terms to compute.
-    int i;                        // Loop counter.
+    int i;
 
     printf("Enter the number of Fibonacci terms to compute: ");
     // Read the number of terms.

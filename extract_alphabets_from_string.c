@@ -9,7 +9,7 @@
 
 int main() {
     char input_string[100]; // Buffer to store the input string
-    int i;                  // Loop counter
+    int i;
 
     // Prompt user for input and read the entire line safely
     printf("Enter a string (e.g., 'Hello World 123!'): ");

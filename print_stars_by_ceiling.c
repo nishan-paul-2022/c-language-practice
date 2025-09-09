@@ -7,7 +7,7 @@
 int main() {
     float input_value;      // The floating-point number entered by the user
     int ceiling_value;      // The ceiling of the input_value
-    int counter;            // Loop counter
+    int counter;
     const char PRINT_CHAR = '*'; // The character to print
 
     printf("Enter a floating-point number: ");

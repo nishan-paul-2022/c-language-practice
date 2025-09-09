@@ -4,8 +4,8 @@
 #include <stdio.h>
 
 int main() {
-    int i; // Outer loop counter, controls the start of each row.
-    int j; // Inner loop counter, prints numbers within a row.
+    int i;
+    int j;
 
     // Outer loop: counts down from 1000, decrementing by 5 in each iteration.
     // This sets the starting number for each row.

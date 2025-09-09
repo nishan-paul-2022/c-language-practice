@@ -7,7 +7,7 @@
 
 int main() {
     int num_test_cases; // Variable to store the total number of test cases.
-    int test_case_index; // Loop counter for iterating through test cases.
+    int test_case_index;
     char input_string[101]; // Buffer to store the input string (max 100 chars + null terminator).
     int string_length; // Variable to store the length of the input string.
     char last_digit_char; // Variable to store the last character of the string.

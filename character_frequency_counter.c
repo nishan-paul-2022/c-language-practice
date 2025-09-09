@@ -19,7 +19,7 @@ int main() {
         char input_string[100];       // Buffer to store the input string
         int frequency[26] = {0};      // Array to store frequencies of 'a' through 'z'
         int string_length;            // Length of the input string
-        int i;                        // Loop counter for string traversal
+        int i;
 
         // Read the input string
         scanf("%99s", input_string); // %99s to prevent buffer overflow

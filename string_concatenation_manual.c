@@ -10,7 +10,7 @@ int main() {
     char string1[100]; // First string
     char string2[100]; // Second string
     char concatenated_string[200]; // Buffer for the concatenated string (large enough for both)
-    int i, j; // Loop counters
+    int i, j;
     int len1, len2; // Lengths of string1 and string2
 
     // Prompt user for input and read the first string safely

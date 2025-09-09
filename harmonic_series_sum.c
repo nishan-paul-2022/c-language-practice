@@ -8,7 +8,7 @@
 int main() {
     int n_terms; // Number of terms for the harmonic series
     float sum_harmonic_series = 0.0; // Variable to store the sum of the series
-    int i; // Loop counter
+    int i;
 
     // Prompt user for input
     printf("Enter the number of terms (n) for the harmonic series: ");

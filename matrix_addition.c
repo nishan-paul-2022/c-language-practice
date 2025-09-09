@@ -12,7 +12,7 @@ int main() {
     int matrix_a[ROWS][COLS]; // First matrix
     int matrix_b[ROWS][COLS]; // Second matrix
     int sum_matrix[ROWS][COLS]; // Matrix to store the sum
-    int i, j; // Loop counters
+    int i, j;
 
     printf("Enter elements for Matrix A (%dx%d):\n", ROWS, COLS);
     // Read elements for Matrix A

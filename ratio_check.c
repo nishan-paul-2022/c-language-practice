@@ -6,7 +6,7 @@
 
 int main() {
     int num_test_cases; // Number of test cases
-    int i;              // Loop counter
+    int i;
 
     // Read the number of test cases
     scanf("%d", &num_test_cases);

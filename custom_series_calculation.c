@@ -7,8 +7,8 @@
 
 int main() {
     int input_x;            // User input value, used as the base for powers.
-    int loop_counter_i;     // Loop counter for the outer loop.
-    int loop_counter_j;     // Loop counter for the inner loop.
+    int loop_counter_i;
+    int loop_counter_j;
     float current_e_sum;    // Accumulates the sum of the series terms.
     float current_k_value;  // The value used in the pow(x, i) / y calculation.
     float y_update_value;   // Variable used in the update rule for 'y'.

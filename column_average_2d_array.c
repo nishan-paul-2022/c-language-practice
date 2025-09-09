@@ -10,7 +10,7 @@
 int main(void) {
     int rows, cols; // Dimensions of the matrix
     int matrix[MAX_ROWS][MAX_COLS]; // 2D array to store integers
-    int i, j; // Loop counters
+    int i, j;
     double column_sum; // Sum of elements in a column
     double column_averages[MAX_COLS]; // Array to store the average of each column
 

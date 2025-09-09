@@ -8,14 +8,14 @@
 
 int main() {
     int num_test_cases;         // Variable to store the total number of test cases.
-    int test_case_index;        // Loop counter for iterating through test cases.
+    int test_case_index;
     char input_string[7];       // Buffer to store the input string (max 6 chars + null terminator).
     int string_length;          // Variable to store the length of the input string.
     long number_from_string = 0; // Variable to store the integer converted from the string.
     int divisor;                // Loop variable for finding divisors.
     long power_of_10;           // To calculate powers of 10 for string to integer conversion.
     int digit_value;            // To store the integer value of a character digit.
-    int char_index;             // Loop counter for iterating through string characters.
+    int char_index;
 
     // Prompt the user to enter the number of test cases.
     printf("Enter the number of test cases: ");

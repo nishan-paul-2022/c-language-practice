@@ -5,7 +5,7 @@
 
 int main() {
     int num_test_cases; // Variable to store the total number of test cases.
-    int test_case_index; // Loop counter for iterating through test cases.
+    int test_case_index;
     int number_to_check; // Variable to store the number read for each test case.
 
     // Prompt the user to enter the number of test cases.

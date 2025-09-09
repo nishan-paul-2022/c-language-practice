@@ -42,7 +42,7 @@ void printStudentArray(struct StudentInfo students[], int numStudents) {
 
 int main() {
     int numStudents; // Number of students
-    int i;           // Loop counter
+    int i;
 
     // Prompt user for the number of students
     printf("Enter the number of students: ");
