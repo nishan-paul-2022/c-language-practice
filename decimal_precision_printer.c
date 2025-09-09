@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For fmod (or simply check against integer part)
+#include <math.h>
 
 int main()
 {

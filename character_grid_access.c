@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit() and EXIT_FAILURE
+#include <stdlib.h>
 
 #define MAX_ROW_LEN 100 // Define a maximum length for each row to prevent buffer overflow with fgets
 

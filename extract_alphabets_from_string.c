@@ -3,9 +3,9 @@
  * Topic: String Manipulation, Loops, Character Handling (ctype.h)
  */
 
-#include <stdio.h>  // Required for printf, fgets
-#include <string.h> // Required for strcspn (to remove newline from fgets)
-#include <ctype.h>  // Required for tolower, isalpha
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int main() {
     char input_string[100]; // Buffer to store the input string

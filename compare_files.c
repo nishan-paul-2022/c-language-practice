@@ -6,7 +6,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
+#include <stdlib.h>
 
 #define OUTPUT_FILE "output.txt"
 #define INPUT_FILE "mineput.txt"

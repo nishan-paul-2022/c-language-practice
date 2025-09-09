@@ -3,9 +3,9 @@
  * Topic: String Manipulation, Loops, Conditional Statements, Character Handling (ctype.h)
  */
 
-#include <stdio.h>  // Required for printf, scanf
-#include <string.h> // Required for string functions (e.g., strlen, though not directly used here)
-#include <ctype.h>  // Required for tolower, isalpha, isdigit, isspace
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int main() {
     char input_string[100]; // Buffer to store the input string

@@ -3,8 +3,8 @@
  * Topic: Loops, Arithmetic Operators (Modulo), Basic I/O
  */
 
-#include <stdio.h> // Required for printf and scanf
-#include <math.h>  // Required for pow (though integer multiplication is preferred for powers of 10)
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     int input_number; // The integer number input by the user

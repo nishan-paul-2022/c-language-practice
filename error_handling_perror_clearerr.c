@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <errno.h>  // For errno
+#include <stdlib.h>
+#include <errno.h>
 
 int main() {
     FILE *file_ptr = NULL;

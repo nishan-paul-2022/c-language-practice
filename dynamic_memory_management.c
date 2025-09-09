@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // Required for calloc, realloc, free
+#include <stdlib.h>
 
 int main() {
     int *allocated_memory = NULL; // Pointer to the dynamically allocated memory block.

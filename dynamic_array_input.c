@@ -3,7 +3,7 @@
  * Topic: Arrays, Input/Output, Dynamic Sizing (via user input)
  */
 
-#include <stdio.h> // Required for printf(), scanf()
+#include <stdio.h>
 
 // Function to read an array of integers from user input.
 // It takes a pointer to the array and its size as arguments.

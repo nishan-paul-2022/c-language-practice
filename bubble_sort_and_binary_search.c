@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For malloc and free
+#include <stdlib.h>
 
 // Function to perform bubble sort on an integer array
 void bubbleSort(int arr[], int size) {

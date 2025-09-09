@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Required for strlen if we were to remove trailing newline, but not strictly needed for this logic.
+#include <string.h>
 
 int main() {
     int input_number;

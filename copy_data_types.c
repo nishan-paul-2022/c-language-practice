@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
+#include <stdlib.h>
 
 #define INPUT_FILENAME "a.txt"
 #define OUTPUT_FILENAME "new.txt"

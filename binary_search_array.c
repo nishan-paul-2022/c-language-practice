@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For malloc and free
+#include <stdlib.h>
 
 int main() {
     int arraySize;

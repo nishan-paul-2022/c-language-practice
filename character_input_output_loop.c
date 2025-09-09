@@ -4,7 +4,7 @@
  * Topic: Basic I/O, Character Handling, Loops
  */
 
-#include <stdio.h> // Required for getchar and printf
+#include <stdio.h>
 
 int main() {
     int character_input; // Use int to store character to properly handle EOF

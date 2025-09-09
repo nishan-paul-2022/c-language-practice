@@ -4,7 +4,7 @@
  * Topic: Basic I/O, Escape Sequences
  */
 
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
     // Print a string with a carriage return character.

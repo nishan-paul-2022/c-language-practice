@@ -4,7 +4,7 @@
  * Topic: Recursion, Loops, Fibonacci Sequence
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 // Recursive function to calculate the Nth Fibonacci number
 // n: the term number in the Fibonacci sequence

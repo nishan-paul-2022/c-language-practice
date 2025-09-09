@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // Required for fabs() if handling negative exponents with division.
+#include <math.h>
 
 // Declare main as int main() for standard C compliance.
 int main()

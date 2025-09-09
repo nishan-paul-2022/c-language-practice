@@ -3,7 +3,7 @@
  * Topic: Basic I/O, Floating-point Arithmetic
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     float num_computers_sold; // Number of computers sold by the employee

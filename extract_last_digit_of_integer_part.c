@@ -3,7 +3,7 @@
  * Topic: Basic I/O, Type Casting, Arithmetic Operators (Modulo)
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     float input_float; // Floating-point number input by the user

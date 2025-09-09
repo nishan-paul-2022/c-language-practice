@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <ctype.h> // For isalpha(), isupper(), isdigit(), ispunct(), isspace()
+#include <ctype.h>
 
 int main()
 {

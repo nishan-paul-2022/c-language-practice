@@ -6,7 +6,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
+#include <stdlib.h>
 
 // Define input and output filenames
 #define BANGLA_FILE "bangla.txt"

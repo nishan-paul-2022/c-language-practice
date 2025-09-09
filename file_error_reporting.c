@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS
+#include <stdlib.h>
 
 int main(void) {
     FILE *file_pointer; // Pointer to the file

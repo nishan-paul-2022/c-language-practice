@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <string.h> // For strlen, strcspn
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_STRING_LENGTH 1000 // Define a maximum buffer size
 

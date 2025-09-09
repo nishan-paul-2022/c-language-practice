@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // Required for pow() function
+#include <math.h>
 
 // Note: The original code included <conio.h> and used getch(), which are non-standard
 // and typically used on DOS/Windows systems. These have been removed for broader compatibility.

@@ -1,4 +1,4 @@
-#include <stdio.h> // For printf() and size_t
+#include <stdio.h>
 
 /*
  * Purpose: Demonstrates the use of the sizeof operator to find the memory size of various data types.

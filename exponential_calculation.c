@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For the exp() function
+#include <math.h>
 
 int main(void) {
     float base_value = 3.0f; // The base value for the exponential calculation

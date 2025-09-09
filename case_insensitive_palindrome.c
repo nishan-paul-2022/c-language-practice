@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // For tolower() function
+#include <ctype.h>
 
 int main() {
     int num_test_cases; // Number of test cases

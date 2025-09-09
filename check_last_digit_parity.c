@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen
-#include <ctype.h>  // For isdigit
+#include <string.h>
+#include <ctype.h>
 
 int main() {
     int num_test_cases; // Variable to store the total number of test cases.

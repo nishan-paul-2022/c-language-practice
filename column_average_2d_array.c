@@ -4,7 +4,7 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 #define MAX_ROWS 100
 #define MAX_COLS 100

@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <errno.h>  // For errno
+#include <stdlib.h>
+#include <errno.h>
 
 int main() {
     const char *filename_to_remove = "ironman+Batman.jpg";

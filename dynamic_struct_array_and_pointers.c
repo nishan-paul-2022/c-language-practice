@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For calloc, free, EXIT_SUCCESS, EXIT_FAILURE
-#include <string.h> // For string operations if needed, though not directly used in this version's scanf
+#include <stdlib.h>
+#include <string.h>
 
 // Define a structure named 'Record' (renamed from 'bat' for clarity)
 typedef struct Record

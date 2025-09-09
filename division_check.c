@@ -3,7 +3,7 @@
  * Topic: Floating-Point Input, Division, Integer Conversion, Switch Statement
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <stdlib.h>
 
 int main() {
     float numerator, denominator;

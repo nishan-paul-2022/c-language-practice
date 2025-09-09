@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For pow() and sqrt() for comparison
+#include <math.h>
 
 // Function to calculate the fast inverse square root
 float fast_inverse_sqrt(float number) {

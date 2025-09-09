@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h> // Required for exp() function
+#include <math.h>
 
 int main() {
     int input_limit;        // User-defined limit for the outer loop.

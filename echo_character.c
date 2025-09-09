@@ -3,7 +3,7 @@
  * Topic: Character Input/Output, getchar(), putchar()
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <stdlib.h>
 
 int main() {
     int input_char; // Use int to accommodate EOF

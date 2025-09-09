@@ -4,9 +4,9 @@
 */
 
 #include <stdio.h>
-#include <string.h> // For strlen, strcmp, strcasecmp, strcat, strncat, strcpy, strncpy, strcspn, strrev, strset, strnset
-#include <stdlib.h> // For exit() and EXIT_FAILURE
-#include <ctype.h>  // For toupper, tolower
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 // Helper function to reverse a string (if strrev is not available or for demonstration)
 char* custom_strrev(char* str) {

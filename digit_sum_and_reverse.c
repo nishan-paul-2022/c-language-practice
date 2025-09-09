@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For pow, though not strictly needed for reversal if done iteratively
+#include <math.h>
 
 // Function to calculate the sum of digits of a number
 long int sum_digits(long int num) {

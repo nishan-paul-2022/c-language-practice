@@ -3,7 +3,7 @@
  * Topic: Loops, Arithmetic Operations, Combinatorics
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 // Function to calculate factorial of a number
 long long int calculate_factorial(int num) {
