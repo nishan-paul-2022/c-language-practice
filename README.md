@@ -319,6 +319,15 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`string_copy_manual.c`](string_copy_manual.c): Demonstrates how to copy one string to another character by character using a loop.
 *   [`string_copy_pointer.c`](string_copy_pointer.c): Demonstrates string copying using strcpy and pointer manipulation.
 *   [`string_formatting_printf.c`](string_formatting_printf.c): Demonstrates string formatting using printf with width and precision specifiers.
+*   [`string_input_output_v1.c`](string_input_output.c): Demonstrates reading a string from input and printing it.
+*   [`string_input_output_v2.c`](string_input_output_v2.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v3.c`](string_input_output_v3.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v4.c`](string_input_output_v4.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v5.c`](string_input_output_v5.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v6.c`](string_input_output_v6.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v7.c`](string_input_output_v7.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v8.c`](string_input_output_v8.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
+*   [`string_input_output_v9.c`](string_input_output_v9.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
 *   [`string_input_output_v10.c`](string_input_output_v10.c): Demonstrates reading a string from input and printing it.
 *   [`string_input_output_v11.c`](string_input_output_v11.c): Demonstrates reading a string from input and printing it.
 *   [`string_input_output_v12.c`](string_input_output_v12.c): Demonstrates reading a string from input and printing it.
@@ -328,15 +337,6 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`string_input_output_v16.c`](string_input_output_v16.c): Demonstrates reading a string from input and printing it.
 *   [`string_input_output_v17.c`](string_input_output_v17.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
 *   [`string_input_output_v18.c`](string_input_output_v18.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v2.c`](string_input_output_v2.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v3.c`](string_input_output_v3.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v4.c`](string_input_output_v4.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v5.c`](string_input_output_v5.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v6.c`](string_input_output_v6.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v7.c`](string_input_output_v7.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v8.c`](string_input_output_v8.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output_v9.c`](string_input_output_v9.c): Demonstrates reading a string from input and printing it using `fgets()` and `puts()`.
-*   [`string_input_output.c`](string_input_output.c): Demonstrates reading a string from input and printing it.
 *   [`string_input_pointer.c`](string_input_pointer.c): Demonstrates reading a string using `fgets()` and accessing it via a character pointer.
 *   [`string_length_calculator.c`](string_length_calculator.c): Demonstrates reading lines from standard input and calculating their lengths.
 *   [`string_length_check.c`](string_length_check.c): Reads a string and prints its length if the string's length is even or odd.
