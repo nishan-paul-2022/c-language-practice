@@ -1,5 +1,7 @@
-// Purpose: Demonstrates sorting an array of structures by a string member (name) using bubble sort, with improved clarity and input handling.
-// Topic: Arrays of Structures, Sorting, String Comparison
+/*
+ * Purpose: Demonstrates sorting an array of structures by a string member (name) using bubble sort, with improved clarity and input handling.
+ * Topic: Arrays of Structures, Sorting, String Comparison
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcmp and strcpy

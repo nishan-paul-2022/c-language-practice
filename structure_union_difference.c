@@ -1,6 +1,8 @@
-// Purpose: Illustrates the fundamental differences between structures (struct) and unions (union) in C,
-//          highlighting how members are stored and accessed, and demonstrates the use of typedef.
-// Topic: Structures, Unions, Typedef
+/*
+ * Purpose: Illustrates the fundamental differences between structures (struct) and unions (union) in C,
+ *          highlighting how members are stored and accessed, and demonstrates the use of typedef.
+ * Topic: Structures, Unions, Typedef
+ */
 
 #include <stdio.h>
 

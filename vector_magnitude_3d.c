@@ -1,5 +1,7 @@
-// Purpose: Calculates the Euclidean magnitude (length) of a 3D vector.
-// Topic: Floating-point Arithmetic, Math Functions (sqrt), Input/Output Formatting
+/*
+ * Purpose: Calculates the Euclidean magnitude (length) of a 3D vector.
+ * Topic: Floating-point Arithmetic, Math Functions (sqrt), Input/Output Formatting
+ */
 
 #include <stdio.h>
 #include <math.h> // For sqrt function

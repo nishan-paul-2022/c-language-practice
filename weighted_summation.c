@@ -1,5 +1,7 @@
-// Purpose: Calculates a weighted sum of numbers from 1 to n.
-// Topic: Loop-based Summation
+/*
+ * Purpose: Calculates a weighted sum of numbers from 1 to n.
+ * Topic: Loop-based Summation
+ */
 
 #include <stdio.h>
 

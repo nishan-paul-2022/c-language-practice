@@ -1,6 +1,8 @@
-// Purpose: Reads a sequence of floating-point numbers from the user and calculates their sum.
-//          The input process stops when the user enters 0.
-// Topic: Floating-Point Input, Summation, Sentinel Value, Loops
+/*
+ * Purpose: Reads a sequence of floating-point numbers from the user and calculates their sum.
+ *          The input process stops when the user enters 0.
+ * Topic: Floating-Point Input, Summation, Sentinel Value, Loops
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

@@ -1,5 +1,7 @@
-// Purpose: Checks if a given string is a palindrome.
-// Topic: String manipulation, palindrome checking, loops, input/output.
+/*
+ * Purpose: Checks if a given string is a palindrome.
+ * Topic: String manipulation, palindrome checking, loops, input/output.
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen and strcspn

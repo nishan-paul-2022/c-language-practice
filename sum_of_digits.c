@@ -1,7 +1,9 @@
 #include <stdio.h>
+/*
+ * Purpose: Calculates the sum of the digits of a given integer.
+ * Topic: Integer Manipulation, Loops
+ */
 
-// Purpose: Calculates the sum of the digits of a given integer.
-// Topic: Integer Manipulation, Loops
 int main() {
     int number;
     int digit_sum = 0;

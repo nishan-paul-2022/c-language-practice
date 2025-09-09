@@ -1,5 +1,7 @@
-// Purpose: Calculates weighted scores from three input sets and then provides a frequency distribution of these scores.
-// Topic: Arrays, Weighted Averages, Loops, Conditional Logic, Frequency Distribution
+/*
+ * Purpose: Calculates weighted scores from three input sets and then provides a frequency distribution of these scores.
+ * Topic: Arrays, Weighted Averages, Loops, Conditional Logic, Frequency Distribution
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

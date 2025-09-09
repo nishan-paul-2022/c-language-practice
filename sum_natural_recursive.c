@@ -1,5 +1,7 @@
-// Purpose: Calculates the sum of the first N natural numbers using recursion.
-// Topic: Recursion, Function Definition, Input Handling
+/*
+ * Purpose: Calculates the sum of the first N natural numbers using recursion.
+ * Topic: Recursion, Function Definition, Input Handling
+ */
 
 #include <stdio.h>
 

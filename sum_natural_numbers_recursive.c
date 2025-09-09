@@ -1,7 +1,9 @@
 #include <stdio.h>
+/*
+ * Purpose: Calculates the sum of the first n natural numbers using recursion.
+ * Topic: Recursion, Functions, Input/Output
+ */
 
-// Purpose: Calculates the sum of the first n natural numbers using recursion.
-// Topic: Recursion, Functions, Input/Output
 int sum_natural_numbers_recursive(int n) {
     // Base case: If n is 0, the sum is 0.
     if (n == 0) {

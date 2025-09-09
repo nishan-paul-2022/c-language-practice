@@ -1,8 +1,10 @@
 #include <stdio.h>
+/*
+ * Purpose: Calculates the sum of squares of the first N odd numbers.
+ *          The input N determines the upper limit of the odd numbers to be squared and summed.
+ * Topic: Iteration, Arithmetic Series, Squares, Input Validation
+ */
 
-// Purpose: Calculates the sum of squares of the first N odd numbers.
-//          The input N determines the upper limit of the odd numbers to be squared and summed.
-// Topic: Iteration, Arithmetic Series, Squares, Input Validation
 int main() {
     int input_n; // The number provided by the user, determining the range of odd numbers.
     int upper_odd_limit; // The largest odd number to consider (2*input_n - 1).

@@ -1,5 +1,7 @@
-// Purpose: Finds the smallest integer 'k' such that the sum of integers from 1 to 'k' (the k-th triangular number) is greater than or equal to a given target sum 'n'.
-// Topic: Number Theory, Summation, Loops, Integer Arithmetic
+/*
+ * Purpose: Finds the smallest integer 'k' such that the sum of integers from 1 to 'k' (the k-th triangular number) is greater than or equal to a given target sum 'n'.
+ * Topic: Number Theory, Summation, Loops, Integer Arithmetic
+ */
 
 #include <stdio.h>
 

@@ -1,5 +1,7 @@
-// Purpose: Collects user registration details and optionally son's information using nested structures.
-// Topic: Nested Structures, String Handling, Input Validation, Password Masking, Conditional Logic
+/*
+ * Purpose: Collects user registration details and optionally son's information using nested structures.
+ * Topic: Nested Structures, String Handling, Input Validation, Password Masking, Conditional Logic
+ */
 
 #include <stdio.h>
 #include <string.h>

@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading a string using fgets and accessing it via a pointer.
-// Topic: Pointers, Strings, Input/Output Functions, Memory Management
+/*
+ * Purpose: Demonstrates reading a string using fgets and accessing it via a pointer.
+ * Topic: Pointers, Strings, Input/Output Functions, Memory Management
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strlen()

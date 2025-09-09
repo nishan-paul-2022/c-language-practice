@@ -1,5 +1,7 @@
-// Purpose: Demonstrates writing and reading a structure to/from a binary file using fwrite and fread.
-// Topic: Structure, Binary File I/O
+/*
+ * Purpose: Demonstrates writing and reading a structure to/from a binary file using fwrite and fread.
+ * Topic: Structure, Binary File I/O
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

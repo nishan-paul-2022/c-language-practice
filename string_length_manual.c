@@ -1,5 +1,7 @@
-// Purpose: Calculates and prints the length of a given string by iterating through characters.
-// Topic: String Manipulation, Manual String Length Calculation, Input Handling
+/*
+ * Purpose: Calculates and prints the length of a given string by iterating through characters.
+ * Topic: String Manipulation, Manual String Length Calculation, Input Handling
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcspn

@@ -1,5 +1,7 @@
-// Purpose: Converts a string of digits into its integer representation.
-// Topic: String to Integer Conversion, Basic Input/Output
+/*
+ * Purpose: Converts a string of digits into its integer representation.
+ * Topic: String to Integer Conversion, Basic Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen

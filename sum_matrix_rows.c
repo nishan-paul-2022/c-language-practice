@@ -1,6 +1,8 @@
-// Purpose: Reads a number 'x', then reads 'x' rows of 'x' double values each,
-//          and prints the sum of values for each row.
-// Topic: Nested Loops, Input/Output, Summation, Data Entry
+/*
+ * Purpose: Reads a number 'x', then reads 'x' rows of 'x' double values each,
+ *          and prints the sum of values for each row.
+ * Topic: Nested Loops, Input/Output, Summation, Data Entry
+ */
 
 #include <stdio.h>
 

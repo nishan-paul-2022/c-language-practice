@@ -1,5 +1,7 @@
-// Purpose: Demonstrates string manipulation using pointers and the strrev function.
-// Topic: Pointers, Strings, String Manipulation
+/*
+ * Purpose: Demonstrates string manipulation using pointers and the strrev function.
+ * Topic: Pointers, Strings, String Manipulation
+ */
 
 #include <stdio.h>
 #include <string.h> // For strrev (Note: strrev is not a standard C function, but common in some compilers)

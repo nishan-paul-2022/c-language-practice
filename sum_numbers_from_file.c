@@ -1,5 +1,7 @@
-// Purpose: Reads integers from a specified text file and calculates their sum.
-// Topic: File I/O, Reading Integers, Summation, File Pointer
+/*
+ * Purpose: Reads integers from a specified text file and calculates their sum.
+ * Topic: File I/O, Reading Integers, Summation, File Pointer
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_FAILURE

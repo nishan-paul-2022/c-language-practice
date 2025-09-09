@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of 'typedef' to create an alias for a pointer type (char*) and assign string literals to these pointers.
-// Topic: Typedef, Pointers, String Literals
+/*
+ * Purpose: Demonstrates the use of 'typedef' to create an alias for a pointer type (char*) and assign string literals to these pointers.
+ * Topic: Typedef, Pointers, String Literals
+ */
 
 #include <stdio.h>
 

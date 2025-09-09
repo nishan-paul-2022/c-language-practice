@@ -1,5 +1,7 @@
-// Purpose: Demonstrates sorting an array of structures by an integer member (roll number) using bubble sort, with improved clarity and input handling.
-// Topic: Arrays of Structures, Sorting, Integer Comparison
+/*
+ * Purpose: Demonstrates sorting an array of structures by an integer member (roll number) using bubble sort, with improved clarity and input handling.
+ * Topic: Arrays of Structures, Sorting, Integer Comparison
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcpy

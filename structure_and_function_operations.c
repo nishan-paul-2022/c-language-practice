@@ -1,5 +1,7 @@
-// Purpose: Demonstrates passing structures to functions and returning structures from functions.
-// Topic: Structures, Functions, Pass-by-Value, Return-by-Value
+/*
+ * Purpose: Demonstrates passing structures to functions and returning structures from functions.
+ * Topic: Structures, Functions, Pass-by-Value, Return-by-Value
+ */
 
 #include <stdio.h>
 #include <string.h> // Included for completeness, though not strictly used in this example.

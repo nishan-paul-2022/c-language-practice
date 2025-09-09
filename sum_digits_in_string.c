@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <string.h> // For strlen
 #include <ctype.h>  // For isdigit
+/*
+ * Purpose: Reads a string and calculates the sum of all digit characters within it.
+ * Topic: Strings, Character Manipulation, Loops, Input/Output, Validation
+ */
 
-// Purpose: Reads a string and calculates the sum of all digit characters within it.
-// Topic: Strings, Character Manipulation, Loops, Input/Output, Validation
 int main() {
     char input_string[100]; // Buffer for the input string
     int string_length;

@@ -1,5 +1,7 @@
-// Purpose: Converts all uppercase letters in a string to lowercase.
-// Topic: String Manipulation, Character Conversion, Input Validation
+/*
+ * Purpose: Converts all uppercase letters in a string to lowercase.
+ * Topic: String Manipulation, Character Conversion, Input Validation
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen and strcspn

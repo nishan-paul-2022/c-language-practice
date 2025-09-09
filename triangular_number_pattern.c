@@ -1,5 +1,7 @@
-// Purpose: Prints a triangular pattern of sequential numbers and calculates their sum.
-// Topic: Nested Loops and Pattern Generation
+/*
+ * Purpose: Prints a triangular pattern of sequential numbers and calculates their sum.
+ * Topic: Nested Loops and Pattern Generation
+ */
 
 #include <stdio.h>
 

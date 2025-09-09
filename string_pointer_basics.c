@@ -1,5 +1,7 @@
-// Purpose: Demonstrates basic pointer usage with strings, including array-pointer equivalence.
-// Topic: Pointers, String Manipulation
+/*
+ * Purpose: Demonstrates basic pointer usage with strings, including array-pointer equivalence.
+ * Topic: Pointers, String Manipulation
+ */
 
 #include <stdio.h>
 

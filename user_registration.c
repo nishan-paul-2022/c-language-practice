@@ -1,5 +1,7 @@
-// Purpose: Demonstrates user registration with nested structures, including password input and confirmation.
-// Topic: Structures, Nested Structures, String Handling, Input Validation, Password Masking
+/*
+ * Purpose: Demonstrates user registration with nested structures, including password input and confirmation.
+ * Topic: Structures, Nested Structures, String Handling, Input Validation, Password Masking
+ */
 
 #include <stdio.h>
 #include <string.h>

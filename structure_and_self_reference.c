@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the use of structures, pointers to structures, and self-referential structures.
-// Topic: Structures, Pointers to Structures, Self-Referential Structures
+/*
+ * Purpose: Demonstrates the use of structures, pointers to structures, and self-referential structures.
+ * Topic: Structures, Pointers to Structures, Self-Referential Structures
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For NULL

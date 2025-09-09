@@ -1,5 +1,7 @@
-// Purpose: Checks if a given string is a palindrome using recursion.
-// Topic: Recursion, String Manipulation, String Length, Character Comparison, Input Handling
+/*
+ * Purpose: Checks if a given string is a palindrome using recursion.
+ * Topic: Recursion, String Manipulation, String Length, Character Comparison, Input Handling
+ */
 
 #include <stdio.h>
 #include <string.h>

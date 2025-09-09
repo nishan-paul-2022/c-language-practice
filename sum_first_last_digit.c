@@ -1,5 +1,7 @@
-// Purpose: Calculates the sum of the first and last digits of a given integer.
-// Topic: Number Manipulation, Digits, Loops, Input/Output
+/*
+ * Purpose: Calculates the sum of the first and last digits of a given integer.
+ * Topic: Number Manipulation, Digits, Loops, Input/Output
+ */
 
 #include <stdio.h>
 

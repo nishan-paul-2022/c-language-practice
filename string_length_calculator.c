@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading lines from standard input and calculating their lengths.
-// Topic: String input and length calculation
+/*
+ * Purpose: Demonstrates reading lines from standard input and calculating their lengths.
+ * Topic: String input and length calculation
+ */
 
 #include <stdio.h>
 #include <string.h>

@@ -1,5 +1,7 @@
-// Purpose: Reverses a given string, including spaces.
-// Topic: Strings, Loops, Character Swapping, Input/Output
+/*
+ * Purpose: Reverses a given string, including spaces.
+ * Topic: Strings, Loops, Character Swapping, Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h>

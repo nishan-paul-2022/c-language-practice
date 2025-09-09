@@ -1,5 +1,7 @@
-// Purpose: Demonstrates parsing strings with sscanf and formatting strings with sprintf.
-// Topic: String Manipulation, Input/Output Functions
+/*
+ * Purpose: Demonstrates parsing strings with sscanf and formatting strings with sprintf.
+ * Topic: String Manipulation, Input/Output Functions
+ */
 
 #include <stdio.h>
 

@@ -1,5 +1,7 @@
-// Purpose: Demonstrates swapping structure contents using pointers based on a condition.
-// Topic: Structures, Pointers to Structures, Functions, String Handling
+/*
+ * Purpose: Demonstrates swapping structure contents using pointers based on a condition.
+ * Topic: Structures, Pointers to Structures, Functions, String Handling
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strcpy

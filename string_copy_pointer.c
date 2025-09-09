@@ -1,5 +1,7 @@
-// Purpose: Demonstrates string copying using strcpy and pointer manipulation.
-// Topic: Pointers, Strings, String Copying
+/*
+ * Purpose: Demonstrates string copying using strcpy and pointer manipulation.
+ * Topic: Pointers, Strings, String Copying
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcpy and strlen

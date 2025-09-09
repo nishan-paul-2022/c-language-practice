@@ -1,6 +1,8 @@
-// Purpose: Demonstrates the use of typedef for creating custom data types and structures,
-//          along with the sizeof operator to determine memory allocation.
-// Topic: Structures, Typedef, Sizeof Operator
+/*
+ * Purpose: Demonstrates the use of typedef for creating custom data types and structures,
+ *          along with the sizeof operator to determine memory allocation.
+ * Topic: Structures, Typedef, Sizeof Operator
+ */
 
 #include <stdio.h>
 

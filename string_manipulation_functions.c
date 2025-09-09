@@ -1,5 +1,7 @@
-// Purpose: Demonstrates string comparison, length calculation, concatenation, and copying.
-// Topic: Strings, String Functions (strcmp, strlen, strcat, strcpy), Input/Output
+/*
+ * Purpose: Demonstrates string comparison, length calculation, concatenation, and copying.
+ * Topic: Strings, String Functions (strcmp, strlen, strcat, strcpy), Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h> // For strcmp, strlen, strcat, strcpy, strcspn

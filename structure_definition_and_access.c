@@ -1,5 +1,7 @@
-// Purpose: Demonstrates the definition and usage of a structure in C, including initializing and accessing its members.
-// Topic: Structures
+/*
+ * Purpose: Demonstrates the definition and usage of a structure in C, including initializing and accessing its members.
+ * Topic: Structures
+ */
 
 #include <stdio.h>
 #include <string.h>

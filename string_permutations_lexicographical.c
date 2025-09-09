@@ -1,5 +1,7 @@
-// Purpose: Generates and prints all permutations of a string in lexicographical order.
-// Topic: String Permutations, Sorting Algorithms
+/*
+ * Purpose: Generates and prints all permutations of a string in lexicographical order.
+ * Topic: String Permutations, Sorting Algorithms
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

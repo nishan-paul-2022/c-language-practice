@@ -1,5 +1,7 @@
-// Purpose: Demonstrates writing different data types (string, character) to a text file using fprintf, fputs, and putc.
-// Topic: Text File I/O, Writing Data
+/*
+ * Purpose: Demonstrates writing different data types (string, character) to a text file using fprintf, fputs, and putc.
+ * Topic: Text File I/O, Writing Data
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

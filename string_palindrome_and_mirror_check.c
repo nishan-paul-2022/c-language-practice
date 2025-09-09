@@ -1,5 +1,7 @@
-// Purpose: Checks if a string is a palindrome, a mirrored string, or a mirrored palindrome.
-// Topic: Strings, Conditionals, Character Handling
+/*
+ * Purpose: Checks if a string is a palindrome, a mirrored string, or a mirrored palindrome.
+ * Topic: Strings, Conditionals, Character Handling
+ */
 
 #include <stdio.h>
 #include <string.h>

@@ -1,5 +1,7 @@
-// Purpose: Calculates the sum of the digits of a non-negative integer.
-// Topic: Arithmetic Operations, Loops, Modulo and Division, Input Handling
+/*
+ * Purpose: Calculates the sum of the digits of a non-negative integer.
+ * Topic: Arithmetic Operations, Loops, Modulo and Division, Input Handling
+ */
 
 #include <stdio.h>
 

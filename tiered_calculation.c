@@ -1,5 +1,7 @@
-// Purpose: Calculates a tiered cost based on the number of units consumed.
-// Topic: Conditional Logic, Floating-Point Arithmetic
+/*
+ * Purpose: Calculates a tiered cost based on the number of units consumed.
+ * Topic: Conditional Logic, Floating-Point Arithmetic
+ */
 
 #include <stdio.h>
 

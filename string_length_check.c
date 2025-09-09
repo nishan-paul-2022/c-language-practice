@@ -1,5 +1,7 @@
-// Purpose: Reads a string and prints its length if the string's length is less than a specified maximum length.
-// Topic: String Input and Length Calculation
+/*
+ * Purpose: Reads a string and prints its length if the string's length is less than a specified maximum length.
+ * Topic: String Input and Length Calculation
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen, strcspn

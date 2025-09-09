@@ -1,5 +1,7 @@
-// Purpose: Converts a string representation of a number into an integer and finds all its divisors.
-// Topic: String to Integer Conversion, Loops, Divisors, Integer Arithmetic
+/*
+ * Purpose: Converts a string representation of a number into an integer and finds all its divisors.
+ * Topic: String to Integer Conversion, Loops, Divisors, Integer Arithmetic
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen

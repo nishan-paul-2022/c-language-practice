@@ -1,5 +1,7 @@
-// Purpose: Reads a string and prints its length using dynamic memory allocation and standard library functions.
-// Topic: String Input, Length Calculation, and Dynamic Memory
+/*
+ * Purpose: Reads a string and prints its length using dynamic memory allocation and standard library functions.
+ * Topic: String Input, Length Calculation, and Dynamic Memory
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For malloc, free

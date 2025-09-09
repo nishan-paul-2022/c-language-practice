@@ -1,5 +1,7 @@
-// Purpose: Sorts an array of structures based on a string member in lexicographical order.
-// Topic: Structures, Arrays of Structures, String Sorting
+/*
+ * Purpose: Sorts an array of structures based on a string member in lexicographical order.
+ * Topic: Structures, Arrays of Structures, String Sorting
+ */
 
 #include <stdio.h>
 #include <string.h>

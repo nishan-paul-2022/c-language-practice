@@ -1,6 +1,8 @@
-// Purpose: Demonstrates reading a character, toggling its case (upper to lower, lower to upper),
-// and printing the result. Includes a mechanism to exit the loop.
-// Topic: Characters, ASCII Values, Conditional Statements, Loops, Input Handling
+/*
+ * Purpose: Demonstrates reading a character, toggling its case (upper to lower, lower to upper),
+ * and printing the result. Includes a mechanism to exit the loop.
+ * Topic: Characters, ASCII Values, Conditional Statements, Loops, Input Handling
+ */
 
 #include <stdio.h>
 

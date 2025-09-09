@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading a string from input and printing it.
-// Topic: Basic string input and output
+/*
+ * Purpose: Demonstrates reading a string from input and printing it.
+ * Topic: Basic string input and output
+ */
 
 #include <stdio.h>
 #include <string.h>

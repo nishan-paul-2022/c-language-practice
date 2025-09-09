@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reversing a string using recursion.
-// Topic: Recursion, String Manipulation
+/*
+ * Purpose: Demonstrates reversing a string using recursion.
+ * Topic: Recursion, String Manipulation
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strlen()

@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading an entire line of text from standard input using fgets.
-// Topic: Strings, Input/Output Functions, Buffer Handling
+/*
+ * Purpose: Demonstrates reading an entire line of text from standard input using fgets.
+ * Topic: Strings, Input/Output Functions, Buffer Handling
+ */
 
 #include <stdio.h>
 #include <string.h> // Required for strlen()

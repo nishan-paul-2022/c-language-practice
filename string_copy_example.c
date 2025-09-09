@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading two strings, copying the first to the second, and printing the result.
-// Topic: String copying and input/output
+/*
+ * Purpose: Demonstrates reading two strings, copying the first to the second, and printing the result.
+ * Topic: String copying and input/output
+ */
 
 #include <stdio.h>
 #include <string.h>

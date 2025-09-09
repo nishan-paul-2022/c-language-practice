@@ -1,5 +1,7 @@
-// Purpose: Demonstrates reading user input into a string and assigning it to a structure member, highlighting safe input practices.
-// Topic: Structures, String Input
+/*
+ * Purpose: Demonstrates reading user input into a string and assigning it to a structure member, highlighting safe input practices.
+ * Topic: Structures, String Input
+ */
 
 #include <stdio.h>
 #include <string.h>

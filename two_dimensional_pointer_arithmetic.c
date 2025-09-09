@@ -1,5 +1,7 @@
-// Purpose: Demonstrates pointer arithmetic with a 2D array, showing how to access elements using pointer notation.
-// Topic: Pointers, 2D Arrays, Pointer Arithmetic
+/*
+ * Purpose: Demonstrates pointer arithmetic with a 2D array, showing how to access elements using pointer notation.
+ * Topic: Pointers, 2D Arrays, Pointer Arithmetic
+ */
 
 #include <stdio.h>
 

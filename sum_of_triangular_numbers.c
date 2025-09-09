@@ -1,5 +1,7 @@
-// Purpose: Calculates the sum of the first n triangular numbers.
-// Topic: Loops and Mathematical Series (Triangular Numbers)
+/*
+ * Purpose: Calculates the sum of the first n triangular numbers.
+ * Topic: Loops and Mathematical Series (Triangular Numbers)
+ */
 
 #include <stdio.h>
 

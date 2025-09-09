@@ -1,6 +1,8 @@
-// Purpose: Demonstrates that an array name can be treated as a pointer to its first element
-// and how to print the string and its starting memory address.
-// Topic: Pointers, Arrays, String Handling, Memory Addresses
+/*
+ * Purpose: Demonstrates that an array name can be treated as a pointer to its first element
+ * and how to print the string and its starting memory address.
+ * Topic: Pointers, Arrays, String Handling, Memory Addresses
+ */
 
 #include <stdio.h>
 
