@@ -64,5 +64,5 @@ int main() {
         printf("%s\n", string1); // Original code prints string1 if v > 0
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

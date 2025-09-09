@@ -57,5 +57,5 @@ int main() {
         case_number++;
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

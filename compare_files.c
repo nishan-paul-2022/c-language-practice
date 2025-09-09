@@ -64,5 +64,5 @@ int main(void) {
         printf("ACCEPTED\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

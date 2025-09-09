@@ -77,5 +77,5 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    return EXIT_SUCCESS; // Indicate successful execution
+    return EXIT_SUCCESS;
 }

@@ -48,5 +48,5 @@ int main() {
     printf("Concatenated string: ");
     puts(concatenated_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

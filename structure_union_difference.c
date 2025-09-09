@@ -58,5 +58,5 @@ int main() {
     printf("\n--- Typedef Example ---\n");
     printf("Employee Salary: %.2f\n", employee_salary);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

@@ -43,5 +43,5 @@ int main() {
         }
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

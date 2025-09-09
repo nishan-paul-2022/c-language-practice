@@ -16,5 +16,5 @@ int main(void) {
     printf("Size of long int: %zu bytes\n", sizeof(long_var));
     printf("Size of unsigned long long int: %zu bytes\n", sizeof(ull_var));
 
-    return 0; // Indicate successful execution
+    return 0;
 }

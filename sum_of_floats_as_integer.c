@@ -22,5 +22,5 @@ int main() {
     // Print the sum as an integer
     printf("The sum of the two numbers (truncated to integer) is: %d\n", sum_as_integer);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

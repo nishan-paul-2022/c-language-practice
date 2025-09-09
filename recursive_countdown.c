@@ -29,5 +29,5 @@ int main() {
     printf("Starting countdown...\n");
     print_countdown_recursive(); // Initiate the recursive process
     printf("Countdown finished.\n");
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -43,5 +43,5 @@ int main() {
         printf("Could not determine the larger value due to an error.\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

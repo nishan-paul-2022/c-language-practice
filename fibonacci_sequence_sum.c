@@ -48,5 +48,5 @@ int main() {
     // %lld is used for printing long long int.
     printf("\n\n%lld\n", total_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

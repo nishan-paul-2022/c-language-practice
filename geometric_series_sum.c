@@ -69,5 +69,5 @@ int main(void) {
         printf("\n"); // Add a newline for better readability between calculations
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

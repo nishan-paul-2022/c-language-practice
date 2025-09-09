@@ -50,5 +50,5 @@ int main(void) {
     // Print the result
     printf("The sum of the first %d natural numbers is: %d\n", n, result_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

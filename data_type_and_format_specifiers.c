@@ -15,5 +15,5 @@ int main() {
     //        'lf' is the correct specifier for 'double' with printf.
     printf("%hd %ld %5.9lf\n", short_int_var, long_int_var, double_var);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -18,5 +18,5 @@ int main(void) {
     // Using %p format specifier for printing memory addresses.
     printf("The memory address of the string (first character) is: %p\\n", (void *)country_name);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

@@ -30,5 +30,5 @@ int main() {
     // Print the value returned by the function
     printf("Value returned by get_fixed_value(): %d\n", function_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

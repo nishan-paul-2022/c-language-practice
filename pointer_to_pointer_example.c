@@ -22,5 +22,5 @@ int main() {
     // You can also print the address of the pointer to the pointer
     printf("Address of ptr_to_ptr: %p\n", ptr_to_ptr);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

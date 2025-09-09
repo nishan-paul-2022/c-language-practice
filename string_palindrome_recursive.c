@@ -59,5 +59,5 @@ int main() {
         printf("No, the string \"%s\" is not a palindrome.\n", input_string);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

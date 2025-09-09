@@ -26,5 +26,5 @@ int main() {
     // Print the total count of numbers not divisible by 6
     printf("The total number of integers not divisible by 6 is: %d\n", count_not_divisible);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

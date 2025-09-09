@@ -21,5 +21,5 @@ int main() {
     // The preprocessor replaces 'x' with '2' here as well.
     printf("%d", x);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

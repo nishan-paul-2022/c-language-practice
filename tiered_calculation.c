@@ -42,5 +42,5 @@ int main() {
     // Using %.2lf to display the cost with two decimal places for currency.
     printf("Total cost: %.2lf\n", total_cost);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

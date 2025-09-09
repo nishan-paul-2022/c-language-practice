@@ -37,5 +37,5 @@ int main() {
     // %lf is used for printing double values.
     printf("%lf\n", years_to_depreciate);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

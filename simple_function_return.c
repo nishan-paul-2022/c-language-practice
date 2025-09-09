@@ -20,5 +20,5 @@ int main() {
     // Print the result returned by the function
     printf("The result of multiplying %d by 10 is: %d\n", input_for_function, function_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

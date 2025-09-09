@@ -34,5 +34,5 @@ int main(void) {
     // Print the destination string
     puts(destination_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -38,5 +38,5 @@ int main() {
 
     printf("The sum of the first and last digits of %d is: %d\n", number, sum_of_digits);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

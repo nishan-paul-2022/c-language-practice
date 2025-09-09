@@ -31,5 +31,5 @@ int main() {
         }
     }
 
-    return 0; // Indicate successful execution (though the loop is infinite, this is good practice)
+    return 0; (though the loop is infinite, this is good practice)
 }

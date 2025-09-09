@@ -59,5 +59,5 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

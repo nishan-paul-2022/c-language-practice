@@ -17,5 +17,5 @@ int main() {
     // Print the integer value of the result (0 for false, 1 for true)
     printf("The result of (5 >= 8 && 6 == 5) is: %d\n", result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

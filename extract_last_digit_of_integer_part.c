@@ -25,5 +25,5 @@ int main() {
     // Print the extracted last digit
     printf("The last digit of the integer part is: %d\n", last_digit);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -74,5 +74,5 @@ int main() {
         printf("GCD: %lld, LCM: %lld\n", gcd_result, lcm_result);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

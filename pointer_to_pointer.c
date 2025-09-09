@@ -29,5 +29,5 @@ int main(void) {
     // You can also print the address of 'pointer_to_number' itself:
     // printf("Address of 'pointer_to_number' (stored in pointer_to_pointer): %p\\n", (void *)pointer_to_pointer);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

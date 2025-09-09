@@ -19,5 +19,5 @@ int main(void) {
         }
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

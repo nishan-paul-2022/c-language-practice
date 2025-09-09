@@ -37,5 +37,5 @@ int main() {
     // Print the result
     printf("The sum of the digits in the string is: %d\n", digit_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -48,5 +48,5 @@ int main() {
     }
     printf("\n"); // Print a newline at the end
 
-    return 0; // Indicate successful execution
+    return 0;
 }

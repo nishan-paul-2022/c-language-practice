@@ -114,5 +114,5 @@ int main() {
     free(matrix);
     free(prime_numbers);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

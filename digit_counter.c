@@ -35,5 +35,5 @@ int main() {
         printf("%d\n", digit_count);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

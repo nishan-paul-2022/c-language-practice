@@ -34,5 +34,5 @@ int main() {
         return 1; // Indicate an error
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

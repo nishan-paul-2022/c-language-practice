@@ -70,5 +70,5 @@ int main(void) {
         printf("\\n"); // Newline after each row
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

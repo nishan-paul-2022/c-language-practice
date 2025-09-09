@@ -47,5 +47,5 @@ int main() {
     result = func_ptr_sub(num1, num2);
     printf("Absolute difference: %d\n", result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

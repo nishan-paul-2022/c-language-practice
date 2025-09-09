@@ -35,5 +35,5 @@ int main(void) {
     // Print the resulting string (string1)
     puts(string1);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

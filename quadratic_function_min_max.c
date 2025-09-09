@@ -46,5 +46,5 @@ int main() {
     // %3.0lf formats the double to have a minimum width of 3 and 0 decimal places (rounded).
     printf("%3.0lf, %3.0lf\n", 4.0 + 0.05 * D1, 4.0 + 0.05 * D2);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

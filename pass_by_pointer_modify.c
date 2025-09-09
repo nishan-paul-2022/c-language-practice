@@ -50,5 +50,5 @@ int main() {
     printf("Original values: %d, %d\n", original_value1, original_value2);
     printf("Modified values: %d, %d\n", value1, value2);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

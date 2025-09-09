@@ -24,5 +24,5 @@ int main() {
     // If the string is shorter than 10 characters, it will be padded with spaces.
     printf("%10s\n", input_buffer);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

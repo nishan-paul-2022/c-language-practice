@@ -25,5 +25,5 @@ int main() {
 
     printf("Input stopped or invalid input received.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -71,5 +71,5 @@ int main() {
     // Print the final count
     printf("The character occurred %d times in the string.\n", occurrence_count);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -79,5 +79,5 @@ int main() {
     // Free the allocated memory to prevent memory leaks
     free_list(head);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

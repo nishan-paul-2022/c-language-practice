@@ -28,5 +28,5 @@ int main() {
     // Note: The original string 'str' is modified by the first strrev call.
     printf("Reversed string starting from 4th char of reversed string: %s\n", strrev(strrev(str) + 3));
 
-    return 0; // Indicate successful execution
+    return 0;
 }

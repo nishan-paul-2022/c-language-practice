@@ -21,5 +21,5 @@ int main() {
     // Print the largest number found
     printf("The largest number is: %d\n", largest_number);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -50,5 +50,5 @@ int main() {
     // Note: If num_elements is not a multiple of 3, the remaining elements are not printed.
     // This behavior matches the original code's logic.
 
-    return 0; // Indicate successful execution
+    return 0;
 }

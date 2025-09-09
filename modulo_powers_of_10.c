@@ -57,5 +57,5 @@ int main() {
     // Print the original input value as in the original code
     printf("Original value: %d\n", input_value);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

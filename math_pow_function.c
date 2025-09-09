@@ -36,5 +36,5 @@ int main() {
         printf("Result: %.2lf\n\n", result);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

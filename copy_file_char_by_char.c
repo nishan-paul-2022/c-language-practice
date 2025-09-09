@@ -95,5 +95,5 @@ int main(void) {
 
     printf("File copy complete.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

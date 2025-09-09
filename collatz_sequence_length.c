@@ -48,5 +48,5 @@ int main() {
     // Print a newline at the end for cleaner output after all numbers are processed.
     printf("\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

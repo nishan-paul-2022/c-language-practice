@@ -60,5 +60,5 @@ int main(void) {
     printf("ptr_to_double: %p\\n", (void *)ptr_to_double);
     printf("ptr_to_long_double: %p\\n", (void *)ptr_to_long_double);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

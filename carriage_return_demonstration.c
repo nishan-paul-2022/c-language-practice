@@ -12,5 +12,5 @@ int main() {
     // from the beginning of the line.
     printf("BATMAN SUPERTMAN IRONMAN\r WOLVERINE CAPTAINAMERICA WONDER WOMAN\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

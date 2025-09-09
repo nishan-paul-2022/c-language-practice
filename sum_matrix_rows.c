@@ -39,5 +39,5 @@ int main() {
         printf("Sum of row %d: %.2lf\n", row_index, row_sum);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

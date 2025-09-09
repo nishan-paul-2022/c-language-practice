@@ -34,5 +34,5 @@ int main(void) {
     printf("copied_value: %d\\n", copied_value);
     printf("*pointer_to_number: %d\\n", *pointer_to_number);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

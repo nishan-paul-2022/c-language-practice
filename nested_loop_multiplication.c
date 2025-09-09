@@ -45,5 +45,5 @@ int main() {
     // Print the total sum of all numbers printed in the pattern.
     printf("Sum of all numbers in the pattern: %d\n", total_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -19,5 +19,5 @@ int main() {
     printf("Printing string via function:\n");
     print_string_function(my_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

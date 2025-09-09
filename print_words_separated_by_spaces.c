@@ -52,5 +52,5 @@ int main() {
         i = j;
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

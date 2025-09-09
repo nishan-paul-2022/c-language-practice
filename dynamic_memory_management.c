@@ -107,5 +107,5 @@ int main() {
     allocated_memory = NULL; // Good practice to set pointer to NULL after freeing.
     printf("Memory freed.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

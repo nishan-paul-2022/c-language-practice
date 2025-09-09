@@ -32,5 +32,5 @@ int main() {
     // Print the result
     printf("The sum of squares of the first %d odd numbers (up to %d) is: %lld\n", input_n, upper_odd_limit, sum_of_squares);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

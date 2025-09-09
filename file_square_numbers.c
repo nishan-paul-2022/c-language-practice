@@ -78,5 +78,5 @@ int main() {
 
     printf("Successfully processed numbers and wrote squares to output.txt.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

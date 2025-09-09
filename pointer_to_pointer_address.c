@@ -16,5 +16,5 @@ int main() {
     // %p is used to print pointer addresses.
     printf("Address of ptr_to_ptr: %p\n", ptr_to_ptr);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

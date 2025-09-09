@@ -22,5 +22,5 @@ int main() {
     // but the original code did not include this, so I will omit it to stay true to the original behavior.
     // If desired, one could add: putchar('\n');
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -26,5 +26,5 @@ int main() {
     // Then PRINT_FLOAT prints this value.
     PRINT_FLOAT(MAX(30.56, 30.89));
 
-    return 0; // Indicate successful execution
+    return 0;
 }

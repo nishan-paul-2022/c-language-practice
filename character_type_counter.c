@@ -58,5 +58,5 @@ int main() {
     printf("Spaces: %d\n", spaces);
     printf("Others: %d\n", others);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

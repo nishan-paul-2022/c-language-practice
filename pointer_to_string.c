@@ -22,5 +22,5 @@ int main(void) {
     // Using %p format specifier for printing memory addresses.
     printf("The memory address pointed to by pointer_to_string is: %p\\n", (void *)pointer_to_string);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

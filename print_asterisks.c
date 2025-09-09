@@ -27,5 +27,5 @@ int main() {
     // Print a final newline character after all asterisks have been printed.
     printf("\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

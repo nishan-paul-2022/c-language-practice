@@ -45,5 +45,5 @@ int main() {
     // Print the modified string
     printf("Modified string: %s\n", str);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

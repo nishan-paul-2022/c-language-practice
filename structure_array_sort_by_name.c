@@ -87,5 +87,5 @@ int main() {
     // Print the sorted array
     printStudentArray(students, numStudents);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

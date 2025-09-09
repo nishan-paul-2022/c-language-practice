@@ -48,5 +48,5 @@ int main() {
     // After the loops, arr[num_elements - 1] will contain the maximum element
     printf("The maximum element in the array is: %d\n", arr[num_elements - 1]);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

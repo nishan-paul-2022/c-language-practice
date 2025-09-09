@@ -94,5 +94,5 @@ void generate_sorted_permutations(char input_string[]) {
 int main() {
     char input_string[] = "ACBC"; // Example string for permutation generation
     generate_sorted_permutations(input_string);
-    return EXIT_SUCCESS; // Indicate successful execution
+    return EXIT_SUCCESS;
 }

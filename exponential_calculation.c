@@ -14,5 +14,5 @@ int main(void) {
     // Print the result
     printf("The result of e^%.1f is %f\n", base_value, result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -27,5 +27,5 @@ int main() {
     printf("Call 5: %d\n", increment_static_value()); // Expected: 15
     printf("Call 6: %d\n", increment_static_value()); // Expected: 16
 
-    return 0; // Indicate successful execution
+    return 0;
 }

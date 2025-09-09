@@ -20,5 +20,5 @@ int main() {
     printf("Calculating the size of long double...\n");
     print_sizeof_long_double(&sample_value); // Pass the address of the sample variable
 
-    return 0; // Indicate successful execution
+    return 0;
 }

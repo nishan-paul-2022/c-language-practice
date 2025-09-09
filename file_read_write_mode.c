@@ -70,5 +70,5 @@ int main(void) {
 
     printf("Successfully read from and wrote to '%s'.\n", FILENAME);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

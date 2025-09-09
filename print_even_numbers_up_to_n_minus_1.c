@@ -20,5 +20,5 @@ int main() {
         printf("%d\n", current_even_number); // Print the current even number
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

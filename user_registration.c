@@ -151,5 +151,5 @@ int main() {
     printf("Username: %s\n", user_data.user_name);
     printf("Birthdate: %d/%d/%d\n", user_data.birth_date.day, user_data.birth_date.month, user_data.birth_date.year);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

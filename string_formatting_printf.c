@@ -16,5 +16,5 @@ int main(void) {
     // The actual output will be the string "NISHAN  PAUL" padded with spaces to a total width of 100 characters.
     printf("%2.100s\n", str);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

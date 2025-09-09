@@ -92,5 +92,5 @@ int main() {
         printf("Custom product calculation result: %lld\n", result_product);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

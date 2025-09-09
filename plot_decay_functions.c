@@ -42,5 +42,5 @@ int main() {
         printf("2\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

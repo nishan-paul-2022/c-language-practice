@@ -29,5 +29,5 @@ int main() {
         printf("Not an alphabet character.\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

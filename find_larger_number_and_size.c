@@ -28,5 +28,5 @@ int main() {
     // Print the size of the float variable
     printf("The size of the float variable 'larger_number' is: %d bytes\n", size_of_float_var);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

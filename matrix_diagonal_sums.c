@@ -42,5 +42,5 @@ int main() {
     printf("\nSum of the main diagonal: %d\n", main_diagonal_sum);
     printf("Sum of the anti-diagonal: %d\n", anti_diagonal_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

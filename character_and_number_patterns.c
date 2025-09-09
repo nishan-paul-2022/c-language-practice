@@ -101,5 +101,5 @@ int main() {
     print_left_aligned_char_triangle(rows2, char2);
     print_right_aligned_number_triangle(rows3);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -59,5 +59,5 @@ int main(void) {
 
     printf("Second string entered: %s\\n", input_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

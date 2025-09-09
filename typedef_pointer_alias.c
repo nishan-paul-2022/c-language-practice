@@ -25,5 +25,5 @@ int main() {
     puts(strPtr2);
     puts(strPtr3);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

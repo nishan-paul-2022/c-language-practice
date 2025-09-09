@@ -22,5 +22,5 @@ int main() {
         printf("report\n%d\n", total_donations); // Report the current total
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

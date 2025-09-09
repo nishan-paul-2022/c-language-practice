@@ -40,5 +40,5 @@ int main() {
         printf("%d\n", stringLength);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

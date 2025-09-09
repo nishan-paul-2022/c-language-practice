@@ -77,5 +77,5 @@ int main() {
     // Print the count of trailing zeros
     printf("Number of trailing zeros in %d! is: %d\n", number, trailing_zeros_count);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -25,5 +25,5 @@ int main() {
     printf("Double: %.2lf\n", myStruct.doubleValue);
     printf("String: %s\n", myStruct.stringValue);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

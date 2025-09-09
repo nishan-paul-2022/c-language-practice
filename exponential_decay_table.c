@@ -53,5 +53,5 @@ int main() {
     // The original code had getch() here, which is non-standard.
     // Removed for compatibility.
 
-    return 0; // Indicate successful execution
+    return 0;
 }

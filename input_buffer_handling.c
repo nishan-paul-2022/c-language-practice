@@ -50,5 +50,5 @@ int main(void) {
     }
 
     printf("\nProgram finished.\n");
-    return 0; // Indicate successful execution
+    return 0;
 }

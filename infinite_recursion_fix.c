@@ -24,5 +24,5 @@ int main() {
     printf("Starting safe recursive function...\n");
     safe_recursive_function(5); // Start recursion with an initial depth of 5
     printf("Safe recursive function finished.\n");
-    return 0; // Indicate successful execution
+    return 0;
 }

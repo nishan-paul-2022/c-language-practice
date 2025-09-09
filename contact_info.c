@@ -9,5 +9,5 @@ int main() {
     printf("2: 6/3, Nayapaltan\n");
     printf("3: Dhaka, 1200\n");
     
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -21,5 +21,5 @@ int main(void) {
     // Print the modified value of the variable.
     printf("Modified value: %f\\n", original_value);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

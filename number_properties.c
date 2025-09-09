@@ -77,5 +77,5 @@ int main() {
         printf("%d is not a Palindrome Number.\n", input_number);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

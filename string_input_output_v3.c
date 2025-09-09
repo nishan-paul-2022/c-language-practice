@@ -20,5 +20,5 @@ int main(void) {
     // Print the string
     puts(input_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -51,5 +51,5 @@ int main() {
     // Print the overall maximum sequence length found in the range.
     printf("%d\n", max_sequence_length);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -43,5 +43,5 @@ int main() {
     // Close the file to free up system resources.
     fclose(file_ptr);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

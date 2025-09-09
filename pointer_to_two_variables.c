@@ -39,5 +39,5 @@ int main(void) {
     printf("second_number: %d\\n", second_number);
     printf("*ptr_to_second: %d\\n", *ptr_to_second);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

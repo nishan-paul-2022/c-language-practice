@@ -64,5 +64,5 @@ int main() {
     printf("Sum of digits: %ld\n", sum_of_digits);
     printf("Reversed number: %ld\n", reversed_number);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

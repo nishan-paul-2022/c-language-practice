@@ -42,5 +42,5 @@ int main(void) {
     printf("second_variable: %d\\n", second_variable);
     printf("*pointer2 (value at address pointer2 points to): %d\\n", *pointer2);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

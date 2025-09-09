@@ -99,5 +99,5 @@ int main() {
 
     printf("Data successfully written to '%s' in mode '%s'.\n", filename, mode);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

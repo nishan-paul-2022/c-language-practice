@@ -46,5 +46,5 @@ int main() {
         num_test_cases--; // Decrement test case counter
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

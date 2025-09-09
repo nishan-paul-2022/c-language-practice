@@ -33,5 +33,5 @@ int main() {
     // Print the calculated total sum.
     printf("The weighted sum is: %d\n", total_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

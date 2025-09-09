@@ -21,5 +21,5 @@ int main(void) {
     // Print the memory address stored in the pointer.
     printf("The character value via pointer: %c, The address via pointer: %p\\n", *pointer_to_char, (void *)pointer_to_char);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

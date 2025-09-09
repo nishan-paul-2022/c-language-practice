@@ -30,5 +30,5 @@ int main() {
     printf("Identifier character: %c\n", container_instance.identifier);
     printf("Aliased integer value: %d\n", alias_value);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

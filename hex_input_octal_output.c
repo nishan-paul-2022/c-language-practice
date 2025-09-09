@@ -25,5 +25,5 @@ int main() {
     printf("Sum in decimal: %d\n", sum_decimal);
     printf("Sum in octal: %o\n", sum_decimal);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

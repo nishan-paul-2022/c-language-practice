@@ -86,5 +86,5 @@ int main(void) {
         return EXIT_FAILURE; // Indicate failure
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

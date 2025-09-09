@@ -9,5 +9,5 @@ int main() {
     // Print a predefined string to the standard output
     printf("SO, WHAT'S THE PLAY RIGHT NOW ? DON'T KNOW YET, BRO.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

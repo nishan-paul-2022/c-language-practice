@@ -105,5 +105,5 @@ int main() {
     sort_records_by_name(records, num_records); // Sort the array by name
     output_records(records, num_records); // Output the sorted data
 
-    return 0; // Indicate successful execution
+    return 0;
 }

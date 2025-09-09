@@ -46,5 +46,5 @@ int main(void) {
         printf("\n"); // Move to the next line
     }
 
-    return EXIT_SUCCESS; // Indicate successful execution
+    return EXIT_SUCCESS;
 }

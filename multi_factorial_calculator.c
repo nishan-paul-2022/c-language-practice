@@ -44,5 +44,5 @@ int main() {
     // Print the calculated result
     printf("The multi-factorial is: %lld\n", result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

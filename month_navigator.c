@@ -71,5 +71,5 @@ int main() {
         printf("Invalid input detected. Exiting program.\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

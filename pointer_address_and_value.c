@@ -18,5 +18,5 @@ int main(void) {
     printf("Address of character: %p\n", (void *)char_pointer); // Cast to void* for %p
     printf("Address of the pointer: %p\n", (void *)&char_pointer); // Cast to void* for %p
 
-    return 0; // Indicate successful execution
+    return 0;
 }

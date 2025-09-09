@@ -70,5 +70,5 @@ int main() {
         printf("No valid numbers were entered before the sentinel value.\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

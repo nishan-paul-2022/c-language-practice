@@ -39,5 +39,5 @@ int main() {
     printf("Value at matrix[1][2]: %d\n", value1);
     printf("Value at matrix[1][1] (accessed via p+5): %d\n", value2);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -95,5 +95,5 @@ int main() {
     // Output the sorted array
     outputStudentArray(students, numStudents);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -36,5 +36,5 @@ int main() {
     // Using %.2lf to display the sum with two decimal places for better readability.
     printf("\nThe total sum of the entered numbers is: %.2lf\n", current_sum);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

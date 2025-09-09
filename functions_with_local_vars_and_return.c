@@ -62,5 +62,5 @@ int main() {
         printf("Division: Error (division by zero).\n");
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

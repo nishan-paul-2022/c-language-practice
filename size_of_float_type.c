@@ -10,5 +10,5 @@ int main() {
     printf("The size of the 'float' data type is: %zu bytes\n", sizeof(float));
     // Using %zu for sizeof result is good practice as sizeof returns size_t
 
-    return 0; // Indicate successful execution
+    return 0;
 }

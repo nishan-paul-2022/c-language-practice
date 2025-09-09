@@ -19,5 +19,5 @@ int main() {
     // Print the final calculated sum.
     printf("%d\n", sum_of_multiples);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

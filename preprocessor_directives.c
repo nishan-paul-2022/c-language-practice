@@ -44,5 +44,5 @@ int main() {
     // Since 'x' was defined and potentially redefined, this will execute the last definition.
     x
 
-    return 0; // Indicate successful execution
+    return 0;
 }

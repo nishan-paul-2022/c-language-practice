@@ -15,5 +15,5 @@ int main() {
         printf("Character '%c' has ASCII value: %d\n", (char)char_code, char_code);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

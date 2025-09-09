@@ -33,5 +33,5 @@ int main() {
     atan2_x = 0.0;
     printf("atan2(%.2f, %.2f) = %.4f radians\n", atan2_y, atan2_x, atan2(atan2_y, atan2_x));
 
-    return 0; // Indicate successful execution
+    return 0;
 }

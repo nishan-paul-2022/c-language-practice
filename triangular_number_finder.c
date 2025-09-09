@@ -34,5 +34,5 @@ int main() {
         printf("%lld\n", current_number);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

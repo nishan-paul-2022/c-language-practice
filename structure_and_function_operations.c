@@ -46,5 +46,5 @@ int main() {
     // Print the result using the print function
     print_numeric_data(&sum_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -32,5 +32,5 @@ int main() {
     printf("Copied string in dest_str: %s\n", dest_str);
     printf("Length of copied string: %d\n", copied_length);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

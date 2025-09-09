@@ -64,5 +64,5 @@ int main() {
         return 1; // Indicate that the input was out of range for defined processing.
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

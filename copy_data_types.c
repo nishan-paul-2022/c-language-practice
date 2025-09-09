@@ -67,5 +67,5 @@ int main(void) {
 
     printf("Data successfully copied from '%s' to '%s'.\n", INPUT_FILENAME, OUTPUT_FILENAME);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

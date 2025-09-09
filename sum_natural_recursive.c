@@ -37,5 +37,5 @@ int main() {
     int sum = sum_natural_numbers(n);
     printf("The sum of the first %d natural numbers is: %d\n", n, sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

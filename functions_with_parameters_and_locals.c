@@ -42,5 +42,5 @@ int main() {
     printf("Sum of %d and %d is: %d\n", number1, number2, sum_result);
     printf("Result of calculation (value * 10 + sum) is: %d\n", product_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

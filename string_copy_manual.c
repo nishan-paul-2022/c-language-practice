@@ -33,5 +33,5 @@ int main() {
     printf("Copied string: ");
     puts(destination_string);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

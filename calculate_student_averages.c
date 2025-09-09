@@ -93,5 +93,5 @@ int main(void) {
 
     printf("\nAverage calculation complete. Results saved to '%s'.\n", OUTPUT_FILE);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

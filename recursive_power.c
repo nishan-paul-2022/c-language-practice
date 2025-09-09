@@ -44,5 +44,5 @@ int main() {
         printf("%d raised to the power of %d is: %d\n", base, exponent, power_result);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

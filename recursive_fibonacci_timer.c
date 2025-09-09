@@ -61,5 +61,5 @@ int main() {
     // Print the elapsed time.
     printf("Time taken for computation: %lf seconds\n", elapsed_time);
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

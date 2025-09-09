@@ -22,5 +22,5 @@ int main(void) {
         printf("Length: %d\n", line_length);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

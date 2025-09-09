@@ -22,6 +22,6 @@ int main(void) {
         // In a real scenario, you would perform operations on the file here.
         fclose(file_pointer);
         printf("File 'perror.txt' opened successfully (and then closed).\n");
-        return EXIT_SUCCESS; // Indicate successful execution
+        return EXIT_SUCCESS;
     }
 }

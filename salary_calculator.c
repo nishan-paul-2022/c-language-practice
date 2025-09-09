@@ -36,5 +36,5 @@ int main(void) {
     // Print the calculated salary
     printf("Your calculated salary is: %.2f\n", salary); // Using %.2f for currency
 
-    return 0; // Indicate successful execution
+    return 0;
 }

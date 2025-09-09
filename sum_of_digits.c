@@ -29,5 +29,5 @@ int main() {
     // Print the result
     printf("The sum of the digits of %d is: %d\n", number, digit_sum);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

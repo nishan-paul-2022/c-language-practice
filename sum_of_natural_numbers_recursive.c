@@ -38,5 +38,5 @@ int main() {
     // Print the calculated result
     printf("The sum of natural numbers up to %d is: %d\n", input_number, sum_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

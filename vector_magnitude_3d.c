@@ -30,5 +30,5 @@ int main() {
         printf("%.2lf\n", magnitude);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

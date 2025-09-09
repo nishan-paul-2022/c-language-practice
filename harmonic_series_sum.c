@@ -23,5 +23,5 @@ int main() {
     // Print the calculated sum
     printf("The summation of the harmonic series up to %d terms is: %f\n", n_terms, sum_harmonic_series);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

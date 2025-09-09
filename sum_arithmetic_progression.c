@@ -35,5 +35,5 @@ int main() {
         num_test_cases--;
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

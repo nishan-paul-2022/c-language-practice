@@ -23,5 +23,5 @@ int main() {
         printf("%d X %d = %d\n", number, multiplier, result);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

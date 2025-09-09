@@ -78,5 +78,5 @@ int main(void) {
         printf("\n"); // Move to the next line after printing a row
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

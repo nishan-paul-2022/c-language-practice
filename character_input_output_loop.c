@@ -19,5 +19,5 @@ int main() {
 
     printf("\nEnd of input detected.\n");
 
-    return 0; // Indicate successful execution
+    return 0;
 }

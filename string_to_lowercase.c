@@ -47,5 +47,5 @@ int main() {
         printf("%s\n", inputString);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

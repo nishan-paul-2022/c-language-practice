@@ -25,5 +25,5 @@ int main() {
     printf("Total cost for rice: %.2f\n", total_rice_cost);
     printf("Total cost for sugar: %.2f\n", total_sugar_cost);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

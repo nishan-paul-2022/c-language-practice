@@ -44,5 +44,5 @@ int main() {
     // Print the calculated GCD
     printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", number1, number2, gcd_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

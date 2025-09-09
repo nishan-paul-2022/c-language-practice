@@ -55,5 +55,5 @@ int main(void) {
         printf("Factorial of %d is %lld\n", n, factorial_result);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

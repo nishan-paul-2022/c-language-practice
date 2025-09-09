@@ -40,5 +40,5 @@ int main() {
     // Print the calculated LCM
     printf("The Least Common Multiple (LCM) of %d and %d is: %lld\n", num1, num2, lcm_result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

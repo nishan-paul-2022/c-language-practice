@@ -37,5 +37,5 @@ int main() {
     // Print the calculated total salary, formatted to two decimal places
     printf("The total salary should be: %.2f\n", total_salary);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

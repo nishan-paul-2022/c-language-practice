@@ -102,5 +102,5 @@ int main() {
         printf("%3d : %d\n", score_value, count);
     }
 
-    return 0; // Indicate successful execution.
+    return 0;
 }

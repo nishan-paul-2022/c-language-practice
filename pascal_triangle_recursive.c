@@ -67,5 +67,5 @@ int main() {
         printf("\n"); // Move to the next line after printing all elements of a row
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

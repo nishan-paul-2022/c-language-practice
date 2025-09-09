@@ -41,5 +41,5 @@ int main() {
 
     printf("The sum of the digits of %d is: %d\n", original_number, sum_of_digits);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

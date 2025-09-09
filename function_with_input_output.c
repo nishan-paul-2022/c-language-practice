@@ -54,5 +54,5 @@ int main() {
     // Print the character returned by the function
     printf("Character returned by the function: %c\n", returned_char);
 
-    return 0; // Indicate successful execution
+    return 0;
 }

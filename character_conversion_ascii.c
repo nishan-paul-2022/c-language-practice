@@ -36,5 +36,5 @@ int main() {
     printf("ASCII values: Original1=%d, Upper1=%d, Original2=%d, Lower1=%d\n",
            asciiVal1, asciiValUpper, asciiVal2, asciiValLower);
 
-    return 0; // Indicate successful execution
+    return 0;
 }
