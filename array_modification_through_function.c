@@ -1,5 +1,7 @@
-// Purpose: Demonstrates how a function can modify array elements passed to it.
-// Topic: Arrays, Functions, Pass-by-Reference (for arrays), Pointers
+/*
+ * Purpose: Demonstrates how a function can modify array elements passed to it.
+ * Topic: Arrays, Functions, Pass-by-Reference (for arrays), Pointers
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

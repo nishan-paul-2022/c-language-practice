@@ -1,9 +1,10 @@
-// Purpose: Reads an array of integers, reverses it in-place, and allows accessing an element by index.
-// Topic: Arrays, Reversal Algorithm, Pointers, Loops, Input/Output
+/*
+ * Purpose: Reads an array of integers, reverses it in-place, and allows accessing an element by index.
+ * Topic: Arrays, Reversal Algorithm, Pointers, Loops, Input/Output
+ */
 
 #include <stdio.h>
-
-#define ARRAY_SIZE 10 // Define the size of the array
+#define ARRAY_SIZE 10
 
 // Function to reverse an array in-place
 void reverse_array(int arr[], int size) {
@@ -59,5 +60,5 @@ int main() {
         return 1; // Indicate an error
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

@@ -1,5 +1,7 @@
-// Purpose: Demonstrates passing an array to a function and modifying its elements, using array size as a parameter, and avoiding global variables.
-// Topic: Arrays, Functions, Pointers, Variable Modification, Dynamic Memory Allocation
+/*
+ * Purpose: Demonstrates passing an array to a function and modifying its elements, using array size as a parameter, and avoiding global variables.
+ * Topic: Arrays, Functions, Pointers, Variable Modification, Dynamic Memory Allocation
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit(), malloc(), free()

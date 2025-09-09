@@ -18,7 +18,6 @@ int main() {
         countInRange = 0; // Reset count for each new batch
 
         printf("--- New Batch ---\n");
-
         while (scanf("%d", &age) == 1) {
             if (age == 0) {
                 break; // End of current batch, process and print count

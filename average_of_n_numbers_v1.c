@@ -5,24 +5,20 @@
 
 #include <stdio.h>
 
-int main()
-{
-    int count; // n in original
-    double sum = 0.0; // z in original
-    double number; // x in original
+int main() {
+    int count; // Number of values to average
+    double sum = 0.0; // Running sum of input values
+    double number; // Temporary storage for each input value
 
     printf("Enter the number of values you want to average: ");
-    if (scanf("%d", &count) != 1 || count <= 0)
-    {
+    if (scanf("%d", &count) != 1 || count <= 0) {
         printf("Invalid input. Please enter a positive integer for the count.\n");
         return 1;
     }
 
     printf("Enter %d numbers:\n", count);
-    for (int i = 0; i < count; i++) // Loop 'count' times to read numbers
-    {
-        if (scanf("%lf", &number) != 1)
-        {
+    for (int i = 0; i < count; i++) { // Loop 'count' times to read numbers
+        if (scanf("%lf", &number) != 1) {
             printf("Invalid input. Please enter a numeric value.\n");
             return 1;
         }

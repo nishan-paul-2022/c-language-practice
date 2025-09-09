@@ -3,14 +3,14 @@
  * Topic: String Manipulation, Loops, Character Handling (ctype.h), Arrays (for frequency counting)
  */
 
-#include <stdio.h>  // Required for printf, fgets
+#include <stdio.h> // Required for printf, fgets
 #include <string.h> // Required for strcspn
-#include <ctype.h>  // Required for tolower, isalpha
+#include <ctype.h> // Required for tolower, isalpha
 
 int main() {
     char input_string[100]; // Buffer to store the input string
     int frequency[26] = {0}; // Array to store frequency of 'a' through 'z', initialized to 0
-    int i;                   // Loop counter
+    int i; // Loop counter
 
     // Prompt user for input and read the entire line safely
     printf("Enter a line of text: ");

@@ -1,5 +1,8 @@
-// Purpose: Calculates the sum of an arithmetic series where the first term is 2 and the common difference is 4.
-// Topic: Arithmetic Progression, Series Summation, Loops
+/*
+ * Purpose: Calculates the sum of an arithmetic series where the first term is 2 and the common difference is 4.
+ * Topic: Arithmetic Progression, Series Summation, Loops
+ */
+
 #include <stdio.h>
 #include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
 
@@ -8,9 +11,9 @@ int main() {
     int term_index;
     int sum = 0;
     int current_term = 2; // The first term of the series
+    char title[] = "Enter the number of terms (n) for the series (2, 6, 10, 14, ...):\n";
 
-    printf("Enter the number of terms (n) for the series (2, 6, 10, 14, ...):\n");
-    printf("Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to exit.\n");
+    printf("%s", title);
 
     // Read the number of terms until EOF is encountered or an input error occurs
     while (scanf("%d", &num_terms) == 1) {
@@ -36,7 +39,7 @@ int main() {
         printf("The sum of the first %d terms is: %d\n", num_terms, sum);
 
         // Prompt for the next input
-        printf("Enter the next number of terms (or EOF to exit): ");
+        printf("%s", title);
     }
 
     // Check if the loop terminated due to an error rather than EOF

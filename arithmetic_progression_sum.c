@@ -1,13 +1,15 @@
-// Purpose: Calculates the sum of the first 'n' terms of an arithmetic progression.
-//          The progression starts at 2 and has a common difference of 4.
-// Topic: Arithmetic Progression, Loops, Summation, Input/Output
+/*
+ * Purpose: Calculates the sum of the first 'n' terms of an arithmetic progression. 
+ *          The progression starts at 2 and has a common difference of 4.
+ * Topic: Arithmetic Progression, Loops, Summation, Input/Output
+ */
 
 #include <stdio.h>
 
 int main() {
     int num_terms;
     long int current_term = 2; // First term of the progression
-    long int total_sum = 0;    // Initialize sum
+    long int total_sum = 0; // Initialize sum
 
     printf("Enter the number of terms for the arithmetic progression (starting with 2, difference of 4): ");
     // Read the number of terms and validate input
@@ -29,7 +31,7 @@ int main() {
     // We will use an iterative approach as in the original code.
     for (int i = 0; i < num_terms; i++) {
         total_sum += current_term; // Add the current term to the sum
-        current_term += 4;         // Calculate the next term (add common difference)
+        current_term += 4; // Calculate the next term (add common difference)
     }
 
     printf("The sum of the first %d terms is: %ld\n", num_terms, total_sum);

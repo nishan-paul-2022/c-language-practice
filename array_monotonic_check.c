@@ -1,5 +1,7 @@
-// Purpose: Counts elements in an array that are strictly increasing or strictly decreasing relative to all preceding elements.
-// Topic: Arrays, Loops, Conditional Logic
+/*
+ * Purpose: Counts elements in an array that are strictly increasing or strictly decreasing relative to all preceding elements.
+ * Topic: Arrays, Loops, Conditional Logic
+ */
 
 #include <stdio.h>
 

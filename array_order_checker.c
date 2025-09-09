@@ -1,8 +1,11 @@
+/*
+ * Purpose: Reads a sequence of numbers and determines if they are in ascending,
+ *          descending, equivalent, or unsorted order.
+ * Topic: Arrays, Conditional Logic, Loops
+ */
+
 #include <stdio.h>
 
-// Purpose: Reads a sequence of numbers and determines if they are in ascending,
-//          descending, equivalent, or unsorted order.
-// Topic: Arrays, Conditional Logic, Loops
 int main() {
     int numbers[5]; // Array to store 5 integers
     int i;

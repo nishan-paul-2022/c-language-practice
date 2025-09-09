@@ -5,9 +5,9 @@
  * Topic: Loops, Arithmetic Operations, String Conversion, Digit Manipulation
  */
 
-#include <stdio.h>  // Required for printf, scanf, sprintf
+#include <stdio.h> // Required for printf, scanf, sprintf
 #include <string.h> // Required for strlen
-#include <math.h>   // Required for pow (though custom power function is better for integers)
+#include <math.h> // Required for pow (though custom power function is better for integers)
 
 // Function to calculate integer power (base^exponent)
 long long int integer_power(int base, int exponent) {
@@ -20,8 +20,8 @@ long long int integer_power(int base, int exponent) {
 
 int main() {
     int original_number; // The number input by the user
-    int temp_number;     // Temporary variable for digit extraction
-    int num_digits = 0;  // Number of digits in the input number
+    int temp_number; // Temporary variable for digit extraction
+    int num_digits = 0; // Number of digits in the input number
     long long int sum_of_powers = 0; // Sum of digits raised to the power of num_digits
     char num_as_string[20]; // Buffer to store the number as a string (max 19 digits for long long)
 

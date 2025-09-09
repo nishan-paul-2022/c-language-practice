@@ -1,6 +1,8 @@
-// Purpose: Reads integers into an array until a sentinel value (1) is entered,
-//          then reverses the array and prints its elements.
-// Topic: Arrays, Sentinel Value, Reversal Algorithm, Loops, Input/Output
+/*
+ * Purpose: Reads integers into an array until a non-integer input is entered,
+ *          then reverses the array and prints its elements.
+ * Topic: Arrays, Input Termination, Reversal Algorithm, Loops, Input/Output
+ */
 
 #include <stdio.h>
 
@@ -30,28 +32,22 @@ int main() {
     int count = 0; // To keep track of the number of elements entered
     int input_value;
 
-    printf("Enter integers. Enter '1' to stop:\n");
+    printf("Enter integers. Enter any non-integer to stop:\n");
 
-    // Read integers until the sentinel value (1) is entered or max size is reached
+    // Read integers until a non-integer is entered or max size is reached
     while (count < MAX_ARRAY_SIZE) {
         printf("Enter element %d: ", count + 1);
         if (scanf("%d", &input_value) != 1) {
-            printf("\nError: Invalid input. Please enter an integer.\n");
-            return 1; // Indicate an error
-        }
-
-        // Check for the sentinel value
-        if (input_value == 1) {
-            break; // Stop reading if sentinel is entered
+            break; // Stop reading if non-integer is entered
         }
 
         numbers[count] = input_value; // Store the valid input
-        count++;                      // Increment the count of elements
+        count++; // Increment the count of elements
     }
 
-    // If no elements were entered (only sentinel was entered or max size reached without sentinel)
+    // If no elements were entered
     if (count == 0) {
-        printf("\nNo elements entered (other than the sentinel).\n");
+        printf("\nNo elements entered.\n");
         return 0;
     }
 
