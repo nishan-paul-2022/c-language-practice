@@ -1,5 +1,7 @@
-// Purpose: Demonstrates sorting an array of characters using the Bubble Sort algorithm.
-// Topic: Arrays, sorting algorithms, characters, loops, input/output.
+/*
+ * Purpose: Demonstrates sorting an array of characters using the Bubble Sort algorithm.
+ * Topic: Arrays, sorting algorithms, characters, loops, input/output.
+ */
 
 #include <stdio.h>
 #include <string.h> // For strlen, strcspn
@@ -36,17 +38,9 @@ int main(void) {
     // Remove the trailing newline character if it exists
     characters[strcspn(characters, "\\n")] = 0;
 
-    // Ensure we only consider up to array_size characters if the input was longer
-    // and the newline was removed.
-    // If the input string was shorter than BUFFER_SIZE-1, array_size might be larger
-    // than the actual number of characters entered. We should use the actual length.
-    // However, the original code used a fixed size 'n' and then read 'n' characters.
-    // Let's stick to the intent of sorting 'array_size' characters.
-    // We need to ensure that the input string has at least 'array_size' characters
-    // or handle cases where it's shorter.
-    // For simplicity and to match the original intent of sorting 'n' characters,
-    // we'll assume the user provides exactly 'array_size' characters.
-    // A more robust solution would involve dynamic allocation or better input handling.
+    // Input validation: Ensure exactly 'array_size' characters are provided.
+    // A more robust solution would handle cases where fewer characters are entered
+    // or implement dynamic allocation.
 
     // Bubble Sort algorithm to sort the characters in ascending order (based on ASCII values)
     // The outer loop controls the number of passes.

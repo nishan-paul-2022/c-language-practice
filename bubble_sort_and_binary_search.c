@@ -7,15 +7,11 @@
 #include <stdlib.h> // For malloc and free
 
 // Function to perform bubble sort on an integer array
-void bubbleSort(int arr[], int size)
-{
+void bubbleSort(int arr[], int size) {
     int i, j, temp;
-    for (i = 0; i < size - 1; i++)
-    {
+    for (i = 0; i < size - 1; i++) {
         for (j = 0; j < size - 1 - i; j++) // Optimized inner loop
-        {
-            if (arr[j] > arr[j + 1])
-            {
+            if (arr[j] > arr[j + 1]) {
                 // Swap elements
                 temp = arr[j];
                 arr[j] = arr[j + 1];
@@ -27,58 +23,48 @@ void bubbleSort(int arr[], int size)
 
 // Function to perform binary search on a sorted integer array
 // Returns 1-based index if found, -1 otherwise
-int binarySearch(int arr[], int size, int target)
-{
+int binarySearch(int arr[], int size, int target) {
     int low = 0;
     int high = size - 1;
     int mid;
 
-    while (low <= high)
-    {
+    while (low <= high) {
         mid = low + (high - low) / 2; // Safer way to calculate mid
 
-        if (arr[mid] == target)
-        {
+        if (arr[mid] == target) {
             return mid + 1; // Element found, return 1-based index
         }
-        else if (arr[mid] < target)
-        {
+        else if (arr[mid] < target) {
             low = mid + 1;
         }
         else // arr[mid] > target
-        {
             high = mid - 1;
         }
     }
     return -1; // Element not found
 }
 
-int main()
-{
+int main() {
     int arraySize; // n in original
     int *numbers;  // a in original
     int targetNumber; // s in original
 
     printf("Enter the size of the array: ");
-    if (scanf("%d", &arraySize) != 1 || arraySize <= 0)
-    {
+    if (scanf("%d", &arraySize) != 1 || arraySize <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 1;
     }
 
     // Dynamically allocate memory for the array
     numbers = (int *)malloc(arraySize * sizeof(int));
-    if (numbers == NULL)
-    {
+    if (numbers == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 1;
     }
 
     printf("Enter %d integer elements for the array:\n", arraySize);
-    for (int i = 0; i < arraySize; i++)
-    {
-        if (scanf("%d", &numbers[i]) != 1)
-        {
+    for (int i = 0; i < arraySize; i++) {
+        if (scanf("%d", &numbers[i]) != 1) {
             printf("Invalid input. Exiting.\n");
             free(numbers);
             return 1;
@@ -86,8 +72,7 @@ int main()
     }
 
     printf("\nOriginal array elements: ");
-    for (int i = 0; i < arraySize; i++)
-    {
+    for (int i = 0; i < arraySize; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
@@ -95,15 +80,13 @@ int main()
     // Sort the array using bubble sort
     bubbleSort(numbers, arraySize);
     printf("Array after Bubble Sort: ");
-    for (int i = 0; i < arraySize; i++)
-    {
+    for (int i = 0; i < arraySize; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
 
     printf("Enter the number to search for: ");
-    if (scanf("%d", &targetNumber) != 1)
-    {
+    if (scanf("%d", &targetNumber) != 1) {
         printf("Invalid input for search target. Exiting.\n");
         free(numbers);
         return 1;
@@ -112,12 +95,10 @@ int main()
     // Perform binary search on the sorted array
     int foundIndex = binarySearch(numbers, arraySize, targetNumber);
 
-    if (foundIndex != -1)
-    {
+    if (foundIndex != -1) {
         printf("Element %d found at 1-based index: %d\n", targetNumber, foundIndex);
     }
-    else
-    {
+    else {
         printf("Element %d DOES NOT EXIST in the array.\n", targetNumber);
     }
 

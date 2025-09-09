@@ -63,9 +63,9 @@ int main() {
         printf("4. Triangle Area\n");
         printf("5. Distance between two points\n");
         printf("0. Exit\n");
-        printf("Enter your choice: ");
+    
+        printf("\n\nEnter your choice: ");
         scanf("%d", &choice);
-
         switch (choice) {
             case 1:
                 division();

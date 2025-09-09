@@ -1,5 +1,7 @@
-// Purpose: Demonstrates sorting an array of integers using the Bubble Sort algorithm.
-// Topic: Arrays, sorting algorithms, loops, input/output.
+/*
+ * Purpose: Demonstrates sorting an array of integers using the Bubble Sort algorithm.
+ * Topic: Arrays, sorting algorithms, loops, input/output.
+ */
 
 #include <stdio.h>
 #include <stdlib.h> // For exit()

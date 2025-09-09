@@ -5,8 +5,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int a = 10; // Binary: 0000 1010
     int b = 20; // Binary: 0001 0100
     char c = -60; // Example for bitwise NOT on a signed char

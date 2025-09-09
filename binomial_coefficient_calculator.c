@@ -7,28 +7,34 @@
 
 // Function to calculate nCr using the formula C(n, k) = C(n, k-1) * (n - k + 1) / k
 // This iterative approach avoids large intermediate factorial calculations.
-long long calculate_nCr(int n, int r) {
+long long calculate_nCr(int n, int r)
+{
     // Base cases and error handling
-    if (r < 0 || r > n) {
+    if (r < 0 || r > n)
+    {
         return -1; // Indicate an error or invalid input
     }
-    if (r == 0 || r == n) {
+    if (r == 0 || r == n)
+    {
         return 1; // C(n, 0) = 1, C(n, n) = 1
     }
     // Optimization: C(n, r) = C(n, n-r)
-    if (r > n / 2) {
+    if (r > n / 2)
+    {
         r = n - r;
     }
 
     long long result = 1;
-    for (int i = 1; i <= r; ++i) {
+    for (int i = 1; i <= r; ++i)
+    {
         // Calculate C(n, i) from C(n, i-1)
         // result = result * (n - i + 1) / i;
         // To prevent overflow, perform multiplication before division,
         // but ensure intermediate results fit in long long.
         // A safer way is to use properties of combinations or BigInt for very large numbers.
         // For typical integer inputs, this should be sufficient.
-        if (__builtin_mul_overflow(result, (n - i + 1), &result)) {
+        if (__builtin_mul_overflow(result, (n - i + 1), &result))
+        {
             return -2; // Indicate overflow
         }
         result /= i;
@@ -36,14 +42,16 @@ long long calculate_nCr(int n, int r) {
     return result;
 }
 
-int main(void) {
+int main(void)
+{
     int n, r;
 
     // Prompt user for input
-    printf("Enter the values for n and r (e.g., '10 5' for C(10, 5)): ");
-    
+    printf("Enter the values for n and r (e.g. '10 5' for C(10, 5)): ");
+
     // Read input. Using "%d %d" for space-separated input.
-    if (scanf("%d %d", &n, &r) != 2) {
+    if (scanf("%d %d", &n, &r) != 2)
+    {
         printf("Invalid input format. Please enter two integers separated by a space.\n");
         return 1; // Indicate input error
     }
@@ -51,13 +59,18 @@ int main(void) {
     // Calculate and print the binomial coefficient
     long long nCr = calculate_nCr(n, r);
 
-    if (nCr == -1) {
+    if (nCr == -1)
+    {
         printf("Error: Invalid input (n or r out of bounds).\n");
-    } else if (nCr == -2) {
+    }
+    else if (nCr == -2)
+    {
         printf("Error: Calculation resulted in overflow.\n");
-    } else {
+    }
+    else
+    {
         printf("C(%d, %d) = %lld\n", n, r, nCr);
     }
 
-    return 0; // Indicate successful execution
+    return 0;
 }

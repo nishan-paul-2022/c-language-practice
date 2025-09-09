@@ -9,8 +9,7 @@
 int add(int num1, int num2);
 int subtract(int num1, int num2);
 
-int main()
-{
+int main() {
     int x = 10;
     int y = 20;
     int sumResult;
@@ -26,13 +25,11 @@ int main()
 }
 
 // Function to add two integers
-int add(int num1, int num2)
-{
+int add(int num1, int num2) {
     return num1 + num2;
 }
 
 // Function to subtract two integers
-int subtract(int num1, int num2)
-{
+int subtract(int num1, int num2) {
     return num1 - num2;
 }
