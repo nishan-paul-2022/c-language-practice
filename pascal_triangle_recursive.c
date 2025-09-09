@@ -4,7 +4,6 @@
  */
 
 #include <stdio.h>
-// #include <math.h> // math.h is not needed for this implementation
 
 // Recursive function to calculate the value at a specific position (row, col) in Pascal's triangle.
 // This is equivalent to calculating the binomial coefficient C(row-1, col-1).

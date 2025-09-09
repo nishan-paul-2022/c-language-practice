@@ -1,5 +1,4 @@
 #include <stdio.h>
-// #include <math.h> // math.h is not needed for this problem.
 
 int main() {
     int sum_of_multiples = 0; // Variable to store the sum
