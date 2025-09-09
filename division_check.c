@@ -36,7 +36,7 @@ int main() {
                 printf("Result of division (integer part: %d) -> ERROR\n", quotient_int);
                 break;
         }
-        return 0; // Indicate success
+        return 0;
     } else {
         // Handle cases where the input format is incorrect or EOF is reached prematurely
         fprintf(stderr, "Error: Invalid input format. Please use 'number, number'.\n");

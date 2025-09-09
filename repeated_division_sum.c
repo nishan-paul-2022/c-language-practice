@@ -35,5 +35,5 @@ int main() {
     // Print the final calculated sum
     printf("The calculated sum is: %d\n", sum);
 
-    return 0; // Indicate success
+    return 0;
 }

@@ -55,5 +55,5 @@ int main() {
     fclose(inputFile);
     fclose(outputFile);
 
-    return 0; // Indicate success
+    return 0;
 }

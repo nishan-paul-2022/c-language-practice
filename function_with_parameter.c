@@ -29,5 +29,5 @@ int main() {
     printf("Original value: %lf\n", input_value);
     printf("Doubled value:  %lf\n", doubled_value);
 
-    return 0; // Indicate success
+    return 0;
 }

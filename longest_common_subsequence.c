@@ -73,5 +73,5 @@ int main() {
     // Print the result
     printf("Length of the Longest Common Subsequence: %d\n", lcs_length);
 
-    return 0; // Indicate success
+    return 0;
 }

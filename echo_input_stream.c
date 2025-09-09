@@ -24,5 +24,5 @@ int main() {
     // A newline might be desirable if the last input didn't end with one.
     // putchar('\n'); // Optional: add a newline if needed for cleaner output
 
-    return 0; // Indicate success
+    return 0;
 }

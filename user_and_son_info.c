@@ -62,7 +62,7 @@ int read_password(char pass_cpy[], int buffer_size) {
     }
     pass_cpy[i] = '\0'; // Null-terminate the password string
     printf("\n"); // Newline after password input
-    return 0; // Indicate success
+    return 0;
 }
 
 // Helper function to consume any leftover newline character in the input buffer

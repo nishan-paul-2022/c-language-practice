@@ -35,5 +35,5 @@ int main() {
     // Close the file
     fclose(input_file_ptr);
 
-    return 0; // Indicate success
+    return 0;
 }

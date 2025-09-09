@@ -49,5 +49,5 @@ int main() {
         fclose(file_ptr);
     }
 
-    return 0; // Indicate success (or failure handled by returning 1 earlier)
+    return 0;(or failure handled by returning 1 earlier)
 }

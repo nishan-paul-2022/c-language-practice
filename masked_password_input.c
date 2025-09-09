@@ -62,7 +62,7 @@ int read_password_masked(char password[], int max_len) {
         // Even if restoring fails, we should try to return the password
     }
 
-    return 0; // Indicate success
+    return 0;
 }
 
 int main() {

@@ -52,5 +52,5 @@ int main() {
 
     printf("File 'file_modes_example.txt' updated successfully.\n");
 
-    return 0; // Indicate success
+    return 0;
 }

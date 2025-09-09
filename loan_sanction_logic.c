@@ -54,5 +54,5 @@ int main() {
         printf("NO LOAN\n");
     }
 
-    return 0; // Indicate success
+    return 0;
 }

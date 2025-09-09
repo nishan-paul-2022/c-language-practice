@@ -53,5 +53,5 @@ int main() {
     printf("\nFibonacci number F(%d) is: %d\n", input_number, nth_fib_value);
     printf("Sum of Fibonacci numbers from F(1) to F(%d) is: %d\n", input_number, sum_of_fibs);
 
-    return 0; // Indicate success
+    return 0;
 }

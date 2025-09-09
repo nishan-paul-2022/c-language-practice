@@ -54,5 +54,5 @@ int main() {
 
     printf("Successfully wrote to text_file_writing_example.txt\n");
 
-    return 0; // Indicate success
+    return 0;
 }

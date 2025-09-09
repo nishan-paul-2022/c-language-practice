@@ -18,7 +18,7 @@ int main() {
 
         // Print the product
         printf("The product of %d and %d is: %lld\n", num1, num2, product);
-        return 0; // Indicate success
+        return 0;
     } else {
         // Handle cases where the input format is incorrect or EOF is reached prematurely
         fprintf(stderr, "Error: Invalid input format. Please use 'input X*Y'.\n");

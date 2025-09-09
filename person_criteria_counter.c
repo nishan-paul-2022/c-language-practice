@@ -50,5 +50,5 @@ int main() {
     // Print the final count of countable persons
     printf("\nTotal number of countable persons: %d\n", countable_persons_count);
 
-    return 0; // Indicate success
+    return 0;
 }

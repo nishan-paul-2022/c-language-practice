@@ -107,5 +107,5 @@ int main() {
     printf("GCD of scaled integers: %lld\n", common_divisor);
     printf("Final result (GCD / Scaling Factor): %lf\n", final_result);
 
-    return 0; // Indicate success
+    return 0;
 }

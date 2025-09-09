@@ -67,5 +67,5 @@ int main() {
     printf("F  (0-39):   %d\n", count_F);
     printf("---------------------\n");
 
-    return 0; // Indicate success
+    return 0;
 }

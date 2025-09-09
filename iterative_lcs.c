@@ -141,5 +141,5 @@ int main() {
         test_case_num++; // Move to the next test case
     }
 
-    return 0; // Indicate success
+    return 0;
 }

@@ -36,7 +36,7 @@ int main() {
         // Print the values after swapping
         printf("After swap:  num1 = %d, num2 = %d\n", num1, num2);
 
-        return 0; // Indicate success
+        return 0;
     } else {
         // Handle cases where the input format is incorrect or EOF is reached prematurely
         fprintf(stderr, "Error: Invalid input. Please enter two integers separated by a space.\n");

@@ -25,7 +25,7 @@ int main() {
         // Print the largest number
         printf("The largest number is: %.2lf\n", largest);
 
-        return 0; // Indicate success
+        return 0;
     } else {
         // Handle cases where the input format is incorrect or EOF is reached prematurely
         fprintf(stderr, "Error: Invalid input format. Please use 'number, number, number'.\n");

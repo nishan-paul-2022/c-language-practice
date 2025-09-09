@@ -24,5 +24,5 @@ int main() {
     printf("Hexadecimal Value 2: 0x%X (%d decimal, %o octal)\n", hexValue2, hexValue2, hexValue2);
     printf("Sum in Octal: %o\n", sum);
 
-    return 0; // Indicate success
+    return 0;
 }

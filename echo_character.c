@@ -19,7 +19,7 @@ int main() {
         } else {
             // EOF was reached without an error, e.g., end of input stream
             printf("\nEnd of input reached.\n");
-            return EXIT_SUCCESS; // Indicate success (graceful exit)
+            return EXIT_SUCCESS;
         }
     }
 
@@ -28,5 +28,5 @@ int main() {
     putchar((char)input_char); // Cast back to char for putchar
     putchar('\n');
 
-    return 0; // Indicate success
+    return 0;
 }
