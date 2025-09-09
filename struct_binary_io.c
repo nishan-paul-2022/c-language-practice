@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <string.h> // For strcpy and NULL
+#include <stdlib.h>
+#include <string.h>
 
 // Define a structure to hold data
 typedef struct {

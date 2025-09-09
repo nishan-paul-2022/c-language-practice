@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stddef.h> // For ptrdiff_t
+#include <stddef.h>
 
 // Function to calculate and print the size of a long double
 void print_sizeof_long_double(long double *ptr) {

@@ -3,7 +3,7 @@
  * Topic: Loops, Integer Division, Accumulation, Input Validation
  */
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS, EXIT_FAILURE
+#include <stdlib.h>
 
 int main() {
     int current_value, divisor;

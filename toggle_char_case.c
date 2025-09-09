@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ctype.h> // Required for islower and toupper/tolower
+#include <ctype.h>
 
 int main() {
     char input_char; // Variable to store the input character

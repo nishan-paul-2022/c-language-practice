@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // For tolower, though not used in this version directly, good for general string ops
+#include <ctype.h>
 
 // Structure to hold birthdate information
 struct BirthDate {

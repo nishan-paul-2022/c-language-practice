@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // Required for malloc and free
+#include <stdlib.h>
 
 // Define a self-referential structure
 typedef struct Node {

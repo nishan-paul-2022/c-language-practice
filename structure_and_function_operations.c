@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Included for completeness, though not strictly used in this example.
+#include <string.h>
 
 // Define a structure to hold an integer and a float
 typedef struct {

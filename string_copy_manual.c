@@ -3,8 +3,8 @@
  * Topic: Strings, Arrays, Loops
  */
 
-#include <stdio.h>  // Required for printf, fgets, puts
-#include <string.h> // Required for strcspn (to remove newline from fgets)
+#include <stdio.h>
+#include <string.h>
 
 int main() {
     char source_string[100];      // Source string to be copied

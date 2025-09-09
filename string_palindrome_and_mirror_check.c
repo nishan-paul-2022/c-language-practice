@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <math.h> // For ceil function
+#include <math.h>
 
 // Function to check if a character has a mirrored counterpart and if it matches
 char get_mirrored_char(char c) {

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h> // Although not strictly needed for this version, it's good practice for string operations.
+#include <string.h>
 
 int main() {
     char input_buffer[11]; // Buffer to store the input string. Size 10 for characters + 1 for null terminator.

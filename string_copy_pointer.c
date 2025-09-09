@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcpy and strlen
+#include <string.h>
 
 int main() {
     char dest_str[100] = "CUET";     // Destination string

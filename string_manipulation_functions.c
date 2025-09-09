@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcmp, strlen, strcat, strcpy, strcspn
-#include <stdlib.h> // For exit() and EXIT_FAILURE
+#include <string.h>
+#include <stdlib.h>
 
 #define MAX_STRING_LEN 100 // Define a maximum length for strings to prevent buffer overflows
 

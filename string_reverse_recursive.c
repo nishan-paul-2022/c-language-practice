@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Required for strlen()
+#include <string.h>
 
 // Recursive function to reverse a string
 // str: The string to reverse

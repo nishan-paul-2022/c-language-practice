@@ -4,7 +4,7 @@
  * Topic: Basic I/O, Data Types, Type Conversion
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     float first_number;  // First floating-point number input by user

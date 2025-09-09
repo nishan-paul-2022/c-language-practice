@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For NULL
+#include <stdlib.h>
 
 // Define a self-referential structure
 struct Node {

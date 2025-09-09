@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcspn
+#include <string.h>
 
 int main() {
     char inputString[256]; // Use a reasonably sized buffer

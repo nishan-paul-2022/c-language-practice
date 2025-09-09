@@ -3,8 +3,8 @@
  * Topic: Character Handling, Conditional Statements, Logical Operators
  */
 
-#include <stdio.h> // Required for getchar and printf
-#include <ctype.h> // Required for tolower() (to handle uppercase input)
+#include <stdio.h>
+#include <ctype.h>
 
 int main() {
     char input_char; // Variable to store the character input by the user

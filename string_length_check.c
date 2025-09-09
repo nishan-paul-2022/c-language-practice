@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen, strcspn
+#include <string.h>
 
 int main() {
     int max_len;

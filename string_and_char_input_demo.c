@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcspn
-#include <stdlib.h> // For exit()
+#include <string.h>
+#include <stdlib.h>
 
 #define BUFFER_SIZE 256 // Define a reasonable buffer size for input strings
 

@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <math.h> // For sqrt() function
+#include <math.h>
 
 int main()
 {

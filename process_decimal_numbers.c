@@ -4,8 +4,8 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
-#include <string.h> // For strcspn (if needed for input, but not here)
+#include <stdlib.h>
+#include <string.h>
 
 // Function to count the number of decimal places in a double.
 // It repeatedly multiplies the number by 10 until it becomes an integer.

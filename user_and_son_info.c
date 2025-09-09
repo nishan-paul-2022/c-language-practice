@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // For character handling functions
+#include <ctype.h>
 
 // Structure to hold birthdate information
 struct BirthDate {

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // Required for tolower()
+#include <ctype.h>
 
 int main() {
     char input_string[100]; // Buffer to store the input string

@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Required for strlen()
+#include <string.h>
 
 int main() {
     char input_line[100000]; // Buffer to store the input line

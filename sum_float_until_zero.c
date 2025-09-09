@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
+#include <stdlib.h>
 
 int main() {
     double input_number;     // Variable to store each floating-point number entered by the user.

@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strrev (Note: strrev is not a standard C function, but common in some compilers)
+#include <string.h>
 
 int main() {
     char str[100] = "BANGLADESH"; // Declare and initialize a character array (string)

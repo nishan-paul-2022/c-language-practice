@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen
-#include <math.h>   // For pow
+#include <string.h>
+#include <math.h>
 
 int main() {
     int numTestCases;

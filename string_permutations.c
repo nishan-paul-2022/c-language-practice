@@ -4,9 +4,9 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For qsort, EXIT_SUCCESS
-#include <string.h>  // For strlen
-#include <stdbool.h> // For bool type
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 /*
  * @brief Compares two characters for qsort.

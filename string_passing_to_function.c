@@ -3,7 +3,7 @@
  * Topic: Functions, Strings, Arrays, Pointers
  */
 
-#include <stdio.h> // Required for puts
+#include <stdio.h>
 
 // Function to print a string
 // It takes a pointer to the first character of the string (char*)

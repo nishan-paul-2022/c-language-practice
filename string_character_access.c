@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Required for strlen()
+#include <string.h>
 
 int main() {
     // Initialize a character array with a string.

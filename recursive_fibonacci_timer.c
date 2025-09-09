@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For EXIT_FAILURE
-#include <time.h>   // For clock(), clock_t, CLOCKS_PER_SEC
+#include <stdlib.h>
+#include <time.h>
 
 // Recursive function to calculate the nth Fibonacci number.
 // Note: This recursive implementation is inefficient due to repeated calculations (exponential time complexity).

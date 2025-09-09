@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function to find the pointer to the larger of two integer values.
 // Takes two integer pointers as input.

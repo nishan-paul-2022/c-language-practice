@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function demonstrating the use of a static variable.
 // The static variable 'counter' is initialized only once when the program starts.

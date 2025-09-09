@@ -3,7 +3,7 @@
  * Topic: Loops, Arithmetic Operations
  */
 
-#include <stdio.h> // Required for printf and scanf
+#include <stdio.h>
 
 int main() {
     int input_number; // The number up to which to calculate the sum

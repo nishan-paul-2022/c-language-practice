@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen
+#include <string.h>
 
 #define BUFFER_SIZE 256 // Define a reasonable buffer size
 

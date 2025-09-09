@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 // Function to multiply an integer by 10.
 // Takes an integer as input and returns the result.

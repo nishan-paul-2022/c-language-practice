@@ -4,9 +4,9 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen
-#include <stdlib.h> // For strtol, EXIT_FAILURE
-#include <math.h>   // For sqrt (for optimization)
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 int main() {
     int num_test_cases;         // Variable to store the total number of test cases.

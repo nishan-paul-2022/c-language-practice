@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcpy
+#include <string.h>
 
 // Define a structure to hold student information
 struct StudentInfo {

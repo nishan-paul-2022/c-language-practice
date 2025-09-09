@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h> // For malloc, free, and other utilities if needed, though not strictly required here.
+#include <stdlib.h>
 
 // Define a structure to hold different data types
 typedef struct {

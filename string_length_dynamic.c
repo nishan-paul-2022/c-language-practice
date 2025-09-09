@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For malloc, free
-#include <string.h> // For strlen, strcspn
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
     int max_len;

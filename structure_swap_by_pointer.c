@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // Required for strcpy
+#include <string.h>
 
 // Define a structure to hold person's information
 struct Person {

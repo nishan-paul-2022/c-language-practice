@@ -4,8 +4,8 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strlen, strcspn, strcmp
-#include <stdlib.h> // For exit
+#include <string.h>
+#include <stdlib.h>
 
 // Function to compare two strings lexicographically
 // Returns:

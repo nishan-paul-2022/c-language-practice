@@ -3,7 +3,7 @@
  * Topic: Data Types, sizeof Operator
  */
 
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
     // Print the size of the float data type in bytes

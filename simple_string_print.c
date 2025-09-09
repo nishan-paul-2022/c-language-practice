@@ -3,7 +3,7 @@
  * Topic: Basic I/O, Strings
  */
 
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
     // Print a predefined string to the standard output

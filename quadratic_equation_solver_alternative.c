@@ -4,8 +4,8 @@
  * Topic: Conditional Statements, Mathematical Functions (sqrt), Floating-point Arithmetic
  */
 
-#include <stdio.h> // Required for printf and scanf
-#include <math.h>  // Required for sqrt()
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     float coeff_a, coeff_b, coeff_c; // Coefficients of the quadratic equation

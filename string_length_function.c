@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <string.h> // For strcspn
+#include <string.h>
 
 // Function to calculate the length of a string
 int calculateStringLength(char str[]) {

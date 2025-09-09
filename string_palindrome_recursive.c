@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h> // For tolower, to make comparison case-insensitive
+#include <ctype.h>
 
 // Recursive helper function to check for palindrome property.
 // It compares characters from the start (index `start`) and end (index `end`) of the string.

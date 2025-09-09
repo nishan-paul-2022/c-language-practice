@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> // For exit()
+#include <stdlib.h>
 
 int main() {
     FILE *output_file_ptr = NULL;

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h> // For strlen
+#include <string.h>
 
 int main() {
     int num_test_cases;
