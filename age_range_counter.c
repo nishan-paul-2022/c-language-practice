@@ -7,7 +7,7 @@
 
 int main() {
     int age;
-    int countInRange;
+    int count_in_range;
 
     printf("Enter ages to count those between 50 and 60 (inclusive).\n");
     printf("Enter 0 to process the current batch and start a new one.\n");
@@ -15,7 +15,7 @@ int main() {
 
     // Outer loop to allow multiple batches of input
     while (1) {
-        countInRange = 0; // Reset count for each new batch
+        count_in_range = 0; // Reset count for each new batch
 
         printf("--- New Batch ---\n");
         while (scanf("%d", &age) == 1) {
@@ -24,7 +24,7 @@ int main() {
             }
 
             if (age >= 50 && age <= 60) {
-                countInRange++;
+                count_in_range++;
             }
         }
 
@@ -34,7 +34,7 @@ int main() {
             break;
         }
 
-        printf("Number of ages in range 50-60: %d\n\n", countInRange);
+        printf("Number of ages in range 50-60: %d\n\n", count_in_range);
 
         // Clear input buffer for the next iteration, if any
         while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
