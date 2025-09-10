@@ -21,7 +21,7 @@ int main(void) {
     copied_value = *pointer_to_number;
 
     // Print the current value of 'original_number'.
-    printf("Initial value of original_number: %d\\n", original_number);
+    printf("Initial value of original_number: %d\n", original_number);
 
     // Dereference the pointer and assign a new value (20) to the memory location it points to.
     // This directly changes the value of 'original_number' to 20.
@@ -31,10 +31,10 @@ int main(void) {
     // - original_number: will be 20 (changed via the pointer).
     // - copied_value: will still be 10 (it's a separate variable that held the value before the change).
     // - *pointer_to_number: will be 20 (the current value at the address pointer_to_number points to).
-    printf("After modification via pointer:\\n");
-    printf("original_number: %d\\n", original_number);
-    printf("copied_value: %d\\n", copied_value);
-    printf("*pointer_to_number: %d\\n", *pointer_to_number);
+    printf("After modification via pointer:\n");
+    printf("original_number: %d\n", original_number);
+    printf("copied_value: %d\n", copied_value);
+    printf("*pointer_to_number: %d\n", *pointer_to_number);
 
     return 0;
 }

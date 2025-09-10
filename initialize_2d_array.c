@@ -18,22 +18,22 @@ int main(void) {
     printf("Enter the dimension of the square matrix (max %d): ", MAX_DIMENSION);
     // Read the dimension of the matrix and validate input
     if (scanf("%d", &dimension) != 1 || dimension <= 0 || dimension > MAX_DIMENSION) {
-        printf("Invalid input. Please enter a positive integer for dimension up to %d.\\n", MAX_DIMENSION);
+        printf("Invalid input. Please enter a positive integer for dimension up to %d.\n", MAX_DIMENSION);
         return 0;
     }
 
     // Consume the newline character left by scanf
-    while (getchar() != '\\n');
+    while (getchar() != '\n');
 
     printf("Enter the number of elements to set to 1 (e.g., 5): ");
     // Read the number of elements to set and validate input
     if (scanf("%d", &num_elements_to_set) != 1 || num_elements_to_set < 0) {
-        printf("Invalid input. Please enter a non-negative integer for the number of elements.\\n");
+        printf("Invalid input. Please enter a non-negative integer for the number of elements.\n");
         return 0;
     }
 
     // Consume the newline character left by scanf
-    while (getchar() != '\\n');
+    while (getchar() != '\n');
 
     // Initialize the entire matrix to 0
     for (row = 0; row < dimension; row++) {
@@ -42,34 +42,34 @@ int main(void) {
         }
     }
 
-    printf("Enter %d pairs of row and column indices (e.g., 'row col' like '0 1'):\\n", num_elements_to_set);
+    printf("Enter %d pairs of row and column indices (e.g., 'row col' like '0 1'):\n", num_elements_to_set);
     // Read the row and column indices and set the corresponding matrix elements to 1
     for (i = 0; i < num_elements_to_set; i++) {
         printf("Enter pair %d: ", i + 1);
         if (scanf("%d %d", &row, &col) != 2) {
-            printf("Invalid input for pair %d. Please enter two integers separated by a space.\\n", i + 1);
+            printf("Invalid input for pair %d. Please enter two integers separated by a space.\n", i + 1);
             // Optionally, you could decide to skip this pair or exit. Exiting for now.
             return 0;
         }
 
         // Consume the newline character left by scanf
-        while (getchar() != '\\n');
+        while (getchar() != '\n');
 
         // Validate indices before setting the element
         if (row >= 0 && row < dimension && col >= 0 && col < dimension) {
             matrix[row][col] = 1;
         } else {
-            printf("Warning: Indices (%d, %d) are out of bounds for a %d x %d matrix. Skipping.\\n", row, col, dimension, dimension);
+            printf("Warning: Indices (%d, %d) are out of bounds for a %d x %d matrix. Skipping.\n", row, col, dimension, dimension);
         }
     }
 
-    printf("\\nMatrix after setting elements to 1:\\n");
+    printf("\\nMatrix after setting elements to 1:\n");
     // Print the modified matrix
     for (row = 0; row < dimension; row++) {
         for (col = 0; col < dimension; col++) {
             printf("%d ", matrix[row][col]);
         }
-        printf("\\n"); // Newline after each row
+        printf("\n"); // Newline after each row
     }
 
     return 0;

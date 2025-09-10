@@ -19,30 +19,30 @@ int main(void) {
     printf("Enter the number of rows and columns (e.g., 'rows cols' like '3 4'): ");
     // Read the dimensions of the matrix and validate input
     if (scanf("%d %d", &rows, &cols) != 2) {
-        printf("Invalid input for dimensions. Please enter two integers separated by a space.\\n");
+        printf("Invalid input for dimensions. Please enter two integers separated by a space.\n");
         return 0;
     }
 
     // Validate dimensions
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
-        printf("Invalid dimensions. Rows and columns must be positive and within limits (max %d x %d).\\n", MAX_ROWS, MAX_COLS);
+        printf("Invalid dimensions. Rows and columns must be positive and within limits (max %d x %d).\n", MAX_ROWS, MAX_COLS);
         return 0;
     }
 
     // Consume the newline character left by scanf
-    while (getchar() != '\\n');
+    while (getchar() != '\n');
 
-    printf("Enter %d integers for the matrix, row by row:\\n", rows * cols);
+    printf("Enter %d integers for the matrix, row by row:\n", rows * cols);
     // Read the matrix elements
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
             printf("Enter element matrix[%d][%d]: ", i, j);
             if (scanf("%d", &matrix[i][j]) != 1) {
-                printf("Invalid input for element matrix[%d][%d]. Please enter an integer.\\n", i, j);
+                printf("Invalid input for element matrix[%d][%d]. Please enter an integer.\n", i, j);
                 return 0;
             }
             // Consume the newline character left by scanf
-            while (getchar() != '\\n');
+            while (getchar() != '\n');
         }
     }
 
@@ -57,12 +57,12 @@ int main(void) {
         column_averages[j] = column_sum / (double)rows;
     }
 
-    printf("\\nColumn averages:\\n");
+    printf("\\nColumn averages:\n");
     // Print the calculated column averages
     for (j = 0; j < cols; j++) {
         printf("%.2lf ", column_averages[j]);
     }
-    printf("\\n"); // Print a newline at the end
+    printf("\n"); // Print a newline at the end
 
     return 0;
 }

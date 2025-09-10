@@ -35,11 +35,11 @@ int main(void) {
     // - *ptr_to_first: will be 20 (the current value at the address ptr_to_first points to).
     // - second_number: will be 30 (changed via *ptr_to_second).
     // - *ptr_to_second: will be 30 (the current value at the address ptr_to_second points to).
-    printf("Values after operations:\\n");
-    printf("first_number: %d\\n", first_number);
-    printf("*ptr_to_first: %d\\n", *ptr_to_first);
-    printf("second_number: %d\\n", second_number);
-    printf("*ptr_to_second: %d\\n", *ptr_to_second);
+    printf("Values after operations:\n");
+    printf("first_number: %d\n", first_number);
+    printf("*ptr_to_first: %d\n", *ptr_to_first);
+    printf("second_number: %d\n", second_number);
+    printf("*ptr_to_second: %d\n", *ptr_to_second);
 
     return 0;
 }

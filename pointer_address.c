@@ -10,7 +10,7 @@ int main(void) {
 
     // Print the memory address of the variable.
     // The %p format specifier is used to print pointer values.
-    printf("The memory address of 'variable' is: %p\\n", (void *)&variable);
+    printf("The memory address of 'variable' is: %p\n", (void *)&variable);
 
     return 0;
 }

@@ -21,12 +21,12 @@ int main(void) {
     pointer2 = &second_variable;
 
     // Print initial values to show the state before pointer assignment.
-    printf("Before pointer assignment:\\n");
-    printf("first_variable: %d (Address: %p)\\n", first_variable, (void *)&first_variable);
-    printf("second_variable: %d (Address: %p)\\n", second_variable, (void *)&second_variable);
-    printf("pointer1 points to address: %p\\n", (void *)pointer1);
-    printf("pointer2 points to address: %p\\n", (void *)pointer2);
-    printf("\\n");
+    printf("Before pointer assignment:\n");
+    printf("first_variable: %d (Address: %p)\n", first_variable, (void *)&first_variable);
+    printf("second_variable: %d (Address: %p)\n", second_variable, (void *)&second_variable);
+    printf("pointer1 points to address: %p\n", (void *)pointer1);
+    printf("pointer2 points to address: %p\n", (void *)pointer2);
+    printf("\n");
 
     // Assign the value of 'pointer2' (which is the address of 'second_variable') to 'pointer1'.
     // Now, 'pointer1' also points to 'second_variable'. The original address of 'first_variable'
@@ -38,11 +38,11 @@ int main(void) {
     // - *pointer1: accesses the value at the address pointer1 points to. Since pointer1 now points to second_variable, this will be 20.
     // - second_variable: remains 20, as it was never modified.
     // - *pointer2: accesses the value at the address pointer2 points to. Since pointer2 points to second_variable, this will be 20.
-    printf("After pointer assignment (pointer1 = pointer2):\\n");
-    printf("first_variable: %d\\n", first_variable);
-    printf("*pointer1 (value at address pointer1 points to): %d\\n", *pointer1);
-    printf("second_variable: %d\\n", second_variable);
-    printf("*pointer2 (value at address pointer2 points to): %d\\n", *pointer2);
+    printf("After pointer assignment (pointer1 = pointer2):\n");
+    printf("first_variable: %d\n", first_variable);
+    printf("*pointer1 (value at address pointer1 points to): %d\n", *pointer1);
+    printf("second_variable: %d\n", second_variable);
+    printf("*pointer2 (value at address pointer2 points to): %d\n", *pointer2);
 
     return 0;
 }

@@ -15,21 +15,21 @@ int main(void) {
     printf("Enter the number of rows: ");
     // Input validation for number of rows
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\\n");
+        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
         return EXIT_FAILURE;
     }
 
     printf("Enter the number of columns: ");
     // Input validation for number of columns
     if (scanf("%d", &num_cols) != 1 || num_cols <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of columns. Please enter a positive integer.\\n");
+        fprintf(stderr, "Error: Invalid input for number of columns. Please enter a positive integer.\n");
         return EXIT_FAILURE;
     }
 
     printf("Enter the number to fill the rectangle with: ");
     // Input validation for fill number
     if (scanf("%d", &fill_number) != 1) {
-        fprintf(stderr, "Error: Invalid input for fill number.\\n");
+        fprintf(stderr, "Error: Invalid input for fill number.\n");
         return EXIT_FAILURE;
     }
 

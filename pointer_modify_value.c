@@ -13,7 +13,7 @@ int main(void) {
     pointer_to_value = &original_value;
 
     // Print the original value of the variable.
-    printf("Original value: %f\\n", original_value);
+    printf("Original value: %f\n", original_value);
 
     // Use the pointer to modify the value of the variable.
     // Dereferencing the pointer (*pointer_to_value) allows us to access and change
@@ -21,7 +21,7 @@ int main(void) {
     *pointer_to_value = 5.67;
 
     // Print the modified value of the variable.
-    printf("Modified value: %f\\n", original_value);
+    printf("Modified value: %f\n", original_value);
 
     return 0;
 }

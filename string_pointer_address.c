@@ -13,12 +13,12 @@ int main(void) {
 
     // Print the string. The array name 'country_name' decays to a pointer
     // to its first element, which is what printf("%s", ...) expects.
-    printf("The string is: %s\\n", country_name);
+    printf("The string is: %s\n", country_name);
 
     // Print the memory address of the first character of the string.
     // The array name 'country_name' itself evaluates to the address of its first element.
     // Using %p format specifier for printing memory addresses.
-    printf("The memory address of the string (first character) is: %p\\n", (void *)country_name);
+    printf("The memory address of the string (first character) is: %p\n", (void *)country_name);
 
     return 0;
 }

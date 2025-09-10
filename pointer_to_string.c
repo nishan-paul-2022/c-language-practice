@@ -18,11 +18,11 @@ int main(void) {
     pointer_to_string = country_name_str; // Equivalent to pointer_to_string = &country_name_str[0];
 
     // Print the string using the pointer. printf("%s", ...) expects a char pointer.
-    printf("The string is: %s\\n", pointer_to_string);
+    printf("The string is: %s\n", pointer_to_string);
 
     // Print the memory address stored in the pointer.
     // Using %p format specifier for printing memory addresses.
-    printf("The memory address pointed to by pointer_to_string is: %p\\n", (void *)pointer_to_string);
+    printf("The memory address pointed to by pointer_to_string is: %p\n", (void *)pointer_to_string);
 
     return 0;
 }

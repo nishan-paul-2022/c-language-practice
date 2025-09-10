@@ -16,14 +16,14 @@ int main() {
     // Use fgets for safe input. It reads up to BUFFER_SIZE-1 characters
     // and appends a null terminator. It also reads the newline character if space permits.
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-        printf("Error reading input.\\n");
+        printf("Error reading input.\n");
         return 0;
     }
 
     // Remove the trailing newline character if it exists
-    input_string[strcspn(input_string, "\\n")] = 0;
+    input_string[strcspn(input_string, "\n")] = 0;
 
-    printf("Words in the string:\\n");
+    printf("Words in the string:\n");
 
     // Iterate through the string to print words.
     // A word is considered a sequence of characters separated by spaces or the end of the string.
@@ -48,7 +48,7 @@ int main() {
         for (int k = i; k < j; k++) {
             printf("%c", input_string[k]);
         }
-        printf("\\n"); // Print each word on a new line
+        printf("\n"); // Print each word on a new line
 
         // Move the index 'i' to the position after the current word (which is 'j')
         i = j;

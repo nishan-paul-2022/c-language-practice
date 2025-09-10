@@ -14,14 +14,14 @@ int main(void) {
     pointer_to_char = &my_char;
 
     // Print the character variable directly.
-    printf("The character value directly: %c\\n", my_char);
+    printf("The character value directly: %c\n", my_char);
 
     // Print the memory address of the character variable.
-    printf("The memory address of the character variable: %p\\n", (void *)&my_char);
+    printf("The memory address of the character variable: %p\n", (void *)&my_char);
 
     // Print the character value using the pointer (dereferencing).
     // Print the memory address stored in the pointer.
-    printf("The character value via pointer: %c, The address via pointer: %p\\n", *pointer_to_char, (void *)pointer_to_char);
+    printf("The character value via pointer: %c, The address via pointer: %p\n", *pointer_to_char, (void *)pointer_to_char);
 
     return 0;
 }

@@ -21,15 +21,15 @@ int main(void) {
 
     // Print the address stored in 'pointer_to_number' (which is the address of 'number').
     // Use %p for printing addresses.
-    printf("Address of 'number' (via pointer_to_number): %p\\n", (void *)pointer_to_number);
+    printf("Address of 'number' (via pointer_to_number): %p\n", (void *)pointer_to_number);
 
     // Print the value of 'number' by dereferencing 'pointer_to_pointer' twice.
     // *pointer_to_pointer gives the value of pointer_to_number (address of number).
     // **pointer_to_pointer dereferences that address, giving the value of number.
-    printf("Value of 'number' (via pointer_to_pointer): %d\\n", **pointer_to_pointer);
+    printf("Value of 'number' (via pointer_to_pointer): %d\n", **pointer_to_pointer);
 
     // You can also print the address of 'pointer_to_number' itself:
-    // printf("Address of 'pointer_to_number' (stored in pointer_to_pointer): %p\\n", (void *)pointer_to_pointer);
+    // printf("Address of 'pointer_to_number' (stored in pointer_to_pointer): %p\n", (void *)pointer_to_pointer);
 
     return 0;
 }

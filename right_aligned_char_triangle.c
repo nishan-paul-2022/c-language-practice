@@ -16,7 +16,7 @@ int main(void) {
     printf("Enter the number of rows: ");
     // Input validation for number of rows
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\\n");
+        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
         return EXIT_FAILURE;
     }
 
@@ -25,7 +25,7 @@ int main(void) {
     while (getchar() != '\n'); 
     // Input validation for starting character
     if (scanf("%c", &start_char) != 1) {
-        fprintf(stderr, "Error: Invalid input for starting character.\\n");
+        fprintf(stderr, "Error: Invalid input for starting character.\n");
         return EXIT_FAILURE;
     }
 

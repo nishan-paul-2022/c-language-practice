@@ -14,7 +14,7 @@ int main(void) {
     printf("Enter the size of the diamond (number of rows in the upper half): ");
     // Input validation for size
     if (scanf("%d", &size) != 1 || size <= 0) {
-        fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\\n");
+        fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
         return EXIT_FAILURE;
     }
 

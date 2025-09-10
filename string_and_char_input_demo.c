@@ -13,7 +13,7 @@ int main(void) {
     char input_string[BUFFER_SIZE];
     char input_char;
 
-    printf("Enter a string followed by a character (e.g., 'hello world!'):\\n");
+    printf("Enter a string followed by a character (e.g., 'hello world!'):\n");
 
     // Use scanf to read a string (%s stops at whitespace) and then a character (%c).
     // The %c format specifier in scanf will consume any whitespace characters
@@ -29,37 +29,37 @@ int main(void) {
 
     printf("Enter a string: ");
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-        printf("Error reading input string.\\n");
+        printf("Error reading input string.\n");
         return 0;
     }
     // Remove trailing newline from fgets
-    input_string[strcspn(input_string, "\\n")] = 0;
+    input_string[strcspn(input_string, "\n")] = 0;
 
     printf("Enter a character: ");
     // Read the character. The space before %c in scanf("%c", ...) is important
     // to consume any leftover whitespace (like the newline from previous input)
     // before reading the actual character.
     if (scanf(" %c", &input_char) != 1) { // Note the space before %c
-        printf("Error reading input character.\\n");
+        printf("Error reading input character.\n");
         return 0;
     }
 
     // Consume any remaining characters on the line after the character, including the newline
-    while (getchar() != '\\n');
+    while (getchar() != '\n');
 
-    printf("\\n--- Input Results ---\\n");
-    printf("String entered: %s\\n", input_string);
-    printf("Character entered: %c\\n", input_char);
+    printf("\n--- Input Results ---\n");
+    printf("String entered: %s\n", input_string);
+    printf("Character entered: %c\n", input_char);
 
     // Demonstrate reading a string again using fgets for safety
     printf("\\nEnter another string: ");
     if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-        printf("Error reading second input string.\\n");
+        printf("Error reading second input string.\n");
         return 0;
     }
-    input_string[strcspn(input_string, "\\n")] = 0;
+    input_string[strcspn(input_string, "\n")] = 0;
 
-    printf("Second string entered: %s\\n", input_string);
+    printf("Second string entered: %s\n", input_string);
 
     return 0;
 }

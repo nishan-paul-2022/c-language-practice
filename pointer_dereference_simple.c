@@ -16,7 +16,7 @@ int main(void) {
 
     // Print the value of 'my_integer' by dereferencing 'pointer_to_integer'.
     // The '*' operator dereferences the pointer, giving the value stored at the address.
-    printf("The value of my_integer (accessed via pointer) is: %d\\n", *pointer_to_integer);
+    printf("The value of my_integer (accessed via pointer) is: %d\n", *pointer_to_integer);
 
     return 0;
 }

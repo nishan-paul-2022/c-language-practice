@@ -11,7 +11,7 @@ int main(void) {
     // Print the memory address of the character variable.
     // The %p format specifier is used to print pointer values.
     // We cast the address to (void *) for compatibility with %p.
-    printf("The memory address of 'sample_char' is: %p\\n", (void *)&sample_char);
+    printf("The memory address of 'sample_char' is: %p\n", (void *)&sample_char);
 
     return 0;
 }

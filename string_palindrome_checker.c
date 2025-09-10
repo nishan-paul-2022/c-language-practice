@@ -34,19 +34,19 @@ int main() {
     char input_string[BUFFER_SIZE];
     int continue_processing = 1; // Flag to control the loop
 
-    printf("Enter strings to check if they are palindromes. Type 'quit' to exit.\\n");
+    printf("Enter strings to check if they are palindromes. Type 'quit' to exit.\n");
 
     while (continue_processing) {
         printf("Enter a string: ");
         // Use fgets for safe input
         if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-            printf("Error reading input.\\n");
+            printf("Error reading input.\n");
             continue_processing = 0; // Exit on error
             break;
         }
 
         // Remove the trailing newline character if it exists
-        input_string[strcspn(input_string, "\\n")] = 0;
+        input_string[strcspn(input_string, "\n")] = 0;
 
         // Check for exit condition
         if (strcmp(input_string, "quit") == 0) {
@@ -56,12 +56,12 @@ int main() {
 
         // Check if the string is a palindrome using the helper function
         if (is_palindrome(input_string)) {
-            printf("Result: PALIN\\n");
+            printf("Result: PALIN\n");
         } else {
-            printf("Result: ERROR\\n"); // Using ERROR to indicate "not a palindrome" as per original code's output style
+            printf("Result: ERROR\n"); // Using ERROR to indicate "not a palindrome" as per original code's output style
         }
     }
 
-    printf("Exiting program.\\n");
+    printf("Exiting program.\n");
     return 0;
 }
