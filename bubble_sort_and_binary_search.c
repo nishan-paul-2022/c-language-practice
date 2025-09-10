@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function to perform bubble sort on an integer array
+// Sorts an integer array using bubble sort algorithm
 void bubble_sort(int arr[], int size) {
     int i, j, temp;
     for (i = 0; i < size - 1; i++) {
@@ -21,7 +21,7 @@ void bubble_sort(int arr[], int size) {
     }
 }
 
-// Function to perform binary search on a sorted integer array
+// Searches for target in a sorted integer array using binary search
 // Returns 1-based index if found, -1 otherwise
 int binary_search(int arr[], int size, int target) {
     int low = 0;
@@ -40,6 +40,7 @@ int binary_search(int arr[], int size, int target) {
         else // arr[mid] > target
             high = mid - 1;
     }
+    
     return -1; // Element not found
 }
 
@@ -76,7 +77,6 @@ int main() {
     }
     printf("\n");
 
-    // Sort the array using bubble sort
     bubble_sort(numbers, array_size);
     printf("Array after Bubble Sort: ");
     for (int i = 0; i < array_size; i++) {
@@ -91,7 +91,6 @@ int main() {
         return 0;
     }
 
-    // Perform binary search on the sorted array
     int found_index = binary_search(numbers, array_size, target_number);
 
     if (found_index != -1) {

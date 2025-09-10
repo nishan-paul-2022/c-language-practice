@@ -16,10 +16,8 @@ int main(void) {
     int array_size;
     char characters[BUFFER_SIZE];
     
-    // Prompt user for the number of characters to sort
     printf("Enter the number of characters to sort (max %d): ", BUFFER_SIZE - 1);
     
-    // Validate input for array size
     if (scanf("%d", &array_size) != 1 || array_size <= 0 || array_size >= BUFFER_SIZE) {
         printf("Invalid input. Please enter a positive integer less than %d.\n", BUFFER_SIZE);
         return 0;
@@ -28,17 +26,14 @@ int main(void) {
     // Clear input buffer
     while (getchar() != '\n');
     
-    // Get characters from user with validation
     int actual_count = get_valid_input(characters, array_size);
     if (actual_count != array_size) {
         printf("Error: Expected %d characters but got %d.\n", array_size, actual_count);
         return 0;
     }
     
-    // Sort the characters using bubble sort
     bubble_sort_chars(characters, array_size);
     
-    // Display the sorted characters
     printf("Sorted characters (ascending order):\n");
     for (int i = 0; i < array_size; i++) {
         printf("%c ", characters[i]);
@@ -48,11 +43,7 @@ int main(void) {
     return 0;
 }
 
-/**
- * Function to perform bubble sort on an array of characters
- * @param arr: Array of characters to sort
- * @param size: Number of elements in the array
- */
+// Function to perform bubble sort on an array of characters
 void bubble_sort_chars(char arr[], int size) {
     int swapped; // Flag to track if any swaps occurred
     
@@ -78,12 +69,7 @@ void bubble_sort_chars(char arr[], int size) {
     }
 }
 
-/**
- * Function to get valid input from user
- * @param characters: Array to store the characters
- * @param array_size: Expected number of characters
- * @return: Actual number of characters entered
- */
+// Function to get valid input from user
 int get_valid_input(char characters[], int array_size) {
     printf("Enter %d characters, separated by spaces or newlines:\n", array_size);
     

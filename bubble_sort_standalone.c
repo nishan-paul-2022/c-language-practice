@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function to perform bubble sort on an integer array
 void bubble_sort(int arr[], int size) {
     int i, j, temp;
     for (i = 0; i < size - 1; i++) {
@@ -22,7 +21,6 @@ void bubble_sort(int arr[], int size) {
     }
 }
 
-// Function to read integer elements into an array
 void input_array(int arr[], int size) {
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
@@ -33,7 +31,6 @@ void input_array(int arr[], int size) {
     }
 }
 
-// Function to print integer elements of an array
 void print_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
@@ -50,8 +47,7 @@ int main() {
         return 0;
     }
 
-    // Dynamically allocate memory for the array
-    int *numbers = (int *)malloc(array_size * sizeof(int));
+    int *numbers = (int *)malloc(array_size * sizeof(int)); // Dynamically allocate memory for the array
     if (numbers == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
@@ -59,12 +55,10 @@ int main() {
 
     input_array(numbers, array_size);
 
-    printf("Original array: ");
     print_array(numbers, array_size);
 
     bubble_sort(numbers, array_size);
 
-    printf("Sorted array (Bubble Sort): ");
     print_array(numbers, array_size);
 
     free(numbers); // Free dynamically allocated memory
