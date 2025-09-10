@@ -7,9 +7,8 @@
 #include <stdio.h>
 
 int main() {
-    // Print a string with a carriage return character.
-    // "WOLVERINE CAPTAINAMERICA WONDER WOMAN" will overwrite "BATMAN SUPERTMAN IRONMAN"
-    // from the beginning of the line.
+    // Demonstrate carriage return effect
+    // "WOLVERINE CAPTAINAMERICA WONDER WOMAN" overwrites "BATMAN SUPERTMAN IRONMAN"
     printf("BATMAN SUPERTMAN IRONMAN\r WOLVERINE CAPTAINAMERICA WONDER WOMAN\n");
 
     return 0;

@@ -1,14 +1,14 @@
 /*
-* Purpose: Demonstrates a wide range of standard and common string manipulation functions.
-* Topic: Strings, String Functions (strlen, strcmp, strcasecmp, strcat, strncat, strcpy, strncpy, toupper, tolower, strrev, strset, strnset)
-*/
+ * Purpose: Demonstrates a wide range of standard and common string manipulation functions.
+ * Topic: Strings, String Functions (strlen, strcmp, strcasecmp, strcat, strncat, strcpy, strncpy, toupper, tolower, strrev, strset, strnset)
+ */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 
-// Helper function to reverse a string (if strrev is not available or for demonstration)
+// Helper function to reverse a string (strrev is not standard C)
 char* custom_strrev(char* str) {
     if (!str) return NULL;
     char* start = str;
@@ -24,7 +24,7 @@ char* custom_strrev(char* str) {
     return str;
 }
 
-// Helper function to convert string to uppercase (if strupr is not available or for demonstration)
+// Helper function to convert string to uppercase (strupr is not standard C)
 char* custom_strupr(char* str) {
     if (!str) return NULL;
     char* original = str;
@@ -35,12 +35,45 @@ char* custom_strupr(char* str) {
     return original;
 }
 
-// Helper function to convert string to lowercase (if strlwr is not available or for demonstration)
+// Helper function to convert string to lowercase (strlwr is not standard C)
 char* custom_strlwr(char* str) {
     if (!str) return NULL;
     char* original = str;
     while (*str) {
         *str = tolower((unsigned char)*str);
+        str++;
+    }
+    return original;
+}
+
+// Helper function for case-insensitive string comparison (strcasecmp is POSIX)
+int custom_strcasecmp(const char* s1, const char* s2) {
+    while (*s1 && *s2) {
+        int diff = tolower((unsigned char)*s1) - tolower((unsigned char)*s2);
+        if (diff != 0) return diff;
+        s1++;
+        s2++;
+    }
+    return tolower((unsigned char)*s1) - tolower((unsigned char)*s2);
+}
+
+// Helper function to set all characters in string to a specific character (strset is not standard C)
+char* custom_strset(char* str, int ch) {
+    if (!str) return NULL;
+    char* original = str;
+    while (*str) {
+        *str = (char)ch;
+        str++;
+    }
+    return original;
+}
+
+// Helper function to set first n characters in string to a specific character (strnset is not standard C)
+char* custom_strnset(char* str, int ch, size_t n) {
+    if (!str) return NULL;
+    char* original = str;
+    for (size_t i = 0; i < n && *str; i++) {
+        *str = (char)ch;
         str++;
     }
     return original;
@@ -79,21 +112,7 @@ int main(void) {
     }
 
     // 3. strcasecmp: Compare strings[3] and strings[4] (case-insensitive)
-    // Note: strcasecmp is POSIX, not standard C. Using custom_strcasecmp if needed.
-    // For this example, we'll assume strcasecmp is available or use a custom one.
-    // If strcasecmp is not available, you might need to implement it manually.
-    // For demonstration, let's use a placeholder or a custom implementation.
-    // Assuming strcasecmp is available for now.
-    #ifdef __USE_GNU
-        int cmp_result2 = strcasecmp(strings[3], strings[4]);
-    #else
-        // Fallback or custom implementation if strcasecmp is not available
-        // For simplicity, we'll just use strcmp here if strcasecmp is not defined.
-        // A proper solution would involve manual conversion to lower/upper case.
-        int cmp_result2 = strcmp(strings[3], strings[4]); // Placeholder if strcasecmp is not available
-        printf("   (Note: strcasecmp might not be standard C. Using strcmp as fallback.)\n");
-    #endif
-    
+    int cmp_result2 = custom_strcasecmp(strings[3], strings[4]);
     printf("3. Comparing strings[3] and strings[4] (case-insensitive):\n");
     if (cmp_result2 == 0) {
         printf("   Result: SAME\n");
@@ -104,55 +123,43 @@ int main(void) {
     }
 
     // 4. strcat: Concatenate strings[5], a space, and strings[6] into strings[5]
-    // Ensure strings[5] has enough buffer space.
-    strcpy(strings[5], strings[5]); // Ensure null termination if it was empty
     strcat(strings[5], " ");
     strcat(strings[5], strings[6]);
     printf("4. Concatenated strings[5] + \" \" + strings[6]: %s\n", strings[5]);
 
     // 5. strncat: Concatenate up to 5 chars of strings[8] to strings[7] after a space
-    // Ensure strings[7] has enough buffer space.
-    strcpy(strings[7], strings[7]); // Ensure null termination
     strcat(strings[7], " ");
     strncat(strings[7], strings[8], 5); // Append at most 5 chars from strings[8]
     printf("5. Concatenated strings[7] + \" \" + first 5 chars of strings[8]: %s\n", strings[7]);
 
     // 6. strcpy: Copy strings[10] to strings[9]
-    // Ensure strings[9] has enough buffer space.
     strcpy(strings[9], strings[10]);
     printf("6. Copied strings[10] to strings[9]: %s\n", strings[9]);
 
     // 7. strncpy: Copy up to 5 characters from strings[12] to strings[11]
     // Note: strncpy does NOT guarantee null-termination if source is >= n.
-    strncpy(strings[11], strings[12], sizeof(strings[11]) - 1); // Copy up to buffer size - 1
-    strings[11][sizeof(strings[11]) - 1] = '\0'; // Ensure null termination
+    strncpy(strings[11], strings[12], 5); // Copy up to 5 chars from strings[12]
+    strings[11][5] = '\0'; // Ensure null termination
     printf("7. Copied up to 5 chars from strings[12] to strings[11]: %s\n", strings[11]);
 
     // 8. strupr: Convert strings[16] to uppercase
-    // Using custom_strupr as strupr is not standard C.
     custom_strupr(strings[16]);
     printf("8. strings[16] in uppercase: %s\n", strings[16]);
 
     // 9. strlwr: Convert strings[17] to lowercase
-    // Using custom_strlwr as strlwr is not standard C.
     custom_strlwr(strings[17]);
     printf("9. strings[17] in lowercase: %s\n", strings[17]);
 
     // 10. strrev: Reverse strings[18]
-    // Using custom_strrev as strrev is not standard C.
     custom_strrev(strings[18]);
     printf("10. Reversed strings[18]: %s\n", strings[18]);
 
     // 11. strset: Set all characters in strings[19] to '1'
-    // strset is standard in C11. Assuming it's available.
-    // If not, a loop would be needed.
-    strset(strings[19], '1');
+    custom_strset(strings[19], '1');
     printf("11. strings[19] set to '1': %s\n", strings[19]);
 
     // 12. strnset: Set first 5 characters of strings[20] to '2'
-    // strnset is standard in C11. Assuming it's available.
-    // If not, a loop would be needed.
-    strnset(strings[20], '2', 5);
+    custom_strnset(strings[20], '2', 5);
     printf("12. First 5 chars of strings[20] set to '2': %s\n", strings[20]);
 
     return 0;

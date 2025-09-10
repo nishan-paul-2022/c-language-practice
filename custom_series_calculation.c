@@ -1,3 +1,8 @@
+/*
+ * Purpose: Calculates a custom series based on user input using nested loops and mathematical operations.
+ * Topic: Mathematical Series, Nested Loops, Floating-Point Arithmetic
+ */
+
 #include <stdio.h>
 #include <math.h>
 

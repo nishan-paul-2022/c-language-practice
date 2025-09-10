@@ -11,24 +11,25 @@ int main() {
     char input_char;
 
     printf("Enter a single character: ");
-    // Read a single character from standard input
+    // Read character from standard input
     input_char = getchar();
 
-    // Check the type of the character using ctype.h functions
-    if (isalpha(input_char)) { // Checks if it's an alphabet character
-        if (isupper(input_char)) { // Checks if it's an uppercase letter
+    // Determine character type using ctype.h functions
+    if (isalpha(input_char)) { // Alphabet character
+        if (isupper(input_char)) { // Uppercase letter
             printf("UPPER CASE\n");
-        } else { // Must be a lowercase letter
+        } else { // Lowercase letter
             printf("LOWER CASE\n");
         }
-    } else if (isdigit(input_char)) { // Checks if it's a digit (0-9)
+    } else if (isdigit(input_char)) { // Digit (0-9)
         printf("DIGIT\n");
-    } else if (ispunct(input_char)) { // Checks if it's a punctuation character
+    } else if (ispunct(input_char)) { // Punctuation character
         printf("PUNCTUATION MARK\n");
-    } else if (isspace(input_char)) { // Checks if it's a whitespace character (space, tab, newline, etc.)
+    } else if (isspace(input_char)) { // Whitespace character
         printf("WHITE SPACE\n");
     } else {
-        printf("OTHER CHARACTER\n"); // For any other character type
+        printf("OTHER CHARACTER\n"); // Other character types
     }
 
     return 0;
+}

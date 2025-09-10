@@ -1,4 +1,4 @@
-/* 
+/*
  * Purpose: Counts the frequency of each lowercase letter in a given string.
  * Topic: Strings, Character Handling, Arrays, Loops, Frequency Counting
  */
@@ -11,36 +11,36 @@ int main() {
     int num_test_cases; // Number of test cases
     int case_num;       // Current test case number
 
-    // Read the number of test cases
+    // Get number of test cases
     scanf("%d", &num_test_cases);
-    // Consume the newline character left by scanf("%d")
+    // Consume newline character left by scanf
     getchar();
 
     // Process each test case
     for (case_num = 1; case_num <= num_test_cases; case_num++) {
-        char input_string[100];       // Buffer to store the input string
-        int frequency[26] = {0};      // Array to store frequencies of 'a' through 'z'
-        int string_length;            // Length of the input string
+        char input_string[100];       // Input string buffer
+        int frequency[26] = {0};      // Frequency array for 'a'-'z'
+        int string_length;            // Length of input string
         int i;
 
-        // Read the input string
-        scanf("%99s", input_string); // %99s to prevent buffer overflow
-        // Consume the newline character left by scanf("%s")
+        // Read input string with buffer overflow protection
+        scanf("%99s", input_string);
+        // Consume newline character left by scanf
         getchar();
 
         string_length = strlen(input_string);
 
-        // Count the frequency of each character
+        // Count frequency of each character
         for (i = 0; i < string_length; i++) {
             char current_char = tolower(input_string[i]); // Convert to lowercase
 
-            // Check if the character is a lowercase letter
+            // Check if character is a lowercase letter
             if (current_char >= 'a' && current_char <= 'z') {
-                frequency[current_char - 'a']++; // Increment the count for this letter
+                frequency[current_char - 'a']++; // Increment count
             }
         }
 
-        // Print the frequencies of letters that appeared in the string
+        // Print frequencies of letters that appeared
         printf("Case %d:\n", case_num);
         for (i = 0; i < 26; i++) {
             if (frequency[i] > 0) {

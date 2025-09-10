@@ -1,5 +1,5 @@
 /*
- * Purpose: Converts a decimal integer to its binary representation.
+* Purpose: Converts a decimal integer to its binary representation.
  * Topic: Loops, Arithmetic Operations, Number Systems, Arrays
  */
 
@@ -8,7 +8,7 @@
 
 int main() {
     int decimal_number;
-    int binary_digits[32]; // An array to store binary digits (sufficient for 32-bit int)
+    int binary_digits[32]; // Array to store binary digits (sufficient for 32-bit int)
     int i;
 
     printf("Enter a non-negative decimal integer (or Ctrl+D to exit): ");

@@ -6,11 +6,11 @@
 #include <stdio.h>
 
 int main(void) {
-    char sample_char = 'a'; // Declare a character variable and initialize it.
+    char sample_char = 'a'; // Character variable
 
-    // Print the memory address of the character variable.
-    // The %p format specifier is used to print pointer values.
-    // We cast the address to (void *) for compatibility with %p.
+    // Print memory address of character variable
+    // %p format specifier prints pointer values
+    // Cast address to (void *) for compatibility with %p
     printf("The memory address of 'sample_char' is: %p\n", (void *)&sample_char);
 
     return 0;

@@ -27,7 +27,6 @@ int main(void) {
         printf("Enter command: ");
         if (scanf(" %c", &command_char) != 1) { // Note the space before %c to consume any leading whitespace/newlines
             fprintf(stderr, "Error: Failed to read command.\n");
-            // Decide how to handle this error, perhaps break or return
             break;
         }
 

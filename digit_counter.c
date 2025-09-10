@@ -1,5 +1,5 @@
 /*
- * Purpose: Counts the number of digits in a given non-negative integer.
+* Purpose: Counts the number of digits in a given non-negative integer.
  * Topic: Integer Arithmetic, Loops, Basic Math
  */
 

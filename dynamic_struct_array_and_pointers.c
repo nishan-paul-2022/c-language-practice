@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates dynamic memory allocation for an array of structures using calloc,
+* Purpose: Demonstrates dynamic memory allocation for an array of structures using calloc,
  *          and how pointers within structures can link elements sequentially.
  * Topic: Structures, Pointers, Dynamic Memory Allocation (calloc, free), Input/Output
  */
@@ -22,7 +22,7 @@ void input_records(Record *records_array, int count) {
     for (int i = 0; i < count; i++) {
         printf("Record %d: ", i + 1);
         // Use a field width for %s to prevent buffer overflow
-        // Note: scanf with %s stops at whitespace. If names can have spaces, use fgets.
+        // Note: scanf with %s stops at whitespace. If names can have spaces, use fgets
         if (scanf("%ld, %f, %99s", &records_array[i].id, &records_array[i].value, records_array[i].name) != 3) {
             fprintf(stderr, "Invalid input format for record %d. Exiting.\n", i + 1);
             // Clear input buffer in case of invalid input

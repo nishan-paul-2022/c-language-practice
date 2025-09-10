@@ -1,3 +1,8 @@
+/*
+ * Purpose: Counts positive and negative numbers from a series of test cases.
+ * Topic: Loops, Conditional Statements, Basic I/O
+ */
+
 #include <stdio.h>
 
 int main() {

@@ -11,8 +11,8 @@ int main(void) {
     long int long_var;
     unsigned long long int ull_var;
 
-    // Print the sizes of these data types using the sizeof operator.
-    // %zu is the correct format specifier for size_t, which is the return type of sizeof.
+    // Print the sizes of these data types using the sizeof operator
+    // %zu is the format specifier for size_t (return type of sizeof)
     printf("Size of short int: %zu bytes\n", sizeof(short_var));
     printf("Size of int: %zu bytes\n", sizeof(int_var));
     printf("Size of long int: %zu bytes\n", sizeof(long_var));

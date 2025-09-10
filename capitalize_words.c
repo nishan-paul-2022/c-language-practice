@@ -1,7 +1,7 @@
 /*
  * Purpose: Reads a string and capitalizes the first letter of each word,
  *          converting other letters to lowercase.
- * Topic: Strings, Character Manipulation, Loops, Input/Output
+* Topic: Strings, Character Manipulation, Loops, Input/Output
  */
 
 #include <stdio.h>
@@ -9,7 +9,7 @@
 #include <ctype.h>
 
 int main() {
-    char str[100]; // Increased buffer size for safety
+    char str[100]; // Buffer for input string
     int i;
     int len;
 
@@ -21,31 +21,31 @@ int main() {
         return 0;
     }
 
-    // Remove trailing newline character if present from fgets
+    // Remove trailing newline from fgets
     len = strlen(str);
     if (len > 0 && str[len - 1] == '\n') {
         str[len - 1] = '\0';
         len--; // Update length
     }
 
-    // Process the string to capitalize first letter of each word
+    // Capitalize first letter of each word
     for (i = 0; i < len; i++) {
-        // Check if the current character is the start of a word
-        // (either it's the first character or preceded by a space)
+        // Check if current character is start of word
+        // (first character or preceded by space)
         if (i == 0 || str[i - 1] == ' ') {
-            // If it's a lowercase letter, convert it to uppercase
+            // Convert lowercase to uppercase
             if (str[i] >= 'a' && str[i] <= 'z') {
                 str[i] = toupper(str[i]);
             }
         } else {
-            // If it's not the start of a word, convert to lowercase
+            // Convert uppercase to lowercase
             if (str[i] >= 'A' && str[i] <= 'Z') {
                 str[i] = tolower(str[i]);
             }
         }
     }
 
-    // Print the modified string
+    // Print result
     printf("Modified string: %s\n", str);
 
     return 0;

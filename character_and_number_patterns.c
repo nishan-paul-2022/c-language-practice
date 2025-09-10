@@ -1,11 +1,11 @@
 /*
  * Purpose: Demonstrates printing various character and number patterns using nested loops.
  * Topic: Patterns, Nested Loops, Functions, Characters, Numbers
- */
+*/
 
 #include <stdio.h>
 
-// Function to print a right-aligned character triangle pattern
+// Print right-aligned character triangle
 void print_right_aligned_char_triangle(int num_rows, char start_char) {
     if (num_rows <= 0) return; // Handle invalid input
 
@@ -14,9 +14,9 @@ void print_right_aligned_char_triangle(int num_rows, char start_char) {
         char current_char = start_char;
         // Print spaces for alignment
         for (int space = 1; space <= num_rows - row; space++) {
-            printf("  "); // Two spaces for better visual separation
+            printf("  "); // Two spaces for visual separation
         }
-        // Print characters for the current row
+        // Print characters for current row
         for (int col = 1; col <= row; col++) {
             printf("%c ", current_char++);
         }
@@ -25,14 +25,14 @@ void print_right_aligned_char_triangle(int num_rows, char start_char) {
     printf("--------------------------------------\n");
 }
 
-// Function to print a left-aligned character triangle pattern
+// Print left-aligned character triangle
 void print_left_aligned_char_triangle(int num_rows, char start_char) {
     if (num_rows <= 0) return; // Handle invalid input
 
     printf("--- Left-aligned Character Triangle ---\n");
     for (int row = 1; row <= num_rows; row++) {
         char current_char = start_char;
-        // Print characters for the current row
+        // Print characters for current row
         for (int col = 1; col <= row; col++) {
             printf("%c", current_char++);
         }
@@ -41,7 +41,7 @@ void print_left_aligned_char_triangle(int num_rows, char start_char) {
     printf("-------------------------------------\n");
 }
 
-// Function to print a right-aligned number triangle pattern
+// Print right-aligned number triangle
 void print_right_aligned_number_triangle(int num_rows) {
     if (num_rows <= 0) return; // Handle invalid input
 
@@ -51,9 +51,9 @@ void print_right_aligned_number_triangle(int num_rows) {
         for (int space = 1; space <= num_rows - row; space++) {
             printf(" "); // Single space for alignment
         }
-        // Print numbers for the current row
+        // Print numbers for current row
         for (int col = 1; col <= row; col++) {
-            printf("%d ", row); // Print the current row number
+            printf("%d ", row); // Print current row number
         }
         printf("\n");
     }
@@ -72,7 +72,7 @@ int main() {
         return 0;
     }
     printf("Enter the starting character: ");
-    if (scanf(" %c", &char1) != 1) { // Space before %c to consume any leftover newline
+    if (scanf(" %c", &char1) != 1) { // Space before %c to consume leftover newline
         printf("Error: Invalid input for character.\n");
         return 0;
     }
@@ -98,7 +98,7 @@ int main() {
         return 0;
     }
 
-    // Print the patterns
+    // Print patterns
     print_right_aligned_char_triangle(rows1, char1);
     print_left_aligned_char_triangle(rows2, char2);
     print_right_aligned_number_triangle(rows3);

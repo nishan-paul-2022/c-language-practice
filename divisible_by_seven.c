@@ -1,5 +1,5 @@
 /*
- * Purpose: Prints all numbers divisible by 7 within a specified range.
+* Purpose: Prints all numbers divisible by 7 within a specified range.
  * Topic: Divisibility, Loops, Conditional Statements, Input Parsing
  */
 
@@ -12,8 +12,8 @@ int main() {
 
     printf("Enter the start and end of the range (e.g., 1, 100): ");
     // Read the range from user input in "start, end" format and validate
-    // scanf returns the number of successfully matched and assigned input items.
-    // We expect 2 integers to be read.
+    // scanf returns the number of successfully matched and assigned input items
+    // We expect 2 integers to be read
     if (scanf("%d, %d", &start_num, &end_num) != 2) {
         printf("Error: Invalid input format. Please use 'start, end' format (e.g., 1, 100).\n");
         return 0;

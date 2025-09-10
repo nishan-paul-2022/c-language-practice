@@ -1,5 +1,5 @@
 /*
- * Purpose: To generate the 3n+1 sequence (Collatz conjecture) for a given number.
+ * Purpose: Generates the 3n+1 sequence (Collatz conjecture) for a given number.
  * Topic: Recursion, Conditional Statements
  */
 
@@ -10,6 +10,7 @@ void collatz_sequence(int n) {
     if (n == 1) {
         return;
     }
+    // Apply Collatz rule: if odd, multiply by 3 and add 1; if even, divide by 2
     if (n % 2) {
         collatz_sequence(3 * n + 1);
     } else {

@@ -1,5 +1,5 @@
 /*
- * Purpose: Simulates a donation collection process, accumulating and reporting the total.
+* Purpose: Simulates a donation collection process, accumulating and reporting the total.
  * Topic: Basic Input/Output, Loops, Accumulation
  */
 

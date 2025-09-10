@@ -24,8 +24,7 @@ int main() {
         printf("Enter four integers for the first set (k1 k2 k3 k4): ");
         if (scanf("%d %d %d %d", &k1, &k2, &k3, &k4) != 4) {
             printf("Invalid input for first set. Skipping this test case.\n");
-            // Clear input buffer
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
+            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
             current_test_case++;
             continue;
         }
@@ -34,15 +33,14 @@ int main() {
         printf("Enter four integers for the second set (K1 K2 K3 K4): ");
         if (scanf("%d %d %d %d", &m1, &m2, &m3, &m4) != 4) {
             printf("Invalid input for second set. Skipping this test case.\n");
-            // Clear input buffer
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
+            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
             current_test_case++;
             continue;
         }
         sum2 = m1 - m2 + m3 - m4;
 
         if (sum1 > 0 && sum2 > 0) {
-            printf("BANGLADESH\n");
+            printf("HIT\n");
         } else {
             printf("MISS\n");
         }

@@ -1,7 +1,7 @@
 /*
- * Purpose: Calculates the sum of digits and reverses a given integer.
+* Purpose: Calculates the sum of digits and reverses a given integer.
  * Topic: Number Manipulation, Loops, Functions, Input/Output
- */
+*/
 
 #include <stdio.h>
 #include <math.h>
@@ -9,7 +9,7 @@
 // Function to calculate the sum of digits of a number
 long int sum_digits(long int num) {
     long int sum = 0;
-    long int temp_num = num; // Use a temporary variable to avoid modifying the original number
+    long int temp_num = num; // Temporary variable to avoid modifying the original number
 
     // Handle negative numbers by taking the absolute value for digit sum
     if (temp_num < 0) {
@@ -27,7 +27,7 @@ long int sum_digits(long int num) {
 // Function to reverse a number
 long int reverse_number(long int num) {
     long int reversed_num = 0;
-    long int temp_num = num; // Use a temporary variable
+    long int temp_num = num; // Temporary variable
 
     // Handle negative numbers: reverse the absolute value and keep the sign
     int sign = 1;

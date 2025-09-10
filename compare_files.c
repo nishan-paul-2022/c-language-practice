@@ -14,9 +14,9 @@
 int main(void) {
     FILE *file_output, *file_input;
     int value_output, value_input;
-    int mismatch_found = 0; // Flag to track if any mismatch occurred
+    int mismatch_found = 0; // Flag to track mismatches
 
-    // Open the files for reading
+    // Open files for reading
     file_output = fopen(OUTPUT_FILE, "r");
     if (file_output == NULL) {
         perror("Error opening output file for reading");
@@ -30,34 +30,34 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    // Read integers from both files simultaneously and compare them
-    // The loop continues as long as we can successfully read an integer from the output file.
+    // Compare integers from both files
+    // Continue while successfully reading from output file
     while (fscanf(file_output, "%d", &value_output) == 1) {
-        // Try to read an integer from the input file.
-        // If reading from input file fails or returns fewer than 1 item, it's a mismatch.
+        // Try to read integer from input file
+        // Failure indicates mismatch (premature end or invalid data)
         if (fscanf(file_input, "%d", &value_input) != 1) {
-            mismatch_found = 1; // Mismatch: input file ended prematurely or had invalid data
-            break; // Exit the loop
+            mismatch_found = 1; // Mismatch: input file ended or had invalid data
+            break; // Exit loop
         }
 
-        // Compare the values read from both files
+        // Compare values from both files
         if (value_output != value_input) {
             mismatch_found = 1; // Mismatch found
-            break; // Exit the loop
+            break; // Exit loop
         }
     }
 
-    // After the loop, check if the input file still has data while output file has ended.
-    // This indicates a mismatch (input file has more data).
+    // Check if input file has more data after output file ended
+    // Indicates mismatch (input file has excess data)
     if (!mismatch_found && fscanf(file_input, "%d", &value_input) == 1) {
         mismatch_found = 1;
     }
 
-    // Close the files
+    // Close files
     fclose(file_output);
     fclose(file_input);
 
-    // Print the result based on whether a mismatch was found
+    // Print result based on mismatch flag
     if (mismatch_found) {
         printf("ERROR\n");
     } else {

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-// Define PI as a constant for better readability and precision
+// Define PI constant for readability and precision
 #define PI 3.14159265358979323846
 
 int main() {

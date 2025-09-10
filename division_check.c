@@ -1,5 +1,5 @@
 /*
- * Purpose: Reads two floating-point numbers, performs division, and checks the integer part of the quotient.
+* Purpose: Reads two floating-point numbers, performs division, and checks the integer part of the quotient.
  * Topic: Floating-Point Input, Division, Integer Conversion, Switch Statement
  */
 #include <stdio.h>
@@ -12,8 +12,8 @@ int main() {
     printf("Enter two numbers separated by a comma (e.g., '15.5, 3.1'):\n");
 
     // Read the numerator and denominator
-    // scanf returns the number of successfully matched and assigned input items.
-    // We expect 2 items (numerator and denominator) to be successfully read.
+    // scanf returns the number of successfully matched and assigned input items
+    // We expect 2 items (numerator and denominator) to be successfully read
     if (scanf("%f, %f", &numerator, &denominator) == 2) {
 
         // Check for division by zero before performing the division
