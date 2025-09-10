@@ -7,34 +7,32 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *input_file = NULL;
-    FILE *output_file = NULL;
-    int number;
-    int square;
+    char input_file_path[] = "files/02-input.txt";
+    char output_file_path[] = "files/02-output.txt";
 
     // Open input file
-    input_file = fopen("input.txt", "r");
+    FILE *input_file = fopen(input_file_path, "r");
     if (input_file == NULL) {
-        perror("Error opening input file input.txt");
+        perror("Error opening input file");
         return EXIT_FAILURE;
     } else {
-        printf("Input file input.txt opened successfully for reading.\n");
+        printf("%s opened successfully for reading.\n", input_file_path);
     }
 
     // Open output file
-    output_file = fopen("output.txt", "w");
+    FILE *output_file = fopen(output_file_path, "w");
     if (output_file == NULL) {
-        perror("Error opening output file output.txt");
+        perror("Error opening output file");
         fclose(input_file);
         return EXIT_FAILURE;
     } else {
-        printf("Output file output.txt opened successfully for writing.\n");
+        printf("%s opened successfully for writing.\n", output_file_path);
     }
 
     // Read numbers and calculate squares
-    printf("Calculating squares...\n");
+    int number;
     while (fscanf(input_file, "%d", &number) == 1) {
-        square = number * number;
+        int square = number * number;
         // Write squared number to output file
         if (fprintf(output_file, "%d\n", square) < 0) {
             perror("Error writing to output file");
@@ -44,7 +42,7 @@ int main() {
         }
     }
 
-    // Check for read errors
+    // Check if the loop exited due to a read error rather than end-of-file
     if (ferror(input_file)) {
         perror("Error reading from input file");
         fclose(input_file);
@@ -52,7 +50,7 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    printf("Squares calculated and written successfully.\n");
+    printf("Squares calculated from %s and written to %s successfully.\n", input_file_path, output_file_path);
 
     // Close files
     fclose(input_file);
