@@ -23,19 +23,19 @@ void swap(char* a, char* b)
 
 // This function finds the index of the smallest character
 // which is greater than 'first' and is present in str[l..h]
-int findCeil(char str[], char first, int l, int h)
+int find_ceil(char str[], char first, int l, int h)
 {
     // Initialize index of ceiling element
-    int ceilIndex = l;
+    int ceil_index = l;
 
     // Iterate through the rest of the elements and find
     // the smallest character greater than 'first'
     for (int i = l + 1; i <= h; i++) {
-        if (str[i] > first && str[i] < str[ceilIndex]) {
-            ceilIndex = i;
+        if (str[i] > first && str[i] < str[ceil_index]) {
+            ceil_index = i;
         }
     }
-    return ceilIndex;
+    return ceil_index;
 }
 
 // Function to generate and print all permutations of str in sorted order
@@ -48,8 +48,8 @@ void generate_sorted_permutations(char str[])
     qsort(str, size, sizeof(str[0]), compare);
 
     // Print permutations one by one
-    int isFinished = 0;
-    while (!isFinished)
+    int is_finished = 0;
+    while (!is_finished)
     {
         // Print the current permutation
         static int permutation_count = 1;
@@ -67,14 +67,14 @@ void generate_sorted_permutations(char str[])
         // If no such character is found, all characters are sorted in decreasing order,
         // meaning we have printed the last permutation.
         if (i == -1) {
-            isFinished = 1;
+            is_finished = 1;
         } else {
             // Find the smallest character to the right of the pivot character
             // that is greater than the pivot character.
-            int ceilIndex = findCeil(str, str[i], i + 1, size - 1);
+            int ceil_index = find_ceil(str, str[i], i + 1, size - 1);
 
             // Swap the pivot character with the found character
-            swap(&str[i], &str[ceilIndex]);
+            swap(&str[i], &str[ceil_index]);
 
             // Sort the substring to the right of the pivot character in ascending order
             // to get the lexicographically next permutation.

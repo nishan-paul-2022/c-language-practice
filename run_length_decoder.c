@@ -9,8 +9,8 @@
 
 int main()
 {
-    char encodedString[100001]; // Buffer for input string, +1 for null terminator
-    int repetitionCount;
+    char encoded_string[100001]; // Buffer for input string, +1 for null terminator
+    int repetition_count;
     int i;
 
     printf("Enter encoded strings (digits 1-9 for repetition, 'b' for space, '!' for newline).\n");
@@ -18,54 +18,54 @@ int main()
     printf("Press Ctrl+D to exit.\n");
 
     // Use fgets for safer input reading
-    while (fgets(encodedString, sizeof(encodedString), stdin) != NULL)
+    while (fgets(encoded_string, sizeof(encoded_string), stdin) != NULL)
     {
         // Remove trailing newline character if present (fgets includes it)
-        int len = strlen(encodedString);
-        if (len > 0 && encodedString[len - 1] == '\n')
+        int len = strlen(encoded_string);
+        if (len > 0 && encoded_string[len - 1] == '\n')
         {
-            encodedString[len - 1] = '\0';
+            encoded_string[len - 1] = '\0';
         }
 
-        repetitionCount = 0; // Reset repetition count for each new line
+        repetition_count = 0; // Reset repetition count for each new line
 
-        for (i = 0; encodedString[i] != '\0'; i++)
+        for (i = 0; encoded_string[i] != '\0'; i++)
         {
-            char currentChar = encodedString[i];
+            char current_char = encoded_string[i];
 
-            if (currentChar >= '1' && currentChar <= '9')
+            if (current_char >= '1' && current_char <= '9')
             {
                 // Accumulate repetition count from digits
-                repetitionCount += (currentChar - '0');
+                repetition_count += (current_char - '0');
             }
             else
             {
-                // Process characters based on accumulated repetitionCount
-                if (repetitionCount == 0)
+                // Process characters based on accumulated repetition_count
+                if (repetition_count == 0)
                 {
                     // If no digit was encountered, default to 1 repetition for the character
-                    repetitionCount = 1;
+                    repetition_count = 1;
                 }
 
-                if (currentChar == '!')
+                if (current_char == '!')
                 {
                     printf("\n"); // Print a newline
                 }
-                else if (currentChar == 'b')
+                else if (current_char == 'b')
                 {
-                    for (int m = 0; m < repetitionCount; m++)
+                    for (int m = 0; m < repetition_count; m++)
                     {
                         printf(" "); // Print spaces
                     }
                 }
                 else
                 {
-                    for (int m = 0; m < repetitionCount; m++)
+                    for (int m = 0; m < repetition_count; m++)
                     {
-                        printf("%c", currentChar); // Print the character
+                        printf("%c", current_char); // Print the character
                     }
                 }
-                repetitionCount = 0; // Reset count after processing the character
+                repetition_count = 0; // Reset count after processing the character
             }
         }
         printf("\n"); // Ensure a newline after each processed line

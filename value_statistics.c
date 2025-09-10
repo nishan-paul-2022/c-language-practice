@@ -9,8 +9,8 @@ int main()
 {
     double value;
     double sum = 0.0;
-    double highestValue = 0.0;
-    double lowestValue = 0.0;
+    double highest_value = 0.0;
+    double lowest_value = 0.0;
     int count = 0;
 
     printf("Enter values (enter 0.1 to terminate input):\n");
@@ -27,18 +27,18 @@ int main()
 
         if (count == 1)
         {
-            highestValue = value;
-            lowestValue = value;
+            highest_value = value;
+            lowest_value = value;
         }
         else
         {
-            if (value > highestValue)
+            if (value > highest_value)
             {
-                highestValue = value;
+                highest_value = value;
             }
-            if (value < lowestValue)
+            if (value < lowest_value)
             {
-                lowestValue = value;
+                lowest_value = value;
             }
         }
         sum += value;
@@ -49,7 +49,7 @@ int main()
         printf("TOTAL VALUE %.3lf\n", sum);
         printf("TOTAL COMPANY %d\n", count);
         printf("AVERAGE VALUE %.3lf\n", sum / count);
-        printf("Highest value %.3lf, Lowest value %.3lf, Range %.3lf\n", highestValue, lowestValue, highestValue - lowestValue);
+        printf("Highest value %.3lf, Lowest value %.3lf, Range %.3lf\n", highest_value, lowest_value, highest_value - lowest_value);
     }
     else
     {

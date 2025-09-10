@@ -7,25 +7,25 @@
 #include <string.h>
 
 // Define a structure to hold different data types
-struct ExampleStructure {
-    int integerValue;      // An integer member
-    double doubleValue;    // A double-precision floating-point member
-    char stringValue[100]; // A character array (string) member
+struct example_structure {
+    int integer_value;      // An integer member
+    double double_value;    // A double-precision floating-point member
+    char string_value[100]; // A character array (string) member
 };
 
 int main() {
     // Declare an instance of the structure
-    struct ExampleStructure myStruct;
+    struct example_structure my_struct;
 
     // Initialize the structure members
-    myStruct.integerValue = 1;
-    myStruct.doubleValue = 3.1416;
-    strcpy(myStruct.stringValue, "string"); // Use strcpy for string assignment
+    my_struct.integer_value = 1;
+    my_struct.double_value = 3.1416;
+    strcpy(my_struct.string_value, "string"); // Use strcpy for string assignment
 
     // Print the structure members
-    printf("Integer: %d\n", myStruct.integerValue);
-    printf("Double: %.2lf\n", myStruct.doubleValue);
-    printf("String: %s\n", myStruct.stringValue);
+    printf("Integer: %d\n", my_struct.integer_value);
+    printf("Double: %.2lf\n", my_struct.double_value);
+    printf("String: %s\n", my_struct.string_value);
 
     return 0;
 }
