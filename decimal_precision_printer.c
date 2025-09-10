@@ -7,25 +7,21 @@
 #include <stdio.h>
 #include <math.h>
 
-int main()
-{
+int main() {
     double input_number;
     double temp_number;
     int decimal_places;
 
     printf("Enter a floating-point number (e.g., 123.456) (or Ctrl+D to exit): ");
-    while (scanf("%lf", &input_number) == 1)
-    {
+    while (scanf("%lf", &input_number) == 1) {
         decimal_places = 0;
         temp_number = input_number;
 
         // Check if the number has a fractional part
-        if (temp_number != (long long)temp_number)
-        {
+        if (temp_number != (long long)temp_number) {
             // Multiply by 10 until the fractional part is zero
             // This counts the number of decimal places
-            while (fmod(temp_number, 1.0) != 0.0 && decimal_places < 15) // Limit to avoid infinite loop with floating point inaccuracies
-            {
+            while (fmod(temp_number, 1.0) != 0.0 && decimal_places < 15) { // Limit to avoid infinite loop with floating point inaccuracies
                 temp_number *= 10.0;
                 decimal_places++;
             }

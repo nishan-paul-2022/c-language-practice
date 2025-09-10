@@ -8,11 +8,9 @@
 #include <stdlib.h>
 
 // Function to initialize the character mapping table
-void initialize_mapping(char map[])
-{
+void initialize_mapping(char map[]) {
     // Initialize with identity mapping (each character maps to itself)
-    for (int i = 0; i < 256; i++)
-    {
+    for (int i = 0; i < 256; i++) {
         map[i] = (char)i;
     }
 
@@ -91,8 +89,7 @@ void initialize_mapping(char map[])
     map['C'] = 'Z';
 }
 
-int main()
-{
+int main() {
     char input_line[10001]; // Buffer to store input line, +1 for null terminator
     char char_map[256];     // Lookup table for character mapping
 
@@ -101,20 +98,17 @@ int main()
     printf("Enter text to convert (press Ctrl+D to exit):\n");
 
     // Read input line by line using fgets for safety (prevents buffer overflow)
-    while (fgets(input_line, sizeof(input_line), stdin) != NULL)
-    {
+    while (fgets(input_line, sizeof(input_line), stdin) != NULL) {
         int length = strlen(input_line);
 
         // Remove trailing newline character if present (fgets includes it)
-        if (length > 0 && input_line[length - 1] == '\n')
-        {
+        if (length > 0 && input_line[length - 1] == '\n') {
             input_line[length - 1] = '\0';
             length--; // Adjust length after removing newline
         }
 
         // Apply the character mapping to each character in the input line
-        for (int i = 0; i < length; i++)
-        {
+        for (int i = 0; i < length; i++) {
             // Cast to unsigned char to ensure correct indexing for all possible char values
             input_line[i] = char_map[(unsigned char)input_line[i]];
         }

@@ -5,14 +5,12 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     float num1, num2;
 
     printf("Enter two floating-point numbers separated by a comma (e.g., 10.5,20.3): ");
     // Using a space in scanf format string to consume any whitespace including newline after first number
-    if (scanf("%f, %f", &num1, &num2) != 2)
-    {
+    if (scanf("%f, %f", &num1, &num2) != 2) {
         printf("Invalid input. Please enter two numbers.\n");
         return 0;
     }
@@ -25,12 +23,9 @@ int main()
     printf("Difference: %.2f\n", num1 - num2);
     printf("Product: %.2f\n", num1 * num2);
 
-    if (num2 != 0)
-    {
+    if (num2 != 0) {
         printf("Quotient: %.2f\n", num1 / num2);
-    }
-    else
-    {
+    } else {
         printf("Quotient: Division by zero is not allowed.\n");
     }
 

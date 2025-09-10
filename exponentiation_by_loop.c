@@ -8,47 +8,45 @@
 #include <math.h>
 
 // Declare main as int main() for standard C compliance.
-int main()
-{
+int main() {
     double base;         // The base number.
     int exponent;        // The exponent.
     double result = 1.0; // Initialize result to 1.0 for exponentiation.
-    int counter;
 
     // --- Input ---
     printf("Enter the base (a double) and the exponent (an integer), separated by a comma (e.g., 2.5, 3): ");
 
     // Read the base and exponent.
-    // Using scanf for mixed input. Note: This can be fragile.
-    if (scanf("%lf", &base) != 1)
-    {
-        printf("Invalid input for base. Please enter a valid double.\n");
+    if (scanf("%lf, %d", &base, &exponent) != 2) {
+        printf("Invalid input format. Please enter in the format: base, exponent\n");
         return 0;
     }
 
-    // Consume the comma and any whitespace after the base.
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF)
-    {
-        if (c == ',')
-        { // Found the comma separator
-            // Consume any whitespace after the comma
-            while ((c = getchar()) != '\n' && c != EOF && (c == ' ' || c == '\t'))
-            {
-            }
-            // If we consumed a newline immediately after comma, it's an error.
-            if (c == '\n' || c == EOF)
-            {
-                printf("Invalid input format. Missing exponent after comma.\n");
-                return 0;
-            }
-    
-            break; // Exit the character consumption loop if we found the comma.
+    // --- Calculation ---
+    if (exponent == 0) {
+        // Any number to the power of 0 is 1.
+        result = 1.0;
+    } else if (exponent > 0) {
+        // Positive exponent: multiply base by itself 'exponent' times.
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
         }
-    }
-    // If the loop finished without finding a comma, it's an error.
-    if (c != ',' && c != '\n' && c != EOF)
-    {
+    } else { // exponent < 0
+        // Negative exponent: calculate 1 / (base ^ |exponent|).
+        // First, check for division by zero.
+        if (base == 0.0) {
+            printf("Error: Division by zero is not allowed (0 raised to a negative power).\n");
+            return 0;
+        }
+        // Calculate power with positive exponent, then take the reciprocal.
+        for (int i = 0; i < -exponent; i++) {
+            result *= base;
+        }
+        result = 1.0 / result;
     }
 
+    // --- Output ---
+    printf("%.2f ^ %d = %f\n", base, exponent, result);
+
+    return 0;
 }

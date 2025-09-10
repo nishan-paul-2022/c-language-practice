@@ -7,8 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
     char encoded_string[100001]; // Buffer for input string, +1 for null terminator
     int repetition_count;
     int i;
@@ -18,50 +17,36 @@ int main()
     printf("Press Ctrl+D to exit.\n");
 
     // Use fgets for safer input reading
-    while (fgets(encoded_string, sizeof(encoded_string), stdin) != NULL)
-    {
+    while (fgets(encoded_string, sizeof(encoded_string), stdin) != NULL) {
         // Remove trailing newline character if present (fgets includes it)
         int len = strlen(encoded_string);
-        if (len > 0 && encoded_string[len - 1] == '\n')
-        {
+        if (len > 0 && encoded_string[len - 1] == '\n') {
             encoded_string[len - 1] = '\0';
         }
 
         repetition_count = 0; // Reset repetition count for each new line
 
-        for (i = 0; encoded_string[i] != '\0'; i++)
-        {
+        for (i = 0; encoded_string[i] != '\0'; i++) {
             char current_char = encoded_string[i];
 
-            if (current_char >= '1' && current_char <= '9')
-            {
+            if (current_char >= '1' && current_char <= '9') {
                 // Accumulate repetition count from digits
                 repetition_count += (current_char - '0');
-            }
-            else
-            {
+            } else {
                 // Process characters based on accumulated repetition_count
-                if (repetition_count == 0)
-                {
+                if (repetition_count == 0) {
                     // If no digit was encountered, default to 1 repetition for the character
                     repetition_count = 1;
                 }
 
-                if (current_char == '!')
-                {
+                if (current_char == '!') {
                     printf("\n"); // Print a newline
-                }
-                else if (current_char == 'b')
-                {
-                    for (int m = 0; m < repetition_count; m++)
-                    {
+                } else if (current_char == 'b') {
+                    for (int m = 0; m < repetition_count; m++) {
                         printf(" "); // Print spaces
                     }
-                }
-                else
-                {
-                    for (int m = 0; m < repetition_count; m++)
-                    {
+                } else {
+                    for (int m = 0; m < repetition_count; m++) {
                         printf("%c", current_char); // Print the character
                     }
                 }

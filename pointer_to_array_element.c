@@ -5,8 +5,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int numbers[5] = {1, 2, 3, 4, 5}; // Initialize an integer array
     int *pointer_to_array_element;       // Declare a pointer to an integer
 

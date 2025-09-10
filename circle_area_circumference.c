@@ -8,21 +8,18 @@
 // Define PI as a constant for better readability and precision
 #define PI 3.14159265358979323846
 
-int main()
-{
+int main() {
     float radius;
     float area;
     float circumference;
 
     printf("Enter the radius of the circle: ");
-    if (scanf("%f", &radius) != 1)
-    {
+    if (scanf("%f", &radius) != 1) {
         printf("Invalid input. Please enter a numeric value for the radius.\n");
         return 0;
     }
 
-    if (radius < 0)
-    {
+    if (radius < 0) {
         printf("Radius cannot be negative. Please enter a non-negative value.\n");
         return 0;
     }

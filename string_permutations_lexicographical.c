@@ -8,14 +8,12 @@
 #include <string.h>
 
 /* Function to compare two characters for qsort. */
-int compare(const void *a, const void * b)
-{
+int compare(const void *a, const void * b) {
     return ( *(char *)a - *(char *)b );
 }
 
 // A utility function to swap two characters a and b
-void swap(char* a, char* b)
-{
+void swap(char* a, char* b) {
     char t = *a;
     *a = *b;
     *b = t;
@@ -23,8 +21,7 @@ void swap(char* a, char* b)
 
 // This function finds the index of the smallest character
 // which is greater than 'first' and is present in str[l..h]
-int find_ceil(char str[], char first, int l, int h)
-{
+int find_ceil(char str[], char first, int l, int h) {
     // Initialize index of ceiling element
     int ceil_index = l;
 
@@ -39,8 +36,7 @@ int find_ceil(char str[], char first, int l, int h)
 }
 
 // Function to generate and print all permutations of str in sorted order
-void generate_sorted_permutations(char str[])
-{
+void generate_sorted_permutations(char str[]) {
     // Get size of string
     int size = strlen(str);
 
@@ -49,8 +45,7 @@ void generate_sorted_permutations(char str[])
 
     // Print permutations one by one
     int is_finished = 0;
-    while (!is_finished)
-    {
+    while (!is_finished) {
         // Print the current permutation
         static int permutation_count = 1;
         printf("%5d  %s \n", permutation_count++, str);
@@ -84,19 +79,15 @@ void generate_sorted_permutations(char str[])
 }
 
 // Driver program to test above function
-int main()
-{
+int main() {
     char input_string[100]; // Buffer to store user input
 
     printf("Enter a string: ");
     // Use fgets for safe input to prevent buffer overflows
     if (fgets(input_string, sizeof(input_string), stdin) != NULL) {
         // Remove the trailing newline character if fgets read one
-        char *newline = input_string;
-        while (*newline != '\n' && *newline != '\0') {
-            newline++;
-        }
-        if (*newline == '\n') {
+        char *newline = strchr(input_string, '\n');
+        if (newline != NULL) {
             *newline = '\0';
         }
 

@@ -6,18 +6,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
     FILE *file_pointer;
     unsigned long long int number;
-    const char *filename = "PRACTICE C/bishal.txt"; // Specify the path to the input file
+    const char *filename = "bishal.txt"; // Specify the path to the input file
 
     // Open the file in read mode
     file_pointer = fopen(filename, "r");
 
     // Check if the file was opened successfully
-    if (file_pointer == NULL)
-    {
+    if (file_pointer == NULL) {
         perror("Error opening file"); // Print error message if file opening fails
         return EXIT_FAILURE;
     }
@@ -25,10 +23,8 @@ int main()
     printf("Reading numbers from '%s' and printing even numbers:\n", filename);
 
     // Read numbers from the file until End-Of-File (EOF) is reached
-    while (fscanf(file_pointer, "%llu", &number) != EOF)
-    {
-        if (number % 2 == 0)
-        {
+    while (fscanf(file_pointer, "%llu", &number) != EOF) {
+        if (number % 2 == 0) {
             printf("%llu ", number); // Print even numbers
         }
     }

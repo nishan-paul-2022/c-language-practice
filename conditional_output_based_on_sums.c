@@ -5,28 +5,24 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int number_of_test_cases;
     int current_test_case = 0;
 
     printf("Enter the number of test cases: ");
-    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0)
-    {
+    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
         printf("Invalid input for number of test cases.\n");
         return 0;
     }
 
-    while (current_test_case < number_of_test_cases)
-    {
+    while (current_test_case < number_of_test_cases) {
         int k1, k2, k3, k4;
         int m1, m2, m3, m4;
         int sum1, sum2;
 
         printf("\n--- Test Case %d ---\n", current_test_case + 1);
         printf("Enter four integers for the first set (k1 k2 k3 k4): ");
-        if (scanf("%d %d %d %d", &k1, &k2, &k3, &k4) != 4)
-        {
+        if (scanf("%d %d %d %d", &k1, &k2, &k3, &k4) != 4) {
             printf("Invalid input for first set. Skipping this test case.\n");
             // Clear input buffer
             while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
@@ -36,8 +32,7 @@ int main()
         sum1 = k1 - k2 + k3 - k4;
 
         printf("Enter four integers for the second set (K1 K2 K3 K4): ");
-        if (scanf("%d %d %d %d", &m1, &m2, &m3, &m4) != 4)
-        {
+        if (scanf("%d %d %d %d", &m1, &m2, &m3, &m4) != 4) {
             printf("Invalid input for second set. Skipping this test case.\n");
             // Clear input buffer
             while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
@@ -46,12 +41,9 @@ int main()
         }
         sum2 = m1 - m2 + m3 - m4;
 
-        if (sum1 > 0 && sum2 > 0)
-        {
+        if (sum1 > 0 && sum2 > 0) {
             printf("BANGLADESH\n");
-        }
-        else
-        {
+        } else {
             printf("MISS\n");
         }
         current_test_case++;

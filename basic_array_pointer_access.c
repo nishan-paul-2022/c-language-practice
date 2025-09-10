@@ -5,8 +5,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int array[100]; // Declare an array of 100 integers
 
     // Prompt the user to enter an integer
@@ -14,8 +13,7 @@ int main()
 
     // Read an integer from the user and store it in the first element of the array.
     // 'array' presents a pointer to the first element, so '&array[0]' is equivalent to 'array'.
-    if (scanf("%d", array) != 1)
-    {
+    if (scanf("%d", array) != 1) {
         printf("Invalid input. Please enter an integer.\n");
         return 0;
     }

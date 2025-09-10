@@ -6,20 +6,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
     int number_of_test_cases;
     int i;
 
     printf("Enter the number of test cases: ");
-    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0)
-    {
+    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
         printf("Invalid input for number of test cases.\n");
         return 0;
     }
 
-    for (i = 0; i < number_of_test_cases; i++)
-    {
+    for (i = 0; i < number_of_test_cases; i++) {
         int number_of_calls;
         int call_duration;
         int mile_cost = 0;
@@ -27,8 +24,7 @@ int main()
 
         printf("\n--- Test Case %d ---\n", i + 1);
         printf("Enter the number of calls: ");
-        if (scanf("%d", &number_of_calls) != 1 || number_of_calls <= 0)
-        {
+        if (scanf("%d", &number_of_calls) != 1 || number_of_calls <= 0) {
             printf("Invalid number of calls. Skipping this test case.\n");
             // Clear input buffer
             while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
@@ -36,10 +32,8 @@ int main()
         }
 
         printf("Enter %d call durations (in seconds):\n", number_of_calls);
-        for (int j = 0; j < number_of_calls; j++)
-        {
-            if (scanf("%d", &call_duration) != 1 || call_duration < 0)
-            {
+        for (int j = 0; j < number_of_calls; j++) {
+            if (scanf("%d", &call_duration) != 1 || call_duration < 0) {
                 printf("Invalid call duration. Skipping remaining calls for this test case.\n");
                 // Clear input buffer
                 while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
@@ -58,16 +52,11 @@ int main()
         }
 
         // Compare costs and print the result
-        if (mile_cost < juice_cost)
-        {
+        if (mile_cost < juice_cost) {
             printf("Case %d: Mile %d\n", i + 1, mile_cost);
-        }
-        else if (juice_cost < mile_cost)
-        {
+        } else if (juice_cost < mile_cost) {
             printf("Case %d: Juice %d\n", i + 1, juice_cost);
-        }
-        else // mile_cost == juice_cost
-        {
+        } else { // mile_cost == juice_cost
             printf("Case %d: Mile Juice %d\n", i + 1, mile_cost);
         }
     }

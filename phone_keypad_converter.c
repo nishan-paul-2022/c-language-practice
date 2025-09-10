@@ -7,8 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main()
-{
+int main() {
     char title[] = "Enter an alphanumeric string (max 30 chars, containing A-Z).\n";
     char input_string[31]; // Increased size to 31 for null terminator, original was 30
     int i;
