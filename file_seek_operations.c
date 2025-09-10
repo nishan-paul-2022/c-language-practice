@@ -32,14 +32,14 @@ int main() {
     sprintf(formatted_string, "%d %d %s", num1, num2, input_buffer_s);
 
     // --- File Operations ---
-    // Open FH fseek.txt in read mode ("r").
+    // Open FH fseek.txt in read mode ("r")
     file_ptr = fopen("FH fseek.txt", "r");
     if (file_ptr == NULL) {
         perror("Error opening FH fseek.txt for reading");
-        // If the file doesn't exist, we can't proceed with fseek examples.
-        // For demonstration, we'll assume it exists or create it if needed.
-        // In a real scenario, you might create it here if it's missing.
-        // For this example, we'll create it with some sample data.
+        // If the file doesn't exist, we can't proceed with fseek examples
+        // For demonstration, we'll assume it exists or create it if needed
+        // In a real scenario, you might create it here if it's missing
+        // For this example, we'll create it with some sample data
         printf("Creating FH fseek.txt with sample data...\n");
         file_ptr = fopen("FH fseek.txt", "w"); // Open in write mode to create/overwrite
         if (file_ptr == NULL) {
@@ -57,7 +57,7 @@ int main() {
     }
 
     // --- First fseek and read ---
-    // Move the file position indicator forward by 3 characters from the current position (SEEK_CUR).
+    // Move the file position indicator forward by 3 characters from the current position (SEEK_CUR)
     // This will skip "Sam" from "SampleString12345"
     if (fseek(file_ptr, sizeof(char) * 3, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (first seek)");
@@ -78,21 +78,21 @@ int main() {
     printf("String read after first fseek (skipping 3 chars): %s\n", input_buffer_t);
 
     // --- Second fseek and read ---
-    // Move the file position indicator forward by 5 characters from the current position (SEEK_CUR).
-    // This will skip the characters after "ple" in "pleString12345" and the newline.
+    // Move the file position indicator forward by 5 characters from the current position (SEEK_CUR)
+    // This will skip the characters after "ple" in "pleString12345" and the newline
     if (fseek(file_ptr, sizeof(char) * 5, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (second seek)");
         fclose(file_ptr);
         return EXIT_FAILURE;
     }
 
-    // Read integers from the current file position.
-    // This assumes the data format is " num1 num2 num3 num4 num5" after the previous seeks.
-    // The original code read 5 integers, but the fseek might position us differently.
-    // Let's adjust the read to match the expected data after the seeks.
+    // Read integers from the current file position
+    // This assumes the data format is " num1 num2 num3 num4 num5" after the previous seeks
+    // The original code read 5 integers, but the fseek might position us differently
+    // Let's adjust the read to match the expected data after the seeks
     // The first seek skipped "Sam", leaving "pleString12345\n10 20 30 40 50\n"
     // The second seek skips "String" (10 chars), leaving "12345\n10 20 30 40 50\n"
-    // So, reading "%d %d %d" should get 12345, 10, 20.
+    // So, reading "%d %d %d" should get 12345, 10, 20
     if (fscanf(file_ptr, "%d %d %d", &num1, &num2, &num3) != 3) {
         if (feof(file_ptr)) {
             fprintf(stderr, "Reached end of file or invalid format for first integer read after second seek.\n");
@@ -105,8 +105,8 @@ int main() {
     printf("Integers read after second fseek: %d %d %d\n", num1, num2, num3);
 
     // --- Third fseek (moving backward) ---
-    // Move the file position indicator backward by 1 character from the current position (SEEK_CUR).
-    // This moves back from reading num3.
+    // Move the file position indicator backward by 1 character from the current position (SEEK_CUR)
+    // This moves back from reading num3
     if (fseek(file_ptr, -sizeof(char) * 1, SEEK_CUR) != 0) {
         perror("Error seeking backward in FH fseek.txt");
         fclose(file_ptr);
@@ -114,19 +114,19 @@ int main() {
     }
 
     // --- Fourth fseek and read ---
-    // Move the file position indicator forward by 2 integers from the current position (SEEK_CUR).
-    // This moves past num1 and num2 (assuming they were read correctly).
-    // The original code had a syntax error here (missing whence argument).
+    // Move the file position indicator forward by 2 integers from the current position (SEEK_CUR)
+    // This moves past num1 and num2 (assuming they were read correctly)
+    // The original code had a syntax error here (missing whence argument)
     if (fseek(file_ptr, sizeof(int) * 2, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (fourth seek)");
         fclose(file_ptr);
         return EXIT_FAILURE;
     }
 
-    // Read the remaining integers.
-    // After the previous seeks and reads, we expect to be at num3.
-    // The original code read "%d %d %d" into x, y, z.
-    // Let's assume we are positioned to read num3, num4, num5.
+    // Read the remaining integers
+    // After the previous seeks and reads, we expect to be at num3
+    // The original code read "%d %d %d" into x, y, z
+    // Let's assume we are positioned to read num3, num4, num5
     if (fscanf(file_ptr, "%d %d %d", &num4, &num5, &num3) != 3) { // Reusing num3 for num5
         if (feof(file_ptr)) {
             fprintf(stderr, "Reached end of file or invalid format for second integer read after fourth seek.\n");

@@ -12,11 +12,11 @@ int main() {
     int i, j;
     int temp_val;     // Temporary variable for swapping
 
-    // Prompt user for the number of elements
+    // Prompt user to enter the number of elements
     printf("Enter the number of elements: ");
-    scanf("%d", &num_elements);
+    scanf("%d", &num_elements); // Read the number of elements
 
-    // Check for valid number of elements
+    // Validate the number of elements
     if (num_elements <= 0) {
         printf("Number of elements must be positive.\n");
         return 0;
@@ -26,10 +26,10 @@ int main() {
     // For strict C89/C90, dynamic memory allocation with malloc would be used.
     int arr[num_elements];
 
-    // Read elements into the array
+    // Prompt user to enter elements into the array
     printf("Enter %d integer elements:\n", num_elements);
     for (i = 0; i < num_elements; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &arr[i]); // Read each element
     }
 
     // Find the maximum element by effectively performing one pass of bubble sort
@@ -45,7 +45,7 @@ int main() {
         }
     }
 
-    // After the loops, arr[num_elements - 1] will contain the maximum element
+    // Display the maximum element found
     printf("The maximum element in the array is: %d\n", arr[num_elements - 1]);
 
     return 0;

@@ -1,7 +1,7 @@
 /*
- * Purpose: Demonstrates reading and printing a long double-precision floating-point number.
- * Topic: Input/Output, Data Types (long double)
- */
+* Purpose: Demonstrates reading and printing long double-precision floating-point number.
+* Topic: Input/Output, Data Types (long double)
+*/
 
 #include <stdio.h>
 

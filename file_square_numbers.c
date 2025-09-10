@@ -15,7 +15,7 @@ int main() {
 
     // --- Step 1: Create input.txt and populate it with numbers from 1 to 1000 ---
 
-    // Open input.txt in write mode ("w"). If the file exists, its content is truncated.
+    // Open input.txt in write mode ("w"). If the file exists, its content is truncated
     input_file_ptr = fopen("input.txt", "w");
     if (input_file_ptr == NULL) {
         perror("Error opening input.txt for writing");
@@ -52,7 +52,7 @@ int main() {
     }
 
     // Read numbers from input.txt until the end of the file (EOF) is reached
-    // fscanf returns the number of items successfully read, or EOF on failure/end of file.
+    // fscanf returns the number of items successfully read, or EOF on failure/end of file
     while (fscanf(input_file_ptr, "%d", &number) == 1) {
         square = number * number; // Calculate the square of the number
         fprintf(output_file_ptr, "%d\n", square); // Write the square to output.txt

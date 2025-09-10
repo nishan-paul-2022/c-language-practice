@@ -7,10 +7,10 @@
 #include <stdio.h>
 
 int main() {
-    float number1; // First floating-point number
-    float number2; // Second floating-point number
-    float larger_number; // Variable to store the larger of the two numbers
-    int size_of_float_var; // Variable to store the size of a float (using int for sizeof result)
+    float number1;
+    float number2;
+    float larger_number;
+    int size_of_float_var;
 
     // Prompt user for input
     printf("Enter two floating-point values (e.g., 10.5 20.3): ");

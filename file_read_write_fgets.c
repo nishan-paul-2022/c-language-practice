@@ -16,7 +16,7 @@ int main() {
 
     // --- Input from User ---
     printf("Enter a string: ");
-    // Use fgets for safe input, as gets() is unsafe.
+    // Use fgets for safe input, as gets() is unsafe
     if (fgets(user_input_string, sizeof(user_input_string), stdin) == NULL) {
         perror("Error reading user input");
         return EXIT_FAILURE;
@@ -26,25 +26,25 @@ int main() {
 
     // --- Write to File ---
     // Open the file in write mode ("w"). This creates the file if it doesn't exist,
-    // or truncates it if it does.
+    // or truncates it if it does
     output_file_ptr = fopen("FH function (fgets).txt", "w");
     if (output_file_ptr == NULL) {
         perror("Error opening FH function (fgets).txt for writing");
         return EXIT_FAILURE;
     }
 
-    // Write the user's input string to the file.
-    // fputs writes a string to a stream. It does not automatically add a newline.
+    // Write the user's input string to the file
+    // fputs writes a string to a stream. It does not automatically add a newline
     if (fputs(user_input_string, output_file_ptr) == EOF) {
         perror("Error writing string to file");
         fclose(output_file_ptr); // Clean up
         return EXIT_FAILURE;
     }
 
-    // Close the output file after writing.
+    // Close the output file after writing
     if (fclose(output_file_ptr) != 0) {
         perror("Error closing FH function (fgets).txt after writing");
-        // Continue to the read operation, but report the error.
+        // Continue to the read operation, but report the error
     }
 
     // --- Read from File ---
@@ -55,9 +55,9 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // Read a string from the file using fgets.
-    // fgets reads up to n-1 characters or until a newline is encountered.
-    // It includes the newline character in the buffer if read.
+    // Read a string from the file using fgets
+    // fgets reads up to n-1 characters or until a newline is encountered
+    // It includes the newline character in the buffer if read
     if (fgets(read_string, sizeof(read_string), input_file_ptr) == NULL) {
         if (feof(input_file_ptr)) {
             fprintf(stderr, "Reached end of file unexpectedly while reading.\n");
@@ -68,12 +68,12 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // Print the string read from the file.
-    // puts adds a newline character after printing the string.
+    // Print the string read from the file
+    // puts adds a newline character after printing the string
     printf("String read from file: ");
     puts(read_string);
 
-    // Close the input file.
+    // Close the input file
     if (fclose(input_file_ptr) != 0) {
         perror("Error closing FH function (fgets).txt after reading");
         return EXIT_FAILURE;

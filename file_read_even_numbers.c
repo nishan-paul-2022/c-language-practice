@@ -9,7 +9,7 @@
 int main() {
     FILE *file_pointer;
     unsigned long long int number;
-    const char *filename = "bishal.txt"; // Specify the path to the input file
+    const char *filename = "bishal.txt";
 
     // Open the file in read mode
     file_pointer = fopen(filename, "r");

@@ -45,8 +45,9 @@ int main() {
     int product_result;
     int division_result;
 
-    // Get the global multiplier/divisor value from the user
+    // Prompt user to enter the global multiplier/divisor value
     printf("Enter a global integer value to be used as a multiplier and divisor: ");
+    // Read the global multiplier/divisor value and validate input
     if (scanf("%d", &global_multiplier_divisor) != 1) {
         fprintf(stderr, "Error: Invalid input for the global multiplier/divisor.\n");
         return 0;
@@ -54,8 +55,9 @@ int main() {
     // Consume any remaining characters on the line after the integer, including the newline
     while (getchar() != '\n');
 
-    // Get two numbers from the user
+    // Prompt user to enter two numbers
     printf("Enter two integers separated by a comma (e.g., 5, 12): ");
+    // Read two integers separated by a comma and validate input
     if (scanf("%d, %d", &number1, &number2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
         return 0;
@@ -63,14 +65,15 @@ int main() {
     // Consume any remaining characters on the line after the second integer, including the newline
     while (getchar() != '\n');
 
-    // Call the functions
+    // Call the functions to perform calculations
     product_result = calculate_product_with_global(number1, number2);
     division_result = calculate_division_with_global(number1, number2);
 
-    // Print the results
+    // Display the product result
     printf("Product result: %d\n", product_result);
     // Check if division resulted in an error before printing
     if (division_result != -1) { // Assuming -1 is the error sentinel
+        // Display the division result
         printf("Division result: %d\n", division_result);
     } else {
         printf("Division result: Error occurred (division by zero).\n");

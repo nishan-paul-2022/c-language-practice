@@ -1,7 +1,7 @@
 /*
- * Purpose: Converts characters in an input string based on a predefined keyboard-like mapping.
- * Topic: Strings, Character Manipulation, Lookup Tables, Input/Output
- */
+* Purpose: Converts characters in an input string based on a predefined keyboard-like mapping.
+* Topic: Strings, Character Manipulation, Lookup Tables, Input/Output
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -14,8 +14,8 @@ void initialize_mapping(char map[]) {
         map[i] = (char)i;
     }
 
-    // Apply specific character substitutions based on the original file's logic
-    // These mappings appear to simulate a keyboard shift or a specific cipher.
+    // Apply specific character substitutions based on original file's logic
+    // These mappings simulate a keyboard shift or specific cipher
 
     // Punctuation and symbols
     map[']'] = 'p';
@@ -93,7 +93,7 @@ int main() {
     char input_line[10001]; // Buffer to store input line, +1 for null terminator
     char char_map[256];     // Lookup table for character mapping
 
-    initialize_mapping(char_map); // Populate the mapping table
+    initialize_mapping(char_map); // Populate mapping table
 
     printf("Enter text to convert (press Ctrl+D to exit):\n");
 
@@ -107,13 +107,13 @@ int main() {
             length--; // Adjust length after removing newline
         }
 
-        // Apply the character mapping to each character in the input line
+        // Apply character mapping to each character in input line
         for (int i = 0; i < length; i++) {
             // Cast to unsigned char to ensure correct indexing for all possible char values
             input_line[i] = char_map[(unsigned char)input_line[i]];
         }
 
-        printf("%s\n", input_line); // Print the converted line
+        printf("%s\n", input_line); // Print converted line
     }
 
     printf("\nExiting program.\n");

@@ -1,104 +1,80 @@
 /*
- * Purpose: Performs matrix multiplication for two matrices.
- * Topic: 2D arrays, matrix operations, loops, input/output.
+ * Purpose: Performs matrix multiplication for two matrices of compatible dimensions.
+ * Topic: 2D Arrays, Matrix Operations, Loops, Input Validation
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-#define MAX_DIM 10 // Define a reasonable maximum dimension for matrices
+#define MAX_DIM 10 // Maximum dimension for the matrices
+
+// Function to read matrix elements from the user
+void read_matrix(int rows, int cols, double matrix[MAX_DIM][MAX_DIM]) {
+    for (int i = 0; i < rows; i++) {
+        printf("Row %d: ", i + 1);
+        for (int j = 0; j < cols; j++) {
+            if (scanf("%lf", &matrix[i][j]) != 1) {
+                printf("Invalid input. Please enter numeric values only.\n");
+                // Exit if input is invalid to avoid further errors
+                exit(1);
+            }
+        }
+    }
+}
+
+// Function to print a matrix
+void print_matrix(int rows, int cols, double matrix[MAX_DIM][MAX_DIM]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%-8.2lf", matrix[i][j]); // Print with formatting
+        }
+        printf("\n");
+    }
+}
 
 int main(void) {
-    int R1, C1_R2, C2; // Dimensions: Matrix1 (R1 x C1_R2), Matrix2 (C1_R2 x C2)
-    double matrix1[MAX_DIM][MAX_DIM];
-    double matrix2[MAX_DIM][MAX_DIM];
-    double result_matrix[MAX_DIM][MAX_DIM];
-    int i, j, k;
-    double sum; // To store the sum for matrix multiplication
+    int r1, c1, r2, c2;
+    double matrix1[MAX_DIM][MAX_DIM], matrix2[MAX_DIM][MAX_DIM], result[MAX_DIM][MAX_DIM];
 
-    printf("Enter dimensions for Matrix 1 (rows cols, e.g., '3 4'): ");
-    // Read dimensions for the first matrix and validate
-    if (scanf("%d %d", &R1, &C1_R2) != 2) {
-        printf("Invalid input for Matrix 1 dimensions. Please enter two integers separated by a space.\n");
-        return 0;
+    // Get dimensions for the first matrix
+    printf("Enter dimensions for Matrix 1 (rows cols): ");
+    if (scanf("%d %d", &r1, &c1) != 2 || r1 <= 0 || c1 <= 0 || r1 > MAX_DIM || c1 > MAX_DIM) {
+        printf("Invalid dimensions. Rows and columns must be between 1 and %d.\n", MAX_DIM);
+        return 1;
     }
 
-    // Validate dimensions for Matrix 1
-    if (R1 <= 0 || R1 > MAX_DIM || C1_R2 <= 0 || C1_R2 > MAX_DIM) {
-        printf("Invalid dimensions for Matrix 1. Rows and columns must be positive and within limits (max %d x %d).\n", MAX_DIM, MAX_DIM);
-        return 0;
+    // Get dimensions for the second matrix
+    printf("Enter dimensions for Matrix 2 (rows cols): ");
+    if (scanf("%d %d", &r2, &c2) != 2 || r2 <= 0 || c2 <= 0 || r2 > MAX_DIM || c2 > MAX_DIM) {
+        printf("Invalid dimensions. Rows and columns must be between 1 and %d.\n", MAX_DIM);
+        return 1;
     }
 
-    // Consume the newline character left by scanf
-    while (getchar() != '\n');
-
-    printf("Enter dimensions for Matrix 2 (rows cols, e.g., '4 2'): ");
-    // Read dimensions for the second matrix and validate
-    if (scanf("%d %d", &C1_R2, &C2) != 2) { // Note: C1_R2 must match for multiplication
-        printf("Invalid input for Matrix 2 dimensions. Please enter two integers separated by a space.\n");
-        return 0;
+    // Check if multiplication is possible
+    if (c1 != r2) {
+        printf("Matrix multiplication is not possible. Columns of Matrix 1 must equal rows of Matrix 2.\n");
+        return 1;
     }
 
-    // Validate dimensions for Matrix 2
-    if (C1_R2 <= 0 || C1_R2 > MAX_DIM || C2 <= 0 || C2 > MAX_DIM) {
-        printf("Invalid dimensions for Matrix 2. Rows and columns must be positive and within limits (max %d x %d).\n", MAX_DIM, MAX_DIM);
-        return 0;
-    }
+    // Read elements for both matrices
+    printf("\nEnter elements for Matrix 1 (%d x %d):\n", r1, c1);
+    read_matrix(r1, c1, matrix1);
 
-    // Check if matrix multiplication is possible
-    // The number of columns in the first matrix must equal the number of rows in the second matrix.
-    // This is already handled by using C1_R2 for both.
-
-    // Consume the newline character left by scanf
-    while (getchar() != '\n');
-
-    printf("\\nEnter elements for Matrix 1 (%d x %d):\n", R1, C1_R2);
-    // Read elements for Matrix 1
-    for (i = 0; i < R1; i++) {
-        for (j = 0; j < C1_R2; j++) {
-            printf("Enter element matrix1[%d][%d]: ", i, j);
-            if (scanf("%lf", &matrix1[i][j]) != 1) {
-                printf("Invalid input for element matrix1[%d][%d]. Please enter a double.\n", i, j);
-                return 0;
-            }
-            // Consume the newline character left by scanf
-            while (getchar() != '\n');
-        }
-    }
-
-    printf("\\nEnter elements for Matrix 2 (%d x %d):\n", C1_R2, C2);
-    // Read elements for Matrix 2
-    for (i = 0; i < C1_R2; i++) {
-        for (j = 0; j < C2; j++) {
-            printf("Enter element matrix2[%d][%d]: ", i, j);
-            if (scanf("%lf", &matrix2[i][j]) != 1) {
-                printf("Invalid input for element matrix2[%d][%d]. Please enter a double.\n", i, j);
-                return 0;
-            }
-            // Consume the newline character left by scanf
-            while (getchar() != '\n');
-        }
-    }
+    printf("\nEnter elements for Matrix 2 (%d x %d):\n", r2, c2);
+    read_matrix(r2, c2, matrix2);
 
     // Perform matrix multiplication
-    for (i = 0; i < R1; i++) { // Iterate through rows of the result matrix
-        for (j = 0; j < C2; j++) { // Iterate through columns of the result matrix
-            sum = 0.0; // Initialize sum for the current element of the result matrix
-            for (k = 0; k < C1_R2; k++) { // Iterate through elements for dot product
-                sum += matrix1[i][k] * matrix2[k][j];
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c2; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < c1; k++) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
             }
-            result_matrix[i][j] = sum; // Store the calculated sum
         }
     }
 
-    printf("\\nResult of Matrix Multiplication (%d x %d):\n", R1, C2);
     // Print the resulting matrix
-    for (i = 0; i < R1; i++) {
-        for (j = 0; j < C2; j++) {
-            printf("%.2lf ", result_matrix[i][j]);
-        }
-        printf("\n"); // Newline after each row
-    }
+    printf("\nResult of Matrix Multiplication (%d x %d):\n", r1, c2);
+    print_matrix(r1, c2, result);
 
     return 0;
 }

@@ -9,8 +9,9 @@ int main() {
     int num1, num2; // Two integer numbers for which to find the GCD
     int current_divisor; // Variable to iterate downwards from the smaller number
 
-    // Prompt user for input
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a space (e.g., 48 18): ");
+    // Read two integers from user input
     scanf("%d %d", &num1, &num2);
 
     // Initialize current_divisor with the smaller of the two numbers
@@ -25,7 +26,7 @@ int main() {
         current_divisor--; // Decrement to check the next smaller number
     }
 
-    // Print the calculated GCD
+    // Display the calculated GCD
     printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, current_divisor);
 
     return 0;

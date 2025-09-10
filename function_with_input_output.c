@@ -40,8 +40,9 @@ int main() {
     int number1, number2;
     char returned_char;
 
-    // Get two integers from the user in main
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a comma (e.g., 5, 10): ");
+    // Read two integers separated by a comma and validate input
     if (scanf("%d, %d", &number1, &number2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
         return 0;
@@ -49,11 +50,11 @@ int main() {
     // Consume any remaining characters on the line after the second integer, including the newline
     while (getchar() != '\n');
 
-    // Call the function, passing the two integers.
-    // The function will prompt for more input and print its own output.
+    // Call the function, passing the two integers
+    // The function will prompt for more input and print its own output
     returned_char = process_numbers_and_return_char(number1, number2);
 
-    // Print the character returned by the function
+    // Display the character returned by the function
     printf("Character returned by the function: %c\n", returned_char);
 
     return 0;

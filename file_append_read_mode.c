@@ -26,46 +26,46 @@ int main(void) {
     }
 
     // Open the file in "a+" mode (append and read)
-    // "a+" creates the file if it doesn't exist, and allows both appending and reading.
+    // "a+" creates the file if it doesn't exist, and allows both appending and reading
     file_append_read = fopen(FILENAME, "a+");
     if (file_append_read == NULL) {
         perror("Error opening file in 'a+' mode");
         return EXIT_FAILURE; // Indicate file opening error
     }
 
-    // Append the input string to the file.
-    // fprintf adds the string, and we ensure a newline is added if fgets didn't capture one.
-    // Note: fgets might include the newline character if it fits in the buffer.
-    // We'll add a newline explicitly for consistent appending.
+    // Append the input string to the file
+    // fprintf adds the string, and we ensure a newline is added if fgets didn't capture one
+    // Note: fgets might include the newline character if it fits in the buffer
+    // We'll add a newline explicitly for consistent appending
     if (fprintf(file_append_read, "\n%s", input_buffer) < 0) {
         perror("Error writing to file");
         fclose(file_append_read);
         return EXIT_FAILURE;
     }
 
-    // To read from the beginning of the file after appending, we need to reposition the file pointer.
+    // To read from the beginning of the file after appending, we need to reposition the file pointer
     // The "a+" mode positions the pointer at the end for writing, but for reading,
-    // we need to explicitly seek to the beginning.
+    // we need to explicitly seek to the beginning
     if (fseek(file_append_read, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of file");
         fclose(file_append_read);
         return EXIT_FAILURE;
     }
 
-    // Read from the file up to the first '!' character or until the buffer is full.
-    // The original code used "%[^!]", which reads characters until '!' is encountered.
-    // We'll use fgets to read a line, which is generally safer and more common for text files.
-    // If the original intent was to read up to '!', we'd need a custom read or careful fscanf.
-    // For this example, let's read the first line that was just appended.
-    // If the file contains other data, reading the first line might be more robust.
+    // Read from the file up to the first '!' character or until the buffer is full
+    // The original code used "%[^!]", which reads characters until '!' is encountered
+    // We'll use fgets to read a line, which is generally safer and more common for text files
+    // If the original intent was to read up to '!', we'd need a custom read or careful fscanf
+    // For this example, let's read the first line that was just appended
+    // If the file contains other data, reading the first line might be more robust
     
     // Let's try to mimic the original behavior of reading up to '!'
-    // However, fscanf with "%[^!]" can be tricky with buffer sizes and newlines.
-    // A safer approach is to read line by line or character by character.
-    // For demonstration, let's read the first line that was just appended.
-    // If the file already had content, this would read the first line of that content.
+    // However, fscanf with "%[^!]" can be tricky with buffer sizes and newlines
+    // A safer approach is to read line by line or character by character
+    // For demonstration, let's read the first line that was just appended
+    // If the file already had content, this would read the first line of that content
     
-    // Using fgets to read the first line after repositioning.
+    // Using fgets to read the first line after repositioning
     if (fgets(read_buffer, BUFFER_SIZE, file_append_read) == NULL) {
         // If the file is empty or an error occurred during read
         if (feof(file_append_read)) {

@@ -19,7 +19,6 @@ int main() {
             perror("Error reading character");
             return EXIT_FAILURE;
         } else {
-            // EOF was reached without an error, e.g., end of input stream
             printf("\nEnd of input reached.\n");
             return EXIT_SUCCESS;
         }
@@ -27,7 +26,7 @@ int main() {
 
     // Echo the character back to standard output
     printf("You entered: ");
-    putchar((char)input_char); // Cast back to char for putchar
+    putchar((char)input_char); // Cast to char for putchar
     putchar('\n');
 
     return 0;

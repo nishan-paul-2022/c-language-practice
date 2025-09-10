@@ -50,6 +50,7 @@ int main() {
 
     // Loop to allow multiple calculations until user chooses to exit
     while (1) {
+        // Prompt user to enter two integers
         printf("\nEnter two integers separated by a comma (e.g., 12, 18) or type '0, 0' to exit: ");
 
         // Read input and check if it's valid
@@ -72,7 +73,7 @@ int main() {
         // Calculate LCM
         lcm_result = calculate_lcm(number1, number2, gcd_result);
 
-        // Print the results
+        // Display the results
         printf("GCD: %lld, LCM: %lld\n", gcd_result, lcm_result);
     }
 

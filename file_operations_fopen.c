@@ -37,7 +37,7 @@ int main() {
 
     // Prompt user for data to write to the file (string)
     printf("Enter a string to write to the file: ");
-    // For strings that can contain spaces, fgets is better.
+    // For strings that can contain spaces, fgets is better
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         perror("Error reading string");
         return EXIT_FAILURE;

@@ -29,7 +29,7 @@ int main() {
 
         // Check if the character is a lowercase alphabet
         if (lower_char >= 'a' && lower_char <= 'z') {
-            printf("%c", lower_char); // Print the lowercase alphabet character
+            printf("%c", lower_char);
         }
     }
     printf("\n");

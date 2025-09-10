@@ -73,19 +73,26 @@ void list_common_divisors(long int num1, long int num2) {
 int main() {
     long int num1, num2;
 
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a comma (e.g., 48, 18) (or Ctrl+D to exit): ");
+    // Read pairs of integers and process them
     while (scanf("%ld, %ld", &num1, &num2) == 2) {
+        // Display the numbers being processed
         printf("\nFor numbers %ld and %ld:\n", num1, num2);
 
+        // List all common divisors of the two numbers
         list_common_divisors(num1, num2);
 
+        // Calculate and display the GCD
         long int gcd = calculate_gcd(num1, num2);
         printf("GREATEST COMMON DIVISOR (GCD): %ld\n", gcd);
 
+        // Calculate and display the LCM
         long int lcm = calculate_lcm(num1, num2);
         printf("LEAST COMMON MULTIPLE (LCM): %ld\n", lcm);
 
         printf("\n----------------------------------------\n");
+        // Prompt for the next pair of integers
         printf("Enter two integers separated by a comma (e.g., 48, 18) (or Ctrl+D to exit): ");
     }
 

@@ -17,11 +17,11 @@ int main() {
     hex_val1 = 0x987; // Decimal: 2439
     hex_val2 = 0x123987; // Decimal: 1294375
 
-    // Perform addition
+    // Perform addition of the two hexadecimal values
     sum_decimal = hex_val1 + hex_val2; // Decimal sum: 1296814
 
-    // Print the sum in octal format
-    // The %o format specifier is used for octal output.
+    // Display the values and their sum in different formats
+    // The %o format specifier is used for octal output
     printf("Hexadecimal value 1: 0x%X (Decimal: %d)\n", hex_val1, hex_val1);
     printf("Hexadecimal value 2: 0x%X (Decimal: %d)\n", hex_val2, hex_val2);
     printf("Sum in decimal: %d\n", sum_decimal);

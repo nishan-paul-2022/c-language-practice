@@ -13,7 +13,7 @@ int main() {
 
     // --- Demonstrate "w" mode (write) ---
     // Open the file in write mode ("w"). This will create the file if it doesn't exist,
-    // or truncate (empty) it if it already exists.
+    // or truncate (empty) it if it already exists
     file_ptr = fopen("file_modes_example.txt", "w");
     if (file_ptr == NULL) {
         perror("Error opening file in 'w' mode");
@@ -33,8 +33,8 @@ int main() {
 
     // --- Demonstrate "a" mode (append) ---
     // Open the file in append mode ("a"). This will create the file if it doesn't exist,
-    // or position the file pointer at the end of the file if it already exists.
-    // Data written will be added to the end of the existing content.
+    // or position the file pointer at the end of the file if it already exists
+    // Data written will be added to the end of the existing content
     file_ptr = fopen("file_modes_example.txt", "a");
     if (file_ptr == NULL) {
         perror("Error opening file in 'a' mode");

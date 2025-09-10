@@ -18,29 +18,31 @@ int main() {
     int found_pair_idx;         // Index of the found pair element.
     int processed_flags[100] = {0}; // To mark elements that have already been part of a pair.
 
+    // Prompt user to enter the number of elements
     printf("Enter the number of elements (max 100): ");
-    // Read the number of elements.
+    // Read the number of elements and validate input
     if (scanf("%d", &num_elements) != 1 || num_elements <= 0 || num_elements > 100) {
         printf("Invalid input. Please enter a positive integer up to 100.\n");
         return EXIT_FAILURE;
     }
 
-    // Consume the newline character left by scanf.
+    // Consume the newline character left by scanf
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 
-    // Read the array elements.
+    // Prompt user to enter the array elements
     printf("Enter %d integers (separated by spaces):\n", num_elements);
     for (index = 0; index < num_elements; index++) {
+        // Read each element and validate input
         if (scanf("%d", &numbers[index]) != 1) {
             printf("Invalid input for element at index %d.\n", index);
             return EXIT_FAILURE;
         }
-        // Consume the newline character after each integer input.
+        // Consume the newline character after each integer input
         while ((c = getchar()) != '\n' && c != EOF);
     }
 
-    // Find the maximum and minimum values in the array.
+    // Find the maximum and minimum values in the array
     if (num_elements > 0) {
         max_val = numbers[0];
         min_val = numbers[0];
@@ -53,37 +55,37 @@ int main() {
             }
         }
     } else {
-        // Handle case of empty array, though num_elements > 0 is checked above.
+        // Handle case of empty array, though num_elements > 0 is checked above
         printf("No elements to process.\n");
         return 0;
     }
 
-    // Calculate the target sum.
+    // Calculate the target sum as the sum of max and min values
     target_sum = max_val + min_val;
     printf("\nTarget sum (max + min) is: %d\n", target_sum);
 
-    // Find pairs that sum up to the target sum.
+    // Find pairs that sum up to the target sum
     printf("Pairs that sum to %d:\n", target_sum);
     for (outer_idx = 0; outer_idx < num_elements; outer_idx++) {
-        // Skip if this element has already been used in a pair.
+        // Skip if this element has already been used in a pair
         if (processed_flags[outer_idx] == 1) {
             continue;
         }
 
-        // Search for a complement element.
+        // Search for a complement element
         for (inner_idx = outer_idx + 1; inner_idx < num_elements; inner_idx++) {
-            // Skip if the inner element has already been used.
+            // Skip if the inner element has already been used
             if (processed_flags[inner_idx] == 1) {
                 continue;
             }
 
-            // Check if the current pair sums to the target.
+            // Check if the current pair sums to the target
             if (numbers[outer_idx] + numbers[inner_idx] == target_sum) {
                 printf("%d %d\n", numbers[outer_idx], numbers[inner_idx]);
-                // Mark both elements as processed.
+                // Mark both elements as processed
                 processed_flags[outer_idx] = 1;
                 processed_flags[inner_idx] = 1;
-                // Break the inner loop since we found a pair for numbers[outer_idx].
+                // Break the inner loop since we found a pair for numbers[outer_idx]
                 break;
             }
         }

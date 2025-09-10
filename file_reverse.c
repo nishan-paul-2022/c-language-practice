@@ -2,6 +2,7 @@
  * Purpose: Reads a text file and writes its content in reverse order to a new file.
  * Topic: File I/O, File Reversal
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 

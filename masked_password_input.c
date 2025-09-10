@@ -1,15 +1,15 @@
 /*
- * Purpose: Reads a password from the user, masking input with asterisks, and stores it securely.
- * Topic: Terminal Input, Password Masking, Character Handling, POSIX Terminal Control
- */
+* Purpose: Reads password from user, masking input with asterisks, and stores it securely.
+* Topic: Terminal Input, Password Masking, Character Handling, POSIX Terminal Control
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
 #include <unistd.h>
 
-// Function to read a password from the user, masking input with asterisks.
-// It returns 0 on success, and -1 on failure.
+// Function to read password from user, masking input with asterisks
+// Returns 0 on success, and -1 on failure
 int read_password_masked(char password[], int max_len) {
     struct termios old_tio, new_tio;
     char character;
@@ -34,11 +34,11 @@ int read_password_masked(char password[], int max_len) {
     }
 
     printf("Enter password: ");
-    fflush(stdout); // Ensure the prompt is displayed
+    fflush(stdout); // Ensure prompt is displayed
 
     // Read characters until Enter key (ASCII 13 or '\n') is pressed
     while (i < max_len - 1) { // Leave space for null terminator
-        // Read a single character without waiting for newline
+        // Read single character without waiting for newline
         // Using read() is more portable than getch() in POSIX
         if (read(STDIN_FILENO, &character, 1) != 1) {
             // Restore terminal settings before returning on error
@@ -69,11 +69,11 @@ int read_password_masked(char password[], int max_len) {
 }
 
 int main() {
-    char user_password[100]; // Buffer to store the password
+    char user_password[100]; // Buffer to store password
 
     if (read_password_masked(user_password, sizeof(user_password)) == 0) {
-        printf("Password entered: %s\n", user_password); // Display the entered password (for demonstration)
-        // In a real application, you would compare this password, not display it.
+        printf("Password entered: %s\n", user_password); // Display entered password (for demonstration)
+        // In a real application, you would compare this password, not display it
         return EXIT_SUCCESS;
     } else {
         fprintf(stderr, "Failed to read password.\n");

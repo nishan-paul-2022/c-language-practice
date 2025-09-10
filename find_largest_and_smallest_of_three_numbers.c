@@ -6,9 +6,9 @@
 #include <stdio.h>
 
 int main() {
-    int num1, num2, num3; // Three integer numbers to compare
-    int largest_val;      // Stores the largest number
-    int smallest_val;     // Stores the smallest number
+    int num1, num2, num3;
+    int largest_val; 
+    int smallest_val;
 
     // Loop to continuously read three numbers until scanf fails (e.g., EOF or invalid input)
     printf("Enter three integers separated by spaces (e.g., 10 20 5). Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to stop.\n");

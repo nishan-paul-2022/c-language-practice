@@ -8,11 +8,11 @@ int main(void) {
     int num1, num2, skipped_value;
     int items_read;
 
-    // Prompt user for input
+    // Prompt user for three integers
     printf("Enter three integers (e.g., 10 20 30): ");
 
     // Read two integers and skip the third one using %*d
-    // scanf returns the number of successfully matched and assigned input items.
+    // scanf returns number of successfully matched and assigned input items
     items_read = scanf("%d %d %*d", &num1, &num2);
 
     // Check if scanf successfully read the two required integers
@@ -23,8 +23,8 @@ int main(void) {
     } else {
         // Handle cases where input was not as expected
         printf("Invalid input. Please ensure you enter three integers separated by spaces.\n");
-        // If scanf failed to read num1 and num2, it might be due to non-integer input
-        // or an incomplete input line.
+        // scanf failed to read num1 and num2 due to non-integer input
+        // or an incomplete input line
         return 0;
     }
 

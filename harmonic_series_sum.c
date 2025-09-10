@@ -10,8 +10,9 @@ int main() {
     float sum_harmonic_series = 0.0; // Variable to store the sum of the series
     int i;
 
-    // Prompt user for input
+    // Prompt user to enter the number of terms
     printf("Enter the number of terms (n) for the harmonic series: ");
+    // Read the number of terms from user input
     scanf("%d", &n_terms);
 
     // Calculate the sum of the harmonic series
@@ -20,7 +21,7 @@ int main() {
         sum_harmonic_series = sum_harmonic_series + (1.0 / i);
     }
 
-    // Print the calculated sum
+    // Display the calculated sum
     printf("The summation of the harmonic series up to %d terms is: %f\n", n_terms, sum_harmonic_series);
 
     return 0;

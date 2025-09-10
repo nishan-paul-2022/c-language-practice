@@ -15,6 +15,7 @@ int main(void) {
 
     // Loop to allow multiple calculations until user decides to exit
     while (1) {
+        // Prompt user to enter the base and maximum exponent
         printf("Enter the base (x) and the maximum exponent (n), separated by a comma (e.g., 2.5, 5): ");
         
         // Read input for base and exponent
@@ -28,6 +29,7 @@ int main(void) {
             continue; // Ask for input again
         }
 
+        // Validate that exponent is non-negative
         if (exponent_n < 0) {
             printf("Exponent n cannot be negative.\n");
             continue; // Ask for input again
@@ -53,7 +55,7 @@ int main(void) {
             sum_of_powers += current_term;
         }
 
-        // Print the result
+        // Display the result
         // The original code had two different print statements based on goto labels.
         // We'll consolidate to one clear output.
         printf("The sum of the series up to x^%d is: %.5lf\n", exponent_n, sum_of_powers);
@@ -64,7 +66,8 @@ int main(void) {
         // Ask if the user wants to perform another calculation
         char another_calculation;
         printf("Do you want to perform another calculation? (y/n): ");
-        scanf(" %c", &another_calculation); // Note the space before %c to consume any leftover newline
+        // Read user's choice with space before %c to consume any leftover newline
+        scanf(" %c", &another_calculation);
         if (another_calculation != 'y' && another_calculation != 'Y') {
             break; // Exit the while loop if user doesn't want to continue
         }

@@ -1,7 +1,7 @@
 /*
- * Purpose: Demonstrates integer square root calculation using binary search.
- * Topic: Algorithms, Binary Search, Integer Math
- */
+* Purpose: Calculates the integer square root of a non-negative integer using the binary search algorithm.
+* Topic: Algorithms, Binary Search, Integer Math
+*/
 
 #include <stdio.h>
 
@@ -18,24 +18,24 @@ int main() {
         int high = number;
         int result = 0;
 
-        // Binary search to find the integer square root
+        // Binary search to find integer square root
         while (low <= high) {
-            int mid = low + (high - low) / 2; // Avoids potential overflow for large low + high
+            int mid = low + (high - low) / 2; // Prevents overflow for large values
             
             // Check if mid*mid is the square root
-            // Using (long long) to prevent overflow when mid*mid is large
+            // Cast to long long to prevent overflow when mid*mid is large
             if ((long long)mid * mid == number) {
                 result = mid;
                 break;
             }
             
-            // If mid*mid is less than number, then mid could be the answer
-            // or we need to search in the upper half.
+            // If mid*mid is less than number, mid could be answer
+            // or we need to search in upper half
             if ((long long)mid * mid < number) {
-                result = mid; // Store mid as a potential answer
+                result = mid; // Store mid as potential answer
                 low = mid + 1;
-            } 
-            // If mid*mid is greater than number, search in the lower half.
+            }
+            // If mid*mid is greater than number, search in lower half
             else {
                 high = mid - 1;
             }

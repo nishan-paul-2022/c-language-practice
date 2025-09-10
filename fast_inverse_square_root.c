@@ -9,24 +9,19 @@
 // Function to calculate the fast inverse square root
 float fast_inverse_sqrt(float number) {
     float x_half = 0.5f * number;
-    // Use a union to reinterpret the bits of the float as an integer.
-    // This is a common technique for bit manipulation in C.
+    // Use a union to reinterpret the bits of the float as an integer
     union {
         float f;
         int i;
     } conv;
 
     conv.f = number;
-    // The magic number 0x5f3759df is a carefully chosen constant
-    // that provides a good initial guess for the inverse square root.
-    // The bit shift (i >> 1) effectively divides the exponent by 2,
-    // which is related to the square root operation.
-    conv.i = 0x5f3759df - (conv.i >> 1); 
+    // The magic number 0x5f3759df provides a good initial guess for the inverse square root
+    // The bit shift (i >> 1) effectively divides the exponent by 2
+    conv.i = 0x5f3759df - (conv.i >> 1);
     float y = conv.f;
 
-    // One round of Newton's method to refine the approximation.
-    // y = y * (1.5f - (x_half * y * y));
-    // This step significantly improves the accuracy of the initial guess.
+    // One round of Newton's method to refine the approximation
     y = y * (1.5f - x_half * y * y);
     
     return y;

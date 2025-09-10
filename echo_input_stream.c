@@ -22,9 +22,8 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // If EOF was reached without error, the program naturally ends after the loop.
-    // A newline might be desirable if the last input didn't end with one.
-    // putchar('\n'); // Optional: add a newline if needed for cleaner output
+    // Optional: add a newline if needed for cleaner output
+    // putchar('\n');
 
     return 0;
 }

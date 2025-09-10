@@ -1,46 +1,50 @@
-#include <stdio.h>
-
 /*
- * Purpose: Calculates the sum of the main diagonal and anti-diagonal of a square matrix.
- * Topic: Arrays, 2D Arrays, Matrix Operations
+ * Purpose: Calculates the sum of the main and anti-diagonals of a square matrix.
+ * Topic: 2D Arrays, Matrix Operations, Loops
  */
 
+#include <stdio.h>
+
+#define MAX_SIZE 100 // Maximum matrix size
+
 int main() {
-    int matrix_size;
-    int matrix[100][100]; // Assuming a maximum size of 100x100 for simplicity.
-                          // For dynamic sizing, malloc would be needed.
+    int matrix[MAX_SIZE][MAX_SIZE];
+    int size, i, j;
     int main_diagonal_sum = 0;
     int anti_diagonal_sum = 0;
-    int i, j;
 
-    // Prompt user for the size of the square matrix
-    printf("Enter the size of the square matrix: ");
-    if (scanf("%d", &matrix_size) != 1 || matrix_size <= 0 || matrix_size > 100) {
-        printf("Invalid input. Please enter a positive integer for the matrix size (up to 100).\n");
-        return 0;
+    // Prompt for the matrix size and validate it
+    printf("Enter the size of the square matrix (1-%d): ", MAX_SIZE);
+    if (scanf("%d", &size) != 1 || size <= 0 || size > MAX_SIZE) {
+        printf("Invalid size. Please enter a positive integer between 1 and %d.\n", MAX_SIZE);
+        return 1; // Indicate error
     }
 
-    // Prompt user to enter the matrix elements
-    printf("Enter the elements of the %dx%d matrix:\n", matrix_size, matrix_size);
-    for (i = 0; i < matrix_size; i++) {
-        for (j = 0; j < matrix_size; j++) {
-            printf("Enter element m[%d][%d]: ", i, j);
+    // Read matrix elements from user input
+    printf("Enter the elements of the %dx%d matrix:\n", size, size);
+    for (i = 0; i < size; i++) {
+        printf("Row %d: ", i + 1);
+        for (j = 0; j < size; j++) {
             if (scanf("%d", &matrix[i][j]) != 1) {
-                printf("Invalid input for matrix element. Please enter an integer.\n");
-                return 0;
-            }
-            // Calculate sum of main diagonal elements
-            if (i == j) {
-                main_diagonal_sum += matrix[i][j];
-            }
-            // Calculate sum of anti-diagonal elements
-            if (i + j == matrix_size - 1) {
-                anti_diagonal_sum += matrix[i][j];
+                printf("Invalid input. Please enter integers only.\n");
+                return 1; // Indicate error
             }
         }
     }
 
-    // Print the sums of the diagonals
+    // Calculate the sum of both diagonals in a single loop
+    for (i = 0; i < size; i++) {
+        main_diagonal_sum += matrix[i][i];
+        anti_diagonal_sum += matrix[i][size - 1 - i];
+    }
+
+    // If the matrix has an odd size, the center element is counted twice, so subtract it once.
+    if (size % 2 != 0) {
+        int center = size / 2;
+        anti_diagonal_sum -= matrix[center][center];
+    }
+
+    // Print the final sums
     printf("\nSum of the main diagonal: %d\n", main_diagonal_sum);
     printf("Sum of the anti-diagonal: %d\n", anti_diagonal_sum);
 

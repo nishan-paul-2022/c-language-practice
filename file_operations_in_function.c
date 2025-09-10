@@ -27,7 +27,7 @@ FILE* open_file_with_extension(char *filename_base, const char *mode) {
     FILE *file_ptr;
 
     // Safely construct the full filename by appending ".txt"
-    // Ensure the buffer is large enough to prevent overflow.
+    // Ensure the buffer is large enough to prevent overflow
     if (snprintf(full_filename, FILENAME_BUFFER_SIZE, "%s.txt", filename_base) >= FILENAME_BUFFER_SIZE) {
         fprintf(stderr, "Error: Filename too long.\n");
         return NULL; // Indicate error due to filename length
@@ -75,14 +75,14 @@ int main(void) {
     // Check if the file was opened successfully
     if (file_handle != NULL) {
         printf("File '%s.txt' opened successfully in mode '%s'.\n", base_filename, file_mode);
-        // In a real application, you would now perform operations on the file.
-        // For this example, we just close it.
+        // In a real application, you would now perform operations on the file
+        // For this example, we just close it
         if (fclose(file_handle) != 0) {
             perror("Error closing file");
             return EXIT_FAILURE;
         }
     } else {
-        // Error message is already printed by the open_file_with_extension function.
+        // Error message is already printed by the open_file_with_extension function
         return EXIT_FAILURE;
     }
 

@@ -11,8 +11,8 @@ int main() {
     char char_to_write = 's';
     int char_read; // Use int to correctly handle EOF
 
-    // Open the file for writing and reading in text mode.
-    // "w+" mode truncates the file if it exists, or creates it if it doesn't.
+    // Open the file for writing and reading in text mode
+    // "w+" mode truncates the file if it exists, or creates it if it doesn't
     file_ptr = fopen("FH putw.txt", "w+");
     if (file_ptr == NULL) {
         perror("Error opening file for writing/reading");
@@ -27,9 +27,9 @@ int main() {
     }
     printf("Wrote character '%c' to file.\n", char_to_write);
 
-    // Rewind the file pointer to the beginning of the file to read what was written.
+    // Rewind the file pointer to the beginning of the file to read what was written
     // This is necessary because "w+" mode allows both reading and writing,
-    // but after writing, the file pointer is at the end.
+    // but after writing, the file pointer is at the end
     rewind(file_ptr);
 
     // Read a single character from the file

@@ -14,10 +14,12 @@ int main() {
     int count_C = 0;
     int count_F = 0;
 
+    // Prompt user to enter scores
     printf("Enter scores between 0 and 100. Enter -1 to finish.\n");
 
     // Loop to read scores until -1 is entered or an input error occurs
     while (1) {
+        // Prompt user to enter a score
         printf("Enter score: ");
         // Read the score and check if input was successful
         if (scanf("%lf", &score) != 1) {
@@ -59,7 +61,7 @@ int main() {
         }
     }
 
-    // Print the final counts for each grade category
+    // Display the final counts for each grade category
     printf("\n--- Grade Summary ---\n");
     printf("A+ (80-100): %d\n", count_A_plus);
     printf("A  (70-79):  %d\n", count_A);

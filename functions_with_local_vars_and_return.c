@@ -41,8 +41,9 @@ int main() {
     double value1, value2;
     CalculationResults calculation_results;
 
-    // Get two double values from the user
+    // Prompt user to enter two double values
     printf("Enter two double values separated by a comma (e.g., 10.5, 5.2): ");
+    // Read two double values separated by a comma and validate input
     if (scanf("%lf, %lf", &value1, &value2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two double values separated by a comma.\n");
         return 0;
@@ -53,12 +54,15 @@ int main() {
     // Call the function to perform calculations
     calculation_results = perform_arithmetic_operations(value1, value2);
 
-    // Print the results
+    // Display the sum result
     printf("Sum: %.2lf\n", calculation_results.sum);
+    // Display the difference result
     printf("Difference: %.2lf\n", calculation_results.difference);
+    // Display the product result
     printf("Product: %.2lf\n", calculation_results.product);
     // Check if division was successful before printing
     if (value2 != 0.0) { // Check original input value for division by zero
+        // Display the division result
         printf("Division: %.2lf\n", calculation_results.division);
     } else {
         printf("Division: Error (division by zero).\n");

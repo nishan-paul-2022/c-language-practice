@@ -21,8 +21,9 @@ int main() {
     int number1, number2; // Two integer numbers for which to find the GCD
     int gcd_result; // Stores the calculated GCD
 
-    // Prompt user for input
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a space (e.g., 48 18): ");
+    // Read two integers from user input
     scanf("%d %d", &number1, &number2);
 
     // Handle cases where inputs are negative or zero for GCD
@@ -41,7 +42,7 @@ int main() {
     // Call the recursive function to find the GCD
     gcd_result = find_gcd_recursive(number1, number2);
 
-    // Print the calculated GCD
+    // Display the calculated GCD
     printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", number1, number2, gcd_result);
 
     return 0;

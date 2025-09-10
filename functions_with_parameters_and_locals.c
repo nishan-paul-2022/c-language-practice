@@ -28,20 +28,21 @@ int main() {
     int sum_result;
     int product_result;
 
-    // Call the add function
-    // It takes number1 and number2, calculates their sum, and returns it.
+    // Call the add function to calculate the sum of number1 and number2
+    // It takes number1 and number2, calculates their sum, and returns it
     sum_result = add_numbers(number1, number2);
 
-    // Call the calculate_product function.
-    // The original mul(a) used 'a' and 'g' (global 10) and 'h' (global, result of add).
-    // So, mul(12) was intended to be 12 * 10 + (result of add).
-    // The result of add(5, 12) is 17.
-    // Thus, mul(12) should be 12 * 10 + 17 = 120 + 17 = 137.
-    // We call calculate_product with number2 (12) and sum_result (17).
+    // Call the calculate_product function
+    // The original mul(a) used 'a' and 'g' (global 10) and 'h' (global, result of add)
+    // So, mul(12) was intended to be 12 * 10 + (result of add)
+    // The result of add(5, 12) is 17
+    // Thus, mul(12) should be 12 * 10 + 17 = 120 + 17 = 137
+    // We call calculate_product with number2 (12) and sum_result (17)
     product_result = calculate_product(number2, sum_result);
 
-    // Print the results
+    // Display the sum result
     printf("Sum of %d and %d is: %d\n", number1, number2, sum_result);
+    // Display the product calculation result
     printf("Result of calculation (value * 10 + sum) is: %d\n", product_result);
 
     return 0;

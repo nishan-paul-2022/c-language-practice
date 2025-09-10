@@ -34,7 +34,7 @@ int main() {
     // Calculate total salary (base + bonus + commission)
     total_salary = base_salary + bonus_amount + commission_amount;
 
-    // Print the calculated total salary, formatted to two decimal places
+    // Print the calculated total salary
     printf("The total salary should be: %.2f\n", total_salary);
 
     return 0;

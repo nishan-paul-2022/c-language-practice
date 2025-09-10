@@ -7,34 +7,30 @@
 #include <math.h>
 
 int main() {
-    double base, exponent, result; // Variables for base, exponent, and the calculated result
+    double base, exponent, result; // Stores the base, exponent, and the final result
 
-    // Loop indefinitely until the user enters 0 for the base.
+    // Loop until the user enters 0 for the base to exit.
     while (1) {
-        // Prompt the user to enter the base and exponent
-        printf("Enter base and exponent (separated by a space, enter 0 for base to exit): ");
+        printf("Enter the base and exponent (or 0 for base to exit): ");
 
-        // Read the base and exponent from the user.
-        // Using %lf for double input. Added input validation.
+        // Read and validate the base and exponent.
         if (scanf("%lf %lf", &base, &exponent) != 2) {
-            printf("Invalid input. Please enter two numbers for base and exponent.\n");
-            // Clear the input buffer to prevent infinite loops on bad input
+            printf("Invalid input. Please enter two numeric values.\n");
+            // Clear the input buffer to prevent an infinite loop.
             while (getchar() != '\n');
-            continue; // Skip the rest of the loop iteration
+            continue; // Restart the loop
         }
 
-        // Check if the base is zero. If so, exit the loop.
+        // If the base is 0, exit the loop.
         if (base == 0.0) {
             printf("Exiting program.\n");
-            break; // Exit the while loop
+            break;
         }
 
-        // Calculate base raised to the power of exponent using the pow() function.
-        // pow(base, exponent) returns a double.
+        // Calculate the power using the pow() function.
         result = pow(base, exponent);
 
-        // Print the result.
-        // Using %.2lf to display the result with two decimal places.
+        // Print the final result.
         printf("Result: %.2lf\n\n", result);
     }
 

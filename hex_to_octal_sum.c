@@ -17,7 +17,7 @@ int main() {
     // Calculate the sum of the two hexadecimal values
     sum = hex_value1 + hex_value2;
 
-    // Print the sum in octal format
+    // Display the values and their sum in different formats
     // 0x987 (hex) = 2439 (dec) = 4547 (oct)
     // 0x123987 (hex) = 1194471 (dec) = 4444747 (oct)
     // Sum (dec) = 2439 + 1194471 = 1196910

@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "FH_advanced_mode.txt" // Define filename for clarity
+#define FILENAME "FH_advanced_mode.txt"
 
 int main(void) {
     FILE *file_write_read;

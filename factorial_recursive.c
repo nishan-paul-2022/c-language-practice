@@ -9,11 +9,11 @@
 // Returns -1 for negative input, and the factorial value for non-negative input.
 // Note: Factorials grow very rapidly. For inputs larger than 20, 'long long' will overflow.
 long long calculate_factorial_recursive(int n) {
-    // Base case: Factorial of 0 is 1.
+    // Base case: Factorial of 0 is 1
     if (n == 0) {
         return 1;
     }
-    // Error case: Factorial is not defined for negative numbers.
+    // Error case: Factorial is not defined for negative numbers
     else if (n < 0) {
         return -1; // Indicate an error
     }
@@ -25,7 +25,6 @@ long long calculate_factorial_recursive(int n) {
             return -1;
         }
         // Check for overflow: if prev_factorial * n exceeds the max value of long long
-        // A simple check: if n > LLONG_MAX / prev_factorial (requires limits.h)
         // For simplicity here, we'll assume inputs are within reasonable bounds for long long.
         // A more robust solution would use __builtin_mul_overflow or a BigInt library.
         return (long long)n * prev_factorial;

@@ -24,10 +24,8 @@ int calculate_fibonacci_recursive(int n) {
 }
 
 int main() {
-    int num_terms; // Number of Fibonacci terms to generate
-    int i;
+    int num_terms;
 
-    // Prompt user for input
     printf("Enter the number of Fibonacci terms to generate: ");
     scanf("%d", &num_terms);
 
@@ -39,7 +37,7 @@ int main() {
 
     printf("Fibonacci Sequence (up to %d terms):\n", num_terms);
     // Loop to print each term of the Fibonacci sequence
-    for (i = 1; i <= num_terms; i++) {
+    for (int i = 1; i <= num_terms; i++) {
         printf("%d ", calculate_fibonacci_recursive(i));
     }
     printf("\n");

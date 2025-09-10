@@ -18,18 +18,18 @@ int main() {
     int local_value = 10; // A local variable within main
     int function_result;
 
-    // Print the value of the local variable in main
+    // Display the value of the local variable in main
     printf("Value of local_value in main (before function call): %d\n", local_value);
 
-    // Call the function. Its return value is captured in function_result.
+    // Call the function and capture its return value in function_result
     function_result = get_fixed_value();
 
-    // Print the value of the local variable in main again.
+    // Display the value of the local variable in main again
     // It remains unchanged because the function operated on its own local variable
-    // and did not modify main's local_value.
+    // and did not modify main's local_value
     printf("Value of local_value in main (after function call): %d\n", local_value);
 
-    // Print the value returned by the function
+    // Display the value returned by the function
     printf("Value returned by get_fixed_value(): %d\n", function_result);
 
     return 0;

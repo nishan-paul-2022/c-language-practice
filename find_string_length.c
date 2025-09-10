@@ -11,8 +11,9 @@ int main() {
     char input_string[256]; // Use a reasonably sized buffer
     int string_length;
 
-    // Prompt user for buffer size (though we'll use a fixed buffer for simplicity and safety)
+    // Prompt user to enter buffer size (though we'll use a fixed buffer for simplicity and safety)
     printf("Enter the maximum string length (e.g., 255 for a buffer of 256):\n");
+    // Read buffer size and validate it
     if (scanf("%d", &buffer_size) != 1 || buffer_size <= 0 || buffer_size >= sizeof(input_string)) {
         fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %lu.\n", sizeof(input_string) - 1);
         buffer_size = sizeof(input_string) - 1; // Use the maximum allowed size
@@ -20,6 +21,7 @@ int main() {
     // Consume the newline character after reading the integer
     while (getchar() != '\n');
 
+    // Prompt user to enter a string
     printf("Enter a string (max %d characters):\n", buffer_size);
     // Read the input string safely using fgets
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
@@ -39,6 +41,7 @@ int main() {
     if (string_length > buffer_size) {
         printf("ERROR: Input string length exceeds the specified buffer size.\n");
     } else {
+        // Display the string length
         printf("%d\n", string_length);
     }
 

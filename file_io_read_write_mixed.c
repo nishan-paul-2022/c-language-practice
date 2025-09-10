@@ -76,7 +76,7 @@ int main() {
 
     // --- Write Phase ---
     // Write the collected data to the file
-    // fprintf is suitable for writing formatted strings, characters, and numbers.
+    // fprintf is suitable for writing formatted strings, characters, and numbers
     if (fprintf(file_ptr, "%s\n", input_string) < 0) {
         perror("Error writing string to file");
         fclose(file_ptr);

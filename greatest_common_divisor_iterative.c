@@ -11,8 +11,9 @@ int main() {
     int smaller_num; // Stores the smaller of the two numbers
     int gcd_result; // Stores the calculated GCD
 
-    // Prompt user for input
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a space (e.g., 48 18): ");
+    // Read two integers from user input
     scanf("%d %d", &num1, &num2);
 
     // Determine the larger and smaller numbers
@@ -27,7 +28,7 @@ int main() {
         }
     }
 
-    // Print the calculated GCD
+    // Display the calculated GCD
     printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, gcd_result);
 
     return 0;

@@ -5,47 +5,47 @@
 
 #include <stdio.h>
 
-#define ROWS 5 // Define number of rows
-#define COLS 5 // Define number of columns
+#define ROWS 5 // Number of rows in the matrices
+#define COLS 5 // Number of columns in the matrices
 
 int main() {
-    int matrix_a[ROWS][COLS]; // First matrix
-    int matrix_b[ROWS][COLS]; // Second matrix
-    int sum_matrix[ROWS][COLS]; // Matrix to store the sum
+    int matrix_a[ROWS][COLS]; // The first matrix
+    int matrix_b[ROWS][COLS]; // The second matrix
+    int sum_matrix[ROWS][COLS]; // Stores the element-wise sum
     int i, j;
 
-    printf("Enter elements for Matrix A (%dx%d):\n", ROWS, COLS);
-    // Read elements for Matrix A
+    printf("--- Enter Elements for Matrix A (%d x %d) ---\n", ROWS, COLS);
+    // Read elements for the first matrix
     for (i = 0; i < ROWS; i++) {
-        printf("Row %d (space-separated integers): ", i + 1);
+        printf("Enter elements for row %d (space-separated): ", i + 1);
         for (j = 0; j < COLS; j++) {
             scanf("%d", &matrix_a[i][j]);
         }
     }
 
-    printf("\nEnter elements for Matrix B (%dx%d):\n", ROWS, COLS);
-    // Read elements for Matrix B
+    printf("\n--- Enter Elements for Matrix B (%d x %d) ---\n", ROWS, COLS);
+    // Read elements for the second matrix
     for (i = 0; i < ROWS; i++) {
-        printf("Row %d (space-separated integers): ", i + 1);
+        printf("Enter elements for row %d (space-separated): ", i + 1);
         for (j = 0; j < COLS; j++) {
             scanf("%d", &matrix_b[i][j]);
         }
     }
 
-    // Calculate the sum of the two matrices
+    // Perform element-wise addition of the two matrices.
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLS; j++) {
             sum_matrix[i][j] = matrix_a[i][j] + matrix_b[i][j];
         }
     }
 
-    printf("\nResultant Sum Matrix (%dx%d):\n", ROWS, COLS);
-    // Print the sum matrix
+    printf("\n--- Resultant Sum Matrix (%d x %d) ---\n", ROWS, COLS);
+    // Print the final sum matrix
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLS; j++) {
-            printf("%d ", sum_matrix[i][j]);
+            printf("%-4d", sum_matrix[i][j]); // Print with formatting
         }
-        printf("\n"); // Newline after each row
+        printf("\n");
     }
     printf("\n");
 

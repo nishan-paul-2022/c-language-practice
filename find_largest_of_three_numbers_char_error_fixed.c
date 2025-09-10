@@ -10,15 +10,15 @@ int main() {
     int num1, num2, num3; // Three integer numbers to compare
     int largest_number;   // Stores the largest number
 
-    // Prompt user for input
+    // Prompt user to enter three integers
     printf("Enter three integers separated by spaces (e.g., 10 20 5): ");
-    scanf("%d %d %d", &num1, &num2, &num3);
+    scanf("%d %d %d", &num1, &num2, &num3); // Read three integers from user input
 
     // Find the largest number using nested ternary operators
     // If num1 > num2, then compare num1 with num3. Otherwise, compare num2 with num3.
     largest_number = (num1 > num2) ? ((num1 > num3) ? num1 : num3) : ((num2 > num3) ? num2 : num3);
 
-    // Print the largest number found
+    // Display the largest number found
     printf("The largest number is: %d\n", largest_number);
 
     return 0;

@@ -24,28 +24,28 @@ int calculate_fibonacci_term(int n) {
 }
 
 int main() {
-    int n;                  // The number of terms to calculate and sum.
+    int n;                  // The number of terms to calculate and sum
     int current_term_index;
-    int fib_term;           // Stores the calculated Fibonacci term.
+    int fib_term;           // Stores the calculated Fibonacci term
     long long int total_sum = 0; // Stores the sum of the Fibonacci terms. Use long long for potentially large sums.
 
-    // Read the number of terms 'n' from standard input.
+    // Read the number of terms 'n' from standard input
     scanf("%d", &n);
 
-    // Iterate from the 1st term up to the n-th term.
+    // Iterate from the 1st term up to the n-th term
     for (current_term_index = 1; current_term_index <= n; current_term_index++) {
-        // Calculate the Fibonacci term for the current index.
+        // Calculate the Fibonacci term for the current index
         fib_term = calculate_fibonacci_term(current_term_index);
         
-        // Print the calculated term followed by a space.
+        // Print the calculated term followed by a space
         printf("%d ", fib_term);
         
-        // Add the calculated term to the total sum.
+        // Add the calculated term to the total sum
         total_sum += fib_term;
     }
 
-    // Print two newlines for formatting, then print the total sum.
-    // %lld is used for printing long long int.
+    // Print two newlines for formatting, then print the total sum
+    // %lld is used for printing long long int
     printf("\n\n%lld\n", total_sum);
 
     return 0;

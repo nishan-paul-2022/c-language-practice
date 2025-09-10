@@ -8,13 +8,13 @@
 
 int main(void) {
     int size;
-    int effective_size; // Ensures the pattern works with odd dimensions
-    int space_offset; // Controls the number of leading spaces
-    int current_number; // The number to print
+    int effective_size; // Ensures pattern works with odd dimensions
+    int space_offset;   // Controls leading spaces
+    int current_number; // Number to print
 
-    // Prompt user for input
+    // Prompt user for diamond size
     printf("Enter the size of the diamond (number of rows in the upper half): ");
-    // Input validation for size
+    // Validate input
     if (scanf("%d", &size) != 1 || size <= 0) {
         fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
         return EXIT_FAILURE;
@@ -22,11 +22,11 @@ int main(void) {
 
     // Ensure effective_size is odd for proper diamond centering
     effective_size = (size % 2 == 0) ? size - 1 : size;
-    if (effective_size <= 0) { // Handle case where input size was 1 and became 0
+    if (effective_size <= 0) { // Handle case where input size was 1
         effective_size = 1;
     }
 
-    // Print the upper half of the diamond
+    // Print upper half of diamond
     space_offset = 1;
     current_number = 1;
     for (int row = 1; row <= effective_size; row += 2) {
@@ -34,38 +34,38 @@ int main(void) {
         for (int col = 1; col < space_offset; col++) {
             printf(" ");
         }
-        // Print numbers for the diamond's sides
+        // Print numbers for diamond's sides
         for (int col = 1; col <= row; col++) {
             if (col == 1 || col == row) {
-                printf("%d", current_number); // Print number at the edges
+                printf("%d", current_number); // Print number at edges
             } else {
                 printf(" "); // Print space inside
             }
         }
-        space_offset++; // Increase space offset for the next row
-        current_number++; // Increment number for the next row
-        printf("\n"); // Move to the next line
+        space_offset++;      // Increase space offset for next row
+        current_number++;    // Increment number for next row
+        printf("\n");        // Move to next line
     }
 
-    // Print the lower half of the diamond (inverted triangle)
-    space_offset = (effective_size + 1) / 2; // Reset space offset for the middle row
-    current_number = (effective_size + 1) / 2 - 1; // Reset number for the row below the middle
+    // Print lower half of diamond
+    space_offset = (effective_size + 1) / 2;       // Reset space offset for middle row
+    current_number = (effective_size + 1) / 2 - 1; // Reset number for row below middle
     for (int row = effective_size - 2; row >= 1; row -= 2) {
         // Print leading spaces
         for (int col = 1; col <= space_offset; col++) {
             printf(" ");
         }
-        // Print numbers for the diamond's sides
+        // Print numbers for diamond's sides
         for (int col = 1; col <= row; col++) {
             if (col == 1 || col == row) {
-                printf("%d", current_number); // Print number at the edges
+                printf("%d", current_number); // Print number at edges
             } else {
                 printf(" "); // Print space inside
             }
         }
-        space_offset++; // Increase space offset for the next row
-        current_number--; // Decrement number for the next row
-        printf("\n"); // Move to the next line
+        space_offset++;   // Increase space offset for next row
+        current_number--; // Decrement number for next row
+        printf("\n");     // Move to next line
     }
 
     return EXIT_SUCCESS;

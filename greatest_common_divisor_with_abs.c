@@ -13,8 +13,9 @@ int main() {
     int smaller_abs_num; // Stores the smaller of the two absolute numbers
     int gcd_result; // Stores the calculated GCD
 
-    // Prompt user for input
+    // Prompt user to enter two integers
     printf("Enter two integers separated by a space (e.g., -48 18): ");
+    // Read two integers from user input
     scanf("%d %d", &num1, &num2);
 
     // Get the absolute values of the numbers
@@ -26,9 +27,11 @@ int main() {
         printf("GCD of 0 and 0 is undefined (or 0 by some definitions).\n");
         return 0;
     } else if (abs_num1 == 0) {
+        // Display GCD when first number is zero
         printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, abs_num2);
         return 0;
     } else if (abs_num2 == 0) {
+        // Display GCD when second number is zero
         printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, abs_num1);
         return 0;
     }
@@ -43,7 +46,7 @@ int main() {
         }
     }
 
-    // Print the calculated GCD
+    // Display the calculated GCD
     printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, gcd_result);
 
     return 0;

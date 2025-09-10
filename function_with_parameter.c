@@ -17,8 +17,9 @@ int main() {
     double input_value;
     double doubled_value;
 
-    // Get input from the user
+    // Prompt user to enter a double value
     printf("Enter a double value: ");
+    // Read a double value and validate input
     if (scanf("%lf", &input_value) != 1) {
         fprintf(stderr, "Error: Invalid input. Please enter a valid double.\n");
         return 0;
@@ -27,7 +28,7 @@ int main() {
     // Call the function to double the input value
     doubled_value = double_value(input_value);
 
-    // Print the original input value and the result
+    // Display the original input value and the result
     printf("Original value: %lf\n", input_value);
     printf("Doubled value:  %lf\n", doubled_value);
 

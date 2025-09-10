@@ -17,7 +17,6 @@ int main() {
         printf("Processing number: %d\n", input_number);
 
         // Loop to extract digits using modulo with increasing powers of 10
-        // Start with 10, then 100, 1000, etc.
         for (power_of_10 = 10; power_of_10 <= input_number * 10; power_of_10 *= 10) {
             extracted_digits = input_number % power_of_10;
             printf("  Digits (modulo %lld): %d\n", power_of_10, extracted_digits);

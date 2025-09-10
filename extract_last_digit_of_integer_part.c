@@ -14,12 +14,10 @@ int main() {
     printf("Enter a floating-point value (e.g., 123.45): ");
     scanf("%f", &input_float);
 
-    // Convert the floating-point number to an integer.
-    // This truncates the decimal part.
+    // Convert the floating-point number to an integer (truncates decimal part)
     integer_part = (int)input_float;
 
-    // Calculate the last digit of the integer part using the modulo operator.
-    // The modulo operator (%) gives the remainder of a division.
+    // Calculate the last digit of the integer part using modulo operator
     last_digit = integer_part % 10;
 
     // Print the extracted last digit

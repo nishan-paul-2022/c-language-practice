@@ -7,7 +7,7 @@
 
 // Recursive function with a base case to prevent infinite recursion
 void safe_recursive_function(int depth) {
-    // Base case: stop recursion when depth reaches a certain limit (e.g., 5)
+    // Base case: stop recursion when depth reaches zero
     if (depth <= 0) {
         printf("Recursion depth reached zero. Stopping.\n");
         return;
@@ -15,16 +15,16 @@ void safe_recursive_function(int depth) {
 
     printf("Calling recursively with depth: %d\n", depth);
 
-    // Recursive call: call the function with a decremented depth
+    // Recursive call with decremented depth
     safe_recursive_function(depth - 1);
 
-    // This part of the code will execute after the recursive calls return
+    // Execute after recursive calls return
     printf("Returning from depth: %d\n", depth);
 }
 
 int main() {
     printf("Starting safe recursive function...\n");
-    safe_recursive_function(5); // Start recursion with an initial depth of 5
+    safe_recursive_function(5); // Start recursion with depth of 5
     printf("Safe recursive function finished.\n");
     return 0;
 }
