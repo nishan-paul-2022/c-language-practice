@@ -26,10 +26,9 @@ int main() {
         return 0;
     }
 
-    // Copy bytes from source to destination
-    // fgetc returns EOF (-1) on end-of-file or error
+    // Copy bytes from source to destination until EOF
     while ((byte_read = fgetc(source_file_ptr)) != EOF) {
-        // fputc returns EOF on write error
+        // Write byte to destination file
         if (fputc(byte_read, destination_file_ptr) == EOF) {
             perror("Error writing byte to destination file");
             fclose(source_file_ptr);
@@ -46,7 +45,7 @@ int main() {
         return 0;
     }
 
-    // Cleanup: close both file handles
+    // Close both file handles
     fclose(source_file_ptr);
     fclose(destination_file_ptr);
 

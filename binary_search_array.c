@@ -32,7 +32,7 @@ int main() {
         }
     }
 
-    // Clear the input buffer after reading array elements, especially if there's a newline left
+    // Clear input buffer
     while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
 
     // Loop to allow multiple searches
@@ -40,7 +40,7 @@ int main() {
         printf("Enter the number to search for (or Ctrl+D to exit): ");
         if (scanf("%d", &target) != 1) {
             printf("\nExiting search program.\n");
-            break; // Exit loop if scanf fails (e.g., EOF)
+            break;
         }
 
         int start = 0;
@@ -49,10 +49,10 @@ int main() {
         int found_index = -1; // To store the 1-based index if found
 
         while (start <= end) {
-            mid = start + (end - start) / 2; // Safer way to calculate mid to prevent overflow
+            mid = start + (end - start) / 2; // Prevents overflow
 
             if (array[mid] == target) {
-                found_index = mid + 1; // Found, store 1-based index
+                found_index = mid + 1; // Store 1-based index
                 break;
             }
             else if (array[mid] < target) {
