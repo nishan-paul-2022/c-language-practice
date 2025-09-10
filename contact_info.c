@@ -6,9 +6,10 @@
 #include <stdio.h>
 
 int main() {
-    printf("1: Nishan Paul\n");
-    printf("2: 6/3, Nayapaltan\n");
-    printf("3: Dhaka, 1200\n");
+    printf("Contact Information:\n");
+    printf("1: Name: Nishan Paul\n");
+    printf("2: Address: 6/3, Nayapaltan\n");
+    printf("3: City, ZIP: Dhaka, 1200\n");
     
     return 0;
 }

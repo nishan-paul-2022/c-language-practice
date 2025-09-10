@@ -12,7 +12,7 @@ int main() {
     int ascii_val1, ascii_val_upper, ascii_val2, ascii_val_lower; // ASCII values
 
     // Get user input
-    printf("Enter two characters: ");
+    printf("Enter two characters (e.g., 'a' and 'B'): ");
     input_char1 = getchar();
     input_char2 = getchar();
 
@@ -27,12 +27,15 @@ int main() {
     ascii_val_lower = toascii(lower_char);   // Lowercase version
 
     // Print converted characters
-    printf("Uppercase of first char: %c\n", upper_char);
-    printf("Lowercase of first char: %c\n", lower_char);
+    printf("Uppercase of '%c' is '%c'\n", input_char1, upper_char);
+    printf("Lowercase of '%c' is '%c'\n", input_char1, lower_char);
 
     // Print ASCII values
-    printf("ASCII values: Original1=%d, Upper1=%d, Original2=%d, Lower1=%d\n",
-           ascii_val1, ascii_val_upper, ascii_val2, ascii_val_lower);
+    printf("ASCII values:\n");
+    printf("  '%c' = %d\n", input_char1, ascii_val1);
+    printf("  '%c' = %d\n", upper_char, ascii_val_upper);
+    printf("  '%c' = %d\n", input_char2, ascii_val2);
+    printf("  '%c' = %d\n", lower_char, ascii_val_lower);
 
     return 0;
 }

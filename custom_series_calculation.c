@@ -22,7 +22,7 @@ int main() {
     // A mechanism to break out of this loop would be needed for a practical application.
     while (1) {
         // Prompt the user to enter a value.
-        printf("ENTER THE VALUE : ");
+        printf("Enter the value for the custom series calculation: ");
         
         // Read the integer input from the user.
         if (scanf("%d", &input_x) != 1) {
@@ -73,7 +73,7 @@ int main() {
         
         // Print the final calculated sum for the given input_x.
         // The original code printed "%f\n", so we'll use that.
-        printf("%f\n", current_e_sum);
+        printf("The result of the custom series calculation is: %f\n", current_e_sum);
         
         // The original code had an infinite loop and no way to break.
         // For demonstration, we'll break after one calculation.

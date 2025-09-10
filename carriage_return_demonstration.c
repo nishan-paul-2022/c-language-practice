@@ -9,6 +9,7 @@
 int main() {
     // Demonstrate carriage return effect
     // "WOLVERINE CAPTAINAMERICA WONDER WOMAN" overwrites "BATMAN SUPERTMAN IRONMAN"
+    printf("Demonstrating carriage return effect:\n");
     printf("BATMAN SUPERTMAN IRONMAN\r WOLVERINE CAPTAINAMERICA WONDER WOMAN\n");
 
     return 0;

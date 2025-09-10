@@ -10,16 +10,17 @@
 int main() {
     char input_char;
 
-    printf("Enter a single character: ");
+    printf("Enter a single character to check its type: ");
     // Read character from standard input
     input_char = getchar();
 
     // Determine character type using ctype.h functions
+    printf("The character '%c' is a ", input_char);
     if (isalpha(input_char)) { // Alphabet character
         if (isupper(input_char)) { // Uppercase letter
-            printf("UPPER CASE\n");
+            printf("UPPER CASE LETTER\n");
         } else { // Lowercase letter
-            printf("LOWER CASE\n");
+            printf("LOWER CASE LETTER\n");
         }
     } else if (isdigit(input_char)) { // Digit (0-9)
         printf("DIGIT\n");

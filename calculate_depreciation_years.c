@@ -9,6 +9,7 @@ int main() {
 
     // Read input values in format: initial_cost, depreciation_rate, target_value
     // Example: 10000.0, 0.10, 5000.0
+    printf("Enter initial cost, depreciation rate, and target value (e.g., 10000.0, 0.10, 5000.0): ");
     if (scanf("%lf, %lf, %lf", &initial_cost, &depreciation_rate, &target_value) != 3) {
         fprintf(stderr, "Invalid input format. Please enter values as 'initial_cost, depreciation_rate, target_value'.\n");
         return 0;
@@ -27,7 +28,8 @@ int main() {
     years_to_depreciate = log(target_value / initial_cost) / log(1.0 - depreciation_rate);
 
     // Print the result
-    printf("%lf\n", years_to_depreciate);
+    printf("Years to depreciate from %.2lf to %.2lf at %.2lf%% rate: %lf\n",
+           initial_cost, target_value, depreciation_rate * 100, years_to_depreciate);
 
     return 0;
 }

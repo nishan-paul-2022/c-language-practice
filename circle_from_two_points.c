@@ -13,23 +13,24 @@
 
 int main() {
     float x1, y1, x2, y2, radius, perimeter, area;
-
-    // Get coordinates of first point
+    
+    printf("Circle Calculator from Two Points\n");
     printf("Enter the coordinates of the first point (x1 y1): ");
     scanf("%f %f", &x1, &y1);
-
-    // Get coordinates of second point
+    
     printf("Enter the coordinates of the second point (x2 y2): ");
     scanf("%f %f", &x2, &y2);
-
+    
     // Calculate radius as distance between the two points
     radius = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
     // Calculate perimeter and area using radius
     perimeter = 2 * M_PI * radius;
     area = M_PI * pow(radius, 2);
-
-    // Print results
-    printf("Perimeter: %f\nArea: %f\n", perimeter, area);
-
+    
+    // Print results with descriptive labels
+    printf("Circle Properties:\n");
+    printf("Perimeter: %f\n", perimeter);
+    printf("Area: %f\n", area);
+    
     return 0;
 }

@@ -6,13 +6,15 @@
 #include <stdio.h>
 
 int main() {
-    int v, t, s;
-
-    printf("Enter two integers (or non-integer to quit): \n");
-    while (scanf("%d %d", &v, &t) == 2) {
-        s = 2 * v * t;
-        printf("Result: %d\n", s);
+    int velocity, time, distance;
+    
+    printf("Continuous Distance Calculator\n");
+    printf("Formula: Distance = 2 * Velocity * Time\n");
+    printf("Enter velocity and time (or non-integer to quit): \n");
+    while (scanf("%d %d", &velocity, &time) == 2) {
+        distance = 2 * velocity * time;
+        printf("Distance (2 * v * t): %d\n", distance);
     }
-
+    
     return 0;
 }

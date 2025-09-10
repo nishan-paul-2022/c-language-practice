@@ -7,20 +7,21 @@
 
 int main() {
     int num_tests, i, value;
-
+    
+    printf("Conditional Distribution Calculator\n");
     printf("Enter the number of test cases: ");
     scanf("%d", &num_tests);
-
+    
     for (i = 0; i < num_tests; i++) {
-        printf("Enter a value: ");
+        printf("Enter a value for test case %d: ", i + 1);
         scanf("%d", &value);
-
+        
         if (value <= 10) {
-            printf("%d %d\n", value, 0);
+            printf("Result for test case %d: %d %d\n", i + 1, value, 0);
         } else {
-            printf("%d %d\n", 10, value - 10);
+            printf("Result for test case %d: %d %d\n", i + 1, 10, value - 10);
         }
     }
-
+    
     return 0;
 }

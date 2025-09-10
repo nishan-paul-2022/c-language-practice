@@ -7,7 +7,7 @@
 
 int main() {
     char char_variable; // Character variable
-    char *char_pointer;      // Pointer to character
+    char *char_pointer; // Pointer to character
 
     // Assign address of char_variable to char_pointer
     char_pointer = &char_variable;

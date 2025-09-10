@@ -22,13 +22,13 @@ int main() {
     }
 
     // Open output file
-    output_file = fopen("mineput.txt", "w");
+    output_file = fopen("output.txt", "w");
     if (output_file == NULL) {
-        perror("Error opening output file mineput.txt");
+        perror("Error opening output file output.txt");
         fclose(input_file);
         return EXIT_FAILURE;
     } else {
-        printf("Output file mineput.txt opened successfully for writing.\n");
+        printf("Output file output.txt opened successfully for writing.\n");
     }
 
     // Read numbers and calculate squares

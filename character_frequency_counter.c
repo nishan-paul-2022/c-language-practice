@@ -12,7 +12,11 @@ int main() {
     int case_num;       // Current test case number
 
     // Get number of test cases
-    scanf("%d", &num_test_cases);
+    printf("Enter the number of test cases: ");
+    if (scanf("%d", &num_test_cases) != 1) {
+        printf("Error: Invalid input for number of test cases.\n");
+        return 1;
+    }
     // Consume newline character left by scanf
     getchar();
 
@@ -24,7 +28,11 @@ int main() {
         int i;
 
         // Read input string with buffer overflow protection
-        scanf("%99s", input_string);
+        printf("Enter string %d (lowercase letters only): ", case_num);
+        if (scanf("%99s", input_string) != 1) {
+            printf("Error: Invalid input for string.\n");
+            continue;
+        }
         // Consume newline character left by scanf
         getchar();
 
