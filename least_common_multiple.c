@@ -1,7 +1,7 @@
 /*
-* Purpose: Calculates the Least Common Multiple (LCM) of two integers.
-* Topic: Loops, Conditional Statements, Arithmetic Operators (Modulo), GCD, LCM
-*/
+ * Purpose: Calculates the Least Common Multiple (LCM) of two integers.
+ * Topic: Loops, Conditional Statements, Arithmetic Operators (Modulo), GCD, LCM
+ */
 
 #include <stdio.h>
 

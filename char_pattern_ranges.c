@@ -2,7 +2,7 @@
  * Purpose: Reads three characters to define a pattern.
  *          It prints characters from the start character up to the row-end character for each row,
  *          and repeats this for the number of columns determined by 'A' up to the column-end character.
-* Topic: Character Input, Nested Loops, Character Arithmetic, Pattern Printing, Input Handling
+ * Topic: Character Input, Nested Loops, Character Arithmetic, Pattern Printing, Input Handling
  */
 
 #include <stdio.h>

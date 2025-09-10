@@ -1,7 +1,7 @@
 /*
-* Purpose: Solves a variant of the Josephus problem using modular arithmetic.
-* Topic: Loops, Modular Arithmetic, Problem Solving
-*/
+ * Purpose: Solves a variant of the Josephus problem using modular arithmetic.
+ * Topic: Loops, Modular Arithmetic, Problem Solving
+ */
 
 #include <stdio.h>
 

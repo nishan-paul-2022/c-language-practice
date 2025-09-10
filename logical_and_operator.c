@@ -1,7 +1,7 @@
 /*
-* Purpose: Demonstrates behavior of logical AND (&&) operator in C.
-* Topic: Operators (Relational, Logical)
-*/
+ * Purpose: Demonstrates behavior of logical AND (&&) operator in C.
+ * Topic: Operators (Relational, Logical)
+ */
 
 #include <stdio.h>
 

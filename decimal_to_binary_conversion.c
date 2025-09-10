@@ -1,5 +1,5 @@
 /*
-* Purpose: Converts a decimal integer to its binary representation.
+ * Purpose: Converts a decimal integer to its binary representation.
  * Topic: Loops, Arithmetic Operations, Number Systems, Arrays
  */
 

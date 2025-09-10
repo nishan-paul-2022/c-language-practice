@@ -1,7 +1,7 @@
 /*
  * Purpose: Reads a string and capitalizes the first letter of each word,
  *          converting other letters to lowercase.
-* Topic: Strings, Character Manipulation, Loops, Input/Output
+ * Topic: Strings, Character Manipulation, Loops, Input/Output
  */
 
 #include <stdio.h>

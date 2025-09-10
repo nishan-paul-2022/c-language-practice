@@ -1,5 +1,5 @@
 /*
-* Purpose: Demonstrates dynamic memory allocation, manipulation, and deallocation in C
+ * Purpose: Demonstrates dynamic memory allocation, manipulation, and deallocation in C
  *          using calloc, realloc, and free.
  * Topic: Dynamic Memory Management
  */

@@ -1,7 +1,7 @@
 /*
-* Purpose: Divides two integers and prints the result, including basic error handling for division by zero.
-* Topic: Functions, Basic I/O
-*/
+ * Purpose: Divides two integers and prints the result, including basic error handling for division by zero.
+ * Topic: Functions, Basic I/O
+ */
 
 #include <stdio.h>
 

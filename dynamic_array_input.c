@@ -1,5 +1,5 @@
 /*
-* Purpose: Reads a dynamic array of integers from user input and prints its elements.
+ * Purpose: Reads a dynamic array of integers from user input and prints its elements.
  * Topic: Arrays, Input/Output, Dynamic Sizing (via user input)
  */
 

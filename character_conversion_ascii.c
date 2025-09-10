@@ -1,5 +1,5 @@
 /*
-* Purpose: Demonstrates character conversion to uppercase and lowercase, and retrieving ASCII values using ctype.h functions.
+ * Purpose: Demonstrates character conversion to uppercase and lowercase, and retrieving ASCII values using ctype.h functions.
  * Topic: Character Manipulation, ctype.h Functions, ASCII Values
  */
 

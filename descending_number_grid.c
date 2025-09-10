@@ -1,5 +1,5 @@
 /*
-* Purpose: Prints a sequence of numbers in a descending order, formatted into rows of 5 numbers each.
+ * Purpose: Prints a sequence of numbers in a descending order, formatted into rows of 5 numbers each.
  * Topic: Nested Loops, Descending Order, Tab Separation, Newline Formatting
  */
 

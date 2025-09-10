@@ -1,7 +1,7 @@
 /*
-* Purpose: Converts characters in an input string based on a predefined keyboard-like mapping.
-* Topic: Strings, Character Manipulation, Lookup Tables, Input/Output
-*/
+ * Purpose: Converts characters in an input string based on a predefined keyboard-like mapping.
+ * Topic: Strings, Character Manipulation, Lookup Tables, Input/Output
+ */
 
 #include <stdio.h>
 #include <string.h>

@@ -1,5 +1,5 @@
 /*
-* Purpose: Compares two integers and prints '>', '<', or '=' based on their relationship.
+ * Purpose: Compares two integers and prints '>', '<', or '=' based on their relationship.
  * Topic: Conditional Statements, Basic I/O
  */
 

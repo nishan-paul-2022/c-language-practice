@@ -1,7 +1,7 @@
 /*
-* Purpose: Calculates length of Longest Common Subsequence (LCS) of two strings.
-* Topic: String Manipulation, Recursion, Dynamic Programming (LCS Algorithm)
-*/
+ * Purpose: Calculates length of Longest Common Subsequence (LCS) of two strings.
+ * Topic: String Manipulation, Recursion, Dynamic Programming (LCS Algorithm)
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

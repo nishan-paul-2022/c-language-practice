@@ -1,5 +1,5 @@
 /*
-* Purpose: Calculates the sum of digits and reverses a given integer.
+ * Purpose: Calculates the sum of digits and reverses a given integer.
  * Topic: Number Manipulation, Loops, Functions, Input/Output
 */
 

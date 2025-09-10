@@ -1,7 +1,7 @@
 /*
-* Purpose: Calculates the integer square root of a non-negative integer using Newton's method.
-* Topic: Algorithms, Newton's Method, Integer Math
-*/
+ * Purpose: Calculates the integer square root of a non-negative integer using Newton's method.
+ * Topic: Algorithms, Newton's Method, Integer Math
+ */
 
 #include <stdio.h>
 #include <math.h>

@@ -1,7 +1,7 @@
 /*
-* Purpose: Reads three integer coefficients and formats them into a linear equation.
-* Topic: Input/Output, Basic Formatting
-*/
+ * Purpose: Reads three integer coefficients and formats them into a linear equation.
+ * Topic: Input/Output, Basic Formatting
+ */
 
 #include <stdio.h>
 #include <math.h>

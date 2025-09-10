@@ -1,7 +1,7 @@
 /*
-* Purpose: Calculates the integer square root of a non-negative integer using the binary search algorithm.
-* Topic: Algorithms, Binary Search, Integer Math
-*/
+ * Purpose: Calculates the integer square root of a non-negative integer using the binary search algorithm.
+ * Topic: Algorithms, Binary Search, Integer Math
+ */
 
 #include <stdio.h>
 

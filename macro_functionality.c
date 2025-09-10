@@ -1,7 +1,7 @@
 /*
-* Purpose: Demonstrates use of macros with arguments and ternary operator.
-* Topic: Preprocessor Directives, Macros with Arguments, Ternary Operator
-*/
+ * Purpose: Demonstrates use of macros with arguments and ternary operator.
+ * Topic: Preprocessor Directives, Macros with Arguments, Ternary Operator
+ */
 
 #include <stdio.h>
 

@@ -1,5 +1,5 @@
 /*
-* Purpose: Reads two double-precision floating-point numbers separated by a slash and prints their quotient in scientific notation.
+ * Purpose: Reads two double-precision floating-point numbers separated by a slash and prints their quotient in scientific notation.
  * Topic: Input/Output, Floating-Point Numbers, Basic Arithmetic
  */
 

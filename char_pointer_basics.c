@@ -1,5 +1,5 @@
 /*
-* Purpose: Demonstrates the basic usage of a character pointer to read and print a single character.
+ * Purpose: Demonstrates the basic usage of a character pointer to read and print a single character.
  * Topic: Pointers, Characters, Input/Output
  */
 

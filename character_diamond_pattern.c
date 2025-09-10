@@ -1,6 +1,6 @@
 /*
  * Purpose: Prints a diamond pattern using characters.
-* Topic: Nested Loops, Diamond Patterns, Character Manipulation
+ * Topic: Nested Loops, Diamond Patterns, Character Manipulation
  */
 
 #include <stdio.h>

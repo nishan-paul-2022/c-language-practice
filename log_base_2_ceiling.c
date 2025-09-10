@@ -1,7 +1,7 @@
 /*
-* Purpose: For each positive integer input, calculates smallest integer k such that 2^k is greater than number.
-* Topic: Loops, Arrays, Bitwise Operations (Powers of 2), Logarithms (conceptual)
-*/
+ * Purpose: For each positive integer input, calculates smallest integer k such that 2^k is greater than number.
+ * Topic: Loops, Arrays, Bitwise Operations (Powers of 2), Logarithms (conceptual)
+ */
 
 #include <stdio.h>
 

@@ -1,7 +1,7 @@
 /*
-* Purpose: Implements specific logic for loan sanctioning based on input values.
-* Topic: Input Processing, Conditional Logic, Financial Calculations (simplified/custom)
-*/
+ * Purpose: Implements specific logic for loan sanctioning based on input values.
+ * Topic: Input Processing, Conditional Logic, Financial Calculations (simplified/custom)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,5 +1,5 @@
 /*
-* Purpose: Demonstrates dynamic memory allocation for an array of structures using calloc,
+ * Purpose: Demonstrates dynamic memory allocation for an array of structures using calloc,
  *          and how pointers within structures can link elements sequentially.
  * Topic: Structures, Pointers, Dynamic Memory Allocation (calloc, free), Input/Output
  */

@@ -1,5 +1,5 @@
 /*
-* Purpose: Reads a double-precision floating-point number and prints it with a precision
+ * Purpose: Reads a double-precision floating-point number and prints it with a precision
  *          equal to the number of decimal places in the input.
  * Topic: Input/Output, Floating-Point Numbers, Loops, Precision Formatting
  */

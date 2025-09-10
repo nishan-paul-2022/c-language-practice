@@ -1,7 +1,7 @@
 /*
-* Purpose: Reads password from user, masking input with asterisks, and stores it securely.
-* Topic: Terminal Input, Password Masking, Character Handling, POSIX Terminal Control
-*/
+ * Purpose: Reads password from user, masking input with asterisks, and stores it securely.
+ * Topic: Terminal Input, Password Masking, Character Handling, POSIX Terminal Control
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
