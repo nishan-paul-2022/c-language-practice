@@ -6,20 +6,17 @@
 #include <stdio.h>
 
 int main() {
-    int array[100]; // Declare an array of 100 integers
+    int array[100];
 
-    // Prompt the user to enter an integer
     printf("Enter an integer: ");
 
-    // Read an integer from the user and store it in the first element of the array.
-    // 'array' presents a pointer to the first element, so '&array[0]' is equivalent to 'array'.
+    // array and &array[0] are both pointers to the first element of the array
     if (scanf("%d", array) != 1) {
         printf("Invalid input. Please enter an integer.\n");
         return 0;
     }
 
-    // Print the entered integer using pointer arithmetic.
-    // '*array' dereferences the pointer to the first element, giving its value.
+    // *array dereferences the pointer to the first element of the array
     printf("You entered: %d\n", *array);
 
     return 0;
