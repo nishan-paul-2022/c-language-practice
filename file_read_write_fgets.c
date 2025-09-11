@@ -19,7 +19,7 @@ int main(void) {
     // Use fgets for safe input, as gets() is unsafe
     if (fgets(user_input_string, sizeof(user_input_string), stdin) == NULL) {
         perror("Error reading user input");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove the trailing newline character read by fgets
     user_input_string[strcspn(user_input_string, "\n")] = '\0';
@@ -30,7 +30,7 @@ int main(void) {
     output_file_ptr = fopen("FH function (fgets).txt", "w");
     if (output_file_ptr == NULL) {
         perror("Error opening FH function (fgets).txt for writing");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write the user's input string to the file
@@ -38,7 +38,7 @@ int main(void) {
     if (fputs(user_input_string, output_file_ptr) == EOF) {
         perror("Error writing string to file");
         fclose(output_file_ptr); // Clean up
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Close the output file after writing
@@ -52,7 +52,7 @@ int main(void) {
     input_file_ptr = fopen("FH function (fgets).txt", "r");
     if (input_file_ptr == NULL) {
         perror("Error opening FH function (fgets).txt for reading");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read a string from the file using fgets
@@ -65,7 +65,7 @@ int main(void) {
             perror("Error reading string from file");
         }
         fclose(input_file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print the string read from the file
@@ -76,7 +76,7 @@ int main(void) {
     // Close the input file
     if (fclose(input_file_ptr) != 0) {
         perror("Error closing FH function (fgets).txt after reading");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

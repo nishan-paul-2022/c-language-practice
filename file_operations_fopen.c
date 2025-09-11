@@ -20,7 +20,7 @@ int main(void) {
     printf("Enter the filename: ");
     if (scanf("%99s", filename) != 1) { // Read up to 99 chars, %s stops at whitespace
         perror("Error reading filename");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line, including the newline character
     int c;
@@ -30,7 +30,7 @@ int main(void) {
     printf("Enter the file mode (e.g., 'w', 'a', 'r': ");
     if (scanf("%99s", mode) != 1) { // Read up to 99 chars for mode
         perror("Error reading file mode");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line, including the newline character
     while ((c = getchar()) != '\n' && c != EOF);
@@ -40,7 +40,7 @@ int main(void) {
     // For strings that can contain spaces, fgets is better
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
         perror("Error reading string");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove trailing newline character from fgets
     size_t len_string = strlen(input_string);
@@ -53,7 +53,7 @@ int main(void) {
     // Use scanf with a space to consume leading whitespace, including newlines
     if (scanf(" %c", &input_char) != 1) {
         perror("Error reading character");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line after reading the character
     while ((c = getchar()) != '\n' && c != EOF);
@@ -62,7 +62,7 @@ int main(void) {
     printf("Enter an integer: ");
     if (scanf("%d", &input_int) != 1) {
         perror("Error reading integer");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line after reading the integer
     while ((c = getchar()) != '\n' && c != EOF);
@@ -71,7 +71,7 @@ int main(void) {
     printf("Enter a float: ");
     if (scanf("%f", &input_float) != 1) {
         perror("Error reading float");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line after reading the float
     while ((c = getchar()) != '\n' && c != EOF);
@@ -82,7 +82,7 @@ int main(void) {
     // Check if the file was opened successfully
     if (file_pointer == NULL) {
         perror("Error opening file"); // Prints a system error message
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write data to the file using fprintf
@@ -96,7 +96,7 @@ int main(void) {
     // fclose releases the resources associated with the file stream
     if (fclose(file_pointer) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Data successfully written to '%s' in mode '%s'.\n", filename, mode);

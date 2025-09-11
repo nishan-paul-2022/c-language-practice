@@ -5,70 +5,238 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define MAX_ROW_LEN 100 // Maximum length for each row to prevent buffer overflow
+#define MAX_ROW_LEN 100
+
+// Data structures for functional approach
+typedef struct {
+    int rows;
+    int cols;
+} Dimensions;
+
+typedef struct {
+    char **data;
+    int rows;
+    int cols;
+} Grid;
+
+typedef struct {
+    int row;
+    int col;
+} Index;
+
+typedef struct {
+    int success;
+    char *error_message;
+} Result;
+
+// Pure functional components
+Dimensions create_dimensions(int rows, int cols) {
+    Dimensions dim = {rows, cols};
+    return dim;
+}
+
+Index create_index(int row, int col) {
+    Index idx = {row, col};
+    return idx;
+}
+
+Result create_success_result() {
+    Result result = {1, NULL};
+    return result;
+}
+
+Result create_error_result(const char *message) {
+    Result result = {0, (char*)message};
+    return result;
+}
+
+// Input/Output components
+Result read_dimensions(Dimensions *dim) {
+    printf("Enter the number of rows and columns (e.g., 3 4): ");
+    if (scanf("%d %d", &dim->rows, &dim->cols) != 2) {
+        return create_error_result("Invalid input for dimensions.");
+    }
+    while (getchar() != '\n'); // clear input buffer
+    return create_success_result();
+}
+
+Result read_indices(Index *idx) {
+    printf("\nEnter the row and column index to access (e.g., 1 2): ");
+    if (scanf("%d %d", &idx->row, &idx->col) != 2) {
+        return create_error_result("Invalid input for indices.");
+    }
+    return create_success_result();
+}
+
+// Grid management components
+Grid create_empty_grid(Dimensions dim) {
+    Grid grid;
+    grid.rows = dim.rows;
+    grid.cols = dim.cols;
+    grid.data = (char**)malloc(dim.rows * sizeof(char*));
+    
+    if (grid.data != NULL) {
+        for (int i = 0; i < dim.rows; i++) {
+            grid.data[i] = (char*)malloc((dim.cols + 1) * sizeof(char));
+            if (grid.data[i] == NULL) {
+                // Cleanup previously allocated rows
+                for (int j = 0; j < i; j++) {
+                    free(grid.data[j]);
+                }
+                free(grid.data);
+                grid.data = NULL;
+                break;
+            }
+        }
+    }
+    
+    return grid;
+}
+
+void destroy_grid(Grid *grid) {
+    if (grid->data != NULL) {
+        for (int i = 0; i < grid->rows; i++) {
+            free(grid->data[i]);
+        }
+        free(grid->data);
+        grid->data = NULL;
+    }
+}
+
+Result is_valid_grid(Grid grid) {
+    if (grid.data == NULL) {
+        return create_error_result("Memory allocation failed for character grid.");
+    }
+    return create_success_result();
+}
+
+// Data processing components
+Result fill_grid_row(Grid grid, int row_num, const char *input) {
+    if (row_num < 0 || row_num >= grid.rows) {
+        return create_error_result("Row index out of bounds.");
+    }
+    
+    if ((int)strlen(input) > grid.cols) {
+        return create_error_result("Input row is too long.");
+    }
+    
+    strncpy(grid.data[row_num], input, grid.cols);
+    
+    // Pad with spaces if shorter
+    for (int j = strlen(input); j < grid.cols; j++) {
+        grid.data[row_num][j] = ' ';
+    }
+    grid.data[row_num][grid.cols] = '\0'; // null terminate
+    
+    return create_success_result();
+}
+
+Result populate_grid(Grid grid) {
+    char input_buffer[MAX_ROW_LEN];
+    
+    printf("Enter the characters for the %d x %d grid, one row per line:\n", 
+           grid.rows, grid.cols);
+    
+    for (int i = 0; i < grid.rows; i++) {
+        printf("Row %d: ", i);
+        if (fgets(input_buffer, sizeof(input_buffer), stdin) == NULL) {
+            return create_error_result("Failed to read row input.");
+        }
+        
+        input_buffer[strcspn(input_buffer, "\n")] = 0; // strip newline
+        
+        Result fill_result = fill_grid_row(grid, i, input_buffer);
+        if (!fill_result.success) {
+            return fill_result;
+        }
+    }
+    
+    return create_success_result();
+}
+
+// Validation components
+Result validate_index(Index idx, Dimensions dim) {
+    if (idx.row < 0 || idx.row >= dim.rows || 
+        idx.col < 0 || idx.col >= dim.cols) {
+        return create_error_result("Indices out of bounds.");
+    }
+    return create_success_result();
+}
+
+// Display components
+void display_grid(Grid grid) {
+    printf("\nGrid entered:\n");
+    for (int i = 0; i < grid.rows; i++) {
+        for (int j = 0; j < grid.cols; j++) {
+            putchar(grid.data[i][j]);
+        }
+        putchar('\n');
+    }
+}
+
+void display_character_at_index(Grid grid, Index idx) {
+    printf("\nCharacter at [%d][%d]: %c\n", 
+           idx.row, idx.col, grid.data[idx.row][idx.col]);
+}
+
+void display_error(const char *message) {
+    fprintf(stderr, "Error: %s\n", message);
+}
 
 int main(void) {
-    int rows, cols;
-    int row_index, col_index;
-    char input_buffer[MAX_ROW_LEN]; // Buffer for reading lines
-
-    // Get grid dimensions
-    printf("Enter the number of rows and columns (e.g., 3 4): ");
-    if (scanf("%d %d", &rows, &cols) != 2) {
-        fprintf(stderr, "Error: Invalid input for dimensions.\n");
+    Dimensions dim;
+    Index idx;
+    Result result;
+    
+    // Get dimensions
+    result = read_dimensions(&dim);
+    if (!result.success) {
+        display_error(result.error_message);
         return EXIT_FAILURE;
     }
-
-    // Consume newline character left by scanf
-    while (getchar() != '\n');
-
-    // Allocate memory for 2D character array
-    char (*char_grid)[cols] = malloc(rows * sizeof(*char_grid));
-    if (char_grid == NULL) {
-        fprintf(stderr, "Error: Memory allocation failed for character grid.\n");
+    
+    // Create and validate grid
+    Grid grid = create_empty_grid(dim);
+    result = is_valid_grid(grid);
+    if (!result.success) {
+        display_error(result.error_message);
         return EXIT_FAILURE;
     }
-
-    // Get grid characters
-    printf("Enter the characters for the %d x %d grid, one row per line:\n", rows, cols);
-    for (int i = 0; i < rows; i++) {
-        printf("Row %d: ", i);
-        if (fgets(char_grid[i], cols + 1, stdin) == NULL) {
-            fprintf(stderr, "Error: Failed to read row %d.\n", i);
-            free(char_grid);
-            return EXIT_FAILURE;
-        }
-        // Remove trailing newline character if present
-        char_grid[i][strcspn(char_grid[i], "\n")] = 0;
+    
+    // Populate grid
+    result = populate_grid(grid);
+    if (!result.success) {
+        display_error(result.error_message);
+        destroy_grid(&grid);
+        return EXIT_FAILURE;
     }
-
+    
     // Display grid
-    printf("\nGrid entered:\n");
-    for (int i = 0; i < rows; i++) {
-        printf("%s\n", char_grid[i]);
-    }
-
-    // Get indices to access
-    printf("\nEnter the row and column index to access (e.g., 1 2): ");
-    if (scanf("%d %d", &row_index, &col_index) != 2) {
-        fprintf(stderr, "Error: Invalid input for indices.\n");
-        free(char_grid);
+    display_grid(grid);
+    
+    // Get indices
+    result = read_indices(&idx);
+    if (!result.success) {
+        display_error(result.error_message);
+        destroy_grid(&grid);
         return EXIT_FAILURE;
     }
-
+    
     // Validate indices
-    if (row_index < 0 || row_index >= rows || col_index < 0 || col_index >= cols) {
-        fprintf(stderr, "Error: Indices out of bounds.\n");
-        free(char_grid);
+    result = validate_index(idx, dim);
+    if (!result.success) {
+        display_error(result.error_message);
+        destroy_grid(&grid);
         return EXIT_FAILURE;
     }
-
-    // Print character at specified index
-    printf("\nCharacter at [%d][%d]: %c\n", row_index, col_index, char_grid[row_index][col_index]);
-
-    // Free allocated memory
-    free(char_grid);
+    
+    // Display character at index
+    display_character_at_index(grid, idx);
+    
+    // Cleanup
+    destroy_grid(&grid);
 
     return 0;
 }

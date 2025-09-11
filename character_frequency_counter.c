@@ -8,49 +8,38 @@
 #include <ctype.h>
 
 int main(void) {
-    int num_test_cases; // Number of test cases
-    int case_num;       // Current test case number
-
-    // Get number of test cases
     printf("Enter the number of test cases: ");
+    int num_test_cases;
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error: Invalid input for number of test cases.\n");
         return 1;
     }
-    // Consume newline character left by scanf
     getchar();
 
-    // Process each test case
-    for (case_num = 1; case_num <= num_test_cases; case_num++) {
-        char input_string[100];       // Input string buffer
-        int frequency[26] = {0};      // Frequency array for 'a'-'z'
-        int string_length;            // Length of input string
-        int i;
+    for (int case_num = 1; case_num <= num_test_cases; case_num++) {
+        int frequency[26] = {0};
 
         // Read input string with buffer overflow protection
         printf("Enter string %d (lowercase letters only): ", case_num);
+        char input_string[100];
         if (scanf("%99s", input_string) != 1) {
             printf("Error: Invalid input for string.\n");
             continue;
         }
-        // Consume newline character left by scanf
         getchar();
 
-        string_length = strlen(input_string);
-
         // Count frequency of each character
-        for (i = 0; i < string_length; i++) {
-            char current_char = tolower(input_string[i]); // Convert to lowercase
-
-            // Check if character is a lowercase letter
+        int string_length = strlen(input_string);
+        for (int i = 0; i < string_length; i++) {
+            char current_char = tolower(input_string[i]);
             if (current_char >= 'a' && current_char <= 'z') {
-                frequency[current_char - 'a']++; // Increment count
+                frequency[current_char - 'a']++;
             }
         }
 
         // Print frequencies of letters that appeared
         printf("Case %d:\n", case_num);
-        for (i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++) {
             if (frequency[i] > 0) {
                 printf("%c %d\n", (char)('a' + i), frequency[i]);
             }

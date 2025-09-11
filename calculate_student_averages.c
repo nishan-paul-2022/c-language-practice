@@ -17,14 +17,14 @@ int main(void) {
     FILE *file_bangla = fopen(BANGLA_FILE, "r");
     if (file_bangla == NULL) {
         perror("Error opening Bangla scores file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     FILE *file_math = fopen(MATH_FILE, "r");
     if (file_math == NULL) {
         perror("Error opening Math scores file");
         fclose(file_bangla);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     FILE *file_english = fopen(ENGLISH_FILE, "r");
@@ -32,7 +32,7 @@ int main(void) {
         perror("Error opening English scores file");
         fclose(file_bangla);
         fclose(file_math);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     FILE *file_output = fopen(OUTPUT_FILE, "w");
@@ -41,7 +41,7 @@ int main(void) {
         fclose(file_bangla);
         fclose(file_math);
         fclose(file_english);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read data and calculate averages

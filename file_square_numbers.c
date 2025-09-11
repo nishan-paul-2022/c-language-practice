@@ -19,7 +19,7 @@ int main(void) {
     input_file_ptr = fopen("input.txt", "w");
     if (input_file_ptr == NULL) {
         perror("Error opening input.txt for writing");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write numbers from 1 to 1000 to input.txt
@@ -40,7 +40,7 @@ int main(void) {
     input_file_ptr = fopen("input.txt", "r");
     if (input_file_ptr == NULL) {
         perror("Error opening input.txt for reading");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Open output.txt in write mode ("w")
@@ -48,7 +48,7 @@ int main(void) {
     if (output_file_ptr == NULL) {
         perror("Error opening output.txt for writing");
         fclose(input_file_ptr); // Close the already opened input file
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read numbers from input.txt until the end of the file (EOF) is reached
@@ -65,7 +65,7 @@ int main(void) {
         // Clean up resources before exiting
         fclose(input_file_ptr);
         fclose(output_file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Close both files after processing
@@ -75,7 +75,7 @@ int main(void) {
     }
     if (fclose(output_file_ptr) != 0) {
         perror("Error closing output.txt");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Successfully processed numbers and wrote squares to output.txt.\n");

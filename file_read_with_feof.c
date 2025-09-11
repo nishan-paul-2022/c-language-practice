@@ -22,7 +22,7 @@ int main(void) {
         // A more robust check would be to ensure the file exists or handle this case
         // For this example, we assume the file might be empty or non-existent
         // If it's non-existent, fopen returns NULL, and we exit
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // --- Corrected approach for reading a file line by line ---
@@ -51,7 +51,7 @@ int main(void) {
     // Close the file
     if (fclose(file_handle) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

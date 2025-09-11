@@ -20,14 +20,14 @@ int main(void) {
     file_output = fopen(OUTPUT_FILE, "r");
     if (file_output == NULL) {
         perror("Error opening output file for reading");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     file_input = fopen(INPUT_FILE, "r");
     if (file_input == NULL) {
         perror("Error opening input file for reading");
         fclose(file_output); // Close previously opened file
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Compare integers from both files

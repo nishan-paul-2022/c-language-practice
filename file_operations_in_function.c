@@ -54,7 +54,7 @@ int main(void) {
     // Use fgets for safe input
     if (fgets(base_filename, FILENAME_BUFFER_SIZE, stdin) == NULL) {
         fprintf(stderr, "Error reading filename input.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove trailing newline character if present from fgets
     base_filename[strcspn(base_filename, "\n")] = 0;
@@ -64,7 +64,7 @@ int main(void) {
     // Use fgets for safe input
     if (fgets(file_mode, MODE_BUFFER_SIZE, stdin) == NULL) {
         fprintf(stderr, "Error reading file mode input.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove trailing newline character if present from fgets
     file_mode[strcspn(file_mode, "\n")] = 0;
@@ -79,11 +79,11 @@ int main(void) {
         // For this example, we just close it
         if (fclose(file_handle) != 0) {
             perror("Error closing file");
-            return EXIT_FAILURE;
+            return 0;
         }
     } else {
         // Error message is already printed by the open_file_with_extension function
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

@@ -22,7 +22,7 @@ int main(void) {
     file_input = fopen(INPUT_FILENAME, "r");
     if (file_input == NULL) {
         perror("Error opening input file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read data from the input file.
@@ -39,7 +39,7 @@ int main(void) {
         // Check if all 4 items were successfully read.
         fprintf(stderr, "Error: Could not read all expected data from '%s'. Check file format.\n", INPUT_FILENAME);
         fclose(file_input);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Close the input file as we have read all necessary data.
@@ -49,20 +49,20 @@ int main(void) {
     file_output = fopen(OUTPUT_FILENAME, "w");
     if (file_output == NULL) {
         perror("Error opening output file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write the read data to the output file, separated by tabs.
     if (fprintf(file_output, "%c\t%s\t%d\t%.6f\n", first_char, string_buffer, integer_value, float_value) < 0) {
         perror("Error writing to output file");
         fclose(file_output);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Close the output file
     if (fclose(file_output) != 0) {
         perror("Error closing output file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Data successfully copied from '%s' to '%s'.\n", INPUT_FILENAME, OUTPUT_FILENAME);

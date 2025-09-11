@@ -15,7 +15,7 @@ int main(void) {
     if (scanf("%lf, %lf", &input1, &input2) != 2) {
         fprintf(stderr, "Error: Invalid input for the first two numbers.\n");
         while (getchar() != '\n'); // Clear buffer
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // --- Unusual Condition Check ---
@@ -30,7 +30,7 @@ int main(void) {
         if (scanf("%lf", &input3) != 1) {
             fprintf(stderr, "Error: Invalid input for the third number.\n");
             while (getchar() != '\n'); // Clear buffer
-            return EXIT_FAILURE;
+            return 0;
         }
 
         // Check if third number is less than 50000

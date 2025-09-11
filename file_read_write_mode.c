@@ -21,7 +21,7 @@ int main(void) {
     file_read_write = fopen(FILENAME, "r+");
     if (file_read_write == NULL) {
         perror("Error opening file in 'r+' mode. Ensure the file exists.");
-        return EXIT_FAILURE; // Indicate file opening error
+        return 0; // Indicate file opening error
     }
 
     // Read from the file up to the first '!' character or until the buffer is full
@@ -40,7 +40,7 @@ int main(void) {
         }
         // Close the file before exiting
         fclose(file_read_write);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print the content read from the file
@@ -52,20 +52,20 @@ int main(void) {
     if (fseek(file_read_write, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of file for writing");
         fclose(file_read_write);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write the new string to the file. This will overwrite existing content from the beginning
     if (fprintf(file_read_write, "%s", write_string) < 0) {
         perror("Error writing to file");
         fclose(file_read_write);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Close the file
     if (fclose(file_read_write) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Successfully read from and wrote to '%s'.\n", FILENAME);

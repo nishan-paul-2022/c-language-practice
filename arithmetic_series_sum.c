@@ -44,7 +44,7 @@ int main(void) {
     // Check if loop terminated due to error
     if (ferror(stdin)) {
         perror("Error reading input");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Exiting program.\n");

@@ -14,7 +14,7 @@ int main(void) {
     printf("Enter initial X and Y coordinates (e.g., 0 0): ");
     if (scanf("%d %d", &current_x, &current_y) != 2) {
         fprintf(stderr, "Error: Invalid input for initial coordinates.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf

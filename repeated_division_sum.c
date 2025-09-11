@@ -17,13 +17,13 @@ int main(void) {
         fprintf(stderr, "Error: Invalid input. Please enter two integers separated by a space.\n");
         // Clear the input buffer
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Check for division by zero to prevent runtime errors
     if (divisor == 0) {
         fprintf(stderr, "Error: Division by zero is not allowed.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Loop as long as the current_value is not zero

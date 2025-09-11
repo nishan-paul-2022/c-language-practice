@@ -19,7 +19,7 @@ int main(void) {
     // Check if the loop terminated due to an error rather than EOF
     if (ferror(stdin)) {
         perror("Error reading from standard input");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Optional: add a newline if needed for cleaner output

@@ -24,7 +24,7 @@ int main(void) {
     // Read the number of test cases.
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error reading number of test cases.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf for the integer.

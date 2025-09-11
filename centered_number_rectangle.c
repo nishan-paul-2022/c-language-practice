@@ -12,7 +12,7 @@ int main(void) {
     printf("Enter the number of rows: ");
     if (scanf("%d", &num_of_rows) != 1 || num_of_rows <= 0) {
         fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get number of columns
@@ -20,7 +20,7 @@ int main(void) {
     printf("Enter the number of columns: ");
     if (scanf("%d", &num_of_cols) != 1 || num_of_cols <= 0) {
         fprintf(stderr, "Error: Invalid input for number of columns. Please enter a positive integer.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get center number
@@ -28,7 +28,7 @@ int main(void) {
     printf("Enter the number to fill the center with: ");
     if (scanf("%d", &center_number) != 1) {
         fprintf(stderr, "Error: Invalid input for center number.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get fill number
@@ -36,7 +36,7 @@ int main(void) {
     printf("Enter the number to fill the rest of the rectangle with: ");
     if (scanf("%d", &fill_number) != 1) {
         fprintf(stderr, "Error: Invalid input for fill number.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print rectangle with center numbers

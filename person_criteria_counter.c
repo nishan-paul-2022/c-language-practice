@@ -17,13 +17,13 @@ int main(void) {
         fprintf(stderr, "Error: Invalid input for the number of persons.\n");
         // Clear the input buffer
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Validate that the number of persons is non-negative
     if (num_persons < 0) {
         fprintf(stderr, "Error: Number of persons cannot be negative.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Enter weight and height for each person (e.g., 'weight height'):\n");
@@ -37,7 +37,7 @@ int main(void) {
             // Clear the input buffer
             while (getchar() != '\n');
             // Decide whether to continue or exit. For this example, we'll exit.
-            return EXIT_FAILURE;
+            return 0;
         }
 
         // Check if the person meets the criteria: weight < 50 and height > 170

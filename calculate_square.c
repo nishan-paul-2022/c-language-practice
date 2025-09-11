@@ -14,7 +14,7 @@ int main(void) {
     FILE *input_file = fopen(input_file_path, "r");
     if (input_file == NULL) {
         perror("Error opening input file");
-        return EXIT_FAILURE;
+        return 0;
     } else {
         printf("%s opened successfully for reading.\n", input_file_path);
     }
@@ -24,7 +24,7 @@ int main(void) {
     if (output_file == NULL) {
         perror("Error opening output file");
         fclose(input_file);
-        return EXIT_FAILURE;
+        return 0;
     } else {
         printf("%s opened successfully for writing.\n", output_file_path);
     }
@@ -38,7 +38,7 @@ int main(void) {
             perror("Error writing to output file");
             fclose(input_file);
             fclose(output_file);
-            return EXIT_FAILURE;
+            return 0;
         }
     }
 
@@ -47,7 +47,7 @@ int main(void) {
         perror("Error reading from input file");
         fclose(input_file);
         fclose(output_file);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Squares calculated from %s and written to %s successfully.\n", input_file_path, output_file_path);

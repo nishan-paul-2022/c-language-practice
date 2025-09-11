@@ -19,7 +19,7 @@ int main(void) {
     FILE *prep_file = fopen(filename, "w");
     if (prep_file == NULL) {
         perror("Error preparing file for ftell demonstration");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Write some sample data to the file. The size of this data will be reported by ftell
     fprintf(prep_file, "This is some sample text for ftell demonstration.\n");
@@ -31,7 +31,7 @@ int main(void) {
     file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for ftell demonstration");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Move the file position indicator to the end of the file
@@ -40,7 +40,7 @@ int main(void) {
     if (fseek(file_ptr, 0, SEEK_END) != 0) {
         perror("Error seeking to end of file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get the current file position indicator
@@ -51,7 +51,7 @@ int main(void) {
     if (file_size == -1L) {
         perror("Error getting file position with ftell");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print the file size. Use %ld for long int
@@ -60,7 +60,7 @@ int main(void) {
     // Close the file
     if (fclose(file_ptr) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

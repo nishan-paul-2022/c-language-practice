@@ -22,7 +22,7 @@ int main(void) {
     // Read input safely using fgets
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return EXIT_FAILURE; 
+        return 0; 
     }
 
     // Open the file in "a+" mode (append and read)
@@ -30,7 +30,7 @@ int main(void) {
     file_append_read = fopen(FILENAME, "a+");
     if (file_append_read == NULL) {
         perror("Error opening file in 'a+' mode");
-        return EXIT_FAILURE; // Indicate file opening error
+        return 0; // Indicate file opening error
     }
 
     // Append the input string to the file
@@ -40,7 +40,7 @@ int main(void) {
     if (fprintf(file_append_read, "\n%s", input_buffer) < 0) {
         perror("Error writing to file");
         fclose(file_append_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // To read from the beginning of the file after appending, we need to reposition the file pointer
@@ -49,7 +49,7 @@ int main(void) {
     if (fseek(file_append_read, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of file");
         fclose(file_append_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read from the file up to the first '!' character or until the buffer is full
@@ -74,7 +74,7 @@ int main(void) {
             perror("Error reading from file");
         }
         fclose(file_append_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print the content read from the file
@@ -83,7 +83,7 @@ int main(void) {
     // Close the file
     if (fclose(file_append_read) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

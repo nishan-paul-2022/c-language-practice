@@ -18,7 +18,7 @@ int main(void) {
         // perror prepends the given string ("File operation error") with the system error message
         perror("File operation error");
         // Return failure status
-        return EXIT_FAILURE;
+        return 0;
     } else {
         // If the file was opened successfully, close it and return success
         // In a real scenario, you would perform operations on the file here

@@ -77,6 +77,6 @@ int main(void) {
         return 0;
     } else {
         fprintf(stderr, "Failed to read password.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 }

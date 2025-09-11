@@ -49,7 +49,7 @@ int main(void) {
     printf("Enter the number of records to store: ");
     if (scanf("%d", &number_of_records) != 1 || number_of_records <= 0) {
         printf("Invalid number of records. Please enter a positive integer.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Clear the newline character left by scanf
     while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
@@ -59,7 +59,7 @@ int main(void) {
     records_array = (Record *)calloc(number_of_records, sizeof(Record));
     if (records_array == NULL) {
         fprintf(stderr, "Memory allocation failed. Unable to create records array.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Link the records sequentially using the 'next' pointer, forming a pseudo-linked list within the array

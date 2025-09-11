@@ -21,7 +21,7 @@ int main(void) {
     if (file_ptr == NULL) {
         perror("Error opening file"); // Print system error message.
         fprintf(stderr, "Could not open file: %s\n", input_filename);
-        return EXIT_FAILURE; // Indicate an error occurred.
+        return 0; // Indicate an error occurred.
     }
 
     // Read numbers from the file until the end of the file (EOF) is reached.
@@ -36,7 +36,7 @@ int main(void) {
         perror("Error reading from file");
         fprintf(stderr, "An error occurred while reading from %s.\n", input_filename);
         fclose(file_ptr); // Close the file before exiting.
-        return EXIT_FAILURE; // Indicate an error occurred.
+        return 0; // Indicate an error occurred.
     }
 
     // Print the calculated total sum.

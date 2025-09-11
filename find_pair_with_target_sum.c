@@ -23,7 +23,7 @@ int main(void) {
     // Read the number of elements and validate input
     if (scanf("%d", &num_elements) != 1 || num_elements <= 0 || num_elements > 100) {
         printf("Invalid input. Please enter a positive integer up to 100.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -36,7 +36,7 @@ int main(void) {
         // Read each element and validate input
         if (scanf("%d", &numbers[index]) != 1) {
             printf("Invalid input for element at index %d.\n", index);
-            return EXIT_FAILURE;
+            return 0;
         }
         // Consume the newline character after each integer input
         while ((c = getchar()) != '\n' && c != EOF);

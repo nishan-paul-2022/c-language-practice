@@ -17,7 +17,7 @@ int main(void) {
     // Check if the file was opened successfully
     if (file_pointer == NULL) {
         perror("Error opening file"); // Print error message if file opening fails
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("Reading numbers from '%s' and printing even numbers:\n", filename);

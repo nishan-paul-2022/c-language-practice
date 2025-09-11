@@ -21,14 +21,14 @@ int main(void) {
     if (file_input == NULL) {
         perror("Error opening input file");
         fprintf(stderr, "Please ensure '%s' exists.\n", INPUT_FILENAME);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Move the file position indicator to the end of the file
     if (fseek(file_input, 0, SEEK_END) != 0) {
         perror("Error seeking to end of input file");
         fclose(file_input);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get the current file position, which is the size of the file
@@ -36,14 +36,14 @@ int main(void) {
     if (file_size == -1) {
         perror("Error getting file size");
         fclose(file_input);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Move the file position indicator back to the beginning of the file
     if (fseek(file_input, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of input file");
         fclose(file_input);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Open the output file in write mode
@@ -51,7 +51,7 @@ int main(void) {
     if (file_output == NULL) {
         perror("Error opening output file");
         fclose(file_input); // Close input file before exiting
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read from the input file character by character and write to the output file
@@ -90,7 +90,7 @@ int main(void) {
     }
     if (fclose(file_output) != 0) {
         perror("Error closing output file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     printf("File copy complete.\n");

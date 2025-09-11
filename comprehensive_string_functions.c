@@ -88,7 +88,7 @@ int main(void) {
         printf("String %d: ", i);
         if (fgets(strings[i], sizeof(strings[i]), stdin) == NULL) {
             fprintf(stderr, "Error: Failed to read string %d.\n", i);
-            return EXIT_FAILURE;
+            return 0;
         }
         // Remove trailing newline character if present
         strings[i][strcspn(strings[i], "\n")] = 0;

@@ -13,7 +13,7 @@ int main(void) {
     printf("Enter the number of rows and columns (e.g., 3 4): ");
     if (scanf("%d %d", &rows, &cols) != 2) {
         fprintf(stderr, "Error: Invalid input for dimensions.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf

@@ -22,7 +22,7 @@ int main(void) {
     // Read input safely using fgets
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return EXIT_FAILURE; 
+        return 0; 
     }
 
     // Open the file in "w+" mode (write and read)
@@ -31,7 +31,7 @@ int main(void) {
     file_write_read = fopen(FILENAME, "w+");
     if (file_write_read == NULL) {
         perror("Error opening file in 'w+' mode");
-        return EXIT_FAILURE; // Indicate file opening error
+        return 0; // Indicate file opening error
     }
 
     // Write the input string to the file.
@@ -39,7 +39,7 @@ int main(void) {
     if (fprintf(file_write_read, "%s", input_buffer) < 0) {
         perror("Error writing to file");
         fclose(file_write_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // To read from the beginning of the file after writing, we need to reposition the file pointer.
@@ -48,7 +48,7 @@ int main(void) {
     if (fseek(file_write_read, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of file for reading");
         fclose(file_write_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read from the file up to the first newline character or until the buffer is full.
@@ -62,7 +62,7 @@ int main(void) {
             perror("Error reading from file");
         }
         fclose(file_write_read);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print a substring of the content read from the file.
@@ -83,7 +83,7 @@ int main(void) {
     // Close the file
     if (fclose(file_write_read) != 0) {
         perror("Error closing file");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

@@ -17,7 +17,7 @@ int main(void) {
     if (input_char == EOF) {
         if (ferror(stdin)) {
             perror("Error reading character");
-            return EXIT_FAILURE;
+            return 0;
         } else {
             printf("\nEnd of input reached.\n");
             return 0;

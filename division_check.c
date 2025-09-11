@@ -21,7 +21,7 @@ int main(void) {
             fprintf(stderr, "Error: Division by zero is not allowed.\n");
             // Clear the input buffer in case of partial reads or invalid characters
             while (getchar() != '\n');
-            return EXIT_FAILURE;
+            return 0;
         }
 
         // Perform the division and get the integer part of the quotient
@@ -44,6 +44,6 @@ int main(void) {
         fprintf(stderr, "Error: Invalid input format. Please use 'number, number'.\n");
         // Clear the input buffer in case of partial reads or invalid characters
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
 }

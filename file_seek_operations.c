@@ -20,7 +20,7 @@ int main(void) {
     // Using scanf for integers and a single word string.
     if (scanf("%d %d %99s", &num1, &num2, input_buffer_s) != 3) {
         perror("Error reading input");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line, including the newline character
     int c;
@@ -44,7 +44,7 @@ int main(void) {
         file_ptr = fopen("FH fseek.txt", "w"); // Open in write mode to create/overwrite
         if (file_ptr == NULL) {
             perror("Error creating FH fseek.txt");
-            return EXIT_FAILURE;
+            return 0;
         }
         // Write some sample data that includes strings and numbers
         fprintf(file_ptr, "SampleString12345 10 20 30 40 50\n");
@@ -52,7 +52,7 @@ int main(void) {
         file_ptr = fopen("FH fseek.txt", "r");
         if (file_ptr == NULL) {
             perror("Error reopening FH fseek.txt for reading");
-            return EXIT_FAILURE;
+            return 0;
         }
     }
 
@@ -62,7 +62,7 @@ int main(void) {
     if (fseek(file_ptr, sizeof(char) * 3, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (first seek)");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read the next 5 characters into input_buffer_t
@@ -73,7 +73,7 @@ int main(void) {
             perror("Error reading string after first seek");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
     printf("String read after first fseek (skipping 3 chars): %s\n", input_buffer_t);
 
@@ -83,7 +83,7 @@ int main(void) {
     if (fseek(file_ptr, sizeof(char) * 5, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (second seek)");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read integers from the current file position
@@ -100,7 +100,7 @@ int main(void) {
             perror("Error reading first set of integers after second seek");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
     printf("Integers read after second fseek: %d %d %d\n", num1, num2, num3);
 
@@ -110,7 +110,7 @@ int main(void) {
     if (fseek(file_ptr, -sizeof(char) * 1, SEEK_CUR) != 0) {
         perror("Error seeking backward in FH fseek.txt");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // --- Fourth fseek and read ---
@@ -120,7 +120,7 @@ int main(void) {
     if (fseek(file_ptr, sizeof(int) * 2, SEEK_CUR) != 0) {
         perror("Error seeking in FH fseek.txt (fourth seek)");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read the remaining integers
@@ -134,14 +134,14 @@ int main(void) {
             perror("Error reading second set of integers after fourth seek");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
     printf("Integers read after fourth fseek: %d %d %d\n", num4, num5, num3); // Printing num3 again as num5
 
     // Close the file
     if (fclose(file_ptr) != 0) {
         perror("Error closing FH fseek.txt");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

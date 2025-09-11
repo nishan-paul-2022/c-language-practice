@@ -22,7 +22,7 @@ int main(void) {
     // Read the number of elements.
     if (scanf("%d", &num_elements) != 1 || num_elements <= 0 || num_elements > 100) {
         printf("Invalid input. Please enter a positive integer up to 100.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf.
@@ -34,7 +34,7 @@ int main(void) {
     for (index = 0; index < num_elements; index++) {
         if (scanf("%f", &first_set[index]) != 1) {
             printf("Invalid input for first set at index %d.\n", index);
-            return EXIT_FAILURE;
+            return 0;
         }
         // Consume the newline character after each float input.
         while ((c = getchar()) != '\n' && c != EOF);
@@ -45,7 +45,7 @@ int main(void) {
     for (index = 0; index < num_elements; index++) {
         if (scanf("%f", &second_set[index]) != 1) {
             printf("Invalid input for second set at index %d.\n", index);
-            return EXIT_FAILURE;
+            return 0;
         }
         // Consume the newline character after each float input.
         while ((c = getchar()) != '\n' && c != EOF);
@@ -56,7 +56,7 @@ int main(void) {
     for (index = 0; index < num_elements; index++) {
         if (scanf("%f", &third_set[index]) != 1) {
             printf("Invalid input for third set at index %d.\n", index);
-            return EXIT_FAILURE;
+            return 0;
         }
         // Consume the newline character after each float input.
         while ((c = getchar()) != '\n' && c != EOF);

@@ -22,7 +22,7 @@ int main(void) {
     // For strings with spaces, fgets would be more appropriate
     if (scanf("%d %d %99s", &input_int1, &input_int2, input_string) != 3) {
         perror("Error reading input");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume the rest of the line, including the newline character
     int c;
@@ -38,14 +38,14 @@ int main(void) {
     file_ptr = fopen("FH fseek.txt", "w+");
     if (file_ptr == NULL) {
         perror("Error opening FH fseek.txt");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Write the formatted string to the file
     if (fputs(formatted_string, file_ptr) == EOF) {
         perror("Error writing to FH fseek.txt");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // --- Using fseek ---
@@ -54,7 +54,7 @@ int main(void) {
     if (fseek(file_ptr, offset, SEEK_SET) != 0) {
         perror("Error seeking in FH fseek.txt");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Read a string from the current file position until a newline character is encountered
@@ -69,7 +69,7 @@ int main(void) {
             perror("Error reading from FH fseek.txt after seeking");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Print the string read from the file
@@ -81,7 +81,7 @@ int main(void) {
     if (fseek(file_ptr, 10, SEEK_SET) != 0) {
         perror("Error seeking in FH fseek.txt (second attempt)");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
     // Read again
     if (fscanf(file_ptr, "%99[^\n]", read_string) != 1) {
@@ -91,7 +91,7 @@ int main(void) {
             perror("Error reading from FH fseek.txt after second seeking");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return 0;
     }
     printf("String read after second fseek: %s\n", read_string);
     */
@@ -99,7 +99,7 @@ int main(void) {
     // Close the file
     if (fclose(file_ptr) != 0) {
         perror("Error closing FH fseek.txt");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     return 0;

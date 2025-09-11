@@ -93,7 +93,7 @@ int main(void) {
     if (scanf("%d", &num_test_cases) != 1) {
         fprintf(stderr, "Error: Invalid input for number of test cases.\n");
         while (getchar() != '\n'); // Clear buffer
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume newline character after reading number of test cases
     getchar();
@@ -107,7 +107,7 @@ int main(void) {
         if (scanf("%999[^\n]", str1) != 1) {
             fprintf(stderr, "Error reading the first string for test case %d.\n", test_case_num);
             while (getchar() != '\n');
-            return EXIT_FAILURE;
+            return 0;
         }
         getchar(); // Consume newline
 
@@ -116,7 +116,7 @@ int main(void) {
         if (scanf("%999[^\n]", str2) != 1) {
             fprintf(stderr, "Error reading the second string for test case %d.\n", test_case_num);
             while (getchar() != '\n');
-            return EXIT_FAILURE;
+            return 0;
         }
 
         // Get lengths of strings

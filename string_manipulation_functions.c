@@ -20,7 +20,7 @@ int main(void) {
     printf("Enter the first string (max %d characters): ", MAX_STRING_LEN - 1);
     if (fgets(string_a, MAX_STRING_LEN, stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read the first string.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove trailing newline character if present
     string_a[strcspn(string_a, "\n")] = 0;
@@ -29,7 +29,7 @@ int main(void) {
     printf("Enter the second string (max %d characters): ", MAX_STRING_LEN - 1);
     if (fgets(string_b, MAX_STRING_LEN, stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read the second string.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
     // Remove trailing newline character if present
     string_b[strcspn(string_b, "\n")] = 0;

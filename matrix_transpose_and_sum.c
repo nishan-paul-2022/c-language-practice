@@ -18,7 +18,7 @@ int main(void) {
     printf("Enter the number of rows and columns (e.g., 3 4): ");
     if (scanf("%d %d", &rows, &cols) != 2) {
         fprintf(stderr, "Error: Invalid input for dimensions.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf
@@ -27,7 +27,7 @@ int main(void) {
     // Validate dimensions
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
         fprintf(stderr, "Error: Dimensions out of range. Rows: 1-%d, Cols: 1-%d\n", MAX_ROWS, MAX_COLS);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Declare a 2D array with Variable Length Arrays (VLA) feature (C99 standard)
@@ -41,7 +41,7 @@ int main(void) {
             printf("Element [%d][%d]: ", i, j);
             if (scanf("%d", &matrix[i][j]) != 1) {
                 fprintf(stderr, "Error: Invalid input for element [%d][%d].\n", i, j);
-                return EXIT_FAILURE;
+                return 0;
             }
         }
     }

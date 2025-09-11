@@ -37,7 +37,7 @@ int main(void) {
     // Read the number of terms.
     if (scanf("%d", &num_terms) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf.

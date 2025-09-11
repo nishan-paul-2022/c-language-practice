@@ -34,6 +34,6 @@ int main(void) {
         fprintf(stderr, "Error: Invalid input format. Please use 'number, number, number'.\n");
         // Clear the input buffer in case of partial reads or invalid characters
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
 }

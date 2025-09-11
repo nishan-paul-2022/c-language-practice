@@ -15,7 +15,7 @@ int main(void) {
     // Read the floating-point input.
     if (scanf("%lf", &input_value) != 1) {
         printf("Invalid input. Please enter a valid floating-point number.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Consume the newline character left by scanf.
@@ -35,7 +35,7 @@ int main(void) {
             // Read the secondary integer input.
             if (scanf("%d", &secondary_input) != 1) {
                 printf("Invalid secondary input.\n");
-                return EXIT_FAILURE;
+                return 0;
             }
             // Consume the newline character.
             while ((c = getchar()) != '\n' && c != EOF);

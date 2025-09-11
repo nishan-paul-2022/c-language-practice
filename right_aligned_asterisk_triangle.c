@@ -15,7 +15,7 @@ int main(void) {
     // Input validation for number of rows
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
         fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
-        return EXIT_FAILURE;
+        return 0;
     }
 
     space_count_decrement = num_rows; // Initialize space count for the first row

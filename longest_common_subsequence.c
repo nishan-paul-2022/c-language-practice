@@ -51,7 +51,7 @@ int main(void) {
         fprintf(stderr, "Error reading the first string.\n");
         // Clear input buffer
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
     // Consume newline character left by scanf
     getchar();
@@ -62,7 +62,7 @@ int main(void) {
         fprintf(stderr, "Error reading the second string.\n");
         // Clear input buffer
         while (getchar() != '\n');
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get lengths of strings

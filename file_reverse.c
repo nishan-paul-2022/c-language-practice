@@ -17,7 +17,7 @@ int main(void) {
     input_file = fopen("FH file.txt", "r");
     if (input_file == NULL) {
         perror("Error opening input file FH file.txt");
-        return EXIT_FAILURE;
+        return 0;
     } else {
         printf("Input file FH file.txt opened successfully for reading.\n");
     }
@@ -26,7 +26,7 @@ int main(void) {
     if (fseek(input_file, 0, SEEK_END) != 0) {
         perror("Error seeking to end of input file");
         fclose(input_file);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Get the current position, which is the file size
@@ -34,7 +34,7 @@ int main(void) {
     if (file_size == -1) {
         perror("Error getting file size");
         fclose(input_file);
-        return EXIT_FAILURE;
+        return 0;
     }
 
     // Open the output file for writing
@@ -42,7 +42,7 @@ int main(void) {
     if (output_file == NULL) {
         perror("Error opening output file FH file 1.txt");
         fclose(input_file);
-        return EXIT_FAILURE;
+        return 0;
     } else {
         printf("Output file FH file 1.txt opened successfully for writing.\n");
     }
@@ -55,7 +55,7 @@ int main(void) {
             perror("Error seeking within input file");
             fclose(input_file);
             fclose(output_file);
-            return EXIT_FAILURE;
+            return 0;
         }
 
         // Read the character at the current position
@@ -66,7 +66,7 @@ int main(void) {
                 perror("Error reading character from input file");
                 fclose(input_file);
                 fclose(output_file);
-                return EXIT_FAILURE;
+                return 0;
             }
         }
 
@@ -75,7 +75,7 @@ int main(void) {
             perror("Error writing character to output file");
             fclose(input_file);
             fclose(output_file);
-            return EXIT_FAILURE;
+            return 0;
         }
     }
 
