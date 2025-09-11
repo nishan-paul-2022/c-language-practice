@@ -7,21 +7,17 @@
 #include <stdlib.h>
 
 int main(void) {
-    int num_rows;
-    char start_char;
-    char current_char;
-
-    // Get number of rows
     printf("Enter the number of rows: ");
+    int num_rows;
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
         fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
         return 0;
     }
+    
+    while (getchar() != '\n'); // Consume newline character left by scanf
 
-    // Get starting character
     printf("Enter the starting character: ");
-    // Consume newline character left by scanf
-    while (getchar() != '\n');
+    char start_char;
     if (scanf("%c", &start_char) != 1) {
         fprintf(stderr, "Error: Invalid input for starting character.\n");
         return 0;
@@ -31,16 +27,17 @@ int main(void) {
     for (int row = 1; row <= num_rows; row++) {
         // Print leading spaces for right alignment
         for (int space = 1; space <= num_rows - row; space++) {
-            printf("  "); // Two spaces for better character spacing
+            printf("  ");
         }
 
-        current_char = start_char; // Reset character for each row
         // Print characters for current row
+        char current_char = start_char;
         for (int col = 1; col <= row; col++) {
-            printf(" %c", current_char); // Print character with leading space
-            current_char++; // Move to next character
+            printf(" %c", current_char);
+            current_char++;
         }
-        printf("\n"); // New line after each row
+
+        printf("\n");
     }
 
     return 0;

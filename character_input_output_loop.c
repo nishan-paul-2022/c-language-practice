@@ -7,17 +7,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int character_input; // Use int to properly handle EOF
+    int character_input;
 
     printf("Enter characters. Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to signal End-Of-File.\n");
 
-    // Read characters until EOF is encountered
-    // getchar() returns int to accommodate EOF (negative integer)
     while ((character_input = getchar()) != EOF) {
-        putchar(character_input); // Print character to standard output
+        putchar(character_input);
     }
 
-    printf("\nEnd of input detected.\n");
+    printf("\nEnd of file detected.\n");
 
     return 0;
 }
