@@ -7,12 +7,9 @@
     "kilocode.kilo-code",
     "pkief.material-icon-theme",
     "ms-vscode.cpptools",
-    "dbaeumer.vscode-eslint",
     "mhutchie.git-graph",
     "yzhang.markdown-all-in-one",
-    "csstools.postcss",
     "esbenp.prettier-vscode",
-    "jock.svg",
     "Codeium.codeium"
   ]
 }

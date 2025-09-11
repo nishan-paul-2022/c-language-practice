@@ -9,29 +9,24 @@
 #include <ctype.h>
 
 int main() {
-    char str[100]; // Buffer for input string
-    int i;
-    int len;
+    char str[100];
 
-    // Prompt user for input
-    printf("Enter any string: ");
     // Use fgets for safe string input
+    printf("Enter any string: ");
     if (fgets(str, sizeof(str), stdin) == NULL) {
         printf("Error reading input.\n");
         return 0;
     }
 
     // Remove trailing newline from fgets
-    len = strlen(str);
+    int len = strlen(str);
     if (len > 0 && str[len - 1] == '\n') {
         str[len - 1] = '\0';
-        len--; // Update length
+        len--;
     }
 
     // Capitalize first letter of each word
-    for (i = 0; i < len; i++) {
-        // Check if current character is start of word
-        // (first character or preceded by space)
+    for (int i = 0; i < len; i++) {
         if (i == 0 || str[i - 1] == ' ') {
             // Convert lowercase to uppercase
             if (str[i] >= 'a' && str[i] <= 'z') {
@@ -45,7 +40,6 @@ int main() {
         }
     }
 
-    // Print result
     printf("Modified string: %s\n", str);
 
     return 0;
