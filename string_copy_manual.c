@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char source_string[100];      // Source string to be copied
     char destination_string[100]; // Destination buffer for the copied string
     int i;

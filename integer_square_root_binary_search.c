@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int number;
     printf("Enter a non-negative integer to find its square root (0 to exit): ");
     while (scanf("%d", &number) == 1 && number >= 0) {

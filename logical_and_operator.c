@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int result; // Variable to store boolean result of logical expression
 
     // Evaluate logical expression: (5 >= 8) && (6 == 5)

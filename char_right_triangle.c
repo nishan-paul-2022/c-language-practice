@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_rows;           // Number of rows for triangle pattern
     int row_index;          // Row loop variable
     int col_index;          // Column loop variable

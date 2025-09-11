@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float first_number;  // First floating-point number input by user
     float second_number; // Second floating-point number input by user
     int sum_as_integer;  // Variable to store the sum after converting to integer

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int start_num, end_num;
     int current_num;
     int remainder;

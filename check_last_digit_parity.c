@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int test_case_index;
     char input_string[101]; // Input string buffer (max 100 chars + null terminator)

@@ -12,7 +12,7 @@ struct Student {
     char name[100];
 };
 
-int main() {
+int main(void) {
     int number_of_students;
 
     printf("Enter the number of students: ");

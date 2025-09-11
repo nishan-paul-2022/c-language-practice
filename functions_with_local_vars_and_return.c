@@ -37,7 +37,7 @@ CalculationResults perform_arithmetic_operations(double num1, double num2) {
     return results;
 }
 
-int main() {
+int main(void) {
     double value1, value2;
     CalculationResults calculation_results;
 

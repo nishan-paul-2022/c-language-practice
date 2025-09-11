@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int main() {
+int main(void) {
     int num_elements;           // Number of elements in the input array.
     int index;                  // General loop index.
     int outer_idx, inner_idx;   // Indices for nested loops.

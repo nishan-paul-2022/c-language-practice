@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float num1, num2;
 
     // Prompt user to enter two floating-point numbers separated by a comma

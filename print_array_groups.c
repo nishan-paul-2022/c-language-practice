@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_elements;
     int element_index;
     int num_groups;

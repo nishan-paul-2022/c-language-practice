@@ -13,7 +13,7 @@ struct Node {
     struct Node *next; // Pointer to the next node in a potential linked list
 };
 
-int main() {
+int main(void) {
     // Declare instances of the structure and pointers to structures
     struct Node node1;
     struct Node node2;

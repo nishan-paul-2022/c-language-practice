@@ -26,7 +26,7 @@ void demonstrate_static_variable() {
     printf("Local variable: %d, Static variable: %d\n", local_var, static_var);
 }
 
-int main() {
+int main(void) {
     printf("Demonstrating static variable behavior:\n");
     
     // Call the function multiple times to observe the static variable's persistence.

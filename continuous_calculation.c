@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int velocity, time, distance;
     
     printf("Continuous Distance Calculator\n");

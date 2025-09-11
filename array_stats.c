@@ -48,7 +48,7 @@ float calculate_average(int numbers[], int size) {
     return (float)sum / size;
 }
 
-int main() {
+int main(void) {
     int size;
 
     printf("Enter the number of elements in the array: ");

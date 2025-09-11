@@ -53,7 +53,7 @@ void distance_between_points() {
     printf("The distance between the two points is: %f\n", distance);
 }
 
-int main() {
+int main(void) {
     int choice;
     do {
         printf("\n\nChoose a calculation:\n");

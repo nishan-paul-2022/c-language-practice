@@ -13,7 +13,7 @@ struct example_structure {
     char string_value[100]; // A character array (string) member
 };
 
-int main() {
+int main(void) {
     // Declare an instance of the structure
     struct example_structure my_struct;
 

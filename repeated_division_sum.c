@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int current_value, divisor;
     int sum = 0;
     int loop_counter = 0; // To track loop iterations, though not strictly necessary for the calculation itself

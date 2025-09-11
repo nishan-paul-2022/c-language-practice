@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;
     const char *filename = "FH perror 1.txt";
 

@@ -13,7 +13,7 @@ void consume_newline() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-int main() {
+int main(void) {
     int number_to_print;    // The integer to print in each cell of the rectangle
     int num_rows;           // The number of rows for the rectangle
     int num_cols;           // The number of columns for the rectangle

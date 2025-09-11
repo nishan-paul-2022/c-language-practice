@@ -10,7 +10,7 @@
 #define MAX_FILENAME_LEN 100
 #define MAX_STRING_LEN 100
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;
     char filename[MAX_FILENAME_LEN];
     char input_string[MAX_STRING_LEN];

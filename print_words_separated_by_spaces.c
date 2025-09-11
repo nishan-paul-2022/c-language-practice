@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 256 // Define a reasonable buffer size for input strings
 
-int main() {
+int main(void) {
     char input_string[BUFFER_SIZE];
     int i, j;
 

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     int i, j;
     int count_monotonic_elements = 0;

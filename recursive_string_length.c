@@ -16,7 +16,7 @@ int recursive_string_length(const char *str) {
     }
 }
 
-int main() {
+int main(void) {
     char input_string[1000]; // Buffer to store user input
 
     printf("Enter a string: ");

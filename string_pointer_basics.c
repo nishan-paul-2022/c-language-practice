@@ -24,7 +24,7 @@ void demonstrate_string_pointer() {
     }
 }
 
-int main() {
+int main(void) {
     demonstrate_string_pointer(); // Call the function to demonstrate
     return 0;
 }

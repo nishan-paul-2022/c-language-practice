@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double x_value;         // The independent variable for the functions (x-axis).
     double y1_value_double; // The calculated value of the first function (exponential decay).
     double y2_value_double; // The calculated value of the second function (Gaussian-like).

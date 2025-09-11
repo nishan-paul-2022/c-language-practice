@@ -27,7 +27,7 @@ void reverse_string_recursive(char *str, int start, int end) {
     reverse_string_recursive(str, start + 1, end - 1);
 }
 
-int main() {
+int main(void) {
     char str[100]; // Buffer to hold the input string
     
     printf("Enter a string to reverse: ");

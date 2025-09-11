@@ -42,7 +42,7 @@ void output_records(Record *records_array, int count) {
     }
 }
 
-int main() {
+int main(void) {
     int number_of_records;
     Record *records_array; // Pointer to the dynamically allocated array of structures
 

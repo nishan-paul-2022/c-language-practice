@@ -60,7 +60,7 @@ int read_password(char pass_cpy[], int buffer_size) {
     return 0;
 }
 
-int main() {
+int main(void) {
     struct UserForm user_data;
     int password_input_status;
 

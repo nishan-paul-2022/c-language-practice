@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num, divisor, sum = 0;
 
     printf("Enter a number and a divisor: ");

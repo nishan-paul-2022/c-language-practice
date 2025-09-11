@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *input_file = NULL;
     FILE *mine_file = NULL; // Output file for calculated values
     FILE *output_file = NULL; // Reference file for verification

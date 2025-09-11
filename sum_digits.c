@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int input_number;       // The number entered by the user
     int original_number;    // To store the original number for display
     int sum_of_digits = 0;  // Accumulator for the sum of digits

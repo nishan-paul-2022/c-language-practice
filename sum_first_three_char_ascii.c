@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     char input_string[100]; // Buffer to store the input string
     int ascii_sum;          // Variable to store the sum of ASCII values

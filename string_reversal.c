@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int i;
 

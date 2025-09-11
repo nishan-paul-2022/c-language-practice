@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float principal_amount = 5000.0f; // Initial principal amount ($5000)
     int year = 0;                     // Year counter (0-10)
     float annual_interest_rate = 0.11f; // Annual interest rate (11%)

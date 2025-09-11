@@ -21,7 +21,7 @@ void reverse_array(int arr[], int size) {
     }
 }
 
-int main() {
+int main(void) {
     int numbers[ARRAY_SIZE];
     int index_to_access;
 

@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     int i;
 

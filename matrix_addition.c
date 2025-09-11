@@ -8,7 +8,7 @@
 #define ROWS 5 // Number of rows in the matrices
 #define COLS 5 // Number of columns in the matrices
 
-int main() {
+int main(void) {
     int matrix_a[ROWS][COLS]; // The first matrix
     int matrix_b[ROWS][COLS]; // The second matrix
     int sum_matrix[ROWS][COLS]; // Stores the element-wise sum

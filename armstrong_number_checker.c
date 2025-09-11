@@ -18,7 +18,7 @@ long long int integer_power(int base, int exponent) {
     return result;
 }
 
-int main() {
+int main(void) {
     int original_number;
     int temp_number;
     int num_digits = 0;

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     // Declare variables with descriptive names
     int hex_val1;
     int hex_val2;

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;
     char char_to_write = 's';
     int char_read; // Use int to correctly handle EOF

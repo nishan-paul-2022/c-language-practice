@@ -4,7 +4,7 @@
  * Purpose: Generates the Fibonacci sequence up to a specified number of terms using an iterative approach.
  * Topic: Iteration, Sequences, Basic Arithmetic
  */
-int main() {
+int main(void) {
     int num_terms;
     long long first_term = 0, second_term = 1; // Use long long for larger Fibonacci numbers
     long long next_term;

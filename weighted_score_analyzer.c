@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int num_elements;           // Number of data points for each score set.
     int index;                  // Loop index for iterating through arrays.
     float first_set[100];       // Array to store the first set of scores (assuming max 100 elements for safety).

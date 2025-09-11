@@ -25,7 +25,7 @@ int power_recursive(int base, int exponent) {
     }
 }
 
-int main() {
+int main(void) {
     int base, exponent, power_result; // Variables for base, exponent, and the result
 
     // Prompt the user to enter the base and exponent

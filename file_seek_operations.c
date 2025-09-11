@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;          // File pointer
     char input_buffer_s[100];       // Buffer for initial string input
     char input_buffer_t[100];       // Buffer for reading string from file

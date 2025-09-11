@@ -27,7 +27,7 @@ float fast_inverse_sqrt(float number) {
     return y;
 }
 
-int main() {
+int main(void) {
     float input_number;
     float result_fast, result_accurate;
 

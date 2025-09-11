@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int input_number; // The number up to which to calculate the sum
     int sum_result = 0; // Variable to store the sum, initialized to 0
 

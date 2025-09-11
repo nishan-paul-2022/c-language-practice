@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL; // File pointer
     long int file_size;    // Variable to store the file size
 

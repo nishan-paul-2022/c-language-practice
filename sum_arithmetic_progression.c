@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     long int n; // Number of terms to consider in the progression (actually n-1 terms are summed)
     long int current_sum; // Stores the sum of the progression

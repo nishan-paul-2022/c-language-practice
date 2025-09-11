@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double initial_cost;
     double depreciation_rate;
     double target_value;

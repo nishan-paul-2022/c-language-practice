@@ -10,7 +10,7 @@
 // and typically used on DOS/Windows systems. These have been removed for broader compatibility.
 // The calculation itself is a custom series and does not represent a standard mathematical series like e^x.
 
-int main() {
+int main(void) {
     int input_x;            // User input value, used as the base for powers.
     int loop_counter_i;
     int loop_counter_j;

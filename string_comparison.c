@@ -17,7 +17,7 @@ int compare_strings(const char str1[], const char str2[]) {
     return strcmp(str1, str2);
 }
 
-int main() {
+int main(void) {
     int buffer_size;
     char string1[256]; // Buffer for the first string
     char string2[256]; // Buffer for the second string

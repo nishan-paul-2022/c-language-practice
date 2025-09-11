@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;
     const char *first_part = "This is the first part of the text. ";
     const char *second_part = "This is the second part, appended.";

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Print a predefined string to the standard output
     printf("SO, WHAT'S THE PLAY RIGHT NOW ? DON'T KNOW YET, BRO.\n");
 

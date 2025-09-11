@@ -31,7 +31,7 @@ int is_prime(int num) {
     return 1; // Prime
 }
 
-int main() {
+int main(void) {
     int number;
 
     printf("Enter an integer: ");

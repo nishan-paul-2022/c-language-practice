@@ -14,7 +14,7 @@ long long int power_of_2(int exp) {
     return 1LL << exp; // Left shift 1 by exp bits (equivalent to 2^exp)
 }
 
-int main() {
+int main(void) {
     int n;
     char binary_string[65]; // Max 64 bits + null terminator
     int decimal_value;

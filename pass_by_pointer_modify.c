@@ -27,7 +27,7 @@ void modify_values_if_less_than_40(int *ptr_val1, int *ptr_val2) {
     }
 }
 
-int main() {
+int main(void) {
     int value1, value2;
     int original_value1, original_value2; // To store original values for comparison
 

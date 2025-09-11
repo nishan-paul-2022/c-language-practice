@@ -79,7 +79,7 @@ void generate_sorted_permutations(char str[]) {
 }
 
 // Driver program to test above function
-int main() {
+int main(void) {
     char input_string[100]; // Buffer to store user input
 
     printf("Enter a string: ");

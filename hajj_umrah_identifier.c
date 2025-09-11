@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char input_string[100]; // Buffer to store each input string
     int case_number = 1;    // Counter for case numbers
 

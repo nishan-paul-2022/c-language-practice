@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float input_float; // Floating-point number input by the user
     int integer_part;  // Integer part of the input float
     int last_digit;    // Last digit of the integer part

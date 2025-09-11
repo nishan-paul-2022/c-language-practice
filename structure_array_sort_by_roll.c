@@ -71,7 +71,7 @@ void sort_student_by_roll(struct student_info students[], int num_students) {
     }
 }
 
-int main() {
+int main(void) {
     int num_students; // Number of students
 
     // Prompt user for the number of students

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int n;
 
     // Prompt the user for input and validate it.

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int array[100];
 
     printf("Enter an integer: ");

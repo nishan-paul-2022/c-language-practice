@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_tests, i, x, y;
 
     printf("Enter the number of test cases: ");

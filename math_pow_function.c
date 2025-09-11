@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double base, exponent, result; // Stores the base, exponent, and the final result
 
     // Loop until the user enters 0 for the base to exit.

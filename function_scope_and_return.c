@@ -14,7 +14,7 @@ int get_fixed_value() {
     return local_value;
 }
 
-int main() {
+int main(void) {
     int local_value = 10; // A local variable within main
     int function_result;
 

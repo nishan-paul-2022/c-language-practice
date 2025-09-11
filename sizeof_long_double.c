@@ -16,7 +16,7 @@ void print_sizeof_long_double(long double *ptr) {
     printf("The size of a long double on this system is: %td bytes\n", diff);
 }
 
-int main() {
+int main(void) {
     long double sample_value; // A sample variable of type long double
 
     printf("Calculating the size of long double...\n");

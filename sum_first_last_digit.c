@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int number;
     int first_digit = 0;
     int last_digit;

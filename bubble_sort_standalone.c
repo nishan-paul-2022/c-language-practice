@@ -38,7 +38,7 @@ void print_array(int arr[], int size) {
     printf("\n");
 }
 
-int main() {
+int main(void) {
     int array_size;
 
     printf("Enter the size of the array: ");

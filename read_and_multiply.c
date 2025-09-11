@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int num1, num2;
     long long product; // Use long long for product to avoid potential overflow
 

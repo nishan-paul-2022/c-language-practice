@@ -7,7 +7,7 @@
 #include <string.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     char input_string[100]; // Increased buffer size for safety
     int str_length;

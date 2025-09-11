@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float rice_quantity_kg; 
     float sugar_quantity_kg;
     float rice_cost_per_kg = 16.75;

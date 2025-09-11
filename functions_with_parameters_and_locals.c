@@ -22,7 +22,7 @@ int calculate_product(int multiplier_val, int value_to_add) {
     return result;
 }
 
-int main() {
+int main(void) {
     int number1 = 5;
     int number2 = 12;
     int sum_result;

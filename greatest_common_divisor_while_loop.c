@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num1, num2; // Two integer numbers for which to find the GCD
     int current_divisor; // Variable to iterate downwards from the smaller number
 

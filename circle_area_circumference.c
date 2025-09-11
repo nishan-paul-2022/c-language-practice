@@ -8,7 +8,7 @@
 // Define PI constant for readability and precision
 #define PI 3.14159265358979323846
 
-int main() {
+int main(void) {
     float radius;
     float area;
     float circumference;

@@ -15,7 +15,7 @@ int increment_static_value() {
     return counter; // Return the incremented value
 }
 
-int main() {
+int main(void) {
     int result;
 
     printf("Demonstrating static variable behavior:\n");

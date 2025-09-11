@@ -10,7 +10,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-int main() {
+int main(void) {
     int max_angle;
     int angle;
     double radians, sin_val, cos_val;

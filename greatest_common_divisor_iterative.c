@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num1, num2; // Two integer numbers for which to find the GCD
     int larger_num; // Stores the larger of the two numbers
     int smaller_num; // Stores the smaller of the two numbers

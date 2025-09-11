@@ -19,7 +19,7 @@ int calculate_power_recursive(int base, int exponent) {
     }
 }
 
-int main() {
+int main(void) {
     int base_number;     // The base for the power calculation
     int exponent_number; // The exponent for the power calculation
     int result_power;    // Stores the calculated power

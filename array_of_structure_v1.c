@@ -12,7 +12,7 @@ struct Node {
     struct Node *next;
 };
 
-int main() {
+int main(void) {
     struct Node nodes[3];
     struct Node *node_pointer;
 

@@ -14,7 +14,7 @@ void consume_newline() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-int main() {
+int main(void) {
     char start_char_for_rows; // Starting character for rows
     char end_char_for_rows;   // Ending character for rows
     char end_char_for_cols;   // Ending character for columns

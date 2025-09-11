@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     double current_value;
     double sum_of_values = 0.0;
     int count = 0;

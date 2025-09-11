@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     double input_value;     // The initial floating-point input from the user.
     int scaled_value;       // The integer value derived from input_value / 10.
     int secondary_input;    // An integer input read based on the scaled_value.

@@ -60,7 +60,7 @@ void print_right_aligned_number_triangle(int num_rows) {
     printf("-------------------------------------\n");
 }
 
-int main() {
+int main(void) {
     int rows1, rows2, rows3;
     char char1, char2;
 

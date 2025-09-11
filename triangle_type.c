@@ -20,7 +20,7 @@ void check_triangle(int x, int y, int z, int case_num) {
     }
 }
 
-int main() {
+int main(void) {
     int num_tests, i, x, y, z;
 
     printf("Enter the number of test cases: ");

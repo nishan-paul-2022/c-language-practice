@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int main() {
+int main(void) {
     int T; // Number of test cases
     scanf("%d", &T);
 

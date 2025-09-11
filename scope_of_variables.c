@@ -18,7 +18,7 @@ void modify_variables(int local_var_param) {
     printf("Inside function: global_var = %d, local_var_param = %d\n", global_var, local_var_param);
 }
 
-int main() {
+int main(void) {
     // Local variable: accessible only within the main function.
     int local_var = 5;
 

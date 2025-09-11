@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int a = 10; // 0000 1010
     int b = 20; // 0001 0100
     char c = -60; // For demonstrating bitwise NOT

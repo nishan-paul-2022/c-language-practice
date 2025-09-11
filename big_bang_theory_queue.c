@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     long long int n_th_person; // The 1-indexed position of the person in the queue.
     long long int current_block_size = 1; // Number of times each person is repeated in the current block.
 

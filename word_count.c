@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     char input_line[1000]; // Buffer to store the input line
     char *token;           // Pointer to store each token (word)

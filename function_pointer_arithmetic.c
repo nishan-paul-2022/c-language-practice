@@ -18,7 +18,7 @@ int subtract_abs(int a, int b) {
     return abs(a - b);
 }
 
-int main() {
+int main(void) {
     int num1, num2, result; // Variables to hold input numbers and the result
 
     // Prompt user to enter two integers

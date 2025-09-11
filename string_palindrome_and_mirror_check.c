@@ -35,7 +35,7 @@ char get_mirrored_char(char c) {
     }
 }
 
-int main() {
+int main(void) {
     char input_string[10000];
     int string_length;
     int is_palindrome;

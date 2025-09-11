@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr = NULL;          // File pointer
     int input_int1;                 // First integer input
     int input_int2;                 // Second integer input

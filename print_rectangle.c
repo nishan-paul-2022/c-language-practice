@@ -12,7 +12,7 @@ void consume_newline() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-int main() {
+int main(void) {
     char pattern_char;      // The character to use for printing the rectangle
     int num_rows;           // The number of rows for the rectangle
     int num_cols;           // The number of columns for the rectangle

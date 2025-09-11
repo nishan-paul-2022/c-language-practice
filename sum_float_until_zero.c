@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     double input_number;     // Variable to store each floating-point number entered by the user.
     double current_sum = 0.0; // Variable to accumulate the sum of the numbers.
 

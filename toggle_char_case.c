@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_char; // Variable to store the input character
 
     // Read a single character from standard input

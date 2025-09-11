@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_asterisks; // The number of asterisks to print, as entered by the user.
     int i;
 

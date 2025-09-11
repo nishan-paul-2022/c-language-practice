@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     long long int num_test_cases; // Number of test cases
     long long int i;
 

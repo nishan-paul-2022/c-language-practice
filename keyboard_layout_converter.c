@@ -89,7 +89,7 @@ void initialize_mapping(char map[]) {
     map['C'] = 'Z';
 }
 
-int main() {
+int main(void) {
     char input_line[10001]; // Buffer to store input line, +1 for null terminator
     char char_map[256];     // Lookup table for character mapping
 

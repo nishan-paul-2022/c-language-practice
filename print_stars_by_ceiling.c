@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     float input_value;      // The floating-point number entered by the user
     int ceiling_value;      // The ceiling of the input_value
     int counter;

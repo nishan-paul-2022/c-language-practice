@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int number;
     const int limit = 20; // Define the upper limit for printing numbers.
 

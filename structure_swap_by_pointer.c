@@ -38,7 +38,7 @@ void swap_persons_by_age(struct Person *person1, struct Person *person2) {
     }
 }
 
-int main() {
+int main(void) {
     // Declare two Person structures and pointers to them
     struct Person person1;
     struct Person person2;

@@ -9,7 +9,7 @@
 // A small epsilon value for floating-point comparisons
 #define EPSILON 1e-9
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int i;
 

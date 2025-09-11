@@ -29,7 +29,7 @@ int calculate_pascal_value(int row, int col) {
     return calculate_pascal_value(row - 1, col) + calculate_pascal_value(row - 1, col - 1);
 }
 
-int main() {
+int main(void) {
     int num_rows; // The number of rows to print for Pascal's triangle
     int row_index; // Loop variable for rows
     int col_index; // Loop variable for columns

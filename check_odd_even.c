@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int test_case_index;
     int number_to_check; // Number to check for odd/even

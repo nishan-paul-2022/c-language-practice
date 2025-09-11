@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int num_elements; // Number of elements in the array
     int i, j;
     int temp_val;     // Temporary variable for swapping

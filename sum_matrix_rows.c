@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_rows;
     int row_index, col_index;
     double row_sum = 0.0; // Initialize sum for the current row

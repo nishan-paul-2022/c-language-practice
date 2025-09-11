@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int num_iterations; // Number of iterations to perform
     int i;
     int power_of_two;    // Stores 2 raised to the power of i

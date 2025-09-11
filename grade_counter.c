@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     double score;
     int count_A_plus = 0;
     int count_A = 0;

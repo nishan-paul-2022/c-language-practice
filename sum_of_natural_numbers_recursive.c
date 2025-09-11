@@ -18,7 +18,7 @@ int calculate_sum_recursive(int n) {
     }
 }
 
-int main() {
+int main(void) {
     int input_number; // The number up to which to calculate the sum
     int sum_result;   // Stores the calculated sum
 

@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float num_computers_sold; // Number of computers sold by the employee
     float computer_price;     // Price of a single computer
     float total_sales_money;  // Total money generated from sales

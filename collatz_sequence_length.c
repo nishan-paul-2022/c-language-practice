@@ -24,7 +24,7 @@ void calculate_collatz_length(int current_num, int *steps) {
     }
 }
 
-int main() {
+int main(void) {
     int start_range, end_range; // Range boundaries
     int current_number;         // Current number being processed
     int sequence_length;      // Length of Collatz sequence

@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int count_needed; // The number of perfect numbers the user wants to find.
     int current_number_to_check = 6; // Start checking for perfect numbers from 6 (the first perfect number).
     int sum_of_divisors; // Accumulator for the sum of proper divisors of current_number_to_check.

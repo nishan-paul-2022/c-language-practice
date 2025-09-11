@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int character_input; // Use int to properly handle EOF
 
     printf("Enter characters. Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to signal End-Of-File.\n");

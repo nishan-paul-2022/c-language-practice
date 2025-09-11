@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char dest_str[100] = "CUET";     // Destination string
     char src_str[100] = "CSE1604085"; // Source string
     char *str_ptr;                   // Pointer to character

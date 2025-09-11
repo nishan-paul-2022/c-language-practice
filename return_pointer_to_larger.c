@@ -25,7 +25,7 @@ int* find_larger_pointer(int *ptr_val1, int *ptr_val2) {
     }
 }
 
-int main() {
+int main(void) {
     int value1 = 10;
     int value2 = 20;
     int *larger_value_ptr = NULL; // Pointer to store the result

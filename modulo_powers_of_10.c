@@ -6,7 +6,7 @@
  *          up to the largest power of 10 less than the input number.
  * Topic: Loops, Modulo Operator, Powers of 10, Input Validation
  */
-int main() {
+int main(void) {
     int input_value;
     int remainder;
     long long current_power_of_10 = 10; // Start with 10^1

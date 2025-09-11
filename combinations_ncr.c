@@ -14,7 +14,7 @@ long long int calculate_factorial(int num) {
     return fact;
 }
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int case_number = 1; // Test case counter
 

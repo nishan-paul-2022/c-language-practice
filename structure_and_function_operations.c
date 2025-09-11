@@ -32,7 +32,7 @@ void print_numeric_data(NumericData *data) {
     printf("Result: Integer = %d, Float = %.2f\n", data->integer_part, data->float_part);
 }
 
-int main() {
+int main(void) {
     NumericData operand1, operand2, sum_result;
 
     // Initialize the first operand

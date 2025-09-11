@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_string[100]; // Buffer to store the input string
     int i;
 

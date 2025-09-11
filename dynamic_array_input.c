@@ -23,7 +23,7 @@ void read_integer_array(int arr[], int size) {
     }
 }
 
-int main() {
+int main(void) {
     int n; // Variable to store the size of the array
     int i;
 

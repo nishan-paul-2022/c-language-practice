@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     char char_variable; // Character variable
     char *char_pointer; // Pointer to character
 

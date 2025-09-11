@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double current_value;       // The current number read from input
     double maximum_value = 0.0; // Stores the maximum value encountered
     double minimum_value = 0.0; // Stores the minimum value encountered

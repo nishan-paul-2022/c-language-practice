@@ -40,7 +40,7 @@ int calculate_division_with_global(int num1, int num2) {
     return result;
 }
 
-int main() {
+int main(void) {
     int number1, number2;
     int product_result;
     int division_result;

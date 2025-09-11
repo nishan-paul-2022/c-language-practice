@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int x, y, z;
     printf("ENTER THE VALUE : \n");
     scanf("%d %d %d", &x, &y, &z);

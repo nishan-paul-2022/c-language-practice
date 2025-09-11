@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num1, num2; // Two integer numbers for which to find the LCM
     int smaller_num; // Stores smaller of two numbers
     int gcd_val; // Stores calculated GCD

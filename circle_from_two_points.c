@@ -11,7 +11,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-int main() {
+int main(void) {
     float x1, y1, x2, y2, radius, perimeter, area;
     
     printf("Circle Calculator from Two Points\n");

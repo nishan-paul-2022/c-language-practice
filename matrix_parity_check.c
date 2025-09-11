@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int n; // Size of the square matrix
 
     // Loop to process multiple matrices until n is 0

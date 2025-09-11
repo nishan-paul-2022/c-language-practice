@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char input_string[256]; // Use a reasonably sized buffer
     int string_length = 0;
     int i;

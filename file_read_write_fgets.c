@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     FILE *output_file_ptr = NULL; // Pointer for the output file
     FILE *input_file_ptr = NULL;  // Pointer for the input file
     char user_input_string[100];  // Buffer for user's string input

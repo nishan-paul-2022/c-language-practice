@@ -53,7 +53,7 @@ void Example5() {
     printf("This line has a lot of text\r                    \rJust this remains\n");
 }
 
-int main() {
+int main(void) {
     printf("Carriage Return Demonstration\n");
     printf("=============================\n\n");
     

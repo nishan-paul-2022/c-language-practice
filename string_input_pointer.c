@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char input_buffer[100]; // Buffer to store the input string
     char *string_ptr = input_buffer; // Pointer to the beginning of the buffer
     

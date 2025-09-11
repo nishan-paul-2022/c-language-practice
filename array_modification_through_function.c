@@ -21,7 +21,7 @@ int modify_first_element(int data_array[], int array_size) {
     return data_array[0];
 }
 
-int main() {
+int main(void) {
     int data_array[3] = {1, 2, 3};
     int function_return_value;
 

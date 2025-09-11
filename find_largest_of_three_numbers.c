@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num1, num2, num3; // Three integer numbers to compare
     int largest_of_two;   // Stores the largest of the first two numbers
     int largest_number;   // Stores the overall largest number

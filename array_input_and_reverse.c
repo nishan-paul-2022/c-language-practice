@@ -26,7 +26,7 @@ void reverse_array(int arr[], int size) {
     }
 }
 
-int main() {
+int main(void) {
     int numbers[MAX_ARRAY_SIZE];
     int count = 0; // To keep track of the number of elements entered
     int input_value;

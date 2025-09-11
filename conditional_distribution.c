@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_tests, i, value;
     
     printf("Conditional Distribution Calculator\n");

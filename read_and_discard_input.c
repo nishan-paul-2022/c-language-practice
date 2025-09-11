@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char input_buffer[11]; // Buffer to store the input string. Size 10 for characters + 1 for null terminator.
 
     // Read input using a specific scanf format:

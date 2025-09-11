@@ -16,7 +16,7 @@ typedef struct {
     char area[10];
 } StudentData;
 
-int main() {
+int main(void) {
     FILE *file_ptr;
     StudentData data_to_write = {"nishan", "cuet", "cse", "16", "ai"};
     StudentData data_read;

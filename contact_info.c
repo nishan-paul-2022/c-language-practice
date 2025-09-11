@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     printf("Contact Information:\n");
     printf("1: Name: Nishan Paul\n");
     printf("2: Address: 6/3, Nayapaltan\n");

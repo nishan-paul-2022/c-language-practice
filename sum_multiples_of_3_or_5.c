@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int sum_of_multiples = 0; // Variable to store the sum
     int limit = 1000;         // The upper limit (exclusive) for numbers to consider
 

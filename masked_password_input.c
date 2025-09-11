@@ -68,7 +68,7 @@ int read_password_masked(char password[], int max_len) {
     return 0;
 }
 
-int main() {
+int main(void) {
     char user_password[100]; // Buffer to store password
 
     if (read_password_masked(user_password, sizeof(user_password)) == 0) {

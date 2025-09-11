@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     long double value;
 
     printf("Enter a long double-precision floating-point number: ");

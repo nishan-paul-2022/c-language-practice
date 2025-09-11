@@ -18,7 +18,7 @@ int sum_natural_numbers(int n) {
     return n + sum_natural_numbers(n - 1);
 }
 
-int main() {
+int main(void) {
     int n; // The number up to which natural numbers are summed
 
     printf("Enter a positive integer to calculate the sum of natural numbers up to it: ");

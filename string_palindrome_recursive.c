@@ -40,7 +40,7 @@ int is_palindrome(const char str[]) {
     return is_palindrome_recursive_helper(str, 0, length - 1);
 }
 
-int main() {
+int main(void) {
     char input_string[100]; // Buffer to store the input string
 
     printf("Enter a string to check if it's a palindrome: ");

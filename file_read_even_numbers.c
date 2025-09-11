@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_pointer;
     unsigned long long int number;
     const char *filename = "bishal.txt";

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char str[100] = "BANGLADESH"; // Declare and initialize a character array (string)
     char *str_ptr;                // Declare a pointer to a character
 

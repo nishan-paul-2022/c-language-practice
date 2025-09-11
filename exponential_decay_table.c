@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int input_limit;        // User-defined limit for the outer loop
     int outer_loop_counter; // Counter for the outer loop
     float current_k;        // The value for which exp(-k) is calculated

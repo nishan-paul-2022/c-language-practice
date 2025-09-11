@@ -13,7 +13,7 @@ double double_value(double input_val) {
     return 2.0 * input_val;
 }
 
-int main() {
+int main(void) {
     double input_value;
     double doubled_value;
 

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int num_test_cases;         // Variable to store the total number of test cases.
     int test_case_index;
     char input_string[7];       // Buffer to store the input string (max 6 chars + null terminator).

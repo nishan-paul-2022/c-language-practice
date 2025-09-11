@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int numbers[5];
     int i;
     int is_ascending = 1;

@@ -11,7 +11,7 @@ void print_string_function(const char *text_string) {
     puts(text_string); // puts() prints the string followed by a newline character
 }
 
-int main() {
+int main(void) {
     // Declare and initialize a character array (string)
     char my_string[100] = "nishan paul cuet cse 16 batch";
 

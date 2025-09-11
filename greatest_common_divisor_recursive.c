@@ -17,7 +17,7 @@ int find_gcd_recursive(int num1, int num2) {
     return find_gcd_recursive(num2, num1 % num2);
 }
 
-int main() {
+int main(void) {
     int number1, number2; // Two integer numbers for which to find the GCD
     int gcd_result; // Stores the calculated GCD
 

@@ -93,7 +93,7 @@ void generate_sorted_permutations(char input_string[]) {
 }
 
 // Driver program to test the permutation generation function
-int main() {
+int main(void) {
     char input_string[] = "ACBC"; // Example string for permutation generation
     generate_sorted_permutations(input_string);
     return EXIT_SUCCESS;

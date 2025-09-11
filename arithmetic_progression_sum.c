@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_terms;
     long int current_term = 2; // First term
     long int total_sum = 0; // Running sum

@@ -7,7 +7,7 @@
 
 #define MAX_SIZE 100 // Maximum matrix size
 
-int main() {
+int main(void) {
     int matrix[MAX_SIZE][MAX_SIZE];
     int size, i, j;
     int main_diagonal_sum = 0;

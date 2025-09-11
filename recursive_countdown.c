@@ -27,7 +27,7 @@ void print_countdown_recursive() {
     printf("%d\n", counter);
 }
 
-int main() {
+int main(void) {
     printf("Starting countdown...\n");
     print_countdown_recursive(); // Initiate the recursive process
     printf("Countdown finished.\n");

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Declare variables of different data types
     short int short_int_var = 12345;          // A short integer
     long int long_int_var = 1234567891;       // A long integer

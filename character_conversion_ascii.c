@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_char1, input_char2; // Input characters
     char upper_char, lower_char;   // Converted characters
     int ascii_val1, ascii_val_upper, ascii_val2, ascii_val_lower; // ASCII values

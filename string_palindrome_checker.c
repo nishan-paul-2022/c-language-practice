@@ -30,7 +30,7 @@ int is_palindrome(const char *str) {
     return 1; // It's a palindrome
 }
 
-int main() {
+int main(void) {
     char input_string[BUFFER_SIZE];
     int continue_processing = 1; // Flag to control the loop
 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int input_number; // The integer number input by the user
     int extracted_digits; // Variable to store the extracted digits
     long long int power_of_10; // Represents 10, 100, 1000, etc. (using long long to prevent overflow)

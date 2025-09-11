@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     float coeff_a, coeff_b, coeff_c; // Coefficients of the quadratic equation
     float discriminant; // Discriminant (b*b - 4*a*c)
     float root_real_part, root_imaginary_part; // For complex roots

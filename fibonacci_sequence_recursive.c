@@ -23,7 +23,7 @@ int calculate_fibonacci_recursive(int n) {
     }
 }
 
-int main() {
+int main(void) {
     int num_terms;
 
     printf("Enter the number of Fibonacci terms to generate: ");

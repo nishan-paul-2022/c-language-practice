@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double base;         // The base number
     int exponent;        // The exponent
     double result = 1.0; // Initialize result to 1.0 for exponentiation

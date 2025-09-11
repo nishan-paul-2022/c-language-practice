@@ -80,7 +80,7 @@ void reconstruct_lcs_string(const char a[], int r, int c, const char directions[
     }
 }
 
-int main() {
+int main(void) {
     int num_test_cases;
     int test_case_num = 1;
     char str1[1000]; // Buffer for first string

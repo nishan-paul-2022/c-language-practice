@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     double score;
 
     printf("Enter scores (e.g., 85.5) or press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to exit.\n");

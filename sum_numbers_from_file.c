@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr;             // File pointer to manage the input file.
     long number;                // Variable to store each number read from the file.
     long total_sum = 0;         // Variable to accumulate the sum of numbers.

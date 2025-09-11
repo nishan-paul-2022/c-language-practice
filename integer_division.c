@@ -14,7 +14,7 @@ int divide(int a, int b) {
     }
 }
 
-int main() {
+int main(void) {
     int x, y, result;
 
     printf("Enter the dividend: ");

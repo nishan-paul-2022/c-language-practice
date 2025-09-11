@@ -16,7 +16,7 @@ void multiply_last_element_by_ten(int data_array[], int array_size) {
     data_array[array_size - 1] *= 10;
 }
 
-int main() {
+int main(void) {
     int array_size;
     int *data_array = NULL;
     int i;

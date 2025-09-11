@@ -44,7 +44,7 @@ int binary_search(int arr[], int size, int target) {
     return -1; // Element not found
 }
 
-int main() {
+int main(void) {
     int array_size;
     int *numbers;
     int target_number;

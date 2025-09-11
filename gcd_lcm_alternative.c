@@ -34,7 +34,7 @@ long int calculate_lcm(long int a, long int b, long int gcd) {
     return (abs_a / gcd) * abs_b; // Prevent potential overflow by dividing first
 }
 
-int main() {
+int main(void) {
     long int num1, num2;
     long int gcd_result, lcm_result;
 

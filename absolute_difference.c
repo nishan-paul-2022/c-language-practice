@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     long int x, y;
 
     printf("Enter two long integers (or non-integer to quit):\n");

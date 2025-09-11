@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int n_terms; // Number of terms for the harmonic series
     float sum_harmonic_series = 0.0; // Variable to store the sum of the series
     int i;

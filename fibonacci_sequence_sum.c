@@ -23,7 +23,7 @@ int calculate_fibonacci_term(int n) {
     return term;
 }
 
-int main() {
+int main(void) {
     int n;                  // The number of terms to calculate and sum
     int current_term_index;
     int fib_term;           // Stores the calculated Fibonacci term

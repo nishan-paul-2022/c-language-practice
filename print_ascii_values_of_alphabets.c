@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int char_code; // Loop variable to iterate through character codes
 
     // Loop from 'a' to 'z'. In C, characters are internally represented by their ASCII values,

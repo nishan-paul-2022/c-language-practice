@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int decimal_number;
     int binary_digits[32]; // Array to store binary digits (sufficient for 32-bit int)
     int i;

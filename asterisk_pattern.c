@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Part 1: Wide horizontal line (3 rows x 18 columns)
     for (int row_count = 0; row_count < 3; row_count++) {
         for (int col_count = 0; col_count < 18; col_count++) {

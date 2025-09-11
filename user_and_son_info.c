@@ -111,7 +111,7 @@ int read_date(struct BirthDate *date) {
     return 0;
 }
 
-int main() {
+int main(void) {
     struct UserForm user_data;
     struct SonInfo son_data;
     int password_input_status;

@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double input_number;
     double temp_number;
     int decimal_places;

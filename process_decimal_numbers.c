@@ -58,7 +58,7 @@ long long power_of_10(int exp) {
     return result;
 }
 
-int main() {
+int main(void) {
     double input_numbers[3];
     long long scaled_integers[3];
     long long max_decimal_places = 0;

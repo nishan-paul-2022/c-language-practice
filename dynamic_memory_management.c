@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int *allocated_memory = NULL; // Pointer to the dynamically allocated memory block
     int num_elements;             // Number of elements to allocate initially
     int index;                    // Loop index

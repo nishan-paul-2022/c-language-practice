@@ -42,7 +42,7 @@ void print_student_array(struct student_info students[], int num_students) {
     printf("\n");
 }
 
-int main() {
+int main(void) {
     int num_students; // Number of students
     int i;
 

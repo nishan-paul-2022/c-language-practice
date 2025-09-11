@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int x, y, z, temp;
 
     printf("Enter three integer values (x, y, z): ");

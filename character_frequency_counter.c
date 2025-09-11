@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases
     int case_num;       // Current test case number
 

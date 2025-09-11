@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     float x = 123.8765456;
     printf("%e\n", x);
     return 0;

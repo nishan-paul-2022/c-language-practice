@@ -21,7 +21,7 @@ typedef union {
     float float_val;   // Member to store a floating-point value.
 } UnionExample;
 
-int main() {
+int main(void) {
     // Declare an instance of the structure.
     StructExample struct_instance;
 

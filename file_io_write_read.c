@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *file_ptr;
     char char1, char2;
     char read_char1, read_char2;

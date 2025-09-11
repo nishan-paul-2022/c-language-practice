@@ -43,7 +43,7 @@ int count_character_occurrences(const char str[], int length) {
     return count;
 }
 
-int main() {
+int main(void) {
     char input_string[MAX_STRING_LENGTH];
     int string_length;
     int occurrence_count;

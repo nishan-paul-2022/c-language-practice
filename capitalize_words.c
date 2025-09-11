@@ -8,7 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char str[100];
 
     // Use fgets for safe string input

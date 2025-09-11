@@ -44,7 +44,7 @@ long long calculate_lcm(long long num1, long long num2, long long gcd_val) {
     return (long long)(product / gcd_val);
 }
 
-int main() {
+int main(void) {
     long long number1, number2;
     long long gcd_result, lcm_result;
 

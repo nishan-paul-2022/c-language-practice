@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char input_line[100000]; // Buffer to store the input line
     
     printf("Enter a line of text: ");

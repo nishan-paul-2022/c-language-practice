@@ -8,7 +8,7 @@
 #define MAX_WORDS 7
 #define MAX_WORD_LENGTH 50 // Increased buffer size for words
 
-int main() {
+int main(void) {
     // Original data
     char input_string[] = "nishan paul 12345 cuet cse 16 batch";
     char parsed_words[MAX_WORDS][MAX_WORD_LENGTH];

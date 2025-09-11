@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     char string1[100]; // First string
     char string2[100]; // Second string
     char concatenated_string[200]; // Buffer for the concatenated string (large enough for both)

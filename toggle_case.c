@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     char input_char;
     
     printf("Enter characters to toggle their case. Enter 'q' to quit.\n");

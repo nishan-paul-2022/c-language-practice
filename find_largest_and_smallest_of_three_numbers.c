@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num1, num2, num3;
     int largest_val; 
     int smallest_val;

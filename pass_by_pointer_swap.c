@@ -21,7 +21,7 @@ void swap(int *ptr1, int *ptr2) {
     *ptr2 = temp;
 }
 
-int main() {
+int main(void) {
     int num1, num2;
 
     printf("Enter two integers separated by a space (e.g., '10 20'):\n");

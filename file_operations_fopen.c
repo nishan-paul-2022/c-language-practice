@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     FILE *file_pointer; // File pointer to manage the file stream
     char filename[100];
     char mode[100];

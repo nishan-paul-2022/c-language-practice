@@ -16,7 +16,7 @@ int calculate_string_length(char str[]) {
     return i; // Return the count, which is the length of the string
 }
 
-int main() {
+int main(void) {
     int string_length;
     char input_string[256]; // Use a reasonably sized buffer
 

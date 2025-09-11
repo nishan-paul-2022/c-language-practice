@@ -9,7 +9,7 @@
 // If this line is commented out, the #else block will be executed.
 #define x puts("nishan paul\n") ;
 
-int main() {
+int main(void) {
 
     // Example of conditional compilation using #if, #elif, #else.
     // This block is currently commented out.

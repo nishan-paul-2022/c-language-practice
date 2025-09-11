@@ -43,7 +43,7 @@ const char* get_current_month_name(int month_num) {
     }
 }
 
-int main() {
+int main(void) {
     int month_number;
 
     printf("Enter a month number (1-12) to see the current and next month.\n");

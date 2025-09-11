@@ -22,7 +22,7 @@ int calculate_fibonacci_recursive(int n) {
     }
 }
 
-int main() {
+int main(void) {
     int input_number;
     int nth_fib_value;
     int sum_of_fibs = 0;

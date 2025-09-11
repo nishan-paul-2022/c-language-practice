@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_char;
 
     printf("Enter a single character to check its type: ");

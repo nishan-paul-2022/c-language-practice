@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_donations; // Number of donation entries to process
     int donation_amount; // Amount for each individual donation
     int total_donations = 0; // Accumulator for the total sum of donations

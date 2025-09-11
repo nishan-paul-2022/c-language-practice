@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     double units_consumed; // Variable to store the input units
     double total_cost;     // Variable to store the calculated total cost
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int i;
     double y_value;         // The value of the quadratic function for a given i
     double min_y = 40.0;    // Initialize minimum y to a large value (or a value from the range)

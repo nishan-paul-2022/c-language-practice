@@ -16,7 +16,7 @@
 // Parentheses around entire expression and arguments are crucial for correct expansion
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
-int main() {
+int main(void) {
     // Call macro 'PRINT_FLOAT' with float literal
     PRINT_FLOAT(2.6);
 

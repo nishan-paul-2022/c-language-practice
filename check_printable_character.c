@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     int input_value; // Integer input (ASCII value)
 
     // Continuously check input values

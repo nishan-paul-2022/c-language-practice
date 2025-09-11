@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int number;         // The base number for factorial calculation
     int k_value = 0;    // Represents 'k' in k-factorial (number of exclamation marks)
     int i;

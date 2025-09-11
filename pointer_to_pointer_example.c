@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int value = 10;         // An integer variable
     int *ptr_to_value;      // A pointer to an integer
     int **ptr_to_ptr;       // A pointer to a pointer to an integer

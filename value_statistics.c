@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     double value;
     double sum = 0.0;
     double highest_value = 0.0;

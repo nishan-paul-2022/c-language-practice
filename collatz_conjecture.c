@@ -18,7 +18,7 @@ void collatz_sequence(int n) {
     }
 }
 
-int main() {
+int main(void) {
     int n;
     printf("Enter a positive integer: ");
     scanf("%d", &n);

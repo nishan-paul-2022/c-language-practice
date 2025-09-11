@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int numbers[2000]; // Array to store input numbers
     int i;
     int j;

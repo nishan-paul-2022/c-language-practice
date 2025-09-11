@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     char input_file_path[] = "files/02-input.txt";
     char output_file_path[] = "files/02-output.txt";
 

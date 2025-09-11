@@ -6,7 +6,7 @@
  * Topic: Strings, Character Manipulation, Loops, Input/Output, Validation
  */
 
-int main() {
+int main(void) {
     char input_string[100]; // Buffer for the input string
     int string_length;
     int digit_sum = 0;

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     // Initialize a character array with a string.
     // The array size is 11, which is enough for "Nishan Paul" (10 characters)
     // plus the null terminator '\0'.

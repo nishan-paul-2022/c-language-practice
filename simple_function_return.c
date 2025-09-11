@@ -12,7 +12,7 @@ int multiply_by_ten(int input_value) {
     return input_value * 10;
 }
 
-int main() {
+int main(void) {
     int input_for_function = 4;
     int function_result;
 

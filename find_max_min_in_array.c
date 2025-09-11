@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_test_cases; // Number of test cases to process
     int numbers[5];      // Array to store 5 integers
     int max_val, min_val; // Variables to store the maximum and minimum values

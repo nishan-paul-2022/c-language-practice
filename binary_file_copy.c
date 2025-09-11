@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     char source_file_path[] = "files/01-img-a.jpg";
     char destination_file_path[] = "files/01-img-b.jpg";
 

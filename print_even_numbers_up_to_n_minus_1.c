@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int limit_value; // Variable to store the user-defined limit
     int current_even_number = 0; // Variable to store and print even numbers, initialized to 0
 

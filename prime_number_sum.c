@@ -22,7 +22,7 @@ int is_prime(int num) {
     return 1; // If no divisors found, it's prime
 }
 
-int main() {
+int main(void) {
     int rows, cols;
     int **matrix; // Pointer to pointer for dynamic 2D array
     int *prime_numbers = NULL; // Pointer to store prime numbers found

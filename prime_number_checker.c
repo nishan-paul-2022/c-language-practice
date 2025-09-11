@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     int number; // The integer number to check for primality
     int i;
     int is_prime = 1; // Flag: 1 means prime, 0 means not prime

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     double angle_rad; // Angle in radians for trigonometric functions
     double sine_value; // Value for inverse trigonometric functions
     double base; // Base for the power function

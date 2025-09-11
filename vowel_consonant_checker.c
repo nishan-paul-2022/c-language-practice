@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_char; // Variable to store the character input by the user
 
     // Prompt user for input

@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int num1, num2; // Two integer numbers for which to find the GCD
     int abs_num1, abs_num2; // Absolute values of num1 and num2
     int smaller_abs_num; // Stores the smaller of the two absolute numbers

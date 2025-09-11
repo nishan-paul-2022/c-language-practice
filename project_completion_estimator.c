@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int target_work_amount;
     int number_of_daily_progress_entries;
     int total_daily_progress;

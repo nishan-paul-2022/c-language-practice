@@ -15,7 +15,7 @@ void f() {
     printf("%d\n", x);
 }
 
-int main() {
+int main(void) {
     // Call function 'f', which will print value of 'x'
     f();
 

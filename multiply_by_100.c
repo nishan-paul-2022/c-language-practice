@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     double x, y;
 
     printf("Enter a value: ");

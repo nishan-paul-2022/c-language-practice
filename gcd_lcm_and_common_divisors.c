@@ -70,7 +70,7 @@ void list_common_divisors(long int num1, long int num2) {
     printf("\n");
 }
 
-int main() {
+int main(void) {
     long int num1, num2;
 
     // Prompt user to enter two integers

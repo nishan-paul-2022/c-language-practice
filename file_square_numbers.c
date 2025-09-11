@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *input_file_ptr = NULL;  // Pointer for the input file
     FILE *output_file_ptr = NULL; // Pointer for the output file
     int number;                   // Variable to store the number read from input file

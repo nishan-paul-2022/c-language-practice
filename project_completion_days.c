@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int total_project_work; // Total work units required for the project
     int num_workers;        // Number of workers
     int worker_capacity;    // Individual worker's daily capacity

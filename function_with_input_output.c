@@ -36,7 +36,7 @@ char process_numbers_and_return_char(int num1, int num2) {
     return 'D'; // Returning a fixed character as in the original code
 }
 
-int main() {
+int main(void) {
     int number1, number2;
     char returned_char;
 

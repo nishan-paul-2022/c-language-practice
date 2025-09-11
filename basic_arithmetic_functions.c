@@ -9,7 +9,7 @@
 int add(int num1, int num2);
 int subtract(int num1, int num2);
 
-int main() {
+int main(void) {
     int x = 10;
     int y = 20;
     int sum_result;

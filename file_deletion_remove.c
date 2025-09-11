@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int main() {
+int main(void) {
     const char *filename_to_remove = "ironman+Batman.jpg";
     int remove_status;
 

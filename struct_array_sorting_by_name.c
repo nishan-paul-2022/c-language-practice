@@ -84,7 +84,7 @@ void sort_records_by_name(Record records[], int num_records) {
 }
 
 // Main function to drive the program
-int main() {
+int main(void) {
     int num_records;
 
     printf("Enter the number of records: ");

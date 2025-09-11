@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     int input_char; // Use int to accommodate EOF
 
     printf("Enter a single character: ");

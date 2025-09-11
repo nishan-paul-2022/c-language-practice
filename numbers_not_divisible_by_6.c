@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int start_range, end_range; // Variables to store the start and end of the range
     int count_not_divisible = 0; // Counter for numbers not divisible by 6
     int current_number; // Loop variable for iterating through the range

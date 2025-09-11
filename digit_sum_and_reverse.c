@@ -44,7 +44,7 @@ long int reverse_number(long int num) {
     return sign * reversed_num; // Return the reversed number with its original sign
 }
 
-int main() {
+int main(void) {
     long int number;
     long int sum_of_digits;
     long int reversed_number;

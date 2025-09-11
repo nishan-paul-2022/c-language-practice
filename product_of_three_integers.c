@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int num_test_cases;
     int num1, num2, num3;
     long long int product; // Use long long to prevent potential overflow

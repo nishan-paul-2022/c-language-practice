@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Define 'p' as a type alias for 'char*' (pointer to character)
     // This makes it easier to declare multiple character pointers.
     typedef char* pointer_to_string;

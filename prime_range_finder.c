@@ -31,7 +31,7 @@ int is_prime(int num) {
     return 1; // Prime
 }
 
-int main() {
+int main(void) {
     int start_range, end_range;
 
     printf("Enter the start and end of the range (e.g., 1 to 100): ");

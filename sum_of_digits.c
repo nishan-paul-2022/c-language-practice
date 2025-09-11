@@ -4,7 +4,7 @@
  * Topic: Integer Manipulation, Loops
  */
 
-int main() {
+int main(void) {
     int number;
     int digit_sum = 0;
 

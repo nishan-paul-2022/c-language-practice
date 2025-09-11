@@ -16,7 +16,7 @@ void print_array(int rows, int cols, int arr[rows][cols]) {
     }
 }
 
-int main() {
+int main(void) {
     int r, c, i, j;
 
     printf("Enter the number of rows and columns: ");

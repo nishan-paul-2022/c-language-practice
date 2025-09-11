@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Declare and initialize a 2D array: 2 rows, 3 columns
     int matrix[2][3] = {
         {1, 2, 3},    // First row

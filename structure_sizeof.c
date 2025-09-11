@@ -16,7 +16,7 @@ typedef struct {
 // In a real-world scenario, 'teacher' might be a more specific alias if relevant.
 typedef int AliasInt;
 
-int main() {
+int main(void) {
     // Declare a variable using the integer type alias.
     AliasInt alias_value = 12;
 

@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_string[100]; // Input string buffer
     int vowels = 0;         // Vowel counter
     int consonants = 0;     // Consonant counter

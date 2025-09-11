@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     char encoded_string[100001]; // Buffer for input string, +1 for null terminator
     int repetition_count;
     int i;

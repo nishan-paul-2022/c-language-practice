@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     double input, sum = 0.0, average;
     int i, count = 10;
 

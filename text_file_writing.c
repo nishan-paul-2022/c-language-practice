@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     FILE *output_file_ptr = NULL;
     const char *string_to_write = "This is a sample string.";
     char char_to_write = '!';

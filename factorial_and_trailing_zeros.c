@@ -44,7 +44,7 @@ int count_trailing_zeros(unsigned long long num) {
     return count;
 }
 
-int main() {
+int main(void) {
     int number;
     unsigned long long factorial_result;
     int trailing_zeros_count;

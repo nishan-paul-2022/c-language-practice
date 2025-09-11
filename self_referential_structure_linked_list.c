@@ -40,7 +40,7 @@ void free_list(Node *head) {
     }
 }
 
-int main() {
+int main(void) {
     Node *head = NULL; // Initialize the head of the list to NULL
     Node *current = NULL;
 

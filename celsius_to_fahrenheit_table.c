@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     printf("Celsius\t\tFahrenheit\n");
     printf("-------\t\t----------\n");
 

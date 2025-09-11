@@ -37,7 +37,7 @@ int calculate_lcs_length(const char a[], const char b[], int m, int n) {
     }
 }
 
-int main() {
+int main(void) {
     char str1[1000]; // Buffer for first string
     char str2[1000]; // Buffer for second string
     int len1, len2;

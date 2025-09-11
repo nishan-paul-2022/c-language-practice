@@ -35,7 +35,7 @@ void perform_arithmetic_operations_via_pointers(double num1, double num2,
     }
 }
 
-int main() {
+int main(void) {
     double value1, value2;
     double result_sum, result_diff, result_prod, result_div;
 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     // Define a buffer size for the string.
     // Using a fixed size buffer, but dynamic allocation would be more robust for very large inputs.
     const int BUFFER_SIZE = 1024;

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     int max_len;
 
     // Prompt user for the maximum string length

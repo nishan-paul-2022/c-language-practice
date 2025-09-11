@@ -4,7 +4,7 @@
  * Purpose: Generates and prints a numerical pattern based on a loop with floating-point increments.
  * Topic: Floating-point arithmetic, Loops, Conditional Logic, Pattern Generation
  */
-int main() {
+int main(void) {
     float current_value; // Represents 'a' in the original code
     int integer_part;    // Represents 'b' in the original code
     float next_value;    // Represents 'f' in the original code

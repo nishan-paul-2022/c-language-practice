@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+int main(void) {
     char input_string[100]; // Buffer to store the input string
     int frequency[26] = {0}; // Array to store frequency of 'a' through 'z', initialized to 0
     int i;

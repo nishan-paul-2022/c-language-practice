@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int number_of_test_cases;
     int current_test_case = 0;
     

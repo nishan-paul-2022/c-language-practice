@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     int input_number;
     char input_string[100]; // Buffer for input string
     int exclamation_count = 0;

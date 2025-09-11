@@ -5,7 +5,7 @@
  * Topic: Iteration, Arithmetic Series, Squares, Input Validation
  */
 
-int main() {
+int main(void) {
     int input_n; // The number provided by the user, determining the range of odd numbers.
     int upper_odd_limit; // The largest odd number to consider (2*input_n - 1).
     long long sum_of_squares = 0; // Use long long to prevent overflow for larger sums.

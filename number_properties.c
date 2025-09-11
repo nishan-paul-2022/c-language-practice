@@ -49,7 +49,7 @@ int is_palindrome(int num) {
     return 1; // It's a palindrome if all compared characters matched
 }
 
-int main() {
+int main(void) {
     int input_number;
 
     printf("Enter a positive integer: ");

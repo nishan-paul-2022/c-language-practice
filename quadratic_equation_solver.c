@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(void) {
     float a, b, c; // Coefficients of the quadratic equation
     float discriminant; // Discriminant (b*b - 4*a*c)
     float root1, root2; // Variables to store the roots
