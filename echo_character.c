@@ -20,7 +20,7 @@ int main(void) {
             return EXIT_FAILURE;
         } else {
             printf("\nEnd of input reached.\n");
-            return EXIT_SUCCESS;
+            return 0;
         }
     }
 

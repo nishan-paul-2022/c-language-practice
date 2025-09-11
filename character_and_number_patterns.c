@@ -5,103 +5,88 @@
 
 #include <stdio.h>
 
-// Print right-aligned character triangle
-void print_right_aligned_char_triangle(int num_rows, char start_char) {
-    if (num_rows <= 0) return; // Handle invalid input
+int get_num_rows() {
+    printf("Enter the number of rows: ");
+    int num_rows;
+    if (scanf("%d", &num_rows) != 1) {
+        printf("Error: Invalid input for rows.\n");
+        return 0;
+    }
+    return num_rows;
+}
 
+char get_start_char() {
+    printf("Enter the starting character: ");
+    char start_char;
+    if (scanf(" %c", &start_char) != 1) { // Space before %c to consume leftover newline
+        printf("Error: Invalid input for character.\n");
+        return 0;
+    }
+    return start_char;
+}
+
+// Pattern 1: Right-aligned character triangle
+void print_right_aligned_char_triangle() {
     printf("--- Right-aligned Character Triangle ---\n");
+    
+    int num_rows = get_num_rows();
+    char start_char = get_start_char();
+
+    if (num_rows <= 0) return;
+
     for (int row = 1; row <= num_rows; row++) {
         char current_char = start_char;
-        // Print spaces for alignment
         for (int space = 1; space <= num_rows - row; space++) {
-            printf("  "); // Two spaces for visual separation
+            printf("  ");
         }
-        // Print characters for current row
         for (int col = 1; col <= row; col++) {
             printf("%c ", current_char++);
         }
         printf("\n");
     }
-    printf("--------------------------------------\n");
 }
 
-// Print left-aligned character triangle
-void print_left_aligned_char_triangle(int num_rows, char start_char) {
-    if (num_rows <= 0) return; // Handle invalid input
-
+// Pattern 2: Left-aligned character triangle
+void print_left_aligned_char_triangle() {
     printf("--- Left-aligned Character Triangle ---\n");
+
+    int num_rows = get_num_rows();
+    char start_char = get_start_char();
+
+    if (num_rows <= 0) return;
+
     for (int row = 1; row <= num_rows; row++) {
         char current_char = start_char;
-        // Print characters for current row
         for (int col = 1; col <= row; col++) {
             printf("%c", current_char++);
         }
         printf("\n");
     }
-    printf("-------------------------------------\n");
 }
 
-// Print right-aligned number triangle
-void print_right_aligned_number_triangle(int num_rows) {
-    if (num_rows <= 0) return; // Handle invalid input
-
+// Pattern 3: Right-aligned number triangle
+void print_right_aligned_number_triangle() {
     printf("--- Right-aligned Number Triangle ---\n");
+
+    int num_rows = get_num_rows();
+
+    if (num_rows <= 0) return;
+
     for (int row = 1; row <= num_rows; row++) {
-        // Print spaces for alignment
         for (int space = 1; space <= num_rows - row; space++) {
-            printf(" "); // Single space for alignment
+            printf(" ");
         }
-        // Print numbers for current row
         for (int col = 1; col <= row; col++) {
-            printf("%d ", row); // Print current row number
+            printf("%d ", row);
         }
         printf("\n");
     }
-    printf("-------------------------------------\n");
 }
 
 int main(void) {
-    int rows1, rows2, rows3;
-    char char1, char2;
-
-    // Pattern 1: Right-aligned character triangle
-    printf("--- Pattern 1 Configuration ---\n");
-    printf("Enter the number of rows for the first pattern: ");
-    if (scanf("%d", &rows1) != 1) {
-        printf("Error: Invalid input for rows.\n");
-        return 0;
-    }
-    printf("Enter the starting character: ");
-    if (scanf(" %c", &char1) != 1) { // Space before %c to consume leftover newline
-        printf("Error: Invalid input for character.\n");
-        return 0;
-    }
-
-    // Pattern 2: Left-aligned character triangle
-    printf("\n--- Pattern 2 Configuration ---\n");
-    printf("Enter the number of rows for the second pattern: ");
-    if (scanf("%d", &rows2) != 1) {
-        printf("Error: Invalid input for rows.\n");
-        return 0;
-    }
-    printf("Enter the starting character: ");
-    if (scanf(" %c", &char2) != 1) { // Space before %c
-        printf("Error: Invalid input for character.\n");
-        return 0;
-    }
-
-    // Pattern 3: Right-aligned number triangle
-    printf("\n--- Pattern 3 Configuration ---\n");
-    printf("Enter the number of rows for the third pattern: ");
-    if (scanf("%d", &rows3) != 1) {
-        printf("Error: Invalid input for rows.\n");
-        return 0;
-    }
-
-    // Print patterns
-    print_right_aligned_char_triangle(rows1, char1);
-    print_left_aligned_char_triangle(rows2, char2);
-    print_right_aligned_number_triangle(rows3);
+    print_right_aligned_char_triangle();
+    print_left_aligned_char_triangle();
+    print_right_aligned_number_triangle();
 
     return 0;
 }

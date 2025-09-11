@@ -78,5 +78,5 @@ int main(void) {
     free(records_array);
     records_array = NULL; // Set pointer to NULL after freeing to prevent dangling pointer issues
 
-    return EXIT_SUCCESS;
+    return 0;
 }

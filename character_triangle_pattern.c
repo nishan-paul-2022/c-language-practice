@@ -43,5 +43,5 @@ int main(void) {
         printf("\n"); // New line after each row
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }

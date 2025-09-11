@@ -33,5 +33,5 @@ int main(void) {
     // Close the file
     fclose(file_pointer);
 
-    return EXIT_SUCCESS;
+    return 0;
 }

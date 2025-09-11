@@ -74,7 +74,7 @@ int main(void) {
     if (read_password_masked(user_password, sizeof(user_password)) == 0) {
         printf("Password entered: %s\n", user_password); // Display entered password (for demonstration)
         // In a real application, you would compare this password, not display it
-        return EXIT_SUCCESS;
+        return 0;
     } else {
         fprintf(stderr, "Failed to read password.\n");
         return EXIT_FAILURE;

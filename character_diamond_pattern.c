@@ -7,20 +7,16 @@
 #include <stdlib.h>
 
 int main(void) {
-    int size;
-    char fill_char;
-
-    // Get diamond size
     printf("Enter the size of the diamond (number of rows in the upper half): ");
+    int size;
     if (scanf("%d", &size) != 1 || size <= 0) {
         fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
         return EXIT_FAILURE;
     }
 
-    // Get fill character
     printf("Enter the character to use for the diamond: ");
-    // Consume newline character left by scanf
-    while (getchar() != '\n');
+    char fill_char;
+    while (getchar() != '\n'); // Consume newline character left by scanf
     if (scanf("%c", &fill_char) != 1) {
         fprintf(stderr, "Error: Invalid input for fill character.\n");
         return EXIT_FAILURE;
@@ -52,5 +48,5 @@ int main(void) {
         printf("\n");
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }

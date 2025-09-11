@@ -6,12 +6,7 @@
 #include <stdio.h>
 
 int main(void) {
-    char sample_char = 'a'; // Character variable
-
-    // Print memory address of character variable
-    // %p format specifier prints pointer values
-    // Cast address to (void *) for compatibility with %p
-    printf("The memory address of 'sample_char' is: %p\n", (void *)&sample_char);
-
+    char c = 'a';
+    printf("memory address of 'c' is: %p\n", (void *)&c);
     return 0;
 }

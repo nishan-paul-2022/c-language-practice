@@ -97,5 +97,5 @@ int main(void) {
     }
 
     printf("\nExiting program.\n");
-    return EXIT_SUCCESS;
+    return 0;
 }

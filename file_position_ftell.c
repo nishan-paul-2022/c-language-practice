@@ -63,5 +63,5 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }

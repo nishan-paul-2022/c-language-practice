@@ -46,5 +46,5 @@ int main(void) {
         space_count++; // Increment space count for next row
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }

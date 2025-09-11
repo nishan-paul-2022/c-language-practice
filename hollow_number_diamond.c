@@ -68,5 +68,5 @@ int main(void) {
         printf("\n");     // Move to next line
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
