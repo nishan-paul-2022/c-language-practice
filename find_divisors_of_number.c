@@ -4,38 +4,34 @@
  */
 
 #include <stdio.h>
-#include <math.h>
 
-int main(void) {
-    int number; // The integer number for which to find divisors
-    int i;
-
-    printf("Enter a positive integer to find its divisors: ");
-    scanf("%d", &number);
-
-    // Handle edge cases
+// Function to find and print all positive divisors of a given integer.
+void find_and_print_divisors(int number) {
     if (number <= 0) {
-        printf("Divisors are typically defined for positive integers.\n");
-        return 0;
+        printf("Input must be a positive integer.\n");
+        return;
     }
 
     printf("Divisors of %d are: ", number);
 
-    // Iterate from 1 up to the square root of the number
-    for (i = 1; i * i <= number; i++) {
+    for (int i = 1; i * i <= number; i++) {
         if (number % i == 0) {
-            // If 'i' is a divisor, print 'i'
-            printf("%d", i);
-
-            // If 'i' and 'number/i' are different, then 'number/i' is also a divisor
-            // This avoids printing the same divisor twice for perfect squares (e.g., for 9, prints 3 only once)
+            printf("%d ", i); // Print the smaller divisor
             if (i * i != number) {
-                printf(" %d", number / i);
+                printf("%d ", number / i); // Print the larger divisor
             }
-            printf(" "); // Add a space after each divisor or pair
         }
     }
     printf("\n");
+}
+
+int main(void) {
+    int number;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
+
+    find_and_print_divisors(number);
 
     return 0;
 }

@@ -5,38 +5,39 @@
 
 #include <stdio.h>
 
-int main(void) {
-    float num1, num2;
-
-    // Prompt user to enter two floating-point numbers separated by a comma
+// Function to get input from the user
+void get_input(float *num1, float *num2) {
     printf("Enter two floating-point numbers separated by a comma (e.g., 10.5,20.3): ");
-    // Using a space in scanf format string to consume any whitespace including newline after first number
-    if (scanf("%f, %f", &num1, &num2) != 2) {
+    if (scanf("%f, %f", num1, num2) != 2) {
         printf("Invalid input. Please enter two numbers.\n");
-        return 0;
+        *num1 = 0; // Resetting to 0 to prevent using uninitialized values
+        *num2 = 0;
     }
+}
 
-    // Loop to repeatedly print results if both numbers are positive
-    // The original code's loop condition (x>0 && y>0) and goto made it an infinite loop
-    // if both numbers were positive. This version prints once.
+// Function to perform and display arithmetic operations
+void perform_operations(float num1, float num2) {
     printf("Results:\n");
-    // Display the sum of the two numbers
     printf("Sum: %.2f\n", num1 + num2);
-    // Display the difference of the two numbers
     printf("Difference: %.2f\n", num1 - num2);
-    // Display the product of the two numbers
     printf("Product: %.2f\n", num1 * num2);
 
-    // Check for division by zero before performing division
     if (num2 != 0) {
-        // Display the quotient of the two numbers
         printf("Quotient: %.2f\n", num1 / num2);
     } else {
         printf("Quotient: Division by zero is not allowed.\n");
     }
+}
 
-    // The original code had an "ERROR" print statement that was unreachable due to the goto.
-    // This version handles invalid input at the beginning.
+int main(void) {
+    float num1, num2;
+
+    get_input(&num1, &num2);
+
+    // Proceed only if input was valid (simplified check)
+    if (num1 != 0 || num2 != 0) {
+        perform_operations(num1, num2);
+    }
 
     return 0;
 }

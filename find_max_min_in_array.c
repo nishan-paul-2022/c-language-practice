@@ -5,44 +5,41 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases to process
-    int numbers[5];      // Array to store 5 integers
-    int max_val, min_val; // Variables to store the maximum and minimum values
+// Function to find the maximum and minimum values in an array
+void findMaxMin(int arr[], int size, int *max, int *min) {
+    *max = arr[0];
+    *min = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+        if (arr[i] < *min) {
+            *min = arr[i];
+        }
+    }
+}
 
-    // Prompt user to enter the number of test cases
+// Function to run the test cases
+void runTestCases() {
+    int num_test_cases;
     printf("Enter the number of test cases: ");
     scanf("%d", &num_test_cases); // Read the number of test cases
 
-    // Process each test case
     while (num_test_cases--) {
-        // Prompt user to enter 5 integers
+        int numbers[5];
         printf("Enter 5 integers separated by spaces: ");
         for (int i = 0; i < 5; i++) {
-            // Read an integer and consume the character immediately following it
-            // This helps in handling input where numbers might be separated by spaces or newlines
-            scanf("%d%*c", &numbers[i]); // Read each integer
+            scanf("%d", &numbers[i]); // Read each integer
         }
 
-        // Initialize max_val and min_val with the first element of the array
-        max_val = numbers[0];
-        min_val = numbers[0];
+        int max_val, min_val;
+        findMaxMin(numbers, 5, &max_val, &min_val);
 
-        // Iterate through the array to find the maximum and minimum values
-        for (int i = 1; i < 5; i++) {
-            // Update max_val if the current element is greater
-            if (numbers[i] > max_val) {
-                max_val = numbers[i];
-            }
-            // Update min_val if the current element is smaller
-            if (numbers[i] < min_val) {
-                min_val = numbers[i];
-            }
-        }
-
-        // Display the maximum and minimum values for the current test case
         printf("Maximum: %d, Minimum: %d\n", max_val, min_val);
     }
+}
 
+int main(void) {
+    runTestCases();
     return 0;
 }

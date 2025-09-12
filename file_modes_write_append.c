@@ -6,53 +6,61 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *file_ptr = NULL;
-    const char *first_part = "This is the first part of the text. ";
-    const char *second_part = "This is the second part, appended.";
-
-    // --- Demonstrate "w" mode (write) ---
-    // Open the file in write mode ("w"). This will create the file if it doesn't exist,
-    // or truncate (empty) it if it already exists
-    file_ptr = fopen("file_modes_example.txt", "w");
+int write_first_part(const char *filename, const char *text) {
+    FILE *file_ptr = fopen(filename, "w");
     if (file_ptr == NULL) {
         perror("Error opening file in 'w' mode");
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    // Write the first part of the text
-    if (fprintf(file_ptr, "%s", first_part) < 0) {
+    if (fprintf(file_ptr, "%s", text) < 0) {
         perror("Error writing first part to file");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
-    printf("Wrote first part using 'w' mode.\n");
 
-    // Close the file after writing in "w" mode
     fclose(file_ptr);
+    printf("Wrote first part using 'w' mode.\n");
+    return 0;
+}
 
-    // --- Demonstrate "a" mode (append) ---
-    // Open the file in append mode ("a"). This will create the file if it doesn't exist,
-    // or position the file pointer at the end of the file if it already exists
-    // Data written will be added to the end of the existing content
-    file_ptr = fopen("file_modes_example.txt", "a");
+int append_second_part(const char *filename, const char *text) {
+    FILE *file_ptr = fopen(filename, "a");
     if (file_ptr == NULL) {
         perror("Error opening file in 'a' mode");
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    // Write the second part of the text
-    if (fprintf(file_ptr, "%s", second_part) < 0) {
+    if (fprintf(file_ptr, "%s", text) < 0) {
         perror("Error writing second part to file");
         fclose(file_ptr);
+        return EXIT_FAILURE;
+    }
+
+    fclose(file_ptr);
+    printf("Wrote second part using 'a' mode.\n");
+    return 0;
+}
+
+int demonstrate_file_modes() {
+    const char *filename = "files/15-input.txt";
+    const char *first_part = "A promise was once made, ";
+    const char *second_part = "that promise will be kept.\n";
+
+    if (write_first_part(filename, first_part)) {
         return 0;
     }
-    printf("Wrote second part using 'a' mode.\n");
 
-    // Close the file after writing in "a" mode
-    fclose(file_ptr);
+    if (append_second_part(filename, second_part)) {
+        return 0;
+    }
 
-    printf("File 'file_modes_example.txt' updated successfully.\n");
+    printf("File '%s' updated successfully.\n", filename);
 
+    return 0;
+}
+
+int main(void) {
+    demonstrate_file_modes();
     return 0;
 }

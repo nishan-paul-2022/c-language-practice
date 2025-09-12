@@ -6,31 +6,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *file_pointer;
-    unsigned long long int number;
-    const char *filename = "bishal.txt";
-
-    // Open the file in read mode
-    file_pointer = fopen(filename, "r");
-
-    // Check if the file was opened successfully
+// Open file for reading
+FILE* open_file(const char *filename) {
+    FILE *file_pointer = fopen(filename, "r");
     if (file_pointer == NULL) {
-        perror("Error opening file"); // Print error message if file opening fails
+        perror("Error opening file");
+    }
+    return file_pointer;
+}
+
+// Check if number is even
+int is_even(unsigned long long int number) {
+    return number % 2 == 0;
+}
+
+// Read numbers from file and print even ones
+void process_even_numbers(FILE *file_pointer, const char *filename) {
+    unsigned long long int number;
+    int found_even = 0;
+    
+    printf("Reading numbers from '%s' and printing even numbers:\n", filename);
+    
+    while (fscanf(file_pointer, "%llu", &number) == 1) {
+        if (is_even(number)) {
+            printf("%llu ", number);
+            found_even = 1;
+        }
+    }
+    
+    if (!found_even) {
+        printf("No even numbers found");
+    }
+    printf("\n");
+}
+
+int main(void) {
+    const char *filename = "bishal.txt";
+    FILE *file_pointer;
+
+    // Open file
+    file_pointer = open_file(filename);
+    if (file_pointer == NULL) {
         return 0;
     }
 
-    printf("Reading numbers from '%s' and printing even numbers:\n", filename);
+    // Process and print even numbers
+    process_even_numbers(file_pointer, filename);
 
-    // Read numbers from the file until End-Of-File (EOF) is reached
-    while (fscanf(file_pointer, "%llu", &number) != EOF) {
-        if (number % 2 == 0) {
-            printf("%llu ", number); // Print even numbers
-        }
-    }
-    printf("\n"); // Print a newline at the end for cleaner output
-
-    // Close the file
+    // Close file
     fclose(file_pointer);
 
     return 0;

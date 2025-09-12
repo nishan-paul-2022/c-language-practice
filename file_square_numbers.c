@@ -6,79 +6,79 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Populates the input file with numbers from 1 to 1000.
+int create_input_file(const char *filename) {
+    FILE *file = fopen(filename, "w");
+    if (file == NULL) {
+        perror("Error creating input file");
+        return 0;
+    }
+
+    for (int i = 1; i <= 1000; i++) {
+        fprintf(file, "%d\n", i);
+    }
+
+    if (fclose(file) != 0) {
+        perror("Error closing input file after writing");
+        return 0;
+    }
+    return 1;
+}
+
+// Reads numbers, calculates squares, and writes them to the output file.
+int process_files(const char *input_filename, const char *output_filename) {
+    FILE *input_file = fopen(input_filename, "r");
+    if (input_file == NULL) {
+        perror("Error opening input file for reading");
+        return 0;
+    }
+
+    FILE *output_file = fopen(output_filename, "w");
+    if (output_file == NULL) {
+        perror("Error opening output file for writing");
+        fclose(input_file);
+        return 0;
+    }
+
+    int number;
+    int square;
+    while (fscanf(input_file, "%d", &number) == 1) {
+        square = number * number;
+        fprintf(output_file, "%d\n", square);
+    }
+
+    if (!feof(input_file)) {
+        perror("Error reading from input file");
+        fclose(input_file);
+        fclose(output_file);
+        return 0;
+    }
+
+    if (fclose(input_file) != 0) {
+        perror("Error closing input file after reading");
+    }
+    if (fclose(output_file) != 0) {
+        perror("Error closing output file");
+        return 0;
+    }
+
+    return 1;
+}
+
 int main(void) {
-    FILE *input_file_ptr = NULL;  // Pointer for the input file
-    FILE *output_file_ptr = NULL; // Pointer for the output file
-    int number;                   // Variable to store the number read from input file
-    int square;                   // Variable to store the calculated square
-    int counter = 1;              // Counter for writing numbers to the input file
+    const char *input_filename = "input.txt";
+    const char *output_filename = "output.txt";
 
-    // --- Step 1: Create input.txt and populate it with numbers from 1 to 1000 ---
-
-    // Open input.txt in write mode ("w"). If the file exists, its content is truncated
-    input_file_ptr = fopen("input.txt", "w");
-    if (input_file_ptr == NULL) {
-        perror("Error opening input.txt for writing");
-        return 0;
+    if (!create_input_file(input_filename)) {
+        return 1; // Indicate failure
     }
 
-    // Write numbers from 1 to 1000 to input.txt
-    while (counter <= 1000) {
-        fprintf(input_file_ptr, "%d\n", counter);
-        counter++;
+    if (process_files(input_filename, output_filename)) {
+        printf("Square calculation complete. Results are in %s.\n", output_filename);
+    } else {
+        fprintf(stderr, "Failed to process files.\n");
+        return 1; // Indicate failure
     }
-
-    // Close the input file after writing
-    if (fclose(input_file_ptr) != 0) {
-        perror("Error closing input.txt after writing");
-        // Continue execution as the primary task is to process the file
-    }
-
-    // --- Step 2: Read from input.txt, calculate squares, and write to output.txt ---
-
-    // Open input.txt in read mode ("r")
-    input_file_ptr = fopen("input.txt", "r");
-    if (input_file_ptr == NULL) {
-        perror("Error opening input.txt for reading");
-        return 0;
-    }
-
-    // Open output.txt in write mode ("w")
-    output_file_ptr = fopen("output.txt", "w");
-    if (output_file_ptr == NULL) {
-        perror("Error opening output.txt for writing");
-        fclose(input_file_ptr); // Close the already opened input file
-        return 0;
-    }
-
-    // Read numbers from input.txt until the end of the file (EOF) is reached
-    // fscanf returns the number of items successfully read, or EOF on failure/end of file
-    while (fscanf(input_file_ptr, "%d", &number) == 1) {
-        square = number * number; // Calculate the square of the number
-        fprintf(output_file_ptr, "%d\n", square); // Write the square to output.txt
-    }
-
-    // Check if the loop terminated due to an error other than EOF
-    if (!feof(input_file_ptr)) {
-        // If it's not EOF, it means fscanf failed for some other reason (e.g., invalid data format)
-        perror("Error reading from input.txt");
-        // Clean up resources before exiting
-        fclose(input_file_ptr);
-        fclose(output_file_ptr);
-        return 0;
-    }
-
-    // Close both files after processing
-    if (fclose(input_file_ptr) != 0) {
-        perror("Error closing input.txt after reading");
-        // Continue to close output file
-    }
-    if (fclose(output_file_ptr) != 0) {
-        perror("Error closing output.txt");
-        return 0;
-    }
-
-    printf("Successfully processed numbers and wrote squares to output.txt.\n");
 
     return 0;
 }

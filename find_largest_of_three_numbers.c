@@ -5,25 +5,25 @@
 
 #include <stdio.h>
 
+// Returns the largest of three integer values.
+int find_largest(int a, int b, int c) {
+    int max = (a > b) ? a : b; // Find the largest between a and b
+    return (max > c) ? max : c; // Compare with c to find the overall largest
+}
+
 int main(void) {
-    int num1, num2, num3; // Three integer numbers to compare
-    int largest_of_two;   // Stores the largest of the first two numbers
-    int largest_number;   // Stores the overall largest number
+    int num1, num2, num3;
 
-    // Prompt user to enter three integers
-    printf("Enter three integers separated by spaces (e.g., 10 20 5). Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to stop.\n");
-    while (scanf("%d %d %d", &num1, &num2, &num3) == 3) { // Check if 3 items were successfully read
-        // Find the largest of the first two numbers using the ternary operator
-        largest_of_two = (num1 > num2) ? num1 : num2;
+    // Prompt for user input.
+    printf("Enter three integers (e.g., 10 20 5). Press Ctrl+D/Ctrl+Z to stop.\n");
 
-        // Compare the largest of the first two with the third number to find the overall largest
-        largest_number = (largest_of_two > num3) ? largest_of_two : num3;
-
-        // Display the largest number found
-        printf("\nThe largest number is: %d\n\n", largest_number);
+    // Loop until input fails or EOF is reached.
+    while (scanf("%d %d %d", &num1, &num2, &num3) == 3) {
+        // Find and display the largest number.
+        printf("The largest number is: %d\n\n", find_largest(num1, num2, num3));
     }
 
-    printf("Input stopped or invalid input received.\n");
+    printf("Input stopped.\n");
 
     return 0;
 }

@@ -6,84 +6,71 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 #define BUFFER_SIZE 100
 #define FILENAME "FH_advanced_mode.txt"
 
+// Function to write content to the file
+void writeToFile(const char *filename, const char *content) {
+    FILE *file = fopen(filename, "w+"); // Truncate or create and open for writing and reading
+    if (file == NULL) {
+        perror("Error opening file for writing");
+        return;
+    }
+
+    if (fprintf(file, "%s", content) < 0) {
+        perror("Error writing to file");
+    }
+
+    fclose(file);
+}
+
+// Function to read content from the file
+void readFromFile(const char *filename, char *buffer, int buffer_size) {
+    FILE *file = fopen(filename, "r"); // Open for reading
+    if (file == NULL) {
+        perror("Error opening file for reading");
+        buffer[0] = '\0'; // Ensure buffer is empty on error
+        return;
+    }
+
+    if (fgets(buffer, buffer_size, file) == NULL) {
+        buffer[0] = '\0'; // Ensure buffer is empty if read fails
+    }
+
+    fclose(file);
+}
+
 int main(void) {
-    FILE *file_write_read;
     char input_buffer[BUFFER_SIZE];
     char read_buffer[BUFFER_SIZE];
 
     // Prompt user for input
-    printf("Enter a string (at least 5 characters) to write to the file: ");
-    
-    // Read input safely using fgets
+    printf("Enter a string to write to the file: ");
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return 0; 
+        return 1;
     }
 
-    // Open the file in "w+" mode (write and read)
-    // "w+" truncates the file to zero length if it exists, or creates it if it doesn't.
-    // It allows both writing and reading.
-    file_write_read = fopen(FILENAME, "w+");
-    if (file_write_read == NULL) {
-        perror("Error opening file in 'w+' mode");
-        return 0; // Indicate file opening error
-    }
+    // Write the user input to the file
+    writeToFile(FILENAME, input_buffer);
 
-    // Write the input string to the file.
-    // fprintf writes the string. Since the mode is "w+", writing starts at the beginning.
-    if (fprintf(file_write_read, "%s", input_buffer) < 0) {
-        perror("Error writing to file");
-        fclose(file_write_read);
-        return 0;
-    }
+    // Read the content back from the file
+    readFromFile(FILENAME, read_buffer, BUFFER_SIZE);
 
-    // To read from the beginning of the file after writing, we need to reposition the file pointer.
-    // "w+" mode positions the pointer at the beginning for writing, but after writing,
-    // it's good practice to explicitly seek to the beginning for reading.
-    if (fseek(file_write_read, 0, SEEK_SET) != 0) {
-        perror("Error seeking to beginning of file for reading");
-        fclose(file_write_read);
-        return 0;
-    }
+    // Check if the read was successful and the string is long enough
+    if (read_buffer[0] != '\0') {
+        printf("Content read from file: %s", read_buffer);
 
-    // Read from the file up to the first newline character or until the buffer is full.
-    // The original code used "%[^\n]", which reads characters until a newline is encountered.
-    // Using fgets is generally safer and more robust for reading lines.
-    if (fgets(read_buffer, BUFFER_SIZE, file_write_read) == NULL) {
-        // If the file is empty or an error occurred during read
-        if (feof(file_write_read)) {
-            printf("File '%s' is empty or no data to read.\n", FILENAME);
+        // Print a substring if the string is long enough
+        if (strlen(read_buffer) > 5) {
+            printf("Substring (from 6th character): %s", read_buffer + 5);
         } else {
-            perror("Error reading from file");
+            printf("String is too short to create a substring from the 6th character.\n");
         }
-        fclose(file_write_read);
-        return 0;
-    }
-
-    // Print a substring of the content read from the file.
-    // The original code printed `c2+5`, which means skipping the first 5 characters.
-    // We need to ensure the string is long enough to avoid issues.
-    // Let's check the length before printing the substring.
-    int len = 0;
-    while (read_buffer[len] != '\0' && len < BUFFER_SIZE) {
-        len++;
-    }
-
-    if (len > 5) { // Ensure there are at least 6 characters to print from index 5 onwards
-        printf("Substring (from 6th character): %s", read_buffer + 5);
     } else {
-        printf("The string read from the file is too short to print a substring from the 6th character.\n");
-    }
-
-    // Close the file
-    if (fclose(file_write_read) != 0) {
-        perror("Error closing file");
-        return 0;
+        printf("Failed to read from file or file is empty.\n");
     }
 
     return 0;

@@ -10,47 +10,64 @@
 #define FILENAME "FH_feof.txt"
 #define BUFFER_SIZE 100
 
-int main(void) {
-    FILE *file_handle;
-    char line_buffer[BUFFER_SIZE];
-
-    // Open the file in read mode
-    file_handle = fopen(FILENAME, "r");
+// Open file for reading
+FILE* open_file_for_reading(const char *filename) {
+    FILE *file_handle = fopen(filename, "r");
     if (file_handle == NULL) {
         perror("Error opening file for reading");
-        // If the file doesn't exist, feof() will be true immediately after opening
-        // A more robust check would be to ensure the file exists or handle this case
-        // For this example, we assume the file might be empty or non-existent
-        // If it's non-existent, fopen returns NULL, and we exit
-        return 0;
     }
+    return file_handle;
+}
 
-    // --- Corrected approach for reading a file line by line ---
-    // The standard and safer way to read a file line by line is to check
-    // the return value of fgets(). fgets() returns NULL when it encounters
-    // an error or when the end of the file is reached before any characters
-    // are read
-
+// Read and print file content line by line
+void read_and_print_file(FILE *file_handle) {
+    char line_buffer[BUFFER_SIZE];
+    
     printf("--- File Content ---\n");
-    // Loop while fgets successfully reads a line
+    
+    // Read lines using fgets until end of file
     while (fgets(line_buffer, BUFFER_SIZE, file_handle) != NULL) {
-        printf("%s", line_buffer); // Print the line read (fgets includes the newline)
+        printf("%s", line_buffer); // fgets includes newline
     }
+    
     printf("--- End of File Content ---\n");
+}
 
-    // After the loop, feof() can be checked to see if the loop terminated
-    // specifically because the end of the file was reached
-    // feof() returns non-zero (true) if the end-of-file indicator is set
+// Check and report file reading status
+void check_file_status(FILE *file_handle) {
     if (feof(file_handle)) {
         printf("End of file reached successfully.\n");
     } else {
-        // This might happen if fgets failed for a reason other than EOF (e.g., read error)
         perror("An error occurred during file reading");
     }
+}
 
-    // Close the file
+// Close file with error checking
+int close_file_safely(FILE *file_handle) {
     if (fclose(file_handle) != 0) {
         perror("Error closing file");
+        return -1;
+    }
+    return 0;
+}
+
+int main(void) {
+    FILE *file_handle;
+
+    // Open file
+    file_handle = open_file_for_reading(FILENAME);
+    if (file_handle == NULL) {
+        return 0;
+    }
+
+    // Read and print file content
+    read_and_print_file(file_handle);
+
+    // Check file reading status
+    check_file_status(file_handle);
+
+    // Close file
+    if (close_file_safely(file_handle) != 0) {
         return 0;
     }
 

@@ -7,98 +7,129 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
-    FILE *file_ptr = NULL;          // File pointer
-    int input_int1;                 // First integer input
-    int input_int2;                 // Second integer input
-    char input_string[100];         // String input
-    char formatted_string[256];     // Buffer to hold formatted string for writing
-    char read_string[100];          // Buffer to read string from file
-    long int offset = 5;            // Offset for fseek
+#define FILENAME "FH fseek.txt"
+#define STRING_SIZE 100
+#define FORMATTED_SIZE 256
 
-    // --- Input ---
+// Get user input
+int get_user_input(int *int1, int *int2, char *string) {
     printf("Enter an integer, another integer, and a string (e.g., 10 20 hello_world): ");
-    // Using scanf for integers and a single word string
-    // For strings with spaces, fgets would be more appropriate
-    if (scanf("%d %d %99s", &input_int1, &input_int2, input_string) != 3) {
+    if (scanf("%d %d %99s", int1, int2, string) != 3) {
         perror("Error reading input");
-        return 0;
+        return -1;
     }
-    // Consume the rest of the line, including the newline character
+    
+    // Clear input buffer
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
+    
+    return 0;
+}
 
-    // --- Formatting input into a string ---
-    // sprintf formats data into a string buffer
-    sprintf(formatted_string, "%d %d %s", input_int1, input_int2, input_string);
+// Format input data into string
+void format_data(char *buffer, int int1, int int2, const char *string) {
+    sprintf(buffer, "%d %d %s", int1, int2, string);
+}
 
-    // --- File Operations ---
-    // Open FH fseek.txt in read/write mode ("w+")
-    // "w+" truncates the file if it exists, or creates it if it doesn't
-    file_ptr = fopen("FH fseek.txt", "w+");
+// Open file in write/read mode
+FILE* open_file_write_read(const char *filename) {
+    FILE *file_ptr = fopen(filename, "w+");
     if (file_ptr == NULL) {
-        perror("Error opening FH fseek.txt");
-        return 0;
+        perror("Error opening file");
     }
+    return file_ptr;
+}
 
-    // Write the formatted string to the file
-    if (fputs(formatted_string, file_ptr) == EOF) {
-        perror("Error writing to FH fseek.txt");
-        fclose(file_ptr);
-        return 0;
+// Write string to file
+int write_to_file(FILE *file_ptr, const char *data) {
+    if (fputs(data, file_ptr) == EOF) {
+        perror("Error writing to file");
+        return -1;
     }
+    return 0;
+}
 
-    // --- Using fseek ---
-    // Move the file position indicator to 'offset' bytes from the beginning of the file (SEEK_SET)
-    // The original code had a syntax error here (missing whence argument)
+// Seek to specific position in file
+int seek_file_position(FILE *file_ptr, long offset) {
     if (fseek(file_ptr, offset, SEEK_SET) != 0) {
-        perror("Error seeking in FH fseek.txt");
-        fclose(file_ptr);
-        return 0;
+        perror("Error seeking in file");
+        return -1;
     }
+    return 0;
+}
 
-    // Read a string from the current file position until a newline character is encountered
-    // Note: The format string "%[^\n]" reads characters until a newline
-    // If the offset in fseek is not correctly placed or the data format doesn't match,
-    // this read operation might not yield the expected results
-    if (fscanf(file_ptr, "%99[^\n]", read_string) != 1) {
-        // Check if it's EOF or a format error
+// Read string from current file position
+int read_from_position(FILE *file_ptr, char *buffer, int size) {
+    if (fscanf(file_ptr, "%99[^\n]", buffer) != 1) {
         if (feof(file_ptr)) {
             fprintf(stderr, "Reached end of file or no matching data found after seeking.\n");
         } else {
-            perror("Error reading from FH fseek.txt after seeking");
+            perror("Error reading from file after seeking");
         }
-        fclose(file_ptr);
-        return 0;
+        return -1;
     }
+    return 0;
+}
 
-    // Print the string read from the file
-    printf("String read after fseek: %s\n", read_string);
+// Display read result
+void display_result(const char *buffer) {
+    printf("String read after fseek: %s\n", buffer);
+}
 
-    // --- Optional: Uncomment to test another fseek operation ---
-    /*
-    // Move the file position indicator to 10 bytes from the beginning
-    if (fseek(file_ptr, 10, SEEK_SET) != 0) {
-        perror("Error seeking in FH fseek.txt (second attempt)");
-        fclose(file_ptr);
-        return 0;
-    }
-    // Read again
-    if (fscanf(file_ptr, "%99[^\n]", read_string) != 1) {
-        if (feof(file_ptr)) {
-            fprintf(stderr, "Reached end of file or no matching data found after second seek.\n");
-        } else {
-            perror("Error reading from FH fseek.txt after second seeking");
-        }
-        fclose(file_ptr);
-        return 0;
-    }
-    printf("String read after second fseek: %s\n", read_string);
-    */
-
-    // Close the file
+// Close file safely
+int close_file_safely(FILE *file_ptr) {
     if (fclose(file_ptr) != 0) {
-        perror("Error closing FH fseek.txt");
+        perror("Error closing file");
+        return -1;
+    }
+    return 0;
+}
+
+int main(void) {
+    FILE *file_ptr = NULL;
+    int input_int1, input_int2;
+    char input_string[STRING_SIZE];
+    char formatted_string[FORMATTED_SIZE];
+    char read_string[STRING_SIZE];
+    long int offset = 5;
+
+    // Get user input
+    if (get_user_input(&input_int1, &input_int2, input_string) != 0) {
+        return 0;
+    }
+
+    // Format input data
+    format_data(formatted_string, input_int1, input_int2, input_string);
+
+    // Open file
+    file_ptr = open_file_write_read(FILENAME);
+    if (file_ptr == NULL) {
+        return 0;
+    }
+
+    // Write formatted string to file
+    if (write_to_file(file_ptr, formatted_string) != 0) {
+        fclose(file_ptr);
+        return 0;
+    }
+
+    // Seek to specific position
+    if (seek_file_position(file_ptr, offset) != 0) {
+        fclose(file_ptr);
+        return 0;
+    }
+
+    // Read from current position
+    if (read_from_position(file_ptr, read_string, STRING_SIZE) != 0) {
+        fclose(file_ptr);
+        return 0;
+    }
+
+    // Display result
+    display_result(read_string);
+
+    // Close file
+    if (close_file_safely(file_ptr) != 0) {
         return 0;
     }
 

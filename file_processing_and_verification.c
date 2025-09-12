@@ -6,89 +6,72 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *input_file = NULL;
-    FILE *mine_file = NULL; // Output file for calculated values
-    FILE *output_file = NULL; // Reference file for verification
-    FILE *mine_file_read = NULL; // For reading mine.txt again
-
-    int number_from_input;
-    int calculated_value;
-
-    // --- Part 1: Read from input.txt, calculate, write to mine.txt ---
-
-    // Open input file for reading
-    input_file = fopen("input.txt", "r");
+// Process input file and write calculated values to output file
+int process_input_file(void) {
+    FILE *input_file = fopen("input.txt", "r");
     if (input_file == NULL) {
         perror("Error opening input.txt for reading");
-        return 0;
+        return -1;
     }
 
-    // Open mine.txt for writing (truncates if exists)
-    mine_file = fopen("mine.txt", "w");
+    FILE *mine_file = fopen("mine.txt", "w");
     if (mine_file == NULL) {
         perror("Error opening mine.txt for writing");
-        fclose(input_file); // Close previously opened file
-        return 0;
+        fclose(input_file);
+        return -1;
     }
 
-    // Read integers from input file, calculate, print, and write to mine.txt
     printf("Processing input.txt:\n");
+    int number_from_input;
     while (fscanf(input_file, "%d", &number_from_input) == 1) {
         // Calculate m = n*n - 2*n + 1, which is (n-1)^2
-        calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1;
+        int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1;
 
-        // Print the calculated value to the console
         printf("  Input: %d, Calculated: %d\n", number_from_input, calculated_value);
 
-        // Write the calculated value to mine.txt
         if (fprintf(mine_file, "%d\n", calculated_value) < 0) {
             perror("Error writing to mine.txt");
             fclose(input_file);
             fclose(mine_file);
-            return 0;
+            return -1;
         }
     }
 
-    // Check for read errors after the loop
+    // Check for read errors
     if (ferror(input_file)) {
         perror("Error reading from input.txt");
         fclose(input_file);
         fclose(mine_file);
-        return 0;
+        return -1;
     }
 
-    // Close files after the first part
     fclose(input_file);
     fclose(mine_file);
+    return 0;
+}
 
-    // --- Part 2: Verify mine.txt against output.txt ---
-
-    // Open output.txt for reading (reference file)
-    output_file = fopen("output.txt", "r");
+// Verify mine.txt against output.txt
+int verify_files(void) {
+    FILE *output_file = fopen("output.txt", "r");
     if (output_file == NULL) {
         perror("Error opening output.txt for reading (reference file)");
-        // If output.txt doesn't exist, we can't verify. Treat as an error or skip verification.
-        // For this example, we'll treat it as an error as the original code implies its existence.
-        return 0;
+        return -1;
     }
 
-    // Open mine.txt again for reading to compare
-    mine_file_read = fopen("mine.txt", "r");
+    FILE *mine_file_read = fopen("mine.txt", "r");
     if (mine_file_read == NULL) {
         perror("Error opening mine.txt for reading (for comparison)");
-        fclose(output_file); // Close previously opened file
-        return 0;
+        fclose(output_file);
+        return -1;
     }
 
     printf("\nVerifying mine.txt against output.txt:\n");
     int val_output, val_mine;
-    int comparison_result = 0; // 0: ACCEPTED, -1: ERROR
+    int comparison_result = 0;
 
-    // Read values from both files and compare
+    // Read and compare values from both files
     while (fscanf(output_file, "%d", &val_output) == 1) {
         if (fscanf(mine_file_read, "%d", &val_mine) != 1) {
-            // If mine.txt has fewer numbers than output.txt
             fprintf(stderr, "  ERROR: Mismatch in number of entries. output.txt has more values than mine.txt.\n");
             comparison_result = -1;
             break;
@@ -97,34 +80,47 @@ int main(void) {
         if (val_output != val_mine) {
             fprintf(stderr, "  ERROR: Mismatch found. output.txt has %d, mine.txt has %d.\n", val_output, val_mine);
             comparison_result = -1;
-            // We can break here if we only need to report the first error,
-            // or continue to find all mismatches. Let's break on first error.
             break;
         }
     }
 
-    // Check if mine.txt had more numbers than output.txt after the loop
+    // Check if mine.txt has more numbers than output.txt
     if (comparison_result == 0 && fscanf(mine_file_read, "%d", &val_mine) == 1) {
         fprintf(stderr, "  ERROR: Mismatch in number of entries. mine.txt has more values than output.txt.\n");
         comparison_result = -1;
     }
 
-    // Check for read errors on either file after the loop
+    // Check for read errors
     if (ferror(output_file) || ferror(mine_file_read)) {
         perror("Error during file comparison read");
         comparison_result = -1;
     }
 
-    // Close files after comparison
     fclose(output_file);
     fclose(mine_file_read);
+    return comparison_result;
+}
 
-    // Report final result
-    if (comparison_result == 0) {
+// Display verification result
+void display_result(int result) {
+    if (result == 0) {
         printf("  ACCEPTED: All values match.\n");
     } else {
         printf("  ERROR: Verification failed.\n");
     }
+}
 
-    return comparison_result == 0 ? 0 : 1; // Return 0 for success, 1 for error
+int main(void) {
+    // Process input file and generate mine.txt
+    if (process_input_file() != 0) {
+        return 0;
+    }
+
+    // Verify mine.txt against output.txt
+    int verification_result = verify_files();
+    
+    // Display final result
+    display_result(verification_result);
+
+    return verification_result == 0 ? 0 : 1;
 }

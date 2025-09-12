@@ -4,58 +4,41 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-// Function that takes two integers, reads another integer from input,
-// calculates the product of their sum and the read integer, prints the product,
-// and returns a character.
+// Process two integers and return a character
 char process_numbers_and_return_char(int num1, int num2) {
     int multiplier;
     int sum = num1 + num2;
     int product;
 
-    // Read an additional integer from standard input within the function
-    printf("  (Inside function) Enter an integer to multiply with the sum: ");
+    printf("Enter an integer to multiply with the sum: "); // Prompt for multiplier
     if (scanf("%d", &multiplier) != 1) {
-        fprintf(stderr, "  (Inside function) Error: Invalid input for multiplier.\n");
-        // In a real application, you might want to handle this error more gracefully,
-        // perhaps by returning an error code or a specific character.
-        // For this example, we'll return a default error character.
-        return '?'; // Indicate an error
+        fprintf(stderr, "Error: Invalid input for multiplier.\n");
+        return '?'; // Error indicator
     }
-    // Consume any remaining characters on the line after the multiplier, including the newline
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Clear input buffer
 
-    // Calculate the product
-    product = sum * multiplier;
+    product = sum * multiplier; // Calculate product
 
-    // Print the product from within the function
-    printf("  (Inside function) Product of (sum * multiplier) is: %d\n", product);
+    printf("Product of (sum * multiplier) is: %d\n", product); // Show result
 
-    // Return a character
-    return 'D'; // Returning a fixed character as in the original code
+    return 'D'; // Return character
 }
 
 int main(void) {
     int number1, number2;
     char returned_char;
 
-    // Prompt user to enter two integers
-    printf("Enter two integers separated by a comma (e.g., 5, 10): ");
-    // Read two integers separated by a comma and validate input
+    printf("Enter two integers separated by a comma (e.g., 5, 10): "); // Prompt for input
     if (scanf("%d, %d", &number1, &number2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
-        return 0;
+        return 0; // Exit on input error
     }
-    // Consume any remaining characters on the line after the second integer, including the newline
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Clear input buffer
 
-    // Call the function, passing the two integers
-    // The function will prompt for more input and print its own output
-    returned_char = process_numbers_and_return_char(number1, number2);
+    returned_char = process_numbers_and_return_char(number1, number2); // Process numbers
 
-    // Display the character returned by the function
-    printf("Character returned by the function: %c\n", returned_char);
+    printf("Character returned by the function: %c\n", returned_char); // Show returned character
 
     return 0;
 }

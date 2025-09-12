@@ -7,8 +7,85 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
-    FILE *file_pointer; // File pointer to manage the file stream
+int get_filename_and_mode(char *filename, char *mode) {
+    int c;
+    
+    printf("Enter the filename: ");
+    if (scanf("%99s", filename) != 1) {
+        perror("Error reading filename");
+        return -1;
+    }
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    printf("Enter the file mode (e.g., 'w', 'a', 'r'): ");
+    if (scanf("%99s", mode) != 1) {
+        perror("Error reading file mode");
+        return -1;
+    }
+    while ((c = getchar()) != '\n' && c != EOF);
+    
+    return 0;
+}
+
+int get_data_inputs(char *input_string, char *input_char, int *input_int, float *input_float) {
+    int c;
+    
+    printf("Enter a string to write to the file: ");
+    if (fgets(input_string, 100, stdin) == NULL) {
+        perror("Error reading string");
+        return -1;
+    }
+    size_t len_string = strlen(input_string);
+    if (len_string > 0 && input_string[len_string - 1] == '\n') {
+        input_string[len_string - 1] = '\0';
+    }
+
+    printf("Enter a single character: ");
+    if (scanf(" %c", input_char) != 1) {
+        perror("Error reading character");
+        return -1;
+    }
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    printf("Enter an integer: ");
+    if (scanf("%d", input_int) != 1) {
+        perror("Error reading integer");
+        return -1;
+    }
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    printf("Enter a float: ");
+    if (scanf("%f", input_float) != 1) {
+        perror("Error reading float");
+        return -1;
+    }
+    while ((c = getchar()) != '\n' && c != EOF);
+    
+    return 0;
+}
+
+int write_data_to_file(const char *filename, const char *mode, const char *input_string, char input_char, int input_int, float input_float) {
+    FILE *file_pointer = fopen(filename, mode);
+    
+    if (file_pointer == NULL) {
+        perror("Error opening file");
+        return -1;
+    }
+
+    fprintf(file_pointer, "String: %s\n", input_string);
+    fprintf(file_pointer, "Character: %c\n", input_char);
+    fprintf(file_pointer, "Integer: %d\n", input_int);
+    fprintf(file_pointer, "Float: %f\n", input_float);
+
+    if (fclose(file_pointer) != 0) {
+        perror("Error closing file");
+        return -1;
+    }
+
+    return 0;
+}
+
+void process_file_operations() {
     char filename[100];
     char mode[100];
     char input_string[100];
@@ -16,90 +93,22 @@ int main(void) {
     int input_int;
     float input_float;
 
-    // Prompt user for filename
-    printf("Enter the filename: ");
-    if (scanf("%99s", filename) != 1) { // Read up to 99 chars, %s stops at whitespace
-        perror("Error reading filename");
-        return 0;
-    }
-    // Consume the rest of the line, including the newline character
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    // Prompt user for file mode
-    printf("Enter the file mode (e.g., 'w', 'a', 'r': ");
-    if (scanf("%99s", mode) != 1) { // Read up to 99 chars for mode
-        perror("Error reading file mode");
-        return 0;
-    }
-    // Consume the rest of the line, including the newline character
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    // Prompt user for data to write to the file (string)
-    printf("Enter a string to write to the file: ");
-    // For strings that can contain spaces, fgets is better
-    if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
-        perror("Error reading string");
-        return 0;
-    }
-    // Remove trailing newline character from fgets
-    size_t len_string = strlen(input_string);
-    if (len_string > 0 && input_string[len_string - 1] == '\n') {
-        input_string[len_string - 1] = '\0';
+    if (get_filename_and_mode(filename, mode) != 0) {
+        return;
     }
 
-    // Prompt user for a single character
-    printf("Enter a single character: ");
-    // Use scanf with a space to consume leading whitespace, including newlines
-    if (scanf(" %c", &input_char) != 1) {
-        perror("Error reading character");
-        return 0;
-    }
-    // Consume the rest of the line after reading the character
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    // Prompt user for an integer
-    printf("Enter an integer: ");
-    if (scanf("%d", &input_int) != 1) {
-        perror("Error reading integer");
-        return 0;
-    }
-    // Consume the rest of the line after reading the integer
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    // Prompt user for a float
-    printf("Enter a float: ");
-    if (scanf("%f", &input_float) != 1) {
-        perror("Error reading float");
-        return 0;
-    }
-    // Consume the rest of the line after reading the float
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    // Open the file
-    file_pointer = fopen(filename, mode);
-
-    // Check if the file was opened successfully
-    if (file_pointer == NULL) {
-        perror("Error opening file"); // Prints a system error message
-        return 0;
+    if (get_data_inputs(input_string, &input_char, &input_int, &input_float) != 0) {
+        return;
     }
 
-    // Write data to the file using fprintf
-    // fprintf is used for formatted output to a file stream
-    fprintf(file_pointer, "String: %s\n", input_string);
-    fprintf(file_pointer, "Character: %c\n", input_char);
-    fprintf(file_pointer, "Integer: %d\n", input_int);
-    fprintf(file_pointer, "Float: %f\n", input_float);
-
-    // Close the file
-    // fclose releases the resources associated with the file stream
-    if (fclose(file_pointer) != 0) {
-        perror("Error closing file");
-        return 0;
+    if (write_data_to_file(filename, mode, input_string, input_char, input_int, input_float) != 0) {
+        return;
     }
 
     printf("Data successfully written to '%s' in mode '%s'.\n", filename, mode);
+}
 
+int main(void) {
+    process_file_operations();
     return 0;
 }

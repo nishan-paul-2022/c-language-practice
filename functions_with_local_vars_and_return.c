@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure to hold multiple results from a function
+// Structure to hold multiple results from a function.
 typedef struct {
     double sum;
     double difference;
@@ -14,22 +14,17 @@ typedef struct {
     double division;
 } CalculationResults;
 
-// Function to perform arithmetic operations on two doubles.
-// Takes two doubles as input.
-// Returns a struct containing the sum, difference, product, and division.
-// Includes error handling for division by zero.
+// Performs arithmetic operations on two doubles.
 CalculationResults perform_arithmetic_operations(double num1, double num2) {
     CalculationResults results;
 
-    // Perform calculations
     results.sum = num1 + num2;
     results.difference = num1 - num2;
     results.product = num1 * num2;
 
-    // Check for division by zero
     if (num2 == 0.0) {
         fprintf(stderr, "Error: Division by zero attempted.\n");
-        results.division = 0.0; // Or some other indicator of error, like NaN if available
+        results.division = 0.0; // Indicate error.
     } else {
         results.division = num1 / num2;
     }
@@ -37,36 +32,32 @@ CalculationResults perform_arithmetic_operations(double num1, double num2) {
     return results;
 }
 
-int main(void) {
-    double value1, value2;
-    CalculationResults calculation_results;
-
-    // Prompt user to enter two double values
+void get_user_input(double *value1, double *value2) {
     printf("Enter two double values separated by a comma (e.g., 10.5, 5.2): ");
-    // Read two double values separated by a comma and validate input
-    if (scanf("%lf, %lf", &value1, &value2) != 2) {
+    if (scanf("%lf, %lf", value1, value2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two double values separated by a comma.\n");
-        return 0;
+        exit(1);
     }
-    // Consume any remaining characters on the line after the second double, including the newline
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Consume remaining characters.
+}
 
-    // Call the function to perform calculations
-    calculation_results = perform_arithmetic_operations(value1, value2);
-
-    // Display the sum result
-    printf("Sum: %.2lf\n", calculation_results.sum);
-    // Display the difference result
-    printf("Difference: %.2lf\n", calculation_results.difference);
-    // Display the product result
-    printf("Product: %.2lf\n", calculation_results.product);
-    // Check if division was successful before printing
-    if (value2 != 0.0) { // Check original input value for division by zero
-        // Display the division result
-        printf("Division: %.2lf\n", calculation_results.division);
+void print_results(CalculationResults results, double divisor) {
+    printf("Sum: %.2lf\n", results.sum);
+    printf("Difference: %.2lf\n", results.difference);
+    printf("Product: %.2lf\n", results.product);
+    if (divisor != 0.0) {
+        printf("Division: %.2lf\n", results.division);
     } else {
         printf("Division: Error (division by zero).\n");
     }
+}
+
+int main(void) {
+    double value1, value2;
+    
+    get_user_input(&value1, &value2);
+    CalculationResults calculation_results = perform_arithmetic_operations(value1, value2);
+    print_results(calculation_results, value2);
 
     return 0;
 }

@@ -6,56 +6,53 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int count_needed; // The number of perfect numbers the user wants to find.
-    int current_number_to_check = 6; // Start checking for perfect numbers from 6 (the first perfect number).
-    int sum_of_divisors; // Accumulator for the sum of proper divisors of current_number_to_check.
-    int divisor; // Loop variable to check for divisors.
-    int perfect_numbers_found = 0; // Counter for how many perfect numbers have been found.
-
-    // Prompt user to enter the number of perfect numbers to find
-    printf("Enter the number of perfect numbers to find: ");
-    // Read the desired count and validate it
-    if (scanf("%d", &count_needed) != 1) {
-        printf("Invalid input. Please enter an integer.\n");
+// Checks if a number is a perfect number.
+int is_perfect(int num) {
+    if (num <= 1) {
         return 0;
     }
 
-    // Ensure the input is positive
-    if (count_needed <= 0) {
-        printf("Please enter a positive integer to find perfect numbers.\n");
-        return 0;
-    }
-
-    printf("The first %d perfect numbers are:\n", count_needed);
-
-    // Find perfect numbers until we have found the desired count
-    // Loop until the desired number of perfect numbers have been found
-    while (perfect_numbers_found < count_needed) {
-        sum_of_divisors = 0; // Reset sum for each new number being checked
-
-        // Find all proper divisors of current_number_to_check and sum them
-        // We only need to check divisors up to half of the number
-        // Note: For efficiency, we could check up to sqrt(k), but k/2 is simpler and sufficient here
-        for (divisor = 1; divisor <= current_number_to_check / 2; divisor++) {
-            // If 'divisor' divides 'current_number_to_check' evenly, it's a proper divisor
-            if (current_number_to_check % divisor == 0) {
-                sum_of_divisors += divisor;
+    int sum_of_divisors = 1;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            sum_of_divisors += i;
+            if (i * i != num) {
+                sum_of_divisors += num / i;
             }
         }
-
-        // Check if the sum of proper divisors equals the number itself
-        if (sum_of_divisors == current_number_to_check) {
-            // If it is a perfect number, print it
-            printf("%d ", current_number_to_check);
-            // Increment the count of perfect numbers found
-            perfect_numbers_found++;
-        }
-
-        // Move to the next number to check
-        current_number_to_check++;
     }
-    printf("\n"); // Print a newline at the end for better formatting
+    return sum_of_divisors == num;
+}
+
+// Finds and prints the first n perfect numbers.
+void find_perfect_numbers(int n) {
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return;
+    }
+
+    printf("The first %d perfect numbers are:\n", n);
+    int count = 0;
+    long long num = 2;
+    while (count < n) {
+        if (is_perfect(num)) {
+            printf("%lld ", num);
+            count++;
+        }
+        num++;
+    }
+    printf("\n");
+}
+
+int main(void) {
+    int count_needed;
+    printf("Enter the number of perfect numbers to find: ");
+    if (scanf("%d", &count_needed) != 1) {
+        printf("Invalid input. Please enter an integer.\n");
+        return 1;
+    }
+
+    find_perfect_numbers(count_needed);
 
     return 0;
 }

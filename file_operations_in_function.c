@@ -11,78 +11,79 @@
 #define FILENAME_BUFFER_SIZE 100
 #define MODE_BUFFER_SIZE 10
 
-/*
- * Function: open_file_with_extension
- * ----------------------------------
- * Appends ".txt" to the given filename and opens the file with the specified mode.
- *
- * name: Pointer to the character array containing the base filename.
- *       This buffer must be large enough to hold the base name + ".txt".
- * mode: Pointer to the character array containing the file opening mode (e.g., "r", "w", "a+").
- *
- * returns: A FILE pointer if the file was opened successfully, otherwise NULL.
- */
+// Appends ".txt" to filename and opens file with specified mode
 FILE* open_file_with_extension(char *filename_base, const char *mode) {
     char full_filename[FILENAME_BUFFER_SIZE];
     FILE *file_ptr;
 
-    // Safely construct the full filename by appending ".txt"
-    // Ensure the buffer is large enough to prevent overflow
+    // Construct full filename with ".txt" extension
     if (snprintf(full_filename, FILENAME_BUFFER_SIZE, "%s.txt", filename_base) >= FILENAME_BUFFER_SIZE) {
         fprintf(stderr, "Error: Filename too long.\n");
-        return NULL; // Indicate error due to filename length
+        return NULL;
     }
 
-    // Open the file with the specified mode
+    // Open file with specified mode
     file_ptr = fopen(full_filename, mode);
     if (file_ptr == NULL) {
         perror("Error opening file");
-        // Print the filename that failed to open for better debugging
         fprintf(stderr, "Failed to open file: %s with mode: %s\n", full_filename, mode);
     }
     
     return file_ptr;
 }
 
+// Get base filename from user input
+int get_filename(char *buffer, int size) {
+    printf("Enter the base filename (without .txt): ");
+    if (fgets(buffer, size, stdin) == NULL) {
+        fprintf(stderr, "Error reading filename input.\n");
+        return -1;
+    }
+    buffer[strcspn(buffer, "\n")] = 0; // Remove newline
+    return 0;
+}
+
+// Get file mode from user input
+int get_file_mode(char *buffer, int size) {
+    printf("Enter the file mode (e.g., r, w, a, r+, w+, a+): ");
+    if (fgets(buffer, size, stdin) == NULL) {
+        fprintf(stderr, "Error reading file mode input.\n");
+        return -1;
+    }
+    buffer[strcspn(buffer, "\n")] = 0; // Remove newline
+    return 0;
+}
+
+// Process file operation
+int process_file_operation(const char *filename, const char *mode) {
+    FILE *file_handle = open_file_with_extension((char*)filename, mode);
+    
+    if (file_handle != NULL) {
+        printf("File '%s.txt' opened successfully in mode '%s'.\n", filename, mode);
+        if (fclose(file_handle) != 0) {
+            perror("Error closing file");
+            return -1;
+        }
+        return 0;
+    }
+    return -1;
+}
+
 int main(void) {
     char base_filename[FILENAME_BUFFER_SIZE];
     char file_mode[MODE_BUFFER_SIZE];
-    FILE *file_handle;
 
-    // Get the base filename from the user
-    printf("Enter the base filename (without .txt): ");
-    // Use fgets for safe input
-    if (fgets(base_filename, FILENAME_BUFFER_SIZE, stdin) == NULL) {
-        fprintf(stderr, "Error reading filename input.\n");
+    // Get user inputs
+    if (get_filename(base_filename, FILENAME_BUFFER_SIZE) != 0) {
         return 0;
     }
-    // Remove trailing newline character if present from fgets
-    base_filename[strcspn(base_filename, "\n")] = 0;
-
-    // Get the file mode from the user
-    printf("Enter the file mode (e.g., r, w, a, r+, w+, a+): ");
-    // Use fgets for safe input
-    if (fgets(file_mode, MODE_BUFFER_SIZE, stdin) == NULL) {
-        fprintf(stderr, "Error reading file mode input.\n");
+    
+    if (get_file_mode(file_mode, MODE_BUFFER_SIZE) != 0) {
         return 0;
     }
-    // Remove trailing newline character if present from fgets
-    file_mode[strcspn(file_mode, "\n")] = 0;
 
-    // Call the function to open the file
-    file_handle = open_file_with_extension(base_filename, file_mode);
-
-    // Check if the file was opened successfully
-    if (file_handle != NULL) {
-        printf("File '%s.txt' opened successfully in mode '%s'.\n", base_filename, file_mode);
-        // In a real application, you would now perform operations on the file
-        // For this example, we just close it
-        if (fclose(file_handle) != 0) {
-            perror("Error closing file");
-            return 0;
-        }
-    } else {
-        // Error message is already printed by the open_file_with_extension function
+    // Process file operation
+    if (process_file_operation(base_filename, file_mode) != 0) {
         return 0;
     }
 

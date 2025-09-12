@@ -1,0 +1,4 @@
+String: hello
+Character: X
+Integer: 123
+Float: 3.141600

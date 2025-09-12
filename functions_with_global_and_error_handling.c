@@ -4,80 +4,61 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-// Global variable to be used by functions.
-// It's generally better to pass such values as parameters, but we'll keep it global
-// to match the original code's structure, adding comments about best practices.
+// Using global variables is generally discouraged.
 int global_multiplier_divisor;
 
-// Function to calculate the product of the sum of two integers and a global multiplier.
-// Takes two integers as input.
+// Calculates product using a global multiplier.
 int calculate_product_with_global(int num1, int num2) {
-    // Uses the global variable 'global_multiplier_divisor'
     int sum = num1 + num2;
     int product = sum * global_multiplier_divisor;
     return product;
 }
 
-// Function to calculate the division of the sum of two integers by a global divisor.
-// Takes two integers as input.
-// Includes error handling for division by zero.
+// Calculates division using a global divisor.
 int calculate_division_with_global(int num1, int num2) {
-    // Uses the global variable 'global_multiplier_divisor' as a divisor.
-    int sum = num1 + num2;
-    int result;
-
-    // Check for division by zero before performing the operation.
     if (global_multiplier_divisor == 0) {
-        fprintf(stderr, "Error: Division by zero attempted in calculate_division_with_global.\n");
-        // Return a specific error value or handle as appropriate.
-        // For this example, we'll return a sentinel value like -1.
-        return -1; // Indicate division by zero error
+        fprintf(stderr, "Error: Division by zero is not allowed.\n");
+        return -1; // Error
     }
-
-    result = sum / global_multiplier_divisor;
-    return result;
+    int sum = num1 + num2;
+    return sum / global_multiplier_divisor;
 }
 
-int main(void) {
-    int number1, number2;
-    int product_result;
-    int division_result;
-
-    // Prompt user to enter the global multiplier/divisor value
-    printf("Enter a global integer value to be used as a multiplier and divisor: ");
-    // Read the global multiplier/divisor value and validate input
+void get_user_input(int *num1, int *num2) {
+    printf("Enter global multiplier/divisor: ");
     if (scanf("%d", &global_multiplier_divisor) != 1) {
         fprintf(stderr, "Error: Invalid input for the global multiplier/divisor.\n");
-        return 0;
+        global_multiplier_divisor = 1; // Default to safe value
     }
-    // Consume any remaining characters on the line after the integer, including the newline
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Clear buffer
 
-    // Prompt user to enter two numbers
-    printf("Enter two integers separated by a comma (e.g., 5, 12): ");
-    // Read two integers separated by a comma and validate input
-    if (scanf("%d, %d", &number1, &number2) != 2) {
+    printf("Enter two integers (e.g., 5, 12): ");
+    if (scanf("%d, %d", num1, num2) != 2) {
         fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
-        return 0;
+        *num1 = 0; // Default
+        *num2 = 0;
     }
-    // Consume any remaining characters on the line after the second integer, including the newline
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Clear buffer
+}
 
-    // Call the functions to perform calculations
-    product_result = calculate_product_with_global(number1, number2);
-    division_result = calculate_division_with_global(number1, number2);
-
-    // Display the product result
+void perform_and_print_calculations(int number1, int number2) {
+    int product_result = calculate_product_with_global(number1, number2);
     printf("Product result: %d\n", product_result);
-    // Check if division resulted in an error before printing
-    if (division_result != -1) { // Assuming -1 is the error sentinel
-        // Display the division result
+
+    int division_result = calculate_division_with_global(number1, number2);
+    if (division_result != -1) {
         printf("Division result: %d\n", division_result);
     } else {
         printf("Division result: Error occurred (division by zero).\n");
     }
+}
+
+int main(void) {
+    int number1, number2;
+
+    get_user_input(&number1, &number2);
+    perform_and_print_calculations(number1, number2);
 
     return 0;
 }

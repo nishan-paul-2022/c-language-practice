@@ -6,30 +6,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function that returns a fixed integer value.
-// It defines its own local variable, demonstrating that it does not affect
-// variables with the same name in other scopes.
+// Demonstrates that local variables in different scopes don't interfere
 int get_fixed_value() {
-    int local_value = 20; // A local variable within this function
+    int local_value = 20; // Local to this function
     return local_value;
 }
 
 int main(void) {
-    int local_value = 10; // A local variable within main
+    int local_value = 10; // Local to main
     int function_result;
 
-    // Display the value of the local variable in main
+    // Display local_value in main before function call
     printf("Value of local_value in main (before function call): %d\n", local_value);
 
-    // Call the function and capture its return value in function_result
+    // Call function and capture return value
     function_result = get_fixed_value();
 
-    // Display the value of the local variable in main again
-    // It remains unchanged because the function operated on its own local variable
-    // and did not modify main's local_value
+    // Display local_value in main after function call
     printf("Value of local_value in main (after function call): %d\n", local_value);
 
-    // Display the value returned by the function
+    // Display value returned by function
     printf("Value returned by get_fixed_value(): %d\n", function_result);
 
     return 0;

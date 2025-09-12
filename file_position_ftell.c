@@ -6,62 +6,73 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *file_ptr = NULL; // File pointer
-    long int file_size;    // Variable to store the file size
-
-    // --- File Preparation ---
-    // The original code opens "# lab 6.docx". For a cleaner example, we'll use "lab6.txt"
-    // We need to ensure the file exists and has some content for ftell to work correctly
-    const char *filename = "lab6.txt";
-
-    // Open the file in write mode to create it or truncate it if it exists
+// Create sample file with content for demonstration
+int create_sample_file(const char *filename) {
     FILE *prep_file = fopen(filename, "w");
     if (prep_file == NULL) {
         perror("Error preparing file for ftell demonstration");
-        return 0;
+        return -1;
     }
-    // Write some sample data to the file. The size of this data will be reported by ftell
+    
     fprintf(prep_file, "This is some sample text for ftell demonstration.\n");
     fprintf(prep_file, "It contains multiple lines and characters.\n");
-    fclose(prep_file); // Close the preparation file
+    fclose(prep_file);
+    return 0;
+}
 
-    // --- File Operations ---
-    // Open the file in read mode ("r")
-    file_ptr = fopen(filename, "r");
+// Get file size using ftell
+long int get_file_size(const char *filename) {
+    FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for ftell demonstration");
-        return 0;
+        return -1L;
     }
 
-    // Move the file position indicator to the end of the file
-    // SEEK_END means the offset is relative to the end of the file
-    // An offset of 0 means exactly at the end
+    // Move file position to end
     if (fseek(file_ptr, 0, SEEK_END) != 0) {
         perror("Error seeking to end of file");
         fclose(file_ptr);
-        return 0;
+        return -1L;
     }
 
-    // Get the current file position indicator
-    // When the file pointer is at the end, ftell returns the size of the file in bytes
-    file_size = ftell(file_ptr);
-
-    // Check if ftell returned an error (indicated by -1L)
+    // Get current file position (file size when at end)
+    long int file_size = ftell(file_ptr);
     if (file_size == -1L) {
         perror("Error getting file position with ftell");
         fclose(file_ptr);
-        return 0;
+        return -1L;
     }
 
-    // Print the file size. Use %ld for long int
-    printf("The size of the file '%s' is: %ld bytes\n", filename, file_size);
-
-    // Close the file
     if (fclose(file_ptr) != 0) {
         perror("Error closing file");
+        return -1L;
+    }
+
+    return file_size;
+}
+
+// Display file size information
+void display_file_size(const char *filename, long int size) {
+    printf("The size of the file '%s' is: %ld bytes\n", filename, size);
+}
+
+int main(void) {
+    const char *filename = "lab6.txt";
+    long int file_size;
+
+    // Create sample file
+    if (create_sample_file(filename) != 0) {
         return 0;
     }
+
+    // Get file size using ftell
+    file_size = get_file_size(filename);
+    if (file_size == -1L) {
+        return 0;
+    }
+
+    // Display result
+    display_file_size(filename, file_size);
 
     return 0;
 }

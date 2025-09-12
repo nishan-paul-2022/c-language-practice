@@ -10,79 +10,61 @@
 #define MAX_FILENAME_LEN 100
 #define MAX_STRING_LEN 100
 
-int main(void) {
-    FILE *file_ptr = NULL;
-    char filename[MAX_FILENAME_LEN];
-    char input_string[MAX_STRING_LEN];
-    char read_char;
-    int input_int;
-    float input_float;
-
-    char read_string[MAX_STRING_LEN];
-    char read_char_from_file;
-    int read_int;
-    float read_float_from_file;
-
-    // --- Input Phase ---
-
-    // Get filename from user
-    printf("Enter filename (e.g., my_data.txt): ");
+int get_filename(char *filename) {
+    printf("Enter filename (e.g., files/13-input.txt): ");
     if (fgets(filename, MAX_FILENAME_LEN, stdin) == NULL) {
         perror("Error reading filename");
         return 0;
     }
-    // Remove trailing newline character from filename if present
     filename[strcspn(filename, "\n")] = 0;
+    return 0;
+}
 
-    // Open file for writing using the user-provided filename
-    file_ptr = fopen(filename, "w");
+int get_user_inputs(char *input_string, char *read_char, int *input_int, float *input_float) {
+    printf("Enter a string: ");
+    if (fgets(input_string, MAX_STRING_LEN, stdin) == NULL) {
+        perror("Error reading string");
+        return 0;
+    }
+    input_string[strcspn(input_string, "\n")] = 0;
+
+    printf("Enter a character: ");
+    if (scanf(" %c", read_char) != 1) {
+        perror("Error reading character");
+        return 0;
+    }
+    while (getchar() != '\n');
+
+    printf("Enter an integer (e.g., 123): ");
+    if (scanf("%d", input_int) != 1) {
+        perror("Error reading integer");
+        return 0;
+    }
+
+    printf("Enter a float (e.g., 45.67): ");
+    if (scanf("%f", input_float) != 1) {
+        perror("Error reading integer and float");
+        return 0;
+    }
+
+    while (getchar() != '\n');
+
+    return 0;
+}
+
+int write_data_to_file(const char *filename, const char *input_string, char read_char, int input_int, float input_float) {
+    FILE *file_ptr = fopen(filename, "w");
     if (file_ptr == NULL) {
         perror("Error opening file for writing");
         return 0;
     }
 
-    // Get string input from user
-    printf("Enter a string: ");
-    if (fgets(input_string, MAX_STRING_LEN, stdin) == NULL) {
-        perror("Error reading string");
-        fclose(file_ptr);
-        return 0;
-    }
-    // Remove trailing newline from input_string
-    input_string[strcspn(input_string, "\n")] = 0;
-
-    // Get character input from user
-    printf("Enter a character: ");
-    // Read character, consuming any leftover newline from previous input
-    if (scanf(" %c", &read_char) != 1) { // Note: Using read_char as variable name here
-        perror("Error reading character");
-        fclose(file_ptr);
-        return 0;
-    }
-    // Consume any remaining characters on the line after the character, including the newline
-    while (getchar() != '\n');
-
-
-    // Get integer and float input from user
-    printf("Enter an integer and a float (e.g., 123 45.67): ");
-    if (scanf("%d %f", &input_int, &input_float) != 2) {
-        perror("Error reading integer and float");
-        fclose(file_ptr);
-        return 0;
-    }
-    // Consume any remaining characters on the line after the float, including the newline
-    while (getchar() != '\n');
-
-
-    // --- Write Phase ---
-    // Write the collected data to the file
-    // fprintf is suitable for writing formatted strings, characters, and numbers
     if (fprintf(file_ptr, "%s\n", input_string) < 0) {
         perror("Error writing string to file");
         fclose(file_ptr);
         return 0;
     }
-    if (fprintf(file_ptr, "%c\n", read_char) < 0) { // Writing char with newline
+    if (fprintf(file_ptr, "%c\n", read_char) < 0) {
         perror("Error writing character to file");
         fclose(file_ptr);
         return 0;
@@ -98,70 +80,96 @@ int main(void) {
         return 0;
     }
 
-    // Close the file after writing
     fclose(file_ptr);
     printf("Data written to '%s' successfully.\n", filename);
+    return 0;
+}
 
-    // --- Read Phase ---
-    // Reopen the file for reading
-    file_ptr = fopen(filename, "r");
+int read_data_from_file(const char *filename, char *read_string, char *read_char_from_file, int *read_int, float *read_float_from_file) {
+    FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for reading");
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    printf("\nReading data from '%s':\n", filename);
-
-    // Read the string (first line)
     if (fgets(read_string, MAX_STRING_LEN, file_ptr) == NULL) {
         perror("Error reading string from file");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
-    read_string[strcspn(read_string, "\n")] = 0; // Remove newline
+    read_string[strcspn(read_string, "\n")] = 0;
 
-    // Read the character
-    if (fscanf(file_ptr, "%c", &read_char_from_file) != 1) {
+    if (fscanf(file_ptr, "%c", read_char_from_file) != 1) {
         perror("Error reading character from file");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
-    // Consume the newline character after reading the character
-    if (fgetc(file_ptr) == EOF && ferror(file_ptr)) { // Check for error after consuming newline
+    if (fgetc(file_ptr) == EOF && ferror(file_ptr)) {
         perror("Error consuming newline after character read");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
 
-
-    // Read the integer
-    if (fscanf(file_ptr, "%d", &read_int) != 1) {
+    if (fscanf(file_ptr, "%d", read_int) != 1) {
         perror("Error reading integer from file");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
-    // Consume the newline character after reading the integer
     if (fgetc(file_ptr) == EOF && ferror(file_ptr)) {
         perror("Error consuming newline after integer read");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    // Read the float
-    if (fscanf(file_ptr, "%f", &read_float_from_file) != 1) {
+    if (fscanf(file_ptr, "%f", read_float_from_file) != 1) {
         perror("Error reading float from file");
         fclose(file_ptr);
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    // Display the data read from the file
+    fclose(file_ptr);
+    return 0;
+}
+
+void display_read_data(const char *filename, const char *read_string, char read_char_from_file, int read_int, float read_float_from_file) {
+    printf("\nReading data from '%s':\n", filename);
     printf("String: %s\n", read_string);
     printf("Character: %c\n", read_char_from_file);
     printf("Integer: %d\n", read_int);
     printf("Float: %.2f\n", read_float_from_file);
+}
 
-    // Close the file
-    fclose(file_ptr);
+int process_file_io() {
+    char filename[MAX_FILENAME_LEN];
+    char input_string[MAX_STRING_LEN];
+    char read_char;
+    int input_int;
+    float input_float;
 
+    char read_string[MAX_STRING_LEN];
+    char read_char_from_file;
+    int read_int;
+    float read_float_from_file;
+
+    if (get_filename(filename)) {
+        return 0;
+    }
+    if (get_user_inputs(input_string, &read_char, &input_int, &input_float)) {
+        return 0;
+    }
+    if (write_data_to_file(filename, input_string, read_char, input_int, input_float)) {
+        return 0;
+    }
+    if (read_data_from_file(filename, read_string, &read_char_from_file, &read_int, &read_float_from_file)) {
+        return 0;
+    }
+
+    display_read_data(filename, read_string, read_char_from_file, read_int, read_float_from_file);
+    
+    return 0;
+}
+
+int main(void) {
+    process_file_io();
     return 0;
 }

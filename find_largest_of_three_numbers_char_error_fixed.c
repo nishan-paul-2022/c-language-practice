@@ -6,19 +6,21 @@
 
 #include <stdio.h>
 
+// Finds the largest of three integers.
+int find_largest(int a, int b, int c) {
+    // Use nested ternary operators to find the largest number.
+    return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+}
+
 int main(void) {
-    int num1, num2, num3; // Three integer numbers to compare
-    int largest_number;   // Stores the largest number
+    int num1, num2, num3;
 
-    // Prompt user to enter three integers
+    // Prompt the user for input.
     printf("Enter three integers separated by spaces (e.g., 10 20 5): ");
-    scanf("%d %d %d", &num1, &num2, &num3); // Read three integers from user input
+    scanf("%d %d %d", &num1, &num2, &num3);
 
-    // Find the largest number using nested ternary operators
-    // If num1 > num2, then compare num1 with num3. Otherwise, compare num2 with num3.
-    largest_number = (num1 > num2) ? ((num1 > num3) ? num1 : num3) : ((num2 > num3) ? num2 : num3);
-
-    // Display the largest number found
+    // Find and display the largest number.
+    int largest_number = find_largest(num1, num2, num3);
     printf("The largest number is: %d\n", largest_number);
 
     return 0;

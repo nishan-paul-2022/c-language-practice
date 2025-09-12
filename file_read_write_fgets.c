@@ -8,76 +8,96 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
-    FILE *output_file_ptr = NULL; // Pointer for the output file
-    FILE *input_file_ptr = NULL;  // Pointer for the input file
-    char user_input_string[100];  // Buffer for user's string input
-    char read_string[100];        // Buffer to read the string back from the file
+#define BUFFER_SIZE 100
+#define FILENAME "FH function (fgets).txt"
 
-    // --- Input from User ---
+// Get string input from user
+int get_user_input(char *buffer, int size) {
     printf("Enter a string: ");
-    // Use fgets for safe input, as gets() is unsafe
-    if (fgets(user_input_string, sizeof(user_input_string), stdin) == NULL) {
+    if (fgets(buffer, size, stdin) == NULL) {
         perror("Error reading user input");
-        return 0;
+        return -1;
     }
-    // Remove the trailing newline character read by fgets
-    user_input_string[strcspn(user_input_string, "\n")] = '\0';
+    // Remove trailing newline
+    buffer[strcspn(buffer, "\n")] = '\0';
+    return 0;
+}
 
-    // --- Write to File ---
-    // Open the file in write mode ("w"). This creates the file if it doesn't exist,
-    // or truncates it if it does
-    output_file_ptr = fopen("FH function (fgets).txt", "w");
+// Write string to file
+int write_string_to_file(const char *filename, const char *str) {
+    FILE *output_file_ptr = fopen(filename, "w");
     if (output_file_ptr == NULL) {
-        perror("Error opening FH function (fgets).txt for writing");
-        return 0;
+        perror("Error opening file for writing");
+        return -1;
     }
 
-    // Write the user's input string to the file
-    // fputs writes a string to a stream. It does not automatically add a newline
-    if (fputs(user_input_string, output_file_ptr) == EOF) {
+    if (fputs(str, output_file_ptr) == EOF) {
         perror("Error writing string to file");
-        fclose(output_file_ptr); // Clean up
-        return 0;
+        fclose(output_file_ptr);
+        return -1;
     }
 
-    // Close the output file after writing
     if (fclose(output_file_ptr) != 0) {
-        perror("Error closing FH function (fgets).txt after writing");
-        // Continue to the read operation, but report the error
+        perror("Error closing file after writing");
+        return -1;
     }
+    
+    return 0;
+}
 
-    // --- Read from File ---
-    // Open the same file in read mode ("r")
-    input_file_ptr = fopen("FH function (fgets).txt", "r");
+// Read string from file
+int read_string_from_file(const char *filename, char *buffer, int size) {
+    FILE *input_file_ptr = fopen(filename, "r");
     if (input_file_ptr == NULL) {
-        perror("Error opening FH function (fgets).txt for reading");
-        return 0;
+        perror("Error opening file for reading");
+        return -1;
     }
 
-    // Read a string from the file using fgets
-    // fgets reads up to n-1 characters or until a newline is encountered
-    // It includes the newline character in the buffer if read
-    if (fgets(read_string, sizeof(read_string), input_file_ptr) == NULL) {
+    if (fgets(buffer, size, input_file_ptr) == NULL) {
         if (feof(input_file_ptr)) {
             fprintf(stderr, "Reached end of file unexpectedly while reading.\n");
         } else {
             perror("Error reading string from file");
         }
         fclose(input_file_ptr);
-        return 0;
+        return -1;
     }
 
-    // Print the string read from the file
-    // puts adds a newline character after printing the string
-    printf("String read from file: ");
-    puts(read_string);
-
-    // Close the input file
     if (fclose(input_file_ptr) != 0) {
-        perror("Error closing FH function (fgets).txt after reading");
+        perror("Error closing file after reading");
+        return -1;
+    }
+
+    return 0;
+}
+
+// Display the string read from file
+void display_read_string(const char *str) {
+    printf("String read from file: ");
+    puts(str);
+}
+
+int main(void) {
+    char user_input_string[BUFFER_SIZE];
+    char read_string[BUFFER_SIZE];
+
+    // Get input from user
+    if (get_user_input(user_input_string, BUFFER_SIZE) != 0) {
         return 0;
     }
+
+    // Write string to file
+    if (write_string_to_file(FILENAME, user_input_string) != 0) {
+        return 0;
+    }
+
+    // Read string from file
+    if (read_string_from_file(FILENAME, read_string, BUFFER_SIZE) != 0) {
+        return 0;
+    }
+
+    // Display the result
+    display_read_string(read_string);
 
     return 0;
 }

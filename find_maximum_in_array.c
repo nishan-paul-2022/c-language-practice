@@ -5,48 +5,44 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void) {
-    int num_elements; // Number of elements in the array
-    int i, j;
-    int temp_val;     // Temporary variable for swapping
-
-    // Prompt user to enter the number of elements
-    printf("Enter the number of elements: ");
-    scanf("%d", &num_elements); // Read the number of elements
-
-    // Validate the number of elements
-    if (num_elements <= 0) {
-        printf("Number of elements must be positive.\n");
-        return 0;
+// Function to read elements into an array
+void read_array_elements(int arr[], int size) {
+    printf("Enter %d integer elements:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
     }
+}
 
-    // Declare a Variable Length Array (VLA) - C99 feature
-    // For strict C89/C90, dynamic memory allocation with malloc would be used.
-    int arr[num_elements];
-
-    // Prompt user to enter elements into the array
-    printf("Enter %d integer elements:\n", num_elements);
-    for (i = 0; i < num_elements; i++) {
-        scanf("%d", &arr[i]); // Read each element
-    }
-
-    // Find the maximum element by effectively performing one pass of bubble sort
-    // The largest element will "bubble" to the last position (arr[num_elements - 1])
-    for (i = 0; i < num_elements - 1; i++) { // Outer loop for passes
-        for (j = i + 1; j < num_elements; j++) { // Inner loop for comparisons
-            if (arr[i] > arr[j]) {
-                // Swap elements if they are in the wrong order
-                temp_val = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp_val;
-            }
+// Function to find the maximum element in an array
+int find_maximum(const int arr[], int size) {
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
         }
     }
+    return max;
+}
 
-    // Display the maximum element found
-    printf("The maximum element in the array is: %d\n", arr[num_elements - 1]);
+int main(void) {
+    int num_elements;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &num_elements);
+
+    if (num_elements <= 0) {
+        printf("Number of elements must be positive.\n");
+        return 1; // Indicate an error
+    }
+
+    int arr[num_elements]; // VLA for the array
+
+    read_array_elements(arr, num_elements);
+
+    int max_element = find_maximum(arr, num_elements);
+
+    printf("The maximum element in the array is: %d\n", max_element);
 
     return 0;
 }

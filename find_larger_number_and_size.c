@@ -6,27 +6,32 @@
 
 #include <stdio.h>
 
-int main(void) {
-    float number1;
-    float number2;
-    float larger_number;
-    int size_of_float_var;
+// Finds the larger of two floating-point numbers.
+float findLarger(float num1, float num2) {
+    return (num1 > num2) ? num1 : num2;
+}
 
-    // Prompt user for input
+// Gets the size of a float variable.
+int getFloatSize() {
+    return sizeof(float);
+}
+
+// Prompts the user to enter two numbers and reads them.
+void getNumbers(float *num1, float *num2) {
     printf("Enter two floating-point values (e.g., 10.5 20.3): ");
-    scanf("%f %f", &number1, &number2);
+    scanf("%f %f", num1, num2);
+}
 
-    // Use the ternary operator to find the larger number
-    larger_number = (number1 > number2) ? number1 : number2;
+int main(void) {
+    float number1, number2;
 
-    // Get the size of a float variable using sizeof operator
-    size_of_float_var = sizeof(larger_number); // Or sizeof(float)
+    getNumbers(&number1, &number2);
 
-    // Print the larger number
-    printf("The larger number is: %.2f\n\n", larger_number);
+    float larger_number = findLarger(number1, number2);
+    int size_of_float = getFloatSize();
 
-    // Print the size of the float variable
-    printf("The size of the float variable 'larger_number' is: %d bytes\n", size_of_float_var);
+    printf("The larger number is: %.2f\n", larger_number);
+    printf("The size of a float is: %d bytes\n", size_of_float);
 
     return 0;
 }
