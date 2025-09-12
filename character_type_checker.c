@@ -8,28 +8,23 @@
 #include <ctype.h>
 
 int main(void) {
-    char input_char;
-
     printf("Enter a single character to check its type: ");
-    // Read character from standard input
-    input_char = getchar();
+    char input_char = getchar();
 
-    // Determine character type using ctype.h functions
-    printf("The character '%c' is a ", input_char);
-    if (isalpha(input_char)) { // Alphabet character
-        if (isupper(input_char)) { // Uppercase letter
+    if (isalpha(input_char)) {
+        if (isupper(input_char)) {
             printf("UPPER CASE LETTER\n");
-        } else { // Lowercase letter
+        } else {
             printf("LOWER CASE LETTER\n");
         }
-    } else if (isdigit(input_char)) { // Digit (0-9)
+    } else if (isdigit(input_char)) {
         printf("DIGIT\n");
-    } else if (ispunct(input_char)) { // Punctuation character
+    } else if (ispunct(input_char)) {
         printf("PUNCTUATION MARK\n");
-    } else if (isspace(input_char)) { // Whitespace character
+    } else if (isspace(input_char)) {
         printf("WHITE SPACE\n");
     } else {
-        printf("OTHER CHARACTER\n"); // Other character types
+        printf("OTHER CHARACTER\n");
     }
 
     return 0;

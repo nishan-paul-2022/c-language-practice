@@ -5,37 +5,35 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases
-    int case_num;       // Current test case number
+int count_digits(long long int number) {
+    if (number == 0) {
+        return 1;
+    }
+    
+    int count = 0;
+    while (number > 0) {
+        number /= 10;
+        count++;
+    }
+    return count;
+}
 
-    // Read the number of test cases
+void process_test_cases() {
+    int num_test_cases;
+    printf("Enter number of test cases: ");
     scanf("%d", &num_test_cases);
-
-    // Process each test case
-    for (case_num = 1; case_num <= num_test_cases; case_num++) {
-        long long int number_to_process; // The number whose digits are to be counted
-        int digit_count = 0;             // Counter for the number of digits
-        long long int temp_number;       // Temporary variable to avoid modifying the original number
-
-        // Read the number
-        scanf("%lld", &number_to_process);
-
-        // Handle the special case of 0
-        if (number_to_process == 0) {
-            digit_count = 1;
-        } else {
-            temp_number = number_to_process;
-            // Count digits by repeatedly dividing by 10
-            while (temp_number > 0) {
-                temp_number /= 10;
-                digit_count++;
-            }
-        }
-
-        // Print the result for the current test case
+    
+    for (int case_num = 1; case_num <= num_test_cases; case_num++) {
+        long long int number;
+        printf("Enter number: ");
+        scanf("%lld", &number);
+        
+        int digit_count = count_digits(number);
         printf("%d\n", digit_count);
     }
+}
 
+int main(void) {
+    process_test_cases();
     return 0;
 }

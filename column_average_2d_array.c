@@ -11,57 +11,53 @@
 
 int main(void) {
     int rows, cols; // Matrix dimensions
-    int matrix[MAX_ROWS][MAX_COLS]; // 2D integer array
+    int matrix[MAX_ROWS][MAX_COLS];
     int i, j;
-    double column_sum; // Sum of column elements
-    double column_averages[MAX_COLS]; // Column averages
+    double column_sum;
+    double column_averages[MAX_COLS]; // Store average for each column
 
-    printf("Enter the number of rows and columns (e.g., 'rows cols' like '3 4'): ");
-    // Read and validate matrix dimensions
+    printf("=== Matrix Column Averages Calculator ===\n");
+    printf("Enter the number of rows and columns (e.g., '3 4'): ");
+    
     if (scanf("%d %d", &rows, &cols) != 2) {
-        printf("Invalid input for dimensions. Please enter two integers separated by a space.\n");
-        return 0;
+        printf("Error: Invalid input for dimensions. Please enter two integers.\n");
+        return 1;
     }
 
-    // Validate dimensions are within bounds
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
-        printf("Invalid dimensions. Rows and columns must be positive and within limits (max %d x %d).\n", MAX_ROWS, MAX_COLS);
-        return 0;
+        printf("Error: Dimensions must be positive and within limits (max %d x %d).\n", MAX_ROWS, MAX_COLS);
+        return 1;
     }
 
-    // Consume newline character left by scanf
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Clear input buffer
 
-    printf("Enter %d integers for the matrix, row by row:\n", rows * cols);
+    printf("\nEnter %d integers for the matrix, row by row:\n", rows * cols);
+    
     // Read matrix elements
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            printf("Enter element matrix[%d][%d]: ", i, j);
+            printf("Enter element at row %d, column %d: ", i + 1, j + 1);
             if (scanf("%d", &matrix[i][j]) != 1) {
-                printf("Invalid input for element matrix[%d][%d]. Please enter an integer.\n", i, j);
-                return 0;
+                printf("Error: Invalid input at position [%d][%d]. Please enter an integer.\n", i, j);
+                return 1;
             }
-            // Consume newline character left by scanf
-            while (getchar() != '\n');
+            while (getchar() != '\n'); // Clear input buffer
         }
     }
 
-    // Calculate column averages
-    for (j = 0; j < cols; j++) { // Iterate through columns
-        column_sum = 0.0; // Reset sum for each column
-        for (i = 0; i < rows; i++) { // Iterate through rows for current column
-            column_sum += matrix[i][j]; // Add element to column sum
-        }
-        // Calculate average with floating-point division
-        column_averages[j] = column_sum / (double)rows;
-    }
-
-    printf("\nColumn averages:\n");
-    // Print column averages
+    // Calculate average for each column
     for (j = 0; j < cols; j++) {
-        printf("%.2lf ", column_averages[j]);
+        column_sum = 0.0;
+        for (i = 0; i < rows; i++) {
+            column_sum += matrix[i][j];
+        }
+        column_averages[j] = column_sum / rows;
     }
-    printf("\n"); // New line for clean output
+
+    printf("\nColumn Averages:\n");
+    for (j = 0; j < cols; j++) {
+        printf("Column %d: %.2lf\n", j + 1, column_averages[j]);
+    }
 
     return 0;
 }

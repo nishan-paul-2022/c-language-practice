@@ -5,36 +5,54 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases
-    int test_case_index;
-    int number_to_check; // Number to check for odd/even
-
-    // Get number of test cases
+// Reads and validates the number of test cases
+int read_test_count(void) {
+    int count;
     printf("Enter the number of test cases: ");
-    if (scanf("%d", &num_test_cases) != 1) {
-        printf("Error reading number of test cases.\n");
+    
+    if (scanf("%d", &count) != 1 || count < 0) {
+        printf("Error: Invalid number of test cases.\n");
+        return -1;
+    }
+    
+    return count;
+}
+
+// Reads and validates a number for testing
+int read_number(int test_num, int *number) {
+    printf("Enter number for test case %d: ", test_num);
+    
+    if (scanf("%d", number) != 1) {
+        printf("Error: Failed to read number for test case %d.\n", test_num);
         return 0;
     }
+    
+    return 1;
+}
 
-    // Process each test case
-    for (test_case_index = 0; test_case_index < num_test_cases; test_case_index++) {
-        // Get number for current test case
-        printf("Enter number for test case %d: ", test_case_index + 1);
-        if (scanf("%d", &number_to_check) != 1) {
-            printf("Error reading number for test case %d.\n", test_case_index + 1);
-            continue;
-        }
+// Determines and prints if number is odd or even
+void check_parity(int number, int test_num) {
+    const char *result = (number % 2 == 0) ? "Even" : "Odd";
+    printf("Result for test case %d: %s\n", test_num, result);
+}
 
-        // Check if number is odd or even using modulo operator
-        // Number is odd if remainder when divided by 2 is non-zero
-        // Number is even if remainder when divided by 2 is zero
-        if (number_to_check % 2 != 0) {
-            printf("Result for test case %d: Odd\n", test_case_index + 1);
-        } else {
-            printf("Result for test case %d: Even\n", test_case_index + 1);
-        }
+int main(void) {
+    int num_test_cases = read_test_count();
+    if (num_test_cases == -1) {
+        return 1;
     }
-
+    
+    // Process each test case
+    for (int i = 0; i < num_test_cases; i++) {
+        int test_num = i + 1;
+        int number;
+        
+        if (!read_number(test_num, &number)) {
+            continue; // Skip to next test case on input error
+        }
+        
+        check_parity(number, test_num);
+    }
+    
     return 0;
 }

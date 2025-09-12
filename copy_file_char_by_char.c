@@ -8,92 +8,133 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "FH_file.txt"
-#define OUTPUT_FILENAME "FH_file_1.txt"
+#define INPUT_FILENAME "files/06-input.txt"
+#define OUTPUT_FILENAME "files/06-output.txt"
+
+// Print program header
+void print_header(void) {
+    printf("=== File Copier ===\n");
+    printf("Source: %s\n", INPUT_FILENAME);
+    printf("Destination: %s\n\n", OUTPUT_FILENAME);
+}
+
+// Open input file with error handling
+FILE* open_input_file(void) {
+    FILE *file = fopen(INPUT_FILENAME, "r");
+    if (file == NULL) {
+        perror("Error opening input file");
+        fprintf(stderr, "Please ensure '%s' exists.\n", INPUT_FILENAME);
+    }
+    return file;
+}
+
+// Open output file with error handling
+FILE* open_output_file(void) {
+    FILE *file = fopen(OUTPUT_FILENAME, "w");
+    if (file == NULL) {
+        perror("Error opening output file");
+    }
+    return file;
+}
+
+// Get file size using fseek and ftell
+long get_file_size(FILE *file) {
+    if (fseek(file, 0, SEEK_END) != 0) {
+        perror("Error seeking to end of file");
+        return -1;
+    }
+    
+    long size = ftell(file);
+    if (size == -1) {
+        perror("Error getting file size");
+        return -1;
+    }
+    
+    if (fseek(file, 0, SEEK_SET) != 0) {
+        perror("Error seeking to beginning of file");
+        return -1;
+    }
+    
+    return size;
+}
+
+// Copy file content character by character
+int copy_file_content(FILE *input, FILE *output, long file_size) {
+    char character;
+    long bytes_copied = 0;
+    
+    printf("Copying %ld bytes...\n", file_size);
+    
+    while (file_size > 0) {
+        character = fgetc(input);
+        
+        if (character == EOF) {
+            if (ferror(input)) {
+                perror("Error reading from input file");
+                return 0;
+            } else if (feof(input)) {
+                printf("Warning: Reached EOF earlier than expected\n");
+                break;
+            }
+        }
+        
+        if (fputc(character, output) == EOF) {
+            perror("Error writing to output file");
+            return 0;
+        }
+        
+        file_size--;
+        bytes_copied++;
+    }
+    
+    printf("Successfully copied %ld bytes\n", bytes_copied);
+    return 1;
+}
+
+// Close file with error handling
+int close_file(FILE *file, const char *filename) {
+    if (fclose(file) != 0) {
+        fprintf(stderr, "Error closing %s\n", filename);
+        return 0;
+    }
+    return 1;
+}
 
 int main(void) {
     FILE *file_input, *file_output;
-    char character;
-    long file_size; // Use long for file size, as returned by ftell
-
-    // Open the input file in read mode
-    file_input = fopen(INPUT_FILENAME, "r");
+    long file_size;
+    
+    print_header();
+    
+    file_input = open_input_file();
     if (file_input == NULL) {
-        perror("Error opening input file");
-        fprintf(stderr, "Please ensure '%s' exists.\n", INPUT_FILENAME);
-        return 0;
+        return 1;
     }
-
-    // Move the file position indicator to the end of the file
-    if (fseek(file_input, 0, SEEK_END) != 0) {
-        perror("Error seeking to end of input file");
-        fclose(file_input);
-        return 0;
-    }
-
-    // Get the current file position, which is the size of the file
-    file_size = ftell(file_input);
+    
+    file_size = get_file_size(file_input);
     if (file_size == -1) {
-        perror("Error getting file size");
         fclose(file_input);
-        return 0;
+        return 1;
     }
-
-    // Move the file position indicator back to the beginning of the file
-    if (fseek(file_input, 0, SEEK_SET) != 0) {
-        perror("Error seeking to beginning of input file");
-        fclose(file_input);
-        return 0;
-    }
-
-    // Open the output file in write mode
-    file_output = fopen(OUTPUT_FILENAME, "w");
+    
+    printf("Input file size: %ld bytes\n", file_size);
+    
+    file_output = open_output_file();
     if (file_output == NULL) {
-        perror("Error opening output file");
-        fclose(file_input); // Close input file before exiting
-        return 0;
+        fclose(file_input);
+        return 1;
     }
-
-    // Read from the input file character by character and write to the output file
-    // The loop iterates 'file_size' times.
-    // Note: For text files, file_size might not be exact due to line ending translations.
-    // However, this method is common for demonstrating file I/O.
-    printf("Copying content from '%s' to '%s'...\n", INPUT_FILENAME, OUTPUT_FILENAME);
-    while (file_size > 0) {
-        character = fgetc(file_input);
-        // Check for read errors or EOF during character read
-        if (character == EOF) {
-            if (ferror(file_input)) {
-                perror("Error reading character from input file");
-            } else if (feof(file_input)) {
-                // This should ideally not happen if file_size was correct and > 0
-                // but can occur if file size calculation was off or file changed.
-                printf("Warning: Reached EOF before expected based on file size.\n");
-            }
-            // Break loop if read error or unexpected EOF
-            break; 
-        }
-        
-        if (fputc(character, file_output) == EOF) {
-            perror("Error writing character to output file");
-            // Break loop if write error occurs
-            break;
-        }
-        
-        file_size--; // Decrement the counter
+    
+    if (!copy_file_content(file_input, file_output, file_size)) {
+        close_file(file_input, "input file");
+        close_file(file_output, "output file");
+        return 1;
     }
-
-    // Close the files
-    if (fclose(file_input) != 0) {
-        perror("Error closing input file");
-        // Continue to close output file even if input file closing failed
-    }
-    if (fclose(file_output) != 0) {
-        perror("Error closing output file");
-        return 0;
-    }
-
-    printf("File copy complete.\n");
-
+    
+    close_file(file_input, "input file");
+    close_file(file_output, "output file");
+    
+    printf("\nFile copy operation completed successfully!\n");
+    
     return 0;
 }

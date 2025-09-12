@@ -6,56 +6,65 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+
+#define MAX_INPUT_SIZE 100
+
+int is_vowel(char c) {
+    char lower = tolower(c);
+    return (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u');
+}
+
+void count_characters(const char *str, int *vowels, int *consonants, int *digits, int *spaces, int *others) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        char current_char = str[i];
+        
+        if (isalpha(current_char)) {
+            if (is_vowel(current_char)) {
+                (*vowels)++;
+            } else {
+                (*consonants)++;
+            }
+        } else if (isdigit(current_char)) {
+            (*digits)++;
+        } else if (isspace(current_char)) {
+            (*spaces)++;
+        } else {
+            (*others)++;
+        }
+    }
+}
+
+void print_results(int vowels, int consonants, int digits, 
+    int spaces, int others) {
+    printf("\nCharacter Count Results:\n");
+    printf("%-12s: %d\n", "Vowels", vowels);
+    printf("%-12s: %d\n", "Consonants", consonants);
+    printf("%-12s: %d\n", "Digits", digits);
+    printf("%-12s: %d\n", "Spaces", spaces);
+    printf("%-12s: %d\n", "Others", others);
+}
 
 int main(void) {
-    char input_string[100]; // Input string buffer
-    int vowels = 0;         // Vowel counter
-    int consonants = 0;     // Consonant counter
-    int digits = 0;         // Digit counter
-    int spaces = 0;         // Space counter
-    int others = 0;         // Other characters counter
-    int i;
+    char input_string[MAX_INPUT_SIZE];
+    int vowels = 0, consonants = 0, digits = 0, spaces = 0, others = 0;
 
-    // Get input line
     printf("Enter a line of text: ");
-    // Use fgets to safely read line including spaces
+    
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
-        printf("Error reading input.\n");
+        fprintf(stderr, "Error: Failed to read input\n");
         return 0;
     }
 
-    // Remove trailing newline character
-    input_string[strcspn(input_string, "\n")] = '\0';
-
-    // Process each character
-    for (i = 0; input_string[i] != '\0'; i++) {
-        char current_char = input_string[i];
-
-        // Convert to lowercase for vowel/consonant check
-        char lower_char = tolower(current_char);
-
-        if (isalpha(lower_char)) { // Alphabet character
-            if (lower_char == 'a' || lower_char == 'e' || lower_char == 'i' || lower_char == 'o' || lower_char == 'u') {
-                vowels++;
-            } else {
-                consonants++;
-            }
-        } else if (isdigit(current_char)) { // Digit
-            digits++;
-        } else if (isspace(current_char)) { // Whitespace
-            spaces++;
-        } else { // Other character
-            others++;
-        }
+    // Remove trailing newline if present
+    size_t len = strlen(input_string);
+    if (len > 0 && input_string[len - 1] == '\n') {
+        input_string[len - 1] = '\0';
     }
 
-    // Print counts
-    printf("Counts:\n");
-    printf("Vowels: %d\n", vowels);
-    printf("Consonants: %d\n", consonants);
-    printf("Digits: %d\n", digits);
-    printf("Spaces: %d\n", spaces);
-    printf("Others: %d\n", others);
+    count_characters(input_string, &vowels, &consonants, &digits, &spaces, &others);
+    
+    print_results(vowels, consonants, digits, spaces, others);
 
     return 0;
 }

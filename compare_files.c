@@ -8,61 +8,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define OUTPUT_FILE "output.txt"
-#define INPUT_FILE "mineput.txt"
+#define INPUT_FILE "files/04-input.txt"
+#define OUTPUT_FILE "files/04-output.txt"
 
 int main(void) {
     FILE *file_output, *file_input;
     int value_output, value_input;
-    int mismatch_found = 0; // Flag to track mismatches
+    int mismatch_found = 0;
 
-    // Open files for reading
+    printf("=== File Comparator ===\n");
+    printf("Comparing integers in '%s' and '%s'...\n\n", OUTPUT_FILE, INPUT_FILE);
+
     file_output = fopen(OUTPUT_FILE, "r");
     if (file_output == NULL) {
-        perror("Error opening output file for reading");
-        return 0;
+        perror("Error opening output file");
+        return 1;
     }
 
     file_input = fopen(INPUT_FILE, "r");
     if (file_input == NULL) {
-        perror("Error opening input file for reading");
-        fclose(file_output); // Close previously opened file
-        return 0;
+        perror("Error opening input file");
+        fclose(file_output);
+        return 1;
     }
 
-    // Compare integers from both files
-    // Continue while successfully reading from output file
     while (fscanf(file_output, "%d", &value_output) == 1) {
-        // Try to read integer from input file
-        // Failure indicates mismatch (premature end or invalid data)
         if (fscanf(file_input, "%d", &value_input) != 1) {
-            mismatch_found = 1; // Mismatch: input file ended or had invalid data
-            break; // Exit loop
+            mismatch_found = 1; // Input file ended prematurely
+            break;
         }
 
-        // Compare values from both files
         if (value_output != value_input) {
-            mismatch_found = 1; // Mismatch found
-            break; // Exit loop
+            mismatch_found = 1; // Values don't match
+            break;
         }
     }
 
-    // Check if input file has more data after output file ended
-    // Indicates mismatch (input file has excess data)
+    // Check for excess data in input file
     if (!mismatch_found && fscanf(file_input, "%d", &value_input) == 1) {
         mismatch_found = 1;
     }
 
-    // Close files
     fclose(file_output);
     fclose(file_input);
 
-    // Print result based on mismatch flag
-    if (mismatch_found) {
-        printf("ERROR\n");
-    } else {
-        printf("ACCEPTED\n");
-    }
+    printf("Comparison Result: %s\n", mismatch_found ? "ERROR" : "ACCEPTED");
 
     return 0;
 }

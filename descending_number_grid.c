@@ -1,26 +1,43 @@
 /*
- * Purpose: Prints a sequence of numbers in a descending order, formatted into rows of 5 numbers each.
- * Topic: Nested Loops, Descending Order, Tab Separation, Newline Formatting
+ * Purpose: Prints a sequence of numbers in a descending order, formatted into a grid.
+ * The grid dimensions (start number, columns, total numbers) are specified by the user.
+ * Topic: Nested Loops, User Input, Dynamic Grid Generation
  */
 
 #include <stdio.h>
 
-int main(void) {
-    int i;
-    int j;
+void print_number_grid(int start, int cols, int total) {
+    int current_number = start;
+    int numbers_printed = 0;
 
-    // Outer loop: counts down from 1000, decrementing by 5 each iteration
-    // This sets the starting number for each row
-    for (i = 1000; i >= 1; i -= 5) {
-        // Inner loop: iterates 5 times, starting from current value of 'i'
-        // Prints numbers from 'i' down to 'i-4'
-        for (j = i; j > i - 5; j--) {
-            // Print current number followed by a tab for spacing
-            printf("%d\t", j);
+    for (int i = 0; numbers_printed < total; ++i) {
+        for (int j = 0; j < cols && numbers_printed < total; ++j) {
+            printf("%d\t", current_number--);
+            numbers_printed++;
         }
-        // After printing 5 numbers, print a newline to move to next row
         printf("\n");
     }
+}
+
+int main(void) {
+    int start_num, num_cols, total_nums;
+
+    printf("Enter the starting number: ");
+    scanf("%d", &start_num);
+
+    printf("Enter the number of columns: ");
+    scanf("%d", &num_cols);
+
+    printf("Enter the total numbers to print: ");
+    scanf("%d", &total_nums);
+
+    if (num_cols <= 0 || total_nums <= 0) {
+        printf("Number of columns and total numbers must be positive.\n");
+        return 1;
+    }
+
+    printf("\n--- Descending Number Grid ---\n");
+    print_number_grid(start_num, num_cols, total_nums);
 
     return 0;
 }

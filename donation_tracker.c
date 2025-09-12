@@ -5,24 +5,36 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num_donations; // Number of donation entries to process
-    int donation_amount; // Amount for each individual donation
-    int total_donations = 0; // Accumulator for the total sum of donations
-    int i;
-
-    // Read the total number of donation entries
+int get_donation_count(void) {
+    int num_donations;
+    printf("Enter number of donations: ");
     scanf("%d", &num_donations);
+    return num_donations;
+}
 
-    // Loop through each donation entry
-    for (i = 0; i < num_donations; i++) {
-        printf("donate "); // Prompt for donation
-        scanf("%d", &donation_amount); // Read the donation amount
+int get_donation_amount(void) {
+    int donation_amount;
+    printf("donate ");
+    scanf("%d", &donation_amount);
+    return donation_amount;
+}
 
-        total_donations += donation_amount; // Add to the running total
+void report_total(int total) {
+    printf("report %d\n", total);
+}
 
-        printf("report\n%d\n", total_donations); // Report the current total
+void process_donations(int num_donations) {
+    int total_donations = 0;
+    
+    for (int i = 0; i < num_donations; i++) {
+        int donation_amount = get_donation_amount();
+        total_donations += donation_amount;
+        report_total(total_donations);
     }
+}
 
+int main(void) {
+    int num_donations = get_donation_count();
+    process_donations(num_donations);
     return 0;
 }

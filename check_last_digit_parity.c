@@ -7,60 +7,82 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases
-    int test_case_index;
-    char input_string[101]; // Input string buffer (max 100 chars + null terminator)
-    int string_length; // Length of input string
-    char last_digit_char; // Last character of string
+#define MAX_STRING_LENGTH 100
+#define BUFFER_SIZE (MAX_STRING_LENGTH + 1)
 
-    // Get number of test cases
-    printf("Enter the number of test cases: ");
-    if (scanf("%d", &num_test_cases) != 1) {
-        printf("Error reading number of test cases.\n");
-        return 0;
-    }
-
-    // Consume newline character left by scanf
+void clear_input_buffer(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
+}
 
-    // Process each test case
-    for (test_case_index = 0; test_case_index < num_test_cases; test_case_index++) {
-        // Get input string
-        printf("Enter string for test case %d: ", test_case_index + 1);
-        // Read string with buffer overflow protection
-        if (scanf("%100s", input_string) != 1) {
-            printf("Error reading string for test case %d.\n", test_case_index + 1);
-            continue; // Skip to next test case if reading fails
-        }
 
-        // Consume leftover characters in input buffer
-        while ((c = getchar()) != '\n' && c != EOF);
-
-        // Get string length
-        string_length = strlen(input_string);
-
-        // Check if string is not empty and last character is a digit
-        if (string_length > 0 && isdigit(input_string[string_length - 1])) {
-            // Get last character
-            last_digit_char = input_string[string_length - 1];
-
-            // Convert character digit to integer
-            // Subtracting '0' from digit character gives integer value
-            int last_digit_int = last_digit_char - '0';
-
-            // Check if digit is odd or even
-            if (last_digit_int % 2 != 0) {
-                printf("Result for test case %d: Odd\n", test_case_index + 1);
-            } else {
-                printf("Result for test case %d: Even\n", test_case_index + 1);
-            }
-        } else {
-            // Handle empty string or non-digit last character
-            printf("Invalid input for test case %d: String is empty or last character is not a digit.\n", test_case_index + 1);
-        }
+int read_test_count(void) {
+    int count;
+    printf("Enter the number of test cases: ");
+    
+    if (scanf("%d", &count) != 1 || count < 0) {
+        printf("Error: Invalid number of test cases.\n");
+        return -1;
     }
+    
+    clear_input_buffer();
+    return count;
+}
 
+int read_string(char *buffer, int test_num) {
+    printf("Enter string for test case %d: ", test_num);
+    
+    if (scanf("%100s", buffer) != 1) {
+        printf("Error: Failed to read string for test case %d.\n", test_num);
+        return 0;
+    }
+    
+    clear_input_buffer();
+    return 1;
+}
+
+void process_string(const char *str, int test_num) {
+    size_t length = strlen(str);
+    
+    // Check for empty string
+    if (length == 0) {
+        printf("Invalid input for test case %d: String is empty.\n", test_num);
+        return;
+    }
+    
+    char last_char = str[length - 1];
+    
+    // Check if last character is a digit
+    if (!isdigit(last_char)) {
+        printf("Invalid input for test case %d: Last character is not a digit.\n", test_num);
+        return;
+    }
+    
+    // Convert digit character to integer and check parity
+    int digit = last_char - '0';
+    const char *result = (digit % 2 == 0) ? "Even" : "Odd";
+    
+    printf("Result for test case %d: %s\n", test_num, result);
+}
+
+int main(void) {
+    char input_string[BUFFER_SIZE];
+    
+    int num_test_cases = read_test_count();
+    if (num_test_cases == -1) {
+        return 1;
+    }
+    
+    // Process each test case
+    for (int i = 0; i < num_test_cases; i++) {
+        int test_num = i + 1;
+        
+        if (!read_string(input_string, test_num)) {
+            continue; // Skip to next test case on read error
+        }
+        
+        process_string(input_string, test_num);
+    }
+    
     return 0;
 }

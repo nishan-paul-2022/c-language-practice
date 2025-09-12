@@ -4,34 +4,58 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-void print_array(int rows, int cols, int arr[rows][cols]) {
-    int i, j;
+void get_dimensions(int *rows, int *cols) {
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", rows, cols);
+}
+
+void input_array(int rows, int cols, int **arr) {
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+}
+
+void print_array(int rows, int cols, int **arr) {
     printf("\nThe array is:\n");
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
             printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
 }
 
-int main(void) {
-    int r, c, i, j;
-
-    printf("Enter the number of rows and columns: ");
-    scanf("%d %d", &r, &c);
-
-    int a[r][c];
-
-    printf("Enter the elements of the array:\n");
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++) {
-            scanf("%d", &a[i][j]);
-        }
+int **allocate_2d_array(int rows, int cols) {
+    int **arr = (int **)malloc(rows * sizeof(int *));
+    for (int i = 0; i < rows; i++) {
+        arr[i] = (int *)malloc(cols * sizeof(int));
     }
+    return arr;
+}
 
+void free_2d_array(int **arr, int rows) {
+    for (int i = 0; i < rows; i++) {
+        free(arr[i]);
+    }
+    free(arr);
+}
+
+int main(void) {
+    int r, c;
+    
+    get_dimensions(&r, &c);
+    
+    int **a = allocate_2d_array(r, c);
+    
+    input_array(r, c, a);
     print_array(r, c, a);
-
+    
+    free_2d_array(a, r);
+    
     return 0;
 }

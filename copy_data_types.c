@@ -7,9 +7,71 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "a.txt"
-#define OUTPUT_FILENAME "new.txt"
-#define BUFFER_SIZE 100 // For string reading
+#define INPUT_FILENAME "files/05-input.txt"
+#define OUTPUT_FILENAME "files/05-output.txt"
+#define BUFFER_SIZE 100
+
+// Print program header and information
+void print_header(void) {
+    printf("=== File Data Processor ===\n");
+    printf("Reading from: %s\n", INPUT_FILENAME);
+    printf("Writing to: %s\n", OUTPUT_FILENAME);
+    printf("Expected format: char string integer float\n\n");
+}
+
+// Open input file with error handling
+FILE* open_input_file(void) {
+    FILE *file = fopen(INPUT_FILENAME, "r");
+    if (file == NULL) {
+        perror("Error opening input file");
+    }
+    return file;
+}
+
+// Open output file with error handling
+FILE* open_output_file(void) {
+    FILE *file = fopen(OUTPUT_FILENAME, "w");
+    if (file == NULL) {
+        perror("Error opening output file");
+    }
+    return file;
+}
+
+// Read data from input file
+int read_file_data(FILE *file, char *first_char, char *string_buffer, int *integer_value, float *float_value) {
+    if (fscanf(file, "%c %s %d %f", first_char, string_buffer, integer_value, float_value) != 4) {
+        fprintf(stderr, "Error: Invalid file format in '%s'\n", INPUT_FILENAME);
+        return 0;
+    }
+    return 1;
+}
+
+// Write data to output file
+int write_file_data(FILE *file, char first_char, const char *string_buffer, int integer_value, float float_value) {
+    if (fprintf(file, "%c\t%s\t%d\t%.2f\n", first_char, string_buffer, integer_value, float_value) < 0) {
+        perror("Error writing to output file");
+        return 0;
+    }
+    return 1;
+}
+
+// Close file with error handling
+int close_file(FILE *file, const char *filename) {
+    if (fclose(file) != 0) {
+        fprintf(stderr, "Error closing file '%s'\n", filename);
+        return 0;
+    }
+    return 1;
+}
+
+// Display the processed data
+void display_data(char first_char, const char *string_buffer, int integer_value, float float_value) {
+    printf("Data processed:\n");
+    printf("Character: %c\n", first_char);
+    printf("String: %s\n", string_buffer);
+    printf("Integer: %d\n", integer_value);
+    printf("Float: %.2f\n\n", float_value);
+}
 
 int main(void) {
     FILE *file_input, *file_output;
@@ -18,54 +80,37 @@ int main(void) {
     int integer_value;
     float float_value;
 
-    // Open the input file in read mode
-    file_input = fopen(INPUT_FILENAME, "r");
+    print_header();
+
+    file_input = open_input_file();
     if (file_input == NULL) {
-        perror("Error opening input file");
-        return 0;
+        return 1;
     }
 
-    // Read data from the input file.
-    // The format string "%c %[^\n] %d %f" reads:
-    // %c: a single character into first_char.
-    // ' ': skips any whitespace.
-    // %[^\n]: reads characters into string_buffer until a newline is encountered.
-    // ' ': skips any whitespace.
-    // %d: reads an integer into integer_value.
-    // ' ': skips any whitespace.
-    // %f: reads a float into float_value.
-    // It's crucial that the input file adheres strictly to this format.
-    if (fscanf(file_input, "%c %[^\n] %d %f", &first_char, string_buffer, &integer_value, &float_value) != 4) {
-        // Check if all 4 items were successfully read.
-        fprintf(stderr, "Error: Could not read all expected data from '%s'. Check file format.\n", INPUT_FILENAME);
+    if (!read_file_data(file_input, &first_char, string_buffer, &integer_value, &float_value)) {
         fclose(file_input);
-        return 0;
+        return 1;
     }
 
-    // Close the input file as we have read all necessary data.
     fclose(file_input);
 
-    // Open the output file in write mode
-    file_output = fopen(OUTPUT_FILENAME, "w");
+    display_data(first_char, string_buffer, integer_value, float_value);
+
+    file_output = open_output_file();
     if (file_output == NULL) {
-        perror("Error opening output file");
-        return 0;
+        return 1;
     }
 
-    // Write the read data to the output file, separated by tabs.
-    if (fprintf(file_output, "%c\t%s\t%d\t%.6f\n", first_char, string_buffer, integer_value, float_value) < 0) {
-        perror("Error writing to output file");
+    if (!write_file_data(file_output, first_char, string_buffer, integer_value, float_value)) {
         fclose(file_output);
-        return 0;
+        return 1;
     }
 
-    // Close the output file
-    if (fclose(file_output) != 0) {
-        perror("Error closing output file");
-        return 0;
+    if (!close_file(file_output, OUTPUT_FILENAME)) {
+        return 1;
     }
 
-    printf("Data successfully copied from '%s' to '%s'.\n", INPUT_FILENAME, OUTPUT_FILENAME);
+    printf("Success: Data copied from '%s' to '%s'\n", INPUT_FILENAME, OUTPUT_FILENAME);
 
     return 0;
 }

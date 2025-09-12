@@ -6,58 +6,100 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    int current_x, current_y;
-    char command_char;
+// Clear input buffer
+void clear_input_buffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
 
-    // Prompt for and read the initial coordinates
-    printf("Enter initial X and Y coordinates (e.g., 0 0): ");
-    if (scanf("%d %d", &current_x, &current_y) != 2) {
-        fprintf(stderr, "Error: Invalid input for initial coordinates.\n");
+// Print program header and instructions
+void print_header(void) {
+    printf("=== Coordinate Movement Simulator ===\n");
+    printf("Navigate on a 2D grid using commands:\n");
+    printf("r = right, l = left, u = up, d = down, s = stop\n\n");
+}
+
+// Read and validate initial coordinates
+int read_initial_coordinates(int *x, int *y) {
+    printf("Enter initial X and Y coordinates (format: x y): ");
+    if (scanf("%d %d", x, y) != 2) {
+        fprintf(stderr, "Error: Invalid input for coordinates.\n");
         return 0;
     }
+    clear_input_buffer();
+    return 1;
+}
 
-    // Consume the newline character left by scanf
-    while (getchar() != '\n');
-
-    printf("\nEnter movement commands (r: right, l: left, u: up, d: down, s: stop):\n");
-
-    // Loop to process movement commands
-    while (1) { // Loop indefinitely until 's' is entered
-        printf("Enter command: ");
-        if (scanf(" %c", &command_char) != 1) { // Note the space before %c to consume any leading whitespace/newlines
-            fprintf(stderr, "Error: Failed to read command.\n");
-            break;
-        }
-
-        // Process the command using a switch statement
-        switch (command_char) {
-            case 'r': // Move right
-                current_x++;
-                break;
-            case 'l': // Move left
-                current_x--;
-                break;
-            case 'u': // Move up
-                current_y++;
-                break;
-            case 'd': // Move down
-                current_y--;
-                break;
-            case 's': // Stop
-                printf("Stopping simulation.\n");
-                goto end_loop; // Exit the loop
-            default: // Handle invalid commands
-                printf("Invalid command '%c'. Please use r, l, u, d, or s.\n", command_char);
-                break;
-        }
-        // Optionally print current coordinates after each valid move
-        // printf("Current position: (%d, %d)\n", current_x, current_y);
+// Read movement command from user
+int read_command(char *command) {
+    printf("Enter command (r/l/u/d/s): ");
+    if (scanf(" %c", command) != 1) {
+        fprintf(stderr, "Error: Failed to read command.\n");
+        return 0;
     }
+    return 1;
+}
 
-end_loop:
-    // Print the final coordinates
-    printf("\nFinal coordinates: (%d, %d)\n", current_x, current_y);
+// Process movement command and update coordinates
+int process_command(char command, int *x, int *y) {
+    switch (command) {
+        case 'r':
+            (*x)++;
+            printf("Moved right to (%d, %d)\n", *x, *y);
+            break;
+        case 'l':
+            (*x)--;
+            printf("Moved left to (%d, %d)\n", *x, *y);
+            break;
+        case 'u':
+            (*y)++;
+            printf("Moved up to (%d, %d)\n", *x, *y);
+            break;
+        case 'd':
+            (*y)--;
+            printf("Moved down to (%d, %d)\n", *x, *y);
+            break;
+        case 's':
+            printf("Stopping simulation.\n");
+            return 0; // Signal to stop
+        default:
+            printf("Invalid command '%c'. Use r/l/u/d/s.\n", command);
+            break;
+    }
+    return 1; // Continue processing
+}
 
+// Main simulation loop
+void run_simulation(int *x, int *y) {
+    char command;
+    
+    printf("\nStarting position: (%d, %d)\n", *x, *y);
+    printf("Enter movement commands:\n");
+    
+    while (read_command(&command)) {
+        if (!process_command(command, x, y)) {
+            break; // Stop command received
+        }
+    }
+}
+
+// Display final results
+void display_final_position(int x, int y) {
+    printf("\nSimulation completed!\n");
+    printf("Final coordinates: (%d, %d)\n", x, y);
+}
+
+int main(void) {
+    int current_x, current_y;
+    
+    print_header();
+    
+    if (!read_initial_coordinates(&current_x, &current_y)) {
+        return 1;
+    }
+    
+    run_simulation(&current_x, &current_y);
+    display_final_position(current_x, current_y);
+    
     return 0;
 }

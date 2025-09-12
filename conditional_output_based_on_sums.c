@@ -5,47 +5,83 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int number_of_test_cases;
-    int current_test_case = 0;
+// Clear input buffer after failed scanf
+void clear_input_buffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
 
+// Read and validate number of test cases
+int read_test_count(void) {
+    int count;
+    printf("=== Hit/Miss Calculator ===\n");
+    printf("This program evaluates (k1-k2+k3-k4) and (m1-m2+m3-m4) for each test case.\n");
+    printf("Result is HIT if both sums are positive, otherwise MISS.\n\n");
+    
     printf("Enter the number of test cases: ");
-    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
-        printf("Invalid input for number of test cases.\n");
+    if (scanf("%d", &count) != 1 || count < 0) {
+        printf("Error: Invalid input for number of test cases.\n");
+        return -1;
+    }
+    return count;
+}
+
+// Read four integers with validation
+int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
+    printf("%s", prompt);
+    if (scanf("%d %d %d %d", a, b, c, d) != 4) {
+        printf("Error: Invalid input. Please enter four integers.\n");
+        clear_input_buffer();
         return 0;
     }
+    return 1;
+}
 
-    while (current_test_case < number_of_test_cases) {
-        int k1, k2, k3, k4;
-        int m1, m2, m3, m4;
-        int sum1, sum2;
+// Calculate sum using formula: a - b + c - d
+int calculate_sum(int a, int b, int c, int d) {
+    return a - b + c - d;
+}
 
-        printf("\n--- Test Case %d ---\n", current_test_case + 1);
-        printf("Enter four integers for the first set (k1 k2 k3 k4): ");
-        if (scanf("%d %d %d %d", &k1, &k2, &k3, &k4) != 4) {
-            printf("Invalid input for first set. Skipping this test case.\n");
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
-            current_test_case++;
-            continue;
-        }
-        sum1 = k1 - k2 + k3 - k4;
+// Determine and print result based on both sums
+void print_result(int sum1, int sum2, int test_num) {
+    const char *result = (sum1 > 0 && sum2 > 0) ? "HIT" : "MISS";
+    printf("Test Case %d Result: %s (Sum1=%d, Sum2=%d)\n", test_num, result, sum1, sum2);
+}
 
-        printf("Enter four integers for the second set (K1 K2 K3 K4): ");
-        if (scanf("%d %d %d %d", &m1, &m2, &m3, &m4) != 4) {
-            printf("Invalid input for second set. Skipping this test case.\n");
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
-            current_test_case++;
-            continue;
-        }
-        sum2 = m1 - m2 + m3 - m4;
-
-        if (sum1 > 0 && sum2 > 0) {
-            printf("HIT\n");
-        } else {
-            printf("MISS\n");
-        }
-        current_test_case++;
+// Process a single test case
+int process_test_case(int test_num) {
+    int k1, k2, k3, k4;
+    int m1, m2, m3, m4;
+    
+    printf("\n--- Test Case %d ---\n", test_num);
+    
+    if (!read_four_integers(&k1, &k2, &k3, &k4, "Enter first set (k1 k2 k3 k4): ")) {
+        return 0;
     }
+    
+    if (!read_four_integers(&m1, &m2, &m3, &m4, "Enter second set (m1 m2 m3 m4): ")) {
+        return 0;
+    }
+    
+    int sum1 = calculate_sum(k1, k2, k3, k4);
+    int sum2 = calculate_sum(m1, m2, m3, m4);
+    
+    print_result(sum1, sum2, test_num);
+    return 1;
+}
 
+int main(void) {
+    int number_of_test_cases = read_test_count();
+    if (number_of_test_cases == -1) {
+        return 1;
+    }
+    
+    for (int i = 0; i < number_of_test_cases; i++) {
+        if (!process_test_case(i + 1)) {
+            printf("Skipping to next test case...\n");
+        }
+    }
+    
+    printf("\nCalculation completed!\n");
     return 0;
 }

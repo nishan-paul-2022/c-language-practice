@@ -7,71 +7,93 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_STRING_LENGTH 1000 // Define a maximum buffer size
+#define MAX_STRING_LENGTH 1000
 
-// Function to count the occurrences of a specific character within a string.
-// Takes the string (char array) and its length as input.
-// Reads a character from standard input to search for.
-// Returns the count of the character in the string.
-int count_character_occurrences(const char str[], int length) {
-    char char_to_find;
+// Clear input buffer
+void clear_input_buffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+// Print program header
+void print_header(void) {
+    printf("=== Character Counter ===\n");
+    printf("This program counts occurrences of a specific character in your string.\n\n");
+}
+
+// Read string from user input
+int read_string(char *buffer, int max_length) {
+    printf("Enter a string (max %d characters): ", max_length - 1);
+    
+    if (fgets(buffer, max_length, stdin) == NULL) {
+        fprintf(stderr, "Error: Failed to read string input.\n");
+        return 0;
+    }
+    
+    buffer[strcspn(buffer, "\n")] = '\0'; // Remove newline
+    return 1;
+}
+
+// Read character to search for
+int read_search_character(char *character) {
+    printf("Enter the character to count: ");
+    
+    if (scanf(" %c", character) != 1) {
+        fprintf(stderr, "Error: Invalid character input.\n");
+        return 0;
+    }
+    
+    clear_input_buffer();
+    return 1;
+}
+
+// Count occurrences of character in string
+int count_character_occurrences(const char *str, char target_char) {
+    if (str == NULL) {
+        fprintf(stderr, "Error: Invalid string provided.\n");
+        return -1;
+    }
+    
     int count = 0;
-    int i;
-
-    // Check for invalid inputs
-    if (str == NULL || length <= 0) {
-        fprintf(stderr, "Error: Invalid string or length passed to count_character_occurrences.\n");
-        return -1; // Indicate an error
-    }
-
-    // Prompt user for the character to search for
-    printf("Enter the character to count in the string: ");
-    // Read the character, consuming any leftover newline from previous input
-    if (scanf(" %c", &char_to_find) != 1) { // Space before %c consumes whitespace
-        fprintf(stderr, "Error: Invalid input for character.\n");
-        return -1; // Indicate an error
-    }
-    // Consume any remaining characters on the line after the character, including the newline
-    while (getchar() != '\n');
-
-    // Iterate through the string to count occurrences of the character
-    for (i = 0; i < length; ++i) {
-        if (str[i] == char_to_find) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == target_char) {
             count++;
         }
     }
+    
     return count;
+}
+
+// Display results
+void display_results(const char *str, char character, int count) {
+    printf("\nResults:\n");
+    printf("String: \"%s\"\n", str);
+    printf("Character: '%c'\n", character);
+    printf("Occurrences: %d\n", count);
 }
 
 int main(void) {
     char input_string[MAX_STRING_LENGTH];
-    int string_length;
+    char search_character;
     int occurrence_count;
-
-    // Get the string input from the user
-    printf("Enter a string (max %d characters): ", MAX_STRING_LENGTH - 1);
-    // Use fgets for safe string input
-    if (fgets(input_string, MAX_STRING_LENGTH, stdin) == NULL) {
-        fprintf(stderr, "Error: Failed to read string input.\n");
-        return 0;
+    
+    print_header();
+    
+    if (!read_string(input_string, MAX_STRING_LENGTH)) {
+        return 1;
     }
-    // Remove the trailing newline character from fgets if it exists
-    input_string[strcspn(input_string, "\n")] = 0;
-
-    // Get the length of the string
-    string_length = strlen(input_string);
-
-    // Call the function to count character occurrences
-    occurrence_count = count_character_occurrences(input_string, string_length);
-
-    // Check if the function call resulted in an error
+    
+    if (!read_search_character(&search_character)) {
+        return 1;
+    }
+    
+    occurrence_count = count_character_occurrences(input_string, search_character);
+    
     if (occurrence_count == -1) {
-        fprintf(stderr, "Character counting failed.\n");
-        return 0;
+        return 1;
     }
-
-    // Print the final count
-    printf("The character occurred %d times in the string.\n", occurrence_count);
-
+    
+    display_results(input_string, search_character, occurrence_count);
+    
     return 0;
 }
