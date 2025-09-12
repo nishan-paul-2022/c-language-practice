@@ -146,14 +146,14 @@ int main(void) {
     // Get and confirm User's Password
     printf("Enter password (max %d characters): ", (int)sizeof(user_data.password) - 1);
     password_input_status = read_password(user_data.password, sizeof(user_data.password));
-    if (password_input_status != 0) return 0;
+    if (password_input_status) return 0;
 
     printf("Confirm password: ");
     password_input_status = read_password(user_data.repeat_password, sizeof(user_data.repeat_password));
-    if (password_input_status != 0) return 0;
+    if (password_input_status) return 0;
 
     // Check if passwords match
-    if (strcmp(user_data.password, user_data.repeat_password) != 0) {
+    if (strcmp(user_data.password, user_data.repeat_password)) {
         printf("Error: Passwords do not match.\n");
         return 0;
     } else {
@@ -162,7 +162,7 @@ int main(void) {
 
     // Get User's Birthdate
     printf("Enter your birthdate:\n");
-    if (read_date(&user_data.birth_date) != 0) return 0;
+    if (read_date(&user_data.birth_date)) return 0;
 
     // Ask about having a son
     printf("Do you have a son? (Y/N): ");
@@ -176,7 +176,7 @@ int main(void) {
     // If the user has a son, collect his information
     if (has_son == 'Y' || has_son == 'y') {
         printf("Enter your son's birthdate:\n");
-        if (read_date(&son_data.son_birth_date) != 0) return 0;
+        if (read_date(&son_data.son_birth_date)) return 0;
 
         // Get Son's Phone Number
         printf("Enter your son's phone number: ");

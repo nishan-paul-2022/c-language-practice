@@ -39,20 +39,20 @@ int main(void) {
     printf("Enter dimensions for Matrix 1 (rows cols): ");
     if (scanf("%d %d", &r1, &c1) != 2 || r1 <= 0 || c1 <= 0 || r1 > MAX_DIM || c1 > MAX_DIM) {
         printf("Invalid dimensions. Rows and columns must be between 1 and %d.\n", MAX_DIM);
-        return 1;
+        return 0;
     }
 
     // Get dimensions for the second matrix
     printf("Enter dimensions for Matrix 2 (rows cols): ");
     if (scanf("%d %d", &r2, &c2) != 2 || r2 <= 0 || c2 <= 0 || r2 > MAX_DIM || c2 > MAX_DIM) {
         printf("Invalid dimensions. Rows and columns must be between 1 and %d.\n", MAX_DIM);
-        return 1;
+        return 0;
     }
 
     // Check if multiplication is possible
     if (c1 != r2) {
         printf("Matrix multiplication is not possible. Columns of Matrix 1 must equal rows of Matrix 2.\n");
-        return 1;
+        return 0;
     }
 
     // Read elements for both matrices

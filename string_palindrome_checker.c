@@ -27,7 +27,7 @@ int is_palindrome(const char *str) {
         }
     }
 
-    return 1; // It's a palindrome
+    return 1;
 }
 
 int main(void) {

@@ -19,9 +19,10 @@ int power_recursive(int base, int exponent) {
         // For negative exponents, a different approach (using doubles and division) would be needed.
         if (exponent < 0) {
             printf("Error: Exponent must be non-negative for this function.\n");
-            return -1; // Indicate an error
+            return -1;
         }
-        return base * power_recursive(base, exponent - 1);
+        int power_result = base * power_recursive(base, exponent - 1);
+        return power_result;
     }
 }
 

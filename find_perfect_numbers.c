@@ -49,7 +49,7 @@ int main(void) {
     printf("Enter the number of perfect numbers to find: ");
     if (scanf("%d", &count_needed) != 1) {
         printf("Invalid input. Please enter an integer.\n");
-        return 1;
+        return 0;
     }
 
     find_perfect_numbers(count_needed);

@@ -9,7 +9,7 @@
 long long calculate_ncr(int n, int r) {
     // Handle invalid inputs
     if (r < 0 || r > n) {
-        return -1; // Error code for invalid input
+        return -1;
     }
     if (r == 0 || r == n) {
         return 1; // Base cases: C(n, 0) = C(n, n) = 1

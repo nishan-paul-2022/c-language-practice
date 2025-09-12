@@ -53,7 +53,9 @@ char* custom_strlwr(char* str) {
 int custom_strcasecmp(const char* s1, const char* s2) {
     while (*s1 && *s2) {
         int diff = tolower((unsigned char)*s1) - tolower((unsigned char)*s2);
-        if (diff != 0) return diff;
+        if (diff) {
+            return diff;
+        }
         s1++;
         s2++;
     }
@@ -94,11 +96,11 @@ int read_strings(char strings[][MAX_STRING_LENGTH]) {
         printf("String %d: ", i + 1);
         if (fgets(strings[i], MAX_STRING_LENGTH, stdin) == NULL) {
             fprintf(stderr, "Error: Failed to read string %d.\n", i + 1);
-            return 0;
+            return -1;
         }
         strings[i][strcspn(strings[i], "\n")] = '\0'; // Remove newline
     }
-    return 1;
+    return 0;
 }
 
 // Demonstrate string length function
@@ -125,7 +127,7 @@ void demo_strcasecmp(const char strings[][MAX_STRING_LENGTH]) {
     int result = custom_strcasecmp(strings[3], strings[4]);
     printf("3. Comparing string 4 and string 5 (case-insensitive): ");
     if (result == 0) {
-        printf("EQUAL\n");
+        printf("Equivalent\n");
     } else if (result > 0) {
         printf("String 4 > String 5\n");
     } else {
@@ -213,11 +215,9 @@ int main(void) {
     
     print_header();
     
-    if (!read_strings(strings)) {
-        return 1;
+    if (read_strings(strings) == 0) {
+        run_demonstrations(strings);
     }
-    
-    run_demonstrations(strings);
     
     return 0;
 }

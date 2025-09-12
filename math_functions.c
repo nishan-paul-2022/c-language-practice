@@ -18,7 +18,7 @@ int main(void) {
     // Read and validate all four input values.
     if (scanf("%lf %lf %lf %lf", &angle_rad, &sine_value, &base, &exponent) != 4) {
         fprintf(stderr, "Error: Invalid input. Please enter four numeric values.\n");
-        return 1; // Return a non-zero value to indicate an error
+        return 0;
     }
 
     // --- Demonstrate Math Functions ---

@@ -22,14 +22,14 @@ int main(void) {
     file_output = fopen(OUTPUT_FILE, "r");
     if (file_output == NULL) {
         perror("Error opening output file");
-        return 1;
+        return 0;
     }
 
     file_input = fopen(INPUT_FILE, "r");
     if (file_input == NULL) {
         perror("Error opening input file");
         fclose(file_output);
-        return 1;
+        return 0;
     }
 
     while (fscanf(file_output, "%d", &value_output) == 1) {

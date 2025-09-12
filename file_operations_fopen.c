@@ -77,7 +77,7 @@ int write_data_to_file(const char *filename, const char *mode, const char *input
     fprintf(file_pointer, "Integer: %d\n", input_int);
     fprintf(file_pointer, "Float: %f\n", input_float);
 
-    if (fclose(file_pointer) != 0) {
+    if (fclose(file_pointer)) {
         perror("Error closing file");
         return -1;
     }
@@ -93,15 +93,15 @@ void process_file_operations() {
     int input_int;
     float input_float;
 
-    if (get_filename_and_mode(filename, mode) != 0) {
+    if (get_filename_and_mode(filename, mode)) {
         return;
     }
 
-    if (get_data_inputs(input_string, &input_char, &input_int, &input_float) != 0) {
+    if (get_data_inputs(input_string, &input_char, &input_int, &input_float)) {
         return;
     }
 
-    if (write_data_to_file(filename, mode, input_string, input_char, input_int, input_float) != 0) {
+    if (write_data_to_file(filename, mode, input_string, input_char, input_int, input_float)) {
         return;
     }
 

@@ -24,10 +24,10 @@ int read_number(int test_num, int *number) {
     
     if (scanf("%d", number) != 1) {
         printf("Error: Failed to read number for test case %d.\n", test_num);
-        return 0;
+        return -1;
     }
     
-    return 1;
+    return 0;
 }
 
 // Determines and prints if number is odd or even
@@ -39,7 +39,7 @@ void check_parity(int number, int test_num) {
 int main(void) {
     int num_test_cases = read_test_count();
     if (num_test_cases == -1) {
-        return 1;
+        return 0;
     }
     
     // Process each test case
@@ -47,11 +47,9 @@ int main(void) {
         int test_num = i + 1;
         int number;
         
-        if (!read_number(test_num, &number)) {
-            continue; // Skip to next test case on input error
+        if (read_number(test_num, &number) == 0) {
+            check_parity(number, test_num);
         }
-        
-        check_parity(number, test_num);
     }
     
     return 0;

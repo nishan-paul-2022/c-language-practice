@@ -194,7 +194,7 @@ int main(void) {
     result = read_dimensions(&dim);
     if (!result.success) {
         display_error(result.error_message);
-        return EXIT_FAILURE;
+        return 0;
     }
     
     // Create and validate grid
@@ -202,7 +202,7 @@ int main(void) {
     result = is_valid_grid(grid);
     if (!result.success) {
         display_error(result.error_message);
-        return EXIT_FAILURE;
+        return 0;
     }
     
     // Populate grid
@@ -210,7 +210,7 @@ int main(void) {
     if (!result.success) {
         display_error(result.error_message);
         destroy_grid(&grid);
-        return EXIT_FAILURE;
+        return 0;
     }
     
     // Display grid
@@ -221,7 +221,7 @@ int main(void) {
     if (!result.success) {
         display_error(result.error_message);
         destroy_grid(&grid);
-        return EXIT_FAILURE;
+        return 0;
     }
     
     // Validate indices
@@ -229,7 +229,7 @@ int main(void) {
     if (!result.success) {
         display_error(result.error_message);
         destroy_grid(&grid);
-        return EXIT_FAILURE;
+        return 0;
     }
     
     // Display character at index

@@ -21,7 +21,7 @@ void echo_stream(void) {
 int check_stream_error(void) {
     if (ferror(stdin)) {
         perror("Error reading from standard input");
-        return 1;
+        return -1;
     }
     return 0;
 }
@@ -29,10 +29,7 @@ int check_stream_error(void) {
 int main(void) {
     display_instructions();
     echo_stream();
-    
-    if (check_stream_error()) {
-        return 0;
-    }
+    check_stream_error();
     
     return 0;
 }

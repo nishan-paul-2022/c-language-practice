@@ -64,7 +64,7 @@ FILE* open_file_for_reading(const char *filename) {
 // Perform first seek and read operation
 int first_seek_and_read(FILE *file_ptr, char *buffer, int size) {
     // Skip first 3 characters
-    if (fseek(file_ptr, sizeof(char) * 3, SEEK_CUR) != 0) {
+    if (fseek(file_ptr, sizeof(char) * 3, SEEK_CUR)) {
         perror("Error seeking in file (first seek)");
         return -1;
     }
@@ -84,7 +84,7 @@ int first_seek_and_read(FILE *file_ptr, char *buffer, int size) {
 // Perform second seek and read integers
 int second_seek_and_read_integers(FILE *file_ptr, int *num1, int *num2, int *num3) {
     // Skip 5 more characters
-    if (fseek(file_ptr, sizeof(char) * 5, SEEK_CUR) != 0) {
+    if (fseek(file_ptr, sizeof(char) * 5, SEEK_CUR)) {
         perror("Error seeking in file (second seek)");
         return -1;
     }
@@ -103,7 +103,7 @@ int second_seek_and_read_integers(FILE *file_ptr, int *num1, int *num2, int *num
 
 // Perform backward seek
 int backward_seek(FILE *file_ptr) {
-    if (fseek(file_ptr, -sizeof(char) * 1, SEEK_CUR) != 0) {
+    if (fseek(file_ptr, -sizeof(char) * 1, SEEK_CUR)) {
         perror("Error seeking backward in file");
         return -1;
     }
@@ -112,7 +112,7 @@ int backward_seek(FILE *file_ptr) {
 
 // Perform fourth seek and read remaining integers
 int fourth_seek_and_read(FILE *file_ptr, int *num4, int *num5, int *num3) {
-    if (fseek(file_ptr, sizeof(int) * 2, SEEK_CUR) != 0) {
+    if (fseek(file_ptr, sizeof(int) * 2, SEEK_CUR)) {
         perror("Error seeking in file (fourth seek)");
         return -1;
     }
@@ -144,7 +144,7 @@ void display_fourth_read_result(int num4, int num5, int num3) {
 
 // Close file safely
 int close_file_safely(FILE *file_ptr) {
-    if (fclose(file_ptr) != 0) {
+    if (fclose(file_ptr)) {
         perror("Error closing file");
         return -1;
     }
@@ -159,7 +159,7 @@ int main(void) {
     int num1, num2, num3, num4, num5;
 
     // Get user input
-    if (get_user_input(&num1, &num2, input_buffer_s) != 0) {
+    if (get_user_input(&num1, &num2, input_buffer_s)) {
         return 0;
     }
 
@@ -173,34 +173,34 @@ int main(void) {
     }
 
     // First seek and read
-    if (first_seek_and_read(file_ptr, input_buffer_t, BUFFER_SIZE) != 0) {
+    if (first_seek_and_read(file_ptr, input_buffer_t, BUFFER_SIZE)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_first_read_result(input_buffer_t);
 
     // Second seek and read integers
-    if (second_seek_and_read_integers(file_ptr, &num1, &num2, &num3) != 0) {
+    if (second_seek_and_read_integers(file_ptr, &num1, &num2, &num3)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_second_read_result(num1, num2, num3);
 
     // Backward seek
-    if (backward_seek(file_ptr) != 0) {
+    if (backward_seek(file_ptr)) {
         close_file_safely(file_ptr);
         return 0;
     }
 
     // Fourth seek and read
-    if (fourth_seek_and_read(file_ptr, &num4, &num5, &num3) != 0) {
+    if (fourth_seek_and_read(file_ptr, &num4, &num5, &num3)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_fourth_read_result(num4, num5, num3);
 
     // Close file
-    if (close_file_safely(file_ptr) != 0) {
+    if (close_file_safely(file_ptr)) {
         return 0;
     }
 

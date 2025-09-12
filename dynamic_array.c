@@ -22,10 +22,11 @@ int read_integer_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         if (scanf("%d", &arr[i]) != 1) {
             printf("Invalid input at element %d. Please enter integers only.\n", i);
-            return 0;
+            return -1;
         }
     }
-    return 1;
+
+    return 0;
 }
 
 void print_array(int arr[], int size) {
@@ -45,7 +46,7 @@ int main(void) {
     
     int arr[n];
     
-    if (!read_integer_array(arr, n)) {
+    if (read_integer_array(arr, n) == -1) {
         return 0;
     }
     

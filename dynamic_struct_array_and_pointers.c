@@ -56,11 +56,11 @@ int input_records(Record *records_array, int count) {
         if (scanf("%ld, %f, %99s", &records_array[i].id, &records_array[i].value, records_array[i].name) != 3) {
             fprintf(stderr, "Invalid input format for record %d. Exiting.\n", i + 1);
             clear_input_buffer();
-            return 0;
+            return -1;
         }
         clear_input_buffer();
     }
-    return 1;
+    return 0;
 }
 
 void output_records(Record *records_array, int count) {
@@ -88,7 +88,7 @@ int main(void) {
     
     link_records(records_array, number_of_records);
     
-    if (!input_records(records_array, number_of_records)) {
+    if (input_records(records_array, number_of_records) == 0) {
         free_records(&records_array);
         return 0;
     }

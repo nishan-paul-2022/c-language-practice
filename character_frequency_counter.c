@@ -12,7 +12,7 @@ int main(void) {
     int num_test_cases;
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error: Invalid input for number of test cases.\n");
-        return 1;
+        return 0;
     }
     getchar();
 

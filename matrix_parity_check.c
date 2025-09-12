@@ -9,7 +9,7 @@ int main(void) {
     int n; // Size of the square matrix
 
     // Loop to process multiple matrices until n is 0
-    while (scanf("%d", &n) == 1 && n != 0) {
+    while (scanf("%d", &n) == 1 && n) {
         int i, j;
         int row_sum_index = 0;
         int col_sum_index;
@@ -48,7 +48,7 @@ int main(void) {
         // Check if all sums are even
         int all_sums_even = 1;
         for (i = 0; i < total_sums_count; i++) {
-            if (sums[i] % 2 != 0) {
+            if (sums[i] % 2) {
                 all_sums_even = 0;
                 break;
             }
@@ -64,7 +64,7 @@ int main(void) {
 
             // Count odd row sums and find the index of the first one
             for (i = 0; i < n; i++) {
-                if (sums[i] % 2 != 0) {
+                if (sums[i] % 2) {
                     odd_row_count++;
                     odd_row_idx = i;
                 }
@@ -72,7 +72,7 @@ int main(void) {
 
             // Count odd column sums and find the index of the first one
             for (i = n; i < total_sums_count; i++) {
-                if (sums[i] % 2 != 0) {
+                if (sums[i] % 2) {
                     odd_col_count++;
                     odd_col_idx = i;
                 }

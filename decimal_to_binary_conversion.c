@@ -34,7 +34,7 @@ int get_decimal_input() {
     printf("Enter a non-negative decimal integer (or Ctrl+D to exit): ");
     
     if (scanf("%d", &decimal_number) != 1) {
-        return -1; // EOF indicator
+        return -1;
     }
     
     return decimal_number;
@@ -43,7 +43,6 @@ int get_decimal_input() {
 void process_decimal_to_binary() {
     int decimal_number;
     int binary_digits[32];
-    int binary_length;
 
     while ((decimal_number = get_decimal_input()) != -1) {
         if (decimal_number < 0) {
@@ -51,7 +50,7 @@ void process_decimal_to_binary() {
             continue;
         }
 
-        binary_length = convert_to_binary(decimal_number, binary_digits);
+        int binary_length = convert_to_binary(decimal_number, binary_digits);
         print_binary(binary_digits, binary_length);
     }
 

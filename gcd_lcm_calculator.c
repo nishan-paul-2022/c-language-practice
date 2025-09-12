@@ -17,7 +17,7 @@ long int calculate_gcd(long int a, long int b) {
     if (b == 0) return a;
 
     // Euclidean algorithm
-    while (b != 0) {
+    while (b) {
         long int temp = b;
         b = a % b;
         a = temp;

@@ -33,10 +33,10 @@ int main(void) {
 
     if (num_elements <= 0) {
         printf("Number of elements must be positive.\n");
-        return 1; // Indicate an error
+        return 0;
     }
 
-    int arr[num_elements]; // VLA for the array
+    int arr[num_elements];
 
     read_array_elements(arr, num_elements);
 

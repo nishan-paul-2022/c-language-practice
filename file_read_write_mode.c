@@ -40,7 +40,7 @@ void display_content(const char *buffer) {
 
 // Seek to beginning of file
 int seek_to_beginning(FILE *file_ptr) {
-    if (fseek(file_ptr, 0, SEEK_SET) != 0) {
+    if (fseek(file_ptr, 0, SEEK_SET)) {
         perror("Error seeking to beginning of file for writing");
         return -1;
     }
@@ -58,7 +58,7 @@ int write_to_file(FILE *file_ptr, const char *str) {
 
 // Close file safely
 int close_file_safely(FILE *file_ptr) {
-    if (fclose(file_ptr) != 0) {
+    if (fclose(file_ptr)) {
         perror("Error closing file");
         return -1;
     }
@@ -82,7 +82,7 @@ int main(void) {
     }
 
     // Read content from file
-    if (read_file_content(file_read_write, read_buffer, BUFFER_SIZE) != 0) {
+    if (read_file_content(file_read_write, read_buffer, BUFFER_SIZE)) {
         fclose(file_read_write);
         return 0;
     }
@@ -91,19 +91,19 @@ int main(void) {
     display_content(read_buffer);
 
     // Seek to beginning for writing
-    if (seek_to_beginning(file_read_write) != 0) {
+    if (seek_to_beginning(file_read_write)) {
         fclose(file_read_write);
         return 0;
     }
 
     // Write new content to file
-    if (write_to_file(file_read_write, write_string) != 0) {
+    if (write_to_file(file_read_write, write_string)) {
         fclose(file_read_write);
         return 0;
     }
 
     // Close file
-    if (close_file_safely(file_read_write) != 0) {
+    if (close_file_safely(file_read_write)) {
         return 0;
     }
 

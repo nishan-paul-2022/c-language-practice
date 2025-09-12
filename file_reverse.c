@@ -33,7 +33,7 @@ FILE* open_output_file(const char *filename) {
 
 // Get file size
 long get_file_size(FILE *file) {
-    if (fseek(file, 0, SEEK_END) != 0) {
+    if (fseek(file, 0, SEEK_END)) {
         perror("Error seeking to end of input file");
         return -1;
     }
@@ -54,7 +54,7 @@ int reverse_file_content(FILE *input_file, FILE *output_file, long file_size) {
 
     for (i = file_size - 1; i >= 0; i--) {
         // Seek to position i
-        if (fseek(input_file, i, SEEK_SET) != 0) {
+        if (fseek(input_file, i, SEEK_SET)) {
             perror("Error seeking within input file");
             return -1;
         }
@@ -113,7 +113,7 @@ int main(void) {
     }
 
     // Reverse file content
-    if (reverse_file_content(input_file, output_file, file_size) != 0) {
+    if (reverse_file_content(input_file, output_file, file_size)) {
         close_files(input_file, output_file);
         return 0;
     }

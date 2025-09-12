@@ -41,27 +41,27 @@ FILE* open_output_file(void) {
 int read_file_data(FILE *file, char *first_char, char *string_buffer, int *integer_value, float *float_value) {
     if (fscanf(file, "%c %s %d %f", first_char, string_buffer, integer_value, float_value) != 4) {
         fprintf(stderr, "Error: Invalid file format in '%s'\n", INPUT_FILENAME);
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 // Write data to output file
 int write_file_data(FILE *file, char first_char, const char *string_buffer, int integer_value, float float_value) {
     if (fprintf(file, "%c\t%s\t%d\t%.2f\n", first_char, string_buffer, integer_value, float_value) < 0) {
         perror("Error writing to output file");
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 // Close file with error handling
 int close_file(FILE *file, const char *filename) {
-    if (fclose(file) != 0) {
+    if (fclose(file)) {
         fprintf(stderr, "Error closing file '%s'\n", filename);
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 // Display the processed data
@@ -84,12 +84,12 @@ int main(void) {
 
     file_input = open_input_file();
     if (file_input == NULL) {
-        return 1;
+        return 0;
     }
 
-    if (!read_file_data(file_input, &first_char, string_buffer, &integer_value, &float_value)) {
+    if (read_file_data(file_input, &first_char, string_buffer, &integer_value, &float_value) == -1) {
         fclose(file_input);
-        return 1;
+        return 0;
     }
 
     fclose(file_input);
@@ -98,16 +98,16 @@ int main(void) {
 
     file_output = open_output_file();
     if (file_output == NULL) {
-        return 1;
+        return 0;
     }
 
-    if (!write_file_data(file_output, first_char, string_buffer, integer_value, float_value)) {
+    if (write_file_data(file_output, first_char, string_buffer, integer_value, float_value) == -1) {
         fclose(file_output);
-        return 1;
+        return 0;
     }
 
-    if (!close_file(file_output, OUTPUT_FILENAME)) {
-        return 1;
+    if (close_file(file_output, OUTPUT_FILENAME) == -1) {
+        return 0;
     }
 
     printf("Success: Data copied from '%s' to '%s'\n", INPUT_FILENAME, OUTPUT_FILENAME);

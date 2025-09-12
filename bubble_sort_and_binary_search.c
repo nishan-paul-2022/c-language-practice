@@ -21,7 +21,6 @@ void bubble_sort(int arr[], int size) {
     }
 }
 
-// Searches for target in a sorted integer array using binary search
 // Returns 1-based index if found, -1 otherwise
 int binary_search(int arr[], int size, int target) {
     int low = 0;
@@ -41,7 +40,7 @@ int binary_search(int arr[], int size, int target) {
             high = mid - 1;
     }
     
-    return -1; // Element not found
+    return -1;
 }
 
 int main(void) {
@@ -93,11 +92,11 @@ int main(void) {
 
     int found_index = binary_search(numbers, array_size, target_number);
 
-    if (found_index != -1) {
-        printf("Element %d found at 1-based index: %d\n", target_number, found_index);
+    if (found_index == -1) {
+        printf("Element %d doesn't exist in the array.\n", target_number);
     }
     else {
-        printf("Element %d DOES NOT EXIST in the array.\n", target_number);
+        printf("Element %d found at 1-based index: %d\n", target_number, found_index);
     }
 
     free(numbers); // Free dynamically allocated memory

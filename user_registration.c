@@ -93,14 +93,14 @@ int main(void) {
     // Get and confirm Password
     printf("Enter password (max %d characters): ", (int)sizeof(user_data.password) - 1);
     password_input_status = read_password(user_data.password, sizeof(user_data.password));
-    if (password_input_status != 0) return 0; // Exit if password input failed
+    if (password_input_status) return 0; // Exit if password input failed
 
     printf("Confirm password: ");
     password_input_status = read_password(user_data.repeat_password, sizeof(user_data.repeat_password));
-    if (password_input_status != 0) return 0; // Exit if password confirmation failed
+    if (password_input_status) return 0; // Exit if password confirmation failed
 
     // Check if passwords match
-    if (strcmp(user_data.password, user_data.repeat_password) != 0) {
+    if (strcmp(user_data.password, user_data.repeat_password)) {
         printf("Error: Passwords do not match.\n");
         return 0; // Exit if passwords don't match
     } else {

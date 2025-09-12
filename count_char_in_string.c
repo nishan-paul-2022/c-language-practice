@@ -27,11 +27,11 @@ int read_string(char *buffer, int max_length) {
     
     if (fgets(buffer, max_length, stdin) == NULL) {
         fprintf(stderr, "Error: Failed to read string input.\n");
-        return 0;
+        return -1;
     }
     
     buffer[strcspn(buffer, "\n")] = '\0'; // Remove newline
-    return 1;
+    return 0;
 }
 
 // Read character to search for
@@ -40,11 +40,11 @@ int read_search_character(char *character) {
     
     if (scanf(" %c", character) != 1) {
         fprintf(stderr, "Error: Invalid character input.\n");
-        return 0;
+        return -1;
     }
     
     clear_input_buffer();
-    return 1;
+    return 0;
 }
 
 // Count occurrences of character in string
@@ -75,22 +75,21 @@ void display_results(const char *str, char character, int count) {
 int main(void) {
     char input_string[MAX_STRING_LENGTH];
     char search_character;
-    int occurrence_count;
     
     print_header();
     
-    if (!read_string(input_string, MAX_STRING_LENGTH)) {
-        return 1;
+    if (read_string(input_string, MAX_STRING_LENGTH) == -1) {
+        return 0;
     }
     
-    if (!read_search_character(&search_character)) {
-        return 1;
+    if (read_search_character(&search_character) == -1) {
+        return 0;
     }
     
-    occurrence_count = count_character_occurrences(input_string, search_character);
+    int occurrence_count = count_character_occurrences(input_string, search_character);
     
     if (occurrence_count == -1) {
-        return 1;
+        return 0;
     }
     
     display_results(input_string, search_character, occurrence_count);

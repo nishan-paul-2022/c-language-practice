@@ -21,12 +21,12 @@ int main(void) {
     
     if (scanf("%d %d", &rows, &cols) != 2) {
         printf("Error: Invalid input for dimensions. Please enter two integers.\n");
-        return 1;
+        return 0;
     }
 
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
         printf("Error: Dimensions must be positive and within limits (max %d x %d).\n", MAX_ROWS, MAX_COLS);
-        return 1;
+        return 0;
     }
 
     while (getchar() != '\n'); // Clear input buffer
@@ -39,7 +39,7 @@ int main(void) {
             printf("Enter element at row %d, column %d: ", i + 1, j + 1);
             if (scanf("%d", &matrix[i][j]) != 1) {
                 printf("Error: Invalid input at position [%d][%d]. Please enter an integer.\n", i, j);
-                return 1;
+                return 0;
             }
             while (getchar() != '\n'); // Clear input buffer
         }

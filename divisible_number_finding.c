@@ -9,21 +9,21 @@ int get_inputs(int *start, int *end, int *divisor) {
     printf("Enter the start and end of the range (e.g., 1, 100): ");
     if (scanf("%d, %d", start, end) != 2) {
         printf("Error: Invalid input format for range. Please use 'start, end'.\n");
-        return 0;
+        return -1;
     }
 
     printf("Enter the divisor: ");
     if (scanf("%d", divisor) != 1) {
         printf("Error: Invalid input for divisor.\n");
-        return 0;
+        return -1;
     }
 
     if (*divisor == 0) {
         printf("Error: Divisor cannot be zero.\n");
-        return 0;
+        return -1;
     }
 
-    return 1;
+    return 0;
 }
 
 void find_and_print_divisible_numbers(int start_num, int end_num, int divisor) {
@@ -41,11 +41,12 @@ void find_and_print_divisible_numbers(int start_num, int end_num, int divisor) {
 int main(void) {
     int start_num, end_num, divisor;
     
-    if (!get_inputs(&start_num, &end_num, &divisor)) {
+    if (get_inputs(&start_num, &end_num, &divisor) == -1) {
         fprintf(stderr, "Exiting due to input error.\n");
-        return 1;
+        return 0;
     }
     
     find_and_print_divisible_numbers(start_num, end_num, divisor);
+    
     return 0;
 }

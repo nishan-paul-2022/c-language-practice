@@ -18,10 +18,10 @@ FILE *open_file_write_read(const char *filename) {
 int write_character_to_file(FILE *file_ptr, char character) {
     if (fputc(character, file_ptr) == EOF) {
         perror("Error writing character to file");
-        return 0;
+        return -1;
     }
     printf("Wrote character '%c' to file.\n", character);
-    return 1;
+    return 0;
 }
 
 int read_character_from_file(FILE *file_ptr) {
@@ -56,7 +56,7 @@ int main(void) {
         return 0;
     }
     
-    if (!write_character_to_file(file_ptr, char_to_write)) {
+    if (write_character_to_file(file_ptr, char_to_write) == -1) {
         close_file(file_ptr);
         return 0;
     }

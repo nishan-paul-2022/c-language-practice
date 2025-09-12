@@ -12,9 +12,10 @@ int get_base_and_exponent(double *base, int *exponent) {
     
     if (scanf("%lf, %d", base, exponent) != 2) {
         printf("Invalid input format. Please enter in the format: base, exponent\n");
-        return 0;
+        return -1;
     }
-    return 1;
+
+    return 0;
 }
 
 double calculate_power(double base, int exponent) {
@@ -41,7 +42,7 @@ double calculate_power(double base, int exponent) {
 }
 
 void display_result(double base, int exponent, double result) {
-    if (result != 0.0 || (base == 0.0 && exponent >= 0)) {
+    if (result || (base == 0.0 && exponent >= 0)) {
         printf("%.2f ^ %d = %f\n", base, exponent, result);
     }
 }
@@ -50,7 +51,7 @@ int main(void) {
     double base;
     int exponent;
     
-    if (!get_base_and_exponent(&base, &exponent)) {
+    if (get_base_and_exponent(&base, &exponent) == -1) {
         return 0;
     }
     

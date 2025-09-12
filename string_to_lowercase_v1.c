@@ -27,11 +27,12 @@ int get_input_string(char *input_string, int buffer_size, int max_buffer_size) {
     
     if (fgets(input_string, max_buffer_size, stdin) == NULL) {
         fprintf(stderr, "Error reading input string.\n");
-        return 0;
+        return -1;
     }
     
     input_string[strcspn(input_string, "\n")] = 0; // Remove trailing newline
-    return 1;
+    
+    return 0;
 }
 
 int validate_string_length(const char *input_string, int buffer_size) {
@@ -39,9 +40,10 @@ int validate_string_length(const char *input_string, int buffer_size) {
     
     if (str_length > buffer_size) {
         printf("ERROR: Input string exceeds the specified buffer size.\n");
-        return 0;
+        return -1;
     }
-    return 1;
+
+    return 0;
 }
 
 void convert_to_lowercase(char *input_string) {
@@ -62,11 +64,7 @@ int main(void) {
     
     int buffer_size = get_buffer_size(max_buffer_size);
     
-    if (!get_input_string(input_string, buffer_size, max_buffer_size)) {
-        return 0;
-    }
-    
-    if (validate_string_length(input_string, buffer_size)) {
+    if (get_input_string(input_string, buffer_size, max_buffer_size) == 0 && validate_string_length(input_string, buffer_size) == 0) {
         convert_to_lowercase(input_string);
         display_result(input_string);
     }

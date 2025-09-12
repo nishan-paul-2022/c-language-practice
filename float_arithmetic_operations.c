@@ -22,7 +22,7 @@ void perform_operations(float num1, float num2) {
     printf("Difference: %.2f\n", num1 - num2);
     printf("Product: %.2f\n", num1 * num2);
 
-    if (num2 != 0) {
+    if (num2) {
         printf("Quotient: %.2f\n", num1 / num2);
     } else {
         printf("Quotient: Division by zero is not allowed.\n");
@@ -35,7 +35,7 @@ int main(void) {
     get_input(&num1, &num2);
 
     // Proceed only if input was valid (simplified check)
-    if (num1 != 0 || num2 != 0) {
+    if (num1 || num2) {
         perform_operations(num1, num2);
     }
 

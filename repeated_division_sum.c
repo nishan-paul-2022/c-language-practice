@@ -28,7 +28,7 @@ int main(void) {
 
     // Loop as long as the current_value is not zero
     // The loop terminates when current_value becomes 0 after integer division.
-    while (current_value != 0) {
+    while (current_value) {
         sum += current_value; // Add the current value to the sum
         current_value /= divisor; // Update current_value by dividing it by the divisor
         loop_counter++;

@@ -12,11 +12,12 @@ int get_input_string(char *input_string, int buffer_size) {
     
     if (fgets(input_string, buffer_size, stdin) == NULL) {
         printf("Error reading input.\n");
-        return 0;
+        return -1;
     }
     
     input_string[strcspn(input_string, "\n")] = '\0'; // Remove trailing newline
-    return 1;
+    
+    return 0;
 }
 
 void extract_and_print_lowercase(const char *input_string) {
@@ -31,11 +32,9 @@ void extract_and_print_lowercase(const char *input_string) {
 int main(void) {
     char input_string[100];
     
-    if (!get_input_string(input_string, sizeof(input_string))) {
-        return 0;
+    if (get_input_string(input_string, sizeof(input_string)) == 0) {
+        extract_and_print_lowercase(input_string);
     }
-    
-    extract_and_print_lowercase(input_string);
     
     return 0;
 }

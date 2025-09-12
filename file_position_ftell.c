@@ -29,7 +29,7 @@ long int get_file_size(const char *filename) {
     }
 
     // Move file position to end
-    if (fseek(file_ptr, 0, SEEK_END) != 0) {
+    if (fseek(file_ptr, 0, SEEK_END)) {
         perror("Error seeking to end of file");
         fclose(file_ptr);
         return -1L;
@@ -43,7 +43,7 @@ long int get_file_size(const char *filename) {
         return -1L;
     }
 
-    if (fclose(file_ptr) != 0) {
+    if (fclose(file_ptr)) {
         perror("Error closing file");
         return -1L;
     }
@@ -61,7 +61,7 @@ int main(void) {
     long int file_size;
 
     // Create sample file
-    if (create_sample_file(filename) != 0) {
+    if (create_sample_file(filename)) {
         return 0;
     }
 

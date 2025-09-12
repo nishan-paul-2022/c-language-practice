@@ -39,7 +39,7 @@ FILE* open_output_file(void) {
 
 // Get file size using fseek and ftell
 long get_file_size(FILE *file) {
-    if (fseek(file, 0, SEEK_END) != 0) {
+    if (fseek(file, 0, SEEK_END)) {
         perror("Error seeking to end of file");
         return -1;
     }
@@ -50,7 +50,7 @@ long get_file_size(FILE *file) {
         return -1;
     }
     
-    if (fseek(file, 0, SEEK_SET) != 0) {
+    if (fseek(file, 0, SEEK_SET)) {
         perror("Error seeking to beginning of file");
         return -1;
     }
@@ -71,7 +71,7 @@ int copy_file_content(FILE *input, FILE *output, long file_size) {
         if (character == EOF) {
             if (ferror(input)) {
                 perror("Error reading from input file");
-                return 0;
+                return -1;
             } else if (feof(input)) {
                 printf("Warning: Reached EOF earlier than expected\n");
                 break;
@@ -88,51 +88,52 @@ int copy_file_content(FILE *input, FILE *output, long file_size) {
     }
     
     printf("Successfully copied %ld bytes\n", bytes_copied);
-    return 1;
+    
+    return 0;
 }
 
 // Close file with error handling
 int close_file(FILE *file, const char *filename) {
-    if (fclose(file) != 0) {
+    if (fclose(file)) {
         fprintf(stderr, "Error closing %s\n", filename);
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 int main(void) {
-    FILE *file_input, *file_output;
+    FILE *input_file, *output_file;
     long file_size;
     
     print_header();
     
-    file_input = open_input_file();
-    if (file_input == NULL) {
-        return 1;
+    input_file = open_input_file();
+    if (input_file == NULL) {
+        return 0;
     }
     
-    file_size = get_file_size(file_input);
+    file_size = get_file_size(input_file);
     if (file_size == -1) {
-        fclose(file_input);
-        return 1;
+        fclose(input_file);
+        return 0;
     }
     
     printf("Input file size: %ld bytes\n", file_size);
     
-    file_output = open_output_file();
-    if (file_output == NULL) {
-        fclose(file_input);
-        return 1;
+    output_file = open_output_file();
+    if (output_file == NULL) {
+        fclose(input_file);
+        return 0;
     }
     
-    if (!copy_file_content(file_input, file_output, file_size)) {
-        close_file(file_input, "input file");
-        close_file(file_output, "output file");
-        return 1;
+    if (copy_file_content(input_file, output_file, file_size) == -1) {
+        close_file(input_file, "input file");
+        close_file(output_file, "output file");
+        return 0;
     }
     
-    close_file(file_input, "input file");
-    close_file(file_output, "output file");
+    close_file(input_file, "input file");
+    close_file(output_file, "output file");
     
     printf("\nFile copy operation completed successfully!\n");
     

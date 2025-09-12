@@ -37,7 +37,7 @@ int write_string_to_file(const char *filename, const char *str) {
         return -1;
     }
 
-    if (fclose(output_file_ptr) != 0) {
+    if (fclose(output_file_ptr)) {
         perror("Error closing file after writing");
         return -1;
     }
@@ -63,7 +63,7 @@ int read_string_from_file(const char *filename, char *buffer, int size) {
         return -1;
     }
 
-    if (fclose(input_file_ptr) != 0) {
+    if (fclose(input_file_ptr)) {
         perror("Error closing file after reading");
         return -1;
     }
@@ -82,17 +82,17 @@ int main(void) {
     char read_string[BUFFER_SIZE];
 
     // Get input from user
-    if (get_user_input(user_input_string, BUFFER_SIZE) != 0) {
+    if (get_user_input(user_input_string, BUFFER_SIZE)) {
         return 0;
     }
 
     // Write string to file
-    if (write_string_to_file(FILENAME, user_input_string) != 0) {
+    if (write_string_to_file(FILENAME, user_input_string)) {
         return 0;
     }
 
     // Read string from file
-    if (read_string_from_file(FILENAME, read_string, BUFFER_SIZE) != 0) {
+    if (read_string_from_file(FILENAME, read_string, BUFFER_SIZE)) {
         return 0;
     }
 

@@ -34,11 +34,12 @@ int read_string(char *buffer, int test_num) {
     
     if (scanf("%100s", buffer) != 1) {
         printf("Error: Failed to read string for test case %d.\n", test_num);
-        return 0;
+        return -1;
     }
     
     clear_input_buffer();
-    return 1;
+    
+    return 0;
 }
 
 void process_string(const char *str, int test_num) {
@@ -70,18 +71,16 @@ int main(void) {
     
     int num_test_cases = read_test_count();
     if (num_test_cases == -1) {
-        return 1;
+        return 0;
     }
     
     // Process each test case
     for (int i = 0; i < num_test_cases; i++) {
         int test_num = i + 1;
         
-        if (!read_string(input_string, test_num)) {
-            continue; // Skip to next test case on read error
-        }
-        
-        process_string(input_string, test_num);
+        if (read_string(input_string, test_num) == 0) {
+            process_string(input_string, test_num);
+        }        
     }
     
     return 0;

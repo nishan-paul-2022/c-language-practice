@@ -10,7 +10,7 @@ int get_two_characters(char *char1, char *char2) {
     printf("Enter two characters separated by a space (e.g., a b): ");
     if (scanf("%c %c", char1, char2) != 2) {
         fprintf(stderr, "Error: Invalid input format.\n");
-        return EXIT_FAILURE;
+        return -1;
     }
     return 0;
 }
@@ -19,18 +19,18 @@ int write_characters_to_file(const char *filename, char char1, char char2) {
     FILE *file_ptr = fopen(filename, "w+");
     if (file_ptr == NULL) {
         perror("Error opening file for writing");
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (putc(char1, file_ptr) == EOF) {
         perror("Error writing first character to file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     if (putc(char2, file_ptr) == EOF) {
         perror("Error writing second character to file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     fclose(file_ptr);
@@ -42,7 +42,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
     FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for reading");
-        return EXIT_FAILURE;
+        return -1;
     }
 
     int temp_read_char1 = getc(file_ptr);
@@ -53,7 +53,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
             fprintf(stderr, "Error: Could not read first character from file.\n");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     *read_char1 = (char)temp_read_char1;
 
@@ -65,7 +65,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
             fprintf(stderr, "Error: Could not read second character from file.\n");
         }
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     *read_char2 = (char)temp_read_char2;
 

@@ -8,7 +8,7 @@
 long long factorial(int n) {
     // Factorial is not defined for negative numbers
     if (n < 0) {
-        return -1; // Error indicator
+        return -1;
     }
     // Base case: factorial of 0 is 1
     if (n == 0) {

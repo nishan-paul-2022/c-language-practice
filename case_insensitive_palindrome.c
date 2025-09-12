@@ -14,7 +14,7 @@ int main(void) {
     printf("Enter the number of test cases: ");
     if (scanf("%d", &num_test_cases) != 1) {
         printf("Error: Invalid input for number of test cases.\n");
-        return 1;
+        return 0;
     }
 
     // Process each test case

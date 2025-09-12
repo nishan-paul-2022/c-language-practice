@@ -24,10 +24,10 @@ int read_initial_coordinates(int *x, int *y) {
     printf("Enter initial X and Y coordinates (format: x y): ");
     if (scanf("%d %d", x, y) != 2) {
         fprintf(stderr, "Error: Invalid input for coordinates.\n");
-        return 0;
+        return -1;
     }
     clear_input_buffer();
-    return 1;
+    return 0;
 }
 
 // Read movement command from user
@@ -35,9 +35,9 @@ int read_command(char *command) {
     printf("Enter command (r/l/u/d/s): ");
     if (scanf(" %c", command) != 1) {
         fprintf(stderr, "Error: Failed to read command.\n");
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 // Process movement command and update coordinates
@@ -66,7 +66,7 @@ int process_command(char command, int *x, int *y) {
             printf("Invalid command '%c'. Use r/l/u/d/s.\n", command);
             break;
     }
-    return 1; // Continue processing
+    return 0; // Continue processing
 }
 
 // Main simulation loop
@@ -94,8 +94,8 @@ int main(void) {
     
     print_header();
     
-    if (!read_initial_coordinates(&current_x, &current_y)) {
-        return 1;
+    if (read_initial_coordinates(&current_x, &current_y) == -1) {
+        return 0;
     }
     
     run_simulation(&current_x, &current_y);

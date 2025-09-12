@@ -24,7 +24,7 @@ CalculationResults perform_arithmetic_operations(double num1, double num2) {
 
     if (num2 == 0.0) {
         fprintf(stderr, "Error: Division by zero attempted.\n");
-        results.division = 0.0; // Indicate error.
+        results.division = 0.0;
     } else {
         results.division = num1 / num2;
     }
@@ -45,7 +45,7 @@ void print_results(CalculationResults results, double divisor) {
     printf("Sum: %.2lf\n", results.sum);
     printf("Difference: %.2lf\n", results.difference);
     printf("Product: %.2lf\n", results.product);
-    if (divisor != 0.0) {
+    if (divisor) {
         printf("Division: %.2lf\n", results.division);
     } else {
         printf("Division: Error (division by zero).\n");

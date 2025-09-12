@@ -26,9 +26,10 @@ int read_integer(int *value) {
     if (scanf("%d", value) != 1) {
         fprintf(stderr, "\nError: Invalid input. Program terminated.\n");
         clear_input_buffer();
-        return 0;
+        return -1;
     }
-    return 1;
+    
+    return 0;
 }
 
 // Checks if value represents a printable character and prints result
@@ -43,7 +44,7 @@ int main(void) {
     print_program_header();
     
     // Process input values until invalid input or EOF
-    while (read_integer(&input_value)) {
+    while (read_integer(&input_value) == 0) {
         check_printable(input_value);
     }
     

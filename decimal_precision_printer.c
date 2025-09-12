@@ -12,7 +12,7 @@ int count_decimal_places(double number) {
     double temp_number = number;
 
     if (temp_number != (long long)temp_number) {
-        while (fmod(temp_number, 1.0) != 0.0 && decimal_places < 15) {
+        while (fmod(temp_number, 1.0) && decimal_places < 15) {
             temp_number *= 10.0;
             decimal_places++;
         }

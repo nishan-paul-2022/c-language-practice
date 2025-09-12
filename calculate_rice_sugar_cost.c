@@ -16,7 +16,7 @@ int main(void) {
     printf("Enter the amount of rice and sugar in KG (e.g., 2.5 1.0): ");
     if (scanf("%f %f", &rice_quantity_kg, &sugar_quantity_kg) != 2) {
         printf("Error: Invalid input. Please enter two numbers separated by a space.\n");
-        return 1;
+        return 0;
     }
 
     total_rice_cost = rice_quantity_kg * rice_cost_per_kg;

@@ -26,7 +26,7 @@ int get_user_input() {
     if (scanf("%d", &x) != 1) {
         fprintf(stderr, "Invalid input. Please enter an integer.\n");
         while (getchar() != '\n' && !feof(stdin));
-        return -1; // Error indicator
+        return -1;
     }
     
     return x;
@@ -40,7 +40,7 @@ int main(void) {
     int input_value = get_user_input();
     
     if (input_value == -1) {
-        return 1; // Exit on invalid input
+        return 0;
     }
     
     float result = calculate_custom_series(input_value);

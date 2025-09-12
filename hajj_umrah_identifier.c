@@ -11,7 +11,7 @@ int main(void) {
     int case_number = 1;    // Counter for case numbers
 
     // Read strings until "*" is encountered
-    while (scanf("%9s", input_string) == 1 && strcmp(input_string, "*") != 0) {
+    while (scanf("%9s", input_string) == 1 && strcmp(input_string, "*")) {
         // %99s ensures that no more than 99 characters are read, preventing buffer overflow
         // scanf("%s") automatically handles whitespace and does not leave a newline
 

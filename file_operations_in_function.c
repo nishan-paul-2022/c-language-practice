@@ -60,7 +60,7 @@ int process_file_operation(const char *filename, const char *mode) {
     
     if (file_handle != NULL) {
         printf("File '%s.txt' opened successfully in mode '%s'.\n", filename, mode);
-        if (fclose(file_handle) != 0) {
+        if (fclose(file_handle)) {
             perror("Error closing file");
             return -1;
         }
@@ -74,16 +74,16 @@ int main(void) {
     char file_mode[MODE_BUFFER_SIZE];
 
     // Get user inputs
-    if (get_filename(base_filename, FILENAME_BUFFER_SIZE) != 0) {
+    if (get_filename(base_filename, FILENAME_BUFFER_SIZE)) {
         return 0;
     }
     
-    if (get_file_mode(file_mode, MODE_BUFFER_SIZE) != 0) {
+    if (get_file_mode(file_mode, MODE_BUFFER_SIZE)) {
         return 0;
     }
 
     // Process file operation
-    if (process_file_operation(base_filename, file_mode) != 0) {
+    if (process_file_operation(base_filename, file_mode)) {
         return 0;
     }
 

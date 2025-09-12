@@ -51,7 +51,7 @@ int write_to_file(FILE *file_ptr, const char *data) {
 
 // Seek to specific position in file
 int seek_file_position(FILE *file_ptr, long offset) {
-    if (fseek(file_ptr, offset, SEEK_SET) != 0) {
+    if (fseek(file_ptr, offset, SEEK_SET)) {
         perror("Error seeking in file");
         return -1;
     }
@@ -78,7 +78,7 @@ void display_result(const char *buffer) {
 
 // Close file safely
 int close_file_safely(FILE *file_ptr) {
-    if (fclose(file_ptr) != 0) {
+    if (fclose(file_ptr)) {
         perror("Error closing file");
         return -1;
     }
@@ -94,7 +94,7 @@ int main(void) {
     long int offset = 5;
 
     // Get user input
-    if (get_user_input(&input_int1, &input_int2, input_string) != 0) {
+    if (get_user_input(&input_int1, &input_int2, input_string)) {
         return 0;
     }
 
@@ -108,19 +108,19 @@ int main(void) {
     }
 
     // Write formatted string to file
-    if (write_to_file(file_ptr, formatted_string) != 0) {
+    if (write_to_file(file_ptr, formatted_string)) {
         fclose(file_ptr);
         return 0;
     }
 
     // Seek to specific position
-    if (seek_file_position(file_ptr, offset) != 0) {
+    if (seek_file_position(file_ptr, offset)) {
         fclose(file_ptr);
         return 0;
     }
 
     // Read from current position
-    if (read_from_position(file_ptr, read_string, STRING_SIZE) != 0) {
+    if (read_from_position(file_ptr, read_string, STRING_SIZE)) {
         fclose(file_ptr);
         return 0;
     }
@@ -129,7 +129,7 @@ int main(void) {
     display_result(read_string);
 
     // Close file
-    if (close_file_safely(file_ptr) != 0) {
+    if (close_file_safely(file_ptr)) {
         return 0;
     }
 

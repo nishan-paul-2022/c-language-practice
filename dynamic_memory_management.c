@@ -48,11 +48,11 @@ int read_integers(int *memory, int num_elements) {
         printf("Enter integer %d: ", index + 1);
         if (scanf("%d", &memory[index]) != 1) {
             printf("Invalid input for integer %d. Aborting.\n", index + 1);
-            return 0;
+            return -1;
         }
         clear_input_buffer();
     }
-    return 1;
+    return 0;
 }
 
 void print_elements(int *memory, int count, const char *message) {
@@ -96,7 +96,7 @@ int main(void) {
         return 0;
     }
     
-    if (!read_integers(allocated_memory, num_elements)) {
+    if (read_integers(allocated_memory, num_elements) == -1) {
         free(allocated_memory);
         return 0;
     }

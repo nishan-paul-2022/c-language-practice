@@ -15,10 +15,10 @@ int handle_eof_error(int input_char) {
     if (input_char == EOF) {
         if (ferror(stdin)) {
             perror("Error reading character");
-            return 1;
+            return -1;
         } else {
             printf("\nEnd of input reached.\n");
-            return 1;
+            return -1;
         }
     }
     return 0;
@@ -33,11 +33,9 @@ void echo_character(int input_char) {
 int main(void) {
     int input_char = read_character();
     
-    if (handle_eof_error(input_char)) {
-        return 0;
+    if (handle_eof_error(input_char) == 0) {
+        echo_character(input_char);
     }
-    
-    echo_character(input_char);
     
     return 0;
 }

@@ -89,45 +89,46 @@ int read_data_from_file(const char *filename, char *read_string, char *read_char
     FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for reading");
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (fgets(read_string, MAX_STRING_LEN, file_ptr) == NULL) {
         perror("Error reading string from file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     read_string[strcspn(read_string, "\n")] = 0;
 
     if (fscanf(file_ptr, "%c", read_char_from_file) != 1) {
         perror("Error reading character from file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     if (fgetc(file_ptr) == EOF && ferror(file_ptr)) {
         perror("Error consuming newline after character read");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (fscanf(file_ptr, "%d", read_int) != 1) {
         perror("Error reading integer from file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
     if (fgetc(file_ptr) == EOF && ferror(file_ptr)) {
         perror("Error consuming newline after integer read");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (fscanf(file_ptr, "%f", read_float_from_file) != 1) {
         perror("Error reading float from file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     fclose(file_ptr);
+
     return 0;
 }
 

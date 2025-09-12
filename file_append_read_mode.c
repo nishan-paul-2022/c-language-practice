@@ -16,9 +16,9 @@ int get_user_input(char *input_buffer, int buffer_size) {
     
     if (fgets(input_buffer, buffer_size, stdin) == NULL) {
         printf("Error reading input.\n");
-        return 0; 
+        return -1; 
     }
-    return 1;
+    return 0;
 }
 
 FILE *open_file_append_read(const char *filename) {
@@ -33,17 +33,17 @@ FILE *open_file_append_read(const char *filename) {
 int append_to_file(FILE *file_ptr, const char *input_buffer) {
     if (fprintf(file_ptr, "\n%s", input_buffer) < 0) {
         perror("Error writing to file");
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 int seek_to_beginning(FILE *file_ptr) {
-    if (fseek(file_ptr, 0, SEEK_SET) != 0) {
+    if (fseek(file_ptr, 0, SEEK_SET)) {
         perror("Error seeking to beginning of file");
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 void read_and_display_file_content(FILE *file_ptr) {
@@ -63,7 +63,7 @@ void read_and_display_file_content(FILE *file_ptr) {
 }
 
 void close_file(FILE *file_ptr) {
-    if (fclose(file_ptr) != 0) {
+    if (fclose(file_ptr)) {
         perror("Error closing file");
     }
 }
@@ -72,7 +72,7 @@ int main(void) {
     char input_buffer[BUFFER_SIZE];
     char read_buffer[BUFFER_SIZE];
     
-    if (!get_user_input(input_buffer, BUFFER_SIZE)) {
+    if (get_user_input(input_buffer, BUFFER_SIZE) == -1) {
         return 0;
     }
     
@@ -81,12 +81,12 @@ int main(void) {
         return 0;
     }
     
-    if (!append_to_file(file_append_read, input_buffer)) {
+    if (append_to_file(file_append_read, input_buffer) == -1) {
         close_file(file_append_read);
         return 0;
     }
     
-    if (!seek_to_beginning(file_append_read)) {
+    if (seek_to_beginning(file_append_read) == -1) {
         close_file(file_append_read);
         return 0;
     }

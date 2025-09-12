@@ -16,9 +16,9 @@ int read_password_masked(char password[], int max_len) {
     int i = 0;
 
     // Get current terminal settings
-    if (tcgetattr(STDIN_FILENO, &old_tio) != 0) {
+    if (tcgetattr(STDIN_FILENO, &old_tio)) {
         perror("tcgetattr");
-        return -1; // Indicate failure
+        return -1;
     }
 
     // Copy current settings to new settings
@@ -28,9 +28,9 @@ int read_password_masked(char password[], int max_len) {
     new_tio.c_lflag &= (~ECHO);
 
     // Apply new terminal settings
-    if (tcsetattr(STDIN_FILENO, TCSANOW, &new_tio) != 0) {
+    if (tcsetattr(STDIN_FILENO, TCSANOW, &new_tio)) {
         perror("tcsetattr");
-        return -1; // Indicate failure
+        return -1;
     }
 
     printf("Enter password: ");
@@ -44,7 +44,7 @@ int read_password_masked(char password[], int max_len) {
             // Restore terminal settings before returning on error
             tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);
             perror("read");
-            return -1; // Indicate failure
+            return -1;
         }
 
         if (character == '\n' || character == 13) { // Enter key
@@ -60,7 +60,7 @@ int read_password_masked(char password[], int max_len) {
     putchar('\n'); // Move to the next line after password entry
 
     // Restore original terminal settings
-    if (tcsetattr(STDIN_FILENO, TCSANOW, &old_tio) != 0) {
+    if (tcsetattr(STDIN_FILENO, TCSANOW, &old_tio)) {
         perror("tcsetattr");
         // Even if restoring fails, we should try to return the password
     }

@@ -10,7 +10,7 @@ void division() {
     float x, y, z, a;
     printf("\n\nEnter the values for x, y, and z for the expression x / (y - z):\n");
     scanf("%f %f %f", &x, &y, &z);
-    if (y - z != 0) {
+    if (y - z) {
         a = x / (y - z);
         printf("The result is: %f\n", a);
     } else {
@@ -88,7 +88,7 @@ int main(void) {
             default:
                 printf("Invalid choice.\n");
         }
-    } while (choice != 0);
+    } while (choice);
 
     return 0;
 }

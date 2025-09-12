@@ -112,7 +112,7 @@ void display_result(int result) {
 
 int main(void) {
     // Process input file and generate mine.txt
-    if (process_input_file() != 0) {
+    if (process_input_file()) {
         return 0;
     }
 

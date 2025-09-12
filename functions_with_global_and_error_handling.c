@@ -19,10 +19,11 @@ int calculate_product_with_global(int num1, int num2) {
 int calculate_division_with_global(int num1, int num2) {
     if (global_multiplier_divisor == 0) {
         fprintf(stderr, "Error: Division by zero is not allowed.\n");
-        return -1; // Error
+        return -1;
     }
     int sum = num1 + num2;
-    return sum / global_multiplier_divisor;
+    int division = sum / global_multiplier_divisor;
+    return division;
 }
 
 void get_user_input(int *num1, int *num2) {
@@ -47,10 +48,10 @@ void perform_and_print_calculations(int number1, int number2) {
     printf("Product result: %d\n", product_result);
 
     int division_result = calculate_division_with_global(number1, number2);
-    if (division_result != -1) {
-        printf("Division result: %d\n", division_result);
-    } else {
+    if (division_result == -1) {
         printf("Division result: Error occurred (division by zero).\n");
+    } else {
+        printf("Division result: %d\n", division_result);
     }
 }
 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 int divide(int a, int b) {
-    if (b != 0) {
+    if (b) {
         return a / b;
     } else {
         printf("Error: Division by zero.\n");
@@ -25,7 +25,7 @@ int main(void) {
 
     result = divide(x, y);
 
-    if (y != 0) {
+    if (y) {
         printf("The result is: %d\n", result);
     }
 

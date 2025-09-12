@@ -21,7 +21,7 @@ FILE *open_file_read_only(const char *filename) {
 
 void attempt_write_and_check_error(FILE *file_handle, char character) {
     if (fputc(character, file_handle) == EOF) {
-        if (ferror(file_handle) != 0) {
+        if (ferror(file_handle)) {
             printf("An error occurred during write operation (as expected).\n");
         } else {
             printf("fputc failed, but ferror() did not report an error.\n");
@@ -34,7 +34,7 @@ void attempt_write_and_check_error(FILE *file_handle, char character) {
 void clear_and_check_error(FILE *file_handle) {
     clearerr(file_handle);
     
-    if (ferror(file_handle) != 0) {
+    if (ferror(file_handle)) {
         printf("Error: ferror() still indicates an error after clearerr().\n");
     } else {
         printf("Error indicator cleared successfully.\n");
@@ -42,7 +42,7 @@ void clear_and_check_error(FILE *file_handle) {
 }
 
 void close_file(FILE *file_handle) {
-    if (fclose(file_handle) != 0) {
+    if (fclose(file_handle)) {
         perror("Error closing file");
     }
 }

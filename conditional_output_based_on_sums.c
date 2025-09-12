@@ -32,9 +32,9 @@ int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     if (scanf("%d %d %d %d", a, b, c, d) != 4) {
         printf("Error: Invalid input. Please enter four integers.\n");
         clear_input_buffer();
-        return 0;
+        return -1;
     }
-    return 1;
+    return 0;
 }
 
 // Calculate sum using formula: a - b + c - d
@@ -55,33 +55,34 @@ int process_test_case(int test_num) {
     
     printf("\n--- Test Case %d ---\n", test_num);
     
-    if (!read_four_integers(&k1, &k2, &k3, &k4, "Enter first set (k1 k2 k3 k4): ")) {
-        return 0;
+    if (read_four_integers(&k1, &k2, &k3, &k4, "Enter first set (k1 k2 k3 k4): ") == -1) {
+        return -1;
     }
     
-    if (!read_four_integers(&m1, &m2, &m3, &m4, "Enter second set (m1 m2 m3 m4): ")) {
-        return 0;
+    if (read_four_integers(&m1, &m2, &m3, &m4, "Enter second set (m1 m2 m3 m4): ") == -1) {
+        return -1;
     }
     
     int sum1 = calculate_sum(k1, k2, k3, k4);
     int sum2 = calculate_sum(m1, m2, m3, m4);
     
     print_result(sum1, sum2, test_num);
-    return 1;
+
+    return 0;
 }
 
 int main(void) {
     int number_of_test_cases = read_test_count();
     if (number_of_test_cases == -1) {
-        return 1;
+        return 0;
     }
     
     for (int i = 0; i < number_of_test_cases; i++) {
-        if (!process_test_case(i + 1)) {
-            printf("Skipping to next test case...\n");
+        if (process_test_case(i + 1) == -1) {
+            printf("Error in test case %d. Continuing to next test case...\n", i + 1);
         }
     }
     
-    printf("\nCalculation completed!\n");
+    printf("\nCalculation completed.\n");
     return 0;
 }

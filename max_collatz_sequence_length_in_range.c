@@ -9,7 +9,7 @@ void calculate_collatz_length(int current_num, int *steps) {
     // Base case: if the number is 1, the sequence ends.
     if (current_num != 1) {
         // Check if the number is odd or even
-        if (current_num % 2 != 0) { // Odd number
+        if (current_num % 2) { // Odd number
             current_num = 3 * current_num + 1;
         } else { // Even number
             current_num = current_num / 2;

@@ -19,7 +19,7 @@ long long calculate_gcd(long long num1, long long num2) {
     if (num2 == 0) return num1;
 
     long long temp;
-    while (num2 != 0) {
+    while (num2) {
         temp = num2;
         num2 = num1 % num2;
         num1 = temp;

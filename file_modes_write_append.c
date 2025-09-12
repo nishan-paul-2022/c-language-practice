@@ -10,13 +10,13 @@ int write_first_part(const char *filename, const char *text) {
     FILE *file_ptr = fopen(filename, "w");
     if (file_ptr == NULL) {
         perror("Error opening file in 'w' mode");
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (fprintf(file_ptr, "%s", text) < 0) {
         perror("Error writing first part to file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     fclose(file_ptr);
@@ -28,13 +28,13 @@ int append_second_part(const char *filename, const char *text) {
     FILE *file_ptr = fopen(filename, "a");
     if (file_ptr == NULL) {
         perror("Error opening file in 'a' mode");
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (fprintf(file_ptr, "%s", text) < 0) {
         perror("Error writing second part to file");
         fclose(file_ptr);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     fclose(file_ptr);

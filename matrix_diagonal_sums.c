@@ -17,7 +17,7 @@ int main(void) {
     printf("Enter the size of the square matrix (1-%d): ", MAX_SIZE);
     if (scanf("%d", &size) != 1 || size <= 0 || size > MAX_SIZE) {
         printf("Invalid size. Please enter a positive integer between 1 and %d.\n", MAX_SIZE);
-        return 1; // Indicate error
+        return 0;
     }
 
     // Read matrix elements from user input
@@ -27,7 +27,7 @@ int main(void) {
         for (j = 0; j < size; j++) {
             if (scanf("%d", &matrix[i][j]) != 1) {
                 printf("Invalid input. Please enter integers only.\n");
-                return 1; // Indicate error
+                return 0;
             }
         }
     }
@@ -39,7 +39,7 @@ int main(void) {
     }
 
     // If the matrix has an odd size, the center element is counted twice, so subtract it once.
-    if (size % 2 != 0) {
+    if (size % 2) {
         int center = size / 2;
         anti_diagonal_sum -= matrix[center][center];
     }

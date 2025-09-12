@@ -41,7 +41,7 @@ int main(void) {
     matrix = (int **)malloc(rows * sizeof(int *));
     if (matrix == NULL) {
         printf("Memory allocation failed for rows.\n");
-        return 1;
+        return 0;
     }
     for (i = 0; i < rows; i++) {
         matrix[i] = (int *)malloc(cols * sizeof(int));
@@ -52,7 +52,7 @@ int main(void) {
                 free(matrix[k]);
             }
             free(matrix);
-            return 1;
+            return 0;
         }
     }
 
@@ -87,7 +87,7 @@ int main(void) {
                     }
                     free(matrix);
                     free(prime_numbers);
-                    return 1;
+                    return 0;
                 }
                 prime_numbers = temp;
                 prime_numbers[prime_count - 1] = matrix[i][j];

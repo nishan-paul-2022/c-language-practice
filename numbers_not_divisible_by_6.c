@@ -17,7 +17,7 @@ int main(void) {
     // Loop through the numbers in the specified range
     for (current_number = start_range; current_number <= end_range; current_number++) {
         // Check if the current number is not divisible by 6
-        if (current_number % 6 != 0) {
+        if (current_number % 6) {
             printf("%d\n", current_number); // Print the number if it's not divisible by 6
             count_not_divisible++; // Increment the counter
         }

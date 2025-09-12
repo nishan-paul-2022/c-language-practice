@@ -69,7 +69,7 @@ int main(void) {
     }
     
     // If the loop terminated due to non-numeric input other than 0
-    if (month_number != 0) {
+    if (month_number) {
         printf("Invalid input detected. Exiting program.\n");
     }
 

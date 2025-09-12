@@ -61,7 +61,7 @@ int main(void) {
     printf("Difference: %.2lf\n", result_diff);
     printf("Product: %.2lf\n", result_prod);
     // Check if division was successful before printing
-    if (value2 != 0.0) { // Check original input value for division by zero
+    if (value2) { // Check original input value for division by zero
         printf("Division: %.2lf\n", result_div);
     } else {
         printf("Division: Error (division by zero).\n");

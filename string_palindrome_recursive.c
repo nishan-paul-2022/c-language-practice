@@ -13,7 +13,7 @@
 int is_palindrome_recursive_helper(const char str[], int start, int end) {
     // Base case 1: If the start index has crossed or met the end index, it's a palindrome.
     if (start >= end) {
-        return 1; // It's a palindrome
+        return 1;
     }
 
     // Compare characters at the current start and end indices (case-insensitive).

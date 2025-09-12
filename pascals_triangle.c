@@ -10,7 +10,7 @@
 long long calculate_next_coefficient(long long current_coeff, int n, int k) {
     // Ensure k is within bounds and current_coeff is valid
     if (k < 0 || k > n || current_coeff < 0) {
-        return -1; // Indicate error or invalid state
+        return -1; // Indicate invalid input
     }
     // For k=0, the coefficient is 1. For subsequent terms:
     // C(n, k) = C(n, k-1) * (n - (k-1)) / k
@@ -22,7 +22,8 @@ long long calculate_next_coefficient(long long current_coeff, int n, int k) {
     if (__builtin_mul_overflow(current_coeff, (n - k + 1), &next_coeff)) {
         return -2; // Indicate overflow
     }
-    return next_coeff / k;
+    long long result = next_coeff / k;
+    return result;
 }
 
 int main(void) {
@@ -68,8 +69,12 @@ int main(void) {
             if (k < m) {
                 coefficient = calculate_next_coefficient(coefficient, m, k + 1);
                 if (coefficient < 0) { // Check for errors (invalid input or overflow)
-                    if (coefficient == -1) printf(" ERR"); // Invalid state
-                    else printf(" OVFL"); // Overflow
+                    if (coefficient == -1) {
+                        printf(" ERR"); // Invalid state
+                    }
+                    else { 
+                        printf(" OVFL"); // Overflow
+                    }
                     // Break inner loop if error occurs, but continue to next row if possible
                     break; 
                 }

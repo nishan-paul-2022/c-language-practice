@@ -44,7 +44,7 @@ void check_file_status(FILE *file_handle) {
 
 // Close file with error checking
 int close_file_safely(FILE *file_handle) {
-    if (fclose(file_handle) != 0) {
+    if (fclose(file_handle)) {
         perror("Error closing file");
         return -1;
     }
@@ -67,7 +67,7 @@ int main(void) {
     check_file_status(file_handle);
 
     // Close file
-    if (close_file_safely(file_handle) != 0) {
+    if (close_file_safely(file_handle)) {
         return 0;
     }
 

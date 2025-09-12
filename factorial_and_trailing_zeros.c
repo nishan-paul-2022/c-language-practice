@@ -47,14 +47,14 @@ int main(void) {
     printf("Enter a non-negative integer: ");
     if (scanf("%d", &number) != 1) {
         printf("Error: Invalid input. Please enter an integer.\n");
-        return 1; // Use 1 to indicate an error.
+        return 0;
     }
 
     factorial_result = calculate_factorial(number);
 
-    if (factorial_result == 0 && number != 0) { // Check for error or overflow.
+    if (factorial_result == 0 && number) { // Check for error or overflow.
         printf("Could not calculate factorial (possibly due to overflow or negative input).\n");
-        return 1; // Use 1 to indicate an error.
+        return 0;
     }
 
     printf("Factorial of %d is: %llu\n", number, factorial_result);

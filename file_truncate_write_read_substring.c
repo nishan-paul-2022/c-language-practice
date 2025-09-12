@@ -50,7 +50,7 @@ int main(void) {
     printf("Enter a string to write to the file: ");
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return 1;
+        return 0;
     }
 
     // Write the user input to the file

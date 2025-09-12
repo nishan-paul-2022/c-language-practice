@@ -33,7 +33,7 @@ int main(void) {
 
     if (num_cols <= 0 || total_nums <= 0) {
         printf("Number of columns and total numbers must be positive.\n");
-        return 1;
+        return 0;
     }
 
     printf("\n--- Descending Number Grid ---\n");
