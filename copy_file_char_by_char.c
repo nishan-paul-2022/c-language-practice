@@ -1,7 +1,6 @@
 /*
- * Purpose: Copies the content of an input file ('FH file.txt') to an output file
- *          ('FH file 1.txt') by reading it character by character after determining
- *          the file size using fseek() and ftell().
+ * Purpose: Copies the content of an input file to an output file by reading it 
+ *          character by character after determining the file size using fseek() and ftell().
  * Topic: File I/O, File Manipulation
  */
 
