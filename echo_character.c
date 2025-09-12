@@ -2,32 +2,42 @@
  * Purpose: Reads a single character from standard input and echoes it back to standard output.
  * Topic: Character Input/Output, getchar(), putchar()
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    int input_char; // Use int to accommodate EOF
-
+int read_character(void) {
     printf("Enter a single character: ");
+    return getchar();
+}
 
-    // Read a single character from standard input
-    input_char = getchar();
-
-    // Check if getchar() returned an error or EOF
+int handle_eof_error(int input_char) {
     if (input_char == EOF) {
         if (ferror(stdin)) {
             perror("Error reading character");
-            return 0;
+            return 1;
         } else {
             printf("\nEnd of input reached.\n");
-            return 0;
+            return 1;
         }
     }
+    return 0;
+}
 
-    // Echo the character back to standard output
+void echo_character(int input_char) {
     printf("You entered: ");
-    putchar((char)input_char); // Cast to char for putchar
+    putchar((char)input_char);
     putchar('\n');
+}
 
+int main(void) {
+    int input_char = read_character();
+    
+    if (handle_eof_error(input_char)) {
+        return 0;
+    }
+    
+    echo_character(input_char);
+    
     return 0;
 }

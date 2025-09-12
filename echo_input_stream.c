@@ -2,28 +2,37 @@
  * Purpose: Reads characters from standard input until EOF and echoes them to standard output.
  * Topic: Character Input/Output, Reading Input Streams, EOF Handling
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    int input_char; // Use int to accommodate EOF
-
+void display_instructions(void) {
     printf("Enter text (press Ctrl+D on Unix/Linux or Ctrl+Z on Windows to signal EOF):\n");
+}
 
-    // Read characters from standard input until EOF is encountered
+void echo_stream(void) {
+    int input_char;
+    
     while ((input_char = getchar()) != EOF) {
-        // Echo the character back to standard output
         putchar((char)input_char);
     }
+}
 
-    // Check if the loop terminated due to an error rather than EOF
+int check_stream_error(void) {
     if (ferror(stdin)) {
         perror("Error reading from standard input");
+        return 1;
+    }
+    return 0;
+}
+
+int main(void) {
+    display_instructions();
+    echo_stream();
+    
+    if (check_stream_error()) {
         return 0;
     }
-
-    // Optional: add a newline if needed for cleaner output
-    // putchar('\n');
-
+    
     return 0;
 }

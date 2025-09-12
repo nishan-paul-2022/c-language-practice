@@ -6,51 +6,67 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *file_ptr = NULL;
-    char char_to_write = 's';
-    int char_read; // Use int to correctly handle EOF
-
-    // Open the file for writing and reading in text mode
-    // "w+" mode truncates the file if it exists, or creates it if it doesn't
-    file_ptr = fopen("FH putw.txt", "w+");
+FILE *open_file_write_read(const char *filename) {
+    FILE *file_ptr = fopen(filename, "w+");
+    
     if (file_ptr == NULL) {
         perror("Error opening file for writing/reading");
-        return 0;
     }
+    return file_ptr;
+}
 
-    // Write a character to the file using fputc
-    if (fputc(char_to_write, file_ptr) == EOF) {
+int write_character_to_file(FILE *file_ptr, char character) {
+    if (fputc(character, file_ptr) == EOF) {
         perror("Error writing character to file");
-        fclose(file_ptr);
         return 0;
     }
-    printf("Wrote character '%c' to file.\n", char_to_write);
+    printf("Wrote character '%c' to file.\n", character);
+    return 1;
+}
 
-    // Rewind the file pointer to the beginning of the file to read what was written
-    // This is necessary because "w+" mode allows both reading and writing,
-    // but after writing, the file pointer is at the end
+int read_character_from_file(FILE *file_ptr) {
     rewind(file_ptr);
-
-    // Read a single character from the file
-    char_read = getc(file_ptr);
-
-    // Check if reading was successful or if it was EOF
+    
+    int char_read = getc(file_ptr);
+    
     if (char_read == EOF) {
         if (ferror(file_ptr)) {
             perror("Error reading character from file");
         } else {
             printf("File is empty or could not read the first character after writing.\n");
         }
+        return EOF;
+    }
+    
+    printf("Read character '%c' from file.\n", (char)char_read);
+    return char_read;
+}
+
+void close_file(FILE *file_ptr) {
+    if (file_ptr != NULL) {
         fclose(file_ptr);
+    }
+}
+
+int main(void) {
+    char char_to_write = 'A';
+    
+    FILE *file_ptr = open_file_write_read("files/12-input.txt");
+    if (file_ptr == NULL) {
         return 0;
     }
-
-    // Print the character read to the console
-    printf("First character read from file: %c\n", (char)char_read);
-
-    // Close the file
-    fclose(file_ptr);
-
+    
+    if (!write_character_to_file(file_ptr, char_to_write)) {
+        close_file(file_ptr);
+        return 0;
+    }
+    
+    if (read_character_from_file(file_ptr) == EOF) {
+        close_file(file_ptr);
+        return 0;
+    }
+    
+    close_file(file_ptr);
+    
     return 0;
 }

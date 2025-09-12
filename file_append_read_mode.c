@@ -9,82 +9,91 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "FH_advanced_mode.txt" // Define filename for clarity
+#define FILENAME "files/08-input.txt"
 
-int main(void) {
-    FILE *file_append_read;
-    char input_buffer[BUFFER_SIZE];
-    char read_buffer[BUFFER_SIZE];
-
-    // Prompt user for input
+int get_user_input(char *input_buffer, int buffer_size) {
     printf("Enter a line of text to append to the file: ");
     
-    // Read input safely using fgets
-    if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
+    if (fgets(input_buffer, buffer_size, stdin) == NULL) {
         printf("Error reading input.\n");
         return 0; 
     }
+    return 1;
+}
 
-    // Open the file in "a+" mode (append and read)
-    // "a+" creates the file if it doesn't exist, and allows both appending and reading
-    file_append_read = fopen(FILENAME, "a+");
-    if (file_append_read == NULL) {
+FILE *open_file_append_read(const char *filename) {
+    FILE *file_ptr = fopen(filename, "a+");
+    
+    if (file_ptr == NULL) {
         perror("Error opening file in 'a+' mode");
-        return 0; // Indicate file opening error
     }
+    return file_ptr;
+}
 
-    // Append the input string to the file
-    // fprintf adds the string, and we ensure a newline is added if fgets didn't capture one
-    // Note: fgets might include the newline character if it fits in the buffer
-    // We'll add a newline explicitly for consistent appending
-    if (fprintf(file_append_read, "\n%s", input_buffer) < 0) {
+int append_to_file(FILE *file_ptr, const char *input_buffer) {
+    if (fprintf(file_ptr, "\n%s", input_buffer) < 0) {
         perror("Error writing to file");
-        fclose(file_append_read);
         return 0;
     }
+    return 1;
+}
 
-    // To read from the beginning of the file after appending, we need to reposition the file pointer
-    // The "a+" mode positions the pointer at the end for writing, but for reading,
-    // we need to explicitly seek to the beginning
-    if (fseek(file_append_read, 0, SEEK_SET) != 0) {
+int seek_to_beginning(FILE *file_ptr) {
+    if (fseek(file_ptr, 0, SEEK_SET) != 0) {
         perror("Error seeking to beginning of file");
-        fclose(file_append_read);
         return 0;
     }
+    return 1;
+}
 
-    // Read from the file up to the first '!' character or until the buffer is full
-    // The original code used "%[^!]", which reads characters until '!' is encountered
-    // We'll use fgets to read a line, which is generally safer and more common for text files
-    // If the original intent was to read up to '!', we'd need a custom read or careful fscanf
-    // For this example, let's read the first line that was just appended
-    // If the file contains other data, reading the first line might be more robust
+void read_and_display_file_content(FILE *file_ptr) {
+    char read_buffer[BUFFER_SIZE];
+    printf("File content:\n");
+    printf("------------------------\n");
     
-    // Let's try to mimic the original behavior of reading up to '!'
-    // However, fscanf with "%[^!]" can be tricky with buffer sizes and newlines
-    // A safer approach is to read line by line or character by character
-    // For demonstration, let's read the first line that was just appended
-    // If the file already had content, this would read the first line of that content
-    
-    // Using fgets to read the first line after repositioning
-    if (fgets(read_buffer, BUFFER_SIZE, file_append_read) == NULL) {
-        // If the file is empty or an error occurred during read
-        if (feof(file_append_read)) {
-            printf("File is empty or no data to read.\n");
-        } else {
-            perror("Error reading from file");
-        }
-        fclose(file_append_read);
-        return 0;
+    // Loop through the file, reading and printing each line
+    while (fgets(read_buffer, BUFFER_SIZE, file_ptr) != NULL) {
+        printf("%s", read_buffer);
     }
+    
+    if (ferror(file_ptr)) {
+        perror("Error reading from file");
+    }
+    printf("------------------------\n");
+}
 
-    // Print the content read from the file
-    printf("Content read from file: %s", read_buffer); // fgets includes newline if present
-
-    // Close the file
-    if (fclose(file_append_read) != 0) {
+void close_file(FILE *file_ptr) {
+    if (fclose(file_ptr) != 0) {
         perror("Error closing file");
+    }
+}
+
+int main(void) {
+    char input_buffer[BUFFER_SIZE];
+    char read_buffer[BUFFER_SIZE];
+    
+    if (!get_user_input(input_buffer, BUFFER_SIZE)) {
         return 0;
     }
-
+    
+    FILE *file_append_read = open_file_append_read(FILENAME);
+    if (file_append_read == NULL) {
+        return 0;
+    }
+    
+    if (!append_to_file(file_append_read, input_buffer)) {
+        close_file(file_append_read);
+        return 0;
+    }
+    
+    if (!seek_to_beginning(file_append_read)) {
+        close_file(file_append_read);
+        return 0;
+    }
+    
+    read_and_display_file_content(file_append_read);
+    
+    close_file(file_append_read);
+    
     return 0;
 }

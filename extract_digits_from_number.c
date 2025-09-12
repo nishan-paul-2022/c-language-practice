@@ -6,25 +6,33 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
-    int input_number; // The integer number input by the user
-    int extracted_digits; // Variable to store the extracted digits
-    long long int power_of_10; // Represents 10, 100, 1000, etc. (using long long to prevent overflow)
+void display_instructions(void) {
+    printf("Enter integers to be processed (e.g., 12345):\n\n");
+}
 
-    // Loop to continuously read integers until scanf fails (e.g., EOF or invalid input)
-    printf("Enter integers one by one (e.g., 12345). Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to stop.\n");
-    while (scanf("%d", &input_number) == 1) { // Check if 1 item was successfully read
-        printf("Processing number: %d\n", input_number);
-
-        // Loop to extract digits using modulo with increasing powers of 10
-        for (power_of_10 = 10; power_of_10 <= input_number * 10; power_of_10 *= 10) {
-            extracted_digits = input_number % power_of_10;
-            printf("  Digits (modulo %lld): %d\n", power_of_10, extracted_digits);
-        }
-        printf("  Original number: %d\n\n", input_number);
+void process_number(int input_number) {
+    printf("Processing number: %d\n", input_number);
+    
+    for (long long int power_of_10 = 10; power_of_10 <= input_number * 10; power_of_10 *= 10) {
+        int extracted_digits = input_number % power_of_10;
+        printf("  Digits (modulo %lld): %d\n", power_of_10, extracted_digits);
     }
+    printf("  Original number: %d\n\n", input_number);
+}
 
+void process_input_stream(void) {
+    int input_number;
+    
+    while (scanf("%d", &input_number) == 1) {
+        process_number(input_number);
+    }
+    
     printf("Input stopped or invalid input received.\n");
+}
 
+int main(void) {
+    display_instructions();
+    process_input_stream();
+    
     return 0;
 }

@@ -8,56 +8,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FILENAME "FH_ferror.txt"
+#define FILENAME "files/10-input.txt"
 
-int main(void) {
-    FILE *file_handle;
-    char character_to_write = 'X';
-
-    // Open the file in read mode. This is intentional to cause a write error.
-    file_handle = fopen(FILENAME, "r");
+FILE *open_file_read_only(const char *filename) {
+    FILE *file_handle = fopen(filename, "r");
+    
     if (file_handle == NULL) {
         perror("Error opening file for reading");
-        // If the file doesn't exist, fopen will fail
-        // We can't proceed to test ferror without a valid file handle
-        return 0;
     }
+    return file_handle;
+}
 
-    // Attempt to write a character to the file opened in read mode.
-    // This operation is expected to fail and set an error indicator.
-    if (fputc(character_to_write, file_handle) == EOF) {
-        // Check if a file error occurred after the write attempt
+void attempt_write_and_check_error(FILE *file_handle, char character) {
+    if (fputc(character, file_handle) == EOF) {
         if (ferror(file_handle) != 0) {
-            // ferror() returns a non-zero value if an error indicator is set
-            // The specific value might indicate the type of error, but often just checking non-zero is sufficient
             printf("An error occurred during write operation (as expected).\n");
-            // Optionally, print the error code: printf("Error code: %d\n", ferror(file_handle));
         } else {
-            // This case is unlikely if fputc returned EOF, but included for completeness
             printf("fputc failed, but ferror() did not report an error.\n");
         }
     } else {
-        // This block should ideally not be reached if the file is opened in read mode
         printf("Unexpected success: fputc succeeded on a read-only stream.\n");
     }
+}
 
-    // Clear the error indicators for the file stream.
-    // This resets the error flags, so subsequent ferror() calls will return 0.
+void clear_and_check_error(FILE *file_handle) {
     clearerr(file_handle);
-
-    // Check the error indicator again after clearing
+    
     if (ferror(file_handle) != 0) {
-        // This should not happen after clearerr()
         printf("Error: ferror() still indicates an error after clearerr().\n");
     } else {
         printf("Error indicator cleared successfully.\n");
     }
+}
 
-    // Close the file
+void close_file(FILE *file_handle) {
     if (fclose(file_handle) != 0) {
         perror("Error closing file");
+    }
+}
+
+int main(void) {
+    char character_to_write = 'X';
+    
+    FILE *file_handle = open_file_read_only(FILENAME);
+    if (file_handle == NULL) {
         return 0;
     }
-
+    
+    attempt_write_and_check_error(file_handle, character_to_write);
+    clear_and_check_error(file_handle);
+    close_file(file_handle);
+    
     return 0;
 }

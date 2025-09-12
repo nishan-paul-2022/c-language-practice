@@ -7,40 +7,33 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int main(void) {
-    FILE *file_ptr = NULL;
-    const char *filename = "FH perror 1.txt";
-
-    // --- Demonstrate perror after a failed file operation ---
-
-    // Attempt to open a file that likely does not exist in read mode.
-    file_ptr = fopen(filename, "r");
-
-    // Check if fopen failed
+FILE *attempt_file_open(const char *filename) {
+    FILE *file_ptr = fopen(filename, "r");
+    
     if (file_ptr == NULL) {
-        // perror prints the string followed by ": " and the system error message
         perror("Error opening file (first call)");
-
-        // clearerr clears the error indicators for the given stream.
-        // It does NOT reset errno.
-        if (file_ptr != NULL) { // This condition will be false if fopen failed
-            clearerr(file_ptr);
-            printf("Called clearerr() on a valid file pointer (this part won't execute if fopen failed).\n");
-        } else {
-            printf("fopen failed, so clearerr() was not called on a valid file pointer.\n");
-        }
-
-        // Call perror again. Since errno is still set from the failed fopen,
-        // this will likely print the same error message as the first call.
+        
+        printf("fopen failed, so clearerr() was not called on a valid file pointer.\n");
+        
         perror("Error after clearerr attempt (second call)");
-
     } else {
-        // If fopen succeeded (e.g., if "FH perror 1.txt" exists)
         printf("Successfully opened file '%s'.\n", filename);
-        // In a real scenario, you would perform operations here and then use clearerr/ferror.
-        // For this example, we'll just close it.
+    }
+    
+    return file_ptr;
+}
+
+void close_file(FILE *file_ptr) {
+    if (file_ptr != NULL) {
         fclose(file_ptr);
     }
+}
 
+int main(void) {
+    const char *filename = "files/07-input.txt";
+    
+    FILE *file_ptr = attempt_file_open(filename);
+    close_file(file_ptr);
+    
     return 0;
 }
