@@ -6,37 +6,38 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases
-    int case_num;       // Current test case number
+int is_perfect_square(long long int number) {
+    if (number < 0) {
+        return 0;
+    }
+    
+    long long int integer_sqrt = (long long int)sqrt(number);
+    return (integer_sqrt * integer_sqrt == number);
+}
 
-    // Read the number of test cases
+int get_test_cases(void) {
+    int num_test_cases;
     scanf("%d", &num_test_cases);
+    return num_test_cases;
+}
 
-    // Process each test case
-    for (case_num = 1; case_num <= num_test_cases; case_num++) {
-        long long int number_to_check; // The number to check for perfect square property
-        long long int integer_sqrt;    // The integer part of the square root
+long long int get_number(void) {
+    long long int number;
+    scanf("%lld", &number);
+    return number;
+}
 
-        // Read the number
-        scanf("%lld", &number_to_check);
+void print_result(int case_num, int is_perfect) {
+    printf("Case %d: %s\n", case_num, is_perfect ? "YES" : "NO");
+}
 
-        // Handle negative numbers (not perfect squares by definition here)
-        if (number_to_check < 0) {
-            printf("Case %d: NO\n", case_num);
-            continue;
-        }
-
-        // Calculate the integer part of the square root
-        integer_sqrt = (long long int)sqrt(number_to_check);
-
-        // Check if the square of the integer square root equals the original number
-        // This is a robust way to check for perfect squares, avoiding float precision issues.
-        if (integer_sqrt * integer_sqrt == number_to_check) {
-            printf("Case %d: YES\n", case_num);
-        } else {
-            printf("Case %d: NO\n", case_num);
-        }
+int main(void) {
+    int num_test_cases = get_test_cases();
+    
+    for (int case_num = 1; case_num <= num_test_cases; case_num++) {
+        long long int number_to_check = get_number();
+        int result = is_perfect_square(number_to_check);
+        print_result(case_num, result);
     }
 
     return 0;

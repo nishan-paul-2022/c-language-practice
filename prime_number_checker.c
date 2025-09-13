@@ -4,48 +4,33 @@
  */
 
 #include <stdio.h>
-#include <math.h>
 
-int main(void) {
-    int number; // The integer number to check for primality
-    int i;
-    int is_prime = 1; // Flag: 1 means prime, 0 means not prime
-
-    // Prompt user for input
-    printf("Enter a positive integer to check if it's prime: ");
-    scanf("%d", &number);
-
-    // Handle edge cases for primality:
-    // Numbers less than or equal to 1 are not prime.
+int is_prime(int number) {
     if (number <= 1) {
-        is_prime = 0; // Not prime
+        return 0;
     }
-    // 2 is the only even prime number
-    else if (number == 2) {
-        is_prime = 1; // Prime
+    if (number == 2) {
+        return 1;
     }
-    // Even numbers greater than 2 are not prime
-    else if (number % 2 == 0) {
-        is_prime = 0; // Not prime
+    if (number % 2 == 0) {
+        return 0;
     }
-    // For odd numbers, check divisibility from 3 up to the square root of the number,
-    // incrementing by 2 (to check only odd divisors)
-    else {
-        // Loop from 3 up to sqrt(number), checking only odd divisors
-        for (i = 3; i * i <= number; i += 2) {
-            if (number % i == 0) {
-                is_prime = 0; // Found a divisor, so it's not prime
-                break;        // Exit the loop
-            }
+
+    for (int i = 3; i * i <= number; i += 2) {
+        if (number % i == 0) {
+            return 0;
         }
     }
 
-    // Print the result based on the is_prime flag
-    if (is_prime == 1) {
-        printf("%d is a Prime number.\n", number);
-    } else {
-        printf("%d is Not a Prime number.\n", number);
-    }
+    return 1;
+}
+
+int main(void) {
+    printf("Enter a positive integer to check if it's prime: ");
+    int number;
+    scanf("%d", &number);
+
+    printf("%d is %sprime.\n", number, is_prime(number) ? "" : "not ");
 
     return 0;
 }

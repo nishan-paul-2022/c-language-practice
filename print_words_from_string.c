@@ -5,54 +5,47 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-#define BUFFER_SIZE 256 // Define a reasonable buffer size
+#define BUFFER_SIZE 256
 
-int main(void) {
-    char input_string[BUFFER_SIZE];
-    int i, j;
-
+void read_input(char str[BUFFER_SIZE]) {
     printf("Enter a string: ");
-    // Use fgets for safe input, it reads up to BUFFER_SIZE-1 characters
-    // and appends a null terminator. It also reads the newline character if space permits.
-    if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
+    if (fgets(str, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        return 0;
+        exit(0);
     }
+    str[strcspn(str, "\n")] = 0; // Remove trailing newline
+}
 
-    // Remove the trailing newline character if it exists
-    input_string[strcspn(input_string, "\n")] = 0;
+void print_words(const char str[BUFFER_SIZE]) {
+    int i = 0, j;
 
     printf("Words in the string:\n");
+    while (str[i] != '\0') {
+        while (str[i] == ' ') i++;
+        if (str[i] == '\0') break;
 
-    // Iterate through the string to print words
-    // A word is considered a sequence of characters separated by spaces.
-    for (i = 0; input_string[i] != '\\0'; ) {
-        // Skip leading spaces
-        while (input_string[i] == ' ') {
-            i++;
-        }
-
-        // If we reached the end of the string after skipping spaces, break
-        if (input_string[i] == '\\0') {
-            break;
-        }
-
-        // Find the end of the current word
+        // Find end of word
         j = i;
-        while (input_string[j] != ' ' && input_string[j] != '\\0') {
+        while (str[j] != ' ' && str[j] != '\0') {
             j++;
         }
 
-        // Print the word
         for (int k = i; k < j; k++) {
-            printf("%c", input_string[k]);
+            printf("%c", str[k]);
         }
-        printf("\n"); // Print each word on a new line
+        printf("\n");
 
-        // Move the index 'i' to the position after the current word
-        i = j;
+        i = j; // Move to next word
     }
+}
+
+int main(void) {
+    char input_string[BUFFER_SIZE];
+
+    read_input(input_string);
+    print_words(input_string);
 
     return 0;
 }

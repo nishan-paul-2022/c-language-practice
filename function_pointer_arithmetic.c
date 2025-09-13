@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 int sum(int a, int b) {
     return a + b;
@@ -15,30 +14,29 @@ int subtract_abs(int a, int b) {
     return abs(a - b);
 }
 
-int perform_arithmetic_operations() {
-    int num1, num2, result;
-
-    printf("Enter two integers (separated by a space): ");
-    if (scanf("%d %d", &num1, &num2) != 2) {
+int get_input(int *num1, int *num2) {
+    printf("Enter two integers: ");
+    if (scanf("%d %d", num1, num2) != 2) {
         printf("Invalid input. Please enter two integers.\n");
-        return 0;
+        return -1;
     }
-
-    int (*func_ptr_add)(int, int);
-    int (*func_ptr_sub)(int, int);
-
-    func_ptr_add = sum;
-    func_ptr_sub = subtract_abs;
-
-    result = func_ptr_add(num1, num2);
-    printf("Sum: %d\n", result);
-
-    result = func_ptr_sub(num1, num2);
-    printf("Absolute difference: %d\n", result);
-
     return 0;
 }
 
+void perform_operations(int num1, int num2) {
+    int (*func_ptr_add)(int, int) = sum;
+    int (*func_ptr_sub)(int, int) = subtract_abs;
+
+    printf("Sum: %d\n", func_ptr_add(num1, num2));
+    printf("Absolute difference: %d\n", func_ptr_sub(num1, num2));
+}
+
 int main(void) {
-    return perform_arithmetic_operations();
+    int num1, num2;
+    
+    if (get_input(&num1, &num2) == 0) {
+        perform_operations(num1, num2);
+    }
+    
+    return 0;
 }

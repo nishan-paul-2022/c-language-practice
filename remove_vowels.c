@@ -7,40 +7,48 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_STRING_SIZE 100
+
+// Function to convert a string to lowercase
+void to_lowercase(char *str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
+
+// Function to print a string without vowels
+void print_without_vowels(const char *str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (!(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||
+              str[i] == 'o' || str[i] == 'u')) {
+            putchar(str[i]);
+        }
+    }
+    putchar('\n');
+}
+
+// Function to safely read a string from input
+int read_input_string(char *buffer, int size) {
+    if (fgets(buffer, size, stdin) == NULL) {
+        return -1; // Failure
+    }
+    buffer[strcspn(buffer, "\n")] = '\0'; // Remove trailing newline
+    return 0; // Success
+}
+
 int main(void) {
-    char input_string[100]; // Buffer to store the input string
-    int string_length;      // Length of the input string
-    int char_index;         // Index for iterating through the string
+    char input_string[MAX_STRING_SIZE];
 
     printf("Enter a string: ");
-    
-    // Use fgets for safer string input to prevent buffer overflows.
-    // fgets reads up to sizeof(input_string) - 1 characters or until a newline is encountered.
-    if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
-        fprintf(stderr, "Error: Failed to read input string.\n");
+    if (read_input_string(input_string, MAX_STRING_SIZE) == -1) {
+        fprintf(stderr, "Error: Failed to read input.\n");
         return 0;
     }
 
-    // Remove the trailing newline character if fgets read one
-    input_string[strcspn(input_string, "\n")] = 0;
-
-    // Convert the entire string to lowercase using tolower()
-    string_length = strlen(input_string);
-    for (char_index = 0; char_index < string_length; char_index++) {
-        input_string[char_index] = tolower(input_string[char_index]);
-    }
+    to_lowercase(input_string);
 
     printf("String without vowels: ");
-    // Iterate through the string and print characters that are not vowels
-    for (char_index = 0; char_index < string_length; char_index++) {
-        // Check if the current character is NOT a vowel
-        if (!(input_string[char_index] == 'a' || input_string[char_index] == 'e' || 
-              input_string[char_index] == 'i' || input_string[char_index] == 'o' || 
-              input_string[char_index] == 'u')) {
-            printf("%c", input_string[char_index]);
-        }
-    }
-    printf("\n"); // Print a newline at the end of the output
+    print_without_vowels(input_string);
 
     return 0;
 }

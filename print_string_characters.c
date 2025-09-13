@@ -7,53 +7,55 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_ROWS 100 // Maximum number of rows
-#define MAX_COLS 100 // Maximum number of columns for each string
+#define MAX_ROWS 100 // Max rows
+#define MAX_COLS 100 // Max columns per string
+
+void read_dimensions(int *rows, int *cols) {
+    printf("Enter the number of rows and columns (e.g., 3 4): "); // Prompt user
+    if (scanf("%d %d", rows, cols) != 2) {
+        fprintf(stderr, "Error: Invalid input for dimensions.\n");
+        exit(0);
+    }
+    while (getchar() != '\n'); // Clear leftover newline
+}
+
+void validate_dimensions(int rows, int cols) {
+    if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
+        fprintf(stderr, "Error: Dimensions out of range. Rows: 1-%d, Cols: 1-%d\n", MAX_ROWS, MAX_COLS);
+        exit(0);
+    }
+}
+
+void read_strings(int rows, int cols, char array[MAX_ROWS][MAX_COLS]) {
+    printf("Enter the strings for each row (max %d characters per string):\n", cols - 1);
+    for (int i = 0; i < rows; i++) {
+        printf("Row %d: ", i); // Prompt for row input
+        if (fgets(array[i], cols, stdin) == NULL) {
+            fprintf(stderr, "Error: Failed to read string for row %d.\n", i);
+            exit(0);
+        }
+        array[i][strcspn(array[i], "\n")] = 0; // Remove trailing newline
+    }
+}
+
+void print_characters(int rows, char array[MAX_ROWS][MAX_COLS]) {
+    printf("\nCharacters in the array:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < strlen(array[i]); j++) {
+            printf("%c ", array[i][j]); // Print each character
+        }
+        printf("\n");
+    }
+}
 
 int main(void) {
     int rows, cols;
-    char char_array[MAX_ROWS][MAX_COLS]; // 2D array to store strings
+    char char_array[MAX_ROWS][MAX_COLS];
 
-    // Prompt for and read the number of rows and columns
-    printf("Enter the number of rows and columns (e.g., 3 4): ");
-    if (scanf("%d %d", &rows, &cols) != 2) {
-        fprintf(stderr, "Error: Invalid input for dimensions.\n");
-        return 0;
-    }
-
-    // Consume the newline character left by scanf
-    while (getchar() != '\n');
-
-    // Validate dimensions
-    if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
-        fprintf(stderr, "Error: Dimensions out of range. Rows: 1-%d, Cols: 1-%d\n", MAX_ROWS, MAX_COLS);
-        return 0;
-    }
-
-    printf("Enter the strings for each row (max %d characters per string):\n", cols - 1);
-    // Read strings into the 2D array
-    for (int i = 0; i < rows; i++) {
-        printf("Row %d: ", i);
-        // Use fgets for safe string input, reading up to 'cols-1' characters to leave space for null terminator
-        if (fgets(char_array[i], cols, stdin) == NULL) {
-            fprintf(stderr, "Error: Failed to read string for row %d.\n", i);
-            return 0;
-        }
-        // Remove trailing newline character if present
-        char_array[i][strcspn(char_array[i], "\n")] = 0;
-    }
-
-    printf("\nCharacters in the array:\n");
-    // Print each character of each string
-    for (int i = 0; i < rows; i++) {
-        // Iterate up to the length of the string in the current row, or up to 'cols-1' if string is longer
-        // Note: strlen(char_array[i]) is used to print only the characters entered,
-        // not the full allocated 'cols' if the input string was shorter.
-        for (int j = 0; j < strlen(char_array[i]); j++) {
-            printf("%c ", char_array[i][j]);
-        }
-        printf("\n"); // Newline after processing each row
-    }
+    read_dimensions(&rows, &cols);
+    validate_dimensions(rows, cols);
+    read_strings(rows, cols, char_array);
+    print_characters(rows, char_array);
 
     return 0;
 }

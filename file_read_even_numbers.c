@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Open file for reading
 FILE* open_file(const char *filename) {
     FILE *file_pointer = fopen(filename, "r");
     if (file_pointer == NULL) {
@@ -15,12 +14,10 @@ FILE* open_file(const char *filename) {
     return file_pointer;
 }
 
-// Check if number is even
 int is_even(unsigned long long int number) {
     return number % 2 == 0;
 }
 
-// Read numbers from file and print even ones
 void process_even_numbers(FILE *file_pointer, const char *filename) {
     unsigned long long int number;
     int found_even = 0;
@@ -44,16 +41,13 @@ int main(void) {
     const char *filename = "bishal.txt";
     FILE *file_pointer;
 
-    // Open file
     file_pointer = open_file(filename);
     if (file_pointer == NULL) {
         return 0;
     }
 
-    // Process and print even numbers
     process_even_numbers(file_pointer, filename);
 
-    // Close file
     fclose(file_pointer);
 
     return 0;

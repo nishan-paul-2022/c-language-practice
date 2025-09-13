@@ -7,9 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function to calculate GCD using Euclidean algorithm
 long int calculate_gcd(long int num1, long int num2) {
-    // Take absolute values to handle negative inputs
     num1 = abs(num1);
     num2 = abs(num2);
 
@@ -21,16 +19,13 @@ long int calculate_gcd(long int num1, long int num2) {
     return num1;
 }
 
-// Function to calculate LCM using GCD
 long int calculate_lcm(long int num1, long int num2) {
     if (num1 == 0 || num2 == 0) {
-        return 0; // LCM is 0 if any number is 0
+        return 0;
     }
-    // LCM(a, b) = |a * b| / GCD(a, b)
     return (long int)labs(num1 * num2) / calculate_gcd(num1, num2);
 }
 
-// Function to list common divisors
 void list_common_divisors(long int num1, long int num2) {
     num1 = abs(num1);
     num2 = abs(num2);
@@ -70,32 +65,33 @@ void list_common_divisors(long int num1, long int num2) {
     printf("\n");
 }
 
-int main(void) {
+void display_results(long int num1, long int num2) {
+    printf("\nFor numbers %ld and %ld:\n", num1, num2);
+    
+    list_common_divisors(num1, num2);
+    
+    long int gcd = calculate_gcd(num1, num2);
+    printf("GREATEST COMMON DIVISOR (GCD): %ld\n", gcd);
+    
+    long int lcm = calculate_lcm(num1, num2);
+    printf("LEAST COMMON MULTIPLE (LCM): %ld\n", lcm);
+    
+    printf("\n----------------------------------------\n");
+}
+
+void process_number_pairs() {
     long int num1, num2;
 
-    // Prompt user to enter two integers
     printf("Enter two integers separated by a comma (e.g., 48, 18) (or Ctrl+D to exit): ");
-    // Read pairs of integers and process them
     while (scanf("%ld, %ld", &num1, &num2) == 2) {
-        // Display the numbers being processed
-        printf("\nFor numbers %ld and %ld:\n", num1, num2);
-
-        // List all common divisors of the two numbers
-        list_common_divisors(num1, num2);
-
-        // Calculate and display the GCD
-        long int gcd = calculate_gcd(num1, num2);
-        printf("GREATEST COMMON DIVISOR (GCD): %ld\n", gcd);
-
-        // Calculate and display the LCM
-        long int lcm = calculate_lcm(num1, num2);
-        printf("LEAST COMMON MULTIPLE (LCM): %ld\n", lcm);
-
-        printf("\n----------------------------------------\n");
-        // Prompt for the next pair of integers
+        display_results(num1, num2);
         printf("Enter two integers separated by a comma (e.g., 48, 18) (or Ctrl+D to exit): ");
     }
 
     printf("\nExiting program.\n");
+}
+
+int main(void) {
+    process_number_pairs();
     return 0;
 }

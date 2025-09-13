@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-// Function to find and print all positive divisors of a given integer.
 void find_and_print_divisors(int number) {
     if (number <= 0) {
         printf("Input must be a positive integer.\n");
@@ -16,9 +15,9 @@ void find_and_print_divisors(int number) {
 
     for (int i = 1; i * i <= number; i++) {
         if (number % i == 0) {
-            printf("%d ", i); // Print the smaller divisor
+            printf("%d ", i);
             if (i * i != number) {
-                printf("%d ", number / i); // Print the larger divisor
+                printf("%d ", number / i);
             }
         }
     }

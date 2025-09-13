@@ -1,49 +1,47 @@
-#include <stdio.h>
-
 /*
  * Purpose: Generates and prints a numerical pattern based on a loop with floating-point increments.
  * Topic: Floating-point arithmetic, Loops, Conditional Logic, Pattern Generation
  */
-int main(void) {
-    float current_value; // Represents 'a' in the original code
-    int integer_part;    // Represents 'b' in the original code
-    float next_value;    // Represents 'f' in the original code
-    int base_int;        // Represents 'c' in the original code
-    int incremented_int; // Represents 'e' in the original code
-    int i;
 
-    // The outer loop iterates 11 times (from i=0 to i=10)
-    // current_value starts at 0.0 and increases by 0.2 in each iteration.
-    for (i = 0; i <= 10; i++) {
-        current_value = i * 0.2f; // Calculate current_value for this iteration
+#include <stdio.h>
 
-        // Calculate an intermediate integer value based on current_value
-        // This is equivalent to original 'A = a*10' and 'b = (int)A'
-        integer_part = (int)(current_value * 10.0f);
+int is_special_case(float value) {
+    int integer_part = (int)(value * 10.0f);
+    return (integer_part == 0 || integer_part == 10 || integer_part == 20);
+}
 
-        // Check if the integer_part is a multiple of 10 (0, 10, 20)
-        if (integer_part == 0 || integer_part == 10 || integer_part == 20) {
-            // Special case: For values like 0.0, 1.0, 2.0
-            base_int = integer_part / 10; // This will be 0, 1, or 2
-            incremented_int = base_int + 1; // Start the second number from base_int + 1
+void print_integer_pattern(float value) {
+    int base_int = (int)(value * 10.0f) / 10;
+    int incremented_int = base_int + 1;
 
-            // Print a pattern 3 times
-            for (int j = 0; j < 3; j++) {
-                printf("I=%d J=%d\n", base_int, incremented_int);
-                incremented_int++; // Increment J for the next print
-            }
+    for (int j = 0; j < 3; j++) {
+        printf("I=%d J=%d\n", base_int, incremented_int);
+        incremented_int++;
+    }
+}
+
+void print_float_pattern(float current_value) {
+    float next_value = current_value + 1.0f;
+
+    for (int j = 0; j < 3; j++) {
+        printf("I=%.1f J=%.1f\n", current_value, next_value);
+        next_value += 1.0f;
+    }
+}
+
+void generate_pattern(void) {
+    for (int i = 0; i <= 10; i++) {
+        float current_value = i * 0.2f;
+
+        if (is_special_case(current_value)) {
+            print_integer_pattern(current_value);
         } else {
-            // General case: For other values
-            next_value = current_value + 1.0f; // Calculate the second float value
-
-            // Print a pattern 3 times
-            for (int j = 0; j < 3; j++) {
-                // Print with one decimal place for clarity
-                printf("I=%.1f J=%.1f\n", current_value, next_value);
-                next_value += 1.0f; // Increment J by 1.0 for the next print
-            }
+            print_float_pattern(current_value);
         }
     }
+}
 
+int main(void) {
+    generate_pattern();
     return 0;
 }

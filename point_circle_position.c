@@ -6,41 +6,33 @@
 #include <stdio.h>
 #include <math.h>
 
-// A small epsilon value for floating-point comparisons
 #define EPSILON 1e-9
 
+double calculate_distance(int x1, int y1, int x2, int y2) {
+    return sqrt((double)(x1 - x2) * (x1 - x2) + (double)(y1 - y2) * (y1 - y2));
+}
+
+void check_point_position(int case_num, int cx, int cy, double r, int px, int py) {
+    double dist = calculate_distance(cx, cy, px, py);
+
+    if (dist < r - EPSILON) {
+        printf("Case %d: Inside\n", case_num);
+    } else if (dist > r + EPSILON) {
+        printf("Case %d: Outside\n", case_num);
+    } else {
+        printf("Case %d: OnCircle\n", case_num);
+    }
+}
+
 int main(void) {
-    int num_test_cases; // Number of test cases
-    int i;
+    int num_cases;
+    scanf("%d", &num_cases);
 
-    // Read the number of test cases
-    scanf("%d", &num_test_cases);
-
-    // Process each test case
-    for (i = 1; i <= num_test_cases; i++) {
-        int center_x, center_y;     // Coordinates of the circle's center
-        double radius;               // Radius of the circle
-        int point_x, point_y;       // Coordinates of the point to check
-        double distance_from_center; // Distance from the circle's center to the point
-
-        // Read circle center (x, y), radius, and point (x, y)
-        scanf("%d %d %lf %d %d", &center_x, &center_y, &radius, &point_x, &point_y);
-
-        // Calculate the Euclidean distance between the center and the point
-        distance_from_center = sqrt(
-            (double)(center_x - point_x) * (center_x - point_x) +
-            (double)(center_y - point_y) * (center_y - point_y)
-        );
-
-        // Determine the point's position relative to the circle
-        // Using EPSILON for robust floating-point comparison
-        if (distance_from_center < radius - EPSILON) {
-            printf("Case %d: Inside\n", i);
-        } else if (distance_from_center > radius + EPSILON) {
-            printf("Case %d: Outside\n", i);
-        } else {
-            printf("Case %d: OnCircle\n", i);
-        }
+    for (int i = 1; i <= num_cases; i++) {
+        int cx, cy, px, py;
+        double r;
+        scanf("%d %d %lf %d %d", &cx, &cy, &r, &px, &py);
+        check_point_position(i, cx, cy, r, px, py);
     }
 
     return 0;

@@ -1,28 +1,31 @@
+/*
+ * Purpose: Demonstrate input reading with scanf format specifiers that read until a specific character and discard subsequent characters.
+ *          Includes visualization of how input is processed and discarded.
+ * Topic: String Input Handling, Format Specifiers, Input Buffer Management
+ */
+
 #include <stdio.h>
 #include <string.h>
 
 int main(void) {
-    char input_buffer[11]; // Buffer to store the input string. Size 10 for characters + 1 for null terminator.
+    char input_buffer[11]; // Buffer: 10 chars + null terminator
+    char remaning_buffer[11];
+    int ch;
 
-    // Read input using a specific scanf format:
-    // "%10[^6]" : Reads up to 10 characters into input_buffer, stopping if '6' is encountered.
-    //             The characters read are stored in input_buffer.
-    // "%*6"     : Reads and discards the next 6 characters from the input stream.
-    //             This is often used to consume specific delimiters or unwanted characters.
-    //             It's important to note that if '6' is encountered by the first part,
-    //             it might be consumed by the second part if it's within the next 6 characters.
-    if (scanf("%10[^6]%*6", input_buffer) != 1) {
-        // If scanf fails to read at least one character into input_buffer,
-        // it might indicate an issue with the input or format.
-        // For simplicity, we'll just print an empty string if reading fails.
-        // A more robust solution might involve clearing the input buffer.
-        input_buffer[0] = '\0'; // Ensure buffer is empty if read fails
+    printf("Example: Enter a string containing numbers and letters, including '6' somewhere in it.\n");
+    printf("Input will be read up to '6' (max 10 chars) and the next 6 characters will be discarded.\n");
+    printf("Enter your string: ");
+
+    // Read up to 10 characters until '6' is encountered
+    if (scanf("%10[^6]", input_buffer) != 1) {
+        input_buffer[0] = '\0'; // On failure, assign empty string
     }
 
-    // Print the string stored in input_buffer, formatted to a width of 10 characters.
-    // "%10s" ensures the output string is right-aligned within a field of 10 characters.
-    // If the string is shorter than 10 characters, it will be padded with spaces.
-    printf("%10s\n", input_buffer);
+    // Show input processing
+    printf("\n--- Input Processing Result ---\n");
+    printf("Read characters (stopped at '6'): '%s'\n", input_buffer);
+    scanf("%10s", remaning_buffer);
+    printf("You entered: '%s'\n", remaning_buffer);
 
     return 0;
 }

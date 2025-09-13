@@ -5,20 +5,15 @@
 
 #include <stdio.h>
 
+void print_character_info(char *ptr) {
+    printf("Character value: %c\n", *ptr);
+    printf("Address of character: %p\n", (void *)ptr);
+    printf("Address of the pointer: %p\n", (void *)&ptr);
+}
+
 int main(void) {
-    char character_variable = 'A';      // Declare and initialize a character variable
-    char *char_pointer;                 // Declare a pointer to a character
-
-    // Assign the memory address of 'character_variable' to 'char_pointer'
-    char_pointer = &character_variable;
-
-    // Print:
-    // 1. The value pointed to by char_pointer (*char_pointer)
-    // 2. The address stored in char_pointer (char_pointer)
-    // 3. The memory address of the pointer variable itself (&char_pointer)
-    printf("Character value: %c\n", *char_pointer);
-    printf("Address of character: %p\n", (void *)char_pointer); // Cast to void* for %p
-    printf("Address of the pointer: %p\n", (void *)&char_pointer); // Cast to void* for %p
-
+    char ch = 'A';
+    char *ptr = &ch;
+    print_character_info(ptr);
     return 0;
 }

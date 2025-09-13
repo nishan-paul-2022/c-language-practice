@@ -6,35 +6,31 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    int buffer_size;
-    char input_string[256]; // Use a reasonably sized buffer
-
-    // Prompt user for buffer size (though we'll use a fixed buffer for simplicity and safety)
-    printf("Enter the maximum string length for each line (e.g., 255 for a buffer of 256):\n");
-    if (scanf("%d", &buffer_size) != 1 || buffer_size <= 0 || buffer_size >= sizeof(input_string)) {
-        fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %lu.\n", sizeof(input_string) - 1);
-        buffer_size = sizeof(input_string) - 1; // Use the maximum allowed size
+int read_buffer_size(int max_size) {
+    int size;
+    printf("Enter the maximum string length for each line (e.g., 255): "); // Prompt user
+    if (scanf("%d", &size) != 1 || size <= 0 || size >= max_size) {
+        fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %d.\n", max_size - 1);
+        size = max_size - 1; // Use default maximum
     }
-    // Consume the newline character after reading the integer
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Consume leftover newline
+    return size;
+}
 
-    printf("Enter lines of text (press Ctrl+D or Ctrl+Z on a new line to end input):\n");
-
-    // Read lines safely using fgets until end-of-file or error
+void read_and_print_lines(int buffer_size) {
+    char input_string[256]; // Fixed buffer for safety
+    printf("Enter lines of text (Ctrl+D/Ctrl+Z to end input):\n");
     while (fgets(input_string, sizeof(input_string), stdin) != NULL) {
-        // Remove trailing newline character if present
-        input_string[strcspn(input_string, "\n")] = 0;
-
-        // Print the read line
-        printf("%s\n", input_string);
+        input_string[strcspn(input_string, "\n")] = 0; // Remove trailing newline
+        printf("%s\n", input_string); // Print line
     }
-
-    // Check if the loop terminated due to an error other than EOF
     if (ferror(stdin)) {
         fprintf(stderr, "An error occurred during input.\n");
-        return 0;
     }
+}
 
+int main(void) {
+    int buffer_size = read_buffer_size(sizeof(char) * 256);
+    read_and_print_lines(buffer_size);
     return 0;
 }

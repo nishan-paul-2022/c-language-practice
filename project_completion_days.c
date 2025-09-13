@@ -6,35 +6,29 @@
 #include <stdio.h>
 
 int main(void) {
-    int total_project_work; // Total work units required for the project
-    int num_workers;        // Number of workers
-    int worker_capacity;    // Individual worker's daily capacity
-    int total_daily_capacity; // Sum of all workers' daily capacities
-    int i;
-    int days_needed;        // Calculated days to complete the project
+    int total_work, num_workers, worker_capacity, total_daily_capacity, days_needed;
 
-    // Read total project work and number of workers until EOF
-    while (scanf("%d %d", &total_project_work, &num_workers) != EOF) {
-        total_daily_capacity = 0; // Reset total daily capacity for each new project
+    printf("Enter total work and number of workers: ");
 
-        // Read individual worker capacities and sum them up
-        for (i = 0; i < num_workers; i++) {
+    while (scanf("%d %d", &total_work, &num_workers) != EOF) {
+        total_daily_capacity = 0;
+        
+        for (int i = 0; i < num_workers; i++) {
+            printf("Enter capacity of worker %d: ", i+1);
             scanf("%d", &worker_capacity);
             total_daily_capacity += worker_capacity;
         }
 
-        // Calculate days needed
         if (total_daily_capacity == 0) {
-            // Avoid division by zero if no work can be done
             printf("Project cannot be finished (no work capacity).\n");
-        } else if (total_project_work <= total_daily_capacity) {
-            // If total work can be done within 1 day
+        } else if (total_work <= total_daily_capacity) {
             printf("Project will finish within 1 day.\n");
         } else {
-            // Calculate days using integer ceiling division: (numerator + denominator - 1) / denominator
-            days_needed = (total_project_work + total_daily_capacity - 1) / total_daily_capacity;
+            days_needed = (total_work + total_daily_capacity - 1) / total_daily_capacity; // Ceiling division
             printf("Project will finish within %d days.\n", days_needed);
         }
+
+        printf("\nEnter total work and number of workers: ");
     }
 
     return 0;

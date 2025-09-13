@@ -6,47 +6,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int read_diamond_size(void) {
     int size;
-    int current_number;
-
-    // Prompt user for input
     printf("Enter the size of the diamond (number of rows in the upper half): ");
-    // Input validation for size
     if (scanf("%d", &size) != 1 || size <= 0) {
         fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
         return 0;
     }
+    return size;
+}
 
-    // Print the upper half of the diamond
-    current_number = 1; // Start with 1 for the first row
-    for (int row = 1; row <= size; row++) {
-        // Print leading spaces
-        for (int col = 1; col <= size - row; col++) {
+void print_upper_half(int size) {
+    int current_number = 1;
+    int row, col;
+    
+    for (row = 1; row <= size; row++) {
+        for (col = 1; col <= size - row; col++) {
             printf(" ");
         }
-        // Print numbers
-        for (int col = 1; col <= row; col++) {
-            printf(" %d", current_number); // Print number with a leading space
-            current_number++; // Increment for the next number
+        for (col = 1; col <= row; col++) {
+            printf(" %d", current_number);
+            current_number++;
         }
-        printf("\n"); // Move to the next line
+        printf("\n");
     }
+}
 
-    // Print the lower half of the diamond (inverted triangle)
-    current_number = size - 1; // Start with size-1 for the first row of the lower half
-    for (int row = size - 1; row >= 1; row--) {
-        // Print leading spaces
-        for (int col = 1; col <= size - row; col++) {
+void print_lower_half(int size) {
+    int current_number = size - 1;
+    int row, col;
+    
+    for (row = size - 1; row >= 1; row--) {
+        for (col = 1; col <= size - row; col++) {
             printf(" ");
         }
-        // Print numbers
-        for (int col = 1; col <= row; col++) {
-            printf(" %d", current_number); // Print number with a leading space
-            current_number--; // Decrement for the next number
+        for (col = 1; col <= row; col++) {
+            printf(" %d", current_number);
+            current_number--;
         }
-        printf("\n"); // Move to the next line
+        printf("\n");
     }
+}
+
+int main(void) {
+    int size = read_diamond_size();
+    
+    if (size == 0) {
+        return 0;
+    }
+
+    print_upper_half(size);
+    print_lower_half(size);
 
     return 0;
 }

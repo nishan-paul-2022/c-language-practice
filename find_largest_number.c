@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-// Finds the largest of three double-precision numbers.
 double find_largest(double a, double b, double c) {
     double largest = a;
     if (b > largest) {
@@ -20,16 +19,13 @@ double find_largest(double a, double b, double c) {
 int main(void) {
     double num1, num2, num3;
 
-    printf("Enter three numbers: ");
+    printf("Enter three numbers (comma-separated): ");
 
-    // Read three numbers from standard input.
     if (scanf("%lf, %lf, %lf", &num1, &num2, &num3) == 3) {
         double largest = find_largest(num1, num2, num3);
         printf("The largest number is: %.2lf\n", largest);
     } else {
-        // Handle incorrect input format.
         fprintf(stderr, "Error: Invalid input format. Please enter three numbers separated by commas.\n");
-        // Clear the input buffer.
         while (getchar() != '\n');
     }
 

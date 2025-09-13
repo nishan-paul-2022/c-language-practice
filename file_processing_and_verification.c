@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Process input file and write calculated values to output file
 int process_input_file(void) {
     FILE *input_file = fopen("input.txt", "r");
     if (input_file == NULL) {
@@ -24,8 +23,7 @@ int process_input_file(void) {
     printf("Processing input.txt:\n");
     int number_from_input;
     while (fscanf(input_file, "%d", &number_from_input) == 1) {
-        // Calculate m = n*n - 2*n + 1, which is (n-1)^2
-        int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1;
+        int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1; // (n-1)^2
 
         printf("  Input: %d, Calculated: %d\n", number_from_input, calculated_value);
 
@@ -37,7 +35,6 @@ int process_input_file(void) {
         }
     }
 
-    // Check for read errors
     if (ferror(input_file)) {
         perror("Error reading from input.txt");
         fclose(input_file);
@@ -50,7 +47,6 @@ int process_input_file(void) {
     return 0;
 }
 
-// Verify mine.txt against output.txt
 int verify_files(void) {
     FILE *output_file = fopen("output.txt", "r");
     if (output_file == NULL) {
@@ -69,7 +65,6 @@ int verify_files(void) {
     int val_output, val_mine;
     int comparison_result = 0;
 
-    // Read and compare values from both files
     while (fscanf(output_file, "%d", &val_output) == 1) {
         if (fscanf(mine_file_read, "%d", &val_mine) != 1) {
             fprintf(stderr, "  ERROR: Mismatch in number of entries. output.txt has more values than mine.txt.\n");
@@ -84,13 +79,11 @@ int verify_files(void) {
         }
     }
 
-    // Check if mine.txt has more numbers than output.txt
     if (comparison_result == 0 && fscanf(mine_file_read, "%d", &val_mine) == 1) {
         fprintf(stderr, "  ERROR: Mismatch in number of entries. mine.txt has more values than output.txt.\n");
         comparison_result = -1;
     }
 
-    // Check for read errors
     if (ferror(output_file) || ferror(mine_file_read)) {
         perror("Error during file comparison read");
         comparison_result = -1;
@@ -101,7 +94,6 @@ int verify_files(void) {
     return comparison_result;
 }
 
-// Display verification result
 void display_result(int result) {
     if (result == 0) {
         printf("  ACCEPTED: All values match.\n");
@@ -111,15 +103,12 @@ void display_result(int result) {
 }
 
 int main(void) {
-    // Process input file and generate mine.txt
     if (process_input_file()) {
         return 0;
     }
 
-    // Verify mine.txt against output.txt
     int verification_result = verify_files();
     
-    // Display final result
     display_result(verification_result);
 
     return verification_result == 0 ? 0 : 1;

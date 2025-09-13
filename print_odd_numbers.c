@@ -1,24 +1,26 @@
 /*
- * Purpose: Prints all odd numbers from 1 up to a specified limit.
- * Topic: Loops and Conditional Logic (Printing Odd Numbers)
+ * Purpose: Prints all odd numbers from 1 up to a user-specified limit.
+ * Topic: Loops, Odd Numbers, Incrementing by 2
  */
 
 #include <stdio.h>
 
 int main(void) {
-    int number;
-    const int limit = 20; // Define the upper limit for printing numbers.
+    int limit;
 
-    printf("Printing odd numbers from 1 to %d:\n", limit);
-
-    // Loop through numbers starting from 1 and incrementing by 2 in each step.
-    // This directly generates odd numbers, making the code more efficient and readable
-    // compared to checking for even numbers and using 'continue'.
-    for (number = 1; number <= limit; number += 2) {
-        // Print the current odd number.
-        printf("%d ", number);
+    printf("Enter the upper limit: ");
+    if (scanf("%d", &limit) != 1 || limit < 1) {
+        printf("Invalid input. Please enter a positive integer.\n");
+        return 0;
     }
-    printf("\n"); // Print a newline at the end for better formatting.
+
+    printf("Odd numbers from 1 to %d:\n", limit);
+
+    // Start from 1 and increment by 2 to get all odd numbers
+    for (int num = 1; num <= limit; num += 2) {
+        printf("%d ", num);
+    }
+    printf("\n");
 
     return 0;
 }

@@ -5,8 +5,7 @@
 
 #include <stdio.h>
 
-// Function to find the maximum and minimum values in an array
-void findMaxMin(int arr[], int size, int *max, int *min) {
+void find_max_min(int arr[], int size, int *max, int *min) {
     *max = arr[0];
     *min = arr[0];
     for (int i = 1; i < size; i++) {
@@ -19,27 +18,26 @@ void findMaxMin(int arr[], int size, int *max, int *min) {
     }
 }
 
-// Function to run the test cases
-void runTestCases() {
+void run_test_cases(void) {
     int num_test_cases;
     printf("Enter the number of test cases: ");
-    scanf("%d", &num_test_cases); // Read the number of test cases
+    scanf("%d", &num_test_cases);
 
     while (num_test_cases--) {
         int numbers[5];
-        printf("Enter 5 integers separated by spaces: ");
+        printf("Enter 5 integers: ");
         for (int i = 0; i < 5; i++) {
-            scanf("%d", &numbers[i]); // Read each integer
+            scanf("%d", &numbers[i]);
         }
 
         int max_val, min_val;
-        findMaxMin(numbers, 5, &max_val, &min_val);
+        find_max_min(numbers, 5, &max_val, &min_val);
 
         printf("Maximum: %d, Minimum: %d\n", max_val, min_val);
     }
 }
 
 int main(void) {
-    runTestCases();
+    run_test_cases();
     return 0;
 }

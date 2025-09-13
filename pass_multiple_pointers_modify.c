@@ -6,32 +6,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function to perform arithmetic operations on two doubles.
-// Takes two doubles (values) and four double pointers (for results).
-// Modifies the values pointed to by p, q, r, s.
-// Includes error handling for division by zero.
-void perform_arithmetic_operations_via_pointers(double num1, double num2,
-                                                double *sum_ptr,
-                                                double *diff_ptr,
-                                                double *prod_ptr,
-                                                double *div_ptr) {
-    // Check for NULL pointers to ensure safety
+void perform_arithmetic_operations(double num1, double num2,
+                                   double *sum_ptr,
+                                   double *diff_ptr,
+                                   double *prod_ptr,
+                                   double *div_ptr) {
     if (sum_ptr == NULL || diff_ptr == NULL || prod_ptr == NULL || div_ptr == NULL) {
-        fprintf(stderr, "Error: NULL pointer passed to perform_arithmetic_operations_via_pointers.\n");
-        return; // Exit if pointers are invalid
+        fprintf(stderr, "Error: NULL pointer passed to function.\n");
+        return;
     }
 
-    // Perform calculations and store results via pointers
     *sum_ptr = num1 + num2;
     *diff_ptr = num1 - num2;
     *prod_ptr = num1 * num2;
 
-    // Check for division by zero
     if (num2 == 0.0) {
         fprintf(stderr, "Error: Division by zero attempted.\n");
-        *div_ptr = 0.0; // Assign a default value or error indicator
+        *div_ptr = 0.0;
     } else {
         *div_ptr = num1 / num2;
+    }
+}
+
+int get_two_doubles(double *value1, double *value2) {
+    printf("Enter two double values (e.g., 10.5 5.2): ");
+    return scanf("%lf %lf", value1, value2);
+}
+
+void clear_input_buffer(void) {
+    while (getchar() != '\n');
+}
+
+void display_results(double sum, double diff, double prod, double div, double divisor) {
+    printf("Sum: %.2lf\n", sum);
+    printf("Difference: %.2lf\n", diff);
+    printf("Product: %.2lf\n", prod);
+    
+    if (divisor != 0.0) {
+        printf("Division: %.2lf\n", div);
+    } else {
+        printf("Division: Error (division by zero).\n")
+        ;
     }
 }
 
@@ -39,33 +54,19 @@ int main(void) {
     double value1, value2;
     double result_sum, result_diff, result_prod, result_div;
 
-    // Get two double values from the user
-    printf("Enter two double values separated by a comma (e.g., 10.5, 5.2): ");
-    if (scanf("%lf, %lf", &value1, &value2) != 2) {
-        fprintf(stderr, "Error: Invalid input format. Please enter two double values separated by a comma.\n");
+    if (get_two_doubles(&value1, &value2) != 2) {
+        fprintf(stderr, "Error: Invalid input format.\n");
         return 0;
     }
-    // Consume any remaining characters on the line after the second double, including the newline
-    while (getchar() != '\n');
+    clear_input_buffer();
 
-    // Call the function, passing the addresses of the result variables.
-    // This allows the function to modify these variables directly.
-    perform_arithmetic_operations_via_pointers(value1, value2,
-                                             &result_sum,
-                                             &result_diff,
-                                             &result_prod,
-                                             &result_div);
+    perform_arithmetic_operations(value1, value2,
+                                  &result_sum,
+                                  &result_diff,
+                                  &result_prod,
+                                  &result_div);
 
-    // Print the results
-    printf("Sum: %.2lf\n", result_sum);
-    printf("Difference: %.2lf\n", result_diff);
-    printf("Product: %.2lf\n", result_prod);
-    // Check if division was successful before printing
-    if (value2) { // Check original input value for division by zero
-        printf("Division: %.2lf\n", result_div);
-    } else {
-        printf("Division: Error (division by zero).\n");
-    }
+    display_results(result_sum, result_diff, result_prod, result_div, value2);
 
     return 0;
 }

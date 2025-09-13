@@ -5,87 +5,88 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int n; // Size of the square matrix
-
-    // Loop to process multiple matrices until n is 0
-    while (scanf("%d", &n) == 1 && n) {
-        int i, j;
-        int row_sum_index = 0;
-        int col_sum_index;
-        int total_sums_count = 2 * n; // n rows + n columns
-
-        // Declare Variable Length Arrays (VLAs) for matrix and sums
-        int matrix[n][n];
-        int sums[total_sums_count];
-
-        // Read matrix elements
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < n; j++) {
-                scanf("%d", &matrix[i][j]);
-            }
-        }
-
-        // Calculate row sums
-        for (i = 0; i < n; i++) {
-            sums[row_sum_index] = 0; // Initialize sum for current row
-            for (j = 0; j < n; j++) {
-                sums[row_sum_index] += matrix[i][j];
-            }
-            row_sum_index++;
-        }
-
-        // Calculate column sums
-        col_sum_index = n; // Start column sums after row sums in the 'sums' array
+void read_matrix(int n, int matrix[n][n]) {
+    int i, j;
+    for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
-            sums[col_sum_index] = 0; // Initialize sum for current column
-            for (i = 0; i < n; i++) {
-                sums[col_sum_index] += matrix[i][j];
-            }
-            col_sum_index++;
+            scanf("%d", &matrix[i][j]);
         }
+    }
+}
 
-        // Check if all sums are even
-        int all_sums_even = 1;
-        for (i = 0; i < total_sums_count; i++) {
-            if (sums[i] % 2) {
-                all_sums_even = 0;
-                break;
-            }
+void calculate_row_sums(int n, int matrix[n][n], int sums[]) {
+    int i, j;
+    for (i = 0; i < n; i++) {
+        sums[i] = 0;
+        for (j = 0; j < n; j++) {
+            sums[i] += matrix[i][j];
         }
+    }
+}
 
-        if (all_sums_even) {
+void calculate_column_sums(int n, int matrix[n][n], int sums[]) {
+    int i, j;
+    for (j = 0; j < n; j++) {
+        sums[n + j] = 0;
+        for (i = 0; i < n; i++) {
+            sums[n + j] += matrix[i][j];
+        }
+    }
+}
+
+int check_all_sums_even(int total_sums_count, int sums[]) {
+    int i;
+    for (i = 0; i < total_sums_count; i++) {
+        if (sums[i] % 2) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void check_parity_errors(int n, int sums[]) {
+    int odd_row_count = 0;
+    int odd_col_count = 0;
+    int odd_row_idx = -1;
+    int odd_col_idx = -1;
+    int i;
+
+    for (i = 0; i < n; i++) {
+        if (sums[i] % 2) {
+            odd_row_count++;
+            odd_row_idx = i;
+        }
+    }
+
+    for (i = n; i < 2 * n; i++) {
+        if (sums[i] % 2) {
+            odd_col_count++;
+            odd_col_idx = i;
+        }
+    }
+
+    if (odd_row_count == 1 && odd_col_count == 1) {
+        printf("Change bit (%d,%d)\n", odd_row_idx + 1, odd_col_idx + 1 - n);
+    } else {
+        printf("Corrupt\n");
+    }
+}
+
+int main(void) {
+    int n;
+
+    while (scanf("%d", &n) == 1 && n) {
+        int matrix[n][n];
+        int sums[2 * n];
+
+        read_matrix(n, matrix);
+        calculate_row_sums(n, matrix, sums);
+        calculate_column_sums(n, matrix, sums);
+
+        if (check_all_sums_even(2 * n, sums)) {
             printf("OK\n");
         } else {
-            int odd_row_count = 0;
-            int odd_col_count = 0;
-            int odd_row_idx = -1;
-            int odd_col_idx = -1;
-
-            // Count odd row sums and find the index of the first one
-            for (i = 0; i < n; i++) {
-                if (sums[i] % 2) {
-                    odd_row_count++;
-                    odd_row_idx = i;
-                }
-            }
-
-            // Count odd column sums and find the index of the first one
-            for (i = n; i < total_sums_count; i++) {
-                if (sums[i] % 2) {
-                    odd_col_count++;
-                    odd_col_idx = i;
-                }
-            }
-
-            // Determine output based on odd sum counts
-            if (odd_row_count == 1 && odd_col_count == 1) {
-                // Single bit change detected
-                printf("Change bit (%d,%d)\n", odd_row_idx + 1, odd_col_idx + 1 - n);
-            } else {
-                // Multiple errors or corrupt matrix
-                printf("Corrupt\n");
-            }
+            check_parity_errors(n, sums);
         }
     }
 

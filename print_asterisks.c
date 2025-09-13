@@ -1,30 +1,24 @@
+/*
+ * Purpose: Prints a user-specified number of asterisks in a single line.
+ * Topic: Loops, User Input, Output Formatting
+ */
+
 #include <stdio.h>
 
 int main(void) {
-    int num_asterisks; // The number of asterisks to print, as entered by the user.
-    int i;
+    int num_asterisks;
 
-    // Prompt the user to enter the desired number of asterisks.
-    printf("ENTER THE NUMBER OF ASTERISKS TO PRINT: ");
-    
-    // Read the integer input from the user.
-    if (scanf("%d", &num_asterisks) != 1) {
-        fprintf(stderr, "Invalid input. Please enter an integer.\n");
-        // Clear the input buffer in case of non-integer input
-        while (getchar() != '\n' && !feof(stdin));
+    // Prompt the user
+    printf("Enter the number of asterisks to print: ");
+    if (scanf("%d", &num_asterisks) != 1 || num_asterisks <= 0) {
+        fprintf(stderr, "Invalid input. Please enter a positive integer.\n");
         return 0;
     }
 
-    // Print a newline character for better formatting after the input prompt.
-    printf("\n");
-
-    // Loop 'num_asterisks' times to print the asterisks.
-    for (i = 0; i < num_asterisks; i++) {
-        // Print an asterisk followed by a space.
-        printf(" * ");
+    // Print the asterisks
+    for (int i = 0; i < num_asterisks; i++) {
+        printf("* ");
     }
-    
-    // Print a final newline character after all asterisks have been printed.
     printf("\n");
 
     return 0;

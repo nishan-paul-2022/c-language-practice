@@ -11,7 +11,6 @@
 #define BUFFER_SIZE 100
 #define FILENAME "FH_advanced_mode.txt"
 
-// Open file in read/write mode
 FILE* open_file_read_write(const char *filename) {
     FILE *file_ptr = fopen(filename, "r+");
     if (file_ptr == NULL) {
@@ -20,7 +19,6 @@ FILE* open_file_read_write(const char *filename) {
     return file_ptr;
 }
 
-// Read content from file
 int read_file_content(FILE *file_ptr, char *buffer, int size) {
     if (fgets(buffer, size, file_ptr) == NULL) {
         if (feof(file_ptr)) {
@@ -33,12 +31,10 @@ int read_file_content(FILE *file_ptr, char *buffer, int size) {
     return 0;
 }
 
-// Display content read from file
 void display_content(const char *buffer) {
-    printf("Content read from file: %s", buffer); // fgets includes newline
+    printf("Content read from file: %s", buffer);
 }
 
-// Seek to beginning of file
 int seek_to_beginning(FILE *file_ptr) {
     if (fseek(file_ptr, 0, SEEK_SET)) {
         perror("Error seeking to beginning of file for writing");
@@ -47,7 +43,6 @@ int seek_to_beginning(FILE *file_ptr) {
     return 0;
 }
 
-// Write string to file
 int write_to_file(FILE *file_ptr, const char *str) {
     if (fprintf(file_ptr, "%s", str) < 0) {
         perror("Error writing to file");
@@ -56,7 +51,6 @@ int write_to_file(FILE *file_ptr, const char *str) {
     return 0;
 }
 
-// Close file safely
 int close_file_safely(FILE *file_ptr) {
     if (fclose(file_ptr)) {
         perror("Error closing file");
@@ -65,7 +59,6 @@ int close_file_safely(FILE *file_ptr) {
     return 0;
 }
 
-// Display success message
 void display_success_message(void) {
     printf("Successfully read from and wrote to '%s'.\n", FILENAME);
 }
@@ -75,39 +68,32 @@ int main(void) {
     char read_buffer[BUFFER_SIZE];
     const char *write_string = "GOOGLE ";
 
-    // Open file in read/write mode
     file_read_write = open_file_read_write(FILENAME);
     if (file_read_write == NULL) {
         return 0;
     }
 
-    // Read content from file
     if (read_file_content(file_read_write, read_buffer, BUFFER_SIZE)) {
         fclose(file_read_write);
         return 0;
     }
 
-    // Display content read
     display_content(read_buffer);
 
-    // Seek to beginning for writing
     if (seek_to_beginning(file_read_write)) {
         fclose(file_read_write);
         return 0;
     }
 
-    // Write new content to file
     if (write_to_file(file_read_write, write_string)) {
         fclose(file_read_write);
         return 0;
     }
 
-    // Close file
     if (close_file_safely(file_read_write)) {
         return 0;
     }
 
-    // Display success message
     display_success_message();
 
     return 0;

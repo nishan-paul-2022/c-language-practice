@@ -6,22 +6,20 @@
 #include <stdio.h>
 #include <string.h>
 
+void process_string(char *input_string, int case_number) {
+    if (strcmp("Hajj", input_string) == 0) {
+        printf("Case %d: Hajj-e-Akbar\n", case_number);
+    } else if (strcmp("Umrah", input_string) == 0) {
+        printf("Case %d: Hajj-e-Asghar\n", case_number);
+    }
+}
+
 int main(void) {
-    char input_string[100]; // Buffer to store each input string
-    int case_number = 1;    // Counter for case numbers
+    char input_string[100];
+    int case_number = 1;
 
-    // Read strings until "*" is encountered
-    while (scanf("%9s", input_string) == 1 && strcmp(input_string, "*")) {
-        // %99s ensures that no more than 99 characters are read, preventing buffer overflow
-        // scanf("%s") automatically handles whitespace and does not leave a newline
-
-        // Check if input string is "Hajj" and print corresponding message
-        if (strcmp("Hajj", input_string) == 0) {
-            printf("Case %d: Hajj-e-Akbar\n", case_number);
-        // Check if input string is "Umrah" and print corresponding message
-        } else if (strcmp("Umrah", input_string) == 0) {
-            printf("Case %d: Hajj-e-Asghar\n", case_number);
-        }
+    while (scanf("%99s", input_string) == 1 && strcmp(input_string, "*")) {
+        process_string(input_string, case_number);
         case_number++;
     }
 

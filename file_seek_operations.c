@@ -11,27 +11,23 @@
 #define BUFFER_SIZE 100
 #define FORMATTED_SIZE 256
 
-// Get user input
 int get_user_input(int *num1, int *num2, char *string) {
-    printf("Enter an integer, another integer, and a string (e.g., 10 20 some_text): ");
+    printf("Enter an integer, another integer, and a string: ");
     if (scanf("%d %d %99s", num1, num2, string) != 3) {
         perror("Error reading input");
         return -1;
     }
     
-    // Clear input buffer
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
     
     return 0;
 }
 
-// Format input data
 void format_input_data(char *buffer, int num1, int num2, const char *string) {
     sprintf(buffer, "%d %d %s", num1, num2, string);
 }
 
-// Create sample file if it doesn't exist
 int create_sample_file(const char *filename) {
     FILE *file_ptr = fopen(filename, "w");
     if (file_ptr == NULL) {
@@ -45,12 +41,10 @@ int create_sample_file(const char *filename) {
     return 0;
 }
 
-// Open file for reading
 FILE* open_file_for_reading(const char *filename) {
     FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
         perror("Error opening file for reading");
-        // Try creating sample file
         if (create_sample_file(filename) == 0) {
             file_ptr = fopen(filename, "r");
             if (file_ptr == NULL) {
@@ -61,9 +55,7 @@ FILE* open_file_for_reading(const char *filename) {
     return file_ptr;
 }
 
-// Perform first seek and read operation
 int first_seek_and_read(FILE *file_ptr, char *buffer, int size) {
-    // Skip first 3 characters
     if (fseek(file_ptr, sizeof(char) * 3, SEEK_CUR)) {
         perror("Error seeking in file (first seek)");
         return -1;
@@ -81,9 +73,7 @@ int first_seek_and_read(FILE *file_ptr, char *buffer, int size) {
     return 0;
 }
 
-// Perform second seek and read integers
 int second_seek_and_read_integers(FILE *file_ptr, int *num1, int *num2, int *num3) {
-    // Skip 5 more characters
     if (fseek(file_ptr, sizeof(char) * 5, SEEK_CUR)) {
         perror("Error seeking in file (second seek)");
         return -1;
@@ -101,7 +91,6 @@ int second_seek_and_read_integers(FILE *file_ptr, int *num1, int *num2, int *num
     return 0;
 }
 
-// Perform backward seek
 int backward_seek(FILE *file_ptr) {
     if (fseek(file_ptr, -sizeof(char) * 1, SEEK_CUR)) {
         perror("Error seeking backward in file");
@@ -110,7 +99,6 @@ int backward_seek(FILE *file_ptr) {
     return 0;
 }
 
-// Perform fourth seek and read remaining integers
 int fourth_seek_and_read(FILE *file_ptr, int *num4, int *num5, int *num3) {
     if (fseek(file_ptr, sizeof(int) * 2, SEEK_CUR)) {
         perror("Error seeking in file (fourth seek)");
@@ -129,7 +117,6 @@ int fourth_seek_and_read(FILE *file_ptr, int *num4, int *num5, int *num3) {
     return 0;
 }
 
-// Display results
 void display_first_read_result(const char *buffer) {
     printf("String read after first fseek (skipping 3 chars): %s", buffer);
 }
@@ -142,7 +129,6 @@ void display_fourth_read_result(int num4, int num5, int num3) {
     printf("Integers read after fourth fseek: %d %d %d\n", num4, num5, num3);
 }
 
-// Close file safely
 int close_file_safely(FILE *file_ptr) {
     if (fclose(file_ptr)) {
         perror("Error closing file");
@@ -158,48 +144,40 @@ int main(void) {
     char formatted_string[FORMATTED_SIZE];
     int num1, num2, num3, num4, num5;
 
-    // Get user input
     if (get_user_input(&num1, &num2, input_buffer_s)) {
         return 0;
     }
 
-    // Format input data
     format_input_data(formatted_string, num1, num2, input_buffer_s);
 
-    // Open file for reading
     file_ptr = open_file_for_reading(FILENAME);
     if (file_ptr == NULL) {
         return 0;
     }
 
-    // First seek and read
     if (first_seek_and_read(file_ptr, input_buffer_t, BUFFER_SIZE)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_first_read_result(input_buffer_t);
 
-    // Second seek and read integers
     if (second_seek_and_read_integers(file_ptr, &num1, &num2, &num3)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_second_read_result(num1, num2, num3);
 
-    // Backward seek
     if (backward_seek(file_ptr)) {
         close_file_safely(file_ptr);
         return 0;
     }
 
-    // Fourth seek and read
     if (fourth_seek_and_read(file_ptr, &num4, &num5, &num3)) {
         close_file_safely(file_ptr);
         return 0;
     }
     display_fourth_read_result(num4, num5, num3);
 
-    // Close file
     if (close_file_safely(file_ptr)) {
         return 0;
     }

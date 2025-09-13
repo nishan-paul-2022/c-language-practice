@@ -11,19 +11,16 @@
 #define BUFFER_SIZE 100
 #define FILENAME "FH function (fgets).txt"
 
-// Get string input from user
 int get_user_input(char *buffer, int size) {
     printf("Enter a string: ");
     if (fgets(buffer, size, stdin) == NULL) {
         perror("Error reading user input");
         return -1;
     }
-    // Remove trailing newline
     buffer[strcspn(buffer, "\n")] = '\0';
     return 0;
 }
 
-// Write string to file
 int write_string_to_file(const char *filename, const char *str) {
     FILE *output_file_ptr = fopen(filename, "w");
     if (output_file_ptr == NULL) {
@@ -45,7 +42,6 @@ int write_string_to_file(const char *filename, const char *str) {
     return 0;
 }
 
-// Read string from file
 int read_string_from_file(const char *filename, char *buffer, int size) {
     FILE *input_file_ptr = fopen(filename, "r");
     if (input_file_ptr == NULL) {
@@ -71,7 +67,6 @@ int read_string_from_file(const char *filename, char *buffer, int size) {
     return 0;
 }
 
-// Display the string read from file
 void display_read_string(const char *str) {
     printf("String read from file: ");
     puts(str);
@@ -81,22 +76,18 @@ int main(void) {
     char user_input_string[BUFFER_SIZE];
     char read_string[BUFFER_SIZE];
 
-    // Get input from user
     if (get_user_input(user_input_string, BUFFER_SIZE)) {
         return 0;
     }
 
-    // Write string to file
     if (write_string_to_file(FILENAME, user_input_string)) {
         return 0;
     }
 
-    // Read string from file
     if (read_string_from_file(FILENAME, read_string, BUFFER_SIZE)) {
         return 0;
     }
 
-    // Display the result
     display_read_string(read_string);
 
     return 0;

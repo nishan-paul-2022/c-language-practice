@@ -5,18 +5,15 @@
 
 #include <stdio.h>
 
+void print_pointer_address(int **ptr) {
+    printf("Address of ptr_to_ptr: %p\n", (void *)ptr);
+}
+
 int main(void) {
-    int value = 10;         // An integer variable
-    int *ptr_to_value;      // A pointer to an integer
-    int **ptr_to_ptr;       // A pointer to a pointer to an integer
+    int value = 10;
+    int *ptr_to_value = &value;
+    int **ptr_to_ptr = &ptr_to_value;
 
-    // Initialize the pointers
-    ptr_to_value = &value;  // ptr_to_value now holds the address of 'value'
-    ptr_to_ptr = &ptr_to_value; // ptr_to_ptr now holds the address of 'ptr_to_value'
-
-    // Print the address of 'ptr_to_ptr' itself.
-    // %p is used to print pointer addresses.
-    printf("Address of ptr_to_ptr: %p\n", ptr_to_ptr);
-
+    print_pointer_address(ptr_to_ptr);
     return 0;
 }

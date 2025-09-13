@@ -5,17 +5,27 @@
 
 #include <stdio.h>
 
+long double read_long_double(void) {
+    long double value;
+    printf("Enter a long double-precision floating-point number: ");
+    if (scanf("%Lf", &value) != 1) {
+        printf("Invalid input. Please enter a valid number.\n");
+        return 0.0L;
+    }
+    return value;
+}
+
+void display_long_double(long double value) {
+    printf("You entered: %Lf\n", value);
+}
+
 int main(void) {
     long double value;
 
-    printf("Enter a long double-precision floating-point number: ");
-    // Use %Lf for long double with scanf and printf
-    if (scanf("%Lf", &value) != 1) {
-        printf("Invalid input. Please enter a valid number.\n");
-        return 0;
+    value = read_long_double();
+    if (value != 0.0L) {
+        display_long_double(value);
     }
-
-    printf("You entered: %Lf\n", value);
 
     return 0;
 }

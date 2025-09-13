@@ -5,17 +5,19 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int result; // Variable to store boolean result of logical expression
+int evaluate_logical_expression(void) {
+    return 5 >= 8 && 6 == 5; // false && false = false
+}
 
-    // Evaluate logical expression: (5 >= 8) && (6 == 5)
-    // (5 >= 8) is false (0)
-    // (6 == 5) is false (0)
-    // false && false evaluates to false (0)
-    result = 5 >= 8 && 6 == 5;
-
-    // Print integer value of result (0 for false, 1 for true)
+void display_result(int result) {
     printf("The result of (5 >= 8 && 6 == 5) is: %d\n", result);
+}
+
+int main(void) {
+    int result;
+
+    result = evaluate_logical_expression();
+    display_result(result);
 
     return 0;
 }

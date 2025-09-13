@@ -6,55 +6,72 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    double input_value;     // The initial floating-point input from the user.
-    int scaled_value;       // The integer value derived from input_value / 10.
-    int secondary_input;    // An integer input read based on the scaled_value.
-
+double read_floating_point_input(void) {
+    double input_value;
     printf("Enter a floating-point number: ");
-    // Read the floating-point input.
     if (scanf("%lf", &input_value) != 1) {
         printf("Invalid input. Please enter a valid floating-point number.\n");
-        return 0;
+        return -1.0;
     }
+    return input_value;
+}
 
-    // Consume the newline character left by scanf.
+int read_secondary_input(void) {
+    int secondary_input;
+    printf("Enter an integer (e.g., 20): ");
+    if (scanf("%d", &secondary_input) != 1) {
+        printf("Invalid secondary input.\n");
+        return -1;
+    }
+    return secondary_input;
+}
+
+void clear_input_buffer(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
+}
 
-    // Calculate a scaled integer value. Note the implicit conversion from double to int.
-    // This truncates any fractional part. For example, 2.99 becomes 2, 3.0 becomes 3.
-    scaled_value = input_value / 10.0;
-
-    // Outer switch statement based on the scaled value.
-    switch (scaled_value) {
-        case 1: // Handles input_value from 10.0 up to (but not including) 20.0
-        case 2: // Handles input_value from 20.0 up to (but not including) 30.0
-        case 3: // Handles input_value from 30.0 up to (but not including) 40.0
-            printf("Enter an integer (e.g., 20): ");
-            // Read the secondary integer input.
-            if (scanf("%d", &secondary_input) != 1) {
-                printf("Invalid secondary input.\n");
-                return 0;
-            }
-            // Consume the newline character.
-            while ((c = getchar()) != '\n' && c != EOF);
-
-            // Inner switch statement based on the secondary input.
-            switch (secondary_input) {
-                case 20:
-                    printf("CAUGHT\n"); // Printed if secondary_input is exactly 20.
-                    break;
-                default:
-                    printf("GOOD\n"); // Printed for any other integer input.
-                    break;
-            }
-            break; // Break from the outer switch's case block.
-
-        default: // Handles all other values of scaled_value (e.g., 0, 4, negative numbers, etc.)
-            printf("F\n"); // Represents a default or 'F' grade/category.
+void process_secondary_input(int secondary_input) {
+    switch (secondary_input) {
+        case 20:
+            printf("CAUGHT\n");
+            break;
+        default:
+            printf("GOOD\n");
             break;
     }
+}
+
+void process_input_range(int scaled_value) {
+    switch (scaled_value) {
+        case 1:
+        case 2:
+        case 3: {
+            int secondary_input = read_secondary_input();
+            if (secondary_input == -1) {
+                return;
+            }
+            clear_input_buffer();
+            process_secondary_input(secondary_input);
+            break;
+        }
+        default:
+            printf("F\n");
+            break;
+    }
+}
+
+int main(void) {
+    double input_value = read_floating_point_input();
+    
+    if (input_value == -1.0) {
+        return 0;
+    }
+    
+    clear_input_buffer();
+    
+    int scaled_value = input_value / 10.0;
+    process_input_range(scaled_value);
 
     return 0;
 }

@@ -6,46 +6,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    int num_rows;
-    int num_cols;
+int get_positive_integer(const char *prompt) {
+    int value;
+    printf("%s", prompt);
+    if (scanf("%d", &value) != 1 || value <= 0) {
+        fprintf(stderr, "Error: Invalid input. Please enter a positive integer.\n");
+        return -1;
+    }
+    return value;
+}
+
+int get_fill_number(void) {
     int fill_number;
-
-    // Prompt user for rectangle dimensions
-    printf("Enter the number of rows: ");
-    // Validate rows input
-    if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
-        return 0;
-    }
-
-    printf("Enter the number of columns: ");
-    // Validate columns input
-    if (scanf("%d", &num_cols) != 1 || num_cols <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of columns. Please enter a positive integer.\n");
-        return 0;
-    }
-
     printf("Enter the number to fill the rectangle with: ");
-    // Validate fill number input
     if (scanf("%d", &fill_number) != 1) {
         fprintf(stderr, "Error: Invalid input for fill number.\n");
-        return 0;
+        return -1;
     }
+    return fill_number;
+}
 
-    // Print hollow rectangle
+void print_hollow_rectangle(int num_rows, int num_cols, int fill_number) {
     for (int row = 1; row <= num_rows; row++) {
         for (int col = 1; col <= num_cols; col++) {
-            // Print fill number for border positions
             if (row == 1 || row == num_rows || col == 1 || col == num_cols) {
                 printf("%d ", fill_number);
             } else {
-                // Print spaces for inside of rectangle
-                printf("  "); // Two spaces to match width of "%d "
+                printf("  ");
             }
         }
-        printf("\n"); // Move to next line
+        printf("\n");
     }
+}
+
+int main(void) {
+    int num_rows = get_positive_integer("Enter the number of rows: ");
+    if (num_rows == -1) return 0;
+
+    int num_cols = get_positive_integer("Enter the number of columns: ");
+    if (num_cols == -1) return 0;
+
+    int fill_number = get_fill_number();
+    if (fill_number == -1) return 0;
+
+    print_hollow_rectangle(num_rows, num_cols, fill_number);
 
     return 0;
 }

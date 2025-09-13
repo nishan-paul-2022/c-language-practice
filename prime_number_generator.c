@@ -6,50 +6,46 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function to check if a number is prime
 int is_prime(int num) {
-    // Numbers less than 2 are not prime
     if (num < 2) {
-        return 0; // Not prime
+        return 0;
     }
-    // 2 is the only even prime number
     if (num == 2) {
-        return 1; // Prime
+        return 1;
     }
-    // Even numbers greater than 2 are not prime
     if (num % 2 == 0) {
-        return 0; // Not prime
+        return 0;
     }
-    // Check for divisibility from 3 up to the square root of the number
-    // We only need to check odd divisors
-    for (int i = 3; i <= sqrt(num); i += 2) {
+
+    for (int i = 3; i * i <= num; i += 2) {
         if (num % i == 0) {
-            return 0; // Not prime
+            return 0;
         }
     }
-    // If no divisors were found, the number is prime
-    return 1; // Prime
+
+    return 1;
+}
+
+void print_primes_in_range(int start, int end) {
+    for (int i = start; i <= end; i++) {
+        if (is_prime(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
 }
 
 int main(void) {
     int start_num, end_num;
 
     printf("Enter the start and end of the range (e.g., 1 100): ");
-    // Read the range from user input
     if (scanf("%d %d", &start_num, &end_num) != 2) {
         printf("Error: Invalid input. Please enter two integers.\n");
         return 0;
     }
 
     printf("\nPrime numbers between %d and %d are:\n", start_num, end_num);
-
-    // Iterate through the range and print prime numbers
-    for (int i = start_num; i <= end_num; i++) {
-        if (is_prime(i)) {
-            printf("%d ", i);
-        }
-    }
-    printf("\n"); // Print a newline at the end for better formatting
+    print_primes_in_range(start_num, end_num);
 
     return 0;
 }

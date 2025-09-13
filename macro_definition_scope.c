@@ -5,23 +5,15 @@
 
 #include <stdio.h>
 
-// Define macro 'x' with value of 2
-// Macros are simple text substitutions performed by preprocessor
-#define x 2
+#define X 2
 
-// Function 'f' that prints value of macro 'x'
-// Preprocessor replaces 'x' with '2' before compilation
-void f() {
-    printf("%d\n", x);
+void print_macro_value(void) {
+    printf("%d\n", X);
 }
 
 int main(void) {
-    // Call function 'f', which will print value of 'x'
-    f();
-
-    // Print value of macro 'x' directly in main
-    // Preprocessor replaces 'x' with '2' here as well
-    printf("%d", x);
+    print_macro_value();
+    printf("%d", X);
 
     return 0;
 }

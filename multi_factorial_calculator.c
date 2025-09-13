@@ -8,40 +8,60 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main(void) {
-    int number;         // The base number for factorial calculation
-    int k_value = 0;    // Represents 'k' in k-factorial (number of exclamation marks)
-    int i;
-    long long int result = 1; // Stores the calculated multi-factorial result (using long long for larger values)
-    char input_string[100]; // Buffer to read the entire input line
-
-    // Prompt user for input and read the entire line including spaces and exclamation marks
+int read_input_string(char input_string[]) {
     printf("Enter a number followed by exclamation marks (e.g., 5!!): ");
-    scanf("%[^\n]", input_string);
+    if (scanf("%[^\n]", input_string) != 1) {
+        printf("Invalid input.\n");
+        return -1;
+    }
+    return 0;
+}
 
-    // Count the number of exclamation marks to determine 'k'
+int count_exclamation_marks(const char input_string[]) {
+    int k_value = 0;
+    int i;
     for (i = 0; input_string[i] != '\0'; i++) {
         if (input_string[i] == '!') {
             k_value++;
         }
     }
+    return k_value;
+}
 
-    // Parse the integer part of the string into 'number'
-    // sscanf is used here to extract the integer before any '!'
+int parse_number(const char input_string[]) {
+    int number;
     sscanf(input_string, "%d", &number);
+    return number;
+}
 
-    // If no exclamation marks are found, default k_value to 1 for standard factorial
+long long calculate_multi_factorial(int number, int k_value) {
+    long long result = 1;
+    int i;
+    
     if (k_value == 0) {
         k_value = 1;
     }
 
-    // Calculate the multi-factorial
-    // The loop decrements by 'k_value' in each step
     for (i = number; i >= 1; i -= k_value) {
         result *= i;
     }
+    
+    return result;
+}
 
-    // Print the calculated result
+int main(void) {
+    char input_string[100];
+    int number, k_value;
+    long long result;
+
+    if (read_input_string(input_string) == -1) {
+        return 0;
+    }
+
+    k_value = count_exclamation_marks(input_string);
+    number = parse_number(input_string);
+    result = calculate_multi_factorial(number, k_value);
+
     printf("The multi-factorial is: %lld\n", result);
 
     return 0;

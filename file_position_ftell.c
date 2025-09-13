@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Create sample file with content for demonstration
 int create_sample_file(const char *filename) {
     FILE *prep_file = fopen(filename, "w");
     if (prep_file == NULL) {
@@ -20,7 +19,6 @@ int create_sample_file(const char *filename) {
     return 0;
 }
 
-// Get file size using ftell
 long int get_file_size(const char *filename) {
     FILE *file_ptr = fopen(filename, "r");
     if (file_ptr == NULL) {
@@ -28,14 +26,12 @@ long int get_file_size(const char *filename) {
         return -1L;
     }
 
-    // Move file position to end
     if (fseek(file_ptr, 0, SEEK_END)) {
         perror("Error seeking to end of file");
         fclose(file_ptr);
         return -1L;
     }
 
-    // Get current file position (file size when at end)
     long int file_size = ftell(file_ptr);
     if (file_size == -1L) {
         perror("Error getting file position with ftell");
@@ -51,7 +47,6 @@ long int get_file_size(const char *filename) {
     return file_size;
 }
 
-// Display file size information
 void display_file_size(const char *filename, long int size) {
     printf("The size of the file '%s' is: %ld bytes\n", filename, size);
 }
@@ -60,18 +55,15 @@ int main(void) {
     const char *filename = "lab6.txt";
     long int file_size;
 
-    // Create sample file
     if (create_sample_file(filename)) {
         return 0;
     }
 
-    // Get file size using ftell
     file_size = get_file_size(filename);
     if (file_size == -1L) {
         return 0;
     }
 
-    // Display result
     display_file_size(filename, file_size);
 
     return 0;

@@ -5,58 +5,58 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+
+void print_prompt() {
+    printf("Enter an alphanumeric string (max 30 chars, containing A-Z).\n");
+}
+
+int read_input(char *buffer) {
+    return scanf("%30[A-Z0-9- ]s", buffer) == 1;
+}
+
+void consume_line() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+void convert_to_digits(char *str) {
+    for (int i = 0; str[i]; i++) {
+        char ch = str[i];
+        if (ch >= 'A' && ch <= 'C') {
+            str[i] = '2';
+        } else if (ch >= 'D' && ch <= 'F') {
+            str[i] = '3';
+        } else if (ch >= 'G' && ch <= 'I') {
+            str[i] = '4';
+        } else if (ch >= 'J' && ch <= 'L') {
+            str[i] = '5';
+        } else if (ch >= 'M' && ch <= 'O') {
+            str[i] = '6';
+        } else if (ch >= 'P' && ch <= 'S') {
+            str[i] = '7';
+        } else if (ch >= 'T' && ch <= 'V') {
+            str[i] = '8';
+        } else if (ch >= 'W' && ch <= 'Z') {
+            str[i] = '9';
+        }
+    }
+}
+
+void print_output(const char *str) {
+    printf("Converted: %s\n\n", str);
+}
 
 int main(void) {
-    char title[] = "Enter an alphanumeric string (max 30 chars, containing A-Z).\n";
-    char input_string[31]; // Increased size to 31 for null terminator, original was 30
-    int i;
-
-    printf("%s", title);
-
-    // Read input until EOF or invalid input
-    while (scanf("%30[A-Z0-1-]s", input_string) == 1) { // Read up to 30 characters matching the set
-        // Consume the rest of the line, including the newline character
-        // This is important if the input string was shorter than 30 chars or if there were other characters after the valid ones.
-        int c;
-
-        while ((c = getchar()) != '\n' && c != EOF);
-
-        int length = strlen(input_string);
-
-        for (i = 0; i < length; i++) {
-            char current_char = input_string[i];
-
-            if (current_char >= 'A' && current_char <= 'C') {
-                input_string[i] = '2';
-            }
-            else if (current_char >= 'D' && current_char <= 'F') {
-                input_string[i] = '3';
-            }
-            else if (current_char >= 'G' && current_char <= 'I') {
-                input_string[i] = '4';
-            }
-            else if (current_char >= 'J' && current_char <= 'L') {
-                input_string[i] = '5';
-            }
-            else if (current_char >= 'M' && current_char <= 'O') {
-                input_string[i] = '6';
-            }
-            else if (current_char >= 'P' && current_char <= 'S') {
-                input_string[i] = '7';
-            }
-            else if (current_char >= 'T' && current_char <= 'V') {
-                input_string[i] = '8';
-            }
-            else if (current_char >= 'W' && current_char <= 'Z') {
-                input_string[i] = '9';
-            }
-        }
-
-        printf("Converted: %s\n\n", input_string);
-        printf("%s", title);
+    char input[31];
+    
+    print_prompt();
+    while (read_input(input)) {
+        consume_line();
+        convert_to_digits(input);
+        print_output(input);
+        print_prompt();
     }
-
+    
     printf("\nExiting program.\n");
     return 0;
 }

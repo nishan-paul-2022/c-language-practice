@@ -5,26 +5,35 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int start_range, end_range; // Variables to store the start and end of the range
-    int count_not_divisible = 0; // Counter for numbers not divisible by 6
-    int current_number; // Loop variable for iterating through the range
-
-    // Prompt user for input and read the range
+void read_range(int *start, int *end) {
     printf("Enter two integers (start and end of range, separated by comma): ");
-    scanf("%d, %d", &start_range, &end_range);
+    scanf("%d, %d", start, end);
+}
 
-    // Loop through the numbers in the specified range
-    for (current_number = start_range; current_number <= end_range; current_number++) {
-        // Check if the current number is not divisible by 6
-        if (current_number % 6) {
-            printf("%d\n", current_number); // Print the number if it's not divisible by 6
-            count_not_divisible++; // Increment the counter
+int is_not_divisible_by_six(int number) {
+    return number % 6;
+}
+
+void print_and_count_non_divisible(int start_range, int end_range, int *count) {
+    for (int current_number = start_range; current_number <= end_range; current_number++) {
+        if (is_not_divisible_by_six(current_number)) {
+            printf("%d\n", current_number);
+            (*count)++;
         }
     }
+}
 
-    // Print the total count of numbers not divisible by 6
-    printf("The total number of integers not divisible by 6 is: %d\n", count_not_divisible);
+void print_result(int count) {
+    printf("The total number of integers not divisible by 6 is: %d\n", count);
+}
+
+int main(void) {
+    int start_range, end_range;
+    int count_not_divisible = 0;
+
+    read_range(&start_range, &end_range);
+    print_and_count_non_divisible(start_range, end_range, &count_not_divisible);
+    print_result(count_not_divisible);
 
     return 0;
 }

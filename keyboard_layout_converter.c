@@ -7,17 +7,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-// Function to initialize the character mapping table
 void initialize_mapping(char map[]) {
-    // Initialize with identity mapping (each character maps to itself)
     for (int i = 0; i < 256; i++) {
         map[i] = (char)i;
     }
 
-    // Apply specific character substitutions based on original file's logic
-    // These mappings simulate a keyboard shift or specific cipher
-
-    // Punctuation and symbols
     map[']'] = 'p';
     map['['] = 'o';
     map['\''] = 'l';
@@ -28,7 +22,6 @@ void initialize_mapping(char map[]) {
     map['='] = '0';
     map['-'] = '9';
 
-    // Number shifts
     map['0'] = '8';
     map['9'] = '7';
     map['8'] = '6';
@@ -39,8 +32,6 @@ void initialize_mapping(char map[]) {
     map['3'] = '1';
     map['2'] = '`';
 
-    // QWERTY keyboard letter shifts (right shift on keyboard)
-    // Lowercase letters
     map['p'] = 'i';
     map['o'] = 'u';
     map['i'] = 'y';
@@ -64,7 +55,6 @@ void initialize_mapping(char map[]) {
     map['v'] = 'x';
     map['c'] = 'z';
 
-    // Uppercase letters (mirroring lowercase shifts)
     map['P'] = 'I';
     map['O'] = 'U';
     map['I'] = 'Y';
@@ -89,33 +79,36 @@ void initialize_mapping(char map[]) {
     map['C'] = 'Z';
 }
 
-int main(void) {
-    char input_line[10001]; // Buffer to store input line, +1 for null terminator
-    char char_map[256];     // Lookup table for character mapping
+void convert_line(char input_line[], const char char_map[]) {
+    int length = strlen(input_line);
 
-    initialize_mapping(char_map); // Populate mapping table
+    if (length > 0 && input_line[length - 1] == '\n') {
+        input_line[length - 1] = '\0';
+        length--;
+    }
 
-    printf("Enter text to convert (press Ctrl+D to exit):\n");
+    for (int i = 0; i < length; i++) {
+        input_line[i] = char_map[(unsigned char)input_line[i]];
+    }
+}
 
-    // Read input line by line using fgets for safety (prevents buffer overflow)
+void process_text_conversion() {
+    char input_line[10001];
+    char char_map[256];
+
+    initialize_mapping(char_map);
+
+    printf("Enter text to convert (Ctrl+D to exit):\n");
+
     while (fgets(input_line, sizeof(input_line), stdin) != NULL) {
-        int length = strlen(input_line);
-
-        // Remove trailing newline character if present (fgets includes it)
-        if (length > 0 && input_line[length - 1] == '\n') {
-            input_line[length - 1] = '\0';
-            length--; // Adjust length after removing newline
-        }
-
-        // Apply character mapping to each character in input line
-        for (int i = 0; i < length; i++) {
-            // Cast to unsigned char to ensure correct indexing for all possible char values
-            input_line[i] = char_map[(unsigned char)input_line[i]];
-        }
-
-        printf("%s\n", input_line); // Print converted line
+        convert_line(input_line, char_map);
+        printf("%s\n", input_line);
     }
 
     printf("\nExiting program.\n");
+}
+
+int main(void) {
+    process_text_conversion();
     return 0;
 }

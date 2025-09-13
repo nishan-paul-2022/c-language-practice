@@ -5,25 +5,32 @@
 
 #include <stdio.h>
 
-int main(void) {
+int read_number(void) {
     int number;
-    int multiplier;
-    int result;
-
     printf("Enter an integer to see its multiplication table: ");
-    // Read the number from user input and validate
     if (scanf("%d", &number) != 1) {
         printf("Error: Invalid input. Please enter an integer.\n");
         return 0;
     }
+    return number;
+}
 
+void print_multiplication_table(int number) {
+    int multiplier;
     printf("\nMultiplication table for %d:\n", number);
-
-    // Loop from 1 to 10 to generate the multiplication table
     for (multiplier = 1; multiplier <= 10; multiplier++) {
-        result = number * multiplier;
-        printf("%d X %d = %d\n", number, multiplier, result);
+        printf("%d X %d = %d\n", number, multiplier, number * multiplier);
     }
+}
+
+int main(void) {
+    int number = read_number();
+    
+    if (number == 0) {
+        return 0;
+    }
+    
+    print_multiplication_table(number);
 
     return 0;
 }

@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 
-// Checks if a number is a perfect number.
 int is_perfect(int num) {
     if (num <= 1) {
         return 0;
@@ -24,7 +23,6 @@ int is_perfect(int num) {
     return sum_of_divisors == num;
 }
 
-// Finds and prints the first n perfect numbers.
 void find_perfect_numbers(int n) {
     if (n <= 0) {
         printf("Please enter a positive integer.\n");

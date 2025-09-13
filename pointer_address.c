@@ -5,12 +5,12 @@
 
 #include <stdio.h>
 
+void print_variable_address(int *ptr) {
+    printf("The memory address of 'variable' is: %p\n", (void *)ptr);
+}
+
 int main(void) {
-    int variable = 5; // Declare an integer variable and initialize it.
-
-    // Print the memory address of the variable.
-    // The %p format specifier is used to print pointer values.
-    printf("The memory address of 'variable' is: %p\n", (void *)&variable);
-
+    int variable = 5;
+    print_variable_address(&variable);
     return 0;
 }

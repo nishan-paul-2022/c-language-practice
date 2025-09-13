@@ -6,30 +6,22 @@
 #include <stdio.h>
 
 int main(void) {
-    int i, j, n;
+    int n;
 
-    printf("ENTER YOUR VALUES: ");
+    printf("Enter the pyramid size: ");
     scanf("%d", &n);
 
     // Upper part of the pyramid
-    for (i = 1; i <= n; i++) {
-        for (j = i; j < n; j++) {
-            printf(" ");
-        }
-        for (j = 1; j <= i; j++) {
-            printf("*");
-        }
+    for (int i = 1; i <= n; i++) {
+        for (int j = i; j < n; j++) printf(" "); // Print leading spaces
+        for (int j = 1; j <= i; j++) printf("*"); // Print asterisks
         printf("\n");
     }
 
     // Lower part of the pyramid
-    for (i = n; i >= 1; i--) {
-        for (j = i; j <= n; j++) {
-            printf(" ");
-        }
-        for (j = 1; j < i; j++) {
-            printf("*");
-        }
+    for (int i = n; i >= 1; i--) {
+        for (int j = i; j <= n; j++) printf(" "); // Print leading spaces
+        for (int j = 1; j < i; j++) printf("*"); // Print asterisks
         printf("\n");
     }
 

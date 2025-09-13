@@ -6,32 +6,39 @@
 #include <stdio.h>
 #include <math.h>
 
+int read_base_and_exponent(double *base, double *exponent) {
+    printf("Enter the base and exponent (or 0 for base to exit): ");
+    if (scanf("%lf %lf", base, exponent) != 2) {
+        printf("Invalid input. Please enter two numeric values.\n");
+        while (getchar() != '\n');
+        return -1;
+    }
+    return 0;
+}
+
+double calculate_power(double base, double exponent) {
+    return pow(base, exponent);
+}
+
+void display_result(double result) {
+    printf("Result: %.2lf\n\n", result);
+}
+
 int main(void) {
-    double base, exponent, result; // Stores the base, exponent, and the final result
+    double base, exponent, result;
 
-    // Loop until the user enters 0 for the base to exit.
     while (1) {
-        printf("Enter the base and exponent (or 0 for base to exit): ");
-
-        // Read and validate the base and exponent.
-        if (scanf("%lf %lf", &base, &exponent) != 2) {
-            printf("Invalid input. Please enter two numeric values.\n");
-            // Clear the input buffer to prevent an infinite loop.
-            while (getchar() != '\n');
-            continue; // Restart the loop
+        if (read_base_and_exponent(&base, &exponent) == -1) {
+            continue;
         }
 
-        // If the base is 0, exit the loop.
         if (base == 0.0) {
             printf("Exiting program.\n");
             break;
         }
 
-        // Calculate the power using the pow() function.
-        result = pow(base, exponent);
-
-        // Print the final result.
-        printf("Result: %.2lf\n\n", result);
+        result = calculate_power(base, exponent);
+        display_result(result);
     }
 
     return 0;

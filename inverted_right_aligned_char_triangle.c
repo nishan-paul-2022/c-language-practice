@@ -6,44 +6,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int get_input_data(int *num_rows, char *start_char) {
+    printf("Enter number of rows: ");
+    if (scanf("%d", num_rows) != 1 || *num_rows <= 0) {
+        fprintf(stderr, "Error: Invalid input for number of rows.\n");
+        return -1;
+    }
+
+    printf("Enter starting character: ");
+    while (getchar() != '\n'); // Consume newline
+    if (scanf("%c", start_char) != 1) {
+        fprintf(stderr, "Error: Invalid input for starting character.\n");
+        return -1;
+    }
+    
+    return 0;
+}
+
+void print_inverted_triangle(int num_rows, char start_char) {
+    int space_count = 1;
+
+    for (int row = num_rows; row >= 1; row--) {
+        for (int space_col = 1; space_col <= space_count; space_col++) {
+            printf(" ");
+        }
+
+        char current_char = start_char;
+        for (int col = 1; col <= row; col++) {
+            printf("%c", current_char);
+            current_char++;
+        }
+        
+        printf("\n");
+        space_count++;
+    }
+}
+
 int main(void) {
     int num_rows;
     char start_char;
-    int space_count = 1; // Number of leading spaces
 
-    // Prompt user for input
-    printf("Enter the number of rows: ");
-    // Validate number of rows input
-    if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
-        return 0;
-    }
-
-    printf("Enter the starting character: ");
-    // Consume newline character left by scanf for integer input
-    while (getchar() != '\n');
-    // Validate starting character input
-    if (scanf("%c", &start_char) != 1) {
-        fprintf(stderr, "Error: Invalid input for starting character.\n");
-        return 0;
-    }
-
-    // Print inverted triangle pattern
-    for (int row = num_rows; row >= 1; row--) {
-        // Print leading spaces for right alignment
-        for (int space_col = 1; space_col <= space_count; space_col++) {
-            printf(" "); // Print single space
-        }
-
-        // Print characters for current row
-        char current_char = start_char;
-        for (int col = 1; col <= row; col++) {
-            printf("%c", current_char); // Print character
-            current_char++; // Move to next character
-        }
-        
-        printf("\n"); // Move to next line
-        space_count++; // Increment space count for next row
+    if (get_input_data(&num_rows, &start_char) == 0) {
+        print_inverted_triangle(num_rows, start_char);
     }
 
     return 0;

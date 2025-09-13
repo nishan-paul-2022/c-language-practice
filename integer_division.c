@@ -5,8 +5,8 @@
 
 #include <stdio.h>
 
-int divide(int a, int b) {
-    if (b) {
+int divide_numbers(int a, int b) {
+    if (b != 0) {
         return a / b;
     } else {
         printf("Error: Division by zero.\n");
@@ -14,20 +14,23 @@ int divide(int a, int b) {
     }
 }
 
-int main(void) {
+void get_input_and_divide() {
     int x, y, result;
 
-    printf("Enter the dividend: ");
+    printf("Enter dividend: ");
     scanf("%d", &x);
 
-    printf("Enter the divisor: ");
+    printf("Enter divisor: ");
     scanf("%d", &y);
 
-    result = divide(x, y);
+    result = divide_numbers(x, y);
 
-    if (y) {
-        printf("The result is: %d\n", result);
+    if (y != 0) {
+        printf("Result: %d\n", result);
     }
+}
 
+int main(void) {
+    get_input_and_divide();
     return 0;
 }

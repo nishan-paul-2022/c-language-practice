@@ -5,41 +5,52 @@
 
 #include <stdio.h>
 
-int main(void) {
+int calculate_josephus_position(int n) {
+    int result_position = 0;
+    
+    for (int x = 2; x <= n; x++) {
+        result_position = (result_position + n + 1 - x) % x;
+    }
+    
+    return result_position + 1; // Convert to 1-indexed
+}
+
+int get_test_case_input(int case_num) {
+    int n;
+    
+    printf("Enter value of n for test case %d: ", case_num);
+    if (scanf("%d", &n) != 1 || n < 1) {
+        printf("Invalid input for n. Skipping test case.\n");
+        while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
+        return -1;
+    }
+    
+    return n;
+}
+
+void process_test_cases() {
     int number_of_test_cases;
     int current_test_case = 0;
-    
-    // Read number of test cases
-    printf("Enter the number of test cases: ");
+
+    printf("Enter number of test cases: ");
     if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
         printf("Invalid input for number of test cases.\n");
-        return 0;
+        return;
     }
 
     while (current_test_case < number_of_test_cases) {
-        int n;
-        int result_position = 0;
-
-        printf("Enter the value of n for test case %d: ", current_test_case + 1);
-        if (scanf("%d", &n) != 1 || n < 1) {
-            printf("Invalid input for n. Skipping this test case.\n");
-            // Clear input buffer in case of invalid input
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
-            current_test_case++;
-            continue;
+        int n = get_test_case_input(current_test_case + 1);
+        
+        if (n != -1) {
+            int result = calculate_josephus_position(n);
+            printf("Result for n = %d: %d\n", n, result);
         }
-
-        // Loop calculates position based on given formula
-        // This pattern is typical for Josephus-like problems where items are removed
-        // and position of last remaining item is sought
-        for (int x = 2; x <= n; x++) {
-            result_position = (result_position + n + 1 - x) % x;
-        }
-
-        // Problem's output is 1-indexed, so add 1 to 0-indexed result
-        printf("Result for n = %d: %d\n", n, result_position + 1);
+        
         current_test_case++;
     }
+}
 
+int main(void) {
+    process_test_cases();
     return 0;
 }

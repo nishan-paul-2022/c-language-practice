@@ -4,61 +4,76 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void) {
-    int number_of_test_cases;
-    int i;
+int read_test_cases() {
+    int num;
+    scanf("%d", &num);
+    return num;
+}
 
-    printf("Enter the number of test cases: ");
-    if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
-        printf("Invalid input for number of test cases.\n");
+int read_call_count() {
+    int num;
+    scanf("%d", &num);
+    return num;
+}
+
+int read_call_duration() {
+    int duration;
+    scanf("%d", &duration);
+    return duration;
+}
+
+void clear_input_buffer() {
+    while (getchar() != '\n');
+}
+
+int calculate_mile_cost(int duration) {
+    return ((duration / 30) + 1) * 10;
+}
+
+int calculate_juice_cost(int duration) {
+    return ((duration / 60) + 1) * 15;
+}
+
+void print_result(int case_num, int mile_cost, int juice_cost) {
+    if (mile_cost < juice_cost) {
+        printf("Case %d: Mile %d\n", case_num, mile_cost);
+    } else if (juice_cost < mile_cost) {
+        printf("Case %d: Juice %d\n", case_num, juice_cost);
+    } else {
+        printf("Case %d: Mile Juice %d\n", case_num, mile_cost);
+    }
+}
+
+int main() {
+    int test_cases = read_test_cases();
+    if (test_cases < 0) {
+        printf("Invalid test case count\n");
         return 0;
     }
 
-    for (i = 0; i < number_of_test_cases; i++) {
-        int number_of_calls;
-        int call_duration;
-        int mile_cost = 0;
-        int juice_cost = 0;
-
+    for (int i = 0; i < test_cases; i++) {
         printf("\n--- Test Case %d ---\n", i + 1);
-        printf("Enter the number of calls: ");
-        if (scanf("%d", &number_of_calls) != 1 || number_of_calls <= 0) {
-            printf("Invalid number of calls. Skipping this test case.\n");
-            // Clear input buffer
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
+        int call_count = read_call_count();
+        if (call_count <= 0) {
+            printf("Invalid call count\n");
+            clear_input_buffer();
             continue;
         }
 
-        printf("Enter %d call durations (in seconds):\n", number_of_calls);
-        for (int j = 0; j < number_of_calls; j++) {
-            if (scanf("%d", &call_duration) != 1 || call_duration < 0) {
-                printf("Invalid call duration. Skipping remaining calls for this test case.\n");
-                // Clear input buffer
-                while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
-                break; // Exit inner loop
+        printf("Enter %d call durations:\n", call_count);
+        int mile_cost = 0, juice_cost = 0;
+        for (int j = 0; j < call_count; j++) {
+            int duration = read_call_duration();
+            if (duration < 0) {
+                printf("Invalid call duration\n");
+                clear_input_buffer();
+                break;
             }
-
-            // Calculate Mile plan cost: 10 cents for every 30 seconds or part thereof
-            // (duration / 30) gives full 30-second blocks. +1 accounts for any remaining part.
-            // Example: 0-30s -> 1 block, 31-60s -> 2 blocks
-            mile_cost += ((call_duration / 30) + 1) * 10;
-
-            // Calculate Juice plan cost: 15 cents for every 60 seconds or part thereof
-            // (duration / 60) gives full 60-second blocks. +1 accounts for any remaining part.
-            // Example: 0-60s -> 1 block, 61-120s -> 2 blocks
-            juice_cost += ((call_duration / 60) + 1) * 15;
+            mile_cost += calculate_mile_cost(duration);
+            juice_cost += calculate_juice_cost(duration);
         }
-
-        // Compare costs and print the result
-        if (mile_cost < juice_cost) {
-            printf("Case %d: Mile %d\n", i + 1, mile_cost);
-        } else if (juice_cost < mile_cost) {
-            printf("Case %d: Juice %d\n", i + 1, juice_cost);
-        } else { // mile_cost == juice_cost
-            printf("Case %d: Mile Juice %d\n", i + 1, mile_cost);
-        }
+        print_result(i + 1, mile_cost, juice_cost);
     }
 
     return 0;

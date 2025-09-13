@@ -11,9 +11,8 @@
 #define BUFFER_SIZE 100
 #define FILENAME "FH_advanced_mode.txt"
 
-// Function to write content to the file
-void writeToFile(const char *filename, const char *content) {
-    FILE *file = fopen(filename, "w+"); // Truncate or create and open for writing and reading
+void write_to_file(const char *filename, const char *content) {
+    FILE *file = fopen(filename, "w+");
     if (file == NULL) {
         perror("Error opening file for writing");
         return;
@@ -26,17 +25,16 @@ void writeToFile(const char *filename, const char *content) {
     fclose(file);
 }
 
-// Function to read content from the file
-void readFromFile(const char *filename, char *buffer, int buffer_size) {
-    FILE *file = fopen(filename, "r"); // Open for reading
+void read_from_file(const char *filename, char *buffer, int buffer_size) {
+    FILE *file = fopen(filename, "r");
     if (file == NULL) {
         perror("Error opening file for reading");
-        buffer[0] = '\0'; // Ensure buffer is empty on error
+        buffer[0] = '\0';
         return;
     }
 
     if (fgets(buffer, buffer_size, file) == NULL) {
-        buffer[0] = '\0'; // Ensure buffer is empty if read fails
+        buffer[0] = '\0';
     }
 
     fclose(file);
@@ -46,24 +44,19 @@ int main(void) {
     char input_buffer[BUFFER_SIZE];
     char read_buffer[BUFFER_SIZE];
 
-    // Prompt user for input
     printf("Enter a string to write to the file: ");
     if (fgets(input_buffer, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
         return 0;
     }
 
-    // Write the user input to the file
-    writeToFile(FILENAME, input_buffer);
+    write_to_file(FILENAME, input_buffer);
 
-    // Read the content back from the file
-    readFromFile(FILENAME, read_buffer, BUFFER_SIZE);
+    read_from_file(FILENAME, read_buffer, BUFFER_SIZE);
 
-    // Check if the read was successful and the string is long enough
     if (read_buffer[0] != '\0') {
         printf("Content read from file: %s", read_buffer);
 
-        // Print a substring if the string is long enough
         if (strlen(read_buffer) > 5) {
             printf("Substring (from 6th character): %s", read_buffer + 5);
         } else {

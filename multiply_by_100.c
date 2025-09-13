@@ -5,15 +5,25 @@
 
 #include <stdio.h>
 
-int main(void) {
-    double x, y;
-
+double read_input_value(void) {
+    double x;
     printf("Enter a value: ");
     scanf("%lf", &x);
+    return x;
+}
 
-    y = x * 100;
+double multiply_by_100(double x) {
+    return x * 100;
+}
 
-    printf("The result is: %lf\n", y);
+void display_result(double result) {
+    printf("The result is: %lf\n", result);
+}
+
+int main(void) {
+    double x = read_input_value();
+    double y = multiply_by_100(x);
+    display_result(y);
 
     return 0;
 }

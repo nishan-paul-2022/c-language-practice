@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 
-// Function to read elements into an array
 void read_array_elements(int arr[], int size) {
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
@@ -14,7 +13,6 @@ void read_array_elements(int arr[], int size) {
     }
 }
 
-// Function to find the maximum element in an array
 int find_maximum(const int arr[], int size) {
     int max = arr[0];
     for (int i = 1; i < size; i++) {

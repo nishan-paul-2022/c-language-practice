@@ -5,52 +5,74 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int get_number_of_persons(void) {
     int num_persons;
-    int weight, height;
-    int person_index;
-    int countable_persons_count = 0;
-
     printf("Enter the number of persons: ");
-    // Read the number of persons and validate input
+    
     if (scanf("%d", &num_persons) != 1) {
         fprintf(stderr, "Error: Invalid input for the number of persons.\n");
-        // Clear the input buffer
         while (getchar() != '\n');
-        return 0;
+        return -1;
     }
-
-    // Validate that the number of persons is non-negative
+    
     if (num_persons < 0) {
         fprintf(stderr, "Error: Number of persons cannot be negative.\n");
+        return -1;
+    }
+    
+    return num_persons;
+}
+
+int get_person_data(int person_number, int *weight, int *height) {
+    printf("Person %d: ", person_number);
+    
+    if (scanf("%d %d", weight, height) != 2) {
+        fprintf(stderr, "\nError: Invalid input for weight and height for person %d.\n", person_number);
+        while (getchar() != '\n');
+        return -1;
+    }
+    
+    return 0;
+}
+
+int is_countable(int weight, int height) {
+    return (weight < 50 && height > 170);
+}
+
+void display_person_status(int is_valid) {
+    printf("  -> %s\n", is_valid ? "Countable" : "Not countable");
+}
+
+void display_final_count(int count) {
+    printf("\nTotal number of countable persons: %d\n", count);
+}
+
+int main(void) {
+    int num_persons = get_number_of_persons();
+    if (num_persons == -1) {
         return 0;
     }
-
-    printf("Enter weight and height for each person (e.g., 'weight height'):\n");
-
-    // Loop through each person to read their details and check criteria
-    for (person_index = 0; person_index < num_persons; ++person_index) {
-        printf("Person %d: ", person_index + 1);
-        // Read weight and height, expecting space-separated values
-        if (scanf("%d %d", &weight, &height) != 2) {
-            fprintf(stderr, "\nError: Invalid input for weight and height for person %d.\n", person_index + 1);
-            // Clear the input buffer
-            while (getchar() != '\n');
-            // Decide whether to continue or exit. For this example, we'll exit.
+    
+    int countable_persons_count = 0;
+    
+    printf("Enter weight and height for each person:\n");
+    
+    for (int person_index = 0; person_index < num_persons; ++person_index) {
+        int weight, height;
+        
+        if (get_person_data(person_index + 1, &weight, &height) == -1) {
             return 0;
         }
-
-        // Check if the person meets the criteria: weight < 50 and height > 170
-        if (weight < 50 && height > 170) {
-            printf("  -> Countable\n");
+        
+        if (is_countable(weight, height)) {
             countable_persons_count++;
+            display_person_status(1);
         } else {
-            printf("  -> Not countable\n");
+            display_person_status(0);
         }
     }
-
-    // Print the final count of countable persons
-    printf("\nTotal number of countable persons: %d\n", countable_persons_count);
-
+    
+    display_final_count(countable_persons_count);
+    
     return 0;
 }

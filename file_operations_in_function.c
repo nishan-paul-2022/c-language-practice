@@ -11,18 +11,15 @@
 #define FILENAME_BUFFER_SIZE 100
 #define MODE_BUFFER_SIZE 10
 
-// Appends ".txt" to filename and opens file with specified mode
 FILE* open_file_with_extension(char *filename_base, const char *mode) {
     char full_filename[FILENAME_BUFFER_SIZE];
     FILE *file_ptr;
 
-    // Construct full filename with ".txt" extension
     if (snprintf(full_filename, FILENAME_BUFFER_SIZE, "%s.txt", filename_base) >= FILENAME_BUFFER_SIZE) {
         fprintf(stderr, "Error: Filename too long.\n");
         return NULL;
     }
 
-    // Open file with specified mode
     file_ptr = fopen(full_filename, mode);
     if (file_ptr == NULL) {
         perror("Error opening file");
@@ -32,29 +29,26 @@ FILE* open_file_with_extension(char *filename_base, const char *mode) {
     return file_ptr;
 }
 
-// Get base filename from user input
 int get_filename(char *buffer, int size) {
-    printf("Enter the base filename (without .txt): ");
+    printf("Enter base filename: ");
     if (fgets(buffer, size, stdin) == NULL) {
         fprintf(stderr, "Error reading filename input.\n");
         return -1;
     }
-    buffer[strcspn(buffer, "\n")] = 0; // Remove newline
+    buffer[strcspn(buffer, "\n")] = 0;
     return 0;
 }
 
-// Get file mode from user input
 int get_file_mode(char *buffer, int size) {
-    printf("Enter the file mode (e.g., r, w, a, r+, w+, a+): ");
+    printf("Enter file mode (r, w, a, r+, w+, a+): ");
     if (fgets(buffer, size, stdin) == NULL) {
         fprintf(stderr, "Error reading file mode input.\n");
         return -1;
     }
-    buffer[strcspn(buffer, "\n")] = 0; // Remove newline
+    buffer[strcspn(buffer, "\n")] = 0;
     return 0;
 }
 
-// Process file operation
 int process_file_operation(const char *filename, const char *mode) {
     FILE *file_handle = open_file_with_extension((char*)filename, mode);
     
@@ -73,7 +67,6 @@ int main(void) {
     char base_filename[FILENAME_BUFFER_SIZE];
     char file_mode[MODE_BUFFER_SIZE];
 
-    // Get user inputs
     if (get_filename(base_filename, FILENAME_BUFFER_SIZE)) {
         return 0;
     }
@@ -82,7 +75,6 @@ int main(void) {
         return 0;
     }
 
-    // Process file operation
     if (process_file_operation(base_filename, file_mode)) {
         return 0;
     }

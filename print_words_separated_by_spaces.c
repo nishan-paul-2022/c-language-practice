@@ -6,53 +6,42 @@
 #include <stdio.h>
 #include <string.h>
 
-#define BUFFER_SIZE 256 // Define a reasonable buffer size for input strings
+#define BUFFER_SIZE 256
+
+void read_input(char str[BUFFER_SIZE]) {
+    printf("Enter a string: "); // Prompt user
+    if (fgets(str, BUFFER_SIZE, stdin) == NULL) {
+        printf("Error reading input.\n");
+        exit(0);
+    }
+    str[strcspn(str, "\n")] = 0; // Remove trailing newline
+}
+
+void print_words(const char str[BUFFER_SIZE]) {
+    int i = 0, j;
+
+    printf("Words in the string:\n");
+    while (str[i] != '\0') {
+        while (str[i] == ' ') i++; // Skip spaces
+        if (str[i] == '\0') break;
+
+        j = i;
+        while (str[j] != ' ' && str[j] != '\0') j++; // Find end of word
+
+        for (int k = i; k < j; k++) {
+            printf("%c", str[k]); // Print word
+        }
+        printf("\n");
+
+        i = j; // Move to next word
+    }
+}
 
 int main(void) {
     char input_string[BUFFER_SIZE];
-    int i, j;
 
-    printf("Enter a string: ");
-    // Use fgets for safe input. It reads up to BUFFER_SIZE-1 characters
-    // and appends a null terminator. It also reads the newline character if space permits.
-    if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-        printf("Error reading input.\n");
-        return 0;
-    }
-
-    // Remove the trailing newline character if it exists
-    input_string[strcspn(input_string, "\n")] = 0;
-
-    printf("Words in the string:\n");
-
-    // Iterate through the string to print words.
-    // A word is considered a sequence of characters separated by spaces or the end of the string.
-    for (i = 0; input_string[i] != '\\0'; ) {
-        // Skip leading spaces
-        while (input_string[i] == ' ') {
-            i++;
-        }
-
-        // If we reached the end of the string after skipping spaces, break
-        if (input_string[i] == '\\0') {
-            break;
-        }
-
-        // Find the end of the current word (either a space or the null terminator)
-        j = i;
-        while (input_string[j] != ' ' && input_string[j] != '\\0') {
-            j++;
-        }
-
-        // Print the word
-        for (int k = i; k < j; k++) {
-            printf("%c", input_string[k]);
-        }
-        printf("\n"); // Print each word on a new line
-
-        // Move the index 'i' to the position after the current word (which is 'j')
-        i = j;
-    }
+    read_input(input_string);
+    print_words(input_string);
 
     return 0;
 }

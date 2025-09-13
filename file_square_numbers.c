@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Populates the input file with numbers from 1 to 1000.
 int create_input_file(const char *filename) {
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
@@ -26,7 +25,6 @@ int create_input_file(const char *filename) {
     return 0;
 }
 
-// Reads numbers, calculates squares, and writes them to the output file.
 int process_files(const char *input_filename, const char *output_filename) {
     FILE *input_file = fopen(input_filename, "r");
     if (input_file == NULL) {
@@ -70,7 +68,7 @@ int main(void) {
     const char *input_filename = "files/input.txt";
     const char *output_filename = "files/output.txt";
 
-    if (create_input_file(input_filename) == 0) {
+    if (create_input_file(input_filename) != 0) {
         return 0;
     }
 

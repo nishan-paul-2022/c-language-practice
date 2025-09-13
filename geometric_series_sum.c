@@ -5,73 +5,69 @@
  * Purpose: Calculates the sum of a geometric series (x^0 + x^1 + ... + x^n).
  * Topic: Series Summation, Loops, Math Functions, Input/Output
  */
-int main(void) {
-    double base_x; // The base of the power
-    int exponent_n; // The maximum exponent
+
+double calculate_series_sum(double base_x, int exponent_n) {
     double sum_of_powers = 0.0;
     double current_term;
-    int i;
-    int input_status;
 
-    // Loop to allow multiple calculations until user decides to exit
+    for (int i = 0; i <= exponent_n; i++) {
+        current_term = pow(base_x, i);
+
+        if (fabs(current_term) < 0.0001 && i > 0) {
+            printf("Term %d (%.5lf) is very small, stopping summation early.\n", i, current_term);
+            break;
+        }
+        
+        sum_of_powers += current_term;
+    }
+
+    return sum_of_powers;
+}
+
+int get_user_input(double *base_x, int *exponent_n) {
+    printf("Enter the base (x) and the maximum exponent (n) (format: 2.5, 5): ");
+    
+    int input_status = scanf("%lf, %d", base_x, exponent_n);
+
+    if (input_status != 2) {
+        printf("Invalid input format. Please enter values like '2.5, 5'.\n");
+        while (getchar() != '\n');
+        return -1;
+    }
+
+    if (*exponent_n < 0) {
+        printf("Exponent n cannot be negative.\n");
+        return -1;
+    }
+
+    return 0;
+}
+
+int ask_continue(void) {
+    char another_calculation;
+    printf("Do you want to perform another calculation? (y/n): ");
+    scanf(" %c", &another_calculation);
+    return (another_calculation == 'y' || another_calculation == 'Y');
+}
+
+int main(void) {
+    double base_x;
+    int exponent_n;
+    double sum_result;
+
     while (1) {
-        // Prompt user to enter the base and maximum exponent
-        printf("Enter the base (x) and the maximum exponent (n), separated by a comma (e.g., 2.5, 5): ");
+        if (get_user_input(&base_x, &exponent_n) == -1) {
+            continue;
+        }
+
+        sum_result = calculate_series_sum(base_x, exponent_n);
+
+        printf("The sum of the series up to x^%d is: %.5lf\n", exponent_n, sum_result);
         
-        // Read input for base and exponent
-        input_status = scanf("%lf, %d", &base_x, &exponent_n);
-
-        // Validate input
-        if (input_status != 2) {
-            printf("Invalid input format. Please enter values like '2.5, 5'.\n");
-            // Clear the input buffer to prevent infinite loop on bad input
-            while (getchar() != '\n'); 
-            continue; // Ask for input again
+        if (ask_continue() == 0) {
+            break;
         }
-
-        // Validate that exponent is non-negative
-        if (exponent_n < 0) {
-            printf("Exponent n cannot be negative.\n");
-            continue; // Ask for input again
-        }
-
-        sum_of_powers = 0.0; // Reset sum for each new calculation
-
-        // Calculate the sum of the series x^0 + x^1 + ... + x^n
-        for (i = 0; i <= exponent_n; i++) {
-            current_term = pow(base_x, i);
-
-            // Check if the current term is very small (close to zero)
-            // This condition was used in the original code to potentially break early.
-            // We'll keep it for educational purposes, but note that for a fixed 'n',
-            // this check might not be strictly necessary unless dealing with very large 'n'
-            // or very small 'x' where terms become negligible.
-            if (fabs(current_term) < 0.0001 && i > 0) { // Use fabs for absolute value of double
-                printf("Term %d (%.5lf) is very small, stopping summation early.\n", i, current_term);
-                // The original code used goto here. We'll break instead.
-                break; 
-            }
-            
-            sum_of_powers += current_term;
-        }
-
-        // Display the result
-        // The original code had two different print statements based on goto labels.
-        // We'll consolidate to one clear output.
-        printf("The sum of the series up to x^%d is: %.5lf\n", exponent_n, sum_of_powers);
-        
-        // The original code had a goto mlf; here, which was effectively a no-op after the first print.
-        // We'll remove the need for goto by structuring the loop correctly.
-
-        // Ask if the user wants to perform another calculation
-        char another_calculation;
-        printf("Do you want to perform another calculation? (y/n): ");
-        // Read user's choice with space before %c to consume any leftover newline
-        scanf(" %c", &another_calculation);
-        if (another_calculation != 'y' && another_calculation != 'Y') {
-            break; // Exit the while loop if user doesn't want to continue
-        }
-        printf("\n"); // Add a newline for better readability between calculations
+        printf("\n");
     }
 
     return 0;

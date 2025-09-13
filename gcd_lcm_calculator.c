@@ -5,18 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function to calculate GCD using the Euclidean algorithm
 long int calculate_gcd(long int a, long int b) {
-    // Ensure a and b are non-negative for the algorithm
     if (a < 0) a = -a;
     if (b < 0) b = -b;
 
-    // Handle cases where one or both numbers are zero
-    if (a == 0 && b == 0) return 0; // GCD of 0 and 0 is undefined, returning 0 for simplicity
+    if (a == 0 && b == 0) return 0;
     if (a == 0) return b;
     if (b == 0) return a;
 
-    // Euclidean algorithm
     while (b) {
         long int temp = b;
         b = a % b;
@@ -25,32 +21,26 @@ long int calculate_gcd(long int a, long int b) {
     return a;
 }
 
-// Function to calculate LCM using the formula: LCM(a, b) = |a * b| / GCD(a, b)
 long int calculate_lcm(long int a, long int b, long int gcd) {
-    if (gcd == 0) return 0; // Avoid division by zero if GCD is 0
-    // Use absolute values for calculation to handle negative inputs correctly
+    if (gcd == 0) return 0;
     long int abs_a = (a < 0) ? -a : a;
     long int abs_b = (b < 0) ? -b : b;
-    return (abs_a / gcd) * abs_b; // Prevent potential overflow by dividing first
+    return (abs_a / gcd) * abs_b; // Divide first to prevent overflow
 }
 
 int main(void) {
     long int num1, num2;
     long int gcd_result, lcm_result;
 
-    // Prompt user to enter pairs of numbers
-    printf("Enter pairs of numbers (e.g., '12, 18') or press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to exit.\n");
+    printf("Enter pairs of numbers (format: 12, 18) or press Ctrl+D/Ctrl+Z to exit:\n");
 
-    // Read pairs of numbers until EOF is encountered or an error occurs
     while (scanf("%ld, %ld", &num1, &num2) == 2) {
-        // Calculate GCD and LCM for the pair
         gcd_result = calculate_gcd(num1, num2);
         lcm_result = calculate_lcm(num1, num2, gcd_result);
 
-        // Display results for the current pair
         printf("For %ld and %ld:\n", num1, num2);
         if (gcd_result == 0) {
-            printf(" GCD: Undefined (both numbers are 0)\n");
+            printf("  GCD: Undefined (both numbers are 0)\n");
             printf("  LCM: Undefined (both numbers are 0)\n");
         } else {
             printf("  GCD: %ld\n", gcd_result);
@@ -58,7 +48,6 @@ int main(void) {
         }
     }
 
-    // Check if the loop terminated due to an error other than reaching EOF
     if (ferror(stdin)) {
         perror("Error reading input");
         return 0;

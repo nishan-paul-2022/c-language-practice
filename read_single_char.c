@@ -6,36 +6,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *input_file_ptr = NULL;
-    int char_read; // Use int to correctly handle EOF
-
-    // Open the file for reading in text mode.
-    input_file_ptr = fopen("FH fwrite & fread.txt", "r");
-    if (input_file_ptr == NULL) {
-        perror("Error opening file for reading");
-        return 0;
+FILE* open_file(const char *filename) {
+    FILE *fp = fopen(filename, "r"); // Open file in text mode
+    if (fp == NULL) {
+        perror("Error opening file");
     }
+    return fp;
+}
 
-    // Read a single character from the file
-    char_read = getc(input_file_ptr);
-
-    // Check if reading was successful or if it was EOF
-    if (char_read == EOF) {
-        if (ferror(input_file_ptr)) {
-            perror("Error reading character from file");
+int read_single_char(FILE *fp) {
+    if (fp == NULL) return EOF;
+    int c = getc(fp); // Read a single character
+    if (c == EOF) {
+        if (ferror(fp)) {
+            perror("Error reading character");
         } else {
-            printf("File is empty or could not read the first character.\n");
+            printf("File is empty or cannot read first character.\n");
         }
-        fclose(input_file_ptr);
-        return 0;
     }
+    return c;
+}
 
-    // Print the character read to the console
-    printf("First character read from file: %c\n", (char)char_read);
+void close_file(FILE *fp) {
+    if (fp != NULL) fclose(fp); // Close file
+}
 
-    // Close the file
-    fclose(input_file_ptr);
-
+int main(void) {
+    const char *filename = "FH fwrite & fread.txt";
+    FILE *file_ptr = open_file(filename);
+    int char_read = read_single_char(file_ptr);
+    
+    if (char_read != EOF) {
+        printf("First character read from file: %c\n", (char)char_read); // Display character
+    }
+    
+    close_file(file_ptr);
     return 0;
 }

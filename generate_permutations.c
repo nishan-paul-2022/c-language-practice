@@ -5,22 +5,21 @@
 
 #include <stdio.h>
 
-int main(void) {
-    // Generate all permutations of three distinct numbers from 1 to 3
+void generate_permutations(void) {
     for (int num1 = 1; num1 <= 3; num1++) {
         for (int num2 = 1; num2 <= 3; num2++) {
-            // Ensure the second number is different from the first
             if (num2 != num1) {
                 for (int num3 = 1; num3 <= 3; num3++) {
-                    // Ensure the third number is different from the first two
                     if (num3 != num1 && num3 != num2) {
-                        // Display the permutation
                         printf("%d, %d, %d\n\n", num1, num2, num3);
                     }
                 }
             }
         }
     }
+}
 
+int main(void) {
+    generate_permutations();
     return 0;
 }

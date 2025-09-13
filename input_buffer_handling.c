@@ -8,41 +8,34 @@
 
 #define BUFFER_SIZE 100
 
-// Function to clear the standard input buffer
-// Portable method reading characters until newline
-void clear_input_buffer() {
+void clear_input_buffer(void) {
     int c;
-    // Read characters until newline or EOF
-    // Consumes leftover characters in input buffer
     while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int read_string(char *input_string) {
+    printf("Enter a string: ");
+    
+    if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
+        fprintf(stderr, "Error reading input.\n");
+        clear_input_buffer();
+        return -1;
+    }
+    
+    clear_input_buffer();
+    return 0;
 }
 
 int main(void) {
     char input_string[BUFFER_SIZE];
-    int loop_count = 2; // Loop twice for demonstration
+    int loop_count = 2;
 
     printf("This program will ask for input twice.\n");
 
-    // Loop to demonstrate reading input multiple times
     while (loop_count--) {
-        printf("Enter a string: ");
-        
-        // Read input using fgets for safety
-        // gets() is unsafe as it doesn't check buffer boundaries
-        if (fgets(input_string, BUFFER_SIZE, stdin) == NULL) {
-            fprintf(stderr, "Error reading input.\n");
-            // If fgets fails, clear buffer and continue
-            clear_input_buffer(); // Attempt to clear buffer on error
-            continue; // Skip to next iteration
+        if (read_string(input_string) == 0) {
+            printf("You entered: %s", input_string);
         }
-
-        // fflush(stdin) has undefined behavior
-        // Use portable buffer clearing function instead
-        // fflush(stdin); // Non-standard, removed
-        clear_input_buffer(); // Clear buffer using portable function
-
-        // Print the input string that was read
-        printf("You entered: %s", input_string); // fgets includes newline
     }
 
     printf("\nProgram finished.\n");

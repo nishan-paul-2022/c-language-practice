@@ -1,50 +1,136 @@
 /*
- * Purpose: Demonstrates various C preprocessor directives like #define, #ifdef, #undef, #else.
- * Topic: Preprocessor Directives, Macros, Conditional Compilation
+ * Purpose: Demonstrates various C preprocessor directives with a function-based approach for better organization
+ * Topic: Preprocessor Directives, Macros, Conditional Compilation, Header Guards
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-// Define a macro 'x'. This will be used by #ifdef.
-// If this line is commented out, the #else block will be executed.
-#define x puts("nishan paul\n") ;
+// Object-like macros
+#define PI 3.14159
+#define MAX_BUFFER_SIZE 1024
+#define VERSION "1.0.0"
+
+// Function-like macros
+#define SQUARE(x) ((x) * (x))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define DEBUG_PRINT(x) printf("[DEBUG] %s = %d\n", #x, x)
+
+// Conditional compilation based on defined constants
+#define DEBUG_MODE
+
+// Platform-specific code
+#ifdef _WIN32
+    #define PLATFORM "Windows"
+#elif __linux__
+    #define PLATFORM "Linux"
+#elif __APPLE__
+    #define PLATFORM "macOS"
+#else
+    #define PLATFORM "Unknown"
+#endif
+
+// Feature toggles
+#define FEATURE_ADVANCED_MATH 1
+
+// Header guard simulation
+#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
+    #define CONFIG_LOADED 1
+#endif
+
+// Function declarations
+void demonstrate_object_macros(void);
+void demonstrate_function_macros(void);
+void demonstrate_conditional_compilation(void);
+void demonstrate_platform_detection(void);
+void demonstrate_feature_toggles(void);
+void demonstrate_header_guards(void);
+void demonstrate_macro_undefining(void);
+
+// Object-like macro demonstration
+void demonstrate_object_macros(void) {
+    printf("1. Object-like Macros:\n");
+    printf("   PI = %f\n", PI);
+    printf("   MAX_BUFFER_SIZE = %d\n", MAX_BUFFER_SIZE);
+    printf("   VERSION = %s\n\n", VERSION);
+}
+
+// Function-like macro demonstration
+void demonstrate_function_macros(void) {
+    printf("2. Function-like Macros:\n");
+    int a = 5, b = 8;
+    printf("   SQUARE(%d) = %d\n", a, SQUARE(a));
+    printf("   MAX(%d, %d) = %d\n", a, b, MAX(a, b));
+    printf("   Using DEBUG_PRINT macro: ");
+    DEBUG_PRINT(a);
+    printf("\n");
+}
+
+// Conditional compilation demonstration
+void demonstrate_conditional_compilation(void) {
+    printf("3. Conditional Compilation:\n");
+    #ifdef DEBUG_MODE
+        printf("   Debug mode is ENABLED\n");
+        printf("   Debug value: %d\n", 42);
+    #else
+        printf("   Debug mode is DISABLED\n");
+    #endif
+    
+    #ifndef RELEASE_MODE
+        printf("   Not in release mode\n");
+    #endif
+    printf("\n");
+}
+
+// Platform detection demonstration
+void demonstrate_platform_detection(void) {
+    printf("4. Platform Detection:\n");
+    printf("   Compiled on: %s\n\n", PLATFORM);
+}
+
+// Feature toggle demonstration
+void demonstrate_feature_toggles(void) {
+    printf("5. Feature Toggles:\n");
+    #if FEATURE_ADVANCED_MATH
+        printf("   Advanced math features are ENABLED\n");
+        printf("   Calculating complex expression: %f\n", PI * SQUARE(3.0));
+    #else
+        printf("   Advanced math features are DISABLED\n");
+    #endif
+    printf("\n");
+}
+
+// Header guard demonstration
+void demonstrate_header_guards(void) {
+    printf("6. Header Guard Simulation:\n");
+    #ifdef CONFIG_LOADED
+        printf("   Configuration loaded successfully\n");
+    #endif
+    printf("\n");
+}
+
+// Macro undefining and redefining demonstration
+void demonstrate_macro_undefining(void) {
+    printf("7. Undefining Macros:\n");
+    printf("   MAX_BUFFER_SIZE is defined: %d\n", MAX_BUFFER_SIZE);
+    #undef MAX_BUFFER_SIZE
+    printf("   MAX_BUFFER_SIZE has been undefined\n");
+    // printf("   MAX_BUFFER_SIZE = %d\n", MAX_BUFFER_SIZE); // This would cause an error
+    
+    // Redefining macros
+    #define MAX_BUFFER_SIZE 2048
+    printf("   MAX_BUFFER_SIZE redefined as: %d\n", MAX_BUFFER_SIZE);
+}
 
 int main(void) {
-
-    // Example of conditional compilation using #if, #elif, #else.
-    // This block is currently commented out.
-    /*
-    #if 20 > 20
-        puts("one"); // This would execute if 20 > 20 were true.
-    #elif (20 == 20)
-        puts("two"); // This would execute because 20 == 20 is true.
-    #else
-        puts("third"); // This would execute if all preceding conditions were false.
-    #endif
-    */
-
-    // Check if macro 'x' is defined.
-    #ifdef x
-    {
-        // If 'x' is defined, undefine it and redefine it.
-        // This demonstrates that macros can be redefined.
-        #undef x
-        #define x puts("cuet cse 16 batch") ;
-    }
-    #else
-        // If 'x' is not defined, execute this block.
-        puts("ok");
-    // The following #ifndef is commented out, so it won't affect execution.
-    /*
-    #ifndef x
-        puts("not ok");
-    #endif
-    */
-    #endif
-
-    // Execute the macro 'x'.
-    // Since 'x' was defined and potentially redefined, this will execute the last definition.
-    x
-
+    demonstrate_object_macros();
+    demonstrate_function_macros();
+    demonstrate_conditional_compilation();
+    demonstrate_platform_detection();
+    demonstrate_feature_toggles();
+    demonstrate_header_guards();
+    demonstrate_macro_undefining();
+    
     return 0;
 }

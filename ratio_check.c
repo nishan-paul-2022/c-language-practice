@@ -7,36 +7,21 @@
 #include <math.h>
 
 int main(void) {
-    int num_test_cases; // Number of test cases
-    int i;
-
-    // Read the number of test cases
+    printf("Enter the number of test cases: ");
+    int num_test_cases;
     scanf("%d", &num_test_cases);
 
-    // Process each test case
-    for (i = 0; i < num_test_cases; i++) {
-        double value_r, value_s; // Input floating-point values
-        double calculated_ratio; // Result of s * 100 / r
-        int integer_ratio;       // Rounded integer value of the ratio
-
-        // Read the two floating-point values
-        scanf("%lf %lf", &value_r, &value_s);
-
-        // Check for division by zero
-        if (value_r == 0.0) {
-            printf("Error: Division by zero (value_r is 0).\n");
-            continue; // Skip to the next test case
+    for (int i = 0; i < num_test_cases; i++) {
+        printf("Enter values for r and s (separated by space): ");
+        double r, s;
+        scanf("%lf %lf", &r, &s);
+        if (r == 0.0) {
+            printf("Error: Division by zero.\n");
+            continue;
         }
 
-        // Calculate the ratio
-        calculated_ratio = value_s * 100.0 / value_r;
-
-        // Round the floating-point result to the nearest integer before casting
-        // This is more robust than simple truncation (int)
-        integer_ratio = (int)round(calculated_ratio);
-
-        // Check if the rounded integer ratio matches the target value
-        if (integer_ratio == 141) {
+        int ratio = (int)round(s * 100.0 / r);
+        if (ratio == 141) {
             printf("Yes\n");
         } else {
             printf("No\n");

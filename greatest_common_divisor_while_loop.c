@@ -5,29 +5,28 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num1, num2; // Two integer numbers for which to find the GCD
-    int current_divisor; // Variable to iterate downwards from the smaller number
+int find_gcd(int num1, int num2) {
+    int current_divisor = (num1 < num2) ? num1 : num2;
 
-    // Prompt user to enter two integers
-    printf("Enter two integers separated by a space (e.g., 48 18): ");
-    // Read two integers from user input
-    scanf("%d %d", &num1, &num2);
-
-    // Initialize current_divisor with the smaller of the two numbers
-    current_divisor = (num1 < num2) ? num1 : num2;
-
-    // Loop downwards from current_divisor to find the GCD
-    // The first number that divides both num1 and num2 is the GCD
     while (current_divisor >= 1) {
         if (num1 % current_divisor == 0 && num2 % current_divisor == 0) {
-            break; // Found the GCD, exit the loop
+            break;
         }
-        current_divisor--; // Decrement to check the next smaller number
+        current_divisor--;
     }
+    return current_divisor;
+}
 
-    // Display the calculated GCD
-    printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, current_divisor);
+int main(void) {
+    int num1, num2;
+    int gcd_result;
+
+    printf("Enter two integers (format: 48 18): ");
+    scanf("%d %d", &num1, &num2);
+
+    gcd_result = find_gcd(num1, num2);
+
+    printf("The Greatest Common Divisor (GCD) of %d and %d is: %d\n", num1, num2, gcd_result);
 
     return 0;
 }
