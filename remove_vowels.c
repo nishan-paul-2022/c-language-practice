@@ -19,8 +19,7 @@ void to_lowercase(char *str) {
 // Function to print a string without vowels
 void print_without_vowels(const char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
-        if (!(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||
-              str[i] == 'o' || str[i] == 'u')) {
+        if (!(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')) {
             putchar(str[i]);
         }
     }

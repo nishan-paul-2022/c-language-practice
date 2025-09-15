@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates reading user input into a string and assigning it to a structure member, highlighting safe input practices.
+ * Purpose: Demonstrates reading user input into a string and assigning it to a structure member using functions, highlighting safe input practices.
  * Topic: Structures, String Input
  */
 
@@ -7,39 +7,49 @@
 #include <string.h>
 
 // Define a structure to hold different data types
-struct example_structure {
-    int integer_value;      // An integer member
-    double double_value;    // A double-precision floating-point member
-    char string_value[100]; // A character array (string) member
-};
+typedef struct {
+    int integer_value;
+    double double_value;
+    char string_value[100];
+} ExampleStructure;
 
-int main(void) {
-    // Declare an instance of the structure
-    struct example_structure my_struct;
-    // Declare a buffer for user input
-    char input_string[100];
-
-    // Prompt user for input
-    printf("Enter a string: ");
-
-    // Safely read user input using fgets to prevent buffer overflow
-    if (fgets(input_string, sizeof(input_string), stdin) != NULL) {
-        // Remove the trailing newline character read by fgets, if present
-        input_string[strcspn(input_string, "\n")] = 0;
-
-        // Assign values to the structure members
-        my_struct.integer_value = 10;
-        my_struct.double_value = 10.12345;
-        strcpy(my_struct.string_value, input_string); // Copy the user's input string
-
-        // Print the structure members
-        printf("Integer: %d\n", my_struct.integer_value);
-        printf("Double: %.2lf\n", my_struct.double_value);
-        printf("String: %s\n", my_struct.string_value);
+// Function to read a string from user safely
+void read_string(char *buffer, size_t size, const char *prompt) {
+    printf("%s", prompt);
+    if (fgets(buffer, size, stdin) != NULL) {
+        buffer[strcspn(buffer, "\n")] = 0; // Remove newline
     } else {
         fprintf(stderr, "Error reading input.\n");
-        return 0;
+        buffer[0] = '\0'; // Set empty string on failure
     }
+}
+
+// Function to initialize the structure
+void initialize_structure(ExampleStructure *s, int int_val, double dbl_val, const char *str_val) {
+    s->integer_value = int_val;
+    s->double_value = dbl_val;
+    strcpy(s->string_value, str_val);
+}
+
+// Function to print the structure members
+void print_structure(const ExampleStructure *s) {
+    printf("Integer: %d\n", s->integer_value);
+    printf("Double: %.2lf\n", s->double_value);
+    printf("String: %s\n", s->string_value);
+}
+
+int main(void) {
+    ExampleStructure my_struct;
+    char input_string[100];
+
+    // Read string input from user
+    read_string(input_string, sizeof(input_string), "Enter a string: ");
+
+    // Initialize structure with sample values and user string
+    initialize_structure(&my_struct, 10, 10.12345, input_string);
+
+    // Print structure members
+    print_structure(&my_struct);
 
     return 0;
 }

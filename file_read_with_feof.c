@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FILENAME "FH_feof.txt"
+#define FILENAME "files/20-input.txt"
 #define BUFFER_SIZE 100
 
 FILE* open_file_for_reading(const char *filename) {

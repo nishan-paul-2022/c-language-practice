@@ -7,25 +7,25 @@
 #include <math.h>
 
 #ifndef M_PI
-#define M_PI 3.14159265358979323846
+#define M_PI 3.1416
 #endif
 
 int main(void) {
+    printf("Enter maximum angle in degrees: ");
     int max_angle;
-    int angle;
-    double radians, sin_val, cos_val;
+    if (scanf("%d", &max_angle) != 1) {
+        printf("Invalid input.\n");
+        return 0;
+    }
 
-    printf("ENTER ANGLE IN DEGREE: ");
-    scanf("%d", &max_angle);
+    printf("\nAngle\tSin\t\tCos\n");
+    printf("--------------------------------\n");
 
-    printf("\n angle \t sin \t\t cos \n");
-    printf("----------------------------------\n");
-
-    for (angle = 0; angle <= max_angle; angle += 10) {
-        radians = (M_PI * angle) / 180.0;
-        sin_val = sin(radians);
-        cos_val = cos(radians);
-        printf(" %d \t %lf \t %lf \n", angle, sin_val, cos_val);
+    for (int angle = 0; angle <= max_angle; angle += 10) {
+        double radians = (M_PI * angle) / 180.0;
+        double sin_val = sin(radians);
+        double cos_val = cos(radians);
+        printf("%d\t%lf\t%lf\n", angle, sin_val, cos_val);
     }
 
     return 0;

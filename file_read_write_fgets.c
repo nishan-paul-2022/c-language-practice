@@ -9,7 +9,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "FH function (fgets).txt"
+#define FILENAME "files/21-input.txt"
 
 int get_user_input(char *buffer, int size) {
     printf("Enter a string: ");

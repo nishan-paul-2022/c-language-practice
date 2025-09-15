@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Define a structure to hold data
 typedef struct {
     char name[10];
     char college[10];
@@ -16,59 +15,48 @@ typedef struct {
     char area[10];
 } StudentData;
 
+void write_structure(FILE *file_ptr, const StudentData *data) {
+    if (fwrite(data, sizeof(StudentData), 1, file_ptr) != 1) {
+        if (ferror(file_ptr)) perror("Error writing structure to file");
+        else fprintf(stderr, "Error: Incomplete write of structure.\n");
+        fclose(file_ptr);
+        exit(0);
+    }
+}
+
+void read_structure(FILE *file_ptr, StudentData *data) {
+    rewind(file_ptr);
+    if (fread(data, sizeof(StudentData), 1, file_ptr) != 1) {
+        if (ferror(file_ptr)) perror("Error reading structure from file");
+        else fprintf(stderr, "Error: Could not read structure.\n");
+        fclose(file_ptr);
+        exit(0);
+    }
+}
+
+void print_student_data(const StudentData *data) {
+    printf("Name: %s\n", data->name);
+    printf("College: %s\n", data->college);
+    printf("Department: %s\n", data->department);
+    printf("Year: %s\n", data->year);
+    printf("Area: %s\n", data->area);
+}
+
 int main(void) {
-    FILE *file_ptr;
-    StudentData data_to_write = {"nishan", "cuet", "cse", "16", "ai"};
+    StudentData data_write = {"UC", "Berkeley", "BAIR"};
     StudentData data_read;
 
-    // Open the file for writing and reading in binary mode.
-    // "wb+" mode truncates the file if it exists, or creates it if it doesn't.
-    // Using binary mode is important for fwrite/fread to avoid text translations.
-    file_ptr = fopen("FH fwrite & fread.txt", "wb+");
+    FILE *file_ptr = fopen("files/28-input.txt", "wb+");
     if (file_ptr == NULL) {
-        perror("Error opening file for writing");
+        perror("Error opening file");
         return 0;
     }
 
-    // Write the structure to the file
-    size_t items_written = fwrite(&data_to_write, sizeof(StudentData), 1, file_ptr);
-    if (items_written != 1) {
-        if (ferror(file_ptr)) {
-            perror("Error writing structure to file");
-        } else {
-            fprintf(stderr, "Error: Incomplete write of structure to file.\n");
-        }
-        fclose(file_ptr);
-        return 0;
-    }
+    write_structure(file_ptr, &data_write);
+    read_structure(file_ptr, &data_read);
+    print_student_data(&data_read);
 
-    // Rewind the file pointer to the beginning of the file to read what was written.
-    rewind(file_ptr);
-
-    // Read the structure back from the file
-    size_t items_read = fread(&data_read, sizeof(StudentData), 1, file_ptr);
-    if (items_read != 1) {
-        if (ferror(file_ptr)) {
-            perror("Error reading structure from file");
-        } else {
-            fprintf(stderr, "Error: Could not read structure from file.\n");
-        }
-        fclose(file_ptr);
-        return 0;
-    }
-
-    // Print the members of the structure
-    // Using %s assumes the data read is null-terminated.
-    // If the original strings were exactly 9 characters long, they might not have been null-terminated
-    // by strcpy if they filled the buffer. However, the provided strings are shorter.
-    printf("Name: %s\n", data_read.name);
-    printf("College: %s\n", data_read.college);
-    printf("Department: %s\n", data_read.department);
-    printf("Year: %s\n", data_read.year);
-    printf("Area: %s\n", data_read.area);
-
-    // Close the file
     fclose(file_ptr);
-
+    
     return 0;
 }

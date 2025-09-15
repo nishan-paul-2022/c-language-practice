@@ -1,39 +1,57 @@
+/*
+ * Purpose: Counts the number of words in multiple input lines.
+ * Topic: Strings, Tokenization, Loops, Functions
+ */
+
 #include <stdio.h>
 #include <string.h>
 
+// Function to safely read a line of input
+void read_line(char *buffer, int size) {
+    if (fgets(buffer, size, stdin) != NULL) {
+        // Remove trailing newline if present
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len - 1] == '\n') {
+            buffer[len - 1] = '\0';
+        }
+    }
+}
+
+// Function to count words in a given string
+int count_words(const char *line) {
+    int count = 0;
+    char copy[1000];
+    char *token;
+
+    // Make a copy since strtok modifies the string
+    strncpy(copy, line, sizeof(copy));
+    copy[sizeof(copy) - 1] = '\0';
+
+    token = strtok(copy, " ");
+    while (token != NULL) {
+        count++;
+        token = strtok(NULL, " ");
+    }
+
+    return count;
+}
+
 int main(void) {
     int num_test_cases;
-    char input_line[1000]; // Buffer to store the input line
-    char *token;           // Pointer to store each token (word)
-    int word_count;        // Counter for the number of words
+    char input_line[1000];
 
-    // Read the total number of test cases
+    // Ask for number of test cases
+    printf("Enter number of test cases: ");
     scanf("%d", &num_test_cases);
-    // Consume the newline character left by scanf
-    getchar(); 
+    getchar(); // consume leftover newline
 
     // Process each test case
-    while (num_test_cases--) {
-        word_count = 0;
-        // Read a line of text from input
-        // %[^\n] reads characters until a newline is encountered
-        scanf("%[^\n]", input_line);
-        // Consume the newline character after reading the line
-        getchar(); 
+    for (int i = 1; i <= num_test_cases; i++) {
+        printf("\nTest case %d - Enter a line of text:\n", i);
+        read_line(input_line, sizeof(input_line));
 
-        // Use strtok to tokenize the string by spaces
-        // The first call to strtok needs the string itself
-        token = strtok(input_line, " ");
-
-        // Loop through all tokens
-        while (token != NULL) {
-            word_count++;
-            // Subsequent calls to strtok use NULL to continue tokenizing the same string
-            token = strtok(NULL, " ");
-        }
-
-        // Print the word count for the current line
-        printf("%d\n", word_count);
+        int word_count = count_words(input_line);
+        printf("Word count for test case %d: %d\n", i, word_count);
     }
 
     return 0;

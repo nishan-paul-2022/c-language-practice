@@ -38,7 +38,7 @@ void process_even_numbers(FILE *file_pointer, const char *filename) {
 }
 
 int main(void) {
-    const char *filename = "bishal.txt";
+    const char *filename = "files/19-input.txt";
     FILE *file_pointer;
 
     file_pointer = open_file(filename);

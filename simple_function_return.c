@@ -4,23 +4,16 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-// Function to multiply an integer by 10.
-// Takes an integer as input and returns the result.
-int multiply_by_ten(int input_value) {
-    return input_value * 10;
+int multiply_by_ten(int num) {
+    return num * 10;
 }
 
 int main(void) {
-    int input_for_function = 4;
-    int function_result;
+    int input_num = 4;
+    int result = multiply_by_ten(input_num);
 
-    // Call the function with a specific value
-    function_result = multiply_by_ten(input_for_function);
-
-    // Print the result returned by the function
-    printf("The result of multiplying %d by 10 is: %d\n", input_for_function, function_result);
+    printf("The result of multiplying %d by 10 is: %d\n", input_num, result);
 
     return 0;
 }

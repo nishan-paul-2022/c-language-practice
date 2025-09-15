@@ -32,7 +32,7 @@ void close_file(FILE *fp) {
 }
 
 int main(void) {
-    const char *filename = "FH fwrite & fread.txt";
+    const char *filename = "files/27-input.txt";
     FILE *file_ptr = open_file(filename);
     int char_read = read_single_char(file_ptr);
     

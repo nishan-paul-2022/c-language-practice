@@ -1,69 +1,30 @@
 /*
  * Purpose: Compares two strings lexicographically and prints the result.
- * Topic: String Manipulation, String Comparison, Input Safety
+ * Topic: String Manipulation, Input Safety
  */
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-
-// Function to compare two strings lexicographically
-// Returns:
-//   0 if strings are equal
-//   a negative value if string1 is lexicographically less than string2
-//   a positive value if string1 is lexicographically greater than string2
-int compare_strings(const char str1[], const char str2[]) {
-    // Using the standard library function strcmp for robust comparison
-    return strcmp(str1, str2);
-}
 
 int main(void) {
-    int buffer_size;
-    char string1[256]; // Buffer for the first string
-    char string2[256]; // Buffer for the second string
-    int comparison_result;
+    printf("Enter the first string:\n");
+    char str1[256];
+    if (fgets(str1, sizeof(str1), stdin) == NULL) return 0;
+    str1[strcspn(str1, "\n")] = 0;
 
-    // Prompt user for buffer size (though we'll use fixed buffers for simplicity and safety)
-    printf("Enter the maximum string length for each input string (e.g., 25 for a buffer of 256):\n");
-    if (scanf("%d", &buffer_size) != 1 || buffer_size <= 0 || buffer_size >= sizeof(string1)) {
-        fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %lu.\n", sizeof(string1) - 1);
-        buffer_size = sizeof(string1) - 1; // Use the maximum allowed size
-    }
-    // Consume the newline character after reading the integer
-    while (getchar() != '\n');
+    printf("Enter the second string:\n");
+    char str2[256];
+    if (fgets(str2, sizeof(str2), stdin) == NULL) return 0;
+    str2[strcspn(str2, "\n")] = 0;
 
-    printf("Enter the first string (max %d characters):\n", buffer_size);
-    // Read the first string safely using fgets
-    if (fgets(string1, sizeof(string1), stdin) == NULL) {
-        fprintf(stderr, "Error reading the first string.\n");
-        return 0;
-    }
-    // Remove trailing newline character if present
-    string1[strcspn(string1, "\n")] = 0;
+    int comparison = strcmp(str1, str2);
 
-    printf("Enter the second string (max %d characters):\n", buffer_size);
-    // Read the second string safely using fgets
-    if (fgets(string2, sizeof(string2), stdin) == NULL) {
-        fprintf(stderr, "Error reading the second string.\n");
-        return 0;
-    }
-    // Remove trailing newline character if present
-    string2[strcspn(string2, "\n")] = 0;
-
-    // Compare the strings
-    comparison_result = compare_strings(string1, string2);
-
-    printf("\n"); // Print a newline before the result as in the original code
-
-    // Print the comparison result
-    if (comparison_result == 0) {
+    if (comparison == 0) {
         printf("EQUAL\n");
-    } else if (comparison_result < 0) {
-        // string1 is lexicographically less than string2
-        printf("%s\n", string2); // Original code prints string2 if v < 0
-    } else { // comparison_result > 0
-        // string1 is lexicographically greater than string2
-        printf("%s\n", string1); // Original code prints string1 if v > 0
+    } else if (comparison < 0) {
+        printf("%s\n", str2);
+    } else {
+        printf("%s\n", str1);
     }
 
     return 0;

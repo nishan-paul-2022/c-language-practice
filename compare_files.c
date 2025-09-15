@@ -1,5 +1,5 @@
 /*
- * Purpose: Compares the contents of two integer files ('output.txt' and 'mineput.txt')
+ * Purpose: Compares the contents of two integer files ('files/04-input.txt' and 'files/04-output.txt')
  *          element by element. Reports "ERROR" if any mismatch is found,
  *          otherwise reports "ACCEPTED" if all elements match.
  * Topic: File Comparison, Testing Utilities

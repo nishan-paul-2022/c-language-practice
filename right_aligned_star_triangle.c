@@ -5,37 +5,45 @@
 
 #include <stdio.h>
 
-int main(void) {
+// Function to safely read the number of rows
+int get_num_rows(void) {
     int rows;
-    char star_char = '*';
-    
     printf("Enter the number of rows for the star triangle: ");
-    // Read the number of rows from the user.
-    // Basic input validation: ensure a positive integer is entered.
+    
+    // Input validation loop
     while (scanf("%d", &rows) != 1 || rows <= 0) {
         printf("Invalid input. Please enter a positive integer for the number of rows: ");
-        // Clear the input buffer in case of non-integer input
-        while (getchar() != '\n'); 
+        while (getchar() != '\n'); // Clear input buffer
+        return -1;
     }
+    
+    return rows;
+}
 
-    // Outer loop controls the number of rows.
+// Function to print the right-aligned star triangle
+void print_star_triangle(int rows, char star_char) {
     for (int i = 1; i <= rows; i++) {
-        // Inner loop controls the number of stars and spaces for each row.
-        // For a right-aligned triangle, we print (rows - i) spaces, then i stars.
-        
-        // Print leading spaces for right alignment
+        // Print leading spaces
         for (int space = 1; space <= rows - i; space++) {
             printf(" ");
         }
-        
-        // Print stars for the current row
+        // Print stars
         for (int j = 1; j <= i; j++) {
             printf("%c", star_char);
         }
-        
-        // Move to the next line after printing stars for the current row.
-        printf("\n");
+        printf("\n"); // Move to next line
     }
-    
+}
+
+int main(void) {
+    int rows = get_num_rows();
+    if (rows == -1) {
+        return 0;
+    }
+
+    char star_char = '*';
+
+    print_star_triangle(rows, star_char);
+
     return 0;
 }

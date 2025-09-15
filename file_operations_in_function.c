@@ -30,7 +30,7 @@ FILE* open_file_with_extension(char *filename_base, const char *mode) {
 }
 
 int get_filename(char *buffer, int size) {
-    printf("Enter base filename: ");
+    printf("Enter base filename (e.g, files/16-input): ");
     if (fgets(buffer, size, stdin) == NULL) {
         fprintf(stderr, "Error reading filename input.\n");
         return -1;

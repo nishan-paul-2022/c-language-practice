@@ -1,157 +1,115 @@
 /*
- * Purpose: Demonstrates user registration with nested structures, including password input and confirmation.
- * Topic: Structures, Nested Structures, String Handling, Input Validation, Password Masking
+ * Purpose: Collects user registration details and optionally son's information using nested structures.
+ * Topic: Nested Structures, String Handling, Input Validation, Password Masking, Conditional Logic
  */
 
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
-// Structure to hold birthdate information
-struct BirthDate {
+struct birth_date {
     int day;
     int month;
     int year;
 };
 
-// Structure to hold user registration form data
-struct UserForm {
+struct user_form {
     char first_name[100];
     char last_name[100];
     char user_name[100];
     char password[100];
     char repeat_password[100];
-    struct BirthDate birth_date; // Nested structure for birthdate
+    struct birth_date birth_date;
 };
 
-// Function to securely read a password, masking input with asterisks.
-// It reads characters until Enter is pressed and stores them in pass_cpy.
-// Returns 0 on success, 1 on buffer overflow.
+void consume_newline(void) {
+    char ch;
+    while ((ch = getchar()) != '\n' && ch != EOF);
+}
+
 int read_password(char pass_cpy[], int buffer_size) {
     char ch;
     int i = 0;
 
-    // Read characters one by one until newline is encountered
     while ((ch = getchar()) != '\n') {
-        // Check for buffer overflow before storing the character
-        if (i < buffer_size - 1) { // Leave space for null terminator
-            if (ch == '\b' || ch == 127) { // Handle backspace (ASCII 8 or 127)
+        if (i < buffer_size - 1) {
+            if (ch == '\b' || ch == 127) {
                 if (i > 0) {
-                    putchar('\b'); // Move cursor back
-                    putchar(' ');  // Overwrite character with space
-                    putchar('\b'); // Move cursor back again
+                    putchar('\b'); putchar(' '); putchar('\b');
                     i--;
                 }
             } else {
-                putchar('*'); // Display asterisk for masked input
-                pass_cpy[i] = ch;
-                i++;
+                putchar('*'); pass_cpy[i++] = ch;
             }
         } else {
-            // Buffer overflow detected
-            fprintf(stderr, "\nError: Password too long. Maximum %d characters allowed.\n", buffer_size - 1);
-            // Clear the rest of the input buffer to prevent issues with subsequent reads
+            fprintf(stderr, "\nError: Password too long. Max %d characters.\n", buffer_size - 1);
             while ((ch = getchar()) != '\n' && ch != EOF);
-            return 0;
+            return 1;
         }
     }
-    pass_cpy[i] = '\0'; // Null-terminate the password string
-    printf("\n"); // Newline after password input
+    pass_cpy[i] = '\0';
+    printf("\n");
     return 0;
 }
 
-int main(void) {
-    struct UserForm user_data;
-    int password_input_status;
+int read_date(struct birth_date *date) {
+    printf("\tDay: "); if (scanf("%d", &date->day) != 1) return 1;
+    if (date->day < 1 || date->day > 31) printf("Warning: Day seems out of range (1-31).\n");
+    consume_newline();
 
-    printf("--- User Registration ---\n\n");
+    printf("\tMonth: "); if (scanf("%d", &date->month) != 1) return 1;
+    if (date->month < 1 || date->month > 12) printf("Warning: Month seems out of range (1-12).\n");
+    consume_newline();
 
-    // Get First Name
+    printf("\tYear: "); if (scanf("%d", &date->year) != 1) return 1;
+    if (date->year < 1900 || date->year > 2025) printf("Warning: Year seems out of range (1900-2025).\n");
+    consume_newline();
+
+    return 0;
+}
+
+void get_user_info(struct user_form *user) {
     printf("Enter your first name: ");
-    if (fgets(user_data.first_name, sizeof(user_data.first_name), stdin) == NULL) {
-        fprintf(stderr, "Error reading first name.\n");
-        return 0;
-    }
-    user_data.first_name[strcspn(user_data.first_name, "\n")] = 0; // Remove trailing newline
+    fgets(user->first_name, sizeof(user->first_name), stdin);
+    user->first_name[strcspn(user->first_name, "\n")] = 0;
 
-    // Get Last Name
     printf("Enter your last name: ");
-    if (fgets(user_data.last_name, sizeof(user_data.last_name), stdin) == NULL) {
-        fprintf(stderr, "Error reading last name.\n");
-        return 0;
-    }
-    user_data.last_name[strcspn(user_data.last_name, "\n")] = 0; // Remove trailing newline
+    fgets(user->last_name, sizeof(user->last_name), stdin);
+    user->last_name[strcspn(user->last_name, "\n")] = 0;
 
-    // Get Username
     printf("Enter your username: ");
-    if (fgets(user_data.user_name, sizeof(user_data.user_name), stdin) == NULL) {
-        fprintf(stderr, "Error reading username.\n");
-        return 0;
-    }
-    user_data.user_name[strcspn(user_data.user_name, "\n")] = 0; // Remove trailing newline
+    fgets(user->user_name, sizeof(user->user_name), stdin);
+    user->user_name[strcspn(user->user_name, "\n")] = 0;
 
-    // Get and confirm Password
-    printf("Enter password (max %d characters): ", (int)sizeof(user_data.password) - 1);
-    password_input_status = read_password(user_data.password, sizeof(user_data.password));
-    if (password_input_status) return 0; // Exit if password input failed
+    printf("Enter password (max %d chars): ", (int)sizeof(user->password)-1);
+    if (read_password(user->password, sizeof(user->password))) return;
 
     printf("Confirm password: ");
-    password_input_status = read_password(user_data.repeat_password, sizeof(user_data.repeat_password));
-    if (password_input_status) return 0; // Exit if password confirmation failed
+    if (read_password(user->repeat_password, sizeof(user->repeat_password))) return;
 
-    // Check if passwords match
-    if (strcmp(user_data.password, user_data.repeat_password)) {
+    if (strcmp(user->password, user->repeat_password)) {
         printf("Error: Passwords do not match.\n");
-        return 0; // Exit if passwords don't match
+        return;
     } else {
         printf("Passwords match.\n");
     }
 
-    // Get Birthdate
-    printf("Enter your birthdate:\n");
-    
-    // Get Day
-    printf("\tDay: ");
-    if (scanf("%d", &user_data.birth_date.day) != 1) {
-        fprintf(stderr, "Error reading day.\n");
-        return 0;
-    }
-    // Basic validation for day (can be more robust)
-    if (user_data.birth_date.day < 1 || user_data.birth_date.day > 31) {
-        printf("Warning: Day seems out of range.\n");
-    }
+    printf("Enter your birth_date:\n");
+    read_date(&user->birth_date);
+}
 
-    // Get Month
-    printf("\tMonth: ");
-    if (scanf("%d", &user_data.birth_date.month) != 1) {
-        fprintf(stderr, "Error reading month.\n");
-        return 0;
-    }
-    // Basic validation for month
-    if (user_data.birth_date.month < 1 || user_data.birth_date.month > 12) {
-        printf("Warning: Month seems out of range.\n");
-    }
+void print_user_summary(const struct user_form *user) {
+    printf("\n--- Thank you for your kind information! ---\n");
+    printf("\n--- User Information Summary ---\n");
+    printf("Name: %s %s\n", user->first_name, user->last_name);
+    printf("Username: %s\n", user->user_name);
+    printf("Birth Date: %d/%d/%d\n", user->birth_date.day, user->birth_date.month, user->birth_date.year);
+}
 
-    // Get Year
-    printf("\tYear: ");
-    if (scanf("%d", &user_data.birth_date.year) != 1) {
-        fprintf(stderr, "Error reading year.\n");
-        return 0;
-    }
-    // Basic validation for year (e.g., not in the far future or past)
-    if (user_data.birth_date.year < 1900 || user_data.birth_date.year > 2025) { // Example range
-        printf("Warning: Year seems out of a typical range.\n");
-    }
-    
-    // Consume any leftover newline character after scanf for integers
-    // This is important if more string input were to follow.
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-
-    printf("\n--- Registration Successful ---\n");
-    printf("Name: %s %s\n", user_data.first_name, user_data.last_name);
-    printf("Username: %s\n", user_data.user_name);
-    printf("Birthdate: %d/%d/%d\n", user_data.birth_date.day, user_data.birth_date.month, user_data.birth_date.year);
-
+int main(void) {
+    printf("--- User Registration ---\n\n");
+    struct user_form user_data;
+    get_user_info(&user_data);
+    print_user_summary(&user_data);
     return 0;
 }

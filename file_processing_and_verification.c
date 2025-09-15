@@ -6,21 +6,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define INPUT_FILENAME "files/18-input.txt"
+#define OUTPUT_FILENAME "files/18-output.txt"
+
 int process_input_file(void) {
-    FILE *input_file = fopen("input.txt", "r");
+    FILE *input_file = fopen(INPUT_FILENAME, "r");
     if (input_file == NULL) {
-        perror("Error opening input.txt for reading");
+        perror("Error opening file for reading");
         return -1;
     }
 
-    FILE *mine_file = fopen("mine.txt", "w");
+    FILE *mine_file = fopen(OUTPUT_FILENAME, "w");
     if (mine_file == NULL) {
-        perror("Error opening mine.txt for writing");
+        perror("Error opening file for writing");
         fclose(input_file);
         return -1;
     }
 
-    printf("Processing input.txt:\n");
+    printf("Processing %s:\n", INPUT_FILENAME);
     int number_from_input;
     while (fscanf(input_file, "%d", &number_from_input) == 1) {
         int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1; // (n-1)^2
@@ -28,7 +31,7 @@ int process_input_file(void) {
         printf("  Input: %d, Calculated: %d\n", number_from_input, calculated_value);
 
         if (fprintf(mine_file, "%d\n", calculated_value) < 0) {
-            perror("Error writing to mine.txt");
+            perror("Error writing to file");
             fclose(input_file);
             fclose(mine_file);
             return -1;
@@ -36,7 +39,7 @@ int process_input_file(void) {
     }
 
     if (ferror(input_file)) {
-        perror("Error reading from input.txt");
+        perror("Error reading from file");
         fclose(input_file);
         fclose(mine_file);
         return -1;
@@ -48,39 +51,39 @@ int process_input_file(void) {
 }
 
 int verify_files(void) {
-    FILE *output_file = fopen("output.txt", "r");
+    FILE *output_file = fopen(INPUT_FILENAME, "r");
     if (output_file == NULL) {
-        perror("Error opening output.txt for reading (reference file)");
+        perror("Error opening file for reading (reference file)");
         return -1;
     }
 
-    FILE *mine_file_read = fopen("mine.txt", "r");
+    FILE *mine_file_read = fopen(OUTPUT_FILENAME, "r");
     if (mine_file_read == NULL) {
-        perror("Error opening mine.txt for reading (for comparison)");
+        perror("Error opening filefor reading (for comparison)");
         fclose(output_file);
         return -1;
     }
 
-    printf("\nVerifying mine.txt against output.txt:\n");
+    printf("\nVerifying %s against %s:\n", OUTPUT_FILENAME, INPUT_FILENAME);
     int val_output, val_mine;
     int comparison_result = 0;
 
     while (fscanf(output_file, "%d", &val_output) == 1) {
         if (fscanf(mine_file_read, "%d", &val_mine) != 1) {
-            fprintf(stderr, "  ERROR: Mismatch in number of entries. output.txt has more values than mine.txt.\n");
+            fprintf(stderr, "  ERROR: Mismatch in number of entries. Input file has more values than output file.\n");
             comparison_result = -1;
             break;
         }
 
         if (val_output != val_mine) {
-            fprintf(stderr, "  ERROR: Mismatch found. output.txt has %d, mine.txt has %d.\n", val_output, val_mine);
+            fprintf(stderr, "  ERROR: Mismatch found. Input file has %d, output file has %d.\n", val_output, val_mine);
             comparison_result = -1;
             break;
         }
     }
 
     if (comparison_result == 0 && fscanf(mine_file_read, "%d", &val_mine) == 1) {
-        fprintf(stderr, "  ERROR: Mismatch in number of entries. mine.txt has more values than output.txt.\n");
+        fprintf(stderr, "  ERROR: Mismatch in number of entries. output file has more values than input file.\n");
         comparison_result = -1;
     }
 
@@ -96,7 +99,7 @@ int verify_files(void) {
 
 void display_result(int result) {
     if (result == 0) {
-        printf("  ACCEPTED: All values match.\n");
+        printf("  Accepted: All values match.\n");
     } else {
         printf("  ERROR: Verification failed.\n");
     }

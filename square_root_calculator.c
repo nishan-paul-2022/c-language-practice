@@ -8,23 +8,22 @@
 
 int main(void) {
     double number;
-    double result;
+    double sqrt_result;
 
-    while (1) { // Infinite loop, broken by explicit return
+    while (1) {
         printf("Enter a non-negative number (or Ctrl+D to exit): ");
         if (scanf("%lf", &number) != 1) {
-            // Handle end-of-file or invalid input
             printf("\nExiting program.\n");
             break;
         }
 
         if (number < 0) {
-            printf("Error: Cannot calculate square root of a negative number. Please try again.\n\n");
-            continue; // Ask for input again
+            printf("Error: Cannot calculate square root of a negative number.\n\n");
+            continue;
         }
 
-        result = sqrt(number);
-        printf("The square root of %.2lf is %.4lf\n\n", number, result);
+        sqrt_result = sqrt(number);
+        printf("Square root of %.2lf is %.4lf\n\n", number, sqrt_result);
     }
 
     return 0;

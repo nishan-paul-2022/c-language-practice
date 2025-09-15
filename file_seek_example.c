@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define FILENAME "FH fseek.txt"
+#define FILENAME "files/24-input.txt"
 #define STRING_SIZE 100
 #define FORMATTED_SIZE 256
 

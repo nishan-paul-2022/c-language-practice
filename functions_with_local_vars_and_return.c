@@ -11,10 +11,10 @@ typedef struct {
     double difference;
     double product;
     double division;
-} calculation_results;
+} CalculationResults;
 
-calculation_results perform_arithmetic_operations(double num1, double num2) {
-    calculation_results results;
+CalculationResults perform_arithmetic_operations(double num1, double num2) {
+    CalculationResults results;
 
     results.sum = num1 + num2;
     results.difference = num1 - num2;
@@ -40,7 +40,7 @@ int get_user_input(double *value1, double *value2) {
     return 0;
 }
 
-void print_results(calculation_results results, double divisor) {
+void print_results(CalculationResults results, double divisor) {
     printf("Sum: %.2lf\n", results.sum);
     printf("Difference: %.2lf\n", results.difference);
     printf("Product: %.2lf\n", results.product);
@@ -55,8 +55,8 @@ int main(void) {
     double value1, value2;
     
     if (get_user_input(&value1, &value2) == 0) {
-        calculation_results calculation_results = perform_arithmetic_operations(value1, value2);
-        print_results(calculation_results, value2);
+        CalculationResults results = perform_arithmetic_operations(value1, value2);
+        print_results(results, value2);
     }
 
     return 0;

@@ -5,35 +5,49 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int num_test_cases; // Number of test cases
-    int case_num;       // Current test case number
+long long read_target_sum(void) {
+    printf("Enter target sum: ");
+    long long n;
+    if (scanf("%lld", &n) != 1) {
+        printf("Invalid input.\n");
+        return -1;
+    }
+    return n;
+}
 
-    // Read the number of test cases
-    scanf("%d", &num_test_cases);
-
-    // Process each test case
-    for (case_num = 1; case_num <= num_test_cases; case_num++) {
-        long long int target_sum;       // The target sum to reach or exceed
-        long long int current_number = 1; // The number being added in the current iteration (starts from 1)
-        long long int cumulative_sum = 0; // The running sum of numbers
-
-        // Read the target sum
-        scanf("%lld", &target_sum);
-
-        // Find the smallest 'k' (represented by current_number) such that the sum 1+2+...+k >= target_sum
-        while (cumulative_sum < target_sum) {
-            cumulative_sum += current_number;
-            // If the cumulative sum has now met or exceeded the target, we stop.
-            // The 'current_number' at this point is the 'k' we are looking for.
-            if (cumulative_sum >= target_sum) {
-                break;
-            }
-            current_number++;
+long long find_smallest_k(long long target) {
+    long long sum = 0;
+    long long k = 1;
+    while (sum < target) {
+        sum += k;
+        if (sum >= target) {
+            break;
         }
+        k++;
+    }
+    return k;
+}
 
-        // Print the result for the current test case
-        printf("%lld\n", current_number);
+long long process_test_case(void) {
+    long long target = read_target_sum();
+    if (target < 0) {
+        return -1;
+    }
+    long long k = find_smallest_k(target);
+    printf("Smallest k: %lld\n", k);
+    return k;
+}
+
+int main(void) {
+    printf("Enter number of test cases: ");
+    int num_cases;
+    if (scanf("%d", &num_cases) != 1 || num_cases < 1) {
+        return 0;
+    }
+
+    for (int i = 0; i < num_cases; i++) {
+        printf("\nTest case %d: \n", i + 1);
+        process_test_case();
     }
 
     return 0;

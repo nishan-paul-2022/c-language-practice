@@ -52,7 +52,7 @@ void display_file_size(const char *filename, long int size) {
 }
 
 int main(void) {
-    const char *filename = "lab6.txt";
+    const char *filename = "files/17-input.txt";
     long int file_size;
 
     if (create_sample_file(filename)) {

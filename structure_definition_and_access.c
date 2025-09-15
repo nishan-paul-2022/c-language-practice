@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates the definition and usage of a structure in C, including initializing and accessing its members.
+ * Purpose: Demonstrates the definition and usage of a structure in C, including initializing and accessing its members using function-based approach.
  * Topic: Structures
  */
 
@@ -7,25 +7,34 @@
 #include <string.h>
 
 // Define a structure to hold different data types
-struct example_structure {
-    int integer_value;      // An integer member
-    double double_value;    // A double-precision floating-point member
-    char string_value[100]; // A character array (string) member
-};
+typedef struct {
+    int integer_value;
+    double double_value;
+    char string_value[100];
+} ExampleStructure;
+
+// Function to initialize a structure
+void initialize_structure(ExampleStructure *s, int int_val, double dbl_val, const char *str_val) {
+    s->integer_value = int_val;
+    s->double_value = dbl_val;
+    strcpy(s->string_value, str_val);
+}
+
+// Function to print a structure's members
+void print_structure(const ExampleStructure *s) {
+    printf("Integer: %d\n", s->integer_value);
+    printf("Double: %.2lf\n", s->double_value);
+    printf("String: %s\n", s->string_value);
+}
 
 int main(void) {
-    // Declare an instance of the structure
-    struct example_structure my_struct;
+    ExampleStructure my_struct;
 
-    // Initialize the structure members
-    my_struct.integer_value = 1;
-    my_struct.double_value = 3.1416;
-    strcpy(my_struct.string_value, "string"); // Use strcpy for string assignment
+    // Initialize structure
+    initialize_structure(&my_struct, 1, 3.1416, "string");
 
-    // Print the structure members
-    printf("Integer: %d\n", my_struct.integer_value);
-    printf("Double: %.2lf\n", my_struct.double_value);
-    printf("String: %s\n", my_struct.string_value);
+    // Print structure members
+    print_structure(&my_struct);
 
     return 0;
 }

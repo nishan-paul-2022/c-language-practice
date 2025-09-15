@@ -6,80 +6,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define a self-referential structure
 typedef struct Node {
-    int data_int;         // An integer data member
-    char data_char;       // A character data member
-    float data_float;     // A float data member
-    struct Node *next;    // A pointer to the next node in the list
+    int data_int;
+    char data_char;
+    float data_float;
+    struct Node *next;
 } Node;
 
-// Function to print the data of each node in the linked list
-void print_list(Node *head) {
-    Node *current = head; // Start from the head of the list
-
+void print_linked_list(Node *head) {
+    Node *current_node = head;
     printf("Linked List Contents:\n");
-    // Traverse the list until the current pointer is NULL (end of the list)
-    while (current != NULL) {
-        printf("  Int: %d, Float: %.2f, Char: %c\n",
-               current->data_int, current->data_float, current->data_char);
-        current = current->next; // Move to the next node
+    while (current_node != NULL) {
+        printf("  Int: %d, Float: %.2f, Char: %c\n", current_node->data_int, current_node->data_float, current_node->data_char);
+        current_node = current_node->next;
     }
     printf("End of List.\n");
 }
 
-// Function to free the memory allocated for the linked list
-void free_list(Node *head) {
-    Node *current = head;
+void free_linked_list(Node *head) {
+    Node *current_node = head;
     Node *next_node;
-
-    while (current != NULL) {
-        next_node = current->next; // Save the next node's address
-        free(current);              // Free the current node
-        current = next_node;        // Move to the next node
+    while (current_node != NULL) {
+        next_node = current_node->next;
+        free(current_node);
+        current_node = next_node;
     }
 }
 
 int main(void) {
-    Node *head = NULL; // Initialize the head of the list to NULL
-    Node *current = NULL;
+    Node *head_node = NULL;
+    Node *current_node = NULL;
 
-    // Create the first node
-    head = (Node *)malloc(sizeof(Node));
-    if (head == NULL) {
+    head_node = (Node *)malloc(sizeof(Node));
+    if (head_node == NULL) {
         fprintf(stderr, "Memory allocation failed for head node.\n");
         return 0;
     }
-    head->data_int = 10;
-    head->data_float = 1.14f;
-    head->data_char = 'A';
-    head->next = NULL; // Initially, the next pointer is NULL
-    current = head;
+    head_node->data_int = 10;
+    head_node->data_float = 1.14f;
+    head_node->data_char = 'A';
+    head_node->next = NULL;
+    current_node = head_node;
 
-    // Create and link subsequent nodes
     for (int i = 2; i <= 10; i++) {
         Node *new_node = (Node *)malloc(sizeof(Node));
         if (new_node == NULL) {
             fprintf(stderr, "Memory allocation failed for node %d.\n", i);
-            // Clean up already allocated memory before exiting
-            free_list(head);
+            free_linked_list(head_node);
             return 0;
         }
         new_node->data_int = i * 10;
         new_node->data_float = (float)i + 0.14f;
-        // Assign characters 'A' through 'J' (or wrap around if needed)
         new_node->data_char = 'A' + (i - 1);
-        new_node->next = NULL; // Set next to NULL for the last node
+        new_node->next = NULL;
 
-        current->next = new_node; // Link the previous node to the new node
-        current = new_node;       // Move current to the new node
+        current_node->next = new_node;
+        current_node = new_node;
     }
 
-    // Print the contents of the linked list
-    print_list(head);
-
-    // Free the allocated memory to prevent memory leaks
-    free_list(head);
+    print_linked_list(head_node);
+    free_linked_list(head_node);
 
     return 0;
 }

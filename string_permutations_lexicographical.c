@@ -7,27 +7,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Function to compare two characters for qsort. */
-int compare(const void *a, const void * b) {
-    return ( *(char *)a - *(char *)b );
+int compare_chars(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b); // Compare two chars
 }
 
-// A utility function to swap two characters a and b
-void swap(char* a, char* b) {
-    char t = *a;
+void swap_chars(char *a, char *b) {
+    char temp = *a;
     *a = *b;
-    *b = t;
+    *b = temp;
 }
 
-// This function finds the index of the smallest character
-// which is greater than 'first' and is present in str[l..h]
-int find_ceil(char str[], char first, int l, int h) {
-    // Initialize index of ceiling element
-    int ceil_index = l;
-
-    // Iterate through the rest of the elements and find
-    // the smallest character greater than 'first'
-    for (int i = l + 1; i <= h; i++) {
+int find_ceil_index(char str[], char first, int left, int right) {
+    int ceil_index = left;
+    for (int i = left + 1; i <= right; i++) {
         if (str[i] > first && str[i] < str[ceil_index]) {
             ceil_index = i;
         }
@@ -35,64 +27,41 @@ int find_ceil(char str[], char first, int l, int h) {
     return ceil_index;
 }
 
-// Function to generate and print all permutations of str in sorted order
-void generate_sorted_permutations(char str[]) {
-    // Get size of string
+void generate_lex_permutations(char str[]) {
     int size = strlen(str);
+    qsort(str, size, sizeof(str[0]), compare_chars);
 
-    // Sort the string in increasing order to start with the lexicographically smallest permutation
-    qsort(str, size, sizeof(str[0]), compare);
+    int finished = 0;
+    int count = 1;
 
-    // Print permutations one by one
-    int is_finished = 0;
-    while (!is_finished) {
-        // Print the current permutation
-        static int permutation_count = 1;
-        printf("%5d  %s \n", permutation_count++, str);
+    while (!finished) {
+        printf("%5d  %s\n", count++, str);
 
-        // Find the rightmost character which is smaller than its next character.
-        // Let us call it 'pivot character'.
         int i;
-        for (i = size - 2; i >= 0; --i) {
-            if (str[i] < str[i+1]) {
+        for (i = size - 2; i >= 0; i--) {
+            if (str[i] < str[i + 1]) {
                 break;
             }
         }
 
-        // If no such character is found, all characters are sorted in decreasing order,
-        // meaning we have printed the last permutation.
         if (i == -1) {
-            is_finished = 1;
+            finished = 1;
         } else {
-            // Find the smallest character to the right of the pivot character
-            // that is greater than the pivot character.
-            int ceil_index = find_ceil(str, str[i], i + 1, size - 1);
-
-            // Swap the pivot character with the found character
-            swap(&str[i], &str[ceil_index]);
-
-            // Sort the substring to the right of the pivot character in ascending order
-            // to get the lexicographically next permutation.
-            qsort(str + i + 1, size - i - 1, sizeof(str[0]), compare);
+            int ceil_index = find_ceil_index(str, str[i], i + 1, size - 1);
+            swap_chars(&str[i], &str[ceil_index]);
+            qsort(str + i + 1, size - i - 1, sizeof(str[0]), compare_chars);
         }
     }
 }
 
-// Driver program to test above function
 int main(void) {
-    char input_string[100]; // Buffer to store user input
+    char input_string[100];
 
     printf("Enter a string: ");
-    // Use fgets for safe input to prevent buffer overflows
     if (fgets(input_string, sizeof(input_string), stdin) != NULL) {
-        // Remove the trailing newline character if fgets read one
-        char *newline = strchr(input_string, '\n');
-        if (newline != NULL) {
-            *newline = '\0';
-        }
-
-        printf("Permutations of the string \"%s\" are:\n", input_string);
-        generate_sorted_permutations(input_string);
+        input_string[strcspn(input_string, "\n")] = 0; // Remove newline
+        printf("Permutations of \"%s\":\n", input_string);
+        generate_lex_permutations(input_string);
     } else {
         printf("Error reading input.\n");
         return 0;

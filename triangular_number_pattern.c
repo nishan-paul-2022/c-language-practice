@@ -5,46 +5,40 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int input_limit;
-    int row;
-    int column;
-    int current_number = 0; // Counter for sequential numbers, starting from 0 to be incremented first.
-    int total_sum = 0;      // Accumulator for the sum of printed numbers.
-
-    // Prompt the user for input and validate it.
-    printf("Enter a positive integer (determines the number of rows in the pattern): ");
-    if (scanf("%d", &input_limit) != 1) {
-        printf("Invalid input. Please enter an integer.\n");
-        return 0;
+int read_positive_integer(const char *prompt) {
+    int n;
+    printf("%s", prompt);
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+        return -1;
     }
+    return n;
+}
 
-    // Ensure the input is positive.
-    if (input_limit <= 0) {
-        printf("Input must be a positive integer.\n");
-        return 0;
-    }
+int print_triangular_pattern_and_sum(int rows) {
+    int current = 0;
+    int total_sum = 0;
 
     printf("Triangular number pattern:\n");
-
-    // Outer loop controls the number of rows.
-    for (row = 1; row <= input_limit; row++) {
-        // Inner loop controls the number of elements in each row.
-        // Each row 'row' has 'row' number of elements.
-        for (column = 1; column <= row; column++) {
-            // Increment the counter to get the next sequential number.
-            current_number++;
-            // Print the current number followed by a space.
-            printf("%d ", current_number);
-            // Add the current number to the total sum.
-            total_sum += current_number;
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            current++;
+            printf("%d ", current);
+            total_sum += current;
         }
-        // After printing all numbers in a row, move to the next line.
         printf("\n");
     }
+    return total_sum;
+}
 
-    // Print the total sum of all numbers printed in the pattern.
-    printf("Sum of all numbers in the pattern: %d\n", total_sum);
+int main(void) {
+    int rows = read_positive_integer("Enter a positive integer (determines the number of rows in the pattern): ");
+    if (rows == -1) {
+        return 0;
+    }
+
+    int total = print_triangular_pattern_and_sum(rows);
+    printf("\nSum of all numbers in the pattern: %d\n", total);
 
     return 0;
 }

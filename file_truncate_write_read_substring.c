@@ -9,7 +9,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "FH_advanced_mode.txt"
+#define FILENAME "files/27-input.txt"
 
 void write_to_file(const char *filename, const char *content) {
     FILE *file = fopen(filename, "w+");

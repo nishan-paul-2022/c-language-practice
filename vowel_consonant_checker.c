@@ -1,33 +1,43 @@
 /*
- * Purpose: Reads a single character and determines if it is a lowercase vowel or a consonant.
- * Topic: Character Handling, Conditional Statements, Logical Operators
+ * Purpose: Reads a single character and determines if it is a vowel or consonant.
+ * Topic: Character Handling, Conditional Statements, Functions
  */
 
 #include <stdio.h>
 #include <ctype.h>
 
-int main(void) {
-    char input_char; // Variable to store the character input by the user
+// Function to check if a character is a vowel (a, e, i, o, u)
+int is_vowel(char ch) {
+    ch = tolower(ch); // Convert to lowercase for uniform check
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
 
-    // Prompt user for input
-    printf("Enter a single alphabet character: ");
-    input_char = getchar(); // Read a single character from standard input
+// Function to check if a character is a lowercase or uppercase alphabet
+int is_alphabet(char ch) {
+    return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
+}
 
-    // Convert the character to lowercase to simplify the check
-    input_char = tolower(input_char);
-
-    // Check if the character is a lowercase vowel
-    if (input_char == 'a' || input_char == 'e' || input_char == 'i' || input_char == 'o' || input_char == 'u') {
-        printf("Vowel\n");
-    }
-    // Check if it's a lowercase alphabet and not a vowel, then it's a consonant
-    else if (input_char >= 'a' && input_char <= 'z') {
-        printf("Consonant\n");
-    }
-    // If it's not an alphabet, print an appropriate message
-    else {
+// Function to classify and print the character type
+void classify_character(char ch) {
+    if (!is_alphabet(ch)) {
         printf("Not an alphabet character.\n");
+    } else if (is_vowel(ch)) {
+        printf("%c is a vowel\n", ch);
+    } else {
+        printf("%c is a consonant\n", ch);
     }
+}
+
+int main(void) {
+    char input_char;
+
+    printf("Enter a single alphabet character: ");
+    if (scanf(" %c", &input_char) != 1) {
+        printf("[ERROR] Invalid input.\n");
+        return 0;
+    }
+
+    classify_character(input_char);
 
     return 0;
 }

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct Record {
+typedef struct {
     long int id;
     char name[100];
     float value;

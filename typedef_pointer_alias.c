@@ -5,27 +5,26 @@
 
 #include <stdio.h>
 
+typedef char* str_ptr;
+
+str_ptr create_string(const char *literal) {
+    return (str_ptr)literal;
+}
+
+void print_string(str_ptr str) {
+    puts(str);
+}
+
 int main(void) {
-    // Define 'p' as a type alias for 'char*' (pointer to character)
-    // This makes it easier to declare multiple character pointers.
-    typedef char* pointer_to_string;
+    str_ptr s1 = create_string("University of ");
+    str_ptr s2 = create_string("California, ");
+    str_ptr s3 = create_string("Berkeley ");
+    str_ptr s4 = create_string("(BAIR)");
 
-    // Declare variables using the typedef alias
-    pointer_to_string str_ptr1;
-    pointer_to_string str_ptr2;
-    pointer_to_string str_ptr3;
-
-    // Assign string literals to the pointers.
-    // String literals are stored in read-only memory, and their addresses are assigned to the pointers.
-    str_ptr1 = "nishan ";
-    str_ptr2 = "paul ";
-    str_ptr3 = "cse";
-
-    // Print the first string literal using puts()
-    puts(str_ptr1);
-    // Optionally print the other strings as well
-    puts(str_ptr2);
-    puts(str_ptr3);
+    printf("%s\n", s1);
+    printf("%s\n", s2);
+    puts(s3);
+    puts(s4);
 
     return 0;
 }

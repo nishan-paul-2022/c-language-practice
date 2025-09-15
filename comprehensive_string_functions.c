@@ -13,7 +13,9 @@
 
 // Reverse a string in place
 char* custom_strrev(char* str) {
-    if (!str) return NULL;
+    if (!str) {
+        return NULL;
+    }
     char* start = str;
     char* end = str + strlen(str) - 1;
     char temp;
@@ -29,7 +31,9 @@ char* custom_strrev(char* str) {
 
 // Convert string to uppercase
 char* custom_strupr(char* str) {
-    if (!str) return NULL;
+    if (!str) {
+        return NULL;
+    }
     char* original = str;
     while (*str) {
         *str = toupper((unsigned char)*str);
@@ -40,7 +44,9 @@ char* custom_strupr(char* str) {
 
 // Convert string to lowercase
 char* custom_strlwr(char* str) {
-    if (!str) return NULL;
+    if (!str) {
+        return NULL;
+    }
     char* original = str;
     while (*str) {
         *str = tolower((unsigned char)*str);
@@ -64,7 +70,9 @@ int custom_strcasecmp(const char* s1, const char* s2) {
 
 // Set all characters in string to specified character
 char* custom_strset(char* str, int ch) {
-    if (!str) return NULL;
+    if (!str) {
+        return NULL;
+    }
     char* original = str;
     while (*str) {
         *str = (char)ch;
@@ -75,7 +83,9 @@ char* custom_strset(char* str, int ch) {
 
 // Set first n characters in string to specified character
 char* custom_strnset(char* str, int ch, size_t n) {
-    if (!str) return NULL;
+    if (!str) {
+        return NULL;
+    }
     char* original = str;
     for (size_t i = 0; i < n && *str; i++) {
         *str = (char)ch;

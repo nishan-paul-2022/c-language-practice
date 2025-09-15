@@ -6,8 +6,6 @@
 #include <stdio.h>
 
 int main(void) {
-    // Print a predefined string to the standard output
-    printf("SO, WHAT'S THE PLAY RIGHT NOW ? DON'T KNOW YET, BRO.\n");
-
+    printf("A peomise was once made, that promise will be kept.\n");
     return 0;
 }

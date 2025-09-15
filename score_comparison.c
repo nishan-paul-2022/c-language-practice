@@ -7,30 +7,30 @@
 
 int main(void) {
     int num_test_cases; // Number of test cases
-    int i;
 
     // Read the number of test cases
-    scanf("%d", &num_test_cases);
+    if (scanf("%d", &num_test_cases) != 1 || num_test_cases <= 0) {
+        printf("Invalid input for number of test cases.\n");
+        return 0;
+    }
 
     // Process each test case
-    for (i = 0; i < num_test_cases; i++) {
-        int team1_score_part1, team1_score_part2, team1_score_part3, team1_score_part4;
-        int team2_score_part1, team2_score_part2, team2_score_part3, team2_score_part4;
+    for (int i = 0; i < num_test_cases; i++) {
+        int t1p1, t1p2, t1p3, t1p4;
+        int t2p1, t2p2, t2p3, t2p4;
 
-        // Read scores for Team 1 (or first entity)
-        scanf("%d %d %d %d", &team1_score_part1, &team1_score_part2, &team1_score_part3, &team1_score_part4);
-        // Read scores for Team 2 (or second entity)
-        scanf("%d %d %d %d", &team2_score_part1, &team2_score_part2, &team2_score_part3, &team2_score_part4);
+        // Read scores for both teams
+        if (scanf("%d %d %d %d", &t1p1, &t1p2, &t1p3, &t1p4) != 4 ||
+            scanf("%d %d %d %d", &t2p1, &t2p2, &t2p3, &t2p4) != 4) {
+            printf("Invalid input for team scores.\n");
+            return 0;
+        }
 
-        // Check the combined condition
-        // Assuming (part1 + part2) represents one aspect of performance
-        // and (part3 + part4) represents another.
-        // The condition checks if the first aspect is greater than the second for both teams.
-        if ((team1_score_part1 + team1_score_part2 > team1_score_part3 + team1_score_part4) &&
-            (team2_score_part1 + team2_score_part2 > team2_score_part3 + team2_score_part4)) {
-            printf("Banglawash\n"); // Output for a specific winning condition
+        // Check condition and print result
+        if ((t1p1 + t1p2 > t1p3 + t1p4) && (t2p1 + t2p2 > t2p3 + t2p4)) {
+            printf("Banglawash\n");
         } else {
-            printf("Miss\n"); // Output for other conditions
+            printf("Miss\n");
         }
     }
 

@@ -1,6 +1,6 @@
 /*
  * Purpose: Reads data of different types (char, string, int, float) from an input file
- *          ('a.txt') and writes them to an output file ('new.txt') with tab separation.
+ *          ('files/05-input.txt') and writes them to an output file ('files/05-output.txt') with tab separation.
  * Topic: File I/O, Data Type Handling
  */
 
