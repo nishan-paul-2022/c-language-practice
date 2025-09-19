@@ -2,6 +2,7 @@
  * Purpose: Demonstrates adding two hexadecimal numbers and printing the sum in octal format.
  * Topic: Number Bases (Hexadecimal, Octal), printf Formatting
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 

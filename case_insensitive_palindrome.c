@@ -1,3 +1,8 @@
+/*
+ * Purpose: Checks if strings are palindromes in a case-insensitive manner.
+ * Topic: String manipulation and palindrome checking
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

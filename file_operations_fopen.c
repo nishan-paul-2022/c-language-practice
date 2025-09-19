@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates basic file opening, writing, and closing operations in C.
+ * Purpose: Demonstrates basic file opening, writing, and closing operations.
  * Topic: File I/O (fopen, fprintf, fclose)
  */
 

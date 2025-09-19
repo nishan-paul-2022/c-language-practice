@@ -1,3 +1,8 @@
+/*
+ * Purpose: Demonstrates the use of carriage return (\r) for text manipulation.
+ * Topic: Text formatting and console output control
+*/
+
 #include <stdio.h>
 #include <unistd.h>
 

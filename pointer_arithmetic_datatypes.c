@@ -1,6 +1,5 @@
 /*
- * Purpose: Demonstrates pointer arithmetic with various data types, showing how incrementing
- * a pointer moves it forward by the size of its base type.
+ * Purpose: Demonstrates pointer arithmetic with various data types, showing how incrementing a pointer moves it forward by the size of its base type.
  * Topic: Pointers, Pointer Arithmetic, Data Types, Memory Addresses
  */
 

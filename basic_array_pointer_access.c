@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates basic array input and access using pointers in C.
+ * Purpose: Demonstrates basic array input and access using pointers.
  * Topic: Pointers, Arrays
  */
 

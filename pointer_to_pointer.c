@@ -1,6 +1,5 @@
 /*
- * Purpose: Demonstrates the concept of a pointer to a pointer (double pointer)
- * and how to access the original variable's value through it.
+ * Purpose: Demonstrates the concept of a pointer to a pointer (double pointer) and how to access the original variable's value through it.
  * Topic: Pointers to Pointers, Double Pointers, Dereferencing
  */
 

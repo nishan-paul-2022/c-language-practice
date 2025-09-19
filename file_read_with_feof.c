@@ -1,6 +1,5 @@
 /*
- * Purpose: Reads and prints a file line by line, demonstrating the use of feof()
- *          to detect the end of the file.
+ * Purpose: Reads and prints a file line by line, demonstrating the use of feof() to detect the end of the file.
  * Topic: File I/O, End-of-File Handling
  */
 

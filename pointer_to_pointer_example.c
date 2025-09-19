@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates the concept of a pointer to a pointer in C.
+ * Purpose: Demonstrates the concept of a pointer to a pointer.
  * Topic: Pointers, Pointer to Pointer
  */
 

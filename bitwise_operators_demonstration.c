@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates the use of various bitwise operators in C.
+ * Purpose: Demonstrates the use of various bitwise operators.
  * Topic: Bitwise Operators
  */
 

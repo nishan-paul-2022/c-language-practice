@@ -1,7 +1,7 @@
 /*
  * Purpose: Illustrates pointer assignment, dereferencing to read, and dereferencing to write,
- * showing how changes through a pointer affect the original variable and how a previously
- * copied value remains unchanged.
+ *          showing how changes through a pointer affect the original variable and how a previously
+ *          copied value remains unchanged.
  * Topic: Pointers, Dereferencing, Variable Assignment, Value Copying
  */
 

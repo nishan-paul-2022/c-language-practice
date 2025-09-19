@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates various ways of passing strings to functions in C.
+ * Purpose: Demonstrates various ways of passing strings to functions.
  * Topic: Functions, Strings, Arrays, Pointers, String Manipulation
  */
 

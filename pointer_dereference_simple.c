@@ -1,6 +1,5 @@
 /*
- * Purpose: Demonstrates the basic concept of dereferencing a pointer to access the value
- * of the variable it points to.
+ * Purpose: Demonstrates the basic concept of dereferencing a pointer to access the value of the variable it points to.
  * Topic: Pointers, Dereferencing, Variable Access
  */
 

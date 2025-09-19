@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates definition and usage of simple macro in C.
+ * Purpose: Demonstrates definition and usage of simple macro.
  * Topic: Preprocessor Directives, Macros
  */
 

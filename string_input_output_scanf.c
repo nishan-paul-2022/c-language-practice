@@ -1,6 +1,6 @@
 /*
  * Purpose: Demonstrates string input using scanf with different format specifiers.
- * Topic: scanf string input, format specifiers
+ * Topic: Formatted String Input with scanf() and Format Specifiers
  */
 
 #include <stdio.h>

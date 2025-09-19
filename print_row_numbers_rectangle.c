@@ -1,3 +1,8 @@
+/*
+ * Purpose: Demonstrates printing a rectangle pattern filled with row numbers using nested loops and input validation.
+ * Topic: Pattern Printing and Nested Loops
+*/
+
 #include <stdio.h>
 
 // Function to get a positive integer from the user

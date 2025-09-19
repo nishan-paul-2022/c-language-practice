@@ -45,7 +45,7 @@ void print_result(int case_num, int mile_cost, int juice_cost) {
     }
 }
 
-int main() {
+int main(void) {
     int test_cases = read_test_cases();
     if (test_cases < 0) {
         printf("Invalid test case count\n");

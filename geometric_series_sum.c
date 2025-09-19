@@ -1,10 +1,11 @@
-#include <stdio.h>
-#include <math.h>
-
 /*
  * Purpose: Calculates the sum of a geometric series (x^0 + x^1 + ... + x^n).
  * Topic: Series Summation, Loops, Math Functions, Input/Output
  */
+
+
+#include <stdio.h>
+#include <math.h>
 
 double calculate_series_sum(double base_x, int exponent_n) {
     double sum_of_powers = 0.0;

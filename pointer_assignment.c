@@ -1,6 +1,5 @@
 /*
- * Purpose: Demonstrates how assigning one pointer to another changes the target of the first pointer,
- * and how this affects the values accessed through it.
+ * Purpose: Demonstrates how assigning one pointer to another changes the target of the first pointer, and how this affects the values accessed through it.
  * Topic: Pointers, Pointer Assignment, Pointer Manipulation
  */
 

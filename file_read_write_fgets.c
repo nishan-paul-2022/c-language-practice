@@ -1,6 +1,5 @@
 /*
- * Purpose: Demonstrates reading a string from user input, writing it to a file,
- *          and then reading it back from the file using fgets.
+ * Purpose: Demonstrates reading a string from user input, writing it to a file, and then reading it back from the file using fgets.
  * Topic: File I/O (fopen, fputs, fgets, fclose)
  */
 

@@ -29,7 +29,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`average_until_sentinel.c`](average_until_sentinel.c): Reads a sequence of double values until a sentinel value is entered, then calculates and prints the average.
 *   [`bank_account_calculation.c`](bank_account_calculation.c): Calculates a final amount based on an initial account type and an input value, applying different base amounts and a percentage increase, then applies discounts based on the final amount.
 *   [`basic_arithmetic_functions.c`](basic_arithmetic_functions.c): Demonstrates basic arithmetic operations (addition and subtraction) using functions.
-*   [`basic_array_pointer_access.c`](basic_array_pointer_access.c): Demonstrates basic array input and access using pointers in C.
+*   [`basic_array_pointer_access.c`](basic_array_pointer_access.c): Demonstrates basic array input and access using pointers.
 *   [`basic_math_operations.c`](basic_math_operations.c): Performs various basic math operations based on user choice using a menu-driven approach.
 *   [`basic_pointer_dereference.c`](basic_pointer_dereference.c): Demonstrates basic pointer declaration and dereferencing.
 *   [`big_bang_theory_queue.c`](big_bang_theory_queue.c): Solves a problem where a sequence of names repeats with doubling frequency.
@@ -37,7 +37,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`binary_search_array.c`](binary_search_array.c): Implements binary search to find a target element in a sorted array and prints its 1-based index.
 *   [`binary_to_decimal_converter.c`](binary_to_decimal_converter.c): Converts a binary string to its decimal equivalent.
 *   [`binomial_coefficient_calculator.c`](binomial_coefficient_calculator.c): Calculates and prints binomial coefficients (nCr) for a given n and r.
-*   [`bitwise_operators_demonstration.c`](bitwise_operators_demonstration.c): Demonstrates the use of various bitwise operators in C.
+*   [`bitwise_operators_demonstration.c`](bitwise_operators_demonstration.c): Demonstrates the use of various bitwise operators.
 *   [`bubble_sort_and_binary_search.c`](bubble_sort_and_binary_search.c): Demonstrates bubble sort to sort an array and then binary search to find an element in the sorted array.
 *   [`bubble_sort_characters.c`](bubble_sort_characters.c): Demonstrates sorting an array of characters using the Bubble Sort algorithm.
 *   [`bubble_sort_integers.c`](bubble_sort_integers.c): Demonstrates sorting an array of integers using the Bubble Sort algorithm.
@@ -190,7 +190,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`least_common_multiple.c`](least_common_multiple.c): Calculates the Least Common Multiple (LCM) of two integers.
 *   [`linear_equation_formatter.c`](linear_equation_formatter.c): Reads three integer coefficients and formats them into a linear equation.
 *   [`log_base_2_ceiling.c`](log_base_2_ceiling.c): For each positive integer input, calculates the smallest integer k such that 2^k is greater than the number.
-*   [`logical_and_operator.c`](logical_and_operator.c): Demonstrates the behavior and evaluation of the logical AND (&&) operator in C.
+*   [`logical_and_operator.c`](logical_and_operator.c): Demonstrates the behavior and evaluation of the logical AND (&&) operator.
 *   [`long_double_input_output.c`](long_double_input_output.c): Demonstrates how to read and print a `long double`-precision floating-point number.
 *   [`longest_common_subsequence.c`](longest_common_subsequence.c): Calculates the length of the Longest Common Subsequence (LCS) of two strings using a recursive approach.
 *   [`macro_definition_scope.c`](macro_definition_scope.c): Illustrates the definition and usage of a simple preprocessor macro.
@@ -238,8 +238,8 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`pointer_dereference_simple.c`](pointer_dereference_simple.c): Demonstrates the basic concept of dereferencing a pointer to access the value of the variable it points to.
 *   [`pointer_modify_value.c`](pointer_modify_value.c): Demonstrates how to use a pointer to access and modify the value of a variable.
 *   [`pointer_to_array_element.c`](pointer_to_array_element.c): Demonstrates assigning a pointer to a specific element of an array and dereferencing it.
-*   [`pointer_to_pointer_address.c`](pointer_to_pointer_address.c): Demonstrates printing the address of a pointer to a pointer in C.
-*   [`pointer_to_pointer_example.c`](pointer_to_pointer_example.c): Demonstrates the concept of a pointer to a pointer in C.
+*   [`pointer_to_pointer_address.c`](pointer_to_pointer_address.c): Demonstrates printing the address of a pointer to a pointer.
+*   [`pointer_to_pointer_example.c`](pointer_to_pointer_example.c): Demonstrates the concept of a pointer to a pointer.
 *   [`pointer_to_pointer.c`](pointer_to_pointer.c): Demonstrates the concept of a pointer to a pointer (double pointer).
 *   [`pointer_to_string.c`](pointer_to_string.c): Demonstrates how to use a character pointer to point to a string (character array).
 *   [`pointer_to_two_variables.c`](pointer_to_two_variables.c): Demonstrates using two pointers to manage and modify two separate integer variables.
@@ -295,7 +295,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`salary_calculator.c`](salary_calculator.c): Calculates an employee's salary based on hours worked, applying different rates for standard and overtime hours.
 *   [`scientific_notation_2.c`](scientific_notation_2.c): To demonstrate printing a number in scientific notation.
 *   [`scientific_notation.c`](scientific_notation.c): To demonstrate printing a floating-point number in scientific notation.
-*   [`scope_of_variables.c`](scope_of_variables.c): Demonstrates the difference between local and global variables in C.
+*   [`scope_of_variables.c`](scope_of_variables.c): Demonstrates the difference between local and global variables.
 *   [`score_comparison.c`](score_comparison.c): Compares two sets of scores based on specific sum conditions.
 *   [`score_to_grade_if_else.c`](score_to_grade_if_else.c): Converts a numerical score into a letter grade using if-else if statements.
 *   [`score_to_grade.c`](score_to_grade.c): Converts a numerical score into a letter grade based on a predefined scale.
@@ -309,7 +309,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`square_root_calculator.c`](square_root_calculator.c): Calculates the square root of a non-negative number, repeatedly prompting for input.
 *   [`star_pyramid_pattern.c`](star_pyramid_pattern.c): Prints a pyramid pattern using asterisks.
 *   [`static_variable_in_function.c`](static_variable_in_function.c): Demonstrates the behavior of static variables within functions.
-*   [`static_variable_lifetime.c`](static_variable_lifetime.c): Demonstrates the lifetime and behavior of static variables in C functions.
+*   [`static_variable_lifetime.c`](static_variable_lifetime.c): Demonstrates the lifetime and behavior of static variables functions.
 *   [`string_and_char_input_demo.c`](string_and_char_input_demo.c): Demonstrates reading a string and a character using scanf and fgets.
 *   [`string_character_access.c`](string_character_access.c): Demonstrates accessing and printing individual characters of a string.
 *   [`string_comparison.c`](string_comparison.c): Compares two strings lexicographically and prints the result.
@@ -348,7 +348,7 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`string_palindrome_checker.c`](string_palindrome_checker.c): Checks if a given string is a palindrome.
 *   [`string_palindrome_recursive.c`](string_palindrome_recursive.c): Checks if a given string is a palindrome using a recursive function.
 *   [`string_parsing_formatting.c`](string_parsing_formatting.c): Demonstrates parsing strings with `sscanf` and formatting strings with `sprintf`.
-*   [`string_passing_to_function.c`](string_passing_to_function.c): Demonstrates how to pass strings to functions in C.
+*   [`string_passing_to_function.c`](string_passing_to_function.c): Demonstrates how to pass strings to functions.
 *   [`string_permutations.c`](string_permutations.c): Generates and prints all permutations of a string in lexicographical order.
 *   [`string_permutations_lexicographical.c`](string_permutations_lexicographical.c): Generates and prints all permutations of a string in lexicographical order.
 *   [`string_pointer_address.c`](string_pointer_address.c): Demonstrates that an array name can be treated as a pointer to its first element and how to print the string and its starting memory address.
@@ -366,11 +366,11 @@ This document provides a detailed analysis of the C files in this project. The f
 *   [`structure_and_self_reference.c`](structure_and_self_reference.c): Demonstrates the use of structures, pointers to structures, and self-referential structures.
 *   [`structure_array_sort_by_name.c`](structure_array_sort_by_name.c): Demonstrates sorting an array of structures by a string member (name).
 *   [`structure_array_sort_by_roll.c`](structure_array_sort_by_roll.c): Demonstrates sorting an array of structures by an integer member (roll number).
-*   [`structure_definition_and_access.c`](structure_definition_and_access.c): Demonstrates the definition and usage of a structure in C.
+*   [`structure_definition_and_access.c`](structure_definition_and_access.c): Demonstrates the definition and usage of a structure.
 *   [`structure_input_and_assignment.c`](structure_input_and_assignment.c): Demonstrates reading user input into a string and assigning it to a structure member.
 *   [`structure_sizeof.c`](structure_sizeof.c): Demonstrates the use of typedef for creating custom data types and structures, along with the sizeof operator.
 *   [`structure_swap_by_pointer.c`](structure_swap_by_pointer.c): Demonstrates swapping structure members using pointers.
-*   [`structure_union_difference.c`](structure_union_difference.c): Illustrates the fundamental differences between structures (struct) and unions (union) in C.
+*   [`structure_union_difference.c`](structure_union_difference.c): Illustrates the fundamental differences between structures (struct) and unions (union).
 *   [`sum_and_average.c`](sum_and_average.c): To calculate the sum and average of 10 numbers.
 *   [`sum_arithmetic_progression.c`](sum_arithmetic_progression.c): Calculates the sum of an arithmetic progression for multiple test cases.
 *   [`sum_digits.c`](sum_digits.c): Calculates the sum of the digits of a non-negative integer.

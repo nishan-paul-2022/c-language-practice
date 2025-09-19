@@ -1,9 +1,9 @@
-#include <stdio.h>
-
 /*
  * Purpose: Demonstrates reading multiple integers from input, including skipping one.
  * Topic: Input/Output (scanf), Format Specifiers, Variable Declaration
  */
+
+#include <stdio.h>
 
 int readAndCalculateProduct() {
     printf("Enter three integers (e.g., 10 20 30): ");

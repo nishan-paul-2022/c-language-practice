@@ -1,5 +1,5 @@
 /*
- * Purpose: Simple demonstration of sscanf parsing and sprintf formatting
+ * Purpose: Demonstrates examples of sscanf parsing and sprintf formatting.
  * Topic: String parsing and formatting
  */
 
@@ -60,7 +60,7 @@ void demo_combined() {
     printf("Result: %s\n", output);
 }
 
-int main() {
+int main(void) {
     printf("Simple sscanf and sprintf Demo\n");
     printf("==============================\n\n");
     

@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates the difference between local and global variables in C.
+ * Purpose: Demonstrates the difference between local and global variables.
  * Topic: Scope of Variables
  */
 

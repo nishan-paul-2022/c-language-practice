@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrates the definition and usage of a structure in C, including initializing and accessing its members using function-based approach.
+ * Purpose: Demonstrates the definition and usage of a structure, including initializing and accessing its members using function-based approach.
  * Topic: Structures
  */
 

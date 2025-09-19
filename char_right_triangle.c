@@ -1,3 +1,8 @@
+/*
+ * Purpose: Demonstrates printing a right-aligned character triangle pattern with input validation.
+ * Topic: Pattern Printing and Character Manipulation
+ */
+
 #include <stdio.h>
 
 void consume_newline(void) {

@@ -1,3 +1,8 @@
+/*
+ * Purpose: Demonstrates file error handling techniques including perror() and clearerr() functions.
+ * Topic: File I/O Error Handling
+ */
+
 #include <stdio.h>
 
 void demonstrate_perror(void) {

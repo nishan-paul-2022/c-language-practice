@@ -1,6 +1,5 @@
 /*
- * Purpose: Prints a sequence of numbers in a descending order, formatted into a grid.
- * The grid dimensions (start number, columns, total numbers) are specified by the user.
+ * Purpose: Prints a sequence of numbers in a descending order, formatted into a grid. The grid dimensions (start number, columns, total numbers) are specified by the user.
  * Topic: Nested Loops, User Input, Dynamic Grid Generation
  */
 

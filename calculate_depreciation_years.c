@@ -1,3 +1,8 @@
+/*
+ * Purpose: Calculates the time (in years) for an asset to depreciate from initial value to target value using logarithmic depreciation model.
+ * Topic: Financial calculations - Asset depreciation
+*/
+
 #include <stdio.h>
 #include <math.h>
 
