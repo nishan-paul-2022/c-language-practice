@@ -16,7 +16,7 @@ void find_and_print_string_length() {
         return;
     }
 
-    input_string[strcspn(input_string, "\n")] = '\0'; // Remove trailing newline
+    input_string[strcspn(input_string, "\n")] = '\0'; 
 
     printf("String length: %zu\n", strlen(input_string));
 }

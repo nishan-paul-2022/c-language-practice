@@ -5,18 +5,18 @@
 
 #include <stdio.h>
 
-// Function to get a positive integer from the user
+
 int get_positive_integer(const char *prompt) {
     int value;
     printf("%s", prompt);
     if (scanf("%d", &value) != 1 || value <= 0) {
         printf("Invalid input. Please enter a positive integer.\n");
-        return -1; // Error indicator
+        return -1; 
     }
     return value;
 }
 
-// Function to print the rectangle with each cell containing its row number
+
 void print_rectangle_rows(int rows, int cols) {
     for (int row = 1; row <= rows; row++) {
         for (int col = 0; col < cols; col++) {

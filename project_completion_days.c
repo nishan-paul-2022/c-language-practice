@@ -24,7 +24,7 @@ int main(void) {
         } else if (total_work <= total_daily_capacity) {
             printf("Project will finish within 1 day.\n");
         } else {
-            days_needed = (total_work + total_daily_capacity - 1) / total_daily_capacity; // Ceiling division
+            days_needed = (total_work + total_daily_capacity - 1) / total_daily_capacity; 
             printf("Project will finish within %d days.\n", days_needed);
         }
 

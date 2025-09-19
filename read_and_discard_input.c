@@ -8,7 +8,7 @@
 #include <string.h>
 
 int main(void) {
-    char input_buffer[11]; // Buffer: 10 chars + null terminator
+    char input_buffer[11]; 
     char remaning_buffer[11];
     int ch;
 
@@ -16,12 +16,12 @@ int main(void) {
     printf("Input will be read up to '6' (max 10 chars) and the next 6 characters will be discarded.\n");
     printf("Enter string: ");
 
-    // Read up to 10 characters until '6' is encountered
+    
     if (scanf("%10[^6]", input_buffer) != 1) {
-        input_buffer[0] = '\0'; // On failure, assign empty string
+        input_buffer[0] = '\0'; 
     }
 
-    // Show input processing
+    
     printf("\n--- Input Processing Result ---\n");
     printf("Read characters (stopped at '6'): '%s'\n", input_buffer);
     scanf("%10s", remaning_buffer);

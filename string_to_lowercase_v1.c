@@ -30,7 +30,7 @@ int get_input_string(char *input_string, int buffer_size, int max_buffer_size) {
         return -1;
     }
     
-    input_string[strcspn(input_string, "\n")] = 0; // Remove trailing newline
+    input_string[strcspn(input_string, "\n")] = 0; 
     
     return 0;
 }
@@ -49,7 +49,7 @@ int validate_string_length(const char *input_string, int buffer_size) {
 void convert_to_lowercase(char *input_string) {
     for (int char_index = 0; input_string[char_index] != '\0'; char_index++) {
         if (input_string[char_index] >= 'A' && input_string[char_index] <= 'Z') {
-            input_string[char_index] = input_string[char_index] + 32; // ASCII difference between 'a' and 'A'
+            input_string[char_index] = input_string[char_index] + 32; 
         }
     }
 }

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 FILE* open_file(const char *filename) {
-    FILE *fp = fopen(filename, "r"); // Open file in text mode
+    FILE *fp = fopen(filename, "r"); 
     if (fp == NULL) {
         perror("Error opening file");
     }
@@ -18,7 +18,7 @@ int read_single_char(FILE *fp) {
     if (fp == NULL) {
         return EOF;
     }
-    int c = getc(fp); // Read a single character
+    int c = getc(fp); 
     if (c == EOF) {
         if (ferror(fp)) {
             perror("Error reading character");
@@ -31,7 +31,7 @@ int read_single_char(FILE *fp) {
 
 void close_file(FILE *fp) {
     if (fp != NULL) {
-        fclose(fp); // Close file
+        fclose(fp); 
     }
 }
 
@@ -41,7 +41,7 @@ int main(void) {
     int char_read = read_single_char(file_ptr);
     
     if (char_read != EOF) {
-        printf("First character read from file: %c\n", (char)char_read); // Display character
+        printf("First character read from file: %c\n", (char)char_read); 
     }
     
     close_file(file_ptr);

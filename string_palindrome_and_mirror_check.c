@@ -9,20 +9,20 @@
 
 #define MAX_STRING_LEN 10000
 
-// Function to return the mirrored character of a given character
+
 char get_mirrored_char(char c) {
-    // Lookup table for mirror mappings (ASCII indexed)
-    static char mirror_map[128] = {0}; // Initialize once
+    
+    static char mirror_map[128] = {0}; 
     static int initialized = 0;
     
     if (!initialized) {
-        // Self-mirroring characters
+        
         char self_mirror[] = "AHIMOTUVWXY018";
         for (int i = 0; self_mirror[i]; i++) {
             mirror_map[self_mirror[i]] = self_mirror[i];
         }
         
-        // Character pairs
+        
         mirror_map['E'] = '3'; mirror_map['3'] = 'E';
         mirror_map['S'] = '2'; mirror_map['2'] = 'S';
         mirror_map['Z'] = '5'; mirror_map['5'] = 'Z';
@@ -35,34 +35,34 @@ char get_mirrored_char(char c) {
     return mirrored;
 }
 
-// Function to check if a string is a palindrome
+
 int is_palindrome(const char *str) {
     size_t len = strlen(str);
 
     for (size_t i = 0; i < len / 2; i++) {
         if (str[i] != str[len - 1 - i]) {
-            return 0; // Not a palindrome
+            return 0; 
         }
     }
 
-    return 1; // Palindrome
+    return 1; 
 }
 
-// Function to check if a string is a mirrored string
+
 int is_mirrored_string(const char *str) {
     size_t len = strlen(str);
 
     for (size_t i = 0; i <= (len - 1) / 2; i++) {
         char mirrored = get_mirrored_char(str[i]);
         if (mirrored == '\0' || mirrored != str[len - 1 - i]) {
-            return 0; // Not a mirrored string
+            return 0; 
         }
     }
 
-    return 1; // Mirrored string
+    return 1; 
 }
 
-// Function to classify a string and print the result
+
 void classify_string(const char *str) {
     int palindrome = is_palindrome(str);
     int mirrored = is_mirrored_string(str);

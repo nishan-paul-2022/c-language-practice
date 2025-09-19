@@ -16,7 +16,7 @@ int read_double_value(double *value) {
     printf("Enter value: ");
     if (scanf("%lf", value) != 1) {
         fprintf(stderr, "Invalid input. Please enter a valid double value.\n");
-        while (getchar() != '\n'); // Clear input buffer
+        while (getchar() != '\n'); 
         return -1;
     }
     return 0;

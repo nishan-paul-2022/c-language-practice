@@ -15,7 +15,7 @@ void read_input(char str[BUFFER_SIZE]) {
         printf("Error reading input.\n");
         exit(0);
     }
-    str[strcspn(str, "\n")] = 0; // Remove trailing newline
+    str[strcspn(str, "\n")] = 0; 
 }
 
 void print_words(const char str[BUFFER_SIZE]) {
@@ -30,7 +30,7 @@ void print_words(const char str[BUFFER_SIZE]) {
             break;
         }
 
-        // Find end of word
+        
         j = i;
         while (str[j] != ' ' && str[j] != '\0') {
             j++;
@@ -41,7 +41,7 @@ void print_words(const char str[BUFFER_SIZE]) {
         }
         printf("\n");
 
-        i = j; // Move to next word
+        i = j; 
     }
 }
 

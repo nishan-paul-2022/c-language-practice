@@ -17,13 +17,13 @@ int main(void) {
         return 0;
     }
 
-    // Validate inputs: positive initial cost, rate (0,1), positive target ≤ initial cost
+    
     if (initial_cost <= 0 || depreciation_rate <= 0 || depreciation_rate >= 1 || target_value <= 0 || target_value > initial_cost) {
         fprintf(stderr, "Invalid input values for depreciation calculation.\n");
         return 0;
     }
 
-    // Logarithmic depreciation formula
+    
     double years_to_depreciate = log(target_value / initial_cost) / log(1.0 - depreciation_rate);
 
     printf("Years to depreciate from %.2lf to %.2lf at %.2lf%% rate: %lf\n",

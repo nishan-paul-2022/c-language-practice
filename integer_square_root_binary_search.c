@@ -15,7 +15,7 @@ int calculate_integer_sqrt(int number) {
     int result = 0;
 
     while (low <= high) {
-        int mid = low + (high - low) / 2; // Prevents overflow
+        int mid = low + (high - low) / 2; 
 
         if ((long long)mid * mid == number) {
             result = mid;
@@ -23,7 +23,7 @@ int calculate_integer_sqrt(int number) {
         }
 
         if ((long long)mid * mid < number) {
-            result = mid; // Store potential answer
+            result = mid; 
             low = mid + 1;
         } else {
             high = mid - 1;

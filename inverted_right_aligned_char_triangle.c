@@ -14,7 +14,7 @@ int get_input_data(int *num_rows, char *start_char) {
     }
 
     printf("Enter starting character: ");
-    while (getchar() != '\n'); // Consume newline
+    while (getchar() != '\n'); 
     if (scanf("%c", start_char) != 1) {
         fprintf(stderr, "Invalid input for starting character.\n");
         return -1;

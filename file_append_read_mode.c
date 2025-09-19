@@ -51,7 +51,7 @@ void read_and_display_file_content(FILE *file_ptr) {
     printf("File content:\n");
     printf("------------------------\n");
     
-    // Loop through the file, reading and printing each line
+    
     while (fgets(read_buffer, BUFFER_SIZE, file_ptr) != NULL) {
         printf("%s", read_buffer);
     }

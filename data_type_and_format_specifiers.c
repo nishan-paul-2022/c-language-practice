@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-// Demonstrates character data types
+
 void display_char_types() {
     char char_var = 'A';
     signed char signed_char_var = -10;
@@ -17,7 +17,7 @@ void display_char_types() {
     printf("unsigned char: %u\n\n", unsigned_char_var);
 }
 
-// Demonstrates integer data types
+
 void display_integer_types() {
     short int short_int_var = 32767;
     unsigned short int unsigned_short_int_var = 65535;
@@ -39,7 +39,7 @@ void display_integer_types() {
     printf("unsigned long long int: %llu\n\n", unsigned_long_long_int_var);
 }
 
-// Demonstrates floating-point data types
+
 void display_floating_point_types() {
     float float_var = 3.14159f;
     double double_var = 3.141592653589793;

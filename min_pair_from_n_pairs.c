@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-// Read a pair of numbers with error handling
+
 int read_pair(long long int *c, long long int *m, int test_case, int pair_num) {
     if (scanf(" %lld %lld", c, m) != 2) {
         fprintf(stderr, "Error reading input for test case %d, pair %d\n", test_case, pair_num);
@@ -15,7 +15,7 @@ int read_pair(long long int *c, long long int *m, int test_case, int pair_num) {
     return 0;
 }
 
-// Update minimum pair based on lexicographic ordering
+
 void update_minimum_pair(long long int c, long long int m, 
                         long long int *min_c, long long int *min_m_for_min_c) {
     if (c < *min_c) {
@@ -26,7 +26,7 @@ void update_minimum_pair(long long int c, long long int m,
     }
 }
 
-// Process single test case
+
 void process_test_case(int test_case_num) {
     int n;
     printf("Enter number of pairs for test case %d: ", test_case_num);

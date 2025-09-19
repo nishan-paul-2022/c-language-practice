@@ -7,16 +7,16 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_ROWS 100 // Max rows
-#define MAX_COLS 100 // Max columns per string
+#define MAX_ROWS 100 
+#define MAX_COLS 100 
 
 void read_dimensions(int *rows, int *cols) {
-    printf("Enter the number of rows and columns (e.g., 3 4): "); // Prompt user
+    printf("Enter the number of rows and columns (e.g., 3 4): "); 
     if (scanf("%d %d", rows, cols) != 2) {
         fprintf(stderr, "Invalid input for dimensions.\n");
         exit(0);
     }
-    while (getchar() != '\n'); // Clear leftover newline
+    while (getchar() != '\n'); 
 }
 
 void validate_dimensions(int rows, int cols) {
@@ -29,12 +29,12 @@ void validate_dimensions(int rows, int cols) {
 void read_strings(int rows, int cols, char array[MAX_ROWS][MAX_COLS]) {
     printf("Enter the strings for each row (max %d characters per string):\n", cols - 1);
     for (int i = 0; i < rows; i++) {
-        printf("Row %d: ", i); // Prompt for row input
+        printf("Row %d: ", i); 
         if (fgets(array[i], cols, stdin) == NULL) {
             fprintf(stderr, "Failed to read string for row %d.\n", i);
             exit(0);
         }
-        array[i][strcspn(array[i], "\n")] = 0; // Remove trailing newline
+        array[i][strcspn(array[i], "\n")] = 0; 
     }
 }
 
@@ -42,7 +42,7 @@ void print_characters(int rows, char array[MAX_ROWS][MAX_COLS]) {
     printf("\nCharacters in the array:\n");
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < strlen(array[i]); j++) {
-            printf("%c ", array[i][j]); // Print each character
+            printf("%c ", array[i][j]); 
         }
         printf("\n");
     }

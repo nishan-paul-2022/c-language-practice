@@ -32,14 +32,14 @@ int get_number_of_students() {
 int read_student_data(struct Student *student, int student_number) {
     printf("Student %d: ", student_number);
     
-    // Format: ID, Score, Name
+    
     if (scanf("%d, %lf, %[^\n]", &student->id, &student->score, student->name) != 3) {
         fprintf(stderr, "Error reading data for student %d. Please ensure input is in the format: ID, Score, Name\n", student_number);
         clear_input_buffer();
-        return -1; // Failure
+        return -1; 
     }
     
-    return 0; // Success
+    return 0; 
 }
 
 void input_all_students(struct Student students[], int count) {
@@ -50,7 +50,7 @@ void input_all_students(struct Student students[], int count) {
         while (read_student_data(&students[i], i + 1) == -1) {
             printf("Please try again for student %d: ", i + 1);
         }
-        clear_input_buffer(); // Clear any remaining input
+        clear_input_buffer(); 
     }
 }
 
@@ -69,19 +69,19 @@ void display_all_students(const struct Student students[], int count) {
 }
 
 int main(void) {
-    // Get number of students
+    
     int number_of_students = get_number_of_students();
     
-    // Create student array
+    
     struct Student students[number_of_students];
     
-    // Clear input buffer after reading integer
+    
     clear_input_buffer();
     
-    // Input all student data
+    
     input_all_students(students, number_of_students);
     
-    // Display all student data
+    
     display_all_students(students, number_of_students);
     
     return 0;

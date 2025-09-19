@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 long sum_numbers_in_file(const char *filename) {
-    FILE *file_ptr = fopen(filename, "r"); // open file in read mode
+    FILE *file_ptr = fopen(filename, "r"); 
     if (file_ptr == NULL) {
         perror("Error opening file");
         fprintf(stderr, "Could not open file: %s\n", filename);

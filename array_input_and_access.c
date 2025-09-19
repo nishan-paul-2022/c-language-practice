@@ -14,16 +14,16 @@ int main(void) {
 
     for (int i = 0; i < 5; i++) {
         printf("Enter element at index %d: ", i);
-        scanf(" %d", &numbers_array[i]); // Use " %d" to consume any leading whitespace, including newlines.
+        scanf(" %d", &numbers_array[i]); 
     }
 
-    // Print the element at index 3 (the fourth element) directly.
+    
     printf("The element at index 3 is %d\n", numbers_array[3]);
 
-    // Equivalent to pointer_to_numbers = &numbers_array[0]
+    
     pointer_to_numbers = numbers_array;
 
-    // numbers_array[3] is equivalent to *(pointer_to_numbers + 3)
+    
     printf("The element at index 3 (accessed via pointer) is %d\n", *(pointer_to_numbers + 3));
 
     return 0;

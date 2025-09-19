@@ -9,12 +9,12 @@
 int main(void) {
     int num_test_cases;
     scanf("%d", &num_test_cases);
-    getchar(); // Consume leftover newline
+    getchar(); 
 
     for (int t = 0; t < num_test_cases; t++) {
         char str[1000];
         scanf("%[^\n]", str);
-        getchar(); // Consume newline
+        getchar(); 
 
         int left = 0, right = strlen(str) - 1;
         while (left < right) {

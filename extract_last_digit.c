@@ -7,36 +7,36 @@
 #include <string.h>
 #include <ctype.h>
 
-// Function to get the last digit of the integer part
+
 int get_last_integer_digit(const char *str, char **dot_pos) {
     *dot_pos = strchr(str, '.');
-    if (*dot_pos != NULL) { // Found a decimal point
+    if (*dot_pos != NULL) { 
         if (*dot_pos > str) {
-            // Return the digit just before the dot
+            
             return (*(*dot_pos - 1)) - '0';
         } else {
-            // Dot is the first character, e.g., ".45"
+            
             return 0;
         }
-    } else { // No decimal point, treat as a whole number
+    } else { 
         int len = strlen(str);
         if (len > 0) {
             return str[len - 1] - '0';
         }
     }
-    return 0; // Should not happen with valid input
+    return 0; 
 }
 
-// Function to get the last digit of the fractional part
+
 int get_last_fractional_digit(const char *dot_pos) {
     if (dot_pos != NULL) {
         int len = strlen(dot_pos);
         if (len > 1) {
-            // Return the last digit of the string part after the dot
+            
             return dot_pos[len - 1] - '0';
         }
     }
-    return 0; // No fractional part
+    return 0; 
 }
 
 int main(void) {

@@ -56,7 +56,7 @@ int main(void) {
         return 0;
     }
 
-    // Remove trailing newline if present
+    
     size_t len = strlen(input_string);
     if (len > 0 && input_string[len - 1] == '\n') {
         input_string[len - 1] = '\0';

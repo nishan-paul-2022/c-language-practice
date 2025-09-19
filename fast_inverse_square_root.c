@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include <math.h>
 
-// Calculate fast inverse square root
+
 float fast_inverse_sqrt(float number) {
     float number_half = 0.5f * number;
-    // Reinterpret float bits as integer
+    
     union {
         float f;
         int i;
     } conv;
 
-    // Magic number for initial guess
+    
     conv.i = 0x5f3759df - (conv.i >> 1);
     conv.f = number;
 
-    // Refine with Newton's method
+    
     float y = conv.f;
     y = y * (1.5f - number_half * y * y);
     
@@ -32,10 +32,10 @@ int main(void) {
 
     printf("Enter a positive floating-point number: ");
     
-    // Process inputs until non-positive number
+    
     while (scanf("%f", &input_number) == 1 && input_number > 0) {
         result_fast = fast_inverse_sqrt(input_number);
-        result_accurate = 1.0f / sqrtf(input_number); // For comparison
+        result_accurate = 1.0f / sqrtf(input_number); 
 
         printf("Input number: %f\n", input_number);
         printf("Fast Inverse Square Root: %f\n", result_fast);

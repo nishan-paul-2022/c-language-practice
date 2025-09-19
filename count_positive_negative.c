@@ -23,7 +23,7 @@ void count_positive_negative() {
         } else if (number < 0) {
             negative_count++;
         }
-        // Zero is neither positive nor negative
+        
     }
 
     printf("Positive count: %d, Negative count: %d\n", positive_count, negative_count);

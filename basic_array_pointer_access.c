@@ -10,13 +10,13 @@ int main(void) {
 
     printf("Enter an integer: ");
 
-    // array and &array[0] are both pointers to the first element of the array
+    
     if (scanf("%d", array) != 1) {
         printf("Invalid input. Please enter an integer.\n");
         return 0;
     }
 
-    // *array dereferences the pointer to the first element of the array
+    
     printf("Entered value: %d\n", *array);
 
     return 0;

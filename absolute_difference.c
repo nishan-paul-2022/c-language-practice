@@ -11,7 +11,7 @@ int main(void) {
 
     printf("Enter two long integers (Ctrl+D to exit):\n");
     while (scanf("%ld %ld", &x, &y) == 2) {
-        long int z = labs(y - x); // Use labs for long integers
+        long int z = labs(y - x); 
         printf("Absolute difference: %ld\n", z);
     }
 

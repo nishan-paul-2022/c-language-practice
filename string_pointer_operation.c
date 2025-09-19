@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 101
 
-// Demonstrate string input with pointer manipulation
+
 void demonstrate_string_input_pointers() {
     char buffer[BUFFER_SIZE];
     char *pointer = buffer;

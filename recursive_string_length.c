@@ -8,21 +8,21 @@
 
 #define MAX_STRING_SIZE 1000
 
-// Recursive function to calculate string length
+
 int recursive_string_length(const char *str) {
     if (*str == '\0') {
-        return 0; // Base case: null terminator
+        return 0; 
     }
-    return 1 + recursive_string_length(str + 1); // Recursive step
+    return 1 + recursive_string_length(str + 1); 
 }
 
-// Function to safely read a string from input
+
 int read_input_string(char *buffer, int size) {
     if (fgets(buffer, size, stdin) == NULL) {
-        return -1; // Failure
+        return -1; 
     }
-    buffer[strcspn(buffer, "\n")] = '\0'; // Remove trailing newline
-    return 0; // Success
+    buffer[strcspn(buffer, "\n")] = '\0'; 
+    return 0; 
 }
 
 int main(void) {

@@ -17,8 +17,8 @@ int main(void) {
 
     while (num_test_cases > 0) {
         int n, r;
-        long long int numerator = 1; // Product of n*(n-1)*...*(n-r+1)
-        long long int denominator = 1; // r factorial
+        long long int numerator = 1; 
+        long long int denominator = 1; 
 
         printf("Enter n and r for Case %d (format: n r): ", case_number);
         scanf("%d %d", &n, &r);
@@ -30,12 +30,12 @@ int main(void) {
             continue;
         }
 
-        // Use symmetry property: C(n,r) = C(n,n-r)
+        
         if (r > n / 2) {
             r = n - r;
         }
 
-        // Calculate nCr efficiently
+        
         for (int i = 0; i < r; i++) {
             numerator *= (n - i);
             denominator *= (i + 1);

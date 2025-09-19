@@ -8,11 +8,11 @@
 
 #define BUFFER_SIZE 100
 
-// Demonstrate pointer comparison and validation
+
 void demonstrate_pointer_validation() {
     char buffer[] = "Hello World";
     
-    // Safe pointer usage
+    
     char *pointer = buffer;
 
     if (pointer != NULL) {
@@ -20,14 +20,14 @@ void demonstrate_pointer_validation() {
         printf("Pointer points to: %p\n", (void*)pointer);
     }
     
-    // Null pointer handling
+    
     char *null_pointer = NULL;
 
     if (null_pointer == NULL) {
         printf("Null pointer detected - safe handling\n");
     }
     
-    // Boundary checking
+    
     int len = strlen(buffer);
 
     printf("String boundary check:\n");

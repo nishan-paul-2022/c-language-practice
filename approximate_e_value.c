@@ -6,28 +6,28 @@
 #include <stdio.h>
 
 int main(void) {
-    double e = 1.0; // First term of series: 1/0! = 1
-    double term = 1.0; // Current term in the series
-    double factorial = 1.0; // Factorial for current term calculation
-    int n = 1; // Series term index
+    double e = 1.0; 
+    double term = 1.0; 
+    double factorial = 1.0; 
+    int n = 1; 
 
-    // Calculate e using Taylor series: e = 1 + 1/1! + 1/2! + 1/3! + ...
+    
     while (1) {
-        factorial *= n; // Calculate n!
-        term = 1.0 / factorial; // Calculate 1/n!
+        factorial *= n; 
+        term = 1.0 / factorial; 
 
-        // Stop when term is negligible
+        
         if (term < 0.000001) {
             break;
         }
 
-        e += term; // Add term to approximation
-        n++; // Increment term index
+        e += term; 
+        n++; 
 
         printf("Term %d: %0.15lf\n", n, e);
     }
 
-    // Output result with high precision
+    
     printf("Approximated value of e: %0.15lf\n", e);
 
     return 0;

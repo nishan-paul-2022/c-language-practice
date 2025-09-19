@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function to calculate integer power (base^exponent)
+
 long long int integer_power(int base, int exponent) {
     long long int result = 1;
     for (int i = 0; i < exponent; i++) {
@@ -17,21 +17,21 @@ long long int integer_power(int base, int exponent) {
     return result;
 }
 
-// Function to count digits in a number
+
 int count_digits(int number) {
     char num_as_string[20];
     sprintf(num_as_string, "%d", number);
     return strlen(num_as_string);
 }
 
-// Function to check if a number is Armstrong
+
 int is_armstrong(int number) {
     if (number < 0) {
-        return 0; // Negative numbers are not Armstrong
+        return 0; 
     }
 
     if (number == 0) {
-        return 1; // 0 is considered Armstrong
+        return 1; 
     }
 
     int temp_number = number;

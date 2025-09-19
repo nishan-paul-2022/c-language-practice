@@ -8,15 +8,15 @@
 int readAndCalculateProduct() {
     printf("Enter three integers (e.g., 10 20 30): ");
     int num1, num2;
-    int items_read = scanf("%d %d %*d", &num1, &num2); // Read two integers, skip third
+    int items_read = scanf("%d %d %*d", &num1, &num2); 
 
     if (items_read == 2) {
         printf("Entered two integers: %d and %d\n", num1, num2);
         printf("Product of %d and %d is: %d\n", num1, num2, num1 * num2);
-        return 0; // Success
+        return 0; 
     } else {
         printf("Invalid input. Please enter three integers separated by spaces.\n");
-        return -1; // Failure
+        return -1; 
     }
 }
 

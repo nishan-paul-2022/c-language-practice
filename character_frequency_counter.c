@@ -19,7 +19,7 @@ int main(void) {
     for (int case_num = 1; case_num <= num_test_cases; case_num++) {
         int frequency[26] = {0};
 
-        // Read input string with buffer overflow protection
+        
         printf("Enter string %d (lowercase letters only): ", case_num);
         char input_string[100];
         if (scanf("%99s", input_string) != 1) {
@@ -28,7 +28,7 @@ int main(void) {
         }
         getchar();
 
-        // Count frequency of each character
+        
         int string_length = strlen(input_string);
         for (int i = 0; i < string_length; i++) {
             char current_char = tolower(input_string[i]);
@@ -37,7 +37,7 @@ int main(void) {
             }
         }
 
-        // Print frequencies of letters that appeared
+        
         printf("Case %d:\n", case_num);
         for (int i = 0; i < 26; i++) {
             if (frequency[i] > 0) {

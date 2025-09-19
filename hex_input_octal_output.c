@@ -18,8 +18,8 @@ int main(void) {
     int hex_val2;
     int sum_decimal;
 
-    hex_val1 = 0x987; // Decimal: 2439
-    hex_val2 = 0x123987; // Decimal: 1294375
+    hex_val1 = 0x987; 
+    hex_val2 = 0x123987; 
 
     sum_decimal = hex_val1 + hex_val2;
 

@@ -8,21 +8,21 @@
 
 int read_buffer_size(int max_size) {
     int size;
-    printf("Enter the maximum string length for each line (e.g., 255): "); // Prompt user
+    printf("Enter the maximum string length for each line (e.g., 255): "); 
     if (scanf("%d", &size) != 1 || size <= 0 || size >= max_size) {
         fprintf(stderr, "Invalid buffer size entered. Using default buffer size of %d.\n", max_size - 1);
-        size = max_size - 1; // Use default maximum
+        size = max_size - 1; 
     }
-    while (getchar() != '\n'); // Consume leftover newline
+    while (getchar() != '\n'); 
     return size;
 }
 
 void read_and_print_lines(int buffer_size) {
-    char input_string[256]; // Fixed buffer for safety
+    char input_string[256]; 
     printf("Enter lines of text (Ctrl+D/Ctrl+Z to end input):\n");
     while (fgets(input_string, sizeof(input_string), stdin) != NULL) {
-        input_string[strcspn(input_string, "\n")] = 0; // Remove trailing newline
-        printf("%s\n", input_string); // Print line
+        input_string[strcspn(input_string, "\n")] = 0; 
+        printf("%s\n", input_string); 
     }
     if (ferror(stdin)) {
         fprintf(stderr, "An error occurred during input.\n");

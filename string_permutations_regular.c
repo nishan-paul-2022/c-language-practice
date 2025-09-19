@@ -33,7 +33,7 @@ int find_ceil_index(const char str[], char pivot, int start, int end) {
 void generate_lex_permutations(char str[]) {
     int len = strlen(str);
     int count = 1;
-    qsort(str, len, sizeof(char), compare_chars); // Start with smallest permutation
+    qsort(str, len, sizeof(char), compare_chars); 
 
     bool done = false;
     while (!done) {
@@ -42,12 +42,12 @@ void generate_lex_permutations(char str[]) {
         int pivot;
         for (pivot = len - 2; pivot >= 0; pivot--) {
             if (str[pivot] < str[pivot + 1]) {
-                break; // Found pivot
+                break; 
             }
         }
 
         if (pivot == -1) {
-            done = true; // Last permutation
+            done = true; 
         } else {
             int ceil_idx = find_ceil_index(str, str[pivot], pivot + 1, len - 1);
             swap_chars(&str[pivot], &str[ceil_idx]);

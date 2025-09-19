@@ -10,7 +10,7 @@
 void consume_newline(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {
-        // consume characters
+        
     }
 }
 

@@ -10,11 +10,11 @@
 #define MAX_COLS 100
 
 int main(void) {
-    int rows, cols; // Matrix dimensions
+    int rows, cols; 
     int matrix[MAX_ROWS][MAX_COLS];
     int i, j;
     double column_sum;
-    double column_averages[MAX_COLS]; // Store average for each column
+    double column_averages[MAX_COLS]; 
 
     printf("=== Matrix Column Averages Calculator ===\n");
     printf("Enter the number of rows and columns (e.g., '3 4'): ");
@@ -29,11 +29,11 @@ int main(void) {
         return 0;
     }
 
-    while (getchar() != '\n'); // Clear input buffer
+    while (getchar() != '\n'); 
 
     printf("\nEnter %d integers for the matrix, row by row:\n", rows * cols);
     
-    // Read matrix elements
+    
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
             printf("Enter element at row %d, column %d: ", i + 1, j + 1);
@@ -41,11 +41,11 @@ int main(void) {
                 printf("Invalid input at position [%d][%d]. Please enter an integer.\n", i, j);
                 return 0;
             }
-            while (getchar() != '\n'); // Clear input buffer
+            while (getchar() != '\n'); 
         }
     }
 
-    // Calculate average for each column
+    
     for (j = 0; j < cols; j++) {
         column_sum = 0.0;
         for (i = 0; i < rows; i++) {

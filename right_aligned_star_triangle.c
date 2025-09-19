@@ -5,33 +5,33 @@
 
 #include <stdio.h>
 
-// Function to safely read the number of rows
+
 int get_num_rows() {
     int rows;
     printf("Enter the number of rows for the star triangle: ");
     
-    // Input validation loop
+    
     while (scanf("%d", &rows) != 1 || rows <= 0) {
         printf("Invalid input. Please enter a positive integer for the number of rows: ");
-        while (getchar() != '\n'); // Clear input buffer
+        while (getchar() != '\n'); 
         return -1;
     }
     
     return rows;
 }
 
-// Function to print the right-aligned star triangle
+
 void print_star_triangle(int rows, char star_char) {
     for (int i = 1; i <= rows; i++) {
-        // Print leading spaces
+        
         for (int space = 1; space <= rows - i; space++) {
             printf(" ");
         }
-        // Print stars
+        
         for (int j = 1; j <= i; j++) {
             printf("%c", star_char);
         }
-        printf("\n"); // Move to next line
+        printf("\n"); 
     }
 }
 

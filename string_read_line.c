@@ -13,7 +13,7 @@ int main(void) {
     if (fgets(input_line, sizeof(input_line), stdin) != NULL) {
         size_t len = strlen(input_line);
         if (len > 0 && input_line[len - 1] == '\n') {
-            input_line[len - 1] = '\0'; // Remove newline
+            input_line[len - 1] = '\0'; 
         }
         printf("Entered string: %s\n", input_line);
     } else {

@@ -7,10 +7,10 @@
 #include <math.h>
 
 void demonstrate_trig_functions() {
-    double angle_rad = 1.57; // Approximately π/2 radians
-    double sine_value = 0.5; // A valid sine value
-    double base = 2.0; // Base for power function
-    double exponent = 3.0; // Exponent for power function
+    double angle_rad = 1.57; 
+    double sine_value = 0.5; 
+    double base = 2.0; 
+    double exponent = 3.0; 
 
     printf("\n--- Trigonometric and Power Functions ---\n");
     printf("Sine of %.2f | %.2f\n", angle_rad, sin(angle_rad));

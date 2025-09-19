@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// Converts a string of digits to an integer
+
 int string_to_integer(const char str[], int test_case) {
     int value = 0;
     for (int i = 0; str[i] != '\0'; i++) {
@@ -19,7 +19,7 @@ int string_to_integer(const char str[], int test_case) {
     return value;
 }
 
-// Reads a line safely from stdin
+
 int read_line(char buffer[], int size) {
     if (fgets(buffer, size, stdin) != NULL) {
         buffer[strcspn(buffer, "\n")] = '\0';
@@ -36,7 +36,7 @@ int main(void) {
         fprintf(stderr, "Error reading number of test cases.\n");
         return 0;
     }
-    while (getchar() != '\n'); // Consume leftover newline
+    while (getchar() != '\n'); 
 
     for (int t = 1; t <= num_test_cases; t++) {
         if (!read_line(input_string, sizeof(input_string))) {

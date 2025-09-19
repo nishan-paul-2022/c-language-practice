@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_DIGITS 7 // max 6 digits + null terminator
+#define MAX_DIGITS 7 
 
-// Reads a single number string from the user safely
+
 int read_number_string(char buffer[], int size, int test_case) {
     int c;
     printf("Enter number string for test case %d (max 6 digits): ", test_case);
     if (scanf("%6s", buffer) != 1) {
-        return 0; // Reading failed
+        return 0; 
     }
-    while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
+    while ((c = getchar()) != '\n' && c != EOF); 
     return 1;
 }
 
-// Converts a string of digits to a long integer
+
 long string_to_long(const char str[], int test_case) {
     long value = 0;
     for (int i = 0; str[i] != '\0'; i++) {
@@ -33,7 +33,7 @@ long string_to_long(const char str[], int test_case) {
     return value;
 }
 
-// Prints all divisors of a given number
+
 void print_divisors(long number) {
     for (long i = 1; i <= number; i++) {
         if (number % i == 0) {
@@ -43,7 +43,7 @@ void print_divisors(long number) {
     printf("\n");
 }
 
-// Processes a single test case
+
 void process_test_case(int test_case) {
     char input_string[MAX_DIGITS];
     if (!read_number_string(input_string, MAX_DIGITS, test_case)) {
@@ -68,7 +68,7 @@ int main(void) {
     }
 
     int c;
-    while ((c = getchar()) != '\n' && c != EOF); // Clear input buffer
+    while ((c = getchar()) != '\n' && c != EOF); 
 
     for (int t = 1; t <= num_test_cases; t++) {
         process_test_case(t);

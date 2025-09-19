@@ -13,7 +13,7 @@ int main(void) {
         printf("Enter the number of daily progress entries: ");
         if (scanf("%d", &num_daily_entries) != 1 || num_daily_entries <= 0) {
             printf("Invalid number of daily progress entries. Please enter a positive integer.\n");
-            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear buffer
+            while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); 
             printf("\nEnter the total work amount required for the project (or Ctrl+D to exit): ");
             continue;
         }

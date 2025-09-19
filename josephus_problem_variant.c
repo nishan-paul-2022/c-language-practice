@@ -12,7 +12,7 @@ int calculate_josephus_position(int n) {
         result_position = (result_position + n + 1 - x) % x;
     }
     
-    return result_position + 1; // Convert to 1-indexed
+    return result_position + 1; 
 }
 
 int get_test_case_input(int case_num) {

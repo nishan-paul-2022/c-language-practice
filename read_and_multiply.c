@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 long long calculate_product(int a, int b) {
-    return (long long)a * b; // Cast to long long to prevent overflow
+    return (long long)a * b; 
 }
 
 int read_input(int *x, int *y) {
@@ -22,7 +22,7 @@ int main(void) {
         printf("The product of %d and %d is %lld\n", num1, num2, product);
     } else {
         fprintf(stderr, "Invalid input format. Please use 'input X*Y'.\n");
-        while (getchar() != '\n'); // Clear input buffer
+        while (getchar() != '\n'); 
     }
 
     return 0;

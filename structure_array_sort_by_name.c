@@ -6,14 +6,14 @@
 #include <stdio.h>
 #include <string.h>
 
-// Define a structure to hold student information
+
 typedef struct {
-    char name[100]; // Student's name
-    int roll;       // Student's roll number
-    double cgpa;    // Student's CGPA
+    char name[100]; 
+    int roll;       
+    double cgpa;    
 } StudentInfo;
 
-// Function to sort an array of StudentInfo structures by name using bubble sort
+
 void sort_students_by_name(StudentInfo students[], int num_students) {
     StudentInfo temp;
     for (int i = 0; i < num_students - 1; i++) {
@@ -27,7 +27,7 @@ void sort_students_by_name(StudentInfo students[], int num_students) {
     }
 }
 
-// Function to print an array of StudentInfo structures
+
 void print_students(const StudentInfo students[], int num_students) {
     printf("\n--- Sorted Student Data ---\n");
     for (int i = 0; i < num_students; i++) {
@@ -36,16 +36,16 @@ void print_students(const StudentInfo students[], int num_students) {
     printf("\n");
 }
 
-// Function to input student data
+
 void input_students(StudentInfo students[], int num_students) {
     for (int i = 0; i < num_students; i++) {
         printf("Student %d: ", i + 1);
         if (scanf(" %99[^\n] %d %lf", students[i].name, &students[i].roll, &students[i].cgpa) != 3) {
             fprintf(stderr, "Invalid input for student %d. Skipping.\n", i + 1);
-            while (getchar() != '\n'); // Clear input buffer
+            while (getchar() != '\n'); 
             continue;
         }
-        while (getchar() != '\n'); // Consume leftover newline
+        while (getchar() != '\n'); 
     }
 }
 
@@ -56,7 +56,7 @@ int main(void) {
         fprintf(stderr, "Invalid input for number of students.\n");
         return 0;
     }
-    while (getchar() != '\n'); // Consume leftover newline
+    while (getchar() != '\n'); 
 
     StudentInfo students[num_students];
 

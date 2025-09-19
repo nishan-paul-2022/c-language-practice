@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-// Calculate 2^exp using bit shifts
+
 int power_of_2(int exp) {
     if (exp < 0) {
         return 0;

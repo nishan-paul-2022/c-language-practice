@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-// Function to get a character from user
+
 char get_character() {
     char ch;
     printf("Enter a character: ");
@@ -16,7 +16,7 @@ char get_character() {
     return ch;
 }
 
-// Function to get a positive integer from user
+
 int get_positive_integer(const char* prompt) {
     int value;
     printf("%s", prompt);
@@ -27,7 +27,7 @@ int get_positive_integer(const char* prompt) {
     return value;
 }
 
-// Function to print a rectangle of the given character
+
 void print_rectangle(char ch, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {

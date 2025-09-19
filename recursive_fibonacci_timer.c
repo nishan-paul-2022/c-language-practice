@@ -8,18 +8,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Recursive function to calculate nth Fibonacci number (f(1)=0, f(2)=1)
+
 int calculate_fibonacci_recursive(int n) {
     if (n <= 0) {
-        return 0; // Base case: F(0)=0
+        return 0; 
     }
     if (n == 1) {
-        return 0; // F(1)=0
+        return 0; 
     }
     if (n == 2) {
-        return 1; // F(2)=1
+        return 1; 
     }
-    return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2); // Recursive step
+    return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2); 
 }
 
 int main(void) {
@@ -33,9 +33,9 @@ int main(void) {
         return 0;
     }
 
-    while (getchar() != '\n'); // Clear input buffer
+    while (getchar() != '\n'); 
 
-    start_time = clock(); // Start timing
+    start_time = clock(); 
 
     printf("Fibonacci sequence up to term %d:\n", num_terms);
     for (i = 1; i <= num_terms; i++) {
@@ -43,7 +43,7 @@ int main(void) {
     }
     printf("\n");
 
-    end_time = clock(); // End timing
+    end_time = clock(); 
     elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
     printf("Time taken for computation: %lf seconds\n", elapsed_time);

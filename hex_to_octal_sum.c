@@ -17,8 +17,8 @@ int main(void) {
     int hex_value2;
     int sum;
 
-    hex_value1 = 0x987; // Represents 2439 in decimal
-    hex_value2 = 0x123987; // Represents 1194471 in decimal
+    hex_value1 = 0x987; 
+    hex_value2 = 0x123987; 
 
     sum = hex_value1 + hex_value2;
 

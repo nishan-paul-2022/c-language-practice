@@ -7,19 +7,19 @@
 #include <string.h>
 #include <ctype.h>
 
-// Function to read a line of input safely
+
 void read_input(char *buffer, int size) {
     printf("Enter a line of text: ");
     if (fgets(buffer, size, stdin) == NULL) {
         printf("Error reading input.\n");
-        buffer[0] = '\0'; // Set empty string on error
+        buffer[0] = '\0'; 
         return;
     }
     
-    buffer[strcspn(buffer, "\n")] = '\0'; // Remove trailing newline if present
+    buffer[strcspn(buffer, "\n")] = '\0'; 
 }
 
-// Function to count frequencies of alphabet characters
+
 void count_frequencies(const char *input, int freq[]) {
     for (int i = 0; input[i] != '\0'; i++) {
         char lower_char = tolower((unsigned char)input[i]);
@@ -29,7 +29,7 @@ void count_frequencies(const char *input, int freq[]) {
     }
 }
 
-// Function to display the frequency results
+
 void display_frequencies(const int freq[]) {
     printf("\nAlphabet Frequencies:\n");
     for (int i = 0; i < 26; i++) {

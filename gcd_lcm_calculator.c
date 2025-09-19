@@ -38,7 +38,7 @@ long int calculate_lcm(long int a, long int b, long int gcd) {
     }
     long int abs_a = (a < 0) ? -a : a;
     long int abs_b = (b < 0) ? -b : b;
-    return (abs_a / gcd) * abs_b; // Divide first to prevent overflow
+    return (abs_a / gcd) * abs_b; 
 }
 
 int main(void) {

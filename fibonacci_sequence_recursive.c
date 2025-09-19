@@ -6,14 +6,14 @@
 
 #include <stdio.h>
 
-// Calculate the Nth Fibonacci number
+
 int calculate_fibonacci_recursive(int n) {
     if (n <= 0) {
-        return 0; // F(0) = 0
+        return 0; 
     } else if (n == 1) {
-        return 0; // F(1) = 0
+        return 0; 
     } else if (n == 2) {
-        return 1; // F(2) = 1
+        return 1; 
     } else {
         return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2);
     }
@@ -22,7 +22,7 @@ int calculate_fibonacci_recursive(int n) {
 int main(void) {
     int num_terms;
 
-    printf("Enter the number of Fibonacci terms to generate: "); // Input prompt
+    printf("Enter the number of Fibonacci terms to generate: "); 
     scanf("%d", &num_terms);
 
     if (num_terms < 0) {
@@ -30,7 +30,7 @@ int main(void) {
         return 0;
     }
 
-    printf("Fibonacci Sequence (up to %d terms):\n", num_terms); // Output title
+    printf("Fibonacci Sequence (up to %d terms):\n", num_terms); 
     for (int i = 1; i <= num_terms; i++) {
         printf("%d ", calculate_fibonacci_recursive(i));
     }

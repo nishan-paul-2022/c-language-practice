@@ -5,33 +5,33 @@
 
 #include <stdio.h>
 
-// Calculates the factorial of a non-negative integer.
+
 unsigned long long calculate_factorial(int num) {
     unsigned long long factorial = 1;
     if (num < 0) {
-        return 0; // Factorial is not defined for negative numbers.
+        return 0; 
     }
     if (num == 0) {
-        return 1; // The factorial of 0 is 1.
+        return 1; 
     }
     for (int i = 1; i <= num; i++) {
-        // Check for potential overflow before multiplication.
+        
         if (__builtin_mul_overflow(factorial, i, &factorial)) {
             printf("Factorial calculation may have overflowed for %d!\n", num);
-            return 0; // Indicate overflow.
+            return 0; 
         }
     }
     return factorial;
 }
 
-// Counts the number of trailing zeros in a given number.
+
 int count_trailing_zeros(unsigned long long num) {
     int count = 0;
     if (num == 0) {
         return 0;
     }
 
-    // Count trailing zeros by repeatedly dividing by 10.
+    
     while (num > 0 && num % 10 == 0) {
         count++;
         num /= 10;
@@ -52,7 +52,7 @@ int main(void) {
 
     factorial_result = calculate_factorial(number);
 
-    if (factorial_result == 0 && number) { // Check for error or overflow.
+    if (factorial_result == 0 && number) { 
         printf("Could not calculate factorial (possibly due to overflow or negative input).\n");
         return 0;
     }

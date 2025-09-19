@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Object-like macros
+
 #define PI 3.14159
 #define MAX_BUFFER_SIZE 1024
 #define VERSION "1.0.0"
 
-// Function-like macros
+
 #define SQUARE(x) ((x) * (x))
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define DEBUG_PRINT(x) printf("[DEBUG] %s = %d\n", #x, x)
 
-// Conditional compilation based on defined constants
+
 #define DEBUG_MODE
 
-// Platform-specific code
+
 #ifdef _WIN32
     #define PLATFORM "Windows"
 #elif __linux__
@@ -30,16 +30,16 @@
     #define PLATFORM "Unknown"
 #endif
 
-// Feature toggles
+
 #define FEATURE_ADVANCED_MATH 1
 
-// Header guard simulation
+
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
     #define CONFIG_LOADED 1
 #endif
 
-// Function declarations
+
 void demonstrate_object_macros();
 void demonstrate_function_macros();
 void demonstrate_conditional_compilation();
@@ -48,7 +48,7 @@ void demonstrate_feature_toggles();
 void demonstrate_header_guards();
 void demonstrate_macro_undefining();
 
-// Object-like macro demonstration
+
 void demonstrate_object_macros() {
     printf("1. Object-like Macros:\n");
     printf("   PI = %f\n", PI);
@@ -56,7 +56,7 @@ void demonstrate_object_macros() {
     printf("   VERSION = %s\n\n", VERSION);
 }
 
-// Function-like macro demonstration
+
 void demonstrate_function_macros() {
     printf("2. Function-like Macros:\n");
     int a = 5, b = 8;
@@ -67,7 +67,7 @@ void demonstrate_function_macros() {
     printf("\n");
 }
 
-// Conditional compilation demonstration
+
 void demonstrate_conditional_compilation() {
     printf("3. Conditional Compilation:\n");
     #ifdef DEBUG_MODE
@@ -83,13 +83,13 @@ void demonstrate_conditional_compilation() {
     printf("\n");
 }
 
-// Platform detection demonstration
+
 void demonstrate_platform_detection() {
     printf("4. Platform Detection:\n");
     printf("   Compiled on: %s\n\n", PLATFORM);
 }
 
-// Feature toggle demonstration
+
 void demonstrate_feature_toggles() {
     printf("5. Feature Toggles:\n");
     #if FEATURE_ADVANCED_MATH
@@ -101,7 +101,7 @@ void demonstrate_feature_toggles() {
     printf("\n");
 }
 
-// Header guard demonstration
+
 void demonstrate_header_guards() {
     printf("6. Header Guard Simulation:\n");
     #ifdef CONFIG_LOADED
@@ -110,15 +110,15 @@ void demonstrate_header_guards() {
     printf("\n");
 }
 
-// Macro undefining and redefining demonstration
+
 void demonstrate_macro_undefining() {
     printf("7. Undefining Macros:\n");
     printf("   MAX_BUFFER_SIZE is defined: %d\n", MAX_BUFFER_SIZE);
     #undef MAX_BUFFER_SIZE
     printf("   MAX_BUFFER_SIZE has been undefined\n");
-    // printf("   MAX_BUFFER_SIZE = %d\n", MAX_BUFFER_SIZE); // This would cause an error
     
-    // Redefining macros
+    
+    
     #define MAX_BUFFER_SIZE 2048
     printf("   MAX_BUFFER_SIZE redefined as: %d\n", MAX_BUFFER_SIZE);
 }

@@ -22,15 +22,15 @@ int main(void) {
         len--;
     }
 
-    // Capitalize first letter of each word
+    
     for (int i = 0; i < len; i++) {
         if (i == 0 || str[i - 1] == ' ') {
-            // Convert lowercase to uppercase
+            
             if (str[i] >= 'a' && str[i] <= 'z') {
                 str[i] = toupper(str[i]);
             }
         } else {
-            // Convert uppercase to lowercase
+            
             if (str[i] >= 'A' && str[i] <= 'Z') {
                 str[i] = tolower(str[i]);
             }

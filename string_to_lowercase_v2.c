@@ -15,7 +15,7 @@ int get_input_string(char *input_string, int buffer_size) {
         return -1;
     }
     
-    input_string[strcspn(input_string, "\n")] = '\0'; // Remove trailing newline
+    input_string[strcspn(input_string, "\n")] = '\0'; 
     
     return 0;
 }

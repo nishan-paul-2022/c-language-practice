@@ -8,7 +8,7 @@
 int main(void) {
     float principal_amount = 5000.0f;
     int year = 0;
-    float annual_interest_rate = 0.11f; // 11% interest rate
+    float annual_interest_rate = 0.11f; 
     
     printf("=== Compound Interest Calculator ===\n");
     printf("Initial Principal: $%.2f\n", principal_amount);

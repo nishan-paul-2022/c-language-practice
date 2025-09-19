@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Clear input buffer
+
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Print program header and instructions
+
 void print_header() {
     printf("=== Coordinate Movement Simulator ===\n");
     printf("Navigate on a 2D grid using commands:\n");
     printf("r = right, l = left, u = up, d = down, s = stop\n\n");
 }
 
-// Read and validate initial coordinates
+
 int read_initial_coordinates(int *x, int *y) {
     printf("Enter initial X and Y coordinates (format: x y): ");
     if (scanf("%d %d", x, y) != 2) {
@@ -30,7 +30,7 @@ int read_initial_coordinates(int *x, int *y) {
     return 0;
 }
 
-// Read movement command from user
+
 int read_command(char *command) {
     printf("Enter command (r/l/u/d/s): ");
     if (scanf(" %c", command) != 1) {
@@ -40,7 +40,7 @@ int read_command(char *command) {
     return 0;
 }
 
-// Process movement command and update coordinates
+
 int process_command(char command, int *x, int *y) {
     switch (command) {
         case 'r':
@@ -61,15 +61,15 @@ int process_command(char command, int *x, int *y) {
             break;
         case 's':
             printf("Stopping simulation.\n");
-            return 0; // Signal to stop
+            return 0; 
         default:
             printf("Invalid command '%c'. Use r/l/u/d/s.\n", command);
             break;
     }
-    return 0; // Continue processing
+    return 0; 
 }
 
-// Main simulation loop
+
 void run_simulation(int *x, int *y) {
     char command;
     
@@ -78,12 +78,12 @@ void run_simulation(int *x, int *y) {
     
     while (read_command(&command)) {
         if (!process_command(command, x, y)) {
-            break; // Stop command received
+            break; 
         }
     }
 }
 
-// Display final results
+
 void display_final_position(int x, int y) {
     printf("\nSimulation completed!\n");
     printf("Final coordinates: (%d, %d)\n", x, y);

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Allocate memory for 2D matrix
+
 int** allocate_matrix(int n) {
     int **matrix = (int**)malloc(n * sizeof(int*));
     if (matrix == NULL) {
@@ -27,7 +27,7 @@ int** allocate_matrix(int n) {
     return matrix;
 }
 
-// Free memory for 2D matrix
+
 void free_matrix(int **matrix, int n) {
     if (matrix != NULL) {
         for (int i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ void free_matrix(int **matrix, int n) {
     }
 }
 
-// Read matrix elements from user
+
 void read_matrix(int n, int **matrix) {
     printf("Enter matrix elements row by row:\n");
 
@@ -49,7 +49,7 @@ void read_matrix(int n, int **matrix) {
     }
 }
 
-// Calculate sum of each row
+
 void calculate_row_sums(int n, int **matrix, int sums[]) {
     for (int i = 0; i < n; i++) {
         sums[i] = 0;
@@ -59,7 +59,7 @@ void calculate_row_sums(int n, int **matrix, int sums[]) {
     }
 }
 
-// Calculate sum of each column
+
 void calculate_column_sums(int n, int **matrix, int sums[]) {
     for (int j = 0; j < n; j++) {
         sums[n + j] = 0;
@@ -69,7 +69,7 @@ void calculate_column_sums(int n, int **matrix, int sums[]) {
     }
 }
 
-// Check if all sums are even
+
 int check_all_sums_even(int total_sums_count, int sums[]) {
     for (int i = 0; i < total_sums_count; i++) {
         if (sums[i] % 2) {
@@ -80,7 +80,7 @@ int check_all_sums_even(int total_sums_count, int sums[]) {
     return 1;
 }
 
-// Check for parity errors and suggest corrections
+
 void check_parity_errors(int n, int sums[]) {
     int odd_row_count = 0;
     int odd_row_idx = -1;

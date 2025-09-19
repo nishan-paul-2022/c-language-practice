@@ -45,7 +45,7 @@ int read_string(char *buffer, int test_num) {
 void process_string(const char *str, int test_num) {
     size_t length = strlen(str);
     
-    // Check for empty string
+    
     if (length == 0) {
         printf("Invalid input for test case %d: String is empty.\n", test_num);
         return;
@@ -53,13 +53,13 @@ void process_string(const char *str, int test_num) {
     
     char last_char = str[length - 1];
     
-    // Check if last character is a digit
+    
     if (!isdigit(last_char)) {
         printf("Invalid input for test case %d: Last character is not a digit.\n", test_num);
         return;
     }
     
-    // Convert digit character to integer and check parity
+    
     int digit = last_char - '0';
     const char *result = (digit % 2 == 0) ? "Even" : "Odd";
     
@@ -74,7 +74,7 @@ int main(void) {
         return 0;
     }
     
-    // Process each test case
+    
     for (int i = 0; i < num_test_cases; i++) {
         int test_num = i + 1;
         

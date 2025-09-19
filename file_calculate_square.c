@@ -44,7 +44,7 @@ int process_numbers(FILE* input_file, FILE* output_file) {
         }
     }
 
-    // Check if the loop exited due to a read error rather than end-of-file
+    
     if (ferror(input_file)) {
         perror("Error reading from input file");
         return -1;

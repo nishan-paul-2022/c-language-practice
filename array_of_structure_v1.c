@@ -16,7 +16,7 @@ int main(void) {
     Node nodes[3];
     Node *node_pointer = nodes;
 
-    // Accessing array elements using pointer arithmetic: node_pointer[index] is equivalent to *(node_pointer + index)
+    
     node_pointer[0].data = 1;
     node_pointer[0].character = 'a';
 

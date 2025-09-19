@@ -34,17 +34,17 @@ int main(void) {
 
     while (fscanf(file_output, "%d", &value_output) == 1) {
         if (fscanf(file_input, "%d", &value_input) != 1) {
-            mismatch_found = 1; // Input file ended prematurely
+            mismatch_found = 1; 
             break;
         }
 
         if (value_output != value_input) {
-            mismatch_found = 1; // Values don't match
+            mismatch_found = 1; 
             break;
         }
     }
 
-    // Check for excess data in input file
+    
     if (!mismatch_found && fscanf(file_input, "%d", &value_input) == 1) {
         mismatch_found = 1;
     }

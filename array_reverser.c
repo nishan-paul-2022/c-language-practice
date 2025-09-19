@@ -10,7 +10,7 @@ void reverse_array(int arr[], int size) {
     int start_index = 0;
     int end_index = size - 1;
 
-    // Swap elements from both ends moving toward center
+    
     while (start_index < end_index) {
         int temp = arr[start_index];
         arr[start_index] = arr[end_index];
@@ -37,7 +37,7 @@ int main(void) {
 
     printf("\nArray reversed.\n");
 
-    // Prompt for index to access element
+    
     printf("Enter an index (1 to %d) to display an element from the reversed array: ", ARRAY_SIZE);
     int index_to_access;
     if (scanf("%d", &index_to_access) != 1) {
@@ -45,7 +45,7 @@ int main(void) {
         return 0;
     }
 
-    // Validate index and display element
+    
     if (index_to_access >= 1 && index_to_access <= ARRAY_SIZE) {
         printf("Element at index %d (1-based) is: %d\n", index_to_access, numbers[index_to_access - 1]);
     } else {

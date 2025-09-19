@@ -14,7 +14,7 @@ int main(void) {
         return 0;
     }
 
-    // Using malloc for dynamic memory allocation
+    
     int *array_pointer = (int *)malloc(size * sizeof(int));
     if (array_pointer == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
@@ -23,7 +23,7 @@ int main(void) {
 
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
-        // Read elements using pointer arithmetic
+        
         if (scanf("%d", (array_pointer + i)) != 1) {
             printf("Invalid input. Exiting.\n");
             free(array_pointer);
@@ -33,7 +33,7 @@ int main(void) {
 
     printf("Array elements entered: ");
     for (int i = 0; i < size; i++) {
-        printf("%d ", *(array_pointer + i)); // Print elements using pointer dereferencing
+        printf("%d ", *(array_pointer + i)); 
     }
 
     free(array_pointer);

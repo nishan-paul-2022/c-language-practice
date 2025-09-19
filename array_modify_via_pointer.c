@@ -25,31 +25,31 @@ int main(void) {
         return 0;
     }
     
-    while (getchar() != '\n'); // Clear input buffer
+    while (getchar() != '\n'); 
 
     if (size <= 0) {
         fprintf(stderr, "Array size must be positive.\n");
         return 0;
     }
 
-    // Allocate memory for array
+    
     int *data = (int *)malloc(size * sizeof(int));
     if (data == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
     }
 
-    // Read elements into the array
+    
     printf("Enter %d integers for the array:\n", size);
     for (int i = 0; i < size; ++i) {
         printf("Element %d: ", i);
         if (scanf("%d", &data[i]) != 1) {
             fprintf(stderr, "Invalid input for array element %d.\n", i);
-            free(data); // Free allocated memory before exiting
+            free(data); 
             return 0;
         }
 
-        while (getchar() != '\n'); // Clear input buffer
+        while (getchar() != '\n'); 
     }
 
     printf("Initial value of the last element (index %d): %d\n", size - 1, data[size - 1]);

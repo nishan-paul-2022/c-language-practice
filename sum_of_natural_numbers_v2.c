@@ -7,9 +7,9 @@
 
 int sum_natural_numbers(int n) {
     if (n == 0) {
-        return 0; // base case
+        return 0; 
     } else {
-        return n + sum_natural_numbers(n - 1); // recursive step
+        return n + sum_natural_numbers(n - 1); 
     }
 }
 

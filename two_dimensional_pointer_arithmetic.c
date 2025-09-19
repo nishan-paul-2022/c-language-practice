@@ -19,8 +19,8 @@ int main(void) {
     int matrix[2][3] = { {1, 2, 3}, {10, 20, 30} };
     int *base_pointer = (int *)matrix;
 
-    int *ptr1 = get_element_ptr(matrix, 1, 2); // matrix[1][2]
-    int *ptr2 = get_element_ptr_flat(base_pointer, 1, 1, 3); // matrix[1][1]
+    int *ptr1 = get_element_ptr(matrix, 1, 2); 
+    int *ptr2 = get_element_ptr_flat(base_pointer, 1, 1, 3); 
 
     printf("Value at matrix[1][2] (regular): %d\n", *ptr1);
     printf("Value at matrix[1][1] (via flat pointer): %d\n", *ptr2);

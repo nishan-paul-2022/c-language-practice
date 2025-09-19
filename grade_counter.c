@@ -30,7 +30,7 @@ int read_score(double *score) {
             perror("Error reading input");
         } else {
             fprintf(stderr, "Invalid input. Please enter a number.\n");
-            while (getchar() != '\n'); // Clear input buffer
+            while (getchar() != '\n'); 
         }
         return -1;
     }

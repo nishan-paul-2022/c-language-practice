@@ -14,7 +14,7 @@ int main(void) {
         return 0;
     }
     
-    while (getchar() != '\n'); // Consume newline character left by scanf
+    while (getchar() != '\n'); 
 
     printf("Enter the starting character: ");
     char start_char;
@@ -23,14 +23,14 @@ int main(void) {
         return 0;
     }
 
-    // Print right-aligned triangle pattern
+    
     for (int row = 1; row <= num_rows; row++) {
-        // Print leading spaces for right alignment
+        
         for (int space = 1; space <= num_rows - row; space++) {
             printf("  ");
         }
 
-        // Print characters for current row
+        
         char current_char = start_char;
         for (int col = 1; col <= row; col++) {
             printf(" %c", current_char);

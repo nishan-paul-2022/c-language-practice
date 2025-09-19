@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-// Displays the memory size of character types
+
 void display_char_type_sizes() {
     printf("--- Character Types ---\n");
     printf("Size of char: %zu byte(s)\n", sizeof(char));
@@ -13,7 +13,7 @@ void display_char_type_sizes() {
     printf("Size of unsigned char: %zu byte(s)\n\n", sizeof(unsigned char));
 }
 
-// Displays the memory size of integer types
+
 void display_integer_type_sizes() {
     printf("--- Integer Types ---\n");
     printf("Size of short int: %zu byte(s)\n", sizeof(short int));
@@ -26,7 +26,7 @@ void display_integer_type_sizes() {
     printf("Size of unsigned long long int: %zu byte(s)\n\n", sizeof(unsigned long long int));
 }
 
-// Displays the memory size of floating-point types
+
 void display_floating_point_type_sizes() {
     printf("--- Floating-Point Types ---\n");
     printf("Size of float: %zu byte(s)\n", sizeof(float));
@@ -34,7 +34,7 @@ void display_floating_point_type_sizes() {
     printf("Size of long double: %zu byte(s)\n\n", sizeof(long double));
 }
 
-// Displays the memory size of pointer types
+
 void display_pointer_type_sizes() {
     printf("--- Pointer Types ---\n");
     printf("Size of char pointer: %zu byte(s)\n", sizeof(char*));

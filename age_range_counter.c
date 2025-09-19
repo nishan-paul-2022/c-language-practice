@@ -10,15 +10,15 @@ int main(void) {
     printf("Enter 0 to process the current batch and start a new one.\n");
     printf("Ctrl+D to exit the program.\n\n");
 
-    // Outer loop to allow multiple batches of input
+    
     while (1) {
-        int count_in_range = 0; // Reset count for each new batch
+        int count_in_range = 0; 
 
         printf("--- New Batch ---\n");
         int age;
         while (scanf("%d", &age) == 1) {
             if (age == 0) {
-                break; // End of current batch, process and print count
+                break; 
             }
 
             if (age >= 50 && age <= 60) {
@@ -26,7 +26,7 @@ int main(void) {
             }
         }
 
-        // If scanf failed (e.g., non-numeric input or EOF), break the outer loop
+        
         if (feof(stdin) || ferror(stdin)) {
             printf("\nExiting program.\n");
             break;
@@ -34,7 +34,7 @@ int main(void) {
 
         printf("Number of ages in range 50-60: %d\n\n", count_in_range);
 
-        // Clear input buffer for the next iteration, if any
+        
         while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
     }
 

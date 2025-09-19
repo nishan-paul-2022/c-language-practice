@@ -9,7 +9,7 @@ int read_input(int *value, int *divisor) {
     printf("Enter two integers (value divisor): ");
     if (scanf("%d %d", value, divisor) != 2) {
         fprintf(stderr, "Invalid input.\n");
-        while (getchar() != '\n'); // Clear buffer
+        while (getchar() != '\n'); 
         return -1;
     }
     if (*divisor == 0) {

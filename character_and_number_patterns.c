@@ -24,7 +24,7 @@ char get_start_char() {
 
     printf("Enter the starting character: ");
 
-    if (scanf(" %c", &start_char) == -1) { // Space before %c to consume leftover newline
+    if (scanf(" %c", &start_char) == -1) { 
         printf("Invalid input for character.\n");
         return 0;
     }

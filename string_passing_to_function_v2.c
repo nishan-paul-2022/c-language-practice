@@ -27,7 +27,7 @@ int compare_strings(const char *str1, const char *str2) {
     return strcmp(str1, str2);
 }
 
-// Function for Example 1: String concatenation
+
 void demonstrate_string_concatenation() {
     printf("=== Example 1: String Concatenation ===\n");
 
@@ -40,7 +40,7 @@ void demonstrate_string_concatenation() {
     printf("\n");
 }
 
-// Function for Example 2: String comparison
+
 void demonstrate_string_comparison() {
     printf("=== Example 2: String Comparison ===\n");
 
@@ -61,7 +61,7 @@ void demonstrate_string_comparison() {
     printf("\n");
 }
 
-// Function for Example 3: Passing string literals
+
 void demonstrate_string_literals() {
     printf("=== Example 3: Passing String Literals ===\n");
 

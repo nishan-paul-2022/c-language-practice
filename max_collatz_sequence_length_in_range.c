@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-// Calculate Collatz sequence length recursively
+
 void calculate_collatz_length(int current_num, int *steps) {
     if (current_num != 1) {
         if (current_num % 2) {
@@ -18,7 +18,7 @@ void calculate_collatz_length(int current_num, int *steps) {
     }
 }
 
-// Read range input from user
+
 int read_range(int *start_range, int *end_range) {
     printf("Enter range (format: start - end): ");
     if (scanf("%d - %d", start_range, end_range) != 2) {
@@ -34,7 +34,7 @@ int read_range(int *start_range, int *end_range) {
     return 0;
 }
 
-// Find maximum Collatz sequence length in range
+
 int find_max_collatz_length(int start_range, int end_range) {
     int max_sequence_length = 0;
 

@@ -5,16 +5,16 @@
 
 #include <stdio.h>
 
-// Recursive function to calculate base^exponent (exponent >= 0)
+
 int power_recursive(int base, int exponent) {
-    if (exponent < 0) { // Only non-negative exponents allowed
+    if (exponent < 0) { 
         printf("Exponent must be non-negative.\n");
         return -1;
     }
     if (exponent == 0) {
-        return 1; // Base case: any number^0 = 1
+        return 1; 
     }
-    return base * power_recursive(base, exponent - 1); // Recursive step
+    return base * power_recursive(base, exponent - 1); 
 }
 
 int main(void) {

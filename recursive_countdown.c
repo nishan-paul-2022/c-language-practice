@@ -5,24 +5,24 @@
 
 #include <stdio.h>
 
-// Recursive function to print numbers from 5 down to 1
-void print_countdown_recursive() {
-    static int counter = 0; // Keep track across recursive calls
 
-    counter++; // Increment counter
+void print_countdown_recursive() {
+    static int counter = 0; 
+
+    counter++; 
 
     if (counter > 5) {
-        return; // Base case
+        return; 
     }
 
-    print_countdown_recursive(); // Recursive call
+    print_countdown_recursive(); 
 
-    printf("%d\n", counter); // Print after recursion to get descending order
+    printf("%d\n", counter); 
 }
 
 int main(void) {
     printf("Starting countdown...\n");
-    print_countdown_recursive(); // Start recursion
+    print_countdown_recursive(); 
     printf("Countdown finished.\n");
     return 0;
 }

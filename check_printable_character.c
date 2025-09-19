@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include <ctype.h>
 
-// Clears input buffer until newline or EOF
+
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Prints program title and instructions
+
 void print_program_header() {
     printf("=== Printable Character Checker ===\n");
     printf("This program checks if ASCII values represent printable characters.\n");
     printf("Enter ASCII values (integers) to check. Invalid input will exit.\n");
 }
 
-// Reads an integer from input with validation and prompt
+
 int read_integer(int *value) {
     printf("Enter an ASCII value (integer): ");
     
@@ -32,7 +32,7 @@ int read_integer(int *value) {
     return 0;
 }
 
-// Checks if value represents a printable character and prints result
+
 void check_printable(int ascii_value) {
     const char *result = isprint(ascii_value) ? "" : "not ";
     printf("ASCII %d is %sprintable\n\n", ascii_value, result);
@@ -43,7 +43,7 @@ int main(void) {
     
     print_program_header();
     
-    // Process input values until invalid input or EOF
+    
     while (read_integer(&input_value) == 0) {
         check_printable(input_value);
     }

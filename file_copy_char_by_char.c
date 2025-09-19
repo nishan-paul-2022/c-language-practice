@@ -10,14 +10,14 @@
 #define INPUT_FILENAME "files/06-input.txt"
 #define OUTPUT_FILENAME "files/06-output.txt"
 
-// Print program header
+
 void print_header() {
     printf("=== File Copier ===\n");
     printf("Source: %s\n", INPUT_FILENAME);
     printf("Destination: %s\n\n", OUTPUT_FILENAME);
 }
 
-// Open input file with error handling
+
 FILE* open_input_file() {
     FILE *file = fopen(INPUT_FILENAME, "r");
     if (file == NULL) {
@@ -27,7 +27,7 @@ FILE* open_input_file() {
     return file;
 }
 
-// Open output file with error handling
+
 FILE* open_output_file() {
     FILE *file = fopen(OUTPUT_FILENAME, "w");
     if (file == NULL) {
@@ -36,7 +36,7 @@ FILE* open_output_file() {
     return file;
 }
 
-// Get file size using fseek and ftell
+
 long get_file_size(FILE *file) {
     if (fseek(file, 0, SEEK_END)) {
         perror("Error seeking to end of file");
@@ -57,7 +57,7 @@ long get_file_size(FILE *file) {
     return size;
 }
 
-// Copy file content character by character
+
 int copy_file_content(FILE *input, FILE *output, long file_size) {
     char character;
     long bytes_copied = 0;
@@ -91,7 +91,7 @@ int copy_file_content(FILE *input, FILE *output, long file_size) {
     return 0;
 }
 
-// Close file with error handling
+
 int close_file(FILE *file, const char *filename) {
     if (fclose(file)) {
         fprintf(stderr, "Error closing %s\n", filename);

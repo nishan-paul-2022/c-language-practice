@@ -8,20 +8,20 @@
 #include <ctype.h>
 
 int is_palindrome_recursive_helper(const char str[], int start, int end) {
-    if (start == end) { // Base case: crossed indices
+    if (start == end) { 
         return 1;
     }
 
-    if (tolower(str[start]) == tolower(str[end])) { // Case-insensitive match
+    if (tolower(str[start]) == tolower(str[end])) { 
         return is_palindrome_recursive_helper(str, start + 1, end - 1);
     } else {
-        return 0; // Not a palindrome
+        return 0; 
     }
 }
 
 int is_palindrome(const char str[]) {
     int length = strlen(str);
-    if (length <= 1) { // Empty or single char
+    if (length <= 1) { 
         return 1;
     }
 
@@ -33,7 +33,7 @@ void read_input(char str[], int size) {
     printf("Enter a string to check palindrome: ");
 
     if (fgets(str, size, stdin) != NULL) {
-        str[strcspn(str, "\n")] = 0; // Remove trailing newline
+        str[strcspn(str, "\n")] = 0; 
     } else {
         fprintf(stderr, "Error reading input.\n");
         str[0] = '\0';

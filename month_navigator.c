@@ -5,13 +5,13 @@
 
 #include <stdio.h>
 
-// Array of month names in sentence case
+
 const char* MONTHS[] = {
     "", "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 };
 
-// Get month name by number
+
 const char* get_month_name(int month_num) {
     if (month_num >= 1 && month_num <= 12) {
         return MONTHS[month_num];
@@ -19,17 +19,17 @@ const char* get_month_name(int month_num) {
     return "Invalid";
 }
 
-// Get next month number
+
 int get_next_month_number(int current_month) {
     return (current_month == 12) ? 1 : current_month + 1;
 }
 
-// Validate month input
+
 int is_valid_month(int month) {
     return (month >= 1 && month <= 12);
 }
 
-// Display current and next month
+
 void display_month_sequence(int month_number) {
     if (is_valid_month(month_number)) {
         const char* current_month = get_month_name(month_number);
@@ -40,7 +40,7 @@ void display_month_sequence(int month_number) {
     }
 }
 
-// Get month input from user
+
 int get_month_input() {
     int month;
     

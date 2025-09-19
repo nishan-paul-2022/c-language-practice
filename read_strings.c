@@ -6,18 +6,18 @@
 #include <stdio.h>
 #include <string.h>
 
-#define BUFFER_SIZE 256 // Maximum buffer size for input strings
+#define BUFFER_SIZE 256 
 
-// Function to read a string safely from input
+
 int read_string(char *buffer, int max_length) {
     if (fgets(buffer, max_length, stdin) == NULL) {
-        return -1; // EOF or error
+        return -1; 
     }
-    buffer[strcspn(buffer, "\n")] = 0; // Remove trailing newline
-    return 0; // Success
+    buffer[strcspn(buffer, "\n")] = 0; 
+    return 0; 
 }
 
-// Function to handle the main loop of reading and printing strings
+
 void process_strings(int max_length) {
     char input[BUFFER_SIZE];
     while (1) {
@@ -40,7 +40,7 @@ int main(void) {
         return 0;
     }
 
-    while (getchar() != '\n'); // Consume leftover newline
+    while (getchar() != '\n'); 
 
     printf("Enter strings. Press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to end.\n");
     process_strings(max_string_length);

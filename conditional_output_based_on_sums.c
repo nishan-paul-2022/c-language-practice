@@ -5,13 +5,13 @@
 
 #include <stdio.h>
 
-// Clear input buffer after failed scanf
+
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Read and validate number of test cases
+
 int read_test_count() {
     int count;
     printf("=== Hit/Miss Calculator ===\n");
@@ -26,7 +26,7 @@ int read_test_count() {
     return count;
 }
 
-// Read four integers with validation
+
 int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     printf("%s", prompt);
     if (scanf("%d %d %d %d", a, b, c, d) != 4) {
@@ -37,18 +37,18 @@ int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     return 0;
 }
 
-// Calculate sum using formula: a - b + c - d
+
 int calculate_sum(int a, int b, int c, int d) {
     return a - b + c - d;
 }
 
-// Determine and print result based on both sums
+
 void print_result(int sum1, int sum2, int test_num) {
     const char *result = (sum1 > 0 && sum2 > 0) ? "HIT" : "MISS";
     printf("Test Case %d Result: %s (Sum1=%d, Sum2=%d)\n", test_num, result, sum1, sum2);
 }
 
-// Process a single test case
+
 int process_test_case(int test_num) {
     int k1, k2, k3, k4;
     int m1, m2, m3, m4;

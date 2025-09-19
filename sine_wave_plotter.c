@@ -27,7 +27,7 @@ void print_spaces(int count) {
 }
 
 void display_sine_wave(int max_degrees, int step, double amplitude) {
-    const int OFFSET = (int)amplitude; // Center the wave
+    const int OFFSET = (int)amplitude; 
 
     printf("Sine Wave Plot (0 to %d degrees):\n", max_degrees);
     printf("-----------------------------------\n");

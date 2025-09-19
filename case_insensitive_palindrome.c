@@ -40,13 +40,13 @@ int is_palindrome(const char *string) {
 
     while (left_index < right_index) {
         if (string[left_index] != string[right_index]) {
-            return -1; // Not a palindrome
+            return -1; 
         }
         left_index++;
         right_index--;
     }
 
-    return 0; // Palindrome
+    return 0; 
 }
 
 void display_result(const char *string, int palindrome_result) {

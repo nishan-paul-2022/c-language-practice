@@ -9,7 +9,7 @@
 
 #define MAX_ROW_LEN 100
 
-// Data structures for functional approach
+
 typedef struct {
     int rows;
     int cols;
@@ -31,7 +31,7 @@ typedef struct {
     char *error_message;
 } Result;
 
-// Pure functional components
+
 Dimensions create_dimensions(int rows, int cols) {
     Dimensions dim = {rows, cols};
     return dim;
@@ -52,13 +52,13 @@ Result create_error_result(const char *message) {
     return result;
 }
 
-// Input/Output components
+
 Result read_dimensions(Dimensions *dim) {
     printf("Enter the number of rows and columns (e.g., 3 4): ");
     if (scanf("%d %d", &dim->rows, &dim->cols) != 2) {
         return create_error_result("Invalid input for dimensions.");
     }
-    while (getchar() != '\n'); // clear input buffer
+    while (getchar() != '\n'); 
     return create_success_result();
 }
 
@@ -70,7 +70,7 @@ Result read_indices(Index *idx) {
     return create_success_result();
 }
 
-// Grid management components
+
 Grid create_empty_grid(Dimensions dim) {
     Grid grid;
     grid.rows = dim.rows;
@@ -81,7 +81,7 @@ Grid create_empty_grid(Dimensions dim) {
         for (int i = 0; i < dim.rows; i++) {
             grid.data[i] = (char*)malloc((dim.cols + 1) * sizeof(char));
             if (grid.data[i] == NULL) {
-                // Cleanup previously allocated rows
+                
                 for (int j = 0; j < i; j++) {
                     free(grid.data[j]);
                 }
@@ -112,7 +112,7 @@ Result is_valid_grid(Grid grid) {
     return create_success_result();
 }
 
-// Data processing components
+
 Result fill_grid_row(Grid grid, int row_num, const char *input) {
     if (row_num < 0 || row_num >= grid.rows) {
         return create_error_result("Row index out of bounds.");
@@ -124,11 +124,11 @@ Result fill_grid_row(Grid grid, int row_num, const char *input) {
     
     strncpy(grid.data[row_num], input, grid.cols);
     
-    // Pad with spaces if shorter
+    
     for (int j = strlen(input); j < grid.cols; j++) {
         grid.data[row_num][j] = ' ';
     }
-    grid.data[row_num][grid.cols] = '\0'; // null terminate
+    grid.data[row_num][grid.cols] = '\0'; 
     
     return create_success_result();
 }
@@ -145,7 +145,7 @@ Result populate_grid(Grid grid) {
             return create_error_result("Failed to read row input.");
         }
         
-        input_buffer[strcspn(input_buffer, "\n")] = 0; // strip newline
+        input_buffer[strcspn(input_buffer, "\n")] = 0; 
         
         Result fill_result = fill_grid_row(grid, i, input_buffer);
         if (!fill_result.success) {
@@ -156,7 +156,7 @@ Result populate_grid(Grid grid) {
     return create_success_result();
 }
 
-// Validation components
+
 Result validate_index(Index idx, Dimensions dim) {
     if (idx.row < 0 || idx.row >= dim.rows || 
         idx.col < 0 || idx.col >= dim.cols) {
@@ -165,7 +165,7 @@ Result validate_index(Index idx, Dimensions dim) {
     return create_success_result();
 }
 
-// Display components
+
 void display_grid(Grid grid) {
     printf("\nGrid entered:\n");
     for (int i = 0; i < grid.rows; i++) {
@@ -190,14 +190,14 @@ int main(void) {
     Index idx;
     Result result;
     
-    // Get dimensions
+    
     result = read_dimensions(&dim);
     if (!result.success) {
         display_error(result.error_message);
         return 0;
     }
     
-    // Create and validate grid
+    
     Grid grid = create_empty_grid(dim);
     result = is_valid_grid(grid);
     if (!result.success) {
@@ -205,7 +205,7 @@ int main(void) {
         return 0;
     }
     
-    // Populate grid
+    
     result = populate_grid(grid);
     if (!result.success) {
         display_error(result.error_message);
@@ -213,10 +213,10 @@ int main(void) {
         return 0;
     }
     
-    // Display grid
+    
     display_grid(grid);
     
-    // Get indices
+    
     result = read_indices(&idx);
     if (!result.success) {
         display_error(result.error_message);
@@ -224,7 +224,7 @@ int main(void) {
         return 0;
     }
     
-    // Validate indices
+    
     result = validate_index(idx, dim);
     if (!result.success) {
         display_error(result.error_message);
@@ -232,10 +232,10 @@ int main(void) {
         return 0;
     }
     
-    // Display character at index
+    
     display_character_at_index(grid, idx);
     
-    // Cleanup
+    
     destroy_grid(&grid);
 
     return 0;

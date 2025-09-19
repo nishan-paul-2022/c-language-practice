@@ -16,7 +16,7 @@ long long count_decimal_places(double num) {
         num *= 10.0;
         decimal_places++;
         if (decimal_places > 15) {
-            return decimal_places; // Prevent infinite loop
+            return decimal_places; 
         }
     }
 
@@ -54,7 +54,7 @@ int main(void) {
         return 0;
     }
 
-    // Find maximum decimal places
+    
     max_decimal_places = count_decimal_places(input_numbers[0]);
     long long dp1 = count_decimal_places(input_numbers[1]);
     long long dp2 = count_decimal_places(input_numbers[2]);
@@ -67,16 +67,16 @@ int main(void) {
 
     scaling_factor = power_of_10(max_decimal_places);
 
-    // Scale numbers to integers
+    
     for (int i = 0; i < 3; i++) {
         scaled_integers[i] = scale_number(input_numbers[i], max_decimal_places);
     }
 
-    // Calculate GCD of scaled integers
+    
     common_divisor = calculate_gcd(scaled_integers[0], scaled_integers[1]);
     common_divisor = calculate_gcd(common_divisor, scaled_integers[2]);
 
-    // Final result
+    
     double final_result = (double)common_divisor / scaling_factor;
 
     printf("Maximum decimal places: %lld\n", max_decimal_places);

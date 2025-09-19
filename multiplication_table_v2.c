@@ -37,7 +37,7 @@ int read_dimensions(int *rows, int *cols) {
     return 0;
 }
 
-// Populate array with multiplication values
+
 void populate_array(int rows, int cols, int **array_grid) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
@@ -46,26 +46,26 @@ void populate_array(int rows, int cols, int **array_grid) {
     }
 }
 
-// Display array in formatted table
+
 void print_array(int rows, int cols, int **array_grid) {
     printf("\n2D Array (Multiplication Table):\n");
     printf("================================\n");
     
-    // Print column headers
+    
     printf("     ");
     for (int j = 0; j < cols; j++) {
         printf("%4d", j + 1);
     }
     printf("\n");
     
-    // Print separator line
+    
     printf("     ");
     for (int j = 0; j < cols; j++) {
         printf("----");
     }
     printf("\n");
     
-    // Print rows with row headers
+    
     for (int i = 0; i < rows; i++) {
         printf("%2d | ", i + 1);
         for (int j = 0; j < cols; j++) {
@@ -76,7 +76,7 @@ void print_array(int rows, int cols, int **array_grid) {
     printf("\n");
 }
 
-// Allocate memory for 2D array
+
 int** allocate_array(int rows, int cols) {
     int **array = (int**)malloc(rows * sizeof(int*));
     if (array == NULL) {
@@ -96,7 +96,7 @@ int** allocate_array(int rows, int cols) {
     return array;
 }
 
-// Free allocated memory
+
 void free_array(int **array, int rows) {
     if (array != NULL) {
         for (int i = 0; i < rows; i++) {
@@ -106,7 +106,7 @@ void free_array(int **array, int rows) {
     }
 }
 
-// Display array creation summary
+
 void display_summary(int rows, int cols) {
     printf("Array Summary:\n");
     printf("- Dimensions: %d x %d\n", rows, cols);

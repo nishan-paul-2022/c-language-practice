@@ -26,7 +26,7 @@ int process_input_file() {
     printf("Processing %s:\n", INPUT_FILENAME);
     int number_from_input;
     while (fscanf(input_file, "%d", &number_from_input) == 1) {
-        int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1; // (n-1)^2
+        int calculated_value = number_from_input * number_from_input - 2 * number_from_input + 1; 
 
         printf("  Input: %d, Calculated: %d\n", number_from_input, calculated_value);
 

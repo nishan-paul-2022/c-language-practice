@@ -29,7 +29,7 @@ int main(void) {
         }
     }
 
-    while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
+    while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); 
 
     while (1) {
         int target;
@@ -41,16 +41,16 @@ int main(void) {
 
         int start = 0;
         int end = array_size - 1;
-        int found_index = -1; // To store the 1-based index if found
+        int found_index = -1; 
         while (start <= end) {
-            int mid = start + (end - start) / 2; // Prevents overflow
+            int mid = start + (end - start) / 2; 
 
             if (array[mid] == target) {
-                found_index = mid + 1; // Store 1-based index
+                found_index = mid + 1; 
                 break;
             } else if (array[mid] < target) {
                 start = mid + 1;
-            } else { // array[mid] > target
+            } else { 
                 end = mid - 1;
             }
         }

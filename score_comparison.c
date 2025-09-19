@@ -19,21 +19,21 @@ int main(void) {
         int t1p1, t1p2, t1p3, t1p4;
         int t2p1, t2p2, t2p3, t2p4;
 
-        // Prompt for Team 1 scores
+        
         printf("\nEnter 4 scores for Team 1 (test case %d): ", i + 1);
         if (scanf("%d %d %d %d", &t1p1, &t1p2, &t1p3, &t1p4) != 4) {
             printf("Invalid input for Team 1 scores.\n");
             return 0;
         }
 
-        // Prompt for Team 2 scores
+        
         printf("Enter 4 scores for Team 2 (test case %d): ", i + 1);
         if (scanf("%d %d %d %d", &t2p1, &t2p2, &t2p3, &t2p4) != 4) {
             printf("Invalid input for Team 2 scores.\n");
             return 0;
         }
 
-        // Check condition and print result
+        
         if ((t1p1 + t1p2 > t1p3 + t1p4) && (t2p1 + t2p2 > t2p3 + t2p4)) {
             printf("Result: Banglawash\n");
         } else {

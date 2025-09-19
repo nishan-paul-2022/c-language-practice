@@ -6,15 +6,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Recursive function to calculate nth Fibonacci number (F(0)=0, F(1)=1)
+
 int calculate_fibonacci_recursive(int n) {
     if (n <= 0) {
-        return 0; // F(0)=0
+        return 0; 
     }
     if (n == 1) {
-        return 1; // F(1)=1
+        return 1; 
     }
-    return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2); // F(n)=F(n-1)+F(n-2)
+    return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2); 
 }
 
 int main(void) {

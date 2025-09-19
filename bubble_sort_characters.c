@@ -52,20 +52,20 @@ int get_array_size() {
     return size;
 }
 
-// Function to get valid input from user
+
 int get_valid_input(char characters[], int array_size) {
     printf("Enter %d characters as a string:\n", array_size);
     
-    // Use fgets for safe input to read the characters
+    
     if (fgets(characters, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input string.\n");
         return -1;
     }
     
-    // Remove the trailing newline character if it exists
+    
     characters[strcspn(characters, "\n")] = '\0';
     
-    // Count actual characters (excluding spaces)
+    
     int count = 0;
     for (int i = 0; characters[i] != '\0'; i++) {
         if (characters[i] != ' ') {
@@ -76,13 +76,13 @@ int get_valid_input(char characters[], int array_size) {
     return count;
 }
 
-// Function to perform bubble sort on an array of characters
+
 void bubble_sort_chars(char arr[], int size) {
-    // Bubble sort algorithm with early termination optimization
+    
     for (int i = 0; i < size - 1; i++) {
-        // In each pass, the largest unsorted character "bubbles up" to its correct position
+        
         for (int j = 0; j < size - 1 - i; j++) {
-            // If current character is greater than the next character, swap them
+            
             if (arr[j] > arr[j + 1]) {
                 char temp = arr[j];
                 arr[j] = arr[j + 1];

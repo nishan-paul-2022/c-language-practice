@@ -8,19 +8,19 @@
 void demo_sscanf() {
     printf("=== sscanf Examples ===\n");
     
-    // Parse numbers
+    
     char data1[] = "25 3.14 A";
     int age; float gpa; char grade;
     sscanf(data1, "%d %f %c", &age, &gpa, &grade);
     printf("Parsed: age=%d, gpa=%.2f, grade=%c\n", age, gpa, grade);
     
-    // Parse strings
+    
     char data2[] = "John Berkeley CS";
     char name[20], city[20], major[20];
     sscanf(data2, "%s %s %s", name, city, major);
     printf("Parsed: %s from %s, major: %s\n", name, city, major);
     
-    // Parse with format
+    
     char data3[] = "ID:12345 Score:95.5";
     int id; float score;
     sscanf(data3, "ID:%d Score:%f", &id, &score);
@@ -32,15 +32,15 @@ void demo_sprintf() {
     
     char buffer[100];
     
-    // Basic formatting
+    
     sprintf(buffer, "Name: %s, Age: %d", "Alice", 22);
     printf("Formatted: %s\n", buffer);
     
-    // Numbers with precision
+    
     sprintf(buffer, "Price: $%.2f, Quantity: %d", 15.99, 3);
     printf("Formatted: %s\n", buffer);
     
-    // Table-like formatting
+    
     sprintf(buffer, "%-10s | %5d | %6.2f", "Student", 12345, 3.85);
     printf("Table row: %s\n", buffer);
 }

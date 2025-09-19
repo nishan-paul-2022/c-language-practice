@@ -9,14 +9,14 @@
 
 #define MAX_STRING_SIZE 100
 
-// Function to convert a string to lowercase
+
 void to_lowercase(char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
         str[i] = tolower(str[i]);
     }
 }
 
-// Function to print a string without vowels
+
 void print_without_vowels(const char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
         if (!(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')) {
@@ -26,13 +26,13 @@ void print_without_vowels(const char *str) {
     putchar('\n');
 }
 
-// Function to safely read a string from input
+
 int read_input_string(char *buffer, int size) {
     if (fgets(buffer, size, stdin) == NULL) {
-        return -1; // Failure
+        return -1; 
     }
-    buffer[strcspn(buffer, "\n")] = '\0'; // Remove trailing newline
-    return 0; // Success
+    buffer[strcspn(buffer, "\n")] = '\0'; 
+    return 0; 
 }
 
 int main(void) {

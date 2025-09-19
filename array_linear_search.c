@@ -16,7 +16,7 @@ int main(void) {
             continue;
         }
 
-        // Dynamically allocate memory for the array
+        
         int *numbers = (int *)malloc(array_size * sizeof(int));
         if (numbers == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
@@ -27,7 +27,7 @@ int main(void) {
         for (int i = 0; i < array_size; i++) {
             if (scanf("%d", &numbers[i]) != 1) {
                 printf("Invalid input. Exiting.\n");
-                free(numbers);  // Free allocated memory before exiting
+                free(numbers);  
                 return 0;
             }
         }
@@ -36,15 +36,15 @@ int main(void) {
         int target_number;
         if (scanf("%d", &target_number) != 1) {
             printf("Invalid input. Exiting.\n");
-            free(numbers);  // Free allocated memory before exiting
+            free(numbers);  
             return 0;
         }
 
         printf("Occurrences of %d found at 1-based indices: ", target_number);
         int found = 0;
-        for (int i = 0; i < array_size; i++) { // Loop up to array_size, not i
+        for (int i = 0; i < array_size; i++) { 
             if (numbers[i] == target_number) {
-                printf("%d ", i + 1); // Print 1-based index
+                printf("%d ", i + 1); 
                 found = 1;
             }
         }

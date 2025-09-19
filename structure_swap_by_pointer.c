@@ -6,14 +6,14 @@
 #include <stdio.h>
 #include <string.h>
 
-// Define a structure to hold person's information
+
 typedef struct {
     char name[100];
     char phone[100];
     int age;
 } Person;
 
-// Function to swap two Person structures if person2's age is greater than person1's age
+
 void swap_persons_by_age(Person *person1, Person *person2) {
     if (person2->age > person1->age) {
         Person temp_person = *person2;
@@ -22,7 +22,7 @@ void swap_persons_by_age(Person *person1, Person *person2) {
     }
 }
 
-// Function to input person details safely
+
 void input_person(Person *person, int person_number) {
     printf("\nEnter details for Person %d:\n", person_number);
     printf("Name: ");
@@ -33,7 +33,7 @@ void input_person(Person *person, int person_number) {
     scanf("%d", &person->age);
 }
 
-// Function to print person details
+
 void print_person(const Person *person, int person_number) {
     printf("\nDetails of Person %d:\n", person_number);
     printf("Name: %s\n", person->name);
@@ -44,14 +44,14 @@ void print_person(const Person *person, int person_number) {
 int main(void) {
     Person person1, person2;
 
-    // Input details
+    
     input_person(&person1, 1);
     input_person(&person2, 2);
 
-    // Swap based on age
+    
     swap_persons_by_age(&person1, &person2);
 
-    // Output details after potential swap
+    
     print_person(&person1, 1);
     print_person(&person2, 2);
 
