@@ -1,3 +1,8 @@
+/*
+ * Purpose: Demonstrates a complete user registration system with input validation and password masking.
+ * Topic: Struct Usage and Input Validation
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

@@ -1,3 +1,8 @@
+/*
+ * Purpose: Calculates the sum of multiples of given divisors up to a specified limit with detailed output.
+ * Topic: Mathematical Algorithms and Array Processing
+ */
+
 #include <stdio.h>
 
 int sum_of_multiples(int limit, int divisiors[], int n) {

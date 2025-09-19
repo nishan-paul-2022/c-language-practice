@@ -1,5 +1,5 @@
 /*
- * Purpose: To calculate the sum of a number and its successive integer divisions.
+ * Purpose: Calculates the sum of a number and its successive integer divisions.
  * Topic: Loops, Basic I/O
  */
 

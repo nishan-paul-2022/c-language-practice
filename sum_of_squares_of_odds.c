@@ -1,3 +1,8 @@
+/*
+ * Purpose: Calculates the sum of squares of the first N odd numbers with input validation.
+ * Topic: Mathematical Computation and Loop Constructs
+ */
+
 #include <stdio.h>
 
 int read_positive_int(const char *prompt) {
