@@ -7,12 +7,22 @@
 #include <stdlib.h>
 
 long int calculate_gcd(long int a, long int b) {
-    if (a < 0) a = -a;
-    if (b < 0) b = -b;
+    if (a < 0) {
+        a = -a;
+    }
+    if (b < 0) {
+        b = -b;
+    }
 
-    if (a == 0 && b == 0) return 0;
-    if (a == 0) return b;
-    if (b == 0) return a;
+    if (a == 0 && b == 0) {
+        return 0;
+    }
+    if (a == 0) {
+        return b;
+    }
+    if (b == 0) {
+        return a;
+    }
 
     while (b) {
         long int temp = b;
@@ -23,7 +33,9 @@ long int calculate_gcd(long int a, long int b) {
 }
 
 long int calculate_lcm(long int a, long int b, long int gcd) {
-    if (gcd == 0) return 0;
+    if (gcd == 0) {
+        return 0;
+    }
     long int abs_a = (a < 0) ? -a : a;
     long int abs_b = (b < 0) ? -b : b;
     return (abs_a / gcd) * abs_b; // Divide first to prevent overflow

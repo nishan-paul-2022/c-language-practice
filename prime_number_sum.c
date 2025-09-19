@@ -7,9 +7,13 @@
 #include <stdlib.h>
 
 int is_prime(int num) {
-    if (num <= 1) return 0;
+    if (num <= 1) {
+        return 0;
+    }
     for (int i = 2; i * i <= num; i++) {
-        if (num % i == 0) return 0;
+        if (num % i == 0) {
+            return 0;
+        }
     }
     return 1;
 }
@@ -58,12 +62,21 @@ int main(void) {
     }
 
     printf("\nPrime numbers found in the matrix: ");
-    if (prime_count == 0) printf("None");
-    else for (int i = 0; i < prime_count; i++) printf("%d ", primes[i]);
+    if (prime_count == 0) {
+        printf("None");
+    } else {
+        for (int i = 0; i < prime_count; i++) {
+            printf("%d ", primes[i]);
+        }
+    }
     printf("\nSum of prime numbers: %d\n", prime_sum);
 
-    for (int i = 0; i < rows; i++) free(matrix[i]);
+    for (int i = 0; i < rows; i++) {
+        free(matrix[i]);
+    }
+    
     free(matrix);
+    
     free(primes);
 
     return 0;

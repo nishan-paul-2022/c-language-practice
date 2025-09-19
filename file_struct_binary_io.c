@@ -17,8 +17,11 @@ typedef struct {
 
 void write_structure(FILE *file_ptr, const StudentData *data) {
     if (fwrite(data, sizeof(StudentData), 1, file_ptr) != 1) {
-        if (ferror(file_ptr)) perror("Error writing structure to file");
-        else fprintf(stderr, "Incomplete write of structure.\n");
+        if (ferror(file_ptr)) {
+            perror("Error writing structure to file");
+        } else {
+            fprintf(stderr, "Incomplete write of structure.\n");
+        }
         fclose(file_ptr);
         exit(0);
     }
@@ -27,8 +30,11 @@ void write_structure(FILE *file_ptr, const StudentData *data) {
 void read_structure(FILE *file_ptr, StudentData *data) {
     rewind(file_ptr);
     if (fread(data, sizeof(StudentData), 1, file_ptr) != 1) {
-        if (ferror(file_ptr)) perror("Error reading structure from file");
-        else fprintf(stderr, "Could not read structure.\n");
+        if (ferror(file_ptr)) {
+            perror("Error reading structure from file");
+        } else {
+            fprintf(stderr, "Could not read structure.\n");
+        }
         fclose(file_ptr);
         exit(0);
     }

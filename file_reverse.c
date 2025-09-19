@@ -70,8 +70,12 @@ int reverse_file_content(FILE *input_file, FILE *output_file, long file_size) {
 }
 
 void close_files(FILE *input_file, FILE *output_file) {
-    if (input_file) fclose(input_file);
-    if (output_file) fclose(output_file);
+    if (input_file) {
+        fclose(input_file);
+    }
+    if (output_file) {
+        fclose(output_file);
+    }
 }
 
 void display_success_message() {

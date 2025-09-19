@@ -16,7 +16,9 @@ typedef struct {
 void read_string(char *buffer, int size) {
     if (fgets(buffer, size, stdin) != NULL) {
         char *newline = strchr(buffer, '\n');
-        if (newline) *newline = '\0';
+        if (newline) {
+            *newline = '\0';
+        }
     }
 }
 

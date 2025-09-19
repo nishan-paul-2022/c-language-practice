@@ -41,13 +41,19 @@ void print_hollow_rectangle(int num_rows, int num_cols, int fill_number) {
 
 int main(void) {
     int num_rows = get_positive_integer("Enter the number of rows: ");
-    if (num_rows == -1) return 0;
+    if (num_rows == -1) {
+        return 0;
+    }
 
     int num_cols = get_positive_integer("Enter the number of columns: ");
-    if (num_cols == -1) return 0;
+    if (num_cols == -1) {
+        return 0;
+    }
 
     int fill_number = get_fill_number();
-    if (fill_number == -1) return 0;
+    if (fill_number == -1) {
+        return 0;
+    }
 
     print_hollow_rectangle(num_rows, num_cols, fill_number);
 

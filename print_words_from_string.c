@@ -23,8 +23,12 @@ void print_words(const char str[BUFFER_SIZE]) {
 
     printf("Words in the string:\n");
     while (str[i] != '\0') {
-        while (str[i] == ' ') i++;
-        if (str[i] == '\0') break;
+        while (str[i] == ' ') {
+            i++;
+        }
+        if (str[i] == '\0') {
+            break;
+        }
 
         // Find end of word
         j = i;

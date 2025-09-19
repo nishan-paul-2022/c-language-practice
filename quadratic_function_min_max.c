@@ -69,8 +69,7 @@ int main(void) {
         }
         
         // Show key points
-        if (x == START_X || x == END_X || x == (int)vertex_x || 
-            x % 20 == 0) {
+        if (x == START_X || x == END_X || x == (int)vertex_x || x % 20 == 0) {
             printf("  x = %3d: y = %6.2f\n", x, y);
         }
     }

@@ -12,9 +12,9 @@ void read_input(char str[BUFFER_SIZE]) {
     printf("Enter a string: "); // Prompt user
     if (fgets(str, BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input.\n");
-        exit(0);
+        exit(1);
     }
-    str[strcspn(str, "\n")] = 0; // Remove trailing newline
+    str[strcspn(str, "\n")] = '\0'; // Remove trailing newline
 }
 
 void print_words(const char str[BUFFER_SIZE]) {
@@ -22,11 +22,17 @@ void print_words(const char str[BUFFER_SIZE]) {
 
     printf("Words in the string:\n");
     while (str[i] != '\0') {
-        while (str[i] == ' ') i++; // Skip spaces
-        if (str[i] == '\0') break;
+        while (str[i] == ' ') {
+            i++; // Skip spaces
+        }
+        if (str[i] == '\0') {
+            break;
+        }
 
         j = i;
-        while (str[j] != ' ' && str[j] != '\0') j++; // Find end of word
+        while (str[j] != ' ' && str[j] != '\0') {
+            j++; // Find end of word
+        }
 
         for (int k = i; k < j; k++) {
             printf("%c", str[k]); // Print word

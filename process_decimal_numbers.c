@@ -7,14 +7,19 @@
 #include <stdlib.h>
 
 long long count_decimal_places(double num) {
-    if (num == 0.0) return 0;
+    if (num == 0.0) {
+        return 0;
+    }
 
     long long decimal_places = 0;
     while (num != (long long)num) {
         num *= 10.0;
         decimal_places++;
-        if (decimal_places > 15) return decimal_places; // Prevent infinite loop
+        if (decimal_places > 15) {
+            return decimal_places; // Prevent infinite loop
+        }
     }
+
     return decimal_places;
 }
 
@@ -24,7 +29,9 @@ long long scale_number(double num, long long power) {
 }
 
 long long calculate_gcd(long long a, long long b) {
-    if (b == 0) return a;
+    if (b == 0) {
+        return a;
+    }
     return calculate_gcd(b, a % b);
 }
 
@@ -51,8 +58,12 @@ int main(void) {
     max_decimal_places = count_decimal_places(input_numbers[0]);
     long long dp1 = count_decimal_places(input_numbers[1]);
     long long dp2 = count_decimal_places(input_numbers[2]);
-    if (dp1 > max_decimal_places) max_decimal_places = dp1;
-    if (dp2 > max_decimal_places) max_decimal_places = dp2;
+    if (dp1 > max_decimal_places) {
+        max_decimal_places = dp1;
+    }
+    if (dp2 > max_decimal_places) {
+        max_decimal_places = dp2;
+    }
 
     scaling_factor = power_of_10(max_decimal_places);
 

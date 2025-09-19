@@ -74,10 +74,14 @@ int main(void) {
     int matrix[MAX_DIMENSION][MAX_DIMENSION];
     
     int dimension = get_dimension();
-    if (dimension == -1) return 0;
+    if (dimension == -1) {
+        return 0;
+    }
 
     int num_elements = get_num_elements();
-    if (num_elements == -1) return 0;
+    if (num_elements == -1) {
+        return 0;
+    }
 
     initialize_matrix(matrix, dimension);
     set_matrix_elements(matrix, dimension, num_elements);

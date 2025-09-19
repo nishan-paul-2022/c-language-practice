@@ -7,12 +7,22 @@
 #include <stdlib.h>
 
 long long calculate_gcd(long long num1, long long num2) {
-    if (num1 < 0) num1 = -num1;
-    if (num2 < 0) num2 = -num2;
+    if (num1 < 0) {
+        num1 = -num1;
+    }
+    if (num2 < 0) {
+        num2 = -num2;
+    }
 
-    if (num1 == 0 && num2 == 0) return 0;
-    if (num1 == 0) return num2;
-    if (num2 == 0) return num1;
+    if (num1 == 0 && num2 == 0) {
+        return 0;
+    }
+    if (num1 == 0) {
+        return num2;
+    }
+    if (num2 == 0) {
+        return num1;
+    }
 
     long long temp;
     while (num2) {
@@ -27,7 +37,9 @@ long long calculate_lcm(long long num1, long long num2, long long gcd_val) {
     if (num1 == 0 || num2 == 0) {
         return 0;
     }
-    if (gcd_val == 0) return 0;
+    if (gcd_val == 0) {
+        return 0;
+    }
 
     unsigned long long product = (unsigned long long)num1 * num2;
     return (long long)(product / gcd_val);

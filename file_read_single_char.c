@@ -15,7 +15,9 @@ FILE* open_file(const char *filename) {
 }
 
 int read_single_char(FILE *fp) {
-    if (fp == NULL) return EOF;
+    if (fp == NULL) {
+        return EOF;
+    }
     int c = getc(fp); // Read a single character
     if (c == EOF) {
         if (ferror(fp)) {
@@ -28,7 +30,9 @@ int read_single_char(FILE *fp) {
 }
 
 void close_file(FILE *fp) {
-    if (fp != NULL) fclose(fp); // Close file
+    if (fp != NULL) {
+        fclose(fp); // Close file
+    }
 }
 
 int main(void) {

@@ -28,10 +28,14 @@ void print_rectangle_rows(int rows, int cols) {
 
 int main(void) {
     int rows = get_positive_integer("Enter the number of rows: ");
-    if (rows <= 0) return 0;
+    if (rows <= 0) {
+        return 0;
+    }
 
     int cols = get_positive_integer("Enter the number of columns: ");
-    if (cols <= 0) return 0;
+    if (cols <= 0) {
+        return 0;
+    }
 
     printf("\nRectangle with row numbers:\n");
     print_rectangle_rows(rows, cols);

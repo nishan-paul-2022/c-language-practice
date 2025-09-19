@@ -16,7 +16,9 @@ int main(void) {
 
     printf("Enter the second string: ");
     char str2[100];
-    if (fgets(str2, sizeof(str2), stdin) == NULL) return 0;
+    if (fgets(str2, sizeof(str2), stdin) == NULL) {
+        return 0;
+    }
     str2[strcspn(str2, "\n")] = 0;
 
     char result[200];

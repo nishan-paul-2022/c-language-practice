@@ -19,8 +19,12 @@ int main(void) {
     printf("Enter two integers (format: 48 18): ");
     scanf("%d %d", &number1, &number2);
 
-    if (number1 < 0) number1 = -number1;
-    if (number2 < 0) number2 = -number2;
+    if (number1 < 0) {
+        number1 = -number1;
+    }
+    if (number2 < 0) {
+        number2 = -number2;
+    }
 
     if (number1 == 0 && number2 == 0) {
         printf("GCD of 0 and 0 is undefined (or 0 by some definitions).\n");
