@@ -24,7 +24,9 @@ long long count_decimal_places(double num) {
 }
 
 long long scale_number(double num, long long power) {
-    for (long long i = 0; i < power; i++) num *= 10.0;
+    for (long long i = 0; i < power; i++) {
+        num *= 10.0;
+    }
     return (long long)num;
 }
 
@@ -37,7 +39,9 @@ long long calculate_gcd(long long a, long long b) {
 
 long long power_of_10(int exp) {
     long long result = 1;
-    for (int i = 0; i < exp; i++) result *= 10;
+    for (int i = 0; i < exp; i++) {
+        result *= 10;
+    }
     return result;
 }
 

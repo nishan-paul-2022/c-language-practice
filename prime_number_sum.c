@@ -40,7 +40,9 @@ int main(void) {
         for (int j = 0; j < cols; j++) {
             if (scanf(" %d", &matrix[i][j]) != 1) {
                 printf("Invalid input for matrix element.\n");
-                for (int k = 0; k < rows; k++) free(matrix[k]);
+                for (int k = 0; k < rows; k++) {
+                    free(matrix[k]);
+                }
                 free(matrix);
                 free(primes);
                 return 0;
@@ -49,7 +51,9 @@ int main(void) {
                 int *temp = (int *)realloc(primes, (prime_count + 1) * sizeof(int));
                 if (!temp) {
                     printf("Memory allocation failed.\n");
-                    for (int k = 0; k < rows; k++) free(matrix[k]);
+                    for (int k = 0; k < rows; k++) {
+                        free(matrix[k]);
+                    }
                     free(matrix);
                     free(primes);
                     return 0;
