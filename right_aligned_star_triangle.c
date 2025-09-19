@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 // Function to safely read the number of rows
-int get_num_rows(void) {
+int get_num_rows() {
     int rows;
     printf("Enter the number of rows for the star triangle: ");
     

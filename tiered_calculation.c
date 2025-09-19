@@ -7,16 +7,20 @@
 
 double read_units(const char *prompt) {
     double units;
+
     printf("%s", prompt);
+
     if (scanf("%lf", &units) != 1 || units < 0) {
         printf("Invalid input. Please enter a non-negative number for units.\n");
         return -1;
     }
+    
     return units;
 }
 
 double calculate_tiered_cost(double units) {
     double cost = 0.0;
+
     if (units <= 200) {
         cost = units * 0.50;
     } else if (units <= 400) {
@@ -26,6 +30,7 @@ double calculate_tiered_cost(double units) {
     } else {
         cost = 390.0 + (units - 600.0) * 1.00;
     }
+
     return cost;
 }
 

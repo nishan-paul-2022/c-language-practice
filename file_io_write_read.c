@@ -9,7 +9,7 @@
 int get_two_characters(char *char1, char *char2) {
     printf("Enter two characters separated by a space (e.g., a b): ");
     if (scanf("%c %c", char1, char2) != 2) {
-        fprintf(stderr, "Error: Invalid input format.\n");
+        fprintf(stderr, "Invalid input format.\n");
         return -1;
     }
     return 0;
@@ -50,7 +50,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
         if (ferror(file_ptr)) {
             perror("Error reading first character from file");
         } else {
-            fprintf(stderr, "Error: Could not read first character from file.\n");
+            fprintf(stderr, "Could not read first character from file.\n");
         }
         fclose(file_ptr);
         return -1;
@@ -62,7 +62,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
         if (ferror(file_ptr)) {
             perror("Error reading second character from file");
         } else {
-            fprintf(stderr, "Error: Could not read second character from file.\n");
+            fprintf(stderr, "Could not read second character from file.\n");
         }
         fclose(file_ptr);
         return -1;

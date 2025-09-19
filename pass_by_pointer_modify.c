@@ -17,7 +17,7 @@ long long calculate_next_coefficient(long long current_coeff, int n, int k) {
     return next_coeff / k;
 }
 
-int read_num_rows(void) {
+int read_num_rows() {
     int num_rows;
     printf("Enter the number of rows for Pascal's triangle: ");
     

@@ -5,54 +5,52 @@
 
 #include <stdio.h>
 
-// Calculate nCr using iterative approach to avoid large factorials
-long long calculate_ncr(int n, int r) {
-    // Handle invalid inputs
+int calculate_ncr(int n, int r) {
     if (r < 0 || r > n) {
         return -1;
     }
     if (r == 0 || r == n) {
-        return 1; // Base cases: C(n, 0) = C(n, n) = 1
+        return 1;
     }
-    // Optimize by using symmetry property: C(n, r) = C(n, n-r)
     if (r > n / 2) {
         r = n - r;
     }
 
-    long long result = 1;
+    int result = 1;
     for (int i = 1; i <= r; ++i) {
-        // Multiply by (n - i + 1) and divide by i to get C(n, i) from C(n, i-1)
-        // Check for overflow during multiplication
-        if (__builtin_mul_overflow(result, (n - i + 1), &result)) {
-            return -2; // Error code for overflow
-        }
-        result /= i;
+        result = result * (n - i + 1) / i;
     }
     
     return result;
 }
 
-int main(void) {
-    int n, r;
-
+int get_input_values(int *n, int *r) {
     printf("Enter the values for n and r (e.g., '10 5' for C(10, 5)): ");
 
-    if (scanf("%d %d", &n, &r) != 2) {
+    if (scanf("%d %d", n, r) != 2) {
         printf("Invalid input format. Please enter two integers separated by a space.\n");
+        return -1;
+    }
+    
+    return 0;
+}
+
+void display_result(int n, int r, int ncr) {
+    if (ncr == -1) {
+        printf("Invalid input (n or r out of bounds).\n");
+    } else {
+        printf("C(%d, %d) = %d\n", n, r, ncr);
+    }
+}
+
+int main(void) {
+    int n, r;
+    if (get_input_values(&n, &r) == -1) {
         return 0;
     }
-
-    long long ncr= calculate_ncr(n, r);
-
-    if (ncr == -1) {
-        printf("Error: Invalid input (n or r out of bounds).\n");
-    }
-    else if (ncr == -2) {
-        printf("Error: Calculation resulted in overflow.\n");
-    }
-    else {
-        printf("C(%d, %d) = %lld\n", n, r, ncr);
-    }
-
+    
+    int ncr = calculate_ncr(n, r);
+    display_result(n, r, ncr);
+    
     return 0;
 }

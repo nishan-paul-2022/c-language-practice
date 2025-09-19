@@ -7,15 +7,15 @@
 #include <string.h>
 
 int main(void) {
-    char src[100], dest[100];
-    int i;
-
     printf("Enter a string: ");
+    char src[100];
     if (fgets(src, sizeof(src), stdin) == NULL) {
         return 0;
     }
     src[strcspn(src, "\n")] = 0;
 
+    int i;
+    char dest[100];
     for (i = 0; src[i] != '\0'; i++) {
         dest[i] = src[i];
     }

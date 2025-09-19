@@ -41,16 +41,16 @@ int is_palindrome(int num) {
     return 1;
 }
 
-int read_positive_integer(void) {
+int read_positive_integer() {
     int input_number;
     printf("Enter a positive integer: ");
     if (scanf("%d", &input_number) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
+        fprintf(stderr, "Invalid input. Please enter an integer.\n");
         return 0;
     }
 
     if (input_number <= 0) {
-        fprintf(stderr, "Error: Please enter a positive integer.\n");
+        fprintf(stderr, "Please enter a positive integer.\n");
         return 0;
     }
     

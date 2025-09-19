@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int read_input_limit(void) {
+int read_input_limit() {
     int input_limit;
     printf("Enter a positive integer (determines the number of rows): ");
     if (scanf("%d", &input_limit) != 1) {

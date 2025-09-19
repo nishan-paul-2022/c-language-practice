@@ -1,5 +1,5 @@
 /*
- * Purpose: To determine the type of a triangle based on its side lengths.
+ * Purpose: Determines triangle type (equilateral, isosceles, scalene) or invalid based on side lengths.
  * Topic: Conditional Statements, Basic I/O
  */
 
@@ -7,11 +7,14 @@
 
 int read_int(const char *prompt) {
     int value;
+
     printf("%s", prompt);
+
     if (scanf("%d", &value) != 1) {
         printf("Invalid input. Please enter an integer.\n");
         return -1;
     }
+
     return value;
 }
 
@@ -35,11 +38,12 @@ int read_triangle_sides_and_check(int case_num) {
     int c = read_int("Enter third side: ");
 
     if(a <= 0 || b <= 0 || c <= 0) {
-        printf("Case %d: Invalid\n", case_num);
+        printf("Case %d: Invalid", case_num);
         return -1;
     }
 
     check_triangle_type(a, b, c, case_num);
+
     return 0;
 }
 
@@ -51,6 +55,7 @@ int main(void) {
 
     for (int i = 1; i <= num_cases; i++) {
         read_triangle_sides_and_check(i);
+        printf("\n");
     }
 
     return 0;

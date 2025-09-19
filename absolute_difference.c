@@ -9,7 +9,7 @@
 int main(void) {
     long int x, y;
 
-    printf("Enter two long integers (or non-integer to quit):\n");
+    printf("Enter two long integers (Ctrl+D to exit):\n");
     while (scanf("%ld %ld", &x, &y) == 2) {
         long int z = labs(y - x); // Use labs for long integers
         printf("Absolute difference: %ld\n", z);

@@ -15,11 +15,11 @@ typedef struct {
     struct Record *next;
 } Record;
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
 }
 
-int get_record_count(void) {
+int get_record_count() {
     int number_of_records;
     printf("Enter the number of records to store: ");
     

@@ -182,7 +182,7 @@ void display_character_at_index(Grid grid, Index idx) {
 }
 
 void display_error(const char *message) {
-    fprintf(stderr, "Error: %s\n", message);
+    fprintf(stderr, "%s\n", message);
 }
 
 int main(void) {

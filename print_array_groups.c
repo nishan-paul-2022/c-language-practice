@@ -10,7 +10,7 @@ int main(void) {
 
     printf("Enter the number of elements: ");
     if (scanf("%d", &num_elements) != 1 || num_elements < 3) {
-        printf("Error: Please enter an integer >= 3.\n");
+        printf("Please enter an integer >= 3.\n");
         return 0;
     }
 
@@ -19,7 +19,7 @@ int main(void) {
     printf("Enter %d integers:\n", num_elements);
     for (int i = 0; i < num_elements; i++) {
         if (scanf("%d", &elements[i]) != 1) {
-            printf("Error: Invalid input for element %d.\n", i + 1);
+            printf("Invalid input for element %d.\n", i + 1);
             return 0;
         }
     }

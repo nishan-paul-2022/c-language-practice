@@ -6,11 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int get_size(void) {
+int get_size() {
     int size;
     printf("Enter the size of the diamond (number of rows in the upper half): ");
     if (scanf("%d", &size) != 1 || size <= 0) {
-        fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
+        fprintf(stderr, "Invalid input for size. Please enter a positive integer.\n");
         return -1;
     }
     return size;

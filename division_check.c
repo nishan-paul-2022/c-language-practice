@@ -15,7 +15,7 @@ void get_numbers(double *numerator, double *denominator) {
 // Function to calculate and display the integer and fractional parts
 void display_parts(double numerator, double denominator) {
     if (denominator == 0.0) {
-        fprintf(stderr, "Error: Cannot divide by zero.\n");
+        fprintf(stderr, "Cannot divide by zero.\n");
         return;
     }
 

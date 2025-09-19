@@ -59,7 +59,7 @@ int close_file_safely(FILE *file_ptr) {
     return 0;
 }
 
-void display_success_message(void) {
+void display_success_message() {
     printf("Successfully read from and wrote to '%s'.\n", FILENAME);
 }
 

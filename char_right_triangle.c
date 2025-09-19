@@ -1,50 +1,64 @@
-/*
- * Purpose: Prints a right-angled triangle pattern of characters, starting from 'A'.
- *          The number of rows is determined by user input. Each row prints characters from 'A' up to the current row number.
- * Topic: Nested Loops, Character Arithmetic, Pattern Printing, Input Handling
-*/
-
 #include <stdio.h>
 
-int main(void) {
+void consume_newline(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int get_number_of_rows(void) {
+    int num_rows;
+
     printf("Enter the number of rows for the character triangle: ");
     
-    // Read and validate number of rows
-    int num_rows;
-    if (scanf("%d", &num_rows) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter an integer for the number of rows.\n");
-        // Clear input buffer
-        while (getchar() != '\n');
-        return 0;
+    if (scanf("%d", &num_rows) == -1) {
+        fprintf(stderr, "Invalid input. Please enter an integer for the number of rows.\n");
+        consume_newline();
+        return -1;
     }
     
-    while (getchar() != '\n'); // Consume newline character left by scanf
+    consume_newline();
+    return num_rows;
+}
 
-    // Validate non-negative rows
-    if (num_rows < 0) {
-        fprintf(stderr, "Error: Number of rows cannot be negative.\n");
-        return 0;
+int validate_rows(int num_rows) {
+    if (num_rows <= 0) {
+        fprintf(stderr, "Number of rows must be positive.\n");
+        return -1;
+    }
+
+    return 0;
+}
+
+void print_triangle_row(int row_index) {
+    printf("\t\t\t");
+    
+    char current_char = 'A';
+    for (int col_index = 1; col_index <= row_index; col_index++) {
+        printf(" %c ", current_char);
+        current_char++;
     }
     
-    // Handle zero rows case
-    if (num_rows == 0) {
-        printf("No rows to display.\n");
-        return 0;
-    }
+    printf("\n");
+}
 
-    // Print triangle pattern with nested loops
+void print_triangle_pattern(int num_rows) {
     for (int row_index = 1; row_index <= num_rows; row_index++) {
-        printf("\t\t\t"); // Print leading tabs for indentation
-        
-        // Print characters for current row
-        char current_char = 'A'; // Initialize character for current row to 'A'
-        for (int col_index = 1; col_index <= row_index; col_index++) {
-            printf(" %c ", current_char);
-            current_char++;
-        }
+        print_triangle_row(row_index);
+    }
+}
 
-        printf("\n"); // New line after completing row
+int main(void) {
+    int num_rows = get_number_of_rows();
+    if (num_rows == -1) {
+        return 0;
+    }
+    
+    int validation_result = validate_rows(num_rows);
+    if (validation_result == -1) {
+        return 0;
     }
 
+    print_triangle_pattern(num_rows);
+    
     return 0;
 }

@@ -10,17 +10,17 @@ int get_positive_integer(const char *prompt) {
     int value;
     printf("%s", prompt);
     if (scanf("%d", &value) != 1 || value <= 0) {
-        fprintf(stderr, "Error: Invalid input. Please enter a positive integer.\n");
+        fprintf(stderr, "Invalid input. Please enter a positive integer.\n");
         return -1;
     }
     return value;
 }
 
-int get_fill_number(void) {
+int get_fill_number() {
     int fill_number;
     printf("Enter the number to fill the rectangle with: ");
     if (scanf("%d", &fill_number) != 1) {
-        fprintf(stderr, "Error: Invalid input for fill number.\n");
+        fprintf(stderr, "Invalid input for fill number.\n");
         return -1;
     }
     return fill_number;

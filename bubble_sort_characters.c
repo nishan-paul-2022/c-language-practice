@@ -8,70 +8,53 @@
 
 #define BUFFER_SIZE 256
 
-// Function prototypes
-void bubble_sort_chars(char arr[], int size);
+void clear_input_buffer();
+int get_array_size();
 int get_valid_input(char characters[], int array_size);
+void bubble_sort_chars(char arr[], int size);
+void display_sorted_characters(char arr[], int size);
 
-int main(void) {
-    int array_size;
-    char characters[BUFFER_SIZE];
-    
-    printf("Enter the number of characters to sort (max %d): ", BUFFER_SIZE - 1);
-    
-    if (scanf("%d", &array_size) != 1 || array_size <= 0 || array_size >= BUFFER_SIZE) {
-        printf("Invalid input. Please enter a positive integer less than %d.\n", BUFFER_SIZE);
+int main(void) {    
+    int array_size = get_array_size();
+    if (array_size == -1) {
         return 0;
     }
     
-    // Clear input buffer
-    while (getchar() != '\n');
-    
+    char characters[BUFFER_SIZE];
     int actual_count = get_valid_input(characters, array_size);
     if (actual_count != array_size) {
-        printf("Error: Expected %d characters but got %d.\n", array_size, actual_count);
+        printf("Expected %d characters but got %d.\n", array_size, actual_count);
         return 0;
     }
     
     bubble_sort_chars(characters, array_size);
-    
-    printf("Sorted characters (ascending order):\n");
-    for (int i = 0; i < array_size; i++) {
-        printf("%c ", characters[i]);
-    }
-    printf("\n");
+    display_sorted_characters(characters, array_size);
     
     return 0;
 }
 
-// Function to perform bubble sort on an array of characters
-void bubble_sort_chars(char arr[], int size) {
-    int swapped; // Flag to track if any swaps occurred
-    
-    // Bubble sort algorithm with early termination optimization
-    for (int i = 0; i < size - 1; i++) {
-        swapped = 0; // Reset flag for each pass
-        
-        // In each pass, the largest unsorted character "bubbles up" to its correct position
-        for (int j = 0; j < size - 1 - i; j++) {
-            // If current character is greater than the next character, swap them
-            if (arr[j] > arr[j + 1]) {
-                char temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = 1; // Set flag to indicate a swap occurred
-            }
-        }
-        
-        // If no swaps occurred, the array is already sorted
-        if (!swapped) {
-            break;
-        }
+void clear_input_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int get_array_size() {
+    int size;
+    printf("Enter the number of characters to sort (max %d): ", BUFFER_SIZE - 1);
+
+    if (scanf("%d", &size) != 1 || size <= 0 || size >= BUFFER_SIZE) {
+        printf("Invalid input. Please enter a positive integer less than %d.\n", BUFFER_SIZE);
+        return -1;
     }
+
+    clear_input_buffer();
+
+    return size;
 }
 
 // Function to get valid input from user
 int get_valid_input(char characters[], int array_size) {
-    printf("Enter %d characters, separated by spaces or newlines:\n", array_size);
+    printf("Enter %d characters as a string:\n", array_size);
     
     // Use fgets for safe input to read the characters
     if (fgets(characters, BUFFER_SIZE, stdin) == NULL) {
@@ -91,4 +74,30 @@ int get_valid_input(char characters[], int array_size) {
     }
     
     return count;
+}
+
+// Function to perform bubble sort on an array of characters
+void bubble_sort_chars(char arr[], int size) {
+    // Bubble sort algorithm with early termination optimization
+    for (int i = 0; i < size - 1; i++) {
+        // In each pass, the largest unsorted character "bubbles up" to its correct position
+        for (int j = 0; j < size - 1 - i; j++) {
+            // If current character is greater than the next character, swap them
+            if (arr[j] > arr[j + 1]) {
+                char temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void display_sorted_characters(char characters[], int size) {
+    printf("Sorted characters (ascending order):\n");
+
+    for (int i = 0; i < size; i++) {
+        printf("%c ", characters[i]);
+    }
+    
+    printf("\n");
 }

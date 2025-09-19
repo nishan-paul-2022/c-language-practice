@@ -18,12 +18,12 @@ int main(void) {
 
     printf("Enter a non-negative integer to calculate Fibonacci numbers up to that term: ");
     if (scanf("%d", &input_number) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
+        fprintf(stderr, "Invalid input. Please enter an integer.\n");
         return 0;
     }
 
     if (input_number < 0) {
-        fprintf(stderr, "Error: Input must be non-negative.\n");
+        fprintf(stderr, "Input must be non-negative.\n");
         return 0;
     }
 

@@ -6,11 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void display_instructions(void) {
+void display_instructions() {
     printf("Enter text (press Ctrl+D on Unix/Linux or Ctrl+Z on Windows to signal EOF):\n");
 }
 
-void echo_stream(void) {
+void echo_stream() {
     int input_char;
     
     while ((input_char = getchar()) != EOF) {
@@ -18,7 +18,7 @@ void echo_stream(void) {
     }
 }
 
-int check_stream_error(void) {
+int check_stream_error() {
     if (ferror(stdin)) {
         perror("Error reading from standard input");
         return -1;

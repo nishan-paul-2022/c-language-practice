@@ -10,7 +10,7 @@ float get_float_input(const char *prompt) {
     float value;
     printf("%s", prompt);
     if (scanf("%f", &value) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter a floating-point number.\n");
+        fprintf(stderr, "Invalid input. Please enter a floating-point number.\n");
         while (getchar() != '\n');
         return NAN;
     }

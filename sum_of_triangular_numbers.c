@@ -1,5 +1,5 @@
 /*
- * Purpose: Calculates the sum of the first n triangular numbers.
+ * Purpose: Calculates the n-th triangular number.
  * Topic: Loops and Mathematical Series (Triangular Numbers)
  */
 
@@ -15,23 +15,25 @@ int read_positive_int(const char *prompt) {
     return n;
 }
 
-int sum_first_n_triangular_numbers(int n) {
+int calculate_n_th_triangular_number(int n) {
     int sum = 0;
-    for (int k = 1; k <= n; k++) {
-        sum += k * (k + 1) / 2;
+    for (int i = 1; i <= n; i++) {
+        sum += i * (i + 1) / 2;
+        printf("%d: %d\n", i, sum);
     }
+    printf("\n");
     return sum;
 }
 
 int main(void) {
-    int n = read_positive_int("Enter a positive integer (n): ");
+    int n = read_positive_int("Enter a positive integer: ");
     if (n == -1) {
         return 0;
     }
 
-    int sum = sum_first_n_triangular_numbers(n);
+    int sum = calculate_n_th_triangular_number(n);
 
-    printf("The sum of the first %d triangular numbers is: %d\n", n, sum);
+    printf("%d-th triangular number is %d.\n", n, sum);
 
     return 0;
 }

@@ -7,11 +7,14 @@
 
 int read_positive_integer(const char *prompt) {
     int n;
+
     printf("%s", prompt);
+
     if (scanf("%d", &n) != 1 || n <= 0) {
         printf("Invalid input. Please enter a positive integer.\n");
         return -1;
     }
+
     return n;
 }
 
@@ -20,14 +23,17 @@ int print_triangular_pattern_and_sum(int rows) {
     int total_sum = 0;
 
     printf("Triangular number pattern:\n");
+
     for (int i = 1; i <= rows; i++) {
         for (int j = 1; j <= i; j++) {
             current++;
             printf("%d ", current);
             total_sum += current;
         }
+        
         printf("\n");
     }
+
     return total_sum;
 }
 

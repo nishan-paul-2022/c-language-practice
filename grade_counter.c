@@ -71,7 +71,7 @@ int main(void) {
         if (score >= 0.0 && score <= 100.0) {
             categorize_score(score, &count_A_plus, &count_A, &count_A_minus, &count_B, &count_C, &count_F);
         } else {
-            printf("ERROR: Score %.2f is out of the valid range (0-100).\n", score);
+            printf("Score %.2f is out of the valid range (0-100).\n", score);
         }
     }
 

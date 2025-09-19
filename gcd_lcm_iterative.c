@@ -41,7 +41,7 @@ int main(void) {
         printf("\nEnter two integers (format: 12, 18) or type '0, 0' to exit: ");
 
         if (scanf("%lld, %lld", &number1, &number2) != 2) {
-            fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
+            fprintf(stderr, "Invalid input format. Please enter two integers separated by a comma.\n");
             while (getchar() != '\n'); // Clear input buffer
             continue;
         }

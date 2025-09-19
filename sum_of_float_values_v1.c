@@ -5,10 +5,10 @@
 
 #include <stdio.h>
 
-double compute_sum(void) {
+double compute_sum() {
     double input_number, sum = 0.0;
 
-    printf("Enter floating-point numbers (non-numeric input to stop):\n");
+    printf("Enter floating-point numbers (Ctrl+D to exit):\n");
 
     while (scanf("%lf", &input_number) != -1) {
         sum += input_number;
@@ -19,6 +19,8 @@ double compute_sum(void) {
 
 int main(void) {
     double total = compute_sum();
-    printf("\nThe total sum of the entered numbers is: %.2lf\n", total);
+
+    printf("\nSum of entered numbers: %.2lf\n", total);
+
     return 0;
 }

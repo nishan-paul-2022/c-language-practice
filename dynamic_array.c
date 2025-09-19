@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int get_array_size(void) {
+int get_array_size() {
     int n;
     printf("Enter the number of elements for the array: ");
     

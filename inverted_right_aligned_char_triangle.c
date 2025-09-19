@@ -9,14 +9,14 @@
 int get_input_data(int *num_rows, char *start_char) {
     printf("Enter number of rows: ");
     if (scanf("%d", num_rows) != 1 || *num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows.\n");
+        fprintf(stderr, "Invalid input for number of rows.\n");
         return -1;
     }
 
     printf("Enter starting character: ");
     while (getchar() != '\n'); // Consume newline
     if (scanf("%c", start_char) != 1) {
-        fprintf(stderr, "Error: Invalid input for starting character.\n");
+        fprintf(stderr, "Invalid input for starting character.\n");
         return -1;
     }
     

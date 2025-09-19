@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 // Function to get a character from user
-char get_character(void) {
+char get_character() {
     char ch;
     printf("Enter a character: ");
     if (scanf(" %c", &ch) != 1) {

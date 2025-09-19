@@ -7,13 +7,13 @@
 #include <stdlib.h>
 
 // Clear input buffer
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // Print program header and instructions
-void print_header(void) {
+void print_header() {
     printf("=== Coordinate Movement Simulator ===\n");
     printf("Navigate on a 2D grid using commands:\n");
     printf("r = right, l = left, u = up, d = down, s = stop\n\n");
@@ -23,7 +23,7 @@ void print_header(void) {
 int read_initial_coordinates(int *x, int *y) {
     printf("Enter initial X and Y coordinates (format: x y): ");
     if (scanf("%d %d", x, y) != 2) {
-        fprintf(stderr, "Error: Invalid input for coordinates.\n");
+        fprintf(stderr, "Invalid input for coordinates.\n");
         return -1;
     }
     clear_input_buffer();
@@ -34,7 +34,7 @@ int read_initial_coordinates(int *x, int *y) {
 int read_command(char *command) {
     printf("Enter command (r/l/u/d/s): ");
     if (scanf(" %c", command) != 1) {
-        fprintf(stderr, "Error: Failed to read command.\n");
+        fprintf(stderr, "Failed to read command.\n");
         return -1;
     }
     return 0;

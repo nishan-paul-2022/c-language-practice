@@ -8,50 +8,76 @@
 
 #define BUFFER_SIZE 256
 
-int main(void) {
-    int array_size;
-    int numbers[BUFFER_SIZE]; // Use a fixed buffer size for simplicity, or dynamically allocate if needed.
-    int outer_index, inner_index, temp;
+void clear_input_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int get_array_size() {
+    int size;
 
     printf("Enter the number of integers to sort (max %d): ", BUFFER_SIZE);
-    if (scanf("%d", &array_size) != 1 || array_size <= 0 || array_size > BUFFER_SIZE) {
+
+    if (scanf("%d", &size) != 1 || size <= 0 || size > BUFFER_SIZE) {
         printf("Invalid input. Please enter a positive integer up to %d.\n", BUFFER_SIZE);
-        return 0;
+        return -1;
     }
 
-    // Consume the newline character left by scanf
-    while (getchar() != '\n');
+    clear_input_buffer();
 
-    printf("Enter %d integers, separated by newlines:\n", array_size);
-    for (outer_index = 0; outer_index < array_size; outer_index++) {
-        if (scanf("%d", &numbers[outer_index]) != 1) {
-            printf("Invalid input for integer at position %d. Please enter integers only.\n", outer_index + 1);
-            return 0;
+    return size;
+}
+
+int read_integers(int numbers[], int size) {
+    printf("Enter %d integers, separated by newlines:\n", size);
+
+    for (int i = 0; i < size; i++) {
+        if (scanf("%d", &numbers[i]) != 1) {
+            printf("Invalid input for integer at position %d. Please enter integers only.\n", i + 1);
+            return -1;
         }
-        // Consume the newline character left by scanf after each number
-        while (getchar() != '\n');
+        clear_input_buffer();
     }
 
-    // Bubble Sort algorithm to sort the array in ascending order
-    // The outer loop controls the number of passes.
-    for (outer_index = 0; outer_index < array_size - 1; outer_index++) {
-        // The inner loop performs comparisons and swaps.
-        // In each pass, the largest unsorted element "bubbles up" to its correct position.
-        for (inner_index = 0; inner_index < array_size - 1 - outer_index; inner_index++) {
-            // If the current element is greater than the next element, swap them
-            if (numbers[inner_index] > numbers[inner_index + 1]) {
-                temp = numbers[inner_index];
-                numbers[inner_index] = numbers[inner_index + 1];
-                numbers[inner_index + 1] = temp;
+    return 0;
+}
+
+void bubble_sort(int numbers[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - 1 - i; j++) {
+            if (numbers[j] > numbers[j + 1]) {
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
             }
         }
     }
+}
 
+void display_sorted_array(int numbers[], int size) {
     printf("Sorted array (ascending order):\n");
-    for (outer_index = 0; outer_index < array_size; outer_index++) {
-        printf("%d ", numbers[outer_index]);
-    }
-    printf("\n");
 
+    for (int i = 0; i < size; i++) {
+        printf("%d ", numbers[i]);
+    }
+    
+    printf("\n");
+}
+
+int main(void) {
+    int numbers[BUFFER_SIZE];
+    
+    int array_size = get_array_size();
+    if (array_size == -1) {
+        return 0;
+    }
+    
+    if (read_integers(numbers, array_size) == -1) {
+        return 0;
+    }
+    
+    bubble_sort(numbers, array_size);
+    display_sorted_array(numbers, array_size);
+    
     return 0;
 }

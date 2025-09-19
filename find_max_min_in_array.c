@@ -18,7 +18,7 @@ void find_max_min(int arr[], int size, int *max, int *min) {
     }
 }
 
-void run_test_cases(void) {
+void run_test_cases() {
     int num_test_cases;
     printf("Enter the number of test cases: ");
     scanf("%d", &num_test_cases);

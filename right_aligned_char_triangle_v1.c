@@ -6,23 +6,23 @@
 #include <stdio.h>
 
 // Get number of rows
-int get_num_rows(void) {
+int get_num_rows() {
     int num_rows;
     printf("Enter the number of rows: ");
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
+        fprintf(stderr, "Invalid input for number of rows. Please enter a positive integer.\n");
         return -1;
     }
     return num_rows;
 }
 
 // Get starting character
-char get_start_char(void) {
+char get_start_char() {
     char start_char;
     printf("Enter the starting character: ");
     while (getchar() != '\n');
     if (scanf("%c", &start_char) != 1) {
-        fprintf(stderr, "Error: Invalid input for starting character.\n");
+        fprintf(stderr, "Invalid input for starting character.\n");
         return '\0';
     }
     return start_char;

@@ -56,7 +56,7 @@ int main(void) {
         if (is_palindrome(input_string)) {
             printf("Result: Palindrome\n");
         } else {
-            printf("Result: Error\n");
+            printf("Result: Not a palindrome\n");
         }
     }
 

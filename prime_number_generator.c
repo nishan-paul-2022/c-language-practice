@@ -40,7 +40,7 @@ int main(void) {
 
     printf("Enter the start and end of the range (e.g., 1 100): ");
     if (scanf("%d %d", &start_num, &end_num) != 2) {
-        printf("Error: Invalid input. Please enter two integers.\n");
+        printf("Invalid input. Please enter two integers.\n");
         return 0;
     }
 

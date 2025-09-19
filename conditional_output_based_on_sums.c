@@ -6,13 +6,13 @@
 #include <stdio.h>
 
 // Clear input buffer after failed scanf
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // Read and validate number of test cases
-int read_test_count(void) {
+int read_test_count() {
     int count;
     printf("=== Hit/Miss Calculator ===\n");
     printf("This program evaluates (k1-k2+k3-k4) and (m1-m2+m3-m4) for each test case.\n");
@@ -20,7 +20,7 @@ int read_test_count(void) {
     
     printf("Enter the number of test cases: ");
     if (scanf("%d", &count) != 1 || count < 0) {
-        printf("Error: Invalid input for number of test cases.\n");
+        printf("Invalid input for number of test cases.\n");
         return -1;
     }
     return count;
@@ -30,7 +30,7 @@ int read_test_count(void) {
 int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     printf("%s", prompt);
     if (scanf("%d %d %d %d", a, b, c, d) != 4) {
-        printf("Error: Invalid input. Please enter four integers.\n");
+        printf("Invalid input. Please enter four integers.\n");
         clear_input_buffer();
         return -1;
     }

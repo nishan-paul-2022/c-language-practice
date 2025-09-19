@@ -7,24 +7,30 @@
 
 int read_non_negative_int(const char *prompt) {
     int n;
+
     printf("%s", prompt);
+
     if (scanf("%d", &n) != 1) {
-        printf("Error: Invalid input. Please enter an integer.\n");
+        printf("Invalid input. Please enter an integer.\n");
         return -1;
     }
+
     if (n < 0) {
-        printf("Error: Input must be a non-negative integer.\n");
+        printf("Input must be a non-negative integer.\n");
         return -1;
     }
+
     return n;
 }
 
 int sum_natural_numbers_iterative(int n) {
     int sum = 0;
+
     while (n > 0) {
         sum += n;
         n--;
     }
+    
     return sum;
 }
 

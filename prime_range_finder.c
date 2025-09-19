@@ -29,7 +29,7 @@ int main(void) {
 
     printf("Enter the start and end of the range (e.g., 1 100): ");
     if (scanf("%d %d", &start_range, &end_range) != 2) {
-        printf("Error: Invalid input format. Please enter two integers.\n");
+        printf("Invalid input format. Please enter two integers.\n");
         return 0;
     }
 

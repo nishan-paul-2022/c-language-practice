@@ -52,7 +52,7 @@ int main(void) {
     printf("Enter a line of text: ");
     
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
-        fprintf(stderr, "Error: Failed to read input\n");
+        fprintf(stderr, "Failed to read input\n");
         return 0;
     }
 

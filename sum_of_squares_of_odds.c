@@ -2,19 +2,24 @@
 
 int read_positive_int(const char *prompt) {
     int n;
+
     printf("%s", prompt);
+
     if (scanf("%d", &n) != 1 || n <= 0) {
         printf("Invalid input. Please enter a positive integer.\n");
         return -1;
     }
+
     return n;
 }
 
 long long sum_squares_of_odds(int n) {
     long long sum = 0;
+
     for (int i = 1; i <= 2 * n - 1; i += 2) {
         sum += (long long)i * i;
     }
+    
     return sum;
 }
 

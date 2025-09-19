@@ -5,18 +5,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int get_number_of_persons(void) {
+int get_number_of_persons() {
     int num_persons;
     printf("Enter the number of persons: ");
     
     if (scanf("%d", &num_persons) != 1) {
-        fprintf(stderr, "Error: Invalid input for the number of persons.\n");
+        fprintf(stderr, "Invalid input for the number of persons.\n");
         while (getchar() != '\n');
         return -1;
     }
     
     if (num_persons < 0) {
-        fprintf(stderr, "Error: Number of persons cannot be negative.\n");
+        fprintf(stderr, "Number of persons cannot be negative.\n");
         return -1;
     }
     
@@ -27,7 +27,7 @@ int get_person_data(int person_number, int *weight, int *height) {
     printf("Person %d: ", person_number);
     
     if (scanf("%d %d", weight, height) != 2) {
-        fprintf(stderr, "\nError: Invalid input for weight and height for person %d.\n", person_number);
+        fprintf(stderr, "\nInvalid input for weight and height for person %d.\n", person_number);
         while (getchar() != '\n');
         return -1;
     }

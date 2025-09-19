@@ -6,17 +6,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+typedef struct Node {
     int data;
     char character;
     struct Node *next;
-};
+} Node;
 
 int main(void) {
-    struct Node nodes[3];
-    struct Node *node_pointer;
-
-    node_pointer = nodes;
+    Node nodes[3];
+    Node *node_pointer = nodes;
 
     // Accessing array elements using pointer arithmetic: node_pointer[index] is equivalent to *(node_pointer + index)
     node_pointer[0].data = 1;

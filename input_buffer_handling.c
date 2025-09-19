@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 100
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
@@ -34,7 +34,7 @@ int main(void) {
 
     while (loop_count--) {
         if (read_string(input_string) == 0) {
-            printf("You entered: %s", input_string);
+            printf("Entered string: %s", input_string);
         }
     }
 

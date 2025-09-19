@@ -11,14 +11,12 @@
 int main(void) {
     char str[100];
 
-    // Use fgets for safe string input
     printf("Enter any string: ");
     if (fgets(str, sizeof(str), stdin) == NULL) {
         printf("Error reading input.\n");
         return 0;
     }
 
-    // Remove trailing newline from fgets
     int len = strlen(str);
     if (len > 0 && str[len - 1] == '\n') {
         str[len - 1] = '\0';

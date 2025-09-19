@@ -7,7 +7,7 @@
 
 int* find_larger_pointer(int *ptr_val1, int *ptr_val2) {
     if (ptr_val1 == NULL || ptr_val2 == NULL) {
-        fprintf(stderr, "Error: NULL pointer passed.\n");
+        fprintf(stderr, "NULL pointer passed.\n");
         return NULL;
     }
     if (*ptr_val1 >= *ptr_val2) {

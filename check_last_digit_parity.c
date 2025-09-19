@@ -10,18 +10,18 @@
 #define MAX_STRING_LENGTH 100
 #define BUFFER_SIZE (MAX_STRING_LENGTH + 1)
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 
-int read_test_count(void) {
+int read_test_count() {
     int count;
     printf("Enter the number of test cases: ");
     
     if (scanf("%d", &count) != 1 || count < 0) {
-        printf("Error: Invalid number of test cases.\n");
+        printf("Invalid number of test cases.\n");
         return -1;
     }
     
@@ -33,7 +33,7 @@ int read_string(char *buffer, int test_num) {
     printf("Enter string for test case %d: ", test_num);
     
     if (scanf("%100s", buffer) != 1) {
-        printf("Error: Failed to read string for test case %d.\n", test_num);
+        printf("Failed to read string for test case %d.\n", test_num);
         return -1;
     }
     

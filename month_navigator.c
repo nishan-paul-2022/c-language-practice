@@ -5,71 +5,80 @@
 
 #include <stdio.h>
 
-const char* get_next_month_name(int current_month_num) {
-    switch (current_month_num) {
-        case 1: return "FEBRUARY";
-        case 2: return "MARCH";
-        case 3: return "APRIL";
-        case 4: return "MAY";
-        case 5: return "JUNE";
-        case 6: return "JULY";
-        case 7: return "AUGUST";
-        case 8: return "SEPTEMBER";
-        case 9: return "OCTOBER";
-        case 10: return "NOVEMBER";
-        case 11: return "DECEMBER";
-        case 12: return "JANUARY";
-        default: return "Invalid Month";
+// Array of month names in sentence case
+const char* MONTHS[] = {
+    "", "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+};
+
+// Get month name by number
+const char* get_month_name(int month_num) {
+    if (month_num >= 1 && month_num <= 12) {
+        return MONTHS[month_num];
     }
+    return "Invalid";
 }
 
-const char* get_current_month_name(int month_num) {
-    switch (month_num) {
-        case 1: return "JANUARY";
-        case 2: return "FEBRUARY";
-        case 3: return "MARCH";
-        case 4: return "APRIL";
-        case 5: return "MAY";
-        case 6: return "JUNE";
-        case 7: return "JULY";
-        case 8: return "AUGUST";
-        case 9: return "SEPTEMBER";
-        case 10: return "OCTOBER";
-        case 11: return "NOVEMBER";
-        case 12: return "DECEMBER";
-        default: return "Invalid Month";
-    }
+// Get next month number
+int get_next_month_number(int current_month) {
+    return (current_month == 12) ? 1 : current_month + 1;
 }
 
-void display_months(int month_number) {
-    if (month_number >= 1 && month_number <= 12) {
-        const char* current_month = get_current_month_name(month_number);
-        const char* next_month = get_next_month_name(month_number);
-        printf("%s is followed by %s.\n", current_month, next_month);
+// Validate month input
+int is_valid_month(int month) {
+    return (month >= 1 && month <= 12);
+}
+
+// Display current and next month
+void display_month_sequence(int month_number) {
+    if (is_valid_month(month_number)) {
+        const char* current_month = get_month_name(month_number);
+        const char* next_month = get_month_name(get_next_month_number(month_number));
+        printf("Result: %s is followed by %s.\n", current_month, next_month);
     } else {
-        printf("Invalid input: Please enter a number between 1 and 12.\n");
+        printf("Please enter a valid month number (1-12).\n");
     }
+}
+
+// Get month input from user
+int get_month_input() {
+    int month;
+    
+    printf("Enter month number (1-12, or 0 to exit): ");
+    
+    if (scanf("%d", &month) != 1) {
+        return -1;
+    }
+    
+    return month;
+}
+
+void clear_input_buffer() {
+    while (getchar() != '\n');
 }
 
 int main(void) {
+    printf("Month Sequence Display Program\n");
+    printf("==============================\n");
+
     int month_number;
 
-    printf("Enter a month number (1-12) to see the current and next month.\n");
-    printf("Enter 0 or a non-numeric value to exit.\n");
-
-    while (scanf("%d", &month_number) == 1) {
+    printf("This program shows the current month and next month based on input.\n\n");
+        
+    while ((month_number = get_month_input()) != -1) {
         if (month_number == 0) {
-            printf("Exiting program.\n");
+            printf("Program terminated successfully.\n");
             break;
         }
-
-        display_months(month_number);
-        printf("\nEnter another month number (1-12) or 0 to exit: ");
+        
+        display_month_sequence(month_number);
+        printf("\n");
     }
-
-    if (month_number) {
-        printf("Invalid input detected. Exiting program.\n");
+    
+    if (month_number == -1) {
+        printf("Invalid input detected. Program terminated.\n");
+        clear_input_buffer();
     }
-
+    
     return 0;
 }

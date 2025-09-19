@@ -10,7 +10,7 @@ int main(void) {
     printf("Enter the size of the diamond (number of rows in the upper half): ");
     int size;
     if (scanf("%d", &size) != 1 || size <= 0) {
-        fprintf(stderr, "Error: Invalid input for size. Please enter a positive integer.\n");
+        fprintf(stderr, "Invalid input for size. Please enter a positive integer.\n");
         return 0;
     }
 
@@ -18,7 +18,7 @@ int main(void) {
     char fill_char;
     while (getchar() != '\n'); // Consume newline character left by scanf
     if (scanf("%c", &fill_char) != 1) {
-        fprintf(stderr, "Error: Invalid input for fill character.\n");
+        fprintf(stderr, "Invalid input for fill character.\n");
         return 0;
     }
 

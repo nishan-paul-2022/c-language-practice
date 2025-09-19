@@ -8,17 +8,14 @@
 
 int main(void) {
     int size;
-    int *array_pointer;
-
     printf("Enter the size of the array: ");
     if (scanf("%d", &size) != 1 || size <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 0;
     }
 
-    // Dynamically allocate memory for the array
-    // Using malloc for dynamic allocation (more flexible than VLA)
-    array_pointer = (int *)malloc(size * sizeof(int));
+    // Using malloc for dynamic memory allocation
+    int *array_pointer = (int *)malloc(size * sizeof(int));
     if (array_pointer == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
@@ -36,11 +33,10 @@ int main(void) {
 
     printf("Array elements entered: ");
     for (int i = 0; i < size; i++) {
-        // Print elements using pointer dereferencing
-        printf("%d ", *(array_pointer + i));
+        printf("%d ", *(array_pointer + i)); // Print elements using pointer dereferencing
     }
 
-    free(array_pointer); // Free the dynamically allocated memory
+    free(array_pointer);
 
     printf("\n");
 

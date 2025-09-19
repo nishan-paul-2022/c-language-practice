@@ -6,35 +6,37 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-char* get_input_string(char* buffer, int size) {
+void get_string(char* str, int size) {
     printf("Enter a string: ");
-    if (fgets(buffer, size, stdin) == NULL) {
-        printf("Error: Invalid string input or end of file reached.\n");
-        return NULL;
+
+    if (fgets(str, size, stdin) == NULL) {
+        printf("Invalid string input or end of file reached.\n");
+        exit(1);
     }
-    return buffer;
+    
+    str[strcspn(str, "\n")] = '\0';
 }
 
 int main(void) {
-    char input_string[100];
-    get_input_string(input_string, sizeof(input_string));
+    char str[100];
+    get_string(str, sizeof(str));
 
-    // Check if input_string is NULL
-    if (input_string == NULL) {
-        printf("Failed to read string input.\n");
-        return 0;
-    }
+    char ch;
+    printf("Enter the desired character: ");
+    scanf("%c", &ch);
+    char ch_lower = tolower(ch);
 
-    // Count exclamation marks
-    int exclamation_count = 0;
-    for (int char_index = 0; input_string[char_index] != '\0'; char_index++) {
-        if (input_string[char_index] == '!') {
-            exclamation_count++;
+    int count = 0;
+    for (int char_index = 0; str[char_index] != '\0'; char_index++) {
+        if (tolower(str[char_index]) == ch_lower) {
+            count++;
         }
     }
 
-    printf("Exclamation count: %d\n",  exclamation_count);
+    printf("%c in '%s': %d\n", ch, str, count);
 
     return 0;
 }

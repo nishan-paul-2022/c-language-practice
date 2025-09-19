@@ -10,7 +10,7 @@ float find_larger(float num1, float num2) {
     return (num1 > num2) ? num1 : num2;
 }
 
-int get_float_size(void) {
+int get_float_size() {
     return sizeof(float);
 }
 

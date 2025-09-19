@@ -5,7 +5,6 @@ int main(void) {
     double initial_cost;
     double depreciation_rate;
     double target_value;
-    double years_to_depreciate;
 
     printf("Enter initial cost, depreciation rate, and target value (e.g., 10000.0, 0.10, 5000.0): ");
     if (scanf("%lf, %lf, %lf", &initial_cost, &depreciation_rate, &target_value) != 3) {
@@ -20,7 +19,7 @@ int main(void) {
     }
 
     // Logarithmic depreciation formula
-    years_to_depreciate = log(target_value / initial_cost) / log(1.0 - depreciation_rate);
+    double years_to_depreciate = log(target_value / initial_cost) / log(1.0 - depreciation_rate);
 
     printf("Years to depreciate from %.2lf to %.2lf at %.2lf%% rate: %lf\n",
            initial_cost, target_value, depreciation_rate * 100, years_to_depreciate);

@@ -11,7 +11,7 @@ int readAndCalculateProduct() {
     int items_read = scanf("%d %d %*d", &num1, &num2); // Read two integers, skip third
 
     if (items_read == 2) {
-        printf("You entered: %d and %d\n", num1, num2);
+        printf("Entered two integers: %d and %d\n", num1, num2);
         printf("Product of %d and %d is: %d\n", num1, num2, num1 * num2);
         return 0; // Success
     } else {

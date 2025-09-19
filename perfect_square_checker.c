@@ -15,13 +15,13 @@ int is_perfect_square(long long int number) {
     return (integer_sqrt * integer_sqrt == number);
 }
 
-int get_test_cases(void) {
+int get_test_cases() {
     int num_test_cases;
     scanf("%d", &num_test_cases);
     return num_test_cases;
 }
 
-long long int get_number(void) {
+long long int get_number() {
     long long int number;
     scanf("%lld", &number);
     return number;

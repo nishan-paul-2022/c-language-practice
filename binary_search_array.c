@@ -8,16 +8,13 @@
 
 int main(void) {
     int array_size;
-    int *array;
-    int target;
-
     printf("Enter the size of the sorted array: ");
     if (scanf("%d", &array_size) != 1 || array_size <= 0) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 0;
     }
 
-    array = (int *)malloc(array_size * sizeof(int));
+    int *array = (int *)malloc(array_size * sizeof(int));
     if (array == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
@@ -32,11 +29,10 @@ int main(void) {
         }
     }
 
-    // Clear input buffer
-    while (getchar() != '\n' && !feof(stdin) && !ferror(stdin));
+    while (getchar() != '\n' && !feof(stdin) && !ferror(stdin)); // Clear input buffer
 
-    // Loop to allow multiple searches
     while (1) {
+        int target;
         printf("Enter the number to search for (or Ctrl+D to exit): ");
         if (scanf("%d", &target) != 1) {
             printf("\nExiting search program.\n");
@@ -45,34 +41,30 @@ int main(void) {
 
         int start = 0;
         int end = array_size - 1;
-        int mid;
         int found_index = -1; // To store the 1-based index if found
-
         while (start <= end) {
-            mid = start + (end - start) / 2; // Prevents overflow
+            int mid = start + (end - start) / 2; // Prevents overflow
 
             if (array[mid] == target) {
                 found_index = mid + 1; // Store 1-based index
                 break;
-            }
-            else if (array[mid] < target) {
+            } else if (array[mid] < target) {
                 start = mid + 1;
-            }
-            else // array[mid] > target
+            } else { // array[mid] > target
                 end = mid - 1;
+            }
         }
 
         if (found_index != -1) {
             printf("Element %d found at 1-based index: %d\n", target, found_index);
-        }
-        else {
+        } else {
             printf("Element %d doesn't exist in the array.\n", target);
         }
         
         printf("\n");
     }
 
-    free(array); // Free dynamically allocated memory
+    free(array);
 
     return 0;
 }

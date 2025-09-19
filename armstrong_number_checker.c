@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 // Function to calculate integer power (base^exponent)
 long long int integer_power(int base, int exponent) {
@@ -18,43 +17,47 @@ long long int integer_power(int base, int exponent) {
     return result;
 }
 
+// Function to count digits in a number
+int count_digits(int number) {
+    char num_as_string[20];
+    sprintf(num_as_string, "%d", number);
+    return strlen(num_as_string);
+}
+
+// Function to check if a number is Armstrong
+int is_armstrong(int number) {
+    if (number < 0) {
+        return 0; // Negative numbers are not Armstrong
+    }
+
+    if (number == 0) {
+        return 1; // 0 is considered Armstrong
+    }
+
+    int temp_number = number;
+    int num_digits = count_digits(number);
+    long long int sum_of_powers = 0;
+
+    while (temp_number > 0) {
+        int digit = temp_number % 10;
+        sum_of_powers += integer_power(digit, num_digits);
+        temp_number /= 10;
+    }
+
+    return (sum_of_powers == number);
+}
+
 int main(void) {
     int original_number;
-    int temp_number;
-    int num_digits = 0;
-    long long int sum_of_powers = 0;
-    char num_as_string[20];
-
     printf("Enter a positive integer to check if it's an Armstrong number: ");
     scanf("%d", &original_number);
 
-    // Handle negative numbers or zero
     if (original_number < 0) {
         printf("%d is not a positive integer.\n", original_number);
         return 0;
     }
 
-    if (original_number == 0) {
-        printf("0 is an Armstrong number.\n"); // 0^1 = 0
-        return 0;
-    }
-
-    // Convert the number to a string to find the number of digits
-    sprintf(num_as_string, "%d", original_number);
-    num_digits = strlen(num_as_string);
-
-    // Reset temp_number to the original number for digit extraction
-    temp_number = original_number;
-
-    // Extract digits and calculate the sum of powers
-    while (temp_number > 0) {
-        int digit = temp_number % 10; // Get the last digit
-        sum_of_powers += integer_power(digit, num_digits); // Add digit^num_digits to sum
-        temp_number /= 10; // Remove the last digit
-    }
-
-    // Check if sum equals original number
-    if (sum_of_powers == original_number) {
+    if (is_armstrong(original_number)) {
         printf("%d is an Armstrong number.\n", original_number);
     } else {
         printf("%d is Not an Armstrong number.\n", original_number);

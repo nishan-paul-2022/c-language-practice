@@ -40,7 +40,7 @@ int main(void) {
 
     printf("Enter a string: ");
     if (read_input_string(input_string, MAX_STRING_SIZE) == -1) {
-        fprintf(stderr, "Error: Failed to read input.\n");
+        fprintf(stderr, "Failed to read input.\n");
         return 0;
     }
 

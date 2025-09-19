@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "files/08-input.txt"
+#define FILENAME "files/08-file.txt"
 
 int get_user_input(char *input_buffer, int buffer_size) {
     printf("Enter a line of text to append to the file: ");

@@ -15,7 +15,7 @@ int main(void) {
 
     printf("Enter a double value: ");
     if (scanf("%lf", &input_value) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter a valid double.\n");
+        fprintf(stderr, "Invalid input. Please enter a valid double.\n");
         return 0;
     }
 

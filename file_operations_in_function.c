@@ -16,7 +16,7 @@ FILE* open_file_with_extension(char *filename_base, const char *mode) {
     FILE *file_ptr;
 
     if (snprintf(full_filename, FILENAME_BUFFER_SIZE, "%s.txt", filename_base) >= FILENAME_BUFFER_SIZE) {
-        fprintf(stderr, "Error: Filename too long.\n");
+        fprintf(stderr, "Filename too long.\n");
         return NULL;
     }
 

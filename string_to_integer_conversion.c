@@ -13,7 +13,7 @@ int string_to_integer(const char str[], int test_case) {
         if (str[i] >= '0' && str[i] <= '9') {
             value = value * 10 + (str[i] - '0');
         } else {
-            fprintf(stderr, "Warning: Non-digit character '%c' in test case %d skipped.\n", str[i], test_case);
+            fprintf(stderr, "Non-digit character '%c' in test case %d skipped.\n", str[i], test_case);
         }
     }
     return value;

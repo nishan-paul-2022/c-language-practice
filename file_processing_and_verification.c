@@ -9,7 +9,7 @@
 #define INPUT_FILENAME "files/18-input.txt"
 #define OUTPUT_FILENAME "files/18-output.txt"
 
-int process_input_file(void) {
+int process_input_file() {
     FILE *input_file = fopen(INPUT_FILENAME, "r");
     if (input_file == NULL) {
         perror("Error opening file for reading");
@@ -50,7 +50,7 @@ int process_input_file(void) {
     return 0;
 }
 
-int verify_files(void) {
+int verify_files() {
     FILE *output_file = fopen(INPUT_FILENAME, "r");
     if (output_file == NULL) {
         perror("Error opening file for reading (reference file)");
@@ -70,20 +70,20 @@ int verify_files(void) {
 
     while (fscanf(output_file, "%d", &val_output) == 1) {
         if (fscanf(mine_file_read, "%d", &val_mine) != 1) {
-            fprintf(stderr, "  ERROR: Mismatch in number of entries. Input file has more values than output file.\n");
+            fprintf(stderr, "  Mismatch in number of entries. Input file has more values than output file.\n");
             comparison_result = -1;
             break;
         }
 
         if (val_output != val_mine) {
-            fprintf(stderr, "  ERROR: Mismatch found. Input file has %d, output file has %d.\n", val_output, val_mine);
+            fprintf(stderr, "  Mismatch found. Input file has %d, output file has %d.\n", val_output, val_mine);
             comparison_result = -1;
             break;
         }
     }
 
     if (comparison_result == 0 && fscanf(mine_file_read, "%d", &val_mine) == 1) {
-        fprintf(stderr, "  ERROR: Mismatch in number of entries. output file has more values than input file.\n");
+        fprintf(stderr, "  Mismatch in number of entries. output file has more values than input file.\n");
         comparison_result = -1;
     }
 
@@ -101,7 +101,7 @@ void display_result(int result) {
     if (result == 0) {
         printf("  Accepted: All values match.\n");
     } else {
-        printf("  ERROR: Verification failed.\n");
+        printf("  Verification failed.\n");
     }
 }
 

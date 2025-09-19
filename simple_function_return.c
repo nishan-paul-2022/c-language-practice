@@ -6,14 +6,15 @@
 #include <stdio.h>
 
 int multiply_by_ten(int num) {
-    return num * 10;
+    int result = num * 10;
+    return result;
 }
 
 int main(void) {
     int input_num = 4;
     int result = multiply_by_ten(input_num);
 
-    printf("The result of multiplying %d by 10 is: %d\n", input_num, result);
+    printf("The result of 'multiplying %d by 10' is %d\n", input_num, result);
 
     return 0;
 }

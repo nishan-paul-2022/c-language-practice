@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void print_instructions(void) {
+void print_instructions() {
     printf("Enter a sequence of double values.\n");
     printf("Enter 0.007 to finish and see the results.\n");
     printf("----------------------------------------\n");
@@ -16,7 +16,7 @@ void print_instructions(void) {
 int read_double_value(double *value) {
     printf("Enter value: ");
     if (scanf("%lf", value) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter a valid double value.\n");
+        fprintf(stderr, "Invalid input. Please enter a valid double value.\n");
         while (getchar() != '\n'); // Clear input buffer
         return -1;
     }

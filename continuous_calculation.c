@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 // Print program header and instructions
-void print_header(void) {
+void print_header() {
     printf("=== Continuous Distance Calculator ===\n");
     printf("Formula: Distance = 2 * Velocity * Time\n");
     printf("Enter velocity and time pairs (invalid input to quit)\n\n");
@@ -29,7 +29,7 @@ void display_result(int velocity, int time, int distance) {
 }
 
 // Process calculations until invalid input
-void process_calculations(void) {
+void process_calculations() {
     int velocity, time, distance;
     
     while (read_values(&velocity, &time)) {
@@ -41,6 +41,6 @@ void process_calculations(void) {
 int main(void) {
     print_header();
     process_calculations();
-    printf("Calculator terminated. Thank you!\n");
+    printf("Calculator terminated. Thanks for using!\n");
     return 0;
 }

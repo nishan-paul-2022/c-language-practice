@@ -5,14 +5,14 @@
 
 #include <stdio.h>
 
-int get_donation_count(void) {
+int get_donation_count() {
     int num_donations;
     printf("Enter number of donations: ");
     scanf("%d", &num_donations);
     return num_donations;
 }
 
-int get_donation_amount(void) {
+int get_donation_amount() {
     int donation_amount;
     printf("donate ");
     scanf("%d", &donation_amount);

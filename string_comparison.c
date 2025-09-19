@@ -6,26 +6,45 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    printf("Enter the first string:\n");
-    char str1[256];
-    if (fgets(str1, sizeof(str1), stdin) == NULL) return 0;
-    str1[strcspn(str1, "\n")] = 0;
+#define BUFFER_SIZE 256
 
-    printf("Enter the second string:\n");
-    char str2[256];
-    if (fgets(str2, sizeof(str2), stdin) == NULL) return 0;
-    str2[strcspn(str2, "\n")] = 0;
+int read_string(const char *prompt, char *buffer, int size) {
+    printf("%s", prompt);
 
-    int comparison = strcmp(str1, str2);
-
-    if (comparison == 0) {
-        printf("EQUAL\n");
-    } else if (comparison < 0) {
-        printf("%s\n", str2);
-    } else {
-        printf("%s\n", str1);
+    if (fgets(buffer, size, stdin) == NULL) {
+        printf("\nError reading input string.\n");
+        return -1;
     }
 
+    buffer[strcspn(buffer, "\n")] = 0;
+    
+    return 0;
+}
+
+void display_comparison_result(const char *str1, const char *str2) {
+    int comparison = strcmp(str1, str2);
+    
+    if (comparison == 0) {
+        printf("%s and %s is equivalent.\n", str1, str2);
+    } else if (comparison < 0) {
+        printf("%s > %s\n", str2, str1);
+    } else {
+        printf("%s > %s\n", str1, str2);
+    }
+}
+
+int main(void) {
+    char str1[BUFFER_SIZE];    
+    if (read_string("Enter the first string: ", str1, BUFFER_SIZE) == -1) {
+        return 0;
+    }
+    
+    char str2[BUFFER_SIZE];
+    if (read_string("Enter the second string: ", str2, BUFFER_SIZE) == -1) {
+        return 0;
+    }
+    
+    display_comparison_result(str1, str2);
+    
     return 0;
 }

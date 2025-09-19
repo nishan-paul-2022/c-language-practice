@@ -23,6 +23,8 @@ int main(void) {
 
         e += term; // Add term to approximation
         n++; // Increment term index
+
+        printf("Term %d: %0.15lf\n", n, e);
     }
 
     // Output result with high precision

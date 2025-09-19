@@ -5,18 +5,18 @@
 
 #include <stdio.h>
 
-void demonstrate_static_variable(void) {
+void demonstrate_static_variable() {
     int local_var = 10;
     static int static_var = 10;
 
     local_var++;
     static_var++;
 
-    printf("Local variable: %d, Static variable: %d\n", local_var, static_var);
+    printf("Local variable: %d | Static variable: %d\n", local_var, static_var);
 }
 
 int main(void) {
-    printf("Demonstrating static variable behavior:\n");
+    printf("=== Demonstrating static variable behavior ===\n");
 
     for (int i = 0; i < 4; i++) {
         demonstrate_static_variable();

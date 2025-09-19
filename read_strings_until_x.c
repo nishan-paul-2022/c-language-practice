@@ -32,7 +32,7 @@ void process_strings(int max_length) {
             break;
         }
 
-        printf("You entered: %s\n", input);
+        printf("Entered string: %s\n", input);
     }
 }
 

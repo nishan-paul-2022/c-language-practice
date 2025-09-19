@@ -18,18 +18,18 @@ int calculate_pascal_value(int row, int col) {
     return ans;
 }
 
-int read_num_rows(void) {
+int read_num_rows() {
     int num_rows;
     printf("Enter the number of rows for Pascal's triangle: ");
     
     if (scanf("%d", &num_rows) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter an integer for the number of rows.\n");
+        fprintf(stderr, "Invalid input. Please enter an integer for the number of rows.\n");
         while (getchar() != '\n');
         return -1;
     }
 
     if (num_rows < 0) {
-        fprintf(stderr, "Error: Number of rows cannot be negative.\n");
+        fprintf(stderr, "Number of rows cannot be negative.\n");
         return -1;
     }
     

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double read_floating_point_input(void) {
+double read_floating_point_input() {
     double input_value;
     printf("Enter a floating-point number: ");
     if (scanf("%lf", &input_value) != 1) {
@@ -16,7 +16,7 @@ double read_floating_point_input(void) {
     return input_value;
 }
 
-int read_secondary_input(void) {
+int read_secondary_input() {
     int secondary_input;
     printf("Enter an integer (e.g., 20): ");
     if (scanf("%d", &secondary_input) != 1) {
@@ -26,7 +26,7 @@ int read_secondary_input(void) {
     return secondary_input;
 }
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }

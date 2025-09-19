@@ -8,12 +8,12 @@
 int read_input(int *value, int *divisor) {
     printf("Enter two integers (value divisor): ");
     if (scanf("%d %d", value, divisor) != 2) {
-        fprintf(stderr, "Error: Invalid input.\n");
+        fprintf(stderr, "Invalid input.\n");
         while (getchar() != '\n'); // Clear buffer
         return -1;
     }
     if (*divisor == 0) {
-        fprintf(stderr, "Error: Division by zero.\n");
+        fprintf(stderr, "Division by zero.\n");
         return -1;
     }
     return 0;

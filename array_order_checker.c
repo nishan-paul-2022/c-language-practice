@@ -7,15 +7,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int numbers[5];
-    int i;
+    int size = 5;
+    int numbers[size];
     int is_ascending = 1;
     int is_descending = 1;
     int is_equivalent = 1;
 
-    printf("Enter 5 integers, separated by spaces or newlines:\n");
+    printf("Enter %d integers, separated by spaces or newlines:\n", size);
 
-    for (i = 0; i < 5; i++) {
+    for (int i = 0; i < size; i++) {
         // Use " %d" to consume any leading whitespace, including newlines
         if (scanf(" %d", &numbers[i]) != 1) {
             printf("Invalid input. Please enter integers only.\n");
@@ -24,7 +24,7 @@ int main(void) {
     }
 
     // Check the order of the numbers
-    for (i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++) {
         // Check for ascending order (allows duplicates)
         if (numbers[i] > numbers[i+1]) {
             is_ascending = 0;
@@ -41,13 +41,13 @@ int main(void) {
 
     // Output the result
     if (is_equivalent) {
-        printf("EQUIVALENT\n");
+        printf("Equivalent\n");
     } else if (is_ascending) {
-        printf("ASCENDING\n");
+        printf("Ascending\n");
     } else if (is_descending) {
-        printf("DESCENDING\n");
+        printf("Descending\n");
     } else {
-        printf("NOT SORTED\n");
+        printf("Unsorted\n");
     }
 
     return 0;

@@ -14,21 +14,22 @@ int calculate_gcd(int num1, int num2) {
             break;
         }
     }
+
     return gcd_val;
 }
 
-long long calculate_lcm(int num1, int num2) {
+int calculate_lcm(int num1, int num2) {
     if (num1 == 0 || num2 == 0) {
         return 0;
     }
 
     int gcd_val = calculate_gcd(num1, num2);
-    return ((long long)num1 * num2) / gcd_val;
+    int lcm_val = (num1 * num2) / gcd_val;
+    return lcm_val;
 }
 
 void get_numbers_and_calculate_lcm() {
     int num1, num2;
-
     printf("Enter two integers (e.g., 12 18): ");
     scanf("%d %d", &num1, &num2);
 
@@ -37,11 +38,12 @@ void get_numbers_and_calculate_lcm() {
         return;
     }
 
-    long long lcm_result = calculate_lcm(num1, num2);
-    printf("LCM of %d and %d is: %lld\n", num1, num2, lcm_result);
+    int lcm_result = calculate_lcm(num1, num2);
+    printf("LCM of %d and %d is %d\n", num1, num2, lcm_result);
 }
 
 int main(void) {
     get_numbers_and_calculate_lcm();
+
     return 0;
 }

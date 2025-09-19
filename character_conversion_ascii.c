@@ -6,8 +6,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void Example1() {
-    printf("Enter any character (lowercase): ");
+void consume_newline(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+void lowercase_to_uppercase() {
+    printf("\nEnter any character (lowercase): ");
 
     char input_char = getchar();
     char upper_char = toupper(input_char);
@@ -19,10 +24,12 @@ void Example1() {
     printf("ASCII values:\n");
     printf("'%c' = %d\n", input_char, input_ascii_val);
     printf("'%c' = %d\n", upper_char, upper_input_ascii_val);
+
+    consume_newline();
 }
 
-void Example2() {
-    printf("Enter any character (uppercase): ");
+void uppercase_to_lowercase() {
+    printf("\nEnter any character (uppercase): ");
 
     char input_char = getchar();
     char lower_char = tolower(input_char);
@@ -37,9 +44,8 @@ void Example2() {
 }
 
 int main(void) {
-    Example1();
-    getchar();
-    Example2();
+    lowercase_to_uppercase();
+    uppercase_to_lowercase();
 
     return 0;
 }

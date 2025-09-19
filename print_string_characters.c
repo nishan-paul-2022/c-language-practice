@@ -13,7 +13,7 @@
 void read_dimensions(int *rows, int *cols) {
     printf("Enter the number of rows and columns (e.g., 3 4): "); // Prompt user
     if (scanf("%d %d", rows, cols) != 2) {
-        fprintf(stderr, "Error: Invalid input for dimensions.\n");
+        fprintf(stderr, "Invalid input for dimensions.\n");
         exit(0);
     }
     while (getchar() != '\n'); // Clear leftover newline
@@ -21,7 +21,7 @@ void read_dimensions(int *rows, int *cols) {
 
 void validate_dimensions(int rows, int cols) {
     if (rows <= 0 || rows > MAX_ROWS || cols <= 0 || cols > MAX_COLS) {
-        fprintf(stderr, "Error: Dimensions out of range. Rows: 1-%d, Cols: 1-%d\n", MAX_ROWS, MAX_COLS);
+        fprintf(stderr, "Dimensions out of range. Rows: 1-%d, Cols: 1-%d\n", MAX_ROWS, MAX_COLS);
         exit(0);
     }
 }
@@ -31,7 +31,7 @@ void read_strings(int rows, int cols, char array[MAX_ROWS][MAX_COLS]) {
     for (int i = 0; i < rows; i++) {
         printf("Row %d: ", i); // Prompt for row input
         if (fgets(array[i], cols, stdin) == NULL) {
-            fprintf(stderr, "Error: Failed to read string for row %d.\n", i);
+            fprintf(stderr, "Failed to read string for row %d.\n", i);
             exit(0);
         }
         array[i][strcspn(array[i], "\n")] = 0; // Remove trailing newline

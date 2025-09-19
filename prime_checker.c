@@ -30,7 +30,7 @@ int main(void) {
     int number;
     printf("Enter an integer: ");
     if (scanf("%d", &number) != 1) {
-        printf("Error: Invalid input. Please enter an integer.\n");
+        printf("Invalid input. Please enter an integer.\n");
         return 0;
     }
 

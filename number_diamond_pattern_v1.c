@@ -6,11 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int read_num_rows(void) {
+int read_num_rows() {
     int num_rows;
     printf("Enter the number of rows: ");
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input for number of rows. Please enter a positive integer.\n");
+        fprintf(stderr, "Invalid input for number of rows. Please enter a positive integer.\n");
         return 0;
     }
     return num_rows;

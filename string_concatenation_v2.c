@@ -23,7 +23,7 @@ int main(void) {
 
     strcat(str1, str2);
 
-    printf("Concatenated string is: %s\n", str1);
+    printf("Concatenated string: %s\n", str1);
 
     return 0;
 }

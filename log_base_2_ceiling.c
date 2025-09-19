@@ -13,33 +13,35 @@ int find_smallest_power_of_two(int number) {
     return k;
 }
 
-int read_numbers(int numbers[]) {
-    int i;
-    for (i = 1; i < 2000; i++) {
-        printf("Enter number (negative to stop): ");
-        scanf("%d", &numbers[i]);
-        if (numbers[i] < 0) {
-            break;
-        }
-    }
-    return i;
+void display_result(int number, int k, int case_number) {
+    printf("Case %d: For number %d, smallest k is: %d\n", case_number, number, k);
 }
 
-void process_numbers(int numbers[], int count) {
-    int j, k;
-    for (j = 1; j < count; j++) {
-        k = find_smallest_power_of_two(numbers[j]);
-        printf("Case %d: %d\n", j, k);
+void process_input(int number, int case_number) {
+    if (number > 0) {
+        int k = find_smallest_power_of_two(number);
+        display_result(number, k, case_number);
+    } else {
+        printf("Case %d: Invalid input (non-positive number): %d\n", case_number, number);
     }
 }
 
 int main(void) {
-    int numbers[2000];
-    int count;
+    int case_number = 1;
 
-    numbers[0] = 0; // unused
-    count = read_numbers(numbers);
-    process_numbers(numbers, count);
+    printf("Enter positive integers to find smallest k where 2^k > number (Ctrl+D to exit):\n");
+
+    while (1) {
+        printf("Enter positive integer: ");
+        int number;
+        if (scanf("%d", &number) != 1) {
+            printf("\nProgram terminated.\n");
+            break;
+        }
+        
+        process_input(number, case_number);
+        case_number++;
+    }
 
     return 0;
 }

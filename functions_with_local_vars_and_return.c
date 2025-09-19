@@ -21,7 +21,7 @@ CalculationResults perform_arithmetic_operations(double num1, double num2) {
     results.product = num1 * num2;
 
     if (num2 == 0.0) {
-        fprintf(stderr, "Error: Division by zero attempted.\n");
+        fprintf(stderr, "Division by zero attempted.\n");
         results.division = 0.0;
     } else {
         results.division = num1 / num2;
@@ -33,7 +33,7 @@ CalculationResults perform_arithmetic_operations(double num1, double num2) {
 int get_user_input(double *value1, double *value2) {
     printf("Enter two double values separated by a comma (e.g., 10.5, 5.2): ");
     if (scanf("%lf, %lf", value1, value2) != 2) {
-        fprintf(stderr, "Error: Invalid input format. Please enter two double values separated by a comma.\n");
+        fprintf(stderr, "Invalid input format. Please enter two double values separated by a comma.\n");
         return -1;
     }
     while (getchar() != '\n');

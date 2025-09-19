@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int read_character(void) {
+int read_character() {
     printf("Enter a single character: ");
     return getchar();
 }
@@ -25,7 +25,7 @@ int handle_eof_error(int input_char) {
 }
 
 void echo_character(int input_char) {
-    printf("You entered: ");
+    printf("Entered character: ");
     putchar((char)input_char);
     putchar('\n');
 }

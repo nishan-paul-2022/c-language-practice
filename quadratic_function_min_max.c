@@ -1,56 +1,104 @@
 /*
- * Purpose: Find the minimum and maximum values of a quadratic function and perform calculations based on those values.
- * Topic: Mathematical Functions, Quadratic Equations, Numerical Analysis
+ * Purpose: Analyze quadratic function to find min/max values and perform calculations.
+ * Topic: Quadratic Functions, Mathematical Analysis, Numerical Computation
  */
 
 #include <stdio.h>
 #include <math.h>
 
+#define START_X 0
+#define END_X 100
+#define COEFF_A 0.01
+#define COEFF_B -0.8
+#define COEFF_C 40.0
+
+// Calculate quadratic function value
+double quadratic_function(int x) {
+    double y = COEFF_A * x * x + COEFF_B * x + COEFF_C;
+    return y;
+}
+
+// Find theoretical vertex of parabola
+double find_vertex_x() {
+    double vertex = -COEFF_B / (2.0 * COEFF_A);
+    return vertex;
+}
+
+// Calculate discriminant-based result
+double calculate_D(double y_value) {
+    double term = 4000.0 - y_value * 100.0;
+    double discriminant = 6400.0 - 4.0 * term;
+    
+    if (discriminant < 0) {
+        printf("Warning: Negative discriminant (%.2f)\n", discriminant);
+        return 0.0;
+    }
+    
+    return sqrt(discriminant);
+}
+
 int main(void) {
-    /*
-    The quadratic function is y = (i*i - 80*i + 4000) / 100
-    This can be rewritten as y = 0.01*i^2 - 0.8*i + 40
-    The vertex (minimum) of a parabola ax^2 + bx + c is at x = -b / (2a).
-    For this function, the vertex is at i = -(-0.8) / (2 * 0.01) = 0.8 / 0.02 = 40.
-    The minimum value occurs at i=40. */
+    printf("Quadratic Function Analysis\n");
+    printf("===========================\n\n");
 
-    double min_y = 40.0; // Initialize minimum y to a large value (or a value from the range)
-    double max_y = 40.0; // Initialize maximum y to a small value (or a value from the range)
-
-    for (int i = 0; i <= 100; i++) {
-        // Calculate the value of the quadratic function for the current i
-        double y_value = ((double)i * i - 80.0 * i + 4000.0) / 100.0;
-
-        // Update the minimum y value found so far
-        if (y_value < min_y) {
-            min_y = y_value;
+    printf("Function: y = 0.01x² - 0.8x + 40\n");
+    printf("Range: x = %d to %d\n\n", START_X, END_X);
+    
+    // Theoretical analysis
+    double vertex_x = find_vertex_x();
+    double vertex_y = quadratic_function((int)vertex_x);
+    printf("Theoretical vertex: x = %.1f, y = %.2f\n\n", vertex_x, vertex_y);
+    
+    // Find min/max through iteration
+    double min_y = quadratic_function(START_X);
+    double max_y = quadratic_function(START_X);
+    int min_x = START_X, max_x = START_X;
+    
+    printf("Analyzing function values:\n");
+    
+    for (int x = START_X; x <= END_X; x++) {
+        double y = quadratic_function(x);
+        
+        if (y < min_y) {
+            min_y = y;
+            min_x = x;
         }
-        // Update the maximum y value found so far
-        if (y_value > max_y) {
-            max_y = y_value;
+        if (y > max_y) {
+            max_y = y;
+            max_x = x;
+        }
+        
+        // Show key points
+        if (x == START_X || x == END_X || x == (int)vertex_x || 
+            x % 20 == 0) {
+            printf("  x = %3d: y = %6.2f\n", x, y);
         }
     }
-
-    /*
-    Calculate D1 using the minimum y value
-    The formula is D1 = sqrt(6400 - 4 * (4000 - min_y * 100))
-    Note: The term inside sqrt must be non-negative for sqrt to be defined in real numbers. */
-    double D1 = sqrt(6400.0 - 4.0 * (4000.0 - min_y * 100.0));
-
-    /*
-    Calculate D2 using the maximum y value
-    The formula is D2 = sqrt(6400 - 4 * (4000 - max_y * 100)) */
-    double D2 = sqrt(6400.0 - 4.0 * (4000.0 - max_y * 100.0));
-
-    /*
-    Print the minimum and maximum y values found.
-    %3.2lf formats the double to have a minimum width of 3 and 2 decimal places. */
-    printf("%3.2lf, %3.2lf\n", min_y, max_y);
-
-    /*
-    Print the results of the final calculations.
-    %3.0lf formats the double to have a minimum width of 3 and 0 decimal places (rounded). */
-    printf("%3.0lf, %3.0lf\n", 4.0 + 0.05 * D1, 4.0 + 0.05 * D2);
-
+    
+    printf("\nResults:\n");
+    printf("Minimum: y = %.2f at x = %d\n", min_y, min_x);
+    printf("Maximum: y = %.2f at x = %d\n", max_y, max_x);
+    
+    // Calculate D values
+    double D1 = calculate_D(min_y);
+    double D2 = calculate_D(max_y);
+    
+    printf("\nCalculations:\n");
+    printf("D1 = √(6400 - 4(4000 - %.2f×100)) = %.2f\n", min_y, D1);
+    printf("D2 = √(6400 - 4(4000 - %.2f×100)) = %.2f\n", max_y, D2);
+    
+    // Final results
+    double result1 = 4.0 + 0.05 * D1;
+    double result2 = 4.0 + 0.05 * D2;
+    
+    printf("\nFinal Results:\n");
+    printf("4 + 0.05×D1 = 4 + 0.05×%.2f = %.2f\n", D1, result1);
+    printf("4 + 0.05×D2 = 4 + 0.05×%.2f = %.2f\n", D2, result2);
+    
+    // Original format output
+    printf("\nOriginal Format Output:\n");
+    printf("%.2f, %.2f\n", min_y, max_y);
+    printf("%.0f, %.0f\n", result1, result2);
+    
     return 0;
 }

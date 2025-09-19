@@ -29,7 +29,7 @@ void print_float_pattern(float current_value) {
     }
 }
 
-void generate_pattern(void) {
+void generate_pattern() {
     for (int i = 0; i <= 10; i++) {
         float current_value = i * 0.2f;
 

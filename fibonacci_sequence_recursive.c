@@ -26,7 +26,7 @@ int main(void) {
     scanf("%d", &num_terms);
 
     if (num_terms < 0) {
-        printf("Error: Number of terms cannot be negative.\n");
+        printf("Number of terms cannot be negative.\n");
         return 0;
     }
 

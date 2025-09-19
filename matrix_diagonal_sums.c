@@ -7,37 +7,40 @@
 
 #define MAX_SIZE 100
 
-int read_matrix_size(void) {
+int read_matrix_size() {
     int size;
+
     printf("Enter the size of the square matrix (1-%d): ", MAX_SIZE);
+
     if (scanf("%d", &size) != 1 || size <= 0 || size > MAX_SIZE) {
         printf("Invalid size. Please enter a positive integer between 1 and %d.\n", MAX_SIZE);
-        return 0;
+        return -1;
     }
+
     return size;
 }
 
 int read_matrix_elements(int matrix[MAX_SIZE][MAX_SIZE], int size) {
-    int i, j;
     printf("Enter the elements of the %dx%d matrix:\n", size, size);
-    for (i = 0; i < size; i++) {
+
+    for (int i = 0; i < size; i++) {
         printf("Row %d: ", i + 1);
-        for (j = 0; j < size; j++) {
+        
+        for (int j = 0; j < size; j++) {
             if (scanf("%d", &matrix[i][j]) != 1) {
                 printf("Invalid input. Please enter integers only.\n");
                 return -1;
             }
         }
     }
+
     return 0;
 }
 
 void calculate_diagonal_sums(int matrix[MAX_SIZE][MAX_SIZE], int size, int *main_sum, int *anti_sum) {
-    int i;
     *main_sum = 0;
     *anti_sum = 0;
-
-    for (i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         *main_sum += matrix[i][i];
         *anti_sum += matrix[i][size - 1 - i];
     }
@@ -54,19 +57,17 @@ void print_results(int main_sum, int anti_sum) {
 }
 
 int main(void) {
-    int matrix[MAX_SIZE][MAX_SIZE];
-    int size;
-    int main_diagonal_sum, anti_diagonal_sum;
-
-    size = read_matrix_size();
-    if (size == 0) {
+    int size = read_matrix_size();
+    if (size == -1) {
         return 0;
     }
 
+    int matrix[MAX_SIZE][MAX_SIZE];
     if (read_matrix_elements(matrix, size) == -1) {
         return 0;
     }
 
+    int main_diagonal_sum, anti_diagonal_sum;
     calculate_diagonal_sums(matrix, size, &main_diagonal_sum, &anti_diagonal_sum);
     print_results(main_diagonal_sum, anti_diagonal_sum);
 

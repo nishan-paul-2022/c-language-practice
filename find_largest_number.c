@@ -25,7 +25,7 @@ int main(void) {
         double largest = find_largest(num1, num2, num3);
         printf("The largest number is: %.2lf\n", largest);
     } else {
-        fprintf(stderr, "Error: Invalid input format. Please enter three numbers separated by commas.\n");
+        fprintf(stderr, "Invalid input format. Please enter three numbers separated by commas.\n");
         while (getchar() != '\n');
     }
 

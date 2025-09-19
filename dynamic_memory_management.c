@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int get_element_count(void) {
+int get_element_count() {
     int num_elements;
     printf("Enter the number of integers to allocate: ");
     
@@ -28,7 +28,7 @@ int *allocate_memory(int num_elements) {
     int *memory = (int *)calloc(num_elements, sizeof(int));
     
     if (memory == NULL) {
-        printf("Error: Memory allocation failed using calloc.\n");
+        printf("Memory allocation failed using calloc.\n");
         return NULL;
     }
     
@@ -36,7 +36,7 @@ int *allocate_memory(int num_elements) {
     return memory;
 }
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
@@ -70,7 +70,7 @@ int *reallocate_memory(int *memory, int new_count) {
     int *temp_ptr = (int *)realloc(memory, new_size_in_bytes);
     
     if (temp_ptr == NULL) {
-        printf("Error: Memory reallocation failed using realloc.\n");
+        printf("Memory reallocation failed using realloc.\n");
         return NULL;
     }
     
@@ -101,7 +101,7 @@ int main(void) {
         return 0;
     }
     
-    print_elements(allocated_memory, num_elements, "You entered: ");
+    print_elements(allocated_memory, num_elements, "Entered elements: ");
     
     int *reallocated_memory = reallocate_memory(allocated_memory, 5);
     if (reallocated_memory == NULL) {

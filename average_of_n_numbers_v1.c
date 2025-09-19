@@ -9,7 +9,7 @@ int main(void) {
     int count;
     double sum = 0.0;
 
-    printf("Enter the number of values you want to average: ");
+    printf("Enter the number of values to average: ");
     if (scanf("%d", &count) != 1 || count <= 0) {
         printf("Invalid input. Please enter a positive integer for the count.\n");
         return 0;
@@ -25,7 +25,7 @@ int main(void) {
         sum += number;
     }
 
-    printf("The average of the %d numbers is: %.3lf\n", count, sum / count);
+    printf("The average of the %d numbers is %.2lf\n", count, sum / count);
 
     return 0;
 }

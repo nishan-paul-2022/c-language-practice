@@ -95,7 +95,7 @@ char* custom_strnset(char* str, int ch, size_t n) {
 }
 
 // Print program header
-void print_header(void) {
+void print_header() {
     printf("=== String Functions Demonstration ===\n");
     printf("Enter %d strings (one per line):\n\n", MAX_STRINGS);
 }
@@ -105,7 +105,7 @@ int read_strings(char strings[][MAX_STRING_LENGTH]) {
     for (int i = 0; i < MAX_STRINGS; i++) {
         printf("String %d: ", i + 1);
         if (fgets(strings[i], MAX_STRING_LENGTH, stdin) == NULL) {
-            fprintf(stderr, "Error: Failed to read string %d.\n", i + 1);
+            fprintf(stderr, "Failed to read string %d.\n", i + 1);
             return -1;
         }
         strings[i][strcspn(strings[i], "\n")] = '\0'; // Remove newline

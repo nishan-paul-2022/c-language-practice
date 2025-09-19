@@ -7,9 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF); // discard leftover input
+    while ((c = getchar()) != '\n' && c != EOF);
 }
 
 void free_matrix(double **matrix, int rows) {
@@ -22,13 +22,13 @@ void free_matrix(double **matrix, int rows) {
 double** allocate_matrix(int rows, int cols) {
     double **matrix = (double**)malloc(rows * sizeof(double*));
     if (matrix == NULL) {
-        printf("Error: Memory allocation failed.\n");
+        printf("Memory allocation failed.\n");
         return NULL;
     }
     for (int i = 0; i < rows; i++) {
         matrix[i] = (double*)malloc(cols * sizeof(double));
         if (matrix[i] == NULL) {
-            printf("Error: Memory allocation failed.\n");
+            printf("Memory allocation failed.\n");
             free_matrix(matrix, i);
             return NULL;
         }
@@ -40,7 +40,7 @@ int read_positive_int(const char *prompt) {
     int n;
     printf("%s", prompt);
     if (scanf("%d", &n) != 1 || n <= 0) {
-        printf("Error: Please enter a valid positive integer.\n");
+        printf("Please enter a valid positive integer.\n");
         return -1;
     }
     clear_input_buffer();
@@ -52,7 +52,7 @@ int read_matrix(int rows, int cols, double **matrix) {
         printf("Enter %d values for row %d: ", cols, i + 1);
         for (int j = 0; j < cols; j++) {
             if (scanf("%lf", &matrix[i][j]) != 1) {
-                printf("\nError: Invalid input detected. Stopping program.\n");
+                printf("\nInvalid input detected. Stopping program.\n");
                 return -1;
             }
         }

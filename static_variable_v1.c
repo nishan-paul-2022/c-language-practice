@@ -5,14 +5,14 @@
 
 #include <stdio.h>
 
-int increment_static_value(void) {
+int increment_static_value() {
     static int counter = 10;
     counter++;
     return counter;
 }
 
 int main(void) {
-    printf("Demonstrating static variable behavior:\n");
+    printf("=== Demonstrating static variable behavior ===\n");
 
     for (int i = 1; i <= 6; i++) {
         printf("Call %d: %d\n", i, increment_static_value());

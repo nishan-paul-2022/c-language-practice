@@ -16,7 +16,7 @@ int get_numbers(double *numerator, double *denominator) {
 
 int check_division_by_zero(double denominator) {
     if (denominator == 0.0) {
-        printf("Error: Division by zero is not allowed.\n");
+        printf("Division by zero is not allowed.\n");
         return -1;
     }
     return 0;

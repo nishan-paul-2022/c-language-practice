@@ -10,8 +10,8 @@ int main(void) {
     char c = 'a';
     char *pointer_to_c = &c;
 
-    printf("Via varaible : Value - %c, Address - %p\n", c, (void *)&c);
-    printf("Via pointer : Value - %c, Address - %p\n", *pointer_to_c, (void *)pointer_to_c);
+    printf("Via varaible : Value - %c | Address - %p\n", c, (void *)&c);
+    printf("Via pointer : Value - %c | Address - %p\n", *pointer_to_c, (void *)pointer_to_c);
 
     return 0;
 }

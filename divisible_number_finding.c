@@ -8,18 +8,18 @@
 int get_inputs(int *start, int *end, int *divisor) {
     printf("Enter the start and end of the range (e.g., 1, 100): ");
     if (scanf("%d, %d", start, end) != 2) {
-        printf("Error: Invalid input format for range. Please use 'start, end'.\n");
+        printf("Invalid input format for range. Please use 'start, end'.\n");
         return -1;
     }
 
     printf("Enter the divisor: ");
     if (scanf("%d", divisor) != 1) {
-        printf("Error: Invalid input for divisor.\n");
+        printf("Invalid input for divisor.\n");
         return -1;
     }
 
     if (*divisor == 0) {
-        printf("Error: Divisor cannot be zero.\n");
+        printf("Divisor cannot be zero.\n");
         return -1;
     }
 

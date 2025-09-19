@@ -97,7 +97,7 @@ int main(void) {
 
     printf("Enter number of test cases:\n");
     if (scanf("%d", &num_test_cases) != 1) {
-        fprintf(stderr, "Error: Invalid input for number of test cases.\n");
+        fprintf(stderr, "Invalid input for number of test cases.\n");
         while (getchar() != '\n');
         return 0;
     }

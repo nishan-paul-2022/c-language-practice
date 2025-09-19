@@ -17,7 +17,7 @@ unsigned long long calculate_factorial(int num) {
     for (int i = 1; i <= num; i++) {
         // Check for potential overflow before multiplication.
         if (__builtin_mul_overflow(factorial, i, &factorial)) {
-            printf("Warning: Factorial calculation may have overflowed for %d!\n", num);
+            printf("Factorial calculation may have overflowed for %d!\n", num);
             return 0; // Indicate overflow.
         }
     }
@@ -46,7 +46,7 @@ int main(void) {
 
     printf("Enter a non-negative integer: ");
     if (scanf("%d", &number) != 1) {
-        printf("Error: Invalid input. Please enter an integer.\n");
+        printf("Invalid input. Please enter an integer.\n");
         return 0;
     }
 

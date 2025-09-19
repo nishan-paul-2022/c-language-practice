@@ -17,7 +17,7 @@ int main(void) {
     }
 
     // *array dereferences the pointer to the first element of the array
-    printf("You entered: %d\n", *array);
+    printf("Entered value: %d\n", *array);
 
     return 0;
 }

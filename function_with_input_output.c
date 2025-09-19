@@ -12,7 +12,7 @@ char process_numbers_and_return_char(int num1, int num2) {
 
     printf("Enter an integer to multiply with the sum: ");
     if (scanf("%d", &multiplier) != 1) {
-        fprintf(stderr, "Error: Invalid input for multiplier.\n");
+        fprintf(stderr, "Invalid input for multiplier.\n");
         return '?';
     }
     while (getchar() != '\n');
@@ -30,7 +30,7 @@ int main(void) {
 
     printf("Enter two integers separated by a comma (e.g., 5, 10): ");
     if (scanf("%d, %d", &number1, &number2) != 2) {
-        fprintf(stderr, "Error: Invalid input format. Please enter two integers separated by a comma.\n");
+        fprintf(stderr, "Invalid input format. Please enter two integers separated by a comma.\n");
         return 0;
     }
     while (getchar() != '\n');

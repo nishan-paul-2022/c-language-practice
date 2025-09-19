@@ -12,7 +12,7 @@ void perform_arithmetic_operations(double num1, double num2,
                                    double *prod_ptr,
                                    double *div_ptr) {
     if (sum_ptr == NULL || diff_ptr == NULL || prod_ptr == NULL || div_ptr == NULL) {
-        fprintf(stderr, "Error: NULL pointer passed to function.\n");
+        fprintf(stderr, "NULL pointer passed to function.\n");
         return;
     }
 
@@ -21,7 +21,7 @@ void perform_arithmetic_operations(double num1, double num2,
     *prod_ptr = num1 * num2;
 
     if (num2 == 0.0) {
-        fprintf(stderr, "Error: Division by zero attempted.\n");
+        fprintf(stderr, "Division by zero attempted.\n");
         *div_ptr = 0.0;
     } else {
         *div_ptr = num1 / num2;
@@ -33,7 +33,7 @@ int get_two_doubles(double *value1, double *value2) {
     return scanf("%lf %lf", value1, value2);
 }
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     while (getchar() != '\n');
 }
 
@@ -55,7 +55,7 @@ int main(void) {
     double result_sum, result_diff, result_prod, result_div;
 
     if (get_two_doubles(&value1, &value2) != 2) {
-        fprintf(stderr, "Error: Invalid input format.\n");
+        fprintf(stderr, "Invalid input format.\n");
         return 0;
     }
     clear_input_buffer();

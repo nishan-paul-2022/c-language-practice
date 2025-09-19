@@ -19,7 +19,7 @@ int calculate_fibonacci_term(int n) {
     return calculate_fibonacci_term(n - 1) + calculate_fibonacci_term(n - 2);
 }
 
-int get_term_count(void) {
+int get_term_count() {
     int n;
     printf("Enter the number of Fibonacci terms to calculate and sum: ");
     scanf("%d", &n);

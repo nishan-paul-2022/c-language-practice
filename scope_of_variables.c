@@ -5,23 +5,30 @@
 
 #include <stdio.h>
 
-int global_var = 1; // Global variable: accessible anywhere in the program
+int global = 1;
 
-// Function to modify global and local variables
-void modify_variables(int local_var_param) {
-    local_var_param = local_var_param * 2; // Modify local copy
-    global_var = global_var + 10; // Modify global variable
-    printf("Inside function: global_var = %d, local_var_param = %d\n", global_var, local_var_param);
+void initialize_global_var(int value) {
+    global = value;
+}
+
+void modify_variables(int x) {
+    x = x * 2;
+    global = global + 10;
+}
+
+void display_values(int x, int y) {
+    printf("local = %d | global = %d\n", x, y);
 }
 
 int main(void) {
-    int local_var = 5; // Local variable for main
+    int local = 5;
+    initialize_global_var(10);
 
-    global_var = 10; // Initialize global variable
-
-    modify_variables(local_var); // Call function
-
-    printf("In main after function call: global_var = %d, local_var = %d\n", global_var, local_var);
-
+    display_values(local, global);
+    
+    modify_variables(local);
+    
+    display_values(local, global);
+    
     return 0;
 }

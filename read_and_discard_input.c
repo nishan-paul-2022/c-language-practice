@@ -14,7 +14,7 @@ int main(void) {
 
     printf("Example: Enter a string containing numbers and letters, including '6' somewhere in it.\n");
     printf("Input will be read up to '6' (max 10 chars) and the next 6 characters will be discarded.\n");
-    printf("Enter your string: ");
+    printf("Enter string: ");
 
     // Read up to 10 characters until '6' is encountered
     if (scanf("%10[^6]", input_buffer) != 1) {
@@ -25,7 +25,7 @@ int main(void) {
     printf("\n--- Input Processing Result ---\n");
     printf("Read characters (stopped at '6'): '%s'\n", input_buffer);
     scanf("%10s", remaning_buffer);
-    printf("You entered: '%s'\n", remaning_buffer);
+    printf("Entered characters after '6': '%s'\n", remaning_buffer);
 
     return 0;
 }

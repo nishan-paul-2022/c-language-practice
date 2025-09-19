@@ -20,7 +20,7 @@ int main(void) {
     scanf("%d %d", &base_number, &exponent_number);
 
     if (exponent_number < 0) {
-        printf("Error: This program calculates power for non-negative exponents only.\n");
+        printf("This program calculates power for non-negative exponents only.\n");
         return 0;
     }
 

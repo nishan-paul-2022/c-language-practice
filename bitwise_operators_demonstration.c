@@ -8,30 +8,20 @@
 int main(void) {
     int a = 10; // 0000 1010
     int b = 20; // 0001 0100
-    char c = -60; // For demonstrating bitwise NOT
+    int c = -60; // 1100 0100
 
     printf("Demonstrating Bitwise Operators:\n");
+
     printf("a = %d\n", a);
     printf("b = %d\n", b);
-    printf("c = %d (signed char)\n\n", c);
+    printf("c = %d\n\n", c);
 
-    // Bitwise AND
-    printf("a & b (AND): %d\n", a & b);
-
-    // Bitwise OR
-    printf("a | b (OR): %d\n", a | b);
-
-    // Bitwise NOT
-    printf("~c (NOT): %d\n", ~c);
-
-    // Bitwise XOR
-    printf("a ^ b (XOR): %d\n", a ^ b);
-
-    // Right Shift
-    printf("a >> 1 (Right Shift): %d\n", a >> 1);
-
-    // Left Shift
-    printf("a << 1 (Left Shift): %d\n", a << 1);
+    printf("a & b   : %d\n", a & b); // Bitwise AND
+    printf("a | b   : %d\n", a | b); // Bitwise OR
+    printf("~c      : %d\n", ~c); // Bitwise NOT
+    printf("a ^ b   : %d\n", a ^ b); // Bitwise XOR
+    printf("a >> 1  : %d\n", a >> 1); // Right Shift
+    printf("a << 1  : %d\n", a << 1); // Left Shift
 
     return 0;
 }

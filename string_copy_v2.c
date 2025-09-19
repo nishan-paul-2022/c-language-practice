@@ -7,17 +7,20 @@
 #include <string.h>
 
 int main(void) {
-    char src[100] = "ABCDEFGHIJ";
-    char dest[100] = "KLM";
-    char *pointer1 = dest;
+    char src1[100] = "UC Berkeley";
+    char src2[100] = "(BAIR)";
+    char *pointer1 = src1;
+    char *pointer2 = strcpy(src2, src1 + 3);
 
-    // Copy substring starting from 4th character of src ("E1604085") into dest
-    char *pointer2 = strcpy(dest, src + 3);
-
-    printf("Substring of original dest: %s\n", pointer1 + 1); // "UET"
-    printf("Pointer returned by strcpy: %p\n", (void*)pointer2);
-    printf("Copied string in dest: %s\n", dest);
-    printf("Length of copied string: %zu\n", strlen(src + 3));
+    printf("src1: %s\n", src1);
+    printf("src2: %s\n", src2);
+    printf("pointer1: %s\n", pointer1);
+    printf("pointer2: %s\n", pointer2);
+    printf("(void*)pointer1: %p\n", (void*)pointer1);
+    printf("pointer1 + 3: %s\n", pointer1 + 3);
+    printf("(void*)(pointer1 + 3): %p\n", (void*)(pointer1 + 3));
+    printf("strlen(src1 + 3): %zu\n", strlen(src1 + 3));
+    printf("strlen(pointer1 + 3): %zu\n", strlen(pointer1 + 3));
 
     return 0;
 }

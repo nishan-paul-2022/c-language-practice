@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-int read_integer_input(void) {
+int read_integer_input() {
     int n;
     printf("Enter an integer (or a non-integer to exit): ");
     if (scanf("%d", &n) != 1) {

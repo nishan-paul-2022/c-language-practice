@@ -21,7 +21,7 @@ int main(void) {
         long long product = calculate_product(num1, num2);
         printf("The product of %d and %d is %lld\n", num1, num2, product);
     } else {
-        fprintf(stderr, "Error: Invalid input format. Please use 'input X*Y'.\n");
+        fprintf(stderr, "Invalid input format. Please use 'input X*Y'.\n");
         while (getchar() != '\n'); // Clear input buffer
     }
 

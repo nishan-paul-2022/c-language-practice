@@ -6,18 +6,16 @@
 #include <stdio.h>
 
 int main(void) {
-    int age;
-    int count_in_range;
-
     printf("Enter ages to count those between 50 and 60 (inclusive).\n");
     printf("Enter 0 to process the current batch and start a new one.\n");
     printf("Ctrl+D to exit the program.\n\n");
 
     // Outer loop to allow multiple batches of input
     while (1) {
-        count_in_range = 0; // Reset count for each new batch
+        int count_in_range = 0; // Reset count for each new batch
 
         printf("--- New Batch ---\n");
+        int age;
         while (scanf("%d", &age) == 1) {
             if (age == 0) {
                 break; // End of current batch, process and print count

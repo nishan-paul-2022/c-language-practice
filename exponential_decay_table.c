@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int get_input_limit(void) {
+int get_input_limit() {
     int input_limit;
     printf("Enter the limit for the outer loop: ");
     scanf("%d", &input_limit);

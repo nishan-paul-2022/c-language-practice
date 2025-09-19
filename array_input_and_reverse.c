@@ -6,17 +6,16 @@
 
 #include <stdio.h>
 
-#define MAX_ARRAY_SIZE 100 // Define a maximum size for the array
+#define MAX_ARRAY_SIZE 100
 
 // Function to reverse an array in-place
 void reverse_array(int arr[], int size) {
-    int temp;
     int start_index = 0;
     int end_index = size - 1;
 
     // Swap elements from the beginning and end, moving towards the center
     while (start_index < end_index) {
-        temp = arr[start_index];
+        int temp = arr[start_index];
         arr[start_index] = arr[end_index];
         arr[end_index] = temp;
 
@@ -28,14 +27,14 @@ void reverse_array(int arr[], int size) {
 
 int main(void) {
     int numbers[MAX_ARRAY_SIZE];
-    int count = 0; // To keep track of the number of elements entered
-    int input_value;
 
-    printf("Enter integers. Enter any non-integer to stop:\n");
+    printf("Enter integers (or any non-integer to stop and process):\n");
 
     // Read integers until a non-integer is entered or max size is reached
+    int count = 0;
     while (count < MAX_ARRAY_SIZE) {
         printf("Enter element %d: ", count + 1);
+        int input_value;
         if (scanf("%d", &input_value) != 1) {
             break; // Stop reading if non-integer is entered
         }
@@ -46,7 +45,7 @@ int main(void) {
 
     // If no elements were entered
     if (count == 0) {
-        printf("\nNo elements entered.\n");
+        printf("\nNo elements were entered.\n");
         return 0;
     }
 
@@ -54,8 +53,8 @@ int main(void) {
     reverse_array(numbers, count);
 
     printf("\nArray after reversal:\n");
-    for (int k = 0; k < count; k++) {
-        printf("%d ", numbers[k]);
+    for (int i = 0; i < count; i++) {
+        printf("%d ", numbers[i]);
     }
     printf("\n");
 

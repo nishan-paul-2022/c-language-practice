@@ -30,7 +30,7 @@ int main(void) {
     long long result = factorial(n);
 
     if (result == -1) {
-        printf("Error: Factorial is not defined for negative numbers.\n");
+        printf("Factorial is not defined for negative numbers.\n");
     } else {
         printf("Factorial of %d is %lld\n", n, result);
     }

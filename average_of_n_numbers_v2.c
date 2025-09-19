@@ -6,26 +6,27 @@
 
 #include <stdio.h>
 
+void clear_input_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 int main(void) {
     double current_value;
     double sum_of_values = 0.0;
     int count = 0;
 
-    printf("Enter a sequence of double values.\n");
-    printf("Enter a non-numeric value to finish and see the average.\n");
-    while (1) {
-        printf("Enter value: ");
-        if (scanf("%lf", &current_value) != 1) {
-            while (getchar() != '\n'); // Clear input buffer
-            break;
-        }
+    printf("Enter a sequence of double values (Ctrl+D to finish and see the average).\n");
+    
+    while (scanf("%lf", &current_value) != -1) {
         count++;
         sum_of_values += current_value;
+        clear_input_buffer();
     }
 
     if (count > 0) {
         double average = sum_of_values / count;
-        printf("The average of the entered numbers is: %.2f\n", average);
+        printf("The average of the entered numbers is %.2f\n", average);
     }
 
     return 0;

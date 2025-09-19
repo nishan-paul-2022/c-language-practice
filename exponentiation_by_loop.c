@@ -29,7 +29,7 @@ double calculate_power(double base, int exponent) {
         }
     } else {
         if (base == 0.0) {
-            printf("Error: Division by zero is not allowed (0 raised to a negative power).\n");
+            printf("Division by zero is not allowed (0 raised to a negative power).\n");
             return 0.0;
         }
         for (int i = 0; i < -exponent; i++) {

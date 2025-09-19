@@ -19,7 +19,7 @@ int get_dimension(void) {
     return dimension;
 }
 
-int get_num_elements(void) {
+int get_num_elements() {
     int num_elements;
     printf("Enter the number of elements to set to 1: ");
     if (scanf("%d", &num_elements) != 1 || num_elements < 0) {
@@ -54,7 +54,7 @@ void set_matrix_elements(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension
         if (row >= 0 && row < dimension && col >= 0 && col < dimension) {
             matrix[row][col] = 1;
         } else {
-            printf("Warning: Indices (%d, %d) are out of bounds for a %d x %d matrix. Skipping.\n", 
+            printf("Indices (%d, %d) are out of bounds for a %d x %d matrix. Skipping.\n", 
                    row, col, dimension, dimension);
         }
     }

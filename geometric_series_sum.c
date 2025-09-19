@@ -43,9 +43,9 @@ int get_user_input(double *base_x, int *exponent_n) {
     return 0;
 }
 
-int ask_continue(void) {
+int ask_continue() {
     char another_calculation;
-    printf("Do you want to perform another calculation? (y/n): ");
+    printf("Type 'y' to perform another calculation? (y/n): ");
     scanf(" %c", &another_calculation);
     return (another_calculation == 'y' || another_calculation == 'Y');
 }

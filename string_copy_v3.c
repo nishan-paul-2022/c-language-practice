@@ -6,24 +6,35 @@
 #include <stdio.h>
 #include <string.h>
 
+#define BUFFER_SIZE 10000
+
+int read_string(const char *prompt, char *buffer, int size) {
+    printf("%s", prompt);
+    if (fgets(buffer, size, stdin) == NULL) {
+        printf("\nError reading input string.\n");
+        return -1;
+    }
+    buffer[strcspn(buffer, "\n")] = 0;
+    return 1;
+}
+
+void copy_and_display(char *destination, const char *source) {
+    strcpy(destination, source);
+    printf("Copied string: %s\n", destination);
+}
+
 int main(void) {
-    char str1[10000], str2[10000];
-
-    printf("Enter the first string: ");
-    if (fgets(str1, sizeof(str1), stdin) == NULL) {
+    char str1[BUFFER_SIZE];    
+    if (read_string("Enter the first string: ", str1, BUFFER_SIZE) == -1) {
         return 0;
     }
-    str1[strcspn(str1, "\n")] = 0;
-
-    printf("Enter the second string: ");
-    if (fgets(str2, sizeof(str2), stdin) == NULL) {
+    
+    char str2[BUFFER_SIZE];
+    if (read_string("Enter the second string: ", str2, BUFFER_SIZE) == -1) {
         return 0;
     }
-    str2[strcspn(str2, "\n")] = 0;
-
-    strcpy(str2, str1);
-
-    printf("The copied string is: %s\n", str2);
-
+    
+    copy_and_display(str2, str1);
+    
     return 0;
 }

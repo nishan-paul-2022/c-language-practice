@@ -17,11 +17,11 @@ int read_non_negative_int(const char *prompt) {
     int n;
     printf("%s", prompt);
     if (scanf("%d", &n) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter an integer.\n");
+        fprintf(stderr, "Invalid input. Please enter an integer.\n");
         return -1;
     }
     if (n < 0) {
-        fprintf(stderr, "Error: Please enter a non-negative integer.\n");
+        fprintf(stderr, "Please enter a non-negative integer.\n");
         return -1;
     }
     return n;

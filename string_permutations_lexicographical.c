@@ -8,7 +8,7 @@
 #include <string.h>
 
 int compare_chars(const void *a, const void *b) {
-    return (*(char *)a - *(char *)b); // Compare two chars
+    return (*(char *)a - *(char *)b);
 }
 
 void swap_chars(char *a, char *b) {
@@ -19,11 +19,13 @@ void swap_chars(char *a, char *b) {
 
 int find_ceil_index(char str[], char first, int left, int right) {
     int ceil_index = left;
+
     for (int i = left + 1; i <= right; i++) {
         if (str[i] > first && str[i] < str[ceil_index]) {
             ceil_index = i;
         }
     }
+
     return ceil_index;
 }
 
@@ -58,8 +60,9 @@ int main(void) {
     char input_string[100];
 
     printf("Enter a string: ");
+
     if (fgets(input_string, sizeof(input_string), stdin) != NULL) {
-        input_string[strcspn(input_string, "\n")] = 0; // Remove newline
+        input_string[strcspn(input_string, "\n")] = 0;
         printf("Permutations of \"%s\":\n", input_string);
         generate_lex_permutations(input_string);
     } else {

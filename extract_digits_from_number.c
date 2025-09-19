@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void display_instructions(void) {
+void display_instructions() {
     printf("Enter integers to be processed (e.g., 12345):\n\n");
 }
 
@@ -20,7 +20,7 @@ void process_number(int input_number) {
     printf("  Original number: %d\n\n", input_number);
 }
 
-void process_input_stream(void) {
+void process_input_stream() {
     int input_number;
     
     while (scanf("%d", &input_number) == 1) {

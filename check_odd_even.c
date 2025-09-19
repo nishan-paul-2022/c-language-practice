@@ -6,12 +6,12 @@
 #include <stdio.h>
 
 // Reads and validates the number of test cases
-int read_test_count(void) {
+int read_test_count() {
     int count;
     printf("Enter the number of test cases: ");
     
     if (scanf("%d", &count) != 1 || count < 0) {
-        printf("Error: Invalid number of test cases.\n");
+        printf("Invalid number of test cases.\n");
         return -1;
     }
     
@@ -23,7 +23,7 @@ int read_number(int test_num, int *number) {
     printf("Enter number for test case %d: ", test_num);
     
     if (scanf("%d", number) != 1) {
-        printf("Error: Failed to read number for test case %d.\n", test_num);
+        printf("Failed to read number for test case %d.\n", test_num);
         return -1;
     }
     

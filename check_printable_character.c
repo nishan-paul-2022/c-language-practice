@@ -7,13 +7,13 @@
 #include <ctype.h>
 
 // Clears input buffer until newline or EOF
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // Prints program title and instructions
-void print_program_header(void) {
+void print_program_header() {
     printf("=== Printable Character Checker ===\n");
     printf("This program checks if ASCII values represent printable characters.\n");
     printf("Enter ASCII values (integers) to check. Invalid input will exit.\n");
@@ -24,7 +24,7 @@ int read_integer(int *value) {
     printf("Enter an ASCII value (integer): ");
     
     if (scanf("%d", value) != 1) {
-        fprintf(stderr, "\nError: Invalid input. Program terminated.\n");
+        fprintf(stderr, "\nInvalid input. Program terminated.\n");
         clear_input_buffer();
         return -1;
     }
@@ -48,6 +48,6 @@ int main(void) {
         check_printable(input_value);
     }
     
-    printf("Thank you for using the Printable Character Checker!\n");
+    printf("Thanks for using the Printable Character Checker!\n");
     return 0;
 }

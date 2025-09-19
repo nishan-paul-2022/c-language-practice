@@ -11,7 +11,7 @@ int main(void) {
     printf("Enter the number of test cases: ");
     int num_test_cases;
     if (scanf("%d", &num_test_cases) != 1) {
-        printf("Error: Invalid input for number of test cases.\n");
+        printf("Invalid input for number of test cases.\n");
         return 0;
     }
     getchar();
@@ -23,7 +23,7 @@ int main(void) {
         printf("Enter string %d (lowercase letters only): ", case_num);
         char input_string[100];
         if (scanf("%99s", input_string) != 1) {
-            printf("Error: Invalid input for string.\n");
+            printf("Invalid input for string.\n");
             continue;
         }
         getchar();

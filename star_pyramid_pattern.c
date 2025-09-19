@@ -6,7 +6,12 @@
 #include <stdio.h>
 
 int main(void) {
-    int total_rows = 10;
+    int total_rows;
+    printf("Enter total number of rows: ");
+    if (scanf("%d", &total_rows) == -1 || total_rows <=0) {
+        printf("Invalid input.");
+        return 0;
+    }
 
     for (int row = 1; row <= total_rows; row++) {
         int stars;

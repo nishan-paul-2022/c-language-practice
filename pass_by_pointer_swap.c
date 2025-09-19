@@ -10,7 +10,7 @@ void swap(int *ptr1, int *ptr2) {
     int temp;
 
     if (ptr1 == NULL || ptr2 == NULL) {
-        fprintf(stderr, "Error: Invalid pointers passed to swap function.\n");
+        fprintf(stderr, "Invalid pointers passed to swap function.\n");
         return;
     }
 
@@ -28,7 +28,7 @@ void display_values(int num1, int num2, const char *stage) {
     printf("%s num1 = %d, num2 = %d\n", stage, num1, num2);
 }
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     while (getchar() != '\n');
 }
 
@@ -40,7 +40,7 @@ int main(void) {
         swap(&num1, &num2);
         display_values(num1, num2, "After swap: ");
     } else {
-        fprintf(stderr, "Error: Invalid input. Please enter two integers.\n");
+        fprintf(stderr, "Invalid input. Please enter two integers.\n");
         clear_input_buffer();
     }
 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 // Recursive function to print numbers from 5 down to 1
-void print_countdown_recursive(void) {
+void print_countdown_recursive() {
     static int counter = 0; // Keep track across recursive calls
 
     counter++; // Increment counter

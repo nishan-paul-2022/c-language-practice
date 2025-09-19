@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-void generate_permutations(void) {
+void generate_permutations() {
     for (int num1 = 1; num1 <= 3; num1++) {
         for (int num2 = 1; num2 <= 3; num2++) {
             if (num2 != num1) {

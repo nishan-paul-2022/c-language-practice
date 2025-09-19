@@ -8,10 +8,8 @@
 
 int main(void) {
     int array_size;
-    int *numbers;
-    int target_number;
-
     printf("Enter the size of the array (or Ctrl+D to exit): ");
+
     while (scanf("%d", &array_size) == 1) {
         if (array_size <= 0) {
             printf("Array size must be positive. Please try again.\n");
@@ -19,7 +17,7 @@ int main(void) {
         }
 
         // Dynamically allocate memory for the array
-        numbers = (int *)malloc(array_size * sizeof(int));
+        int *numbers = (int *)malloc(array_size * sizeof(int));
         if (numbers == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
             return 0;
@@ -35,6 +33,7 @@ int main(void) {
         }
 
         printf("Enter the number to search for: ");
+        int target_number;
         if (scanf("%d", &target_number) != 1) {
             printf("Invalid input. Exiting.\n");
             free(numbers);  // Free allocated memory before exiting
@@ -54,7 +53,7 @@ int main(void) {
         }
         printf("\n\n");
 
-        free(numbers); // Free the allocated memory after use
+        free(numbers);
 
         printf("Enter the size of the next array (or Ctrl+D to exit): ");
     }

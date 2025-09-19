@@ -23,7 +23,7 @@ int main(void) {
     int num_rows;
     printf("Enter the number of rows: ");
     if (scanf("%d", &num_rows) != 1 || num_rows <= 0) {
-        fprintf(stderr, "Error: Invalid input. Enter a positive integer.\n");
+        fprintf(stderr, "Invalid input. Enter a positive integer.\n");
         return 0;
     }
     print_triangle(num_rows);

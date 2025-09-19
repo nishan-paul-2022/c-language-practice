@@ -40,16 +40,16 @@
 #endif
 
 // Function declarations
-void demonstrate_object_macros(void);
-void demonstrate_function_macros(void);
-void demonstrate_conditional_compilation(void);
-void demonstrate_platform_detection(void);
-void demonstrate_feature_toggles(void);
-void demonstrate_header_guards(void);
-void demonstrate_macro_undefining(void);
+void demonstrate_object_macros();
+void demonstrate_function_macros();
+void demonstrate_conditional_compilation();
+void demonstrate_platform_detection();
+void demonstrate_feature_toggles();
+void demonstrate_header_guards();
+void demonstrate_macro_undefining();
 
 // Object-like macro demonstration
-void demonstrate_object_macros(void) {
+void demonstrate_object_macros() {
     printf("1. Object-like Macros:\n");
     printf("   PI = %f\n", PI);
     printf("   MAX_BUFFER_SIZE = %d\n", MAX_BUFFER_SIZE);
@@ -57,7 +57,7 @@ void demonstrate_object_macros(void) {
 }
 
 // Function-like macro demonstration
-void demonstrate_function_macros(void) {
+void demonstrate_function_macros() {
     printf("2. Function-like Macros:\n");
     int a = 5, b = 8;
     printf("   SQUARE(%d) = %d\n", a, SQUARE(a));
@@ -68,7 +68,7 @@ void demonstrate_function_macros(void) {
 }
 
 // Conditional compilation demonstration
-void demonstrate_conditional_compilation(void) {
+void demonstrate_conditional_compilation() {
     printf("3. Conditional Compilation:\n");
     #ifdef DEBUG_MODE
         printf("   Debug mode is ENABLED\n");
@@ -84,13 +84,13 @@ void demonstrate_conditional_compilation(void) {
 }
 
 // Platform detection demonstration
-void demonstrate_platform_detection(void) {
+void demonstrate_platform_detection() {
     printf("4. Platform Detection:\n");
     printf("   Compiled on: %s\n\n", PLATFORM);
 }
 
 // Feature toggle demonstration
-void demonstrate_feature_toggles(void) {
+void demonstrate_feature_toggles() {
     printf("5. Feature Toggles:\n");
     #if FEATURE_ADVANCED_MATH
         printf("   Advanced math features are ENABLED\n");
@@ -102,7 +102,7 @@ void demonstrate_feature_toggles(void) {
 }
 
 // Header guard demonstration
-void demonstrate_header_guards(void) {
+void demonstrate_header_guards() {
     printf("6. Header Guard Simulation:\n");
     #ifdef CONFIG_LOADED
         printf("   Configuration loaded successfully\n");
@@ -111,7 +111,7 @@ void demonstrate_header_guards(void) {
 }
 
 // Macro undefining and redefining demonstration
-void demonstrate_macro_undefining(void) {
+void demonstrate_macro_undefining() {
     printf("7. Undefining Macros:\n");
     printf("   MAX_BUFFER_SIZE is defined: %d\n", MAX_BUFFER_SIZE);
     #undef MAX_BUFFER_SIZE

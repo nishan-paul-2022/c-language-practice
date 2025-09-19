@@ -16,7 +16,7 @@ int main(void) {
         double r, s;
         scanf("%lf %lf", &r, &s);
         if (r == 0.0) {
-            printf("Error: Division by zero.\n");
+            printf("Division by zero.\n");
             continue;
         }
 

@@ -43,7 +43,7 @@ void process_number() {
     printf("Enter an integer: ");
     
     if (scanf("%ld", &number) != 1) {
-        printf("Error: Invalid input. Please enter a long integer.\n");
+        printf("Invalid input. Please enter a long integer.\n");
         return;
     }
     

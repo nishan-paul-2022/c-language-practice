@@ -47,6 +47,6 @@ int main(void) {
         case_number++;
     }
 
-    printf("Thank you for using the Combinations Calculator!\n");
+    printf("Thanks for using the Combinations Calculator!\n");
     return 0;
 }

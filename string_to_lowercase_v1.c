@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void clear_input_buffer(void) {
+void clear_input_buffer() {
     while (getchar() != '\n');
 }
 
@@ -39,7 +39,7 @@ int validate_string_length(const char *input_string, int buffer_size) {
     int str_length = strlen(input_string);
     
     if (str_length > buffer_size) {
-        printf("ERROR: Input string exceeds the specified buffer size.\n");
+        printf("Input string exceeds the specified buffer size.\n");
         return -1;
     }
 

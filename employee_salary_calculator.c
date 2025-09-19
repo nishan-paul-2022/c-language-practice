@@ -5,14 +5,14 @@
 
 #include <stdio.h>
 
-float get_computers_sold(void) {
+float get_computers_sold() {
     float num_computers_sold;
     printf("Enter the number of computers sold: ");
     scanf("%f", &num_computers_sold);
     return num_computers_sold;
 }
 
-float get_computer_price(void) {
+float get_computer_price() {
     float computer_price;
     printf("Enter the price per computer: ");
     scanf("%f", &computer_price);

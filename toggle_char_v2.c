@@ -12,14 +12,18 @@ char toggle_case(char ch) {
     } else {
         return toupper(ch);
     }
+    
     return ch;
 }
 
 int main(void) {
-    printf("Enter alpahabet to toggle their case (Ctrl+D to quit).\n");
     char ch;
+
+    printf("Enter alpahabet to toggle their case (Ctrl+D to quit).\n");
+
     while (scanf(" %c", &ch) != -1) {
         int is_letter = (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
+
         if (is_letter) {
             char toggled = toggle_case(ch);
             printf("Toggled case: %c\n", toggled);

@@ -12,7 +12,8 @@ void read_two_floats(float *a, float *b) {
 }
 
 int sum_as_int(float a, float b) {
-    return (int)(a + b); // truncate decimal part
+    int result = a + b;
+    return result;
 }
 
 int main(void) {

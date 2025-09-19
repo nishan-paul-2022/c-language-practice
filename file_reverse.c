@@ -74,7 +74,7 @@ void close_files(FILE *input_file, FILE *output_file) {
     if (output_file) fclose(output_file);
 }
 
-void display_success_message(void) {
+void display_success_message() {
     printf("File content reversed successfully.\n");
 }
 
