@@ -20,19 +20,22 @@ void decode_and_print(const char *encoded_string) {
             }
 
             switch (current_char) {
-                case '!':
+                case '!': {
                     printf("\n");
                     break;
-                case 'b':
+                }
+                case 'b': {
                     for (int m = 0; m < repetition_count; m++) {
                         printf(" ");
                     }
                     break;
-                default:
+                }
+                default: {
                     for (int m = 0; m < repetition_count; m++) {
                         printf("%c", current_char);
                     }
                     break;
+                }
             }
             repetition_count = 0;
         }

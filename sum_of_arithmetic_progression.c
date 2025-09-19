@@ -1,5 +1,5 @@
 /*
- * Purpose: Calculate the sum of the first n terms of the progression 2, 6, 10, ...
+ * Purpose: Calculates the sum of the first n terms of the progression (2, 6, 10, ...).
  * Topic: Loops, Arithmetic Progression, Functions
  */
 

@@ -1,5 +1,5 @@
 /*
- * Purpose: To demonstrate printing numbers in scientific notation using different format specifiers.
+ * Purpose: Demonstrates printing numbers in scientific notation using different format specifiers.
  * Topic: Data Types, Format Specifiers, Scientific Notation
  */
 

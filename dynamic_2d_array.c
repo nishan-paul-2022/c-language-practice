@@ -1,5 +1,5 @@
 /*
- * Purpose: To read and print a 2D array.
+ * Purpose: Reada and printa 2D array.
  * Topic: Arrays, Functions
  */
 

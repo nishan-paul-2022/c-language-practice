@@ -1,5 +1,5 @@
 /*
- * Purpose: To calculate and print a table of sine and cosine values.
+ * Purpose: Calculates and prints a table of sine and cosine values.
  * Topic: Math functions, Loops
  */
 

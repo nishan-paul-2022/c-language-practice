@@ -1,6 +1,5 @@
 /*
- * Purpose: Reads a sequence of double values until a sentinel value (0.007) is entered,
- * then calculates and prints the average, maximum, and minimum of the entered numbers.
+ * Purpose: Reads a sequence of double values until a sentinel value (0.007) is entered, then calculates and prints the average, maximum, and minimum of the entered numbers.
  * Topic: Loops, Input Handling, Floating-Point Numbers, Max/Min/Average Calculation
  */
 

@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate table formatting and multiple string handling.
+ * Purpose: Demonstrates table formatting and multiple string handling.
  * Topic: Creating tables, reports, multiple strings in formatted output
  */
 

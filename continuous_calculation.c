@@ -1,5 +1,5 @@
 /*
- * Purpose: To continuously read two integers, calculate a value, and print the result.
+ * Purpose: Reads two integers, calculates a value, and prints the result.
  * Topic: Loops, Basic I/O
  */
 

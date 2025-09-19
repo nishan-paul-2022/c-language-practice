@@ -1,5 +1,5 @@
 /*
- * Purpose: Find the maximum Collatz sequence length for numbers in a given range
+ * Purpose: Finds the maximum Collatz sequence length for numbers in a given range.
  * Topic: Collatz Conjecture, Recursive Functions, Range Processing
  */
 

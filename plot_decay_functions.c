@@ -1,5 +1,5 @@
 /*
- * Purpose: Plot exponential and Gaussian decay functions using ASCII visualization
+ * Purpose: Plots exponential and Gaussian decay functions using ASCII visualization.
  * Topic: Mathematical Functions, Exponential Decay, Gaussian Function, ASCII Plotting
  */
 

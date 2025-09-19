@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate precision specification in string formatting.
+ * Purpose: Demonstrates precision specification in string formatting.
  * Topic: String truncation, maximum characters to print
  */
 

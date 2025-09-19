@@ -1,5 +1,5 @@
 /*
- * Purpose: Copy a string character by character using a loop.
+ * Purpose: Copies a string character by character using a loop.
  * Topic: Strings, Loops
  */
 

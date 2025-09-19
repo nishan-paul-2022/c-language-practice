@@ -1,6 +1,6 @@
 /*
  * Purpose: Demonstrates safe string input using fgets.
- * Topic: fgets, safe string input, newline handling
+* Topic: String input/output, fgets, Buffer management
  */
 
 #include <stdio.h>

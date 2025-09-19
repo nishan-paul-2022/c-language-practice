@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrate combined width and precision in string formatting.
- * Topic: Field width + string truncation together
+ * Purpose: Demonstrates combined width and precision in string formatting.
+ * Topic: String formatting, Width and Precision, Format specifiers
  */
 
 #include <stdio.h>

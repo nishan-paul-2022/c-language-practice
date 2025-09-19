@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrate left alignment in string formatting.
- * Topic: Left alignment flag (-), comparison with right alignment
+ * Purpose: Demonstrates left alignment in string formatting.
+ * Topic: String formatting, Left alignment, Format specifiers
  */
 
 #include <stdio.h>

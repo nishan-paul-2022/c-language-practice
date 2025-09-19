@@ -10,9 +10,15 @@
 
 // Recursive function to calculate nth Fibonacci number (f(1)=0, f(2)=1)
 int calculate_fibonacci_recursive(int n) {
-    if (n <= 0) return 0; // Base case: F(0)=0
-    if (n == 1) return 0; // F(1)=0
-    if (n == 2) return 1; // F(2)=1
+    if (n <= 0) {
+        return 0; // Base case: F(0)=0
+    }
+    if (n == 1) {
+        return 0; // F(1)=0
+    }
+    if (n == 2) {
+        return 1; // F(2)=1
+    }
     return calculate_fibonacci_recursive(n - 1) + calculate_fibonacci_recursive(n - 2); // Recursive step
 }
 

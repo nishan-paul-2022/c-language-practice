@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate pointer arithmetic for string manipulation.
+ * Purpose: Demonstrates pointer arithmetic for string manipulation.
  * Topic: Pointer arithmetic, substring operations
  */
 

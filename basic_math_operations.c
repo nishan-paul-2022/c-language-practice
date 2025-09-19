@@ -1,5 +1,5 @@
 /*
- * Purpose: To perform various basic math operations based on user choice.
+ * Purpose: Performs various basic math operations based on user choice.
  * Topic: Functions, Menu-driven programs
  */
 

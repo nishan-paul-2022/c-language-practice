@@ -11,7 +11,9 @@ void print_countdown_recursive() {
 
     counter++; // Increment counter
 
-    if (counter > 5) return; // Base case
+    if (counter > 5) {
+        return; // Base case
+    }
 
     print_countdown_recursive(); // Recursive call
 

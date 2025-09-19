@@ -1,5 +1,5 @@
 /*
- * Purpose: To swap the values of three variables.
+ * Purpose: Swaps the values of three variables.
  * Topic: Variables, Basic I/O, Functions
  */
 

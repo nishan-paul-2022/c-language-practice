@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate safe pointer usage and validation.
+ * Purpose: Demonstrates safe pointer usage and validation.
  * Topic: Pointer safety, null checking, boundary validation
  */
 

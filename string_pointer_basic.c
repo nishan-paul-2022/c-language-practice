@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate basic string pointer concepts.
+ * Purpose: Demonstrates basic string pointer concepts.
  * Topic: String arrays, pointers, memory addresses
  */
 

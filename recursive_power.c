@@ -1,5 +1,5 @@
 /*
- * Purpose: Calculates x raised to the power of y using recursion.
+ * Purpose: Calculates 'x' raised to the power of 'y' using recursion.
  * Topic: Recursion, Mathematical Functions
  */
 
@@ -11,7 +11,9 @@ int power_recursive(int base, int exponent) {
         printf("Exponent must be non-negative.\n");
         return -1;
     }
-    if (exponent == 0) return 1; // Base case: any number^0 = 1
+    if (exponent == 0) {
+        return 1; // Base case: any number^0 = 1
+    }
     return base * power_recursive(base, exponent - 1); // Recursive step
 }
 

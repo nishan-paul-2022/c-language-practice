@@ -1,6 +1,6 @@
 /*
  * Purpose: Demonstrates a wide range of standard and common string manipulation functions.
- * Topic: Strings, String Functions (strlen, strcmp, strcasecmp, strcat, strncat, strcpy, strncpy, toupper, tolower, strrev, strset, strnset)
+ * Topic: String, String Functions (strlen, strcmp, strcasecmp, strcat, strncat, strcpy, strncpy, toupper, tolower, strrev, strset, strnset)
  */
 
 #include <stdio.h>

@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrate width specification in string formatting.
- * Topic: Field width, right alignment (default), padding with spaces
+ * Purpose: Demonstrates width specification in string formatting.
+ * Topic: Field width, right alignment, padding with spaces
  */
 
  #include <stdio.h>

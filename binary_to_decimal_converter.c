@@ -1,5 +1,5 @@
 /*
- * Purpose: Converts binary strings to their decimal equivalents
+ * Purpose: Converts binary strings to their decimal equivalents.
  * Topic: Binary conversion, String processing, Bit manipulation
  */
 

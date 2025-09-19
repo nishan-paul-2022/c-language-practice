@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrate string input and manipulation using pointers.
- * Topic: String I/O, pointer-based string analysis
+ * Purpose: Demonstrates string input and manipulation using pointers.
+ * Topic: String manipulation, Pointer operations, String analysis
  */
 
 #include <stdio.h>

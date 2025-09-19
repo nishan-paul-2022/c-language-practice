@@ -1,5 +1,4 @@
 /*
- * File: digit_sum.c
  * Purpose: Reads a string and calculates the sum of all digit characters within it.
  * Topic: Strings, Character Manipulation, Loops, Input/Output
  */

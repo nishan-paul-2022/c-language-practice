@@ -1,5 +1,5 @@
 /*
- * Purpose: Compute the product of three integers across multiple test cases.
+ * Purpose: Computes the product of three integers across multiple test cases.
  * Topic: Integer Arithmetic, Test Case Processing, Basic Input/Output
  */
 

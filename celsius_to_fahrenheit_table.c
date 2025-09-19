@@ -1,5 +1,5 @@
 /*
- * Purpose: To print a table converting Celsius to Fahrenheit.
+ * Purpose: Prints a table converting Celsius to Fahrenheit.
  * Topic: Loops, Basic I/O
  */
 

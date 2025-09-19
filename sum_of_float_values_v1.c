@@ -1,5 +1,5 @@
 /*
- * Purpose: Continuously reads floating-point numbers and calculates their sum. Input ends when a non-numeric character is entered.
+ * Purpose: Reads floating-point numbers and calculates their sum. Input ends when a non-numeric character is entered.
  * Topic: Floating-Point Input, Summation, Input Validation, Loops
  */
 

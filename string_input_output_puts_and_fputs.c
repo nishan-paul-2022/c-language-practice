@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates string output using puts and fputs
- * Topic: puts, fputs, string output methods
+ * Purpose: Demonstrates string output using puts and fputs.
+ * Topic: String output, puts, fputs, Stream output
  */
 
 #include <stdio.h>

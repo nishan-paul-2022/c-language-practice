@@ -1,6 +1,6 @@
 /*
  * Purpose: Reads two strings, copies the first into the second, and prints the result.
- * Topic: String copying
+ * Topic: String Functions
  */
 
 #include <stdio.h>

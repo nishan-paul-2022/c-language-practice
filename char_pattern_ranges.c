@@ -1,7 +1,6 @@
 /*
  * Purpose: Reads three characters to define a pattern.
- *          Prints characters from start to row-end for each row,
- *          with columns from start to column-end character.
+ *          Prints characters from start to row-end for each row, with columns from start to column-end character.
  * Topic: Character Input, Nested Loops, Character Arithmetic, Pattern Printing
  */
 

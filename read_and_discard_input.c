@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate input reading with scanf format specifiers that read until a specific character and discard subsequent characters.
+ * Purpose: Demonstrates input reading with scanf format specifiers that read until a specific character and discard subsequent characters.
  *          Includes visualization of how input is processed and discarded.
  * Topic: String Input Handling, Format Specifiers, Input Buffer Management
  */

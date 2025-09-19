@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate string manipulation using pointer operations.
+ * Purpose: Demonstrates string manipulation using pointer operations.
  * Topic: Manual string copying, string reversal, pointer-based operations
  */
 

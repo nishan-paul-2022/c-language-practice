@@ -1,5 +1,5 @@
 /*
- * Purpose: Find the minimum pair from n pairs of numbers in multiple test cases.
+ * Purpose: Finds the minimum pair from n pairs of numbers in multiple test cases.
  * Topic: Algorithm for finding lexicographically smallest pair based on first element, with tie-breaking by second element
  */
 

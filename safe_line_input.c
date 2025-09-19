@@ -1,5 +1,5 @@
 /*
- * Purpose: Safely reads multiple lines of input and prints them.
+ * Purpose: Reads multiple lines of input and prints them.
  * Topic: Safe String Input and Line Printing
  */
 

@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates various printf functions for string output
- * Topic: printf, fprintf, sprintf, formatted output
+ * Purpose: Demonstrates various printf functions for string output.
+ * Topic: String output, printf variants, Formatted output
  */
 
 #include <stdio.h>

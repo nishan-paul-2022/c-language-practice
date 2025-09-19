@@ -1,5 +1,5 @@
 /*
- * Purpose: To print a pyramid pattern using asterisks.
+ * Purpose: Prints a pyramid pattern using asterisks.
  * Topic: Loops, Nested Loops
  */
 

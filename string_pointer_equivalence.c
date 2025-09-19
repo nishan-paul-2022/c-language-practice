@@ -1,5 +1,5 @@
 /*
- * Purpose: Demonstrate array-pointer equivalence for character access.
+ * Purpose: Demonstrates array-pointer equivalence for character access.
  * Topic: Multiple ways to access array elements
  */
 

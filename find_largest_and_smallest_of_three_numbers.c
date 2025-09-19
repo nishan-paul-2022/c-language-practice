@@ -1,5 +1,5 @@
 /*
- * Purpose: Continuously reads three integers and determines both the largest and smallest among them.
+ * Purpose: Reads three integers and determines both the largest and smallest among them.
  * Topic: Loops, Conditional Operator (Ternary), Basic I/O
  */
 

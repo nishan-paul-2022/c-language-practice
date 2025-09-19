@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates dynamic string allocation and handling
- * Topic: malloc, dynamic memory, string allocation
+ * Purpose: Demonstrates dynamic string allocation and handling.
+ * Topic: Dynamic memory allocation, String handling, malloc/free
  */
 
 #include <stdio.h>

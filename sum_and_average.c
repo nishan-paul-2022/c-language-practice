@@ -1,5 +1,5 @@
 /*
- * Purpose: Calculate the sum and average of 10 numbers.
+ * Purpose: Calculates sum and average of given numbers.
  * Topic: Loops, Basic I/O, Functions
  */
 

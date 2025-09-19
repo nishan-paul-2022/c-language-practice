@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates character-by-character string input using getchar
- * Topic: getchar, character input, manual string building
+ * Purpose: Demonstrates character-by-character string input using getchar.
+ * Topic: Character input/output, getchar, String construction
  */
 
 #include <stdio.h>

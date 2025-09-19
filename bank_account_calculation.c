@@ -1,5 +1,5 @@
 /*
- * Purpose: Calculate a final amount based on account type and input value, applying base amounts and discounts.
+ * Purpose: Calculates a final amount based on account type and input value, applying base amounts and discounts.
  * Topic: Conditional statements, input/output, floating-point arithmetic
  */
 

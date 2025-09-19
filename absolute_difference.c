@@ -1,5 +1,5 @@
 /*
- * Purpose: To continuously read two long integers and print their absolute difference.
+ * Purpose: Reads two long integers and print their absolute difference.
  * Topic: Math functions, Loops, Basic I/O
  */
 

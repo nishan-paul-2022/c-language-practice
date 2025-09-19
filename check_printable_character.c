@@ -1,5 +1,5 @@
 /*
- * Purpose: Continuously reads integers and checks if each corresponds to a printable ASCII character.
+ * Purpose: Reads integers and checks if each corresponds to a printable ASCII character.
  * Topic: Input/Output, Character Handling, Loops, Conditional Statements
  */
 

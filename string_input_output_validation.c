@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates string input validation techniques
- * Topic: input validation, error handling, user input verification
+ * Purpose: Demonstrates string input validation techniques.
+ * Topic: String input validation, Error handling, User input verification
  */
 
 #include <stdio.h>

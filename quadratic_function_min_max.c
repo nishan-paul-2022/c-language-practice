@@ -1,5 +1,5 @@
 /*
- * Purpose: Analyze quadratic function to find min/max values and perform calculations.
+ * Purpose: Demonstrates quadratic function to find min/max values and perform calculations.
  * Topic: Quadratic Functions, Mathematical Analysis, Numerical Computation
  */
 

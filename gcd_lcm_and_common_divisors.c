@@ -16,6 +16,7 @@ long int calculate_gcd(long int num1, long int num2) {
         num2 = num1 % num2;
         num1 = temp;
     }
+    
     return num1;
 }
 
@@ -23,7 +24,8 @@ long int calculate_lcm(long int num1, long int num2) {
     if (num1 == 0 || num2 == 0) {
         return 0;
     }
-    return (long int)labs(num1 * num2) / calculate_gcd(num1, num2);
+    long int lcm = labs(num1 * num2) / calculate_gcd(num1, num2);
+    return lcm;
 }
 
 void list_common_divisors(long int num1, long int num2) {
@@ -31,7 +33,7 @@ void list_common_divisors(long int num1, long int num2) {
     num2 = abs(num2);
 
     if (num1 == 0 && num2 == 0) {
-        printf("Common divisors: All integers (undefined for 0,0)\n");
+        printf("Common divisors: All integers (undefined for 0, 0)\n");
         return;
     }
     if (num1 == 0) {

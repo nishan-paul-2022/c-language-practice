@@ -10,7 +10,9 @@
 
 // Recursive function to calculate string length
 int recursive_string_length(const char *str) {
-    if (*str == '\0') return 0; // Base case: null terminator
+    if (*str == '\0') {
+        return 0; // Base case: null terminator
+    }
     return 1 + recursive_string_length(str + 1); // Recursive step
 }
 

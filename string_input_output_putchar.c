@@ -1,6 +1,6 @@
 /*
- * Purpose: Demonstrates character output using putchar
- * Topic: putchar, character-by-character output
+ * Purpose: Demonstrates character output using putchar.
+ * Topic: Character output, putchar, String traversal
  */
 
 #include <stdio.h>
