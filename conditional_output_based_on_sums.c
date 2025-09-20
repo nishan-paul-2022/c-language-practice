@@ -5,12 +5,10 @@
 
 #include <stdio.h>
 
-
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
-
 
 int read_test_count() {
     int count;
@@ -23,9 +21,9 @@ int read_test_count() {
         printf("Invalid input for number of test cases.\n");
         return -1;
     }
+
     return count;
 }
-
 
 int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     printf("%s", prompt);
@@ -37,17 +35,14 @@ int read_four_integers(int *a, int *b, int *c, int *d, const char *prompt) {
     return 0;
 }
 
-
 int calculate_sum(int a, int b, int c, int d) {
     return a - b + c - d;
 }
-
 
 void print_result(int sum1, int sum2, int test_num) {
     const char *result = (sum1 > 0 && sum2 > 0) ? "HIT" : "MISS";
     printf("Test Case %d Result: %s (Sum1=%d, Sum2=%d)\n", test_num, result, sum1, sum2);
 }
-
 
 int process_test_case(int test_num) {
     int k1, k2, k3, k4;

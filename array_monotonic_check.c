@@ -7,9 +7,7 @@
 
 int main(void) {
     int num_test_cases;
-
-    printf("Enter array size: ");
-
+    printf("Enter number of test cases: ");
     scanf("%d", &num_test_cases);
 
     int numbers[num_test_cases];
@@ -18,7 +16,6 @@ int main(void) {
         printf("Element %d: ", i);
         scanf("%d", &numbers[i]);
     }
-
     
     int count_monotonic_elements = 0;
     int monotonic_elements[num_test_cases]; 
@@ -27,7 +24,6 @@ int main(void) {
     for (int i = 1; i < num_test_cases; i++) {
         int is_strictly_increasing = 1; 
         int is_strictly_decreasing = 1; 
-
         
         for (int j = 0; j < i; j++) {
             if (numbers[i] <= numbers[j]) {
@@ -37,7 +33,6 @@ int main(void) {
                 is_strictly_decreasing = 0; 
             }
         }
-
         
         if (is_strictly_increasing || is_strictly_decreasing) {
             count_monotonic_elements++;
@@ -46,7 +41,7 @@ int main(void) {
         }
     }
 
-    printf("Count: %d\n", count_monotonic_elements);
+    printf("\nCount: %d\n", count_monotonic_elements);
     
     if (count_monotonic_elements > 0) {
         printf("Monotonic elements: ");

@@ -16,13 +16,11 @@ int main(void) {
         fprintf(stderr, "Invalid input format. Please enter values as 'initial_cost, depreciation_rate, target_value'.\n");
         return 0;
     }
-
     
     if (initial_cost <= 0 || depreciation_rate <= 0 || depreciation_rate >= 1 || target_value <= 0 || target_value > initial_cost) {
         fprintf(stderr, "Invalid input values for depreciation calculation.\n");
         return 0;
     }
-
     
     double years_to_depreciate = log(target_value / initial_cost) / log(1.0 - depreciation_rate);
 
