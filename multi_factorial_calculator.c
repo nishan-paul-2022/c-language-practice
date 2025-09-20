@@ -13,12 +13,10 @@
 #define MAX_INPUT_LENGTH 100
 #define MAX_SAFE_NUMBER 20
 
-
 void clear_input_buffer() {
     long long c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
-
 
 long long read_input_string(char input[], long long size) {
     printf("Enter a number followed by exclamation marks (e.g., 5!, 7!!, 10!!!): ");
@@ -28,13 +26,11 @@ long long read_input_string(char input[], long long size) {
         return -1;
     }
     
-    
     size_t len = strlen(input);
     if (len > 0 && input[len - 1] == '\n') {
         input[len - 1] = '\0';
         len--;
     }
-    
     
     if (len == 0) {
         fprintf(stderr, "Empty input provided.\n");
@@ -44,14 +40,11 @@ long long read_input_string(char input[], long long size) {
     return 0;
 }
 
-
 long long parse_and_validate_input(const char input[], long long *number, long long *exclamation_count) {    
-    
     long long i = 0;
     while (input[i] && isspace(input[i])) {
         i++;
     }
-    
     
     if (isdigit(input[i]) == 0) {
         fprintf(stderr, "Input must start with a positive number.\n");
@@ -64,13 +57,11 @@ long long parse_and_validate_input(const char input[], long long *number, long l
         i++;
     }
     
-    
     long long excl_count = 0;
     while (input[i] && input[i] == '!') {
         excl_count++;
         i++;
     }
-    
     
     while (input[i]) {
         if (isspace(input[i] == 0)) {
@@ -80,12 +71,10 @@ long long parse_and_validate_input(const char input[], long long *number, long l
         i++;
     }
     
-    
     if (sscanf(input, "%lld", number) != 1) {
         fprintf(stderr, "Failed to parse number.\n");
         return -1;
     }
-    
     
     if (*number < 0) {
         fprintf(stderr, "Number must be non-negative.\n");
@@ -101,16 +90,13 @@ long long parse_and_validate_input(const char input[], long long *number, long l
     return 0;
 }
 
-
 long long calculate_multi_factorial(long long number, long long step) {
     if (number < 0) {
         return -1;
     }
-    
     if (number <= 1) {
         return 1;
     }
-    
     
     if (step == 0) {
         step = 1;
@@ -119,7 +105,6 @@ long long calculate_multi_factorial(long long number, long long step) {
     long long result = 1;
     
     for (long long i = number; i > 0; i -= step) {
-        
         if (result > LLONG_MAX / i) {
             fprintf(stderr, "Calculation would cause overflow.\n");
             return -1;
@@ -129,7 +114,6 @@ long long calculate_multi_factorial(long long number, long long step) {
     
     return result;
 }
-
 
 void display_result(long long number, long long exclamation_count, long long result) {
     printf("\nCalculation Details:\n");

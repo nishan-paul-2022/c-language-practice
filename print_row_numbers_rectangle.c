@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 int get_positive_integer(const char *prompt) {
     int value;
     printf("%s", prompt);
@@ -15,7 +14,6 @@ int get_positive_integer(const char *prompt) {
     }
     return value;
 }
-
 
 void print_rectangle_rows(int rows, int cols) {
     for (int row = 1; row <= rows; row++) {

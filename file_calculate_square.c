@@ -43,7 +43,6 @@ int process_numbers(FILE* input_file, FILE* output_file) {
             return -1;
         }
     }
-
     
     if (ferror(input_file)) {
         perror("Error reading from input file");

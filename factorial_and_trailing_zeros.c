@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 unsigned long long calculate_factorial(int num) {
     unsigned long long factorial = 1;
     if (num < 0) {
@@ -24,18 +23,17 @@ unsigned long long calculate_factorial(int num) {
     return factorial;
 }
 
-
 int count_trailing_zeros(unsigned long long num) {
     int count = 0;
     if (num == 0) {
         return 0;
     }
-
     
     while (num > 0 && num % 10 == 0) {
         count++;
         num /= 10;
     }
+    
     return count;
 }
 

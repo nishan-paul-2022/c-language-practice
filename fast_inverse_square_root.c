@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
 float fast_inverse_sqrt(float number) {
     float number_half = 0.5f * number;
     
@@ -14,11 +13,9 @@ float fast_inverse_sqrt(float number) {
         float f;
         int i;
     } conv;
-
     
     conv.i = 0x5f3759df - (conv.i >> 1);
     conv.f = number;
-
     
     float y = conv.f;
     y = y * (1.5f - number_half * y * y);
@@ -31,7 +28,6 @@ int main(void) {
     float result_fast, result_accurate;
 
     printf("Enter a positive floating-point number: ");
-    
     
     while (scanf("%f", &input_number) == 1 && input_number > 0) {
         result_fast = fast_inverse_sqrt(input_number);
@@ -46,5 +42,6 @@ int main(void) {
     }
     
     printf("Exiting.\n");
+
     return 0;
 }

@@ -3,7 +3,6 @@
  * Topic: Series Summation, Loops, Math Functions, Input/Output
  */
 
-
 #include <stdio.h>
 #include <math.h>
 

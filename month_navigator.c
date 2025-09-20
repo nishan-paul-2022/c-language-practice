@@ -5,12 +5,10 @@
 
 #include <stdio.h>
 
-
 const char* MONTHS[] = {
     "", "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 };
-
 
 const char* get_month_name(int month_num) {
     if (month_num >= 1 && month_num <= 12) {
@@ -19,16 +17,13 @@ const char* get_month_name(int month_num) {
     return "Invalid";
 }
 
-
 int get_next_month_number(int current_month) {
     return (current_month == 12) ? 1 : current_month + 1;
 }
 
-
 int is_valid_month(int month) {
     return (month >= 1 && month <= 12);
 }
-
 
 void display_month_sequence(int month_number) {
     if (is_valid_month(month_number)) {
@@ -39,7 +34,6 @@ void display_month_sequence(int month_number) {
         printf("Please enter a valid month number (1-12).\n");
     }
 }
-
 
 int get_month_input() {
     int month;

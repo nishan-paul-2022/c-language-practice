@@ -10,14 +10,12 @@
 #define OUTPUT_FILENAME "files/05-output.txt"
 #define BUFFER_SIZE 100
 
-
 void print_header() {
     printf("=== File Data Processor ===\n");
     printf("Reading from: %s\n", INPUT_FILENAME);
     printf("Writing to: %s\n", OUTPUT_FILENAME);
     printf("Expected format: char string integer float\n\n");
 }
-
 
 FILE* open_input_file() {
     FILE *file = fopen(INPUT_FILENAME, "r");
@@ -27,7 +25,6 @@ FILE* open_input_file() {
     return file;
 }
 
-
 FILE* open_output_file() {
     FILE *file = fopen(OUTPUT_FILENAME, "w");
     if (file == NULL) {
@@ -35,7 +32,6 @@ FILE* open_output_file() {
     }
     return file;
 }
-
 
 int read_file_data(FILE *file, char *first_char, char *string_buffer, int *integer_value, float *float_value) {
     if (fscanf(file, "%c %s %d %f", first_char, string_buffer, integer_value, float_value) != 4) {
@@ -45,7 +41,6 @@ int read_file_data(FILE *file, char *first_char, char *string_buffer, int *integ
     return 0;
 }
 
-
 int write_file_data(FILE *file, char first_char, const char *string_buffer, int integer_value, float float_value) {
     if (fprintf(file, "%c %s %d %.2f\n", first_char, string_buffer, integer_value, float_value) < 0) {
         perror("Error writing to output file");
@@ -54,7 +49,6 @@ int write_file_data(FILE *file, char first_char, const char *string_buffer, int 
     return 0;
 }
 
-
 int close_file(FILE *file, const char *filename) {
     if (fclose(file)) {
         fprintf(stderr, "Error closing file '%s'\n", filename);
@@ -62,7 +56,6 @@ int close_file(FILE *file, const char *filename) {
     }
     return 0;
 }
-
 
 void display_data(char first_char, const char *string_buffer, int integer_value, float float_value) {
     printf("Data processed:\n");

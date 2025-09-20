@@ -7,7 +7,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 int get_last_integer_digit(const char *str, char **dot_pos) {
     *dot_pos = strchr(str, '.');
     if (*dot_pos != NULL) { 
@@ -26,7 +25,6 @@ int get_last_integer_digit(const char *str, char **dot_pos) {
     }
     return 0; 
 }
-
 
 int get_last_fractional_digit(const char *dot_pos) {
     if (dot_pos != NULL) {

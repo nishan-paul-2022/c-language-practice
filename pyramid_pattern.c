@@ -11,7 +11,6 @@ int main(void) {
     printf("Enter the pyramid size: ");
     scanf("%d", &n);
 
-    
     for (int i = 1; i <= n; i++) {
         for (int j = i; j < n; j++) {
             printf(" ");
@@ -22,7 +21,6 @@ int main(void) {
         printf("\n");
     }
 
-    
     for (int i = n; i >= 1; i--) {
         for (int j = i; j <= n; j++) {
             printf(" ");

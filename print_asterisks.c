@@ -7,7 +7,6 @@
 
 int main(void) {
     int num_asterisks;
-
     
     printf("Enter the number of asterisks to print: ");
     if (scanf("%d", &num_asterisks) != 1 || num_asterisks <= 0) {
@@ -15,7 +14,6 @@ int main(void) {
         return 0;
     }
 
-    
     for (int i = 0; i < num_asterisks; i++) {
         printf("* ");
     }

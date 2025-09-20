@@ -22,6 +22,7 @@ void print_words(const char str[BUFFER_SIZE]) {
     int i = 0, j;
 
     printf("Words in the string:\n");
+
     while (str[i] != '\0') {
         while (str[i] == ' ') {
             i++;
@@ -29,7 +30,6 @@ void print_words(const char str[BUFFER_SIZE]) {
         if (str[i] == '\0') {
             break;
         }
-
         
         j = i;
         while (str[j] != ' ' && str[j] != '\0') {

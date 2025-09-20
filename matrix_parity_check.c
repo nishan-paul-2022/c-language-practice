@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int** allocate_matrix(int n) {
     int **matrix = (int**)malloc(n * sizeof(int*));
     if (matrix == NULL) {
@@ -27,7 +26,6 @@ int** allocate_matrix(int n) {
     return matrix;
 }
 
-
 void free_matrix(int **matrix, int n) {
     if (matrix != NULL) {
         for (int i = 0; i < n; i++) {
@@ -36,7 +34,6 @@ void free_matrix(int **matrix, int n) {
         free(matrix);
     }
 }
-
 
 void read_matrix(int n, int **matrix) {
     printf("Enter matrix elements row by row:\n");
@@ -49,7 +46,6 @@ void read_matrix(int n, int **matrix) {
     }
 }
 
-
 void calculate_row_sums(int n, int **matrix, int sums[]) {
     for (int i = 0; i < n; i++) {
         sums[i] = 0;
@@ -58,7 +54,6 @@ void calculate_row_sums(int n, int **matrix, int sums[]) {
         }
     }
 }
-
 
 void calculate_column_sums(int n, int **matrix, int sums[]) {
     for (int j = 0; j < n; j++) {
@@ -69,7 +64,6 @@ void calculate_column_sums(int n, int **matrix, int sums[]) {
     }
 }
 
-
 int check_all_sums_even(int total_sums_count, int sums[]) {
     for (int i = 0; i < total_sums_count; i++) {
         if (sums[i] % 2) {
@@ -79,7 +73,6 @@ int check_all_sums_even(int total_sums_count, int sums[]) {
 
     return 1;
 }
-
 
 void check_parity_errors(int n, int sums[]) {
     int odd_row_count = 0;

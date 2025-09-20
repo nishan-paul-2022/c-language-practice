@@ -5,14 +5,12 @@
 
 #include <stdio.h>
 
-
 void display_char_type_sizes() {
     printf("--- Character Types ---\n");
     printf("Size of char: %zu byte(s)\n", sizeof(char));
     printf("Size of signed char: %zu byte(s)\n", sizeof(signed char));
     printf("Size of unsigned char: %zu byte(s)\n\n", sizeof(unsigned char));
 }
-
 
 void display_integer_type_sizes() {
     printf("--- Integer Types ---\n");
@@ -26,14 +24,12 @@ void display_integer_type_sizes() {
     printf("Size of unsigned long long int: %zu byte(s)\n\n", sizeof(unsigned long long int));
 }
 
-
 void display_floating_point_type_sizes() {
     printf("--- Floating-Point Types ---\n");
     printf("Size of float: %zu byte(s)\n", sizeof(float));
     printf("Size of double: %zu byte(s)\n", sizeof(double));
     printf("Size of long double: %zu byte(s)\n\n", sizeof(long double));
 }
-
 
 void display_pointer_type_sizes() {
     printf("--- Pointer Types ---\n");

@@ -15,7 +15,6 @@ int main(void) {
     }
 
     printf("Odd numbers from 1 to %d:\n", limit);
-
     
     for (int num = 1; num <= limit; num += 2) {
         printf("%d ", num);

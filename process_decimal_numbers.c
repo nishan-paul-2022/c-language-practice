@@ -57,7 +57,6 @@ int main(void) {
         fprintf(stderr, "Invalid input format.\n");
         return 0;
     }
-
     
     max_decimal_places = count_decimal_places(input_numbers[0]);
     long long dp1 = count_decimal_places(input_numbers[1]);
@@ -70,16 +69,13 @@ int main(void) {
     }
 
     scaling_factor = power_of_10(max_decimal_places);
-
     
     for (int i = 0; i < 3; i++) {
         scaled_integers[i] = scale_number(input_numbers[i], max_decimal_places);
     }
 
-    
     common_divisor = calculate_gcd(scaled_integers[0], scaled_integers[1]);
     common_divisor = calculate_gcd(common_divisor, scaled_integers[2]);
-
     
     double final_result = (double)common_divisor / scaling_factor;
 

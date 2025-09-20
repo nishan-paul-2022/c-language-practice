@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 void display_char_types() {
     char char_var = 'A';
     signed char signed_char_var = -10;
@@ -16,7 +15,6 @@ void display_char_types() {
     printf("signed char: %d\n", signed_char_var);
     printf("unsigned char: %u\n\n", unsigned_char_var);
 }
-
 
 void display_integer_types() {
     short int short_int_var = 32767;
@@ -38,7 +36,6 @@ void display_integer_types() {
     printf("long long int: %lld\n", long_long_int_var);
     printf("unsigned long long int: %llu\n\n", unsigned_long_long_int_var);
 }
-
 
 void display_floating_point_types() {
     float float_var = 3.14159f;

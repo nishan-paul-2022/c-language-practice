@@ -43,7 +43,6 @@ int main(void) {
             break;
         }
     }
-
     
     if (!mismatch_found && fscanf(file_input, "%d", &value_input) == 1) {
         mismatch_found = 1;
