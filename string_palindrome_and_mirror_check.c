@@ -56,7 +56,6 @@ int is_mirrored_string(const char *str) {
     return 1; 
 }
 
-
 void classify_string(const char *str) {
     int palindrome = is_palindrome(str);
     int mirrored = is_mirrored_string(str);
