@@ -22,14 +22,14 @@ int read_num_rows() {
     int num_rows;
     printf("Enter the number of rows for Pascal's triangle: ");
     
-    if (scanf("%d", &num_rows) != 1) {
+    if (scanf("%d", &num_rows) == -1) {
         fprintf(stderr, "Invalid input. Please enter an integer for the number of rows.\n");
         while (getchar() != '\n');
         return -1;
     }
 
-    if (num_rows < 0) {
-        fprintf(stderr, "Number of rows cannot be negative.\n");
+    if (num_rows <= 0) {
+        fprintf(stderr, "Number of rows must be postive.\n");
         return -1;
     }
     
@@ -37,11 +37,6 @@ int read_num_rows() {
 }
 
 void print_pascal_triangle(int num_rows) {
-    if (num_rows == 0) {
-        printf("No rows to display.\n");
-        return;
-    }
-
     for (int row_index = 1; row_index <= num_rows; row_index++) {
         for (int col_index = 1; col_index <= row_index; col_index++) {
             printf("%d ", calculate_pascal_value(row_index, col_index));
@@ -52,7 +47,6 @@ void print_pascal_triangle(int num_rows) {
 
 int main(void) {
     int num_rows = read_num_rows();
-    
     if (num_rows == -1) {
         return 0;
     }

@@ -6,24 +6,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double read_floating_point_input() {
-    double input_value;
-    printf("Enter a floating-point number: ");
-    if (scanf("%lf", &input_value) != 1) {
-        printf("Invalid input. Please enter a valid floating-point number.\n");
-        return -1.0;
-    }
-    return input_value;
-}
-
-int read_secondary_input() {
-    int secondary_input;
-    printf("Enter an integer (e.g., 20): ");
-    if (scanf("%d", &secondary_input) != 1) {
-        printf("Invalid secondary input.\n");
+double get_employee_hours() {
+    double hours;
+    printf("Enter hours worked this week: ");
+    if (scanf("%lf", &hours) != 1 || hours < 0 || hours > 168) {
+        printf("Invalid input. Hours must be between 0-168.\n");
         return -1;
     }
-    return secondary_input;
+    return hours;
+}
+
+double get_hourly_rate() {
+    double rate;
+    printf("Enter hourly rate ($): ");
+    if (scanf("%lf", &rate) != 1 || rate < 0) {
+        printf("Invalid hourly rate.\n");
+        return -1;
+    }
+    return rate;
+}
+
+int get_employee_level() {
+    int level;
+    printf("Enter employee level (1=Junior, 2=Senior, 3=Manager): ");
+    if (scanf("%d", &level) != 1) {
+        printf("Invalid employee level.\n");
+        return -1;
+    }
+    return level;
 }
 
 void clear_input_buffer() {
@@ -31,47 +41,75 @@ void clear_input_buffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-void process_secondary_input(int secondary_input) {
-    switch (secondary_input) {
-        case 20:
-            printf("CAUGHT\n");
-            break;
-        default:
-            printf("GOOD\n");
-            break;
+double calculate_overtime_rate(int employee_level) {
+    switch (employee_level) {
+        case 1: {
+            printf("Junior employee: Standard overtime rate (1.5x)\n");
+            return 1.5;
+        }
+        case 2: {
+            printf("Senior employee: Enhanced overtime rate (1.75x)\n");
+            return 1.75;
+        }
+        case 3: {
+            printf("Manager: Premium overtime rate (2.0x)\n");
+            return 2.0;
+        }
+        default: {
+            printf("Unknown level: Using standard overtime rate (1.5x)\n");
+            return 1.5;
+        }
     }
 }
 
-void process_input_range(int scaled_value) {
-    switch (scaled_value) {
+int calculate_payroll(int hours_category) {
+    switch (hours_category) {
         case 1:
         case 2:
-        case 3: {
-            int secondary_input = read_secondary_input();
-            if (secondary_input == -1) {
-                return;
+        case 3:
+        case 4: {
+            printf("Regular hours (under 40) - No overtime needed.\n");
+            return 0;
+        }
+        case 5:
+        case 6: {
+            printf("Overtime hours detected (40+ hours).\n");
+            int employee_level = get_employee_level();
+            if (employee_level == -1) {
+                return -1;
             }
             clear_input_buffer();
-            process_secondary_input(secondary_input);
-            break;
+            
+            double overtime_multiplier = calculate_overtime_rate(employee_level);
+            printf("Overtime will be calculated at %.1fx rate.\n", overtime_multiplier);
+            return 0;
         }
-        default:
-            printf("F\n");
-            break;
+        default: {
+            printf("Excessive hours (60+) - Please review with HR.\n");
+            return 0;
+        }
     }
 }
 
 int main(void) {
-    double input_value = read_floating_point_input();
+    printf("=== Payroll Processing System ===\n");
     
-    if (input_value == -1.0) {
-        return 0;
+    double hours_worked = get_employee_hours();
+    if (hours_worked == -1) {
+        return 1;
     }
     
     clear_input_buffer();
     
-    int scaled_value = input_value / 10.0;
-    process_input_range(scaled_value);
-
+    int hours_category = (int)(hours_worked / 10.0) + 1;
+    
+    printf("\nProcessing payroll for %.1f hours worked...\n", hours_worked);
+    
+    if (calculate_payroll(hours_category) == -1) {
+        printf("Payroll processing failed.\n");
+        return 1;
+    }
+    
+    printf("Payroll processing completed.\n\n");
     return 0;
 }

@@ -7,19 +7,19 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void consume_newline(void) {
+void consume_newline() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {
         
     }
 }
 
-void display_instructions(void) {
+void display_instructions() {
     printf("Enter pattern parameters in the format: start_char_for_rows, end_char_for_rows, end_char_for_cols\n");
     printf("Example: A, E, G\n");
 }
 
-int get_start_char(void) {
+int get_start_char() {
     char start_char_for_rows;
     if (scanf(" %c", &start_char_for_rows) != 1) {
         fprintf(stderr, "Invalid input for start_char_for_rows.\n");
@@ -29,7 +29,7 @@ int get_start_char(void) {
     return start_char_for_rows;
 }
 
-int get_end_char_rows(void) {
+int get_end_char_rows() {
     char end_char_for_rows;
     if (scanf(" , %c", &end_char_for_rows) != 1) {
         fprintf(stderr, "Invalid input for end_char_for_rows.\n");
@@ -39,7 +39,7 @@ int get_end_char_rows(void) {
     return end_char_for_rows;
 }
 
-int get_end_char_cols(void) {
+int get_end_char_cols() {
     char end_char_for_cols;
     if (scanf(" , %c", &end_char_for_cols) != 1) {
         fprintf(stderr, "Invalid input for end_char_for_cols.\n");

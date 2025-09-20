@@ -20,7 +20,10 @@ void safe_recursive_function(int depth) {
 
 int main(void) {
     printf("Starting safe recursive function...\n");
+
     safe_recursive_function(5);
+
     printf("Safe recursive function finished.\n");
+    
     return 0;
 }

@@ -4,11 +4,12 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void find_and_print_divisors(int number) {
     if (number <= 0) {
         printf("Input must be a positive integer.\n");
-        return;
+        exit(1);
     }
 
     printf("Divisors of %d are: ", number);

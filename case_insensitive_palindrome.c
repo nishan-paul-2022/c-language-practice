@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int get_test_cases(void) {
+int get_test_cases() {
     int num_test_cases;
     printf("Enter the number of test cases: ");
     if (scanf("%d", &num_test_cases) != 1) {

@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int calculate_josephus_position(int n) {
     int result_position = 0;
@@ -35,7 +36,7 @@ void process_test_cases() {
     printf("Enter number of test cases: ");
     if (scanf("%d", &number_of_test_cases) != 1 || number_of_test_cases < 0) {
         printf("Invalid input for number of test cases.\n");
-        return;
+        exit(1);
     }
 
     while (current_test_case < number_of_test_cases) {

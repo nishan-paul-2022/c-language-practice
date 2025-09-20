@@ -6,19 +6,19 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void basic_carriage_return(void) {
+void basic_carriage_return() {
     printf("Example 1: Basic Carriage Return\n");
     printf("Before\rAfter\n");
     printf("Notice how 'After' overwrote 'Before'\n\n");
 }
 
-void overwrite_with_shorter_text(void) {
+void overwrite_with_shorter_text() {
     printf("Example 2: Overwriting with shorter text\n");
     printf("Longer text\rShort\n");
     printf("Notice how 'Short' only overwrote part of 'Longer text'\n\n");
 }
 
-void simulate_countdown_timer(void) {
+void simulate_countdown_timer() {
     printf("Example 3: Countdown Timer Simulation\n");
     printf("Counting down: ");
 
@@ -31,7 +31,7 @@ void simulate_countdown_timer(void) {
     printf("\nCountdown finished!\n\n");
 }
 
-void show_progress_indicator(void) {
+void show_progress_indicator() {
     printf("Example 4: Progress Indicator\n");
     printf("Processing: ");
 
@@ -44,7 +44,7 @@ void show_progress_indicator(void) {
     printf("\nProcessing complete!\n\n");
 }
 
-void clear_text_with_spaces(void) {
+void clear_text_with_spaces() {
     printf("Example 5: Clearing text with spaces\n");
     printf("This text will be partially cleared:\n");
     printf("This line has a lot of text\r                    \rJust this remains\n");

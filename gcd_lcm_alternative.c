@@ -50,26 +50,19 @@ void display_results(long int num1, long int num2, long int gcd_result, long int
         printf("  GCD: %ld\n", gcd_result);
         printf("  LCM: %ld\n", lcm_result);
     }
+    printf("\n");
 }
 
 void process_number_pairs() {
     long int num1, num2;
-    long int gcd_result, lcm_result;
 
-    printf("Enter pairs of numbers (e.g., '12, 18') or press Ctrl+D (Unix/Linux) or Ctrl+Z (Windows) to exit:\n");
+    printf("Enter pairs of numbers (e.g., '12 18') or press Ctrl+D to exit:\n\n");
 
-    while (scanf("%ld, %ld", &num1, &num2) == 2) {
-        gcd_result = calculate_gcd(num1, num2);
-        lcm_result = calculate_lcm(num1, num2, gcd_result);
+    while (scanf("%ld %ld", &num1, &num2) == 2) {
+        long int gcd_result = calculate_gcd(num1, num2);
+        long int lcm_result = calculate_lcm(num1, num2, gcd_result);
         display_results(num1, num2, gcd_result, lcm_result);
     }
-
-    if (ferror(stdin)) {
-        perror("Error reading input");
-        return;
-    }
-
-    printf("Exiting program.\n");
 }
 
 int main(void) {

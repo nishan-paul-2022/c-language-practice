@@ -8,7 +8,7 @@
 
 #define MAX_DIMENSION 100
 
-int get_dimension(void) {
+int get_dimension() {
     int dimension;
     printf("Enter the dimension of the square matrix (max %d): ", MAX_DIMENSION);
     if (scanf("%d", &dimension) != 1 || dimension <= 0 || dimension > MAX_DIMENSION) {
@@ -38,7 +38,7 @@ void initialize_matrix(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension) 
     }
 }
 
-void set_matrix_elements(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension, int num_elements) {
+int set_matrix_elements(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension, int num_elements) {
     printf("Enter %d pairs of row and column indices (format: row col):\n", num_elements);
     
     for (int i = 0; i < num_elements; i++) {
@@ -47,7 +47,7 @@ void set_matrix_elements(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension
         
         if (scanf("%d %d", &row, &col) != 2) {
             printf("Invalid input for pair %d. Please enter two integers separated by a space.\n", i + 1);
-            return;
+            return -1;
         }
         while (getchar() != '\n');
 
@@ -58,6 +58,7 @@ void set_matrix_elements(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension
                    row, col, dimension, dimension);
         }
     }
+    return 0;
 }
 
 void print_matrix(int matrix[MAX_DIMENSION][MAX_DIMENSION], int dimension) {
@@ -84,7 +85,9 @@ int main(void) {
     }
 
     initialize_matrix(matrix, dimension);
-    set_matrix_elements(matrix, dimension, num_elements);
+    if (set_matrix_elements(matrix, dimension, num_elements) != 0) {
+        return 0;
+    }
     print_matrix(matrix, dimension);
 
     return 0;

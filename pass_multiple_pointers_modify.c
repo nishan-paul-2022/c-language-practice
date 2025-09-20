@@ -9,7 +9,7 @@
 void perform_arithmetic_operations(double num1, double num2, double *sum_ptr, double *diff_ptr, double *prod_ptr, double *div_ptr) {
     if (sum_ptr == NULL || diff_ptr == NULL || prod_ptr == NULL || div_ptr == NULL) {
         fprintf(stderr, "NULL pointer passed to function.\n");
-        return;
+        exit(1);
     }
 
     *sum_ptr = num1 + num2;
@@ -56,11 +56,7 @@ int main(void) {
     }
     clear_input_buffer();
 
-    perform_arithmetic_operations(value1, value2,
-                                  &result_sum,
-                                  &result_diff,
-                                  &result_prod,
-                                  &result_div);
+    perform_arithmetic_operations(value1, value2, &result_sum, &result_diff, &result_prod, &result_div);
 
     display_results(result_sum, result_diff, result_prod, result_div, value2);
 

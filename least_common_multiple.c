@@ -28,22 +28,27 @@ int calculate_lcm(int num1, int num2) {
     return lcm_val;
 }
 
-void get_numbers_and_calculate_lcm() {
+int get_numbers_and_calculate_lcm() {
     int num1, num2;
-    printf("Enter two integers (e.g., 12 18): ");
-    scanf("%d %d", &num1, &num2);
+
+    printf("Enter two integers: ");
+
+    if (scanf("%d %d", &num1, &num2) != 2) {
+        printf("Invalid input. Please enter two integers.\n");
+        return -1;
+    }
 
     if (num1 == 0 || num2 == 0) {
         printf("LCM of 0 with any number is 0.\n");
-        return;
+    } else {
+        int lcm_result = calculate_lcm(num1, num2);
+        printf("LCM of %d and %d is %d.\n", num1, num2, lcm_result);
     }
 
-    int lcm_result = calculate_lcm(num1, num2);
-    printf("LCM of %d and %d is %d\n", num1, num2, lcm_result);
+    return 0;
 }
 
 int main(void) {
     get_numbers_and_calculate_lcm();
-
     return 0;
 }

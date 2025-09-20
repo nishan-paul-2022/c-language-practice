@@ -13,7 +13,7 @@ void consume_newline() {
 }
 
 int get_filename_and_mode(char *filename, char *mode) {
-    printf("Enter the filename (e.g, files/file_operations_fopen.txt): ");
+    printf("Enter the filename (e.g., files/file_operations_fopen.txt): ");
     if (scanf("%100s", filename) != 1) {
         perror("Error reading filename");
         return -1;

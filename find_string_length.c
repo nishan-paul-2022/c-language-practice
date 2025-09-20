@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void find_and_print_string_length() {
@@ -12,8 +13,8 @@ void find_and_print_string_length() {
     printf("Enter a string: ");
 
     if (fgets(input_string, sizeof(input_string), stdin) == NULL) {
-        fprintf(stderr, "Error reading input string.\n");
-        return;
+        fprintf(stderr, "\nError reading input string.\n");
+        exit(1);
     }
 
     input_string[strcspn(input_string, "\n")] = '\0'; 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void demonstrate_perror(void) {
+void demonstrate_perror() {
     printf("=== perror() ===\n");
     FILE *file = fopen("missing.txt", "r");
     if (file == NULL) {

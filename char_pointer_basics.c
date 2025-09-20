@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-void consume_newline(void) {
+void consume_newline() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }

@@ -22,7 +22,7 @@ struct user_form {
     struct birth_date birth_date;
 };
 
-void consume_newline(void) {
+void consume_newline() {
     char ch;
     while ((ch = getchar()) != '\n' && ch != EOF);
 }

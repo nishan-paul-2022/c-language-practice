@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int get_rows(void) {
+int get_rows() {
     int num_of_rows;
     printf("Enter the number of rows: ");
     if (scanf("%d", &num_of_rows) != 1 || num_of_rows <= 0) {
@@ -16,7 +16,7 @@ int get_rows(void) {
     return num_of_rows;
 }
 
-int get_columns(void) {
+int get_columns() {
     int num_of_cols;
     printf("Enter the number of columns: ");
     if (scanf("%d", &num_of_cols) != 1 || num_of_cols <= 0) {
@@ -26,7 +26,7 @@ int get_columns(void) {
     return num_of_cols;
 }
 
-int get_center_number(void) {
+int get_center_number() {
     int center_number;
     printf("Enter the number to fill the center with: ");
     if (scanf("%d", &center_number) != 1) {
@@ -36,7 +36,7 @@ int get_center_number(void) {
     return center_number;
 }
 
-int get_fill_number(void) {
+int get_fill_number() {
     int fill_number;
     printf("Enter the number to fill the rest of the rectangle with: ");
     if (scanf("%d", &fill_number) != 1) {

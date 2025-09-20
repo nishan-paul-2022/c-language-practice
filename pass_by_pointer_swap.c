@@ -11,7 +11,7 @@ void swap(int *ptr1, int *ptr2) {
 
     if (ptr1 == NULL || ptr2 == NULL) {
         fprintf(stderr, "Invalid pointers passed to swap function.\n");
-        return;
+        exit(1);
     }
 
     temp = *ptr1;

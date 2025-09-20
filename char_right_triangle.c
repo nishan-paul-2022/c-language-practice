@@ -5,12 +5,12 @@
 
 #include <stdio.h>
 
-void consume_newline(void) {
+void consume_newline() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-int get_number_of_rows(void) {
+int get_number_of_rows() {
     int num_rows;
 
     printf("Enter the number of rows for the character triangle: ");

@@ -5,14 +5,14 @@
 
 #include <stdio.h>
 
-void get_address(void) {
+void get_address() {
     printf("=== Example 1: Getting Memory Address ===\n");
     char c = 'a';
     printf("Memory address of 'c' is: %p\n", (void *)&c);
     printf("Value of 'c' is: %c\n\n", c);
 }
 
-void dereference_pointer(void) {
+void dereference_pointer() {
     printf("=== Example 2: Dereferencing Pointer ===\n");
     char c = 'a';
     char *ptr = &c;
@@ -20,7 +20,7 @@ void dereference_pointer(void) {
     printf("Address stored in ptr is: %p\n\n", (void *)ptr);
 }
 
-void modify_through_pointer(void) {
+void modify_through_pointer() {
     printf("=== Example 3: Modifying Value Through Pointer ===\n");
     char c = 'a';
     char *ptr = &c;
@@ -30,7 +30,7 @@ void modify_through_pointer(void) {
     printf("Value pointed to by ptr is now: %c\n\n", *ptr);
 }
 
-void pointer_arithmetic(void) {
+void pointer_arithmetic() {
     printf("=== Example 4: Pointer Arithmetic ===\n");
     char str[] = "Hello";
     char *ptr = str;
@@ -41,7 +41,7 @@ void pointer_arithmetic(void) {
     printf("Value of second character: %c\n\n", *(ptr + 1));
 }
 
-void compare_pointers(void) {
+void compare_pointers() {
     printf("=== Example 5: Comparing Pointers ===\n");
     char c1 = 'x';
     char c2 = 'y';
