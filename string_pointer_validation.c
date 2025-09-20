@@ -8,11 +8,8 @@
 
 #define BUFFER_SIZE 100
 
-
 void demonstrate_pointer_validation() {
     char buffer[] = "Hello World";
-    
-    
     char *pointer = buffer;
 
     if (pointer != NULL) {
@@ -20,13 +17,11 @@ void demonstrate_pointer_validation() {
         printf("Pointer points to: %p\n", (void*)pointer);
     }
     
-    
     char *null_pointer = NULL;
 
     if (null_pointer == NULL) {
         printf("Null pointer detected - safe handling\n");
     }
-    
     
     int len = strlen(buffer);
 

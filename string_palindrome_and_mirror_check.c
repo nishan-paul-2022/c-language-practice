@@ -9,19 +9,15 @@
 
 #define MAX_STRING_LEN 10000
 
-
 char get_mirrored_char(char c) {
-    
     static char mirror_map[128] = {0}; 
     static int initialized = 0;
     
     if (!initialized) {
-        
         char self_mirror[] = "AHIMOTUVWXY018";
         for (int i = 0; self_mirror[i]; i++) {
             mirror_map[self_mirror[i]] = self_mirror[i];
         }
-        
         
         mirror_map['E'] = '3'; mirror_map['3'] = 'E';
         mirror_map['S'] = '2'; mirror_map['2'] = 'S';
@@ -35,7 +31,6 @@ char get_mirrored_char(char c) {
     return mirrored;
 }
 
-
 int is_palindrome(const char *str) {
     size_t len = strlen(str);
 
@@ -47,7 +42,6 @@ int is_palindrome(const char *str) {
 
     return 1; 
 }
-
 
 int is_mirrored_string(const char *str) {
     size_t len = strlen(str);

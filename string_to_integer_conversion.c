@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <string.h>
 
+void consume_newline() {
+    while (getchar() != '\n'); 
+}
 
 int string_to_integer(const char str[], int test_case) {
     int value = 0;
@@ -19,7 +22,6 @@ int string_to_integer(const char str[], int test_case) {
     return value;
 }
 
-
 int read_line(char buffer[], int size) {
     if (fgets(buffer, size, stdin) != NULL) {
         buffer[strcspn(buffer, "\n")] = '\0';
@@ -32,11 +34,12 @@ int main(void) {
     int num_test_cases;
     char input_string[100];
 
-    if (scanf("%d", &num_test_cases) != 1) {
+    if (scanf("%d", &num_test_cases) == -1) {
         fprintf(stderr, "Error reading number of test cases.\n");
         return 0;
     }
-    while (getchar() != '\n'); 
+    
+    consume_newline();
 
     for (int t = 1; t <= num_test_cases; t++) {
         if (!read_line(input_string, sizeof(input_string))) {

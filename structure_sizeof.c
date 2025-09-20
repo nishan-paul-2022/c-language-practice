@@ -6,14 +6,12 @@
 
 #include <stdio.h>
 
-
 typedef struct {
     int numbers[10];
     char identifier;
 } DataContainer;
 
-typedef int AliasInt;
-
+typedef int IntAlias;
 
 void initialize_container(DataContainer *container, char id_char) {
     container->identifier = id_char;
@@ -22,19 +20,18 @@ void initialize_container(DataContainer *container, char id_char) {
     }
 }
 
-
-void print_container_info(const DataContainer *container, AliasInt value) {
+void print_container_info(const DataContainer *container, IntAlias value) {
     printf("Size of DataContainer: %zu bytes\n", sizeof(DataContainer));
     printf("Identifier character: %c\n", container->identifier);
     printf("Aliased integer value: %d\n", value);
 }
 
 int main(void) {
-    DataContainer container_instance;
-    AliasInt alias_value = 12;
+    DataContainer container;
+    IntAlias value = 12;
 
-    initialize_container(&container_instance, 'X');
-    print_container_info(&container_instance, alias_value);
+    initialize_container(&container, 'X');
+    print_container_info(&container, value);
 
     return 0;
 }

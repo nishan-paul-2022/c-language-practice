@@ -6,20 +6,22 @@
 #include <stdio.h>
 #include <string.h>
 
-
 typedef struct {
     char name[100]; 
     int roll;       
     double cgpa;    
 } StudentInfo;
 
+void consume_newline() {
+    while (getchar() != '\n');
+}
 
 void input_students(StudentInfo students[], int num_students) {
     for (int i = 0; i < num_students; i++) {
         printf("Student %d Name: ", i + 1);
         if (fgets(students[i].name, sizeof(students[i].name), stdin) == NULL) {
             fprintf(stderr, "Error reading name for student %d.\n", i + 1);
-            while (getchar() != '\n'); 
+            consume_newline();
             continue;
         }
         
@@ -28,13 +30,13 @@ void input_students(StudentInfo students[], int num_students) {
         printf("Student %d Roll and CGPA: ", i + 1);
         if (scanf("%d %lf", &students[i].roll, &students[i].cgpa) != 2) {
             fprintf(stderr, "Error reading roll/CGPA for student %d.\n", i + 1);
-            while (getchar() != '\n'); 
+            consume_newline();
             continue;
         }
-        while (getchar() != '\n'); 
+
+        consume_newline();
     }
 }
-
 
 void sort_students_by_roll(StudentInfo students[], int num_students) {
     StudentInfo temp;
@@ -48,7 +50,6 @@ void sort_students_by_roll(StudentInfo students[], int num_students) {
         }
     }
 }
-
 
 void print_students(const StudentInfo students[], int num_students) {
     printf("\n--- Sorted Student Data (by Roll Number) ---\n");
@@ -65,7 +66,8 @@ int main(void) {
         fprintf(stderr, "Invalid number of students.\n");
         return 0;
     }
-    while (getchar() != '\n'); 
+    
+    consume_newline();
 
     StudentInfo students[num_students];
 
