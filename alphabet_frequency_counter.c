@@ -5,20 +5,18 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
-
 
 void read_input(char *buffer, int size) {
     printf("Enter a line of text: ");
     if (fgets(buffer, size, stdin) == NULL) {
-        printf("Error reading input.\n");
-        buffer[0] = '\0'; 
-        return;
+        printf("\nError reading input.\n");
+        exit(1);
     }
     
     buffer[strcspn(buffer, "\n")] = '\0'; 
 }
-
 
 void count_frequencies(const char *input, int freq[]) {
     for (int i = 0; input[i] != '\0'; i++) {
@@ -28,7 +26,6 @@ void count_frequencies(const char *input, int freq[]) {
         }
     }
 }
-
 
 void display_frequencies(const int freq[]) {
     printf("\nAlphabet Frequencies:\n");

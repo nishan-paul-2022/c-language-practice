@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 int read_number_of_test_cases() {
     printf("Enter the number of test cases: ");
     int number_of_test_cases;
@@ -15,7 +14,6 @@ int read_number_of_test_cases() {
     }
     return number_of_test_cases;
 }
-
 
 int read_time(int test_case_index, int *hours, int *minutes) {
     printf("Enter time in HH:MM format for test case %d: ", test_case_index + 1);
@@ -28,7 +26,6 @@ int read_time(int test_case_index, int *hours, int *minutes) {
     return 0;
 }
 
-
 int validate_time(int hours, int minutes) {
     if (hours < 1 || hours > 12 || minutes < 0 || minutes > 59) {
         printf("Invalid time: Hours must be 1-12, minutes 0-59. Skipping this test case.\n");
@@ -36,7 +33,6 @@ int validate_time(int hours, int minutes) {
     }
     return 0;
 }
-
 
 void calculate_reflected_time(int hours, int minutes, int *reflected_hours, int *reflected_minutes) {
     if (minutes == 0) {
@@ -54,13 +50,11 @@ void calculate_reflected_time(int hours, int minutes, int *reflected_hours, int 
             *reflected_hours = 11 - hours; 
         }
     }
-
     
     if (*reflected_hours == 0) {
         *reflected_hours = 12;
     }
 }
-
 
 void display_reflected_time(int reflected_hours, int reflected_minutes) {
     printf("Reflected time: %02d:%02d\n", reflected_hours, reflected_minutes);

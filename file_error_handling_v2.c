@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void demonstrate_perror(void) {
     printf("=== perror() ===\n");
@@ -18,7 +19,7 @@ void demonstrate_clearerr(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
         perror("Error opening test file");
-        return;
+        exit(1);
     }
 
     char buffer[100];

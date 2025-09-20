@@ -15,7 +15,6 @@ int main(void) {
             printf("Array size must be positive. Please try again.\n");
             continue;
         }
-
         
         int *numbers = (int *)malloc(array_size * sizeof(int));
         if (numbers == NULL) {

@@ -6,31 +6,31 @@
 #include <stdio.h>
 
 typedef struct {
-    float integer_val;
-    float float_val;
-} StructExample;
+    float i;
+    float f;
+} DataPair;
 
 typedef union {
-    float integer_val;
-    float float_val;
-} UnionExample;
+    float i;
+    float f;
+} SharedFloatData;
 
-void demonstrate_struct(StructExample *s) {
-    s->integer_val = 10.0f;
-    s->float_val = 3.1416f;
+void demonstrate_struct(DataPair *s) {
+    s->i = 10.0f;
+    s->f = 3.1416f;
 
     printf("--- Structure Example ---\n");
-    printf("Struct integer_val: %.2f\n", s->integer_val);
-    printf("Struct float_val:   %.4f\n", s->float_val);
+    printf("Struct i: %.2f\n", s->i);
+    printf("Struct f:   %.4f\n", s->f);
 }
 
-void demonstrate_union(UnionExample *u) {
-    u->float_val = 2.71f;
-    u->integer_val = 20.0f;
+void demonstrate_union(SharedFloatData *u) {
+    u->f = 2.71f;
+    u->i = 20.0f;
 
     printf("\n--- Union Example ---\n");
-    printf("Union integer_val: %.2f\n", u->integer_val);
-    printf("Union float_val:   %.4f (may be unexpected)\n", u->float_val);
+    printf("Union i: %.2f\n", u->i);
+    printf("Union f:   %.4f (may be unexpected)\n", u->f);
 }
 
 void demonstrate_typedef() {
@@ -42,11 +42,11 @@ void demonstrate_typedef() {
 }
 
 int main(void) {
-    StructExample s_instance;
-    UnionExample u_instance;
+    DataPair data_pair;
+    SharedFloatData shared_floats;
 
-    demonstrate_struct(&s_instance);
-    demonstrate_union(&u_instance);
+    demonstrate_struct(&data_pair);
+    demonstrate_union(&shared_floats);
     demonstrate_typedef();
 
     return 0;

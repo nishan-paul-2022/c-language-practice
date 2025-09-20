@@ -11,30 +11,30 @@ typedef struct {
     int integer_value;
     double double_value;
     char string_value[100];
-} ExampleStructure;
+} DataRecord;
 
 
-void initialize_structure(ExampleStructure *s, int int_val, double dbl_val, const char *str_val) {
+void initialize_structure(DataRecord *s, int int_val, double dbl_val, const char *str_val) {
     s->integer_value = int_val;
     s->double_value = dbl_val;
     strcpy(s->string_value, str_val);
 }
 
 
-void print_structure(const ExampleStructure *s) {
+void print_structure(const DataRecord *s) {
     printf("Integer: %d\n", s->integer_value);
     printf("Double: %.2lf\n", s->double_value);
     printf("String: %s\n", s->string_value);
 }
 
 int main(void) {
-    ExampleStructure my_struct;
+    DataRecord record;
 
     
-    initialize_structure(&my_struct, 1, 3.1416, "string");
+    initialize_structure(&record, 1, 3.1416, "string");
 
     
-    print_structure(&my_struct);
+    print_structure(&record);
 
     return 0;
 }

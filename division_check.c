@@ -6,24 +6,15 @@
 #include <stdio.h>
 #include <math.h>
 
-
 void get_numbers(double *numerator, double *denominator) {
     printf("Enter numerator and denominator (e.g., 15.75, 4): ");
     scanf("%lf, %lf", numerator, denominator);
 }
 
-
 void display_parts(double numerator, double denominator) {
-    if (denominator == 0.0) {
-        fprintf(stderr, "Cannot divide by zero.\n");
-        return;
-    }
-
     double quotient = numerator / denominator;
-    double fractional_part, integer_part;
-
-    
-    fractional_part = modf(quotient, &integer_part);
+    double integer_part;
+    double fractional_part = modf(quotient, &integer_part);
 
     printf("\n--- Division Result ---\n");
     printf("Integer Part: %.0f\n", integer_part);

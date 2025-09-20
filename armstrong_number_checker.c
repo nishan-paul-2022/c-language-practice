@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 long long int integer_power(int base, int exponent) {
     long long int result = 1;
     for (int i = 0; i < exponent; i++) {
@@ -17,13 +16,11 @@ long long int integer_power(int base, int exponent) {
     return result;
 }
 
-
 int count_digits(int number) {
     char num_as_string[20];
     sprintf(num_as_string, "%d", number);
     return strlen(num_as_string);
 }
-
 
 int is_armstrong(int number) {
     if (number < 0) {

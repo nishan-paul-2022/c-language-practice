@@ -9,7 +9,7 @@
 void multiply_last_element_by_ten(int data[], int size) {
     if (data == NULL || size <= 0) {
         fprintf(stderr, "Invalid array or size.\n");
-        return;
+        exit(1);
     }
 
     data[size - 1] *= 10;
@@ -32,13 +32,11 @@ int main(void) {
         return 0;
     }
 
-    
     int *data = (int *)malloc(size * sizeof(int));
     if (data == NULL) {
         fprintf(stderr, "Memory allocation failed.\n");
         return 0;
     }
-
     
     printf("Enter %d integers for the array:\n", size);
     for (int i = 0; i < size; ++i) {

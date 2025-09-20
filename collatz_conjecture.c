@@ -5,16 +5,15 @@
 
 #include <stdio.h>
 
-void collatz_sequence(int n) {
+int collatz_sequence(int n) {
     printf("%d ", n);
+
     if (n == 1) {
-        return;
-    }
-    
-    if (n % 2) {
-        collatz_sequence(3 * n + 1);
+        return n;
+    } else if (n % 2) {
+        return collatz_sequence(3 * n + 1);
     } else {
-        collatz_sequence(n / 2);
+        return collatz_sequence(n / 2);
     }
 }
 

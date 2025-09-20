@@ -16,16 +16,13 @@ int main(void) {
     printf("Enter %d integers, separated by spaces or newlines:\n", size);
 
     for (int i = 0; i < size; i++) {
-        
         if (scanf(" %d", &numbers[i]) != 1) {
             printf("Invalid input. Please enter integers only.\n");
             return 0;
         }
     }
-
     
     for (int i = 0; i < 4; i++) {
-        
         if (numbers[i] > numbers[i+1]) {
             is_ascending = 0;
         }
@@ -39,7 +36,6 @@ int main(void) {
         }
     }
 
-    
     if (is_equivalent) {
         printf("Equivalent\n");
     } else if (is_ascending) {

@@ -32,7 +32,6 @@ int get_number_of_students() {
 int read_student_data(struct Student *student, int student_number) {
     printf("Student %d: ", student_number);
     
-    
     if (scanf("%d, %lf, %[^\n]", &student->id, &student->score, student->name) != 3) {
         fprintf(stderr, "Error reading data for student %d. Please ensure input is in the format: ID, Score, Name\n", student_number);
         clear_input_buffer();
@@ -69,19 +68,11 @@ void display_all_students(const struct Student students[], int count) {
 }
 
 int main(void) {
-    
     int number_of_students = get_number_of_students();
-    
-    
     struct Student students[number_of_students];
     
-    
     clear_input_buffer();
-    
-    
     input_all_students(students, number_of_students);
-    
-    
     display_all_students(students, number_of_students);
     
     return 0;

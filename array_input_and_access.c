@@ -16,14 +16,11 @@ int main(void) {
         printf("Enter element at index %d: ", i);
         scanf(" %d", &numbers_array[i]); 
     }
-
     
     printf("The element at index 3 is %d\n", numbers_array[3]);
-
     
     pointer_to_numbers = numbers_array;
 
-    
     printf("The element at index 3 (accessed via pointer) is %d\n", *(pointer_to_numbers + 3));
 
     return 0;

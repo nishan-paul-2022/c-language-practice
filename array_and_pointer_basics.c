@@ -13,7 +13,6 @@ int main(void) {
         printf("Invalid array size. Please enter a positive integer.\n");
         return 0;
     }
-
     
     int *array_pointer = (int *)malloc(size * sizeof(int));
     if (array_pointer == NULL) {
@@ -23,7 +22,6 @@ int main(void) {
 
     printf("Enter %d integer elements:\n", size);
     for (int i = 0; i < size; i++) {
-        
         if (scanf("%d", (array_pointer + i)) != 1) {
             printf("Invalid input. Exiting.\n");
             free(array_pointer);

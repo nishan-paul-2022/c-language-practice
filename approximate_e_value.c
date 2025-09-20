@@ -10,12 +10,10 @@ int main(void) {
     double term = 1.0; 
     double factorial = 1.0; 
     int n = 1; 
-
     
     while (1) {
         factorial *= n; 
         term = 1.0 / factorial; 
-
         
         if (term < 0.000001) {
             break;
@@ -26,7 +24,6 @@ int main(void) {
 
         printf("Term %d: %0.15lf\n", n, e);
     }
-
     
     printf("Approximated value of e: %0.15lf\n", e);
 

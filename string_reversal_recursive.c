@@ -6,17 +6,15 @@
 #include <stdio.h>
 #include <string.h>
 
-
-void reverse_string_recursive(char *str, int start, int end) {
+int reverse_string_recursive(char *str, int start, int end) {
     if (start >= end) {
-        return;
+        return 0;
     }
     char temp = str[start];
     str[start] = str[end];
     str[end] = temp;
-    reverse_string_recursive(str, start + 1, end - 1);
+    return reverse_string_recursive(str, start + 1, end - 1);
 }
-
 
 int get_input_string(char *str, size_t max_len) {
     printf("Enter a string to reverse: ");
@@ -27,7 +25,6 @@ int get_input_string(char *str, size_t max_len) {
     }
 }
 
-
 size_t clean_input_string(char *str) {
     size_t len = strlen(str);
     if (len > 0 && str[len - 1] == '\n') {
@@ -37,11 +34,9 @@ size_t clean_input_string(char *str) {
     return len;
 }
 
-
 int is_valid_string(const char *str, size_t len) {
     return len > 0;
 }
-
 
 void display_result(const char *str, int success) {
     if (success) {
@@ -51,7 +46,6 @@ void display_result(const char *str, int success) {
     }
 }
 
-
 void display_error(const char *message) {
     printf("%s\n", message);
 }
@@ -59,15 +53,12 @@ void display_error(const char *message) {
 int main(void) {
     char str[100];
     
-    
     if (get_input_string(str, sizeof(str)) == -1) {
         display_error("Error reading input.");
         return 1;
     }
     
-    
     size_t len = clean_input_string(str);
-    
     
     if (is_valid_string(str, len)) {
         reverse_string_recursive(str, 0, len - 1);

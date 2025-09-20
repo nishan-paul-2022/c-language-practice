@@ -6,9 +6,9 @@
 #include <stdio.h>
 #include <math.h>
 
-long int sum_digits(long int num) {
-    long int sum = 0;
-    long int temp_num = num;
+int sum_digits(int num) {
+    int sum = 0;
+    int temp_num = num;
     
     if (temp_num < 0) {
         temp_num = -temp_num;
@@ -18,12 +18,13 @@ long int sum_digits(long int num) {
         sum += temp_num % 10;
         temp_num /= 10;
     }
+
     return sum;
 }
 
-long int reverse_number(long int num) {
-    long int reversed_num = 0;
-    long int temp_num = num;
+int reverse_number(int num) {
+    int reversed_num = 0;
+    int temp_num = num;
     int sign = 1;
     
     if (temp_num < 0) {
@@ -35,26 +36,24 @@ long int reverse_number(long int num) {
         reversed_num = reversed_num * 10 + temp_num % 10;
         temp_num /= 10;
     }
+
     return sign * reversed_num;
 }
 
-void process_number() {
-    long int number;
+int main(void) {
+    int number;
     printf("Enter an integer: ");
     
-    if (scanf("%ld", &number) != 1) {
+    if (scanf("%d", &number) != 1) {
         printf("Invalid input. Please enter a long integer.\n");
-        return;
+        return 0;
     }
     
-    long int sum_of_digits = sum_digits(number);
-    long int reversed_number = reverse_number(number);
+    int sum_of_digits = sum_digits(number);
+    int reversed_number = reverse_number(number);
     
-    printf("Sum of digits: %ld\n", sum_of_digits);
-    printf("Reversed number: %ld\n", reversed_number);
-}
+    printf("Sum of digits: %d\n", sum_of_digits);
+    printf("Reversed number: %d\n", reversed_number);
 
-int main(void) {
-    process_number();
     return 0;
 }

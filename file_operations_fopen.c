@@ -85,7 +85,7 @@ int write_data_to_file(const char *filename, const char *mode, const char *input
     return 0;
 }
 
-void process_file_operations() {
+int main(void) {
     char filename[100];
     char mode[100];
     char input_string[100];
@@ -93,22 +93,19 @@ void process_file_operations() {
     int input_int;
     float input_float;
 
-    if (get_filename_and_mode(filename, mode)) {
-        return;
+    if (get_filename_and_mode(filename, mode) == -1) {
+        return 0;
     }
 
-    if (get_data_inputs(input_string, &input_char, &input_int, &input_float)) {
-        return;
+    if (get_data_inputs(input_string, &input_char, &input_int, &input_float) == -1) {
+        return 0;
     }
 
-    if (write_data_to_file(filename, mode, input_string, input_char, input_int, input_float)) {
-        return;
+    if (write_data_to_file(filename, mode, input_string, input_char, input_int, input_float) == -1) {
+        return 0;
     }
 
     printf("Data successfully written to '%s' in mode '%s'.\n", filename, mode);
-}
-
-int main(void) {
-    process_file_operations();
+    
     return 0;
 }

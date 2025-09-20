@@ -48,7 +48,7 @@ void process_string(const char *str, int test_num) {
     
     if (length == 0) {
         printf("Invalid input for test case %d: String is empty.\n", test_num);
-        return;
+        exit(1);
     }
     
     char last_char = str[length - 1];
@@ -56,7 +56,7 @@ void process_string(const char *str, int test_num) {
     
     if (!isdigit(last_char)) {
         printf("Invalid input for test case %d: Last character is not a digit.\n", test_num);
-        return;
+        exit(1);
     }
     
     

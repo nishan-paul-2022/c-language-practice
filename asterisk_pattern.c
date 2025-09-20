@@ -16,7 +16,6 @@ void print_horizontal_line(int rows, int columns) {
 
 void print_indented_line(int rows, int columns, int indent_spaces) {
     for (int row_count = 0; row_count < rows; row_count++) {
-        
         for (int indent_count = 0; indent_count < indent_spaces; indent_count++) {
             printf("  ");
         }
@@ -29,19 +28,10 @@ void print_indented_line(int rows, int columns, int indent_spaces) {
 }
 
 int main(void) {
-    
     print_horizontal_line(3, 18);
-    
-    
     print_horizontal_line(3, 4);
-    
-    
     print_horizontal_line(3, 18);
-    
-    
     print_indented_line(3, 4, 14);
-    
-    
     print_horizontal_line(3, 18);
 
     return 0;

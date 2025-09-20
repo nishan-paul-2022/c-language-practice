@@ -9,21 +9,17 @@
 int main(void) {
     char title[] = "Enter the number of terms (n) for the series (2, 6, 10, 14, ...): ";
     printf("%s", title);
-
     
     int num_terms;
     while (scanf("%d", &num_terms) == 1) {
-        
         if (num_terms < 0) {
             fprintf(stderr, "Number of terms cannot be negative. Please try again.\n");
             while (getchar() != '\n'); 
             continue;
         }
-
         
         int sum = 0;
         int current_term = 2; 
-
         
         for (int term_index = 0; term_index < num_terms; ++term_index) {
             sum += current_term;
@@ -34,7 +30,6 @@ int main(void) {
 
         printf("\n%s", title); 
     }
-
     
     if (ferror(stdin)) {
         perror("Error reading input");

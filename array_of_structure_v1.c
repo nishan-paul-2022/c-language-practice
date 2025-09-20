@@ -16,7 +16,6 @@ int main(void) {
     Node nodes[3];
     Node *node_pointer = nodes;
 
-    
     node_pointer[0].data = 1;
     node_pointer[0].character = 'a';
 
