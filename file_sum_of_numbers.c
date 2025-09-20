@@ -32,7 +32,7 @@ long sum_numbers_in_file(const char *filename) {
 }
 
 int main(void) {
-    const char *filename = "files/28-input.txt";
+    const char *filename = "files/file_sum_of_numbers.txt";
     long sum = sum_numbers_in_file(filename);
 
     if (sum == -1) {

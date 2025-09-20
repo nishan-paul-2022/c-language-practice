@@ -7,22 +7,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-int get_filename_and_mode(char *filename, char *mode) {
+void consume_newline() {
     int c;
-    
-    printf("Enter the filename: ");
-    if (scanf("%99s", filename) != 1) {
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int get_filename_and_mode(char *filename, char *mode) {
+    printf("Enter the filename (e.g, files/file_operations_fopen.txt): ");
+    if (scanf("%100s", filename) != 1) {
         perror("Error reading filename");
         return -1;
     }
-    while ((c = getchar()) != '\n' && c != EOF);
+    consume_newline();
 
     printf("Enter the file mode (e.g., 'w', 'a', 'r'): ");
     if (scanf("%99s", mode) != 1) {
         perror("Error reading file mode");
         return -1;
     }
-    while ((c = getchar()) != '\n' && c != EOF);
+    consume_newline();
     
     return 0;
 }
@@ -45,21 +48,21 @@ int get_data_inputs(char *input_string, char *input_char, int *input_int, float 
         perror("Error reading character");
         return -1;
     }
-    while ((c = getchar()) != '\n' && c != EOF);
+    consume_newline();
 
     printf("Enter an integer: ");
     if (scanf("%d", input_int) != 1) {
         perror("Error reading integer");
         return -1;
     }
-    while ((c = getchar()) != '\n' && c != EOF);
+    consume_newline();
 
     printf("Enter a float: ");
     if (scanf("%f", input_float) != 1) {
         perror("Error reading float");
         return -1;
     }
-    while ((c = getchar()) != '\n' && c != EOF);
+    consume_newline();
     
     return 0;
 }

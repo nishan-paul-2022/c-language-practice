@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FILENAME "files/10-input.txt"
+#define FILENAME "files/file_error_handling_v1.txt"
 
 FILE *open_file_read_only(const char *filename) {
     FILE *file_handle = fopen(filename, "r");

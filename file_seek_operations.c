@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define FILENAME "files/25-input.txt"
+#define FILENAME "files/file_seek_operations.txt"
 #define BUFFER_SIZE 100
 #define FORMATTED_SIZE 256
 

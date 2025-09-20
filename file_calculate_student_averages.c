@@ -8,10 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BANGLA_FILE "files/03-bangla.txt"
-#define MATH_FILE "files/03-math.txt"
-#define ENGLISH_FILE "files/03-english.txt"
-#define RESULT_FILE "files/03-result.txt"
+#define BANGLA_FILE "files/file_calculate_student_averages_bangla.txt"
+#define MATH_FILE "files/file_calculate_student_averages_math.txt"
+#define ENGLISH_FILE "files/file_calculate_student_averages_english.txt"
+#define RESULT_FILE "files/file_calculate_student_averages_result.txt"
 
 FILE* open_file(const char* filename, const char* mode, const char* description) {
     FILE *file = fopen(filename, mode);

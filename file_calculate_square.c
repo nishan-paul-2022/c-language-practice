@@ -62,8 +62,8 @@ void close_files(FILE* input_file, FILE* output_file) {
 }
 
 int main(void) {
-    char input_file_path[] = "files/02-input.txt";
-    char output_file_path[] = "files/02-output.txt";
+    char input_file_path[] = "files/file_calculate_square_a.txt";
+    char output_file_path[] = "files/file_calculate_square_b.txt";
 
     FILE *input_file = open_input_file(input_file_path);
     if (input_file == NULL) {

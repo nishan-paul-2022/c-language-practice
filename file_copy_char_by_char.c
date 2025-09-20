@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "files/06-input.txt"
-#define OUTPUT_FILENAME "files/06-output.txt"
+#define INPUT_FILENAME "files/file_copy_char_by_char_a.txt"
+#define OUTPUT_FILENAME "files/file_copy_char_by_char_b.txt"
 
 void print_header() {
     printf("=== File Copier ===\n");

@@ -40,7 +40,7 @@ void demonstrate_clearerr(const char *filename) {
 }
 
 int main(void) {
-    char test_file[] = "files/07-file.txt";
+    char test_file[] = "files/file_error_handling_v2.txt";
 
     demonstrate_perror();
     demonstrate_clearerr(test_file);

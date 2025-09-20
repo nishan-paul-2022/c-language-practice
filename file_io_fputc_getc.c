@@ -51,7 +51,7 @@ void close_file(FILE *file_ptr) {
 int main(void) {
     char char_to_write = 'A';
     
-    FILE *file_ptr = open_file_write_read("files/12-input.txt");
+    FILE *file_ptr = open_file_write_read("files/file_io_fputc_getc.txt");
     if (file_ptr == NULL) {
         return 0;
     }

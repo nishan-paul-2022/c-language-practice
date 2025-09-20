@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FILE_A "files/04-file-a.txt"
-#define FILE_B "files/04-file-b.txt"
+#define FILE_A "files/file_comparison_a.txt"
+#define FILE_B "files/file_comparison_b.txt"
 
 int main(void) {
     FILE *file_output, *file_input;

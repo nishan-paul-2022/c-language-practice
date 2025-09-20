@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "files/05-input.txt"
-#define OUTPUT_FILENAME "files/05-output.txt"
+#define INPUT_FILENAME "files/file_copy_data_types_a.txt"
+#define OUTPUT_FILENAME "files/file_copy_data_types_b.txt"
 #define BUFFER_SIZE 100
 
 void print_header() {

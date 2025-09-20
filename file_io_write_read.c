@@ -76,7 +76,7 @@ int read_characters_from_file(const char *filename, char *read_char1, char *read
 int process_file_write_read() {
     char char1, char2;
     char read_char1, read_char2;
-    const char *filename = "files/14-input.txt";
+    const char *filename = "files/file_io_write_read.txt";
 
     if (get_two_characters(&char1, &char2)) {
         return 0;

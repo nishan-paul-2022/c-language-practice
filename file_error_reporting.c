@@ -25,7 +25,7 @@ void close_file(FILE *file_pointer) {
 }
 
 int main(void) {
-    const char *filename = "files/11-input.txt";
+    const char *filename = "files/file_error_reporting.txt";
     
     FILE *file_pointer = attempt_file_open(filename);
     

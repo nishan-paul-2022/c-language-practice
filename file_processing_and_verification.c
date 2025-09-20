@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "files/18-input.txt"
-#define OUTPUT_FILENAME "files/18-output.txt"
+#define INPUT_FILENAME "files/file_processing_and_verification_a.txt"
+#define OUTPUT_FILENAME "files/file_processing_and_verification_b.txt"
 
 int process_input_file() {
     FILE *input_file = fopen(INPUT_FILENAME, "r");

@@ -41,8 +41,8 @@ void close_file(FILE *file_pointer) {
 }
 
 int main(void) {
-    char source_file_path[] = "files/01-img-a.jpg";
-    char destination_file_path[] = "files/01-img-b.jpg";
+    char source_file_path[] = "files/file_binary_copy_a.jpg";
+    char destination_file_path[] = "files/file_binary_copy_b.jpg";
     
     FILE *source_file_pointer = open_file(source_file_path, "rb");
     if (source_file_pointer == NULL) {

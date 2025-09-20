@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INPUT_FILENAME "files/23-input.txt"
-#define OUTPUT_FILENAME "files/23-output.txt"
+#define INPUT_FILENAME "files/file_reverse_a.txt"
+#define OUTPUT_FILENAME "files/file_reverse_b.txt"
 
 FILE* open_input_file(const char *filename) {
     FILE *input_file = fopen(filename, "r");

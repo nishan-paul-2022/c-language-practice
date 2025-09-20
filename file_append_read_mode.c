@@ -1,7 +1,6 @@
 /*
  * Purpose: Demonstrates file operations using "a+" mode (append and read).
- *          It reads a line from input, appends it to a file,
- *          then reads from the file up to a specified delimiter and prints it.
+ *          It reads a line from input, appends it to a file, then reads from the file up to a specified delimiter and prints it.
  * Topic: File I/O, String Handling
  */
 
@@ -9,7 +8,7 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "files/08-file.txt"
+#define FILENAME "files/file_append_read_mode.txt"
 
 int get_user_input(char *input_buffer, int buffer_size) {
     printf("Enter a line of text to append to the file: ");

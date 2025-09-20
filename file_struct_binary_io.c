@@ -52,7 +52,7 @@ int main(void) {
     StudentData data_write = {"UC", "Berkeley", "BAIR"};
     StudentData data_read;
 
-    FILE *file_ptr = fopen("files/28-input.txt", "wb+");
+    FILE *file_ptr = fopen("files/file_struct_binary_io.txt", "wb+");
     if (file_ptr == NULL) {
         perror("Error opening file");
         return 0;

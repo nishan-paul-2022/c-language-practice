@@ -36,7 +36,7 @@ void close_file(FILE *fp) {
 }
 
 int main(void) {
-    const char *filename = "files/27-input.txt";
+    const char *filename = "files/file_read_single_char.txt";
     FILE *file_ptr = open_file(filename);
     int char_read = read_single_char(file_ptr);
     

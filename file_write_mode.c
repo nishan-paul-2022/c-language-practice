@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-#define FILENAME "files/29-file.txt"
+#define FILENAME "files/file_write_mode.txt"
 
 FILE* open_file_for_writing(const char *filename) {
     FILE *fp = fopen(filename, "w");

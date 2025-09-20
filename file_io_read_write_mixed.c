@@ -11,7 +11,7 @@
 #define MAX_STRING_LEN 100
 
 int get_filename(char *filename) {
-    printf("Enter filename (e.g., files/13-input.txt): ");
+    printf("Enter filename (e.g., files/file_io_read_write_mixed.txt): ");
     if (fgets(filename, MAX_FILENAME_LEN, stdin) == NULL) {
         perror("Error reading filename");
         return 0;

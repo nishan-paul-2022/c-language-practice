@@ -65,8 +65,8 @@ int process_files(const char *input_filename, const char *output_filename) {
 }
 
 int main(void) {
-    const char *input_filename = "files/26-input.txt";
-    const char *output_filename = "files/26-output.txt";
+    const char *input_filename = "files/file_square_numbers_a.txt";
+    const char *output_filename = "files/file_square_numbers_b.txt";
 
     if (create_input_file(input_filename) != 0) {
         return 0;

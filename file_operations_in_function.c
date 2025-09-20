@@ -30,7 +30,7 @@ FILE* open_file_with_extension(char *filename_base, const char *mode) {
 }
 
 int get_filename(char *buffer, int size) {
-    printf("Enter base filename (e.g, files/16-input): ");
+    printf("Enter base filename (e.g, files/file_operations_in_function): ");
     if (fgets(buffer, size, stdin) == NULL) {
         fprintf(stderr, "Error reading filename input.\n");
         return -1;
@@ -52,15 +52,17 @@ int get_file_mode(char *buffer, int size) {
 int process_file_operation(const char *filename, const char *mode) {
     FILE *file_handle = open_file_with_extension((char*)filename, mode);
     
-    if (file_handle != NULL) {
+    if (file_handle == NULL) {
+        return -1;
+    } else {
         printf("File '%s.txt' opened successfully in mode '%s'.\n", filename, mode);
-        if (fclose(file_handle)) {
-            perror("Error closing file");
+        if (fclose(file_handle) == -1) {
+            perror("Error closing file.");
             return -1;
+        } else {
+            return 0;
         }
-        return 0;
     }
-    return -1;
 }
 
 int main(void) {

@@ -20,7 +20,7 @@ int remove_file(const char *filename) {
 }
 
 int main(void) {
-    const char *filename_to_remove = "files/09-img.jpg";
+    const char *filename_to_remove = "files/file_remove.jpg";
     
     return remove_file(filename_to_remove);
 }

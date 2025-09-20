@@ -43,7 +43,7 @@ int append_second_part(const char *filename, const char *text) {
 }
 
 int demonstrate_file_modes() {
-    const char *filename = "files/15-input.txt";
+    const char *filename = "files/file_modes_write_append.txt";
     const char *first_part = "A promise was once made, ";
     const char *second_part = "that promise will be kept.\n";
 

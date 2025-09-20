@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 100
-#define FILENAME "files/22-input.txt"
+#define FILENAME "files/file_read_write_mode.txt"
 
 FILE* open_file_read_write(const char *filename) {
     FILE *file_ptr = fopen(filename, "r+");
