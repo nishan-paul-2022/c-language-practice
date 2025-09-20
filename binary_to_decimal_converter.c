@@ -7,7 +7,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 int power_of_2(int exp) {
     if (exp < 0) {
         return 0;

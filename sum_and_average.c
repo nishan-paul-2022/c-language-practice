@@ -42,6 +42,5 @@ int main(void) {
         printf("Average of inputs: %.2lf\n", average);
     }
 
-
     return 0;
 }
