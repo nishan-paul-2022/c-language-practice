@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 int power_recursive(int base, int exponent) {
     if (exponent < 0) { 
         printf("Exponent must be non-negative.\n");

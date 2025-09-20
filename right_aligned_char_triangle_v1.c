@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 int get_num_rows() {
     int num_rows;
     printf("Enter the number of rows: ");
@@ -15,7 +14,6 @@ int get_num_rows() {
     }
     return num_rows;
 }
-
 
 char get_start_char() {
     char start_char;
@@ -27,7 +25,6 @@ char get_start_char() {
     }
     return start_char;
 }
-
 
 void print_triangle(int num_rows, char start_char) {
     int space_count_decrement = 1;

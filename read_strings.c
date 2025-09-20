@@ -8,7 +8,6 @@
 
 #define BUFFER_SIZE 256 
 
-
 int read_string(char *buffer, int max_length) {
     if (fgets(buffer, max_length, stdin) == NULL) {
         return -1; 
@@ -17,11 +16,11 @@ int read_string(char *buffer, int max_length) {
     return 0; 
 }
 
-
 void process_strings(int max_length) {
     char input[BUFFER_SIZE];
     while (1) {
         printf("Enter a string: ");
+        
         if (read_string(input, max_length) == -1) {
             printf("Error reading input or end of input reached.\n");
             break;

@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 void print_countdown_recursive() {
     static int counter = 0; 
 

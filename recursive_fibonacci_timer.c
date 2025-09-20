@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 int calculate_fibonacci_recursive(int n) {
     if (n <= 0) {
         return 0; 

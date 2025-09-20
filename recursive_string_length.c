@@ -8,14 +8,12 @@
 
 #define MAX_STRING_SIZE 1000
 
-
 int recursive_string_length(const char *str) {
     if (*str == '\0') {
         return 0; 
     }
     return 1 + recursive_string_length(str + 1); 
 }
-
 
 int read_input_string(char *buffer, int size) {
     if (fgets(buffer, size, stdin) == NULL) {

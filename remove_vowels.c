@@ -9,13 +9,11 @@
 
 #define MAX_STRING_SIZE 100
 
-
 void to_lowercase(char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
         str[i] = tolower(str[i]);
     }
 }
-
 
 void print_without_vowels(const char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
@@ -25,7 +23,6 @@ void print_without_vowels(const char *str) {
     }
     putchar('\n');
 }
-
 
 int read_input_string(char *buffer, int size) {
     if (fgets(buffer, size, stdin) == NULL) {
