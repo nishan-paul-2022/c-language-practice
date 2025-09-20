@@ -6,13 +6,11 @@
 #include <stdio.h>
 #include <string.h>
 
-
 typedef struct {
     int i;
     double d;
     char str[100];
 } DataRecord;
-
 
 void read_string(char *str, int size) {
     printf("Enter a string: ");
@@ -25,7 +23,6 @@ void read_string(char *str, int size) {
     }
 }
 
-
 DataRecord initialize_structure(int i, double d, const char *str) {
     DataRecord record;
     record.i = i;
@@ -33,7 +30,6 @@ DataRecord initialize_structure(int i, double d, const char *str) {
     strcpy(record.str, str);
     return record;
 }
-
 
 void print_structure(const DataRecord *s) {
     printf("Integer: %d\n", s->i);

@@ -6,21 +6,17 @@
 #include <stdio.h>
 #include <string.h>
 
-
 void print_string_puts(const char *text) {
     puts(text);
 }
-
 
 void print_string_printf(const char *text) {
     printf("Using printf(): %s\n", text);
 }
 
-
 void print_string_length(const char *text) {
     printf("String length: %zu\n", strlen(text));
 }
-
 
 void print_string_characters(const char *text) {
     printf("Characters: ");
@@ -30,7 +26,6 @@ void print_string_characters(const char *text) {
     printf("\n");
 }
 
-
 void string_to_uppercase(char *text) {
     for (int i = 0; text[i] != '\0'; i++) {
         if (text[i] >= 'a' && text[i] <= 'z') {
@@ -38,7 +33,6 @@ void string_to_uppercase(char *text) {
         }
     }
 }
-
 
 int count_vowels(const char *text) {
     int count = 0;
@@ -50,7 +44,6 @@ int count_vowels(const char *text) {
     }
     return count;
 }
-
 
 void demonstrate_basic_string_passing() {
     printf("=== Example 1: Basic String Passing ===\n");
@@ -65,7 +58,6 @@ void demonstrate_basic_string_passing() {
     printf("\n");
 }
 
-
 void demonstrate_string_modification() {
     printf("=== Example 2: Modifying Strings ===\n");
 
@@ -76,7 +68,6 @@ void demonstrate_string_modification() {
     printf("After uppercase conversion: %s\n", str);
     printf("\n");
 }
-
 
 void demonstrate_string_analysis() {
     printf("=== Example 3: String Analysis ===\n");

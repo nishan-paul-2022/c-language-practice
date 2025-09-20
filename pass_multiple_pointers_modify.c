@@ -6,11 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void perform_arithmetic_operations(double num1, double num2,
-                                   double *sum_ptr,
-                                   double *diff_ptr,
-                                   double *prod_ptr,
-                                   double *div_ptr) {
+void perform_arithmetic_operations(double num1, double num2, double *sum_ptr, double *diff_ptr, double *prod_ptr, double *div_ptr) {
     if (sum_ptr == NULL || diff_ptr == NULL || prod_ptr == NULL || div_ptr == NULL) {
         fprintf(stderr, "NULL pointer passed to function.\n");
         return;
