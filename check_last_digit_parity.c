@@ -15,7 +15,6 @@ void clear_input_buffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-
 int read_test_count() {
     int count;
     printf("Enter the number of test cases: ");
@@ -45,7 +44,6 @@ int read_string(char *buffer, int test_num) {
 void process_string(const char *str, int test_num) {
     size_t length = strlen(str);
     
-    
     if (length == 0) {
         printf("Invalid input for test case %d: String is empty.\n", test_num);
         exit(1);
@@ -53,12 +51,10 @@ void process_string(const char *str, int test_num) {
     
     char last_char = str[length - 1];
     
-    
     if (!isdigit(last_char)) {
         printf("Invalid input for test case %d: Last character is not a digit.\n", test_num);
         exit(1);
     }
-    
     
     int digit = last_char - '0';
     const char *result = (digit % 2 == 0) ? "Even" : "Odd";
@@ -73,7 +69,6 @@ int main(void) {
     if (num_test_cases == -1) {
         return 0;
     }
-    
     
     for (int i = 0; i < num_test_cases; i++) {
         int test_num = i + 1;

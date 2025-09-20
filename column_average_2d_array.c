@@ -9,6 +9,10 @@
 #define MAX_ROWS 100
 #define MAX_COLS 100
 
+void consume_newline() {
+    while (getchar() != '\n'); 
+}
+
 int main(void) {
     int rows, cols; 
     int matrix[MAX_ROWS][MAX_COLS];
@@ -29,10 +33,9 @@ int main(void) {
         return 0;
     }
 
-    while (getchar() != '\n'); 
+    consume_newline();
 
     printf("\nEnter %d integers for the matrix, row by row:\n", rows * cols);
-    
     
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
@@ -41,10 +44,9 @@ int main(void) {
                 printf("Invalid input at position [%d][%d]. Please enter an integer.\n", i, j);
                 return 0;
             }
-            while (getchar() != '\n'); 
+            consume_newline();
         }
     }
-
     
     for (j = 0; j < cols; j++) {
         column_sum = 0.0;

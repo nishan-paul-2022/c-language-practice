@@ -9,18 +9,15 @@
 
 #define MAX_STRING_LENGTH 1000
 
-
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-
 void print_header() {
     printf("=== Character Counter ===\n");
     printf("This program counts occurrences of a specific character in a string.\n\n");
 }
-
 
 int read_string(char *buffer, int max_length) {
     printf("Enter a string (max %d characters): ", max_length - 1);
@@ -34,7 +31,6 @@ int read_string(char *buffer, int max_length) {
     return 0;
 }
 
-
 int read_search_character(char *character) {
     printf("Enter the character to count: ");
     
@@ -46,7 +42,6 @@ int read_search_character(char *character) {
     clear_input_buffer();
     return 0;
 }
-
 
 int count_character_occurrences(const char *str, char target_char) {
     if (str == NULL) {
@@ -63,7 +58,6 @@ int count_character_occurrences(const char *str, char target_char) {
     
     return count;
 }
-
 
 void display_results(const char *str, char character, int count) {
     printf("\nResults:\n");

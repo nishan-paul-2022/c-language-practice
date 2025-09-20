@@ -5,7 +5,6 @@
 
 #include <stdio.h>
 
-
 int read_test_count() {
     int count;
     printf("Enter the number of test cases: ");
@@ -18,7 +17,6 @@ int read_test_count() {
     return count;
 }
 
-
 int read_number(int test_num, int *number) {
     printf("Enter number for test case %d: ", test_num);
     
@@ -30,7 +28,6 @@ int read_number(int test_num, int *number) {
     return 0;
 }
 
-
 void check_parity(int number, int test_num) {
     const char *result = (number % 2 == 0) ? "Even" : "Odd";
     printf("Result for test case %d: %s\n", test_num, result);
@@ -41,7 +38,6 @@ int main(void) {
     if (num_test_cases == -1) {
         return 0;
     }
-    
     
     for (int i = 0; i < num_test_cases; i++) {
         int test_num = i + 1;

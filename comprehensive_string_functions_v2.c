@@ -75,7 +75,6 @@ char* custom_strset(char* str, int ch) {
     return original;
 }
 
-
 char* custom_strnset(char* str, int ch, size_t n) {
     if (!str) {
         return NULL;

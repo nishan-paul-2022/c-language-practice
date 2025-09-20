@@ -29,12 +29,10 @@ int main(void) {
             case_number++;
             continue;
         }
-
         
         if (r > n / 2) {
             r = n - r;
         }
-
         
         for (int i = 0; i < r; i++) {
             numerator *= (n - i);

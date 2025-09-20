@@ -5,9 +5,7 @@
 
 #include <stdio.h>
 
-
 void calculate_collatz_length(int current_num, int *steps) {
-    
     if (current_num != 1) {
         if (current_num % 2) {
             current_num = 3 * current_num + 1;
@@ -26,10 +24,8 @@ int main(void) {
         fprintf(stderr, "Invalid input format. Please enter range as 'start - end'.\n");
         return 0;
     }
-
     
     for (int current_number = start_range; current_number <= end_range; current_number++) {
-        
         int sequence_length = 1;
         calculate_collatz_length(current_number, &sequence_length);
         printf("%d ", sequence_length);

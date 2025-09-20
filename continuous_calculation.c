@@ -5,29 +5,24 @@
 
 #include <stdio.h>
 
-
 void print_header() {
     printf("=== Continuous Distance Calculator ===\n");
     printf("Formula: Distance = 2 * Velocity * Time\n");
     printf("Enter velocity and time pairs (invalid input to quit)\n\n");
 }
 
-
 int read_values(int *velocity, int *time) {
     printf("Enter velocity and time: ");
     return scanf("%d %d", velocity, time) == 2;
 }
 
-
 int calculate_distance(int velocity, int time) {
     return 2 * velocity * time;
 }
 
-
 void display_result(int velocity, int time, int distance) {
     printf("Result: Distance = 2 * %d * %d = %d\n\n", velocity, time, distance);
 }
-
 
 void process_calculations() {
     int velocity, time, distance;
