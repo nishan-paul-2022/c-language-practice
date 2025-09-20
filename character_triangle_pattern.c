@@ -22,15 +22,12 @@ int main(void) {
         fprintf(stderr, "Invalid input for starting character.\n");
         return 0;
     }
-
     
     for (int row = 1; row <= num_rows; row++) {
-        
         for (int space = 1; space <= num_rows - row; space++) {
             printf("  ");
         }
 
-        
         char current_char = start_char;
         for (int col = 1; col <= row; col++) {
             printf(" %c", current_char);

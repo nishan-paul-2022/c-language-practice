@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <limits.h>
 
-
 int read_pair(long long int *c, long long int *m, int test_case, int pair_num) {
     if (scanf(" %lld %lld", c, m) != 2) {
         fprintf(stderr, "Error reading input for test case %d, pair %d\n", test_case, pair_num);
@@ -15,9 +14,7 @@ int read_pair(long long int *c, long long int *m, int test_case, int pair_num) {
     return 0;
 }
 
-
-void update_minimum_pair(long long int c, long long int m, 
-                        long long int *min_c, long long int *min_m_for_min_c) {
+void update_minimum_pair(long long int c, long long int m, long long int *min_c, long long int *min_m_for_min_c) {
     if (c < *min_c) {
         *min_c = c;
         *min_m_for_min_c = m;
@@ -25,7 +22,6 @@ void update_minimum_pair(long long int c, long long int m,
         *min_m_for_min_c = m;
     }
 }
-
 
 void process_test_case(int test_case_num) {
     int n;

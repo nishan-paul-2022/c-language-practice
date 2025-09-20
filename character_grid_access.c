@@ -9,7 +9,6 @@
 
 #define MAX_ROW_LEN 100
 
-
 typedef struct {
     int rows;
     int cols;
@@ -31,7 +30,6 @@ typedef struct {
     char *error_message;
 } Result;
 
-
 Dimensions create_dimensions(int rows, int cols) {
     Dimensions dim = {rows, cols};
     return dim;
@@ -52,7 +50,6 @@ Result create_error_result(const char *message) {
     return result;
 }
 
-
 Result read_dimensions(Dimensions *dim) {
     printf("Enter the number of rows and columns (e.g., 3 4): ");
     if (scanf("%d %d", &dim->rows, &dim->cols) != 2) {
@@ -69,7 +66,6 @@ Result read_indices(Index *idx) {
     }
     return create_success_result();
 }
-
 
 Grid create_empty_grid(Dimensions dim) {
     Grid grid;
@@ -112,7 +108,6 @@ Result is_valid_grid(Grid grid) {
     return create_success_result();
 }
 
-
 Result fill_grid_row(Grid grid, int row_num, const char *input) {
     if (row_num < 0 || row_num >= grid.rows) {
         return create_error_result("Row index out of bounds.");
@@ -123,7 +118,6 @@ Result fill_grid_row(Grid grid, int row_num, const char *input) {
     }
     
     strncpy(grid.data[row_num], input, grid.cols);
-    
     
     for (int j = strlen(input); j < grid.cols; j++) {
         grid.data[row_num][j] = ' ';
@@ -156,7 +150,6 @@ Result populate_grid(Grid grid) {
     return create_success_result();
 }
 
-
 Result validate_index(Index idx, Dimensions dim) {
     if (idx.row < 0 || idx.row >= dim.rows || 
         idx.col < 0 || idx.col >= dim.cols) {
@@ -164,7 +157,6 @@ Result validate_index(Index idx, Dimensions dim) {
     }
     return create_success_result();
 }
-
 
 void display_grid(Grid grid) {
     printf("\nGrid entered:\n");
@@ -177,8 +169,7 @@ void display_grid(Grid grid) {
 }
 
 void display_character_at_index(Grid grid, Index idx) {
-    printf("\nCharacter at [%d][%d]: %c\n", 
-           idx.row, idx.col, grid.data[idx.row][idx.col]);
+    printf("\nCharacter at [%d][%d]: %c\n", idx.row, idx.col, grid.data[idx.row][idx.col]);
 }
 
 void display_error(const char *message) {
@@ -190,13 +181,11 @@ int main(void) {
     Index idx;
     Result result;
     
-    
     result = read_dimensions(&dim);
     if (!result.success) {
         display_error(result.error_message);
         return 0;
     }
-    
     
     Grid grid = create_empty_grid(dim);
     result = is_valid_grid(grid);
@@ -205,7 +194,6 @@ int main(void) {
         return 0;
     }
     
-    
     result = populate_grid(grid);
     if (!result.success) {
         display_error(result.error_message);
@@ -213,9 +201,7 @@ int main(void) {
         return 0;
     }
     
-    
     display_grid(grid);
-    
     
     result = read_indices(&idx);
     if (!result.success) {
@@ -224,7 +210,6 @@ int main(void) {
         return 0;
     }
     
-    
     result = validate_index(idx, dim);
     if (!result.success) {
         display_error(result.error_message);
@@ -232,10 +217,7 @@ int main(void) {
         return 0;
     }
     
-    
     display_character_at_index(grid, idx);
-    
-    
     destroy_grid(&grid);
 
     return 0;

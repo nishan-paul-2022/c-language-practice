@@ -18,7 +18,6 @@ int main(void) {
 
     for (int case_num = 1; case_num <= num_test_cases; case_num++) {
         int frequency[26] = {0};
-
         
         printf("Enter string %d (lowercase letters only): ", case_num);
         char input_string[100];
@@ -27,7 +26,6 @@ int main(void) {
             continue;
         }
         getchar();
-
         
         int string_length = strlen(input_string);
         for (int i = 0; i < string_length; i++) {
@@ -36,7 +34,6 @@ int main(void) {
                 frequency[current_char - 'a']++;
             }
         }
-
         
         printf("Case %d:\n", case_num);
         for (int i = 0; i < 26; i++) {

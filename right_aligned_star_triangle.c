@@ -5,11 +5,9 @@
 
 #include <stdio.h>
 
-
 int get_num_rows() {
     int rows;
     printf("Enter the number of rows for the star triangle: ");
-    
     
     while (scanf("%d", &rows) != 1 || rows <= 0) {
         printf("Invalid input. Please enter a positive integer for the number of rows: ");
@@ -20,10 +18,8 @@ int get_num_rows() {
     return rows;
 }
 
-
 void print_star_triangle(int rows, char star_char) {
     for (int i = 1; i <= rows; i++) {
-        
         for (int space = 1; space <= rows - i; space++) {
             printf(" ");
         }

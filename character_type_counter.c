@@ -55,7 +55,6 @@ int main(void) {
         fprintf(stderr, "Failed to read input\n");
         return 0;
     }
-
     
     size_t len = strlen(input_string);
     if (len > 0 && input_string[len - 1] == '\n') {
